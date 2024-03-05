@@ -3,14 +3,15 @@ import 'package:flutter/material.dart';
 // import 'package:projtemplate/presentation/views/home_screen.dart';
 
 import '../presentation/views/home_screen.dart';
+import '../presentation/views/home_section/homes_screen.dart';
 
 class RouteGenerator {
   static Route generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case HomeScreen.routeName:
         return route(HomeScreen(
-          // params: settings.arguments as HomeScreenArgs?
-          ));
+            // params: settings.arguments as HomeScreenArgs?
+            ));
       // case FirstScreen.routeName:
       //   return route(FirstScreen(
       //       firstScreenArgs: settings.arguments as FirstScreenArgs));

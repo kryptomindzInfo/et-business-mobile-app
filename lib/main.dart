@@ -2,10 +2,9 @@ import 'package:etbank_business_app/providers/localization_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
 import 'navigation/navigator_key.dart';
 import 'navigation/route_generator.dart';
-import 'presentation/views/home_screen.dart';
+import 'presentation/views/home_section/homes_screen.dart';
 import 'resources/localization/app_localization.dart';
 
 void main() {
