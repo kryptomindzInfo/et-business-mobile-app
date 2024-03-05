@@ -6,31 +6,37 @@ class AppTextstyle {
   static headingTextStyle(
           {FontWeight fontWeight = FontWeight.normal,
           double fontSize = 14,
-          Color color = AppColors.black}) =>
+          Color color = AppColors.black,TextOverflow overflow=TextOverflow.ellipsis }) =>
       _normalText(
           fontFamily: 'Sora',
           fontSize: fontSize,
           fontWeight: fontWeight,
-          color: color);
+          color: color,
+          overflow:  overflow,
+          );
   static bodyTextStyle(
           {FontWeight fontWeight = FontWeight.normal,
           double fontSize = 14,
-          Color color = AppColors.black}) =>
+          Color color = AppColors.black,TextOverflow overflow=TextOverflow.ellipsis}) =>
       _normalText(
           fontFamily: 'WorkSans',
           fontSize: fontSize,
           fontWeight: fontWeight,
-          color: color);
+          color: color,
+          overflow:  overflow,
+          );
 
   static TextStyle _normalText(
           {required String fontFamily,
           FontWeight fontWeight = FontWeight.normal,
           double fontSize = 14,
-          Color color = AppColors.black}) =>
+          Color color = AppColors.black,
+           TextOverflow? overflow
+          }) =>
       TextStyle(
           fontFamily: '',
           fontWeight: fontWeight,
           fontSize: fontSize,
-          overflow: TextOverflow.ellipsis,
+          overflow:overflow,
           color: color);
 }

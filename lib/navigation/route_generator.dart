@@ -1,3 +1,4 @@
+import 'package:etbank_business_app/presentation/views/Onboarding/onboarding.dart';
 import 'package:flutter/material.dart';
 // import 'package:projtemplate/navigation/params/home_screen_args.dart';
 // import 'package:projtemplate/presentation/views/home_screen.dart';
@@ -9,7 +10,12 @@ class RouteGenerator {
   static Route generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case HomeScreen.routeName:
-        return route(HomeScreen(
+        return route(const HomeScreen(
+            // params: settings.arguments as HomeScreenArgs?
+            ));
+
+      case Onboarding.routeName:
+        return route(Onboarding(
             // params: settings.arguments as HomeScreenArgs?
             ));
       // case FirstScreen.routeName:
