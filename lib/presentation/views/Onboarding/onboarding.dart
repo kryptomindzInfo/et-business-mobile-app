@@ -13,7 +13,7 @@ class Onboarding extends ConsumerWidget {
       title: 'onboarding1_title',
       subtitle: 'onboarding1_subtitle',
       image: AppAssets.onboardingImage1,
-    ), // Assuming these are your widget constructors
+    ),
     OnboardingWidget(
       title: 'onboarding2_title',
       subtitle: 'onboarding2_subtitle',
@@ -40,7 +40,6 @@ class Onboarding extends ConsumerWidget {
       image: AppAssets.onboardingImage6,
       isButtons: true,
     ),
-    // Add the rest of your onboarding widgets
   ];
 
   Onboarding({super.key});
@@ -48,7 +47,6 @@ class Onboarding extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final pageController = ref.read(pageControllerProvider);
-    // final activePage = ref.watch(activePageIndexProvider);
 
     return Scaffold(
       body: Stack(
@@ -63,44 +61,9 @@ class Onboarding extends ConsumerWidget {
               itemBuilder: (context, index) => pages[index % pages.length],
             ),
           ),
-          Positioned(
-            left: 0.w,
-            top: 85,
-            right: 0.w,
-            height: 20.h,
-            child: const LinearIndicator(),
-            // child: Padding(
-            //   padding: EdgeInsets.symmetric(horizontal: 40.w),
-            //   child: Row(
-            //     children: List<Widget>.generate(_pages.length, (index) {
-            //       return InkWell(
-            //         onTap: () => pageController.animateToPage(
-            //           index,
-            //           duration: const Duration(milliseconds: 300),
-            //           curve: Curves.easeIn,
-            //         ),
-            //         child: Container(
-            //           width: 50.w,
-            //           height: 2.h,
-            //           decoration: BoxDecoration(
-            //             borderRadius: BorderRadius.circular(1.r),
-            //             border: Border.all(
-            //               color: getPageIndicatorColor(index, activePage),
-            //               width: 1.w,
-            //             ),
-            //           ),
-            //         ),
-            //       );
-            //     }),
-            //   ),
-            // ),
-          ),
+          const LinearIndicator(),
         ],
       ),
     );
   }
-
-  // Color getPageIndicatorColor(int index, int activePage) {
-  //   return index == activePage ? Colors.green : Colors.grey;
-  // }
 }

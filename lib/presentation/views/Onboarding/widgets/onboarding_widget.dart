@@ -22,8 +22,6 @@ class OnboardingWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // ScreenUtil.init(context, designSize: const Size(390, 844));
-    // var applocal = AppLocalizations.of(context)!;
     return Scaffold(
       body: Stack(
         children: [
@@ -54,42 +52,36 @@ class OnboardingWidget extends StatelessWidget {
           Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Padding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: 0.w,
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    130.spaceY,
-                    SizedBox(
-                      width: 293.w,
-                      child: Text(
-                        getTranslated(title, context),
-                        // textAlign: TextAlign.center,
-                        style: AppTextstyle.headingTextStyle(
-                            fontSize: 32.sp,
-                            fontWeight: FontWeight.w700,
-                            color: AppColors.white,
-                            overflow: TextOverflow.clip),
-                      ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  130.spaceY,
+                  SizedBox(
+                    width: 293.w,
+                    child: Text(
+                      getTranslated(title, context),
+                      style: AppTextstyle.headingTextStyle(
+                          fontSize: 32.sp,
+                          fontWeight: FontWeight.w700,
+                          color: AppColors.white,
+                          overflow: TextOverflow.clip),
                     ),
-                    SizedBox(
-                      height: 5.h,
+                  ),
+                  SizedBox(
+                    height: 5.h,
+                  ),
+                  SizedBox(
+                    width: 317.w,
+                    child: Text(
+                      getTranslated(subtitle, context),
+                      style: AppTextstyle.bodyTextStyle(
+                          fontSize: 16.sp,
+                          fontWeight: FontWeight.w500,
+                          color: AppColors.baseGreenColor,
+                          overflow: TextOverflow.clip),
                     ),
-                    SizedBox(
-                      width: 317.w,
-                      child: Text(
-                        getTranslated(subtitle, context),
-                        style: AppTextstyle.bodyTextStyle(
-                            fontSize: 16.sp,
-                            fontWeight: FontWeight.w500,
-                            color: AppColors.baseGreenColor,
-                            overflow: TextOverflow.clip),
-                      ),
-                    ),
-                  ],
-                ),
+                  ),
+                ],
               ),
               20.spaceY,
               SizedBox(
@@ -97,7 +89,6 @@ class OnboardingWidget extends StatelessWidget {
                   height: 391.h,
                   child: Image.asset(
                     image,
-                    // fit: BoxFit.cover,
                     width: 388.w,
                     height: 388.h,
                   )),

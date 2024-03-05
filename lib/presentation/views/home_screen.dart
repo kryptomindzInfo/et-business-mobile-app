@@ -1,12 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
-import '../../api_resources/api_models/photos_model.dart';
-import '../../api_resources/api_services/api_services.dart';
-import '../../core/core.dart';
 import '../../providers/localization_provider.dart';
 import '../../resources/localization/language_constrants.dart';
-import '../base_widgets/base_widget.dart';
 
 class HomeScreen extends ConsumerStatefulWidget {
   static const String routeName = "home_screen";
