@@ -16,5 +16,10 @@
    "onboarding6_title": "Explore Endless Possibilities",
    "onboarding6_subtitle": "Open a modern business account in minutes. Submit your details now to embark on a seamless financial journey.",
    "sign_in": "Sign In",
-   "sign_up": "Sign Up"
+   "sign_up": "Sign Up",
+
+   "----------------------SIGN UP TEXTS-----------":"",
+
+   "signup_email_title": "Enter Email Address",
+   "continue": "Continue"
 }

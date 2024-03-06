@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'OnboardingWidgets/linear_indicator.dart';
-import 'OnboardingWidgets/onboarding_widget.dart';
+import 'onboarding_widgets/onboarding_widget.dart';
 
 class Onboarding extends ConsumerWidget {
   static const String routeName = "my_page_view";

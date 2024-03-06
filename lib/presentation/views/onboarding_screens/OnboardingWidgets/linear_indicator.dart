@@ -1,4 +1,4 @@
-import 'package:etbank_business_app/presentation/views/Onboarding/onboarding.dart';
+import 'package:etbank_business_app/presentation/views/onboarding_screens/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
