@@ -1,16 +1,28 @@
+import 'package:etbank_business_app/presentation/views/Onboarding/onboarding.dart';
+import 'package:etbank_business_app/presentation/views/profile_section/profile_screen.dart';
 import 'package:flutter/material.dart';
 // import 'package:projtemplate/navigation/params/home_screen_args.dart';
 // import 'package:projtemplate/presentation/views/home_screen.dart';
 
 import '../presentation/views/home_screen.dart';
+import '../presentation/views/home_section/homes_screen.dart';
 
 class RouteGenerator {
   static Route generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case HomeScreen.routeName:
-        return route(HomeScreen(
-          // params: settings.arguments as HomeScreenArgs?
-          ));
+        return route(const HomeScreen(
+            // params: settings.arguments as HomeScreenArgs?
+            ));
+
+      case Onboarding.routeName:
+        return route(Onboarding(
+            // params: settings.arguments as HomeScreenArgs?
+            ));
+      case ProfileScreen.routeName:
+        return route(ProfileScreen(
+            // params: settings.arguments as HomeScreenArgs?
+            ));
       // case FirstScreen.routeName:
       //   return route(FirstScreen(
       //       firstScreenArgs: settings.arguments as FirstScreenArgs));

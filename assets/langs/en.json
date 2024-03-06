@@ -1,3 +1,21 @@
 {
-   "lang" :"english"
+   "lang" :"english",
+
+   "----------------------ONBOARDING TEXTS-----------":"",
+
+   "onboarding1_title": "Maximize Your \nBusiness Potential",
+   "onboarding1_subtitle": "Empower Your Business Finances with ET \nBank. Unlock full control, elevate your \nexperience.",
+   "onboarding2_title": "Payments Made Simple, Absolutely Free",
+   "onboarding2_subtitle": "Enjoy cost-free international and local payments within your plan allowance, plus free transfers between Revolut Business accounts. Streamline your financial transactions effortlessly.",
+   "onboarding3_title": "Effortless Spend Control By Company Card",
+   "onboarding3_subtitle": "Issue physical and virtual debit cards for your team. Track expenses, set limits, or freeze cards in a click, ensuring total control over your company's spending.",
+   "onboarding4_title": "Transparent Currency Exchange",
+   "onboarding4_subtitle": "Exchange, send, and receive money in 28 currencies at the real (interbank) exchange rate. No hidden fees, just straightforward currency transactions.",
+   "onboarding5_title": "Simplify Subscriptions, Stay in Control",
+   "onboarding5_subtitle": "Effortlessly manage all recurring payments from a single dashboard. Track, spot duplicates, and cancel unused subscriptions with ease.",
+   "onboarding6_title": "Explore Endless Possibilities",
+   "onboarding6_subtitle": "Open a modern business account in minutes. Submit your details now to embark on a seamless financial journey.",
+   "sign_in": "Sign In",
+   "sign_up": "Sign Up"
+   
 }
