@@ -10,19 +10,21 @@ class InfoCardCommonWidget extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Container(
-      height: 200,
+      width: double.infinity,
+      // height: 200,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(32),
           color: AppColors.tealColor,
           border: Border.all(color: AppColors.white)),
       child: Column(
         children: [
-          20.spaceY,
+          // 20.spaceY,
           InfoTextWidget(),
-          10.spaceY,
+          // 10.spaceY,
           InfoTextWidget(),
-          10.spaceY,
-          InfoTextWidget()
+          // 10.spaceY,
+          InfoTextWidget(),
+          // 20.spaceY,
         ],
       ),
     );
