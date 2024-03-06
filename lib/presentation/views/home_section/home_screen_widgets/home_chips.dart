@@ -9,6 +9,6 @@ class HomeChips extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return Chips(title);
+    return Chips(title: title);
   }
 }
