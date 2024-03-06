@@ -14,20 +14,26 @@ class SeeAllCommonWidget extends ConsumerWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(
-          title,
-          style: AppTextstyle.bodyTextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.w600,
-              color: AppColors.white),
+        Padding(
+          padding: const EdgeInsets.only(left: 15),
+          child: Text(
+            title,
+            style: AppTextstyle.bodyTextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.w600,
+                color: AppColors.white),
+          ),
         ),
         isSeeAll
-            ? Text(
-                "See All",
-                style: AppTextstyle.bodyTextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w400,
-                    color: AppColors.primaryColor),
+            ? Padding(
+                padding: const EdgeInsets.only(right: 15),
+                child: Text(
+                  "See All",
+                  style: AppTextstyle.bodyTextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w400,
+                      color: AppColors.primaryColor),
+                ),
               )
             : SizedBox()
       ],
