@@ -1,3 +1,4 @@
+import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:etbank_business_app/presentation/views/onboarding_screens/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -44,6 +45,6 @@ class LinearIndicator extends ConsumerWidget {
   }
 
   Color getPageIndicatorColor(int index, int activePage) {
-    return index == activePage ? Colors.green : Colors.grey;
+    return index == activePage ? AppColors.primaryColor : AppColors.grey;
   }
 }
