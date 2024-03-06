@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 // import 'package:projtemplate/presentation/views/home_screen.dart';
 
 import '../presentation/views/home_screen.dart';
+import '../presentation/views/home_section/homes_screen.dart';
 
 class RouteGenerator {
   static Route generateRoute(RouteSettings settings) {

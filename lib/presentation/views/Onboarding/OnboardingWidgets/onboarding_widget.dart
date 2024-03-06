@@ -7,6 +7,9 @@ import 'package:etbank_business_app/resources/localization/language_constrants.d
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../navigation/navigation.dart';
+import '../../home_section/homes_screen.dart';
+
 class OnboardingWidget extends StatelessWidget {
   String title;
   String subtitle;
@@ -99,7 +102,9 @@ class OnboardingWidget extends StatelessWidget {
               bottom: 60.h,
               left: 50.w,
               child: CustomButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigation.pushNamed(HomeScreen.routeName);
+                },
                 height: 39.h,
                 width: 133.w,
                 backgroundColor: AppColors.signInButtonColor,
