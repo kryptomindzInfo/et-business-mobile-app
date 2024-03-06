@@ -1,10 +1,10 @@
 import 'package:etbank_business_app/constants/app_assets.dart';
-import 'package:etbank_business_app/presentation/views/Onboarding/widgets/linear_indicator.dart';
-import 'package:etbank_business_app/presentation/views/Onboarding/widgets/onboarding_widget.dart';
 import 'package:etbank_business_app/providers/pageview_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'OnboardingWidgets/linear_indicator.dart';
+import 'OnboardingWidgets/onboarding_widget.dart';
 
 class Onboarding extends ConsumerWidget {
   static const String routeName = "my_page_view";

@@ -2,7 +2,7 @@ import 'package:etbank_business_app/constants/app_assets.dart';
 import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:etbank_business_app/constants/app_textstyle.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
-import 'package:etbank_business_app/presentation/views/Onboarding/widgets/button.dart';
+import 'package:etbank_business_app/presentation/views/Onboarding/OnboardingWidgets/button.dart';
 import 'package:etbank_business_app/resources/localization/language_constrants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
