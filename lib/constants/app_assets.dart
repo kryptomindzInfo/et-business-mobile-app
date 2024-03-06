@@ -29,4 +29,5 @@ class AppAssets {
   static const requesticon = "${iconsDir}requesticon.png";
   static const moreicon = "${iconsDir}moreicon.png";
   static const transactioninfoicon = "${iconsDir}transactioninfoicon.png";
+  static const arrowLeft = "${iconsDir}arrow_left.png";
 }
