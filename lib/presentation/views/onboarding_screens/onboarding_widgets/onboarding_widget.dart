@@ -6,7 +6,6 @@ import 'package:etbank_business_app/presentation/views/onboarding_screens/onboar
 import 'package:etbank_business_app/resources/localization/language_constrants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../../../navigation/navigation.dart';
 import '../../home_section/homes_screen.dart';
 

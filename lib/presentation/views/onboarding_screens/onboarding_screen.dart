@@ -9,32 +9,32 @@ import 'onboarding_widgets/onboarding_widget.dart';
 class Onboarding extends ConsumerWidget {
   static const String routeName = "my_page_view";
   final List<Widget> pages = [
-    OnboardingWidget(
+    const OnboardingWidget(
       title: 'onboarding1_title',
       subtitle: 'onboarding1_subtitle',
       image: AppAssets.onboardingImage1,
     ),
-    OnboardingWidget(
+    const OnboardingWidget(
       title: 'onboarding2_title',
       subtitle: 'onboarding2_subtitle',
       image: AppAssets.onboardingImage2,
     ),
-    OnboardingWidget(
+    const OnboardingWidget(
       title: 'onboarding3_title',
       subtitle: 'onboarding3_subtitle',
       image: AppAssets.onboardingImage3,
     ),
-    OnboardingWidget(
+    const OnboardingWidget(
       title: 'onboarding4_title',
       subtitle: 'onboarding4_subtitle',
       image: AppAssets.onboardingImage4,
     ),
-    OnboardingWidget(
+    const OnboardingWidget(
       title: 'onboarding5_title',
       subtitle: 'onboarding5_subtitle',
       image: AppAssets.onboardingImage5,
     ),
-    OnboardingWidget(
+    const OnboardingWidget(
       title: 'onboarding6_title',
       subtitle: 'onboarding6_subtitle',
       image: AppAssets.onboardingImage6,

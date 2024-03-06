@@ -28,8 +28,13 @@ class AppAssets {
   static const requesticon = "${iconsDir}requesticon.png";
   static const moreicon = "${iconsDir}moreicon.png";
   static const transactioninfoicon = "${iconsDir}transactioninfoicon.png";
-
-  // Signup
-
   static const arrowLeft = "${iconsDir}arrow_left.png";
+
+  // SignUp Screens
+
+  static const checkEmailImage = "${imagesDir}check_email_image.png";
+  static const companyIcon = "${iconsDir}company_icon.png";
+  static const freelancerIcon = "${iconsDir}freelancer_icon.png";
+
+  static const personIcon = "${iconsDir}person_icon.png";
 }
