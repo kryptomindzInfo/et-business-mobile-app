@@ -12,10 +12,12 @@ class SignUpState extends ChangeNotifier {
 
   String get email => _email;
 
+  void notify() {
+    notifyListeners();
+  }
+
   set email(String email) {
     _email = email;
     notifyListeners();
   }
 }
-
-Color buttonColor(bool value) => value ? Colors.black : Colors.green;

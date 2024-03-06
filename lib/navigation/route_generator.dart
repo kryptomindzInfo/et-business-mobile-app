@@ -1,10 +1,12 @@
 import 'package:etbank_business_app/presentation/views/onboarding_screens/onboarding_screen.dart';
+import 'package:etbank_business_app/presentation/views/signup_screens/signup_check_email_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_email_screen.dart';
 import 'package:flutter/material.dart';
 // import 'package:projtemplate/navigation/params/home_screen_args.dart';
 // import 'package:projtemplate/presentation/views/home_screen.dart';
 
 import '../presentation/views/home_screen.dart';
+import '../presentation/views/home_section/homes_screen.dart';
 
 class RouteGenerator {
   static Route generateRoute(RouteSettings settings) {
@@ -19,6 +21,9 @@ class RouteGenerator {
 
       case SignUpEmail.routeName:
         return route(const SignUpEmail());
+
+      case SignUpCheckEmail.routeName:
+        return route(const SignUpCheckEmail());
 
       // case FirstScreen.routeName:
       //   return route(FirstScreen(

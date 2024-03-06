@@ -1,4 +1,6 @@
 import 'package:etbank_business_app/constants/app_textstyle.dart';
+import 'package:etbank_business_app/extensions/sized_box.dart';
+import 'package:etbank_business_app/navigation/navigation.dart';
 import 'package:etbank_business_app/providers/signup_provider.dart';
 import 'package:etbank_business_app/resources/localization/language_constrants.dart';
 import 'package:flutter/material.dart';
@@ -6,6 +8,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../constants/app_assets.dart';
 import '../../../constants/app_colors.dart';
+import '../../../globals/button_color.dart';
 import 'signup_widgets/button_widget.dart';
 import 'signup_widgets/text_field_widget.dart';
 
@@ -48,25 +51,22 @@ class SignUpEmail extends ConsumerWidget {
                     ),
                   ],
                 ),
-                SizedBox(
-                  height: 31.h,
-                ),
+                31.spaceY,
                 Text(
                   getTranslated('signup_email_title', context),
-                  style: const TextStyle(
-                      color: AppColors.white,
-                      fontSize: 26,
-                      fontWeight: FontWeight.w500,
-                      fontFamily: 'Sora'),
+                  style: AppTextstyle.headingTextStyle(
+                    color: AppColors.white,
+                    fontSize: 26,
+                    fontWeight: FontWeight.w500,
+                  ),
                 ),
-                SizedBox(
-                  height: 30.h,
-                ),
+                30.spaceY,
                 Row(
                   children: [
                     Expanded(
                       child: SizedBox(
                         child: TextFieldWidget(
+                          style: const TextStyle(color: Colors.black),
                           controller:
                               ref.read(emailStateProvider).emailController,
                           hintText:
@@ -77,7 +77,7 @@ class SignUpEmail extends ConsumerWidget {
                             fontWeight: FontWeight.w400,
                           ),
                           onChanged: (value) {
-                            // ref.read(emailStateProvider).email = value;
+                            ref.read(emailStateProvider).notify();
                           },
                         ),
                       ),
@@ -101,26 +101,22 @@ class SignUpEmail extends ConsumerWidget {
                   height: 48.h,
                   width: 327.w,
                   child: ButtonWidget(
-                      color: buttonColor(
-                          ref.watch(emailStateProvider).isEmailEmpty),
-                      text: Text(
-                        getTranslated('continue', context),
-                        style: AppTextstyle.bodyTextStyle(
-                            color: AppColors.black,
-                            fontSize: 16,
-                            fontWeight: FontWeight.w500),
-                      ),
-                      onPressed: () {}
-                      // onPressed: signupEmailController.Email.value != ''
-                      //     ?
-                      //     () {
-                      //         Navigator.push(
-                      //             context,
-                      //             MaterialPageRoute(
-                      //                 builder: (context) => screensoone()));
-                      //       }
-                      //     : () {}),
-                      ),
+                    color:
+                        buttonColor(ref.watch(emailStateProvider).isEmailEmpty),
+                    text: Text(
+                      getTranslated('continue', context),
+                      style: AppTextstyle.bodyTextStyle(
+                          color: buttonTextColor(
+                              ref.watch(emailStateProvider).isEmailEmpty),
+                          fontSize: 16,
+                          fontWeight: FontWeight.w500),
+                    ),
+                    onPressed: ref.watch(emailStateProvider).isEmailEmpty
+                        ? () {}
+                        : () {
+                            Navigation.pushNamed('signup_check_email');
+                          },
+                  ),
                 ),
               ),
             ));
