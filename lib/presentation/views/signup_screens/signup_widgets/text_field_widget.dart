@@ -1,4 +1,7 @@
+import 'package:etbank_business_app/constants/app_textstyle.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class TextFieldWidget extends StatelessWidget {
   const TextFieldWidget(
@@ -14,6 +17,7 @@ class TextFieldWidget extends StatelessWidget {
       this.labelText,
       this.obscureText,
       this.suffixIcon,
+      this.onSuffixIconTap,
       this.isFirst,
       this.isLast,
       this.style,
@@ -27,7 +31,8 @@ class TextFieldWidget extends StatelessWidget {
       this.focusNode,
       this.autofocus,
       this.focusColor,
-      this.controller})
+      this.controller,
+      this.fillColor})
       : super(key: key);
 
   final TextEditingController? controller;
@@ -48,6 +53,7 @@ class TextFieldWidget extends StatelessWidget {
   final bool? isLast;
   final Widget? prefixIcon;
   final Widget? suffixIcon;
+  final VoidCallback? onSuffixIconTap;
   final Widget? suffix;
   final int? maxlength;
   final bool? readonly;
@@ -55,77 +61,84 @@ class TextFieldWidget extends StatelessWidget {
   final FocusNode? focusNode;
   final bool? autofocus;
   final Color? focusColor;
+  final Color? fillColor;
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      // mainAxisAlignment: MainAxisAlignment.start,
-      children: [
-        Text(
-          labelText ?? "",
-          style: const TextStyle(
-              fontWeight: FontWeight.w600,
-              fontFamily: 'WorkSans',
-              color: Color(0xff191D23)),
-          textAlign: textAlign ?? TextAlign.start,
-        ),
-        //rgba(25, 29, 35, 1)
-        const SizedBox(
-          height: 5,
-        ),
-        TextFormField(
-          controller: controller,
-          autofocus: autofocus ?? false,
-          focusNode: focusNode,
-          textInputAction: textInputAction,
-          readOnly: readonly ?? false,
-          maxLength: maxlength,
-          maxLines: keyboardType == TextInputType.multiline ? null : 1,
-          key: key,
-          keyboardType: keyboardType ?? TextInputType.text,
-          onSaved: onSaved,
-          onChanged: onChanged,
-          validator: validator,
-          // initialValue: initialValue ?? '',
-          style: style ?? TextStyle(color: Colors.white),
-          obscureText: obscureText ?? false,
-          textAlign: textAlign ?? TextAlign.start,
-          obscuringCharacter: '●',
-          decoration: InputDecoration(
-              fillColor: Colors.white,
-              filled: true,
-              hintText: hintText ?? '',
-              suffix: suffix,
-              errorText: errorText,
-              //   iconData: iconData,
-              contentPadding: const EdgeInsets.only(
-                left: 10,
-                top: 10,
-              ),
-              hintStyle: hintStyle ??
-                  const TextStyle(
-                      fontSize: 14,
-                      fontFamily: 'WorkSans',
-                      fontStyle: FontStyle.normal,
-                      fontWeight: FontWeight.w400,
-                      color: Color(0xff191D23)),
-              suffixIcon: suffixIcon,
-              enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(8),
-                // borderSide: BorderSide(color: AppColors.textFieldBorderColor),
-              ),
-              focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(8),
-                // borderSide: BorderSide(
-                //     color: focusColor ?? AppColors.textFieldBorderColor),
-              ),
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(8),
-                // borderSide: BorderSide(color: AppColors.textFieldBorderColor),
-              )),
-        ),
-      ],
+    return SizedBox(
+      height: 80.h,
+      width: 360.w,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        // mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Text(
+            labelText ?? "",
+            style: const TextStyle(
+                fontWeight: FontWeight.w600,
+                fontFamily: 'WorkSans',
+                color: Color(0xff191D23)),
+            textAlign: textAlign ?? TextAlign.start,
+          ),
+          //rgba(25, 29, 35, 1)
+          const SizedBox(
+            height: 5,
+          ),
+          TextFormField(
+            controller: controller,
+            autofocus: autofocus ?? false,
+            focusNode: focusNode,
+            textInputAction: textInputAction,
+            readOnly: readonly ?? false,
+            maxLength: maxlength,
+            maxLines: keyboardType == TextInputType.multiline ? null : 1,
+            key: key,
+            keyboardType: keyboardType ?? TextInputType.text,
+            onSaved: onSaved,
+            onChanged: onChanged,
+            validator: validator,
+            // initialValue: initialValue ?? '',
+            style: style ?? const TextStyle(color: Colors.white),
+            obscureText: obscureText ?? false,
+            textAlign: textAlign ?? TextAlign.start,
+            obscuringCharacter: '●',
+            decoration: InputDecoration(
+                fillColor: fillColor ?? Colors.white,
+                filled: true,
+                hintText: hintText ?? '',
+                // suffix: suffix,
+                errorText: errorText,
+                //   iconData: iconData,
+                contentPadding: const EdgeInsets.only(
+                  left: 10,
+                  top: 10,
+                ),
+                hintStyle: hintStyle ??
+                    AppTextstyle.bodyTextStyle(color: const Color(0xff191D23)),
+                // const TextStyle(
+                //     fontSize: 14,
+                //     fontFamily: 'WorkSans',
+                //     fontStyle: FontStyle.normal,
+                //     fontWeight: FontWeight.w400,
+                //     color: Color(0xff191D23)),
+                // suffixIcon:
+                //     GestureDetector(onTap: onSuffixIconTap, child: suffixIcon),
+                enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(8),
+                  // borderSide: BorderSide(color: AppColors.textFieldBorderColor),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(8),
+                  // borderSide: BorderSide(
+                  //     color: focusColor ?? AppColors.textFieldBorderColor),
+                ),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(8),
+                  // borderSide: BorderSide(color: AppColors.textFieldBorderColor),
+                )),
+          ),
+        ],
+      ),
     );
   }
 

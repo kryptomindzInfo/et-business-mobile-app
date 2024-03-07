@@ -3,7 +3,7 @@ import 'package:etbank_business_app/providers/pageview_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'onboarding_widgets/linear_indicator.dart';
+import 'onboarding_widgets/linear_indicator_widget.dart';
 import 'onboarding_widgets/onboarding_widget.dart';
 
 class Onboarding extends ConsumerWidget {
@@ -61,7 +61,7 @@ class Onboarding extends ConsumerWidget {
               itemBuilder: (context, index) => pages[index % pages.length],
             ),
           ),
-          const LinearIndicator(),
+          const LinearIndicatorWidget(),
         ],
       ),
     );

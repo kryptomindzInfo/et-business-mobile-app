@@ -37,6 +37,26 @@
    "freelancer": "Freelancer",
    "freelancer_desc": "You're self-employed and operate under your own name (i.e. sole trader)",
    "dont_have_business": "I don't have a business yet",
-   "dont_have_business_desc": "Your company is not yet registered or you want to learn more about Revolut Business"
-   
+   "dont_have_business_desc": "Your company is not yet registered or you want to learn more about Revolut Business",
+   "mobile_no":"Mobile Number",
+   "mobile_no_verification_code":"We may send a verification code to this number",
+   "country":"Country",
+   "mobile_code_subtitle": "Code sent to +44 3456432342 unless you already have accounts",
+   "create_password_title":"Create password",
+   "create_password_subtitle":"This password can be used both in mobile app and in browser",
+   "password":"Password",
+   "password_condition":"Your password must contain 8 or more characters and include numbers, letters, and special characters",
+   "Password_condition_failed":"Your password must contain special characters",
+   "welcome_back_title":"Welcome back,\nRamy!",
+   "welcome_back_subtitle":"We've recognised your personal Revolut account. Confirm it's you and we can use your information to speed up your sign up.",
+   "yes_confirm":"Yes, confirm",
+   "no_not_me":"No, not me",
+   "enter_passcode":"Enter passcode",
+   "enter_passcode_to_login":"Enter Passcode to login",
+   "forgot_passcode":"Forgot passcode?",
+   "enable_push_notif_title": "Get what you need, in a tap",
+   "enable_push_notif_subtitle": "Push notifications help you securely log in on our web app, instantly approve payments, confirm card transactions and more",
+   "enable_push_notification": "Enable push notification",
+   "not_now": "Not now"
+
 }

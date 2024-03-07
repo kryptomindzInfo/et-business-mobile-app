@@ -1,5 +1,8 @@
 import 'package:etbank_business_app/presentation/views/onboarding_screens/onboarding_screen.dart';
+import 'package:etbank_business_app/presentation/views/signup_screens/signup_business_type_screen.dart';
+import 'package:etbank_business_app/presentation/views/signup_screens/signup_create_password_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_email_screen.dart';
+import 'package:etbank_business_app/presentation/views/signup_screens/signup_mobile_num_screen.dart';
 import 'package:etbank_business_app/providers/localization_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -38,7 +41,7 @@ class MyApp extends ConsumerWidget {
         ],
         navigatorKey: navigatorKey,
         onGenerateRoute: RouteGenerator.generateRoute,
-        initialRoute: SignUpEmail.routeName,
+        initialRoute: Onboarding.routeName,
       ),
     );
   }

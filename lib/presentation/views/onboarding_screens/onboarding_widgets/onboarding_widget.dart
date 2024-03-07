@@ -2,7 +2,9 @@ import 'package:etbank_business_app/constants/app_assets.dart';
 import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:etbank_business_app/constants/app_textstyle.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
+import 'package:etbank_business_app/presentation/views/onboarding_screens/onboarding_screen.dart';
 import 'package:etbank_business_app/presentation/views/onboarding_screens/onboarding_widgets/button_widget.dart';
+import 'package:etbank_business_app/presentation/views/signup_screens/signup_email_screen.dart';
 import 'package:etbank_business_app/resources/localization/language_constrants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -117,7 +119,9 @@ class OnboardingWidget extends StatelessWidget {
               bottom: 60.h,
               right: 50.w,
               child: CustomButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigation.pushNamed(SignUpEmailScreen.routeName);
+                },
                 height: 39.h,
                 width: 133.w,
                 backgroundColor: AppColors.primaryColor,

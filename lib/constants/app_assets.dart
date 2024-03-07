@@ -35,6 +35,8 @@ class AppAssets {
   static const checkEmailImage = "${imagesDir}check_email_image.png";
   static const companyIcon = "${iconsDir}company_icon.png";
   static const freelancerIcon = "${iconsDir}freelancer_icon.png";
-
   static const personIcon = "${iconsDir}person_icon.png";
+  static const exclamationMark = "${iconsDir}exclamation_mark.png";
+  static const welcomeBackImage = "${imagesDir}welcome_back_image.png";
+  static const ufoImage = "${imagesDir}ufo_image.png";
 }

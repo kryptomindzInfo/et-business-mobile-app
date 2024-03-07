@@ -5,8 +5,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../providers/pageview_provider.dart';
 
-class LinearIndicator extends ConsumerWidget {
-  const LinearIndicator({super.key});
+class LinearIndicatorWidget extends ConsumerWidget {
+  const LinearIndicatorWidget({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

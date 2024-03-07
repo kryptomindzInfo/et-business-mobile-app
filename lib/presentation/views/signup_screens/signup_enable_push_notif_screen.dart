@@ -12,10 +12,10 @@ import '../../../constants/app_assets.dart';
 import '../../../constants/app_colors.dart';
 import 'signup_widgets/primary_button.dart';
 
-class SignUpCheckEmailScreen extends ConsumerWidget {
-  static const String routeName = "signup_check_email";
+class SignUpEnablePushNotifScreen extends ConsumerWidget {
+  static const String routeName = "signup_enable_push_notif";
 
-  const SignUpCheckEmailScreen({super.key});
+  const SignUpEnablePushNotifScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -28,14 +28,15 @@ class SignUpCheckEmailScreen extends ConsumerWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               HeaderIconWithTitle(
-                title: getTranslated('check_email_title', context),
-                description: getTranslated('check_email_subtitle', context),
+                title: getTranslated('enable_push_notif_title', context),
+                description:
+                    getTranslated('enable_push_notif_subtitle', context),
               ),
               57.spaceY,
               Image.asset(
-                AppAssets.checkEmailImage,
-                height: 306.h,
-                width: 306.w,
+                AppAssets.ufoImage,
+                height: 390.h,
+                width: 390.w,
               )
             ],
           ),
@@ -58,7 +59,7 @@ class SignUpCheckEmailScreen extends ConsumerWidget {
                       child: PrimaryButton(
                         color: AppColors.primaryColor,
                         text: Text(
-                          getTranslated('go_to_inbox', context),
+                          getTranslated('enable_push_notification', context),
                           style: AppTextstyle.bodyTextStyle(
                               color: AppColors.black,
                               fontSize: 16,
@@ -74,14 +75,14 @@ class SignUpCheckEmailScreen extends ConsumerWidget {
                       child: PrimaryButton(
                         color: AppColors.primaryColor.withOpacity(0.5),
                         text: Text(
-                          getTranslated('enter_code_manually', context),
+                          getTranslated('not_now', context),
                           style: AppTextstyle.bodyTextStyle(
                               color: AppColors.primaryColor,
                               fontSize: 16,
                               fontWeight: FontWeight.w500),
                         ),
                         onPressed: () {
-                          Navigation.pushNamed(SignUpEmailCodeScreen.routeName);
+                          // Navigation.pushNamed(SignUpEmailCodeScreen.routeName);
                         },
                       ),
                     ),
