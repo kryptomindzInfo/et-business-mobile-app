@@ -57,6 +57,18 @@
    "enable_push_notif_title": "Get what you need, in a tap",
    "enable_push_notif_subtitle": "Push notifications help you securely log in on our web app, instantly approve payments, confirm card transactions and more",
    "enable_push_notification": "Enable push notification",
-   "not_now": "Not now"
+   "not_now": "Not now",
 
+   "help":"Help",
+   "marketing_coordinator":"Marketing Coordinator",
+   "caring_marketing":"Caring is the new marketing",
+   "personal_profile":"Personal Profile",
+   "business_profile":"Business Profile",
+   "merchant_profile":"Merchant Profile",
+   "statement":"Statement",
+   "billing":"Billing",
+   "choose_theme":"Choose Theme",
+   "dark":"Dark",
+   "light":"Light"
+   
 }

@@ -15,6 +15,8 @@ class AppAssets {
   //home screen Assets
   static const backgroundImage = "${imagesDir}etbackgrd.png";
   static const ukflag = "${imagesDir}uk.png";
+  static const light = "${imagesDir}light.png";
+  static const dark = "${imagesDir}dark.png";
 
   //app_icons
   static const earthicon = "${iconsDir}earth.png";
@@ -23,6 +25,7 @@ class AppAssets {
   static const profileicon = "${iconsDir}profile.png";
   static const charticon = "${iconsDir}chart.png";
   static const notificationicon = "${iconsDir}notification.png";
+
   static const dropdownicon = "${iconsDir}dropdown.png";
   static const sendicon = "${iconsDir}sendicon.png";
   static const requesticon = "${iconsDir}requesticon.png";
@@ -39,4 +42,13 @@ class AppAssets {
   static const exclamationMark = "${iconsDir}exclamation_mark.png";
   static const welcomeBackImage = "${imagesDir}welcome_back_image.png";
   static const ufoImage = "${imagesDir}ufo_image.png";
+  static const upgradeicon = "${iconsDir}upgradeicon.png";
+  static const favrouriteicon = "${iconsDir}favorite.png";
+  static const communicationicon = "${iconsDir}communication.png";
+  static const marketingicon = "${iconsDir}marketing.png";
+  static const personalprofileicon = "${iconsDir}personalprofile.png";
+  static const businessprofileicon = "${iconsDir}businessprofile.png";
+  static const merchantprofileicon = "${iconsDir}merchantprofile.png";
+  static const statementicon = "${iconsDir}statement.png";
+  static const billingicon = "${iconsDir}billing.png";
 }
