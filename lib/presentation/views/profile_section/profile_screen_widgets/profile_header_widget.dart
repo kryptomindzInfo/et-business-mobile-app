@@ -17,6 +17,7 @@ class ProfileHeaderWidget extends ConsumerWidget {
         HeaderIconWithTitle(
           title: "Brooklyn Simmons",
           description: "Louis Vuitton",
+          imageicon: AppAssets.arrowLeft,
         ),
         Padding(
           padding: EdgeInsets.only(bottom: 18),

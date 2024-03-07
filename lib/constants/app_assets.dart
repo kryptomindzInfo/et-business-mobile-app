@@ -42,4 +42,9 @@ class AppAssets {
   static const merchantprofileicon = "${iconsDir}merchantprofile.png";
   static const statementicon = "${iconsDir}statement.png";
   static const billingicon = "${iconsDir}billing.png";
+  static const crossicon = "${iconsDir}cross.png";
+  static const popularicon = "${iconsDir}popular.png";
+  static const cardicon = "${iconsDir}cardicon.png";
+  static const intpaymenticon = "${iconsDir}intpayment.png";
+  static const localpaymenticon = "${iconsDir}localpayment.png";
 }

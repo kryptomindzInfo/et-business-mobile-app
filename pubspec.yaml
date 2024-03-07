@@ -93,6 +93,9 @@ flutter:
     - family: WorkSans
       fonts:
         - asset: assets/fonts/WorkSans-Regular.ttf
+    - family: roboto
+      fonts:
+        - asset: assets/fonts/Roboto-Medium.ttf
   # fonts:
   #   - family: Schyler
   #     fonts:

@@ -27,6 +27,16 @@
    "billing":"Billing",
    "choose_theme":"Choose Theme",
    "dark":"Dark",
-   "light":"Light"
+   "light":"Light",
+   "confirmation":"Confirmation",
+   "charge":"Charge for new subscription",
+   "select_plan":"Select your plan",
+   "monthly_sub":"New monthly subscription",
+   "first_month":"First Month",
+   "continue":"Continue",
+   "refer_business":"Refer a Business",
+   "refer_for_faster":"Refer a business for faster payments",
+   "free_instant_transfer":"Free Instant transfers to other Revolute accounts",
+   "get_started":"Get Started"
    
 }
