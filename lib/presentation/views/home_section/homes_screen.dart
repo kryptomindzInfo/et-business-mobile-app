@@ -45,7 +45,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
             20.spaceY,
             const SeeAllCommonWidget("Transactions", true),
             10.spaceY,
-            const InfoCardCommonWidget()
+            const HomeInfoCardWidget()
           ]),
         ),
       ),

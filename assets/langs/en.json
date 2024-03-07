@@ -16,6 +16,17 @@
    "onboarding6_title": "Explore Endless Possibilities",
    "onboarding6_subtitle": "Open a modern business account in minutes. Submit your details now to embark on a seamless financial journey.",
    "sign_in": "Sign In",
-   "sign_up": "Sign Up"
+   "sign_up": "Sign Up",
+   "help":"Help",
+   "marketing_coordinator":"Marketing Coordinator",
+   "caring_marketing":"Caring is the new marketing",
+   "personal_profile":"Personal Profile",
+   "business_profile":"Business Profile",
+   "merchant_profile":"Merchant Profile",
+   "statement":"Statement",
+   "billing":"Billing",
+   "choose_theme":"Choose Theme",
+   "dark":"Dark",
+   "light":"Light"
    
 }
