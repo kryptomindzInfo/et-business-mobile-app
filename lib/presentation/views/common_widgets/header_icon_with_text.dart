@@ -58,10 +58,10 @@ class HeaderIconWithTitle extends ConsumerWidget {
             ? Text(
                 description!,
                 style: AppTextstyle.bodyTextStyle(
-                  color: AppColors.white,
-                  fontSize: 12,
-                  fontWeight: FontWeight.w500,
-                ),
+                    color: AppColors.white,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500,
+                    overflow: TextOverflow.clip),
               )
             : const SizedBox(),
       ],

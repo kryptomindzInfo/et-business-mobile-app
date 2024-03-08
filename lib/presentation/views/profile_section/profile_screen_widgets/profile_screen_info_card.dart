@@ -1,9 +1,11 @@
 import 'package:etbank_business_app/constants/app_assets.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
+import 'package:etbank_business_app/navigation/navigation.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/info_card_common_widget.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/see_all_widget.dart';
 import 'package:etbank_business_app/presentation/views/profile_section/profile_screen_bottom_sheets/light_dark_bottom_sheet.dart';
 import 'package:etbank_business_app/presentation/views/profile_section/profile_screen_widgets/profile_info_text_widget.dart';
+import 'package:etbank_business_app/presentation/views/profile_section/statement_section/statement_screen.dart';
 import 'package:etbank_business_app/resources/localization/language_constrants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -27,7 +29,7 @@ class ProfileInfoCard extends ConsumerWidget {
                   showModalBottomSheet(
                     backgroundColor: Colors.transparent,
                     context: context,
-                    builder: (context) => LightAndDarkBottomSheet(),
+                    builder: (context) => ThemeBottomSheet(),
                   );
                 },
               ),
@@ -42,6 +44,9 @@ class ProfileInfoCard extends ConsumerWidget {
               ProfileInfoTextWidget(
                 image: AppAssets.statementicon,
                 title: getTranslated("statement", context),
+                onpress: () {
+                  Navigation.pushNamed(StatementScreen.routeName);
+                },
               ),
               ProfileInfoTextWidget(
                 image: AppAssets.billingicon,

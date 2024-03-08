@@ -6,6 +6,8 @@ import 'package:etbank_business_app/presentation/views/common_widgets/primary_bu
 import 'package:etbank_business_app/presentation/views/common_widgets/see_all_widget.dart';
 import 'package:etbank_business_app/presentation/views/profile_section/profile_screen_bottom_sheets/confirmation_bottom_sheet.dart';
 import 'package:etbank_business_app/presentation/views/profile_section/profile_screen_bottom_sheets/plans_bottom_sheet_info_text.dart';
+import 'package:etbank_business_app/presentation/views/profile_section/profile_screen_bottom_sheets/popular_widget.dart';
+import 'package:etbank_business_app/presentation/views/profile_section/profile_screen_bottom_sheets/upgrade_btm_sheet_main_Card.dart';
 import 'package:etbank_business_app/presentation/views/profile_section/profile_screen_widgets/profile_screen_chips.dart';
 import 'package:etbank_business_app/providers/profile_provider.dart';
 import 'package:etbank_business_app/resources/localization/language_constrants.dart';
@@ -60,60 +62,11 @@ class UpgradeBottomSheet extends ConsumerWidget {
               }).toList(),
             ),
             15.spaceY,
-            Container(
-              height: 106,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(28),
-                  color: AppColors.primaryColor,
-                  border: Border.all(color: AppColors.white)),
-              child: Container(
-                margin: EdgeInsets.only(
-                  left: 20,
-                  right: 20,
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  // crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      // mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          upgradePlanslist[profileProviderWatch.selectedPlan]
-                              ["title"],
-                          style: AppTextstyle.headingTextStyle(
-                              fontSize: 48, fontWeight: FontWeight.bold),
-                        ),
-                        Text(
-                          "1 month free . £${upgradePlanslist[profileProviderWatch.selectedPlan]["price"]}/month",
-                          style: AppTextstyle.headingTextStyle(
-                              fontSize: 12,
-                              fontWeight: FontWeight.bold,
-                              color: AppColors.black.withOpacity(0.5)),
-                        ),
-                      ],
-                    ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Image.asset(
-                          AppAssets.popularicon,
-                          height: 30,
-                        ),
-                        5.spaceY,
-                        Text(
-                          "Popular",
-                          style: AppTextstyle.headingTextStyle(
-                              fontSize: 16, fontWeight: FontWeight.bold),
-                        ),
-                      ],
-                    )
-                  ],
-                ),
-              ),
+            UpgradeBottomSheetMainCard(
+              title: upgradePlanslist[profileProviderWatch.selectedPlan]
+                  ["title"],
+              subtitle:
+                  "1 month free . £${upgradePlanslist[profileProviderWatch.selectedPlan]["price"]}/month",
             ),
             25.spaceY,
             const SeeAllCommonWidget("Get more from your plan", false),

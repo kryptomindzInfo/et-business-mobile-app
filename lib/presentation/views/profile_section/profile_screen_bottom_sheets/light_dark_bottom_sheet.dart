@@ -8,8 +8,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../../constants/app_textstyle.dart';
 import '../../../../resources/localization/language_constrants.dart';
 
-class LightAndDarkBottomSheet extends ConsumerWidget {
-  const LightAndDarkBottomSheet({super.key});
+class ThemeBottomSheet extends ConsumerWidget {
+  const ThemeBottomSheet({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

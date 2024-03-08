@@ -17,6 +17,7 @@ class HomeMainCard extends ConsumerWidget {
       width: double.infinity,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(28),
+          border: Border.all(color: AppColors.white),
           color: AppColors.primaryColor),
       child: Container(
         margin: EdgeInsets.only(left: 25, right: 20),

@@ -4,9 +4,9 @@ import 'package:etbank_business_app/resources/localization/language_constrants.d
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class GetStartedButton extends ConsumerWidget {
+class ShareLinkButton extends ConsumerWidget {
   final VoidCallback? onpress;
-  const GetStartedButton({super.key, this.onpress});
+  const ShareLinkButton({super.key, this.onpress});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -14,13 +14,14 @@ class GetStartedButton extends ConsumerWidget {
       onTap: onpress,
       child: Container(
         height: 39,
-        width: 120,
+        width: 100,
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(70), color: AppColors.black),
+            color: AppColors.tealColor,
+            borderRadius: BorderRadius.circular(70)),
         child: Center(
           child: Text(
-            getTranslated("get_started", context),
-            style: AppTextstyle.headingTextStyle(
+            getTranslated("share_link", context),
+            style: AppTextstyle.bodyTextStyle(
                 color: AppColors.white,
                 fontSize: 16,
                 fontWeight: FontWeight.w500),

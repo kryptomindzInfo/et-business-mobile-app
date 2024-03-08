@@ -37,7 +37,7 @@ class Chips extends ConsumerWidget {
               style: AppTextstyle.bodyTextStyle(
                   fontWeight: FontWeight.w500,
                   fontSize: 16,
-                  color: AppColors.white.withOpacity(0.5)))
+                  color: AppColors.white))
         ]),
       ),
     ));
