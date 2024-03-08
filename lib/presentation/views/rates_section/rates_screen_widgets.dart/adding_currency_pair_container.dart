@@ -29,7 +29,7 @@ class AddingCurrencyPairContainer extends ConsumerWidget {
             Expanded(
               child: ListView.builder(
                 itemCount:
-                    ref.read(ratesScreenProvider).currencyPairCards.length,
+                    ref.watch(ratesScreenProvider).currencyPairCards.length,
                 itemBuilder: (context, index) {
                   return ref
                       .watch(ratesScreenProvider)
