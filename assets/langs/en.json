@@ -57,7 +57,17 @@
    "enable_push_notif_title": "Get what you need, in a tap",
    "enable_push_notif_subtitle": "Push notifications help you securely log in on our web app, instantly approve payments, confirm card transactions and more",
    "enable_push_notification": "Enable push notification",
-   "not_now": "Not now",
+   "not_now": "Not now", 
+   "tailor_experience_title": "Help us tailor your experience",
+   "tailor_experience_subtitle": "See better in-app suggestions and fewer irrelevant ads we place on other sites and platforms",
+   "business_details_title":"Business details",
+   "business_details_subtitle":"You can search for your business name below to automatically fill in the required information",
+   "county_of_incorporation":"Country of incorporation",
+   "legal_name": "Legal name",
+   "search_country": "search country",
+   "cancel": "cancel",
+   "business_not_listed_here": "My business is not listed here",
+
 
    "help":"Help",
    "marketing_coordinator":"Marketing Coordinator",

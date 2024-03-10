@@ -1,4 +1,6 @@
+import 'package:etbank_business_app/navigation/params/pincode_screen_args.dart';
 import 'package:etbank_business_app/presentation/views/onboarding_screens/onboarding_screen.dart';
+import 'package:etbank_business_app/presentation/views/signup_screens/signup_business_details_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_business_type_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_check_email_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_create_password_screen.dart';
@@ -9,6 +11,7 @@ import 'package:etbank_business_app/presentation/views/signup_screens/signup_ena
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_enter_passcode_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_mobile_code_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_mobile_num_screen.dart';
+import 'package:etbank_business_app/presentation/views/signup_screens/signup_tailor_experience_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_welcome_back_screen.dart';
 import 'package:flutter/material.dart';
 // import 'package:projtemplate/navigation/params/home_screen_args.dart';
@@ -34,8 +37,9 @@ class RouteGenerator {
       case SignUpCheckEmailScreen.routeName:
         return route(const SignUpCheckEmailScreen());
 
-      case SignUpEmailCodeScreen.routeName:
-        return route(const SignUpEmailCodeScreen());
+      case SignUpOtpCodeScreen.routeName:
+        return route(SignUpOtpCodeScreen(
+            params: settings.arguments as PinCodeScreenArgs));
 
       case SignUpBusinessTypeScreen.routeName:
         return route(const SignUpBusinessTypeScreen());
@@ -43,8 +47,8 @@ class RouteGenerator {
       case SignUpMobileNoScreen.routeName:
         return route(const SignUpMobileNoScreen());
 
-      case SignUpMobileCodeScreen.routeName:
-        return route(const SignUpMobileCodeScreen());
+      // case SignUpMobileCodeScreen.routeName:
+      //   return route(const SignUpMobileCodeScreen());
 
       case SignUpCreatePassword.routeName:
         return route(const SignUpCreatePassword());
@@ -57,6 +61,12 @@ class RouteGenerator {
 
       case SignUpEnablePushNotifScreen.routeName:
         return route(const SignUpEnablePushNotifScreen());
+
+      case SignUpTailorExperienceScreen.routeName:
+        return route(const SignUpTailorExperienceScreen());
+
+      case SignUpBusinessDetailsScreen.routeName:
+        return route(const SignUpBusinessDetailsScreen());
 
       case ProfileScreen.routeName:
         return route(const ProfileScreen(

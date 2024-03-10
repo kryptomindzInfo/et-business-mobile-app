@@ -89,3 +89,30 @@ class SignUpEmailScreen extends ConsumerWidget {
     );
   }
 }
+
+// class ButtonBottomNavigation extends ConsumerWidget {
+//   final List<Widget> children;
+//   const ButtonBottomNavigation({super.key, this.children = const []});
+
+//   @override
+//   Widget build(BuildContext context, WidgetRef ref) {
+//     return Builder(builder: (context) {
+//       final keyboardHeight = MediaQuery.of(context).viewInsets.bottom;
+//       return Padding(
+//           padding: EdgeInsets.only(bottom: keyboardHeight),
+//           child: BottomAppBar(
+//             elevation: 0,
+//             color: Colors.transparent,
+//             child: Center(
+//               child: SizedBox(
+//                 height: 48.h,
+//                 width: 327.w,
+//                 child: Column(
+//                   children: children,
+//                 ),
+//               ),
+//             ),
+//           ));
+//     });
+//   }
+// }

@@ -1,6 +1,8 @@
 import 'package:etbank_business_app/constants/app_textstyle.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
+import 'package:etbank_business_app/globals/enums.dart';
 import 'package:etbank_business_app/navigation/navigation.dart';
+import 'package:etbank_business_app/navigation/params/pincode_screen_args.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/app_common_widgets.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/header_icon_with_text.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_email_code_screen.dart';
@@ -81,7 +83,10 @@ class SignUpCheckEmailScreen extends ConsumerWidget {
                               fontWeight: FontWeight.w500),
                         ),
                         onPressed: () {
-                          Navigation.pushNamed(SignUpEmailCodeScreen.routeName);
+                          Navigation.pushNamed(SignUpOtpCodeScreen.routeName,
+                              arguments: PinCodeScreenArgs(
+                                  value: 'hello@gmail.com',
+                                  type: PinCodeDestinationType.email));
                         },
                       ),
                     ),

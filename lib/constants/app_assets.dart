@@ -51,4 +51,8 @@ class AppAssets {
   static const merchantprofileicon = "${iconsDir}merchantprofile.png";
   static const statementicon = "${iconsDir}statement.png";
   static const billingicon = "${iconsDir}billing.png";
+  static const tailorExperienceImage =
+      "${imagesDir}tailor_experience_image.png";
+  static const iconArrowDownBlack = "${iconsDir}icon_arrow_down_black.png";
+  static const iconSearchBlack = "${iconsDir}icon_search_black.png";
 }

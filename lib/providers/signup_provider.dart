@@ -71,6 +71,17 @@ class SignUpState extends ChangeNotifier {
     _passCode = value;
   }
 
+  // Country of Incorporation
+
+  String? _countryOfIncorporation = '';
+
+  String? get countryOfIncorporation => _countryOfIncorporation;
+
+  void setcountryOfIncorporation(String? country) {
+    _countryOfIncorporation = country;
+    notifyListeners();
+  }
+
   void notify() {
     notifyListeners();
   }

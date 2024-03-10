@@ -1,10 +1,13 @@
 import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:etbank_business_app/constants/app_textstyle.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
+import 'package:etbank_business_app/globals/enums.dart';
 import 'package:etbank_business_app/navigation/navigation.dart';
+import 'package:etbank_business_app/navigation/params/pincode_screen_args.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/app_common_widgets.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/header_icon_with_text.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_business_type_screen.dart';
+import 'package:etbank_business_app/presentation/views/signup_screens/signup_create_password_screen.dart';
 import 'package:etbank_business_app/resources/localization/language_constrants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -12,10 +15,10 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
-class SignUpEmailCodeScreen extends ConsumerWidget {
-  static const String routeName = "signup_email_code";
-
-  const SignUpEmailCodeScreen({super.key});
+class SignUpOtpCodeScreen extends ConsumerWidget {
+  static const String routeName = "signup_otp_code";
+  final PinCodeScreenArgs params;
+  const SignUpOtpCodeScreen({super.key, required this.params});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -30,7 +33,8 @@ class SignUpEmailCodeScreen extends ConsumerWidget {
               HeaderIconWithTitle(
                 title: getTranslated('signup_email_code_title', context),
                 description:
-                    getTranslated('signup_email_code_subtitle', context),
+                    "Code Send to ${params.value} unless you already have accounts",
+                // "${getTranslated('signup_email_code_subtitle', context)} ${params.value}",
               ),
               32.spaceY,
               PinCodeTextField(
@@ -62,7 +66,11 @@ class SignUpEmailCodeScreen extends ConsumerWidget {
                   enableActiveFill: true,
                   enablePinAutofill: true,
                   onCompleted: (value) {
-                    Navigation.pushNamed(SignUpBusinessTypeScreen.routeName);
+                    if (params.type == PinCodeDestinationType.email) {
+                      Navigation.pushNamed(SignUpBusinessTypeScreen.routeName);
+                    } else {
+                      Navigation.pushNamed(SignUpCreatePassword.routeName);
+                    }
                   }),
               20.spaceY,
               Text(
