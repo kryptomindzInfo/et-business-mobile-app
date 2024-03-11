@@ -1,5 +1,6 @@
 import 'package:etbank_business_app/navigation/params/pincode_screen_args.dart';
 import 'package:etbank_business_app/presentation/views/onboarding_screens/onboarding_screen.dart';
+import 'package:etbank_business_app/presentation/views/profile_section/statement_section/monthly_statement_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_business_details_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_business_type_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_check_email_screen.dart';
@@ -105,6 +106,10 @@ class RouteGenerator {
             ));
       case RatesAndConverterScreen.routeName:
         return route(RatesAndConverterScreen(
+            // params: settings.arguments as HomeScreenArgs?
+            ));
+      case MonthlyStatementScreen.routeName:
+        return route(MonthlyStatementScreen(
             // params: settings.arguments as HomeScreenArgs?
             ));
       // case FirstScreen.routeName:

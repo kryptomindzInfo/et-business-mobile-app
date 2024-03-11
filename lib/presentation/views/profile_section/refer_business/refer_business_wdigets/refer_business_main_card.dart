@@ -1,11 +1,11 @@
 import 'package:etbank_business_app/constants/app_textstyle.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
-import 'package:etbank_business_app/presentation/views/profile_section/refer_business_wdigets/get_started_whole_container.dart';
+import 'package:etbank_business_app/presentation/views/profile_section/refer_business/refer_business_wdigets/get_started_whole_container.dart';
 import 'package:etbank_business_app/resources/localization/language_constrants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../../constants/app_colors.dart';
+import '../../../../../constants/app_colors.dart';
 
 class ReferBusinessMainCard extends ConsumerWidget {
   const ReferBusinessMainCard({super.key});

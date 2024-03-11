@@ -106,7 +106,19 @@
    "audit_confirmation":"Audit confirmation",
    "audit_confirmation_sub":"ET Bank reference letter to auditors",
    "rates":"Rates",
-   "add_currency_pair":"Add currency pair"
+   "add_currency_pair":"Add currency pair",
+   "file_type":"File type",
+   "accounts":"Accounts",
+   "select":"Select",
+   "period":"Period",
+   "from":"From",
+   "to":"To",
+   "get_statement":"Get Statement",
+   "share_statement":"Share statement",
+   "done":"Done",
+   "et_bank_business":"ET Bank Business",
+   "export":"Export"
+   
    
    
 }

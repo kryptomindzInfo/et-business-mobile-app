@@ -7,17 +7,17 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BusinessDetailsWhiteContainerWidet extends ConsumerWidget {
   final String title;
-  final Widget icon;
+  final Widget? icon;
   final VoidCallback? onTap;
   final Color? titleTextColor;
-
+  final String? labelText;
   const BusinessDetailsWhiteContainerWidet(
       {super.key,
       required this.title,
-      required this.icon,
+      this.icon,
       this.onTap,
-      this.titleTextColor});
-
+      this.titleTextColor,
+      this.labelText});
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return GestureDetector(
@@ -28,15 +28,26 @@ class BusinessDetailsWhiteContainerWidet extends ConsumerWidget {
             borderRadius: BorderRadius.all(Radius.circular(8))),
         child: Padding(
           padding: const EdgeInsets.all(15),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                title,
-                style: AppTextstyle.bodyTextStyle(
-                    fontSize: 16.sp, color: titleTextColor ?? AppColors.grey),
+                labelText ?? 'country',
+                style: AppTextstyle.bodyTextStyle(color: AppColors.grey),
               ),
-              icon,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    title,
+                    style: AppTextstyle.bodyTextStyle(
+                        fontSize: 16.sp,
+                        color: titleTextColor ?? AppColors.grey),
+                  ),
+                  if (icon != null) icon!
+                ],
+              ),
             ],
           ),
         ),
