@@ -8,14 +8,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class BusinessTypeWidget extends ConsumerWidget {
   final String image;
   final String title;
-  final String description;
+  final String? description;
   final VoidCallback? onPressed;
   final String? labelText;
   const BusinessTypeWidget(
       {super.key,
       required this.image,
       required this.title,
-      required this.description,
+      this.description,
       this.onPressed,
       this.labelText});
 
@@ -23,43 +23,40 @@ class BusinessTypeWidget extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return InkWell(
       onTap: onPressed,
-      child: Column(
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            labelText ?? 'country',
-            style: AppTextstyle.bodyTextStyle(color: AppColors.grey),
+          Image.asset(
+            image,
+            height: 34.h,
+            width: 34.w,
           ),
-          Row(
+          16.spaceX,
+          Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Image.asset(
-                image,
-                height: 34.h,
-                width: 34.w,
+              SizedBox(
+                width: 260.w,
+                child: Text(
+                  title,
+                  style: AppTextstyle.headingTextStyle(
+                      fontSize: 16.sp,
+                      color: AppColors.white,
+                      fontWeight: FontWeight.w600,
+                      overflow: TextOverflow.clip),
+                ),
               ),
-              16.spaceX,
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    title,
-                    style: AppTextstyle.headingTextStyle(
-                        fontSize: 16.sp,
-                        color: AppColors.white,
-                        fontWeight: FontWeight.w600),
+              if (description != null)
+                SizedBox(
+                  width: 230.w,
+                  child: Text(
+                    description ?? '',
+                    style: AppTextstyle.bodyTextStyle(
+                        color: AppColors.grey, overflow: TextOverflow.clip),
                   ),
-                  SizedBox(
-                    width: 198.w,
-                    child: Text(
-                      description,
-                      style: AppTextstyle.bodyTextStyle(
-                          color: AppColors.grey, overflow: TextOverflow.clip),
-                    ),
-                  ),
-                ],
-              )
+                ),
             ],
-          ),
+          )
         ],
       ),
     );

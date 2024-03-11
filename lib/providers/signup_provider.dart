@@ -1,5 +1,8 @@
+import 'package:etbank_business_app/constants/app_assets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+import '../core/app_print.dart';
 
 final signUpStateProvider = ChangeNotifierProvider((ref) => SignUpState());
 
@@ -82,7 +85,49 @@ class SignUpState extends ChangeNotifier {
     notifyListeners();
   }
 
+  String? _postCode = '';
+
+  String? get postCode => _postCode;
+
+  void setPostCode(String? postCode) {
+    _postCode = postCode;
+    console('wwwwwwwwwwwwwww');
+
+    notifyListeners();
+  }
+
   void notify() {
     notifyListeners();
   }
+
+  List get companyRolesList => companyRoles;
+  int _selectedRole = 0;
+  int get selectedRole => _selectedRole;
+  changeRole(int value) {
+    _selectedRole = value;
+    notifyListeners();
+  }
 }
+
+List companyRoles = [
+  {
+    "title": "role_1_title",
+    "subtitle": "role_1_subtitle",
+    "image": AppAssets.companyIcon,
+  },
+  {
+    "title": "role_2_title",
+    "subtitle": "role_2_subtitle",
+    "image": AppAssets.freelancerIcon,
+  },
+  {
+    "title": "role_3_title",
+    "subtitle": "role_3_subtitle",
+    "image": AppAssets.personIcon,
+  },
+  {
+    "title": "not_sure_what_to_choose",
+    "subtitle": "",
+    "image": AppAssets.personIcon,
+  },
+];

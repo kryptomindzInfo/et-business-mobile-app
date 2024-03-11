@@ -68,4 +68,5 @@ class AppAssets {
   static const balancestatement = "${iconsDir}balancestatement.png";
   static const transaction = "${iconsDir}transaction.png";
   static const addingicon = "${iconsDir}addingbutton.png";
+  static const puzzleImage = "${iconsDir}puzzle_image.png";
 }

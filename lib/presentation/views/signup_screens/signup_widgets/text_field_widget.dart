@@ -66,7 +66,7 @@ class TextFieldWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 80.h,
+      // height: 80.h,
       width: 360.w,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -106,6 +106,7 @@ class TextFieldWidget extends StatelessWidget {
                 fillColor: fillColor ?? Colors.white,
                 filled: true,
                 hintText: hintText ?? '',
+
                 // suffix: suffix,
                 errorText: errorText,
                 //   iconData: iconData,

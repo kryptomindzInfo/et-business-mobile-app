@@ -10,9 +10,16 @@ class BusinessNotListedWidet extends ConsumerWidget {
 
   final VoidCallback? onTap;
   final Color? titleTextColor;
+  final TextStyle? tilteStyle;
+  final String? image;
 
   const BusinessNotListedWidet(
-      {super.key, required this.title, this.onTap, this.titleTextColor});
+      {super.key,
+      required this.title,
+      this.onTap,
+      this.titleTextColor,
+      this.tilteStyle,
+      this.image});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -25,12 +32,28 @@ class BusinessNotListedWidet extends ConsumerWidget {
             borderRadius: BorderRadius.all(Radius.circular(8))),
         child: Padding(
           padding: const EdgeInsets.all(15),
-          child: Text(
-            title,
-            style: AppTextstyle.bodyTextStyle(
-                fontSize: 16.sp,
-                color: titleTextColor ?? AppColors.blue,
-                fontWeight: FontWeight.w600),
+          child: Center(
+            child: Row(
+              children: [
+                if (image != null)
+                  Padding(
+                    padding: const EdgeInsets.only(right: 24.0),
+                    child: Image.asset(
+                      image!,
+                      height: 24.h,
+                      width: 24.w,
+                    ),
+                  ),
+                Text(
+                  title,
+                  style: tilteStyle ??
+                      AppTextstyle.bodyTextStyle(
+                          fontSize: 16.sp,
+                          color: titleTextColor ?? AppColors.blue,
+                          fontWeight: FontWeight.w600),
+                ),
+              ],
+            ),
           ),
         ),
       ),

@@ -1,3 +1,4 @@
+import 'package:etbank_business_app/presentation/views/SignUp_Screens/signup_business_details_screen.dart';
 import 'package:etbank_business_app/presentation/views/onboarding_screens/onboarding_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_business_type_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_check_email_screen.dart';
@@ -12,6 +13,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'navigation/navigator_key.dart';
 import 'navigation/route_generator.dart';
+import 'presentation/views/signup_screens/signup_role_in_the_company_screen.dart';
 import 'resources/localization/app_localization.dart';
 
 void main() {
@@ -43,7 +45,7 @@ class MyApp extends ConsumerWidget {
         ],
         navigatorKey: navigatorKey,
         onGenerateRoute: RouteGenerator.generateRoute,
-        initialRoute: Onboarding.routeName,
+        initialRoute: SignUpRoleInTheCompanyScreen.routeName,
       ),
     );
   }
