@@ -27,6 +27,8 @@ class SignUpMobileNoScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       extendBody: true,
+            resizeToAvoidBottomInset: false,
+      backgroundColor: Colors.transparent,
       body: BackgroundImageWidget(
         child: Padding(
           padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),

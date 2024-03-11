@@ -19,10 +19,11 @@ class SignUpEnterPassCodeScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return Scaffold(
-      extendBody: true,
-      body: BackgroundImageWidget(
-        child: Padding(
+    return BackgroundImageWidget(
+      child: Scaffold(
+        // extendBody: true,
+        
+        body: Padding(
           padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -57,32 +58,34 @@ class SignUpEnterPassCodeScreen extends ConsumerWidget {
             ],
           ),
         ),
-      ),
-      bottomNavigationBar: Builder(builder: (context) {
-        final keyboardHeight = MediaQuery.of(context).viewInsets.bottom;
-        return Padding(
-            padding: EdgeInsets.only(bottom: keyboardHeight),
-            child: BottomAppBar(
-              elevation: 0,
-              height: 100.h,
-              color: Colors.transparent,
-              child: Center(
-                child: Column(
-                  children: [
-                    Center(
-                      child: Text(
-                        getTranslated('forgot_passcode', context),
-                        style: AppTextstyle.bodyTextStyle(
-                          color: AppColors.baseGreenColor,
-                          fontSize: 16.sp,
+              // resizeToAvoidBottomInset: false,
+        backgroundColor: Colors.transparent,
+        bottomNavigationBar: Builder(builder: (context) {
+          final keyboardHeight = MediaQuery.of(context).viewInsets.bottom;
+          return Padding(
+              padding: EdgeInsets.only(bottom: keyboardHeight),
+              child: BottomAppBar(
+                elevation: 0,
+                height: 100.h,
+                color: Colors.transparent,
+                child: Center(
+                  child: Column(
+                    children: [
+                      Center(
+                        child: Text(
+                          getTranslated('forgot_passcode', context),
+                          style: AppTextstyle.bodyTextStyle(
+                            color: AppColors.baseGreenColor,
+                            fontSize: 16.sp,
+                          ),
                         ),
-                      ),
-                    )
-                  ],
+                      )
+                    ],
+                  ),
                 ),
-              ),
-            ));
-      }),
+              ));
+        }),
+      ),
     );
   }
 }

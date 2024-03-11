@@ -23,6 +23,8 @@ class SignUpEmailScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       extendBody: true,
+      resizeToAvoidBottomInset: false,
+      backgroundColor: Colors.transparent,
       body: BackgroundImageWidget(
         child: Padding(
           padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
@@ -54,13 +56,16 @@ class SignUpEmailScreen extends ConsumerWidget {
           ),
         ),
       ),
-      bottomNavigationBar: Builder(builder: (context) {
+      bottomNavigationBar: 
+      Builder(builder: (context) {
         final keyboardHeight = MediaQuery.of(context).viewInsets.bottom;
-        return Padding(
+        return
+         Padding(
           padding: EdgeInsets.only(bottom: keyboardHeight),
-          child: BottomAppBar(
+          child: 
+          BottomAppBar(
             elevation: 0,
-            color: Colors.transparent,
+            color: AppColors.transparent,
             child: Center(
               child: SizedBox(
                 height: 48.h,

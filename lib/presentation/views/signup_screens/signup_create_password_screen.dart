@@ -103,6 +103,8 @@ class SignUpCreatePassword extends ConsumerWidget {
           ),
         ),
       ),
+            resizeToAvoidBottomInset: false,
+      backgroundColor: Colors.transparent,
       bottomNavigationBar: Builder(builder: (context) {
         final keyboardHeight = MediaQuery.of(context).viewInsets.bottom;
         return Padding(

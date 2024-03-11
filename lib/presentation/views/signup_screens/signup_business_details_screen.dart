@@ -23,147 +23,151 @@ class SignUpBusinessDetailsScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return Scaffold(
-      extendBody: true,
-      body: BackgroundImageWidget(
-        child: Padding(
-          padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              HeaderIconWithTitle(
-                title: getTranslated('business_details_title', context),
-                description:
-                    getTranslated('business_details_subtitle', context),
-                imageicon: AppAssets.arrowLeft,
-              ),
-              30.spaceY,
-              BusinessDetailsWhiteContainerWidet(
-                onTap: () {
-                  showModalBottomSheet(
-                      backgroundColor: AppColors.black,
-                      isScrollControlled: true,
-                      context: context,
-                      builder: (context) {
-                        return BottomSheetWidet(
-                          onChanged: (value) {},
-                          onCancelTap: () {},
-                          bottomNavigationBody: const CountriesListWidget(),
-                        );
-                      });
-                },
-                title: ref.watch(signUpStateProvider).countryOfIncorporation ==
-                        ''
-                    ? getTranslated('county_of_incorporation', context)
-                    : ref.watch(signUpStateProvider).countryOfIncorporation!,
-                titleTextColor:
-                    ref.watch(signUpStateProvider).countryOfIncorporation == ''
-                        ? Colors.grey
-                        : Colors.black,
-                icon: Image.asset(
-                  AppAssets.iconArrowDownBlack,
-                  height: 11.h,
-                  width: 22.w,
+    return BackgroundImageWidget(
+      child: Scaffold(
+        extendBody: false,
+        backgroundColor: AppColors.transparent,
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                HeaderIconWithTitle(
+                  title: getTranslated('business_details_title', context),
+                  description:
+                      getTranslated('business_details_subtitle', context),
+                  imageicon: AppAssets.arrowLeft,
                 ),
-              ),
-              16.spaceY,
-              BusinessDetailsWhiteContainerWidet(
-                title: getTranslated('legal_name', context),
-                labelText: getTranslated('legal_name', context),
-                onTap: () {
-                  showModalBottomSheet(
-                      backgroundColor: AppColors.black,
-                      isScrollControlled: true,
-                      context: context,
-                      builder: (context) {
-                        return BottomSheetWidet(
-                          hintText: getTranslated('legal_name', context),
-                          onChanged: (value) {},
-                          onCancelTap: () {},
-                          bottomNavigationBody: BusinessNotListedWidet(
-                            title: getTranslated(
-                                'business_not_listed_here', context),
-                          ),
-                        );
-                      });
-                },
-              ),
-              16.spaceY,
-              BusinessDetailsWhiteContainerWidet(
-                labelText:
-                    getTranslated('company_house_registration_number', context),
-                title: 'A1213454',
-                icon: Image.asset(
-                  AppAssets.iconSearchBlack,
-                  height: 18.h,
-                  width: 18.w,
+                30.spaceY,
+                BusinessDetailsWhiteContainerWidet(
+                  onTap: () {
+                    showModalBottomSheet(
+                        backgroundColor: AppColors.black,
+                        isScrollControlled: true,
+                        context: context,
+                        builder: (context) {
+                          return BottomSheetWidet(
+                            onChanged: (value) {},
+                            onCancelTap: () {},
+                            bottomNavigationBody: const CountriesListWidget(),
+                          );
+                        });
+                  },
+                  title: 
+                  ref.watch(signUpStateProvider).countryOfIncorporation ==
+                          ''
+                      ? getTranslated('county_of_incorporation', context)
+                      : ref.watch(signUpStateProvider).countryOfIncorporation!,
+                  titleTextColor:
+                      ref.watch(signUpStateProvider).countryOfIncorporation == ''
+                          ? Colors.grey
+                          : Colors.black,
+                  icon: Image.asset(
+                    AppAssets.iconArrowDownBlack,
+                    height: 11.h,
+                    width: 22.w,
+                  ),
                 ),
-                onTap: () {},
-              ),
-              8.spaceY,
-              Text(
-                getTranslated('usually_looks_like_format', context),
-                style: AppTextstyle.bodyTextStyle(
-                    fontSize: 16.sp, color: Colors.grey),
-                overflow: TextOverflow.clip,
-              ),
-              16.spaceY,
-              BusinessDetailsWhiteContainerWidet(
-                labelText: getTranslated('date_of_incorporation', context),
-                title: '02/28/2024',
-                onTap: () {},
-              ),
-              16.spaceY,
-              BusinessDetailsWhiteContainerWidet(
-                labelText: getTranslated('business_type', context),
-                title: getTranslated('private_limited_company', context),
-                onTap: () {},
-              ),
-              16.spaceY,
-              BusinessNotListedWidet(
-                title: getTranslated('known_by_different_name', context),
-                tilteStyle: AppTextstyle.bodyTextStyle(
-                  fontSize: 19.sp,
+                16.spaceY,
+                BusinessDetailsWhiteContainerWidet(
+                  title: getTranslated('legal_name', context),
+                  // labelText: getTranslated('legal_name', context),
+                  onTap: () {
+                    showModalBottomSheet(
+                        backgroundColor: AppColors.black,
+                        isScrollControlled: true,
+                        context: context,
+                        builder: (context) {
+                          return BottomSheetWidet(
+                            hintText: getTranslated('legal_name', context),
+                            onChanged: (value) {},
+                            onCancelTap: () {},
+                            bottomNavigationBody: BusinessNotListedWidet(
+                              title: getTranslated(
+                                  'business_not_listed_here', context),
+                            ),
+                          );
+                        });
+                  },
                 ),
-              ),
-            ],
+                16.spaceY,
+                BusinessDetailsWhiteContainerWidet(
+                  labelText:
+                      getTranslated('company_house_registration_number', context),
+                  title: 'A1213454',
+                  icon: Image.asset(
+                    AppAssets.iconSearchBlack,
+                    height: 18.h,
+                    width: 18.w,
+                  ),
+                  onTap: () {},
+                ),
+                8.spaceY,
+                Text(
+                  getTranslated('usually_looks_like_format', context),
+                  style: AppTextstyle.bodyTextStyle(
+                      fontSize: 16.sp, color: Colors.grey),
+                  overflow: TextOverflow.clip,
+                ),
+                16.spaceY,
+                BusinessDetailsWhiteContainerWidet(
+                  labelText: getTranslated('date_of_incorporation', context),
+                  title: '02/28/2024',
+                  onTap: () {},
+                ),
+                16.spaceY,
+                BusinessDetailsWhiteContainerWidet(
+                  labelText: getTranslated('business_type', context),
+                  title: getTranslated('private_limited_company', context),
+                  onTap: () {},
+                ),
+                16.spaceY,
+                BusinessNotListedWidet(
+                  title: getTranslated('known_by_different_name', context),
+                  tilteStyle: AppTextstyle.bodyTextStyle(
+                    fontSize: 19.sp,
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
-      ),
-      bottomNavigationBar: Builder(builder: (context) {
-        final keyboardHeight = MediaQuery.of(context).viewInsets.bottom;
-        return Padding(
-            padding: EdgeInsets.only(bottom: keyboardHeight),
-            child: BottomAppBar(
-              elevation: 0,
-              height: 100.h,
-              color: Colors.transparent,
-              child: Center(
-                child: Column(
-                  children: [
-                    SizedBox(
-                      height: 48.h,
-                      width: 327.w,
-                      child: PrimaryButton(
-                        color: AppColors.primaryColor,
-                        text: Text(
-                          getTranslated('continue', context),
-                          style: AppTextstyle.bodyTextStyle(
-                              color: AppColors.black,
-                              fontSize: 16,
-                              fontWeight: FontWeight.w500),
+        bottomNavigationBar: Builder(builder: (context) {
+          final keyboardHeight = MediaQuery.of(context).viewInsets.bottom;
+          return Padding(
+              padding: EdgeInsets.only(bottom: keyboardHeight),
+              child: BottomAppBar(
+                elevation: 0,
+                height: 100.h,
+                color: Colors.transparent,
+                child: Center(
+                  child: Column(
+                    children: [
+                      SizedBox(
+                        height: 48.h,
+                        width: 327.w,
+                        child: PrimaryButton(
+                          color: AppColors.primaryColor,
+                          text: Text(
+                            getTranslated('continue', context),
+                            style: AppTextstyle.bodyTextStyle(
+                                color: AppColors.black,
+                                fontSize: 16,
+                                fontWeight: FontWeight.w500),
+                          ),
+                          onPressed: () {
+                            Navigator.pushNamed(context,
+                                SignUpRegisteredBusinessAddressScreen.routeName);
+                          },
                         ),
-                        onPressed: () {
-                          Navigator.pushNamed(context,
-                              SignUpRegisteredBusinessAddressScreen.routeName);
-                        },
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-              ),
-            ));
-      }),
+              ));
+        }),
+      ),
     );
   }
 }
