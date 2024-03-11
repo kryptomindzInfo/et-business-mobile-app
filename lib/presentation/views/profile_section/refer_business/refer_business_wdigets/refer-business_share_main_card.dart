@@ -5,7 +5,7 @@ import 'package:etbank_business_app/resources/localization/language_constrants.d
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../../constants/app_colors.dart';
+import '../../../../../constants/app_colors.dart';
 
 class ReferBusinessShareLinkMainCard extends ConsumerWidget {
   const ReferBusinessShareLinkMainCard({super.key});
