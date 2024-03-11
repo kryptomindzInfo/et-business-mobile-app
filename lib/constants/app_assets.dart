@@ -18,6 +18,7 @@ class AppAssets {
   static const ukflag = "${imagesDir}uk.png";
   static const light = "${imagesDir}light.png";
   static const dark = "${imagesDir}dark.png";
+  static const chartimage = "${imagesDir}chartimage.png";
 
   //app_icons
   static const earthicon = "${iconsDir}earth.png";
@@ -42,4 +43,16 @@ class AppAssets {
   static const merchantprofileicon = "${iconsDir}merchantprofile.png";
   static const statementicon = "${iconsDir}statement.png";
   static const billingicon = "${iconsDir}billing.png";
+  static const crossicon = "${iconsDir}cross.png";
+  static const popularicon = "${iconsDir}popular.png";
+  static const cardicon = "${iconsDir}cardicon.png";
+  static const intpaymenticon = "${iconsDir}intpayment.png";
+  static const localpaymenticon = "${iconsDir}localpayment.png";
+  static const contactpermission = "${iconsDir}contactpermission.png";
+  static const monthlystatement = "${iconsDir}monthly.png";
+  static const accountconfirmation = "${iconsDir}accountcnfrm.png";
+  static const auditicon = "${iconsDir}audit.png";
+  static const balancestatement = "${iconsDir}balancestatement.png";
+  static const transaction = "${iconsDir}transaction.png";
+  static const addingicon = "${iconsDir}addingbutton.png";
 }

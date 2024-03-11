@@ -1,14 +1,15 @@
 import 'package:etbank_business_app/constants/app_assets.dart';
 import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
+import 'package:etbank_business_app/providers/profile_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../constants/app_textstyle.dart';
 import '../../../../resources/localization/language_constrants.dart';
 
-class LightAndDarkBottomSheet extends ConsumerWidget {
-  const LightAndDarkBottomSheet({super.key});
+class ThemeBottomSheet extends ConsumerWidget {
+  const ThemeBottomSheet({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -69,6 +70,16 @@ class LightAndDarkBottomSheet extends ConsumerWidget {
                         color: AppColors.white,
                         fontWeight: FontWeight.w600),
                   ),
+                  Radio(
+                    value: "light",
+                    groupValue: ref.watch(profilescreenProvider).lightDark,
+                    onChanged: (val) {
+                      ref
+                          .read(profilescreenProvider)
+                          .changeLightAndDarkTheme(val!);
+                    },
+                    activeColor: AppColors.primaryColor,
+                  ),
                 ],
               ),
               Column(
@@ -83,6 +94,16 @@ class LightAndDarkBottomSheet extends ConsumerWidget {
                         fontSize: 16,
                         color: AppColors.white,
                         fontWeight: FontWeight.w600),
+                  ),
+                  Radio(
+                    value: "dark",
+                    groupValue: ref.watch(profilescreenProvider).lightDark,
+                    onChanged: (val) {
+                      ref
+                          .read(profilescreenProvider)
+                          .changeLightAndDarkTheme(val!);
+                    },
+                    activeColor: AppColors.primaryColor,
                   ),
                 ],
               )

@@ -8,7 +8,14 @@ import '../../../constants/app_colors.dart';
 class HeaderIconWithTitle extends ConsumerWidget {
   final String? title;
   final String? description;
-  const HeaderIconWithTitle({super.key, this.title, this.description});
+  final String imageicon;
+  final EdgeInsetsGeometry? edgeinsets;
+  const HeaderIconWithTitle(
+      {super.key,
+      this.title,
+      this.description,
+      required this.imageicon,
+      this.edgeinsets});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -19,13 +26,15 @@ class HeaderIconWithTitle extends ConsumerWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Padding(
-              padding: const EdgeInsets.only(top: 54, right: 54),
+              padding: edgeinsets != null
+                  ? edgeinsets!
+                  : EdgeInsets.only(top: 54, right: 54),
               child: InkWell(
                 onTap: () {
                   Navigator.pop(context);
                 },
                 child: Image.asset(
-                  AppAssets.arrowLeft,
+                  imageicon,
                   width: 25.12,
                   height: 17.94,
                 ),
@@ -49,10 +58,10 @@ class HeaderIconWithTitle extends ConsumerWidget {
             ? Text(
                 description!,
                 style: AppTextstyle.bodyTextStyle(
-                  color: AppColors.white,
-                  fontSize: 12,
-                  fontWeight: FontWeight.w500,
-                ),
+                    color: AppColors.white,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500,
+                    overflow: TextOverflow.clip),
               )
             : const SizedBox(),
       ],
