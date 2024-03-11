@@ -54,6 +54,7 @@ class SignUpBusinessDetailsScreen extends ConsumerWidget {
                           );
                         });
                   },
+                  labelText:getTranslated('country', context) ,
                   title: 
                   ref.watch(signUpStateProvider).countryOfIncorporation ==
                           ''

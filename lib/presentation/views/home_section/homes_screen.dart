@@ -1,3 +1,5 @@
+
+import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/navigation/navigation.dart';
 import 'package:etbank_business_app/presentation/views/profile_section/profile_screen.dart';
@@ -23,11 +25,12 @@ class HomeScreen extends ConsumerStatefulWidget {
 class _HomeScreenState extends ConsumerState<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      extendBody: true,
-      resizeToAvoidBottomInset: false,
-      body: BackgroundImageWidget(
-        child: Padding(
+    return BackgroundImageWidget(
+      child: Scaffold(
+        backgroundColor: AppColors.transparent,
+        // extendBody: true,
+        // resizeToAvoidBottomInset: false,
+        body: Padding(
           padding: const EdgeInsets.only(left: 20, right: 20),
           child: Column(children: [
             60.spaceY,
@@ -48,9 +51,9 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
             const HomeInfoCardWidget()
           ]),
         ),
-      ),
-      bottomNavigationBar: CustomBottomNavigation(
-        onTap: (p0) {},
+        bottomNavigationBar: CustomBottomNavigation(
+          onTap: (p0) {},
+        ),
       ),
     );
   }

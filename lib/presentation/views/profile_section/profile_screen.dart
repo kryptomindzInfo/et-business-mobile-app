@@ -8,6 +8,8 @@ import 'package:etbank_business_app/presentation/views/profile_section/profile_s
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../constants/app_colors.dart';
+
 class ProfileScreen extends ConsumerStatefulWidget {
   static const String routeName = "profile_screen";
   const ProfileScreen({super.key});
@@ -19,10 +21,11 @@ class ProfileScreen extends ConsumerStatefulWidget {
 class _ProfileScreenState extends ConsumerState<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: BackgroundImageWidget(
-        child: Padding(
-          padding: EdgeInsets.only(left: 20, right: 20),
+    return BackgroundImageWidget(
+      child: Scaffold(
+        backgroundColor: AppColors.transparent,
+        body: Padding(
+          padding:const EdgeInsets.only(left: 20, right: 20),
           child: SingleChildScrollView(
             child: Column(
               children: [

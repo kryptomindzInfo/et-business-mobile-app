@@ -7,6 +7,7 @@ import 'package:etbank_business_app/presentation/views/profile_section/refer_bus
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../../constants/app_colors.dart';
 import '../../../../resources/localization/language_constrants.dart';
 
 class ReferBusinessShareLinkScreen extends ConsumerWidget {
@@ -15,9 +16,10 @@ class ReferBusinessShareLinkScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return Scaffold(
-      body: BackgroundImageWidget(
-        child: Padding(
+    return BackgroundImageWidget(
+      child: Scaffold(
+        backgroundColor: AppColors.transparent,
+        body: Padding(
           padding: const EdgeInsets.only(left: 20, right: 20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,

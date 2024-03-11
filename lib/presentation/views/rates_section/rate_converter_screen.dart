@@ -14,9 +14,9 @@ class RatesAndConverterScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return Scaffold(
-      body: BackgroundImageWidget(
-        child: Padding(
+    return BackgroundImageWidget(
+      child: Scaffold(
+        body: Padding(
           padding: const EdgeInsets.only(left: 20, right: 20),
           child: Column(
             children: [

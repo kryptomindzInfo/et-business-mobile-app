@@ -21,10 +21,11 @@ class SignUpCheckEmailScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return Scaffold(
-      extendBody: true,
-      body: BackgroundImageWidget(
-        child: Padding(
+    return BackgroundImageWidget(
+      child: Scaffold(
+        backgroundColor: AppColors.transparent,
+        extendBody: true,
+        body: Padding(
           padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -43,59 +44,59 @@ class SignUpCheckEmailScreen extends ConsumerWidget {
             ],
           ),
         ),
-      ),
-      bottomNavigationBar: Builder(builder: (context) {
-        final keyboardHeight = MediaQuery.of(context).viewInsets.bottom;
-        return Padding(
-            padding: EdgeInsets.only(bottom: keyboardHeight),
-            child: BottomAppBar(
-              elevation: 0,
-              height: 150.h,
-              color: Colors.transparent,
-              child: Center(
-                child: Column(
-                  children: [
-                    SizedBox(
-                      height: 48.h,
-                      width: 327.w,
-                      child: PrimaryButton(
-                        color: AppColors.primaryColor,
-                        text: Text(
-                          getTranslated('go_to_inbox', context),
-                          style: AppTextstyle.bodyTextStyle(
-                              color: AppColors.black,
-                              fontSize: 16,
-                              fontWeight: FontWeight.w500),
+        bottomNavigationBar: Builder(builder: (context) {
+          final keyboardHeight = MediaQuery.of(context).viewInsets.bottom;
+          return Padding(
+              padding: EdgeInsets.only(bottom: keyboardHeight),
+              child: BottomAppBar(
+                elevation: 0,
+                height: 150.h,
+                color: Colors.transparent,
+                child: Center(
+                  child: Column(
+                    children: [
+                      SizedBox(
+                        height: 48.h,
+                        width: 327.w,
+                        child: PrimaryButton(
+                          color: AppColors.primaryColor,
+                          text: Text(
+                            getTranslated('go_to_inbox', context),
+                            style: AppTextstyle.bodyTextStyle(
+                                color: AppColors.black,
+                                fontSize: 16,
+                                fontWeight: FontWeight.w500),
+                          ),
+                          onPressed: () {},
                         ),
-                        onPressed: () {},
                       ),
-                    ),
-                    16.spaceY,
-                    SizedBox(
-                      height: 48.h,
-                      width: 327.w,
-                      child: PrimaryButton(
-                        color: AppColors.primaryColor.withOpacity(0.5),
-                        text: Text(
-                          getTranslated('enter_code_manually', context),
-                          style: AppTextstyle.bodyTextStyle(
-                              color: AppColors.primaryColor,
-                              fontSize: 16,
-                              fontWeight: FontWeight.w500),
+                      16.spaceY,
+                      SizedBox(
+                        height: 48.h,
+                        width: 327.w,
+                        child: PrimaryButton(
+                          color: AppColors.primaryColor.withOpacity(0.5),
+                          text: Text(
+                            getTranslated('enter_code_manually', context),
+                            style: AppTextstyle.bodyTextStyle(
+                                color: AppColors.primaryColor,
+                                fontSize: 16,
+                                fontWeight: FontWeight.w500),
+                          ),
+                          onPressed: () {
+                            Navigation.pushNamed(SignUpOtpCodeScreen.routeName,
+                                arguments: PinCodeScreenArgs(
+                                    value: 'hello@gmail.com',
+                                    type: PinCodeDestinationType.email));
+                          },
                         ),
-                        onPressed: () {
-                          Navigation.pushNamed(SignUpOtpCodeScreen.routeName,
-                              arguments: PinCodeScreenArgs(
-                                  value: 'hello@gmail.com',
-                                  type: PinCodeDestinationType.email));
-                        },
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-              ),
-            ));
-      }),
+              ));
+        }),
+      ),
     );
   }
 }

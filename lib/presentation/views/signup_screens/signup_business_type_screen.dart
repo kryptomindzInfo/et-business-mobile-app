@@ -9,6 +9,8 @@ import 'package:etbank_business_app/resources/localization/language_constrants.d
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../constants/app_colors.dart';
+
 class SignUpBusinessTypeScreen extends ConsumerWidget {
   static const String routeName = "signup_business_type";
 
@@ -16,10 +18,11 @@ class SignUpBusinessTypeScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return Scaffold(
-      extendBody: true,
-      body: BackgroundImageWidget(
-        child: Padding(
+    return BackgroundImageWidget(
+      child: Scaffold(
+        extendBody: true,
+        backgroundColor: AppColors.transparent,
+        body: Padding(
           padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,

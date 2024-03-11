@@ -22,10 +22,11 @@ class SignUpRoleInTheCompanyScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return Scaffold(
-      extendBody: true,
-      body: BackgroundImageWidget(
-        child: Padding(
+    return BackgroundImageWidget(
+      child: Scaffold(
+         backgroundColor: AppColors.transparent,
+        extendBody: true,
+        body: Padding(
           padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -78,36 +79,36 @@ class SignUpRoleInTheCompanyScreen extends ConsumerWidget {
             ],
           ),
         ),
-      ),
-      bottomNavigationBar: Builder(builder: (context) {
-        final keyboardHeight = MediaQuery.of(context).viewInsets.bottom;
-        return Padding(
-          padding: EdgeInsets.only(bottom: keyboardHeight),
-          child: BottomAppBar(
-            elevation: 0,
-            color: Colors.transparent,
-            child: Center(
-              child: SizedBox(
-                height: 48.h,
-                width: 327.w,
-                child: PrimaryButton(
-                  color: AppColors.baseGreenColor,
-                  text: Text(
-                    getTranslated('continue', context),
-                    style: AppTextstyle.bodyTextStyle(
-                        color: AppColors.black,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w500),
+        bottomNavigationBar: Builder(builder: (context) {
+          final keyboardHeight = MediaQuery.of(context).viewInsets.bottom;
+          return Padding(
+            padding: EdgeInsets.only(bottom: keyboardHeight),
+            child: BottomAppBar(
+              elevation: 0,
+              color: Colors.transparent,
+              child: Center(
+                child: SizedBox(
+                  height: 48.h,
+                  width: 327.w,
+                  child: PrimaryButton(
+                    color: AppColors.baseGreenColor,
+                    text: Text(
+                      getTranslated('continue', context),
+                      style: AppTextstyle.bodyTextStyle(
+                          color: AppColors.black,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w500),
+                    ),
+                    onPressed: () {
+                      Navigation.pushNamed(SignUpCreatePassCodeScreen.routeName);
+                    },
                   ),
-                  onPressed: () {
-                    Navigation.pushNamed(SignUpCreatePassCodeScreen.routeName);
-                  },
                 ),
               ),
             ),
-          ),
-        );
-      }),
+          );
+        }),
+      ),
     );
   }
 }

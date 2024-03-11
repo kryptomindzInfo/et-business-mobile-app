@@ -23,9 +23,10 @@ class MonthlyStatementScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return Scaffold(
-      body: BackgroundImageWidget(
-        child: Padding(
+    return BackgroundImageWidget(
+      child: Scaffold(
+        backgroundColor: AppColors.transparent,
+        body: Padding(
           padding: const EdgeInsets.only(left: 20, right: 20),
           child: SingleChildScrollView(
             child: Column(

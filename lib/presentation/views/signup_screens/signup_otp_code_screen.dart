@@ -25,10 +25,11 @@ class SignUpOtpCodeScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return Scaffold(
-      extendBody: true,
-      body: BackgroundImageWidget(
-        child: Padding(
+    return BackgroundImageWidget(
+      child: Scaffold(
+        extendBody: true,
+         backgroundColor: AppColors.transparent,
+        body: Padding(
           padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,

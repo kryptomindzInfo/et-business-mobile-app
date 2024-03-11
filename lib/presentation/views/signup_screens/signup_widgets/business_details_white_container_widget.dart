@@ -41,10 +41,10 @@ class BusinessDetailsWhiteContainerWidet extends ConsumerWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    labelText ?? 'country',
-                    style: AppTextstyle.bodyTextStyle(color: AppColors.grey),
-                  ),
+                  // Text(
+                  //   labelText ?? 'country',
+                  //   style: AppTextstyle.bodyTextStyle(color: AppColors.grey),
+                  // ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.start,

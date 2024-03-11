@@ -25,12 +25,13 @@ class SignUpMobileNoScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return Scaffold(
-      extendBody: true,
-            resizeToAvoidBottomInset: false,
-      backgroundColor: Colors.transparent,
-      body: BackgroundImageWidget(
-        child: Padding(
+    return BackgroundImageWidget(
+      child: Scaffold(
+        
+        extendBody: true,
+              resizeToAvoidBottomInset: false,
+        backgroundColor: Colors.transparent,
+        body: Padding(
           padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -64,7 +65,7 @@ class SignUpMobileNoScreen extends ConsumerWidget {
                             child: DropdownButton<String>(
                               menuMaxHeight: 300,
                               isExpanded: true,
-
+        
                               hint: Text(
                                 getTranslated('country', context),
                                 style: AppTextstyle.bodyTextStyle(
@@ -81,7 +82,7 @@ class SignUpMobileNoScreen extends ConsumerWidget {
                               //         .selectedCountry.value.isNotEmpty
                               //     ? countryController.selectedCountry.value
                               //     : null,
-
+        
                               style: const TextStyle(color: AppColors.white),
                               underline: const SizedBox(),
                               borderRadius: BorderRadius.circular(4),
@@ -133,45 +134,45 @@ class SignUpMobileNoScreen extends ConsumerWidget {
             ],
           ),
         ),
-      ),
-      bottomNavigationBar: Builder(builder: (context) {
-        final keyboardHeight = MediaQuery.of(context).viewInsets.bottom;
-        return Padding(
-            padding: EdgeInsets.only(bottom: keyboardHeight),
-            child: BottomAppBar(
-              elevation: 0,
-              color: Colors.transparent,
-              child: Center(
-                child: SizedBox(
-                  height: 48.h,
-                  width: 327.w,
-                  child: PrimaryButton(
-                    color: buttonColor(
-                        ref.watch(signUpStateProvider).isMobileNoEmpty),
-                    text: Text(
-                      getTranslated('continue', context),
-                      style: AppTextstyle.bodyTextStyle(
-                          color: buttonTextColor(
-                              ref.watch(signUpStateProvider).isMobileNoEmpty),
-                          fontSize: 16,
-                          fontWeight: FontWeight.w500),
+        bottomNavigationBar: Builder(builder: (context) {
+          final keyboardHeight = MediaQuery.of(context).viewInsets.bottom;
+          return Padding(
+              padding: EdgeInsets.only(bottom: keyboardHeight),
+              child: BottomAppBar(
+                elevation: 0,
+                color: Colors.transparent,
+                child: Center(
+                  child: SizedBox(
+                    height: 48.h,
+                    width: 327.w,
+                    child: PrimaryButton(
+                      color: buttonColor(
+                          ref.watch(signUpStateProvider).isMobileNoEmpty),
+                      text: Text(
+                        getTranslated('continue', context),
+                        style: AppTextstyle.bodyTextStyle(
+                            color: buttonTextColor(
+                                ref.watch(signUpStateProvider).isMobileNoEmpty),
+                            fontSize: 16,
+                            fontWeight: FontWeight.w500),
+                      ),
+                      onPressed: () {
+                        if (ref.read(signUpStateProvider).isMobileNoEmpty) {
+                        } else {
+                          Navigation.pushNamed(SignUpOtpCodeScreen.routeName,
+                              arguments: PinCodeScreenArgs(
+                                  value: '+92343242342',
+                                  type: PinCodeDestinationType.phone));
+      
+                          // Navigation.pushNamed(SignUpMobileCodeScreen.routeName);
+                        }
+                      },
                     ),
-                    onPressed: () {
-                      if (ref.read(signUpStateProvider).isMobileNoEmpty) {
-                      } else {
-                        Navigation.pushNamed(SignUpOtpCodeScreen.routeName,
-                            arguments: PinCodeScreenArgs(
-                                value: '+92343242342',
-                                type: PinCodeDestinationType.phone));
-
-                        // Navigation.pushNamed(SignUpMobileCodeScreen.routeName);
-                      }
-                    },
                   ),
                 ),
-              ),
-            ));
-      }),
+              ));
+        }),
+      ),
     );
   }
 }
