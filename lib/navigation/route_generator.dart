@@ -121,15 +121,7 @@ class RouteGenerator {
             // params: settings.arguments as HomeScreenArgs?
             ));
       case MonthlyStatementScreen.routeName:
-        return route(MonthlyStatementScreen(
-            // params: settings.arguments as HomeScreenArgs?
-            ));
-      case MonthlyStatementScreen.routeName:
-        return route(MonthlyStatementScreen(
-            // params: settings.arguments as HomeScreenArgs?
-            ));
-      case MonthlyStatementScreen.routeName:
-        return route(MonthlyStatementScreen(
+        return route(const MonthlyStatementScreen(
             // params: settings.arguments as HomeScreenArgs?
             ));
       // case FirstScreen.routeName:

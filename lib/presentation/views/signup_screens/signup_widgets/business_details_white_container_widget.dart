@@ -12,7 +12,6 @@ class BusinessDetailsWhiteContainerWidet extends ConsumerWidget {
   final VoidCallback? onTap;
   final Color? titleTextColor;
   final String? labelText;
-  final String? labelText;
   const BusinessDetailsWhiteContainerWidet(
       {super.key,
       required this.title,
@@ -20,7 +19,7 @@ class BusinessDetailsWhiteContainerWidet extends ConsumerWidget {
       this.onTap,
       this.titleTextColor,
       this.labelText,
-      this.labelText});
+      });
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return GestureDetector(
