@@ -1,5 +1,17 @@
-import 'package:etbank_business_app/presentation/views/Onboarding/onboarding.dart';
+import 'package:etbank_business_app/navigation/params/pincode_screen_args.dart';
+import 'package:etbank_business_app/presentation/views/onboarding_screens/onboarding_screen.dart';
+import 'package:etbank_business_app/presentation/views/signup_screens/signup_business_details_screen.dart';
+import 'package:etbank_business_app/presentation/views/signup_screens/signup_business_type_screen.dart';
+import 'package:etbank_business_app/presentation/views/signup_screens/signup_check_email_screen.dart';
+import 'package:etbank_business_app/presentation/views/signup_screens/signup_create_password_screen.dart';
+import 'package:etbank_business_app/presentation/views/signup_screens/signup_otp_code_screen.dart';
+import 'package:etbank_business_app/presentation/views/signup_screens/signup_email_screen.dart';
 import 'package:etbank_business_app/presentation/views/profile_section/profile_screen.dart';
+import 'package:etbank_business_app/presentation/views/signup_screens/signup_enable_push_notif_screen.dart';
+import 'package:etbank_business_app/presentation/views/signup_screens/signup_enter_passcode_screen.dart';
+import 'package:etbank_business_app/presentation/views/signup_screens/signup_mobile_num_screen.dart';
+import 'package:etbank_business_app/presentation/views/signup_screens/signup_tailor_experience_screen.dart';
+import 'package:etbank_business_app/presentation/views/signup_screens/signup_welcome_back_screen.dart';
 import 'package:etbank_business_app/presentation/views/profile_section/refer_business/refer_busines_share_link_screen.dart';
 import 'package:etbank_business_app/presentation/views/profile_section/refer_business/refer_business_screen.dart';
 import 'package:etbank_business_app/presentation/views/profile_section/statement_section/statement_screen.dart';
@@ -20,11 +32,47 @@ class RouteGenerator {
             ));
 
       case Onboarding.routeName:
-        return route(Onboarding(
-            // params: settings.arguments as HomeScreenArgs?
-            ));
+        return route(Onboarding());
+
+      case SignUpEmailScreen.routeName:
+        return route(const SignUpEmailScreen());
+
+      case SignUpCheckEmailScreen.routeName:
+        return route(const SignUpCheckEmailScreen());
+
+      case SignUpOtpCodeScreen.routeName:
+        return route(SignUpOtpCodeScreen(
+            params: settings.arguments as PinCodeScreenArgs));
+
+      case SignUpBusinessTypeScreen.routeName:
+        return route(const SignUpBusinessTypeScreen());
+
+      case SignUpMobileNoScreen.routeName:
+        return route(const SignUpMobileNoScreen());
+
+      // case SignUpMobileCodeScreen.routeName:
+      //   return route(const SignUpMobileCodeScreen());
+
+      case SignUpCreatePassword.routeName:
+        return route(const SignUpCreatePassword());
+
+      case SignUpWelcomeBackScreen.routeName:
+        return route(const SignUpWelcomeBackScreen());
+
+      case SignUpEnterPassCodeScreen.routeName:
+        return route(const SignUpEnterPassCodeScreen());
+
+      case SignUpEnablePushNotifScreen.routeName:
+        return route(const SignUpEnablePushNotifScreen());
+
+      case SignUpTailorExperienceScreen.routeName:
+        return route(const SignUpTailorExperienceScreen());
+
+      case SignUpBusinessDetailsScreen.routeName:
+        return route(const SignUpBusinessDetailsScreen());
+
       case ProfileScreen.routeName:
-        return route(ProfileScreen(
+        return route(const ProfileScreen(
             // params: settings.arguments as HomeScreenArgs?
             ));
       case ReferBusinessScreen.routeName:
@@ -39,7 +87,23 @@ class RouteGenerator {
         return route(StatementScreen(
             // params: settings.arguments as HomeScreenArgs?
             ));
-            case RatesAndConverterScreen.routeName:
+      case ProfileScreen.routeName:
+        return route(const ProfileScreen(
+            // params: settings.arguments as HomeScreenArgs?
+            ));
+      case ReferBusinessScreen.routeName:
+        return route(ReferBusinessScreen(
+            // params: settings.arguments as HomeScreenArgs?
+            ));
+      case ReferBusinessShareLinkScreen.routeName:
+        return route(ReferBusinessShareLinkScreen(
+            // params: settings.arguments as HomeScreenArgs?
+            ));
+      case StatementScreen.routeName:
+        return route(StatementScreen(
+            // params: settings.arguments as HomeScreenArgs?
+            ));
+      case RatesAndConverterScreen.routeName:
         return route(RatesAndConverterScreen(
             // params: settings.arguments as HomeScreenArgs?
             ));

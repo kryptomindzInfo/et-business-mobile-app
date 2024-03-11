@@ -8,7 +8,7 @@ import '../../../constants/app_assets.dart';
 
 class BackgroundImageWidget extends ConsumerWidget {
   final Widget? child;
-  BackgroundImageWidget({super.key, this.child});
+  const BackgroundImageWidget({super.key, this.child});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

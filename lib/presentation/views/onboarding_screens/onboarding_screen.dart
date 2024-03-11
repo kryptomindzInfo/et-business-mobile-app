@@ -3,38 +3,38 @@ import 'package:etbank_business_app/providers/pageview_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'OnboardingWidgets/linear_indicator.dart';
-import 'OnboardingWidgets/onboarding_widget.dart';
+import 'onboarding_widgets/linear_indicator_widget.dart';
+import 'onboarding_widgets/onboarding_widget.dart';
 
 class Onboarding extends ConsumerWidget {
   static const String routeName = "my_page_view";
   final List<Widget> pages = [
-    OnboardingWidget(
+    const OnboardingWidget(
       title: 'onboarding1_title',
       subtitle: 'onboarding1_subtitle',
       image: AppAssets.onboardingImage1,
     ),
-    OnboardingWidget(
+    const OnboardingWidget(
       title: 'onboarding2_title',
       subtitle: 'onboarding2_subtitle',
       image: AppAssets.onboardingImage2,
     ),
-    OnboardingWidget(
+    const OnboardingWidget(
       title: 'onboarding3_title',
       subtitle: 'onboarding3_subtitle',
       image: AppAssets.onboardingImage3,
     ),
-    OnboardingWidget(
+    const OnboardingWidget(
       title: 'onboarding4_title',
       subtitle: 'onboarding4_subtitle',
       image: AppAssets.onboardingImage4,
     ),
-    OnboardingWidget(
+    const OnboardingWidget(
       title: 'onboarding5_title',
       subtitle: 'onboarding5_subtitle',
       image: AppAssets.onboardingImage5,
     ),
-    OnboardingWidget(
+    const OnboardingWidget(
       title: 'onboarding6_title',
       subtitle: 'onboarding6_subtitle',
       image: AppAssets.onboardingImage6,
@@ -61,7 +61,7 @@ class Onboarding extends ConsumerWidget {
               itemBuilder: (context, index) => pages[index % pages.length],
             ),
           ),
-          const LinearIndicator(),
+          const LinearIndicatorWidget(),
         ],
       ),
     );

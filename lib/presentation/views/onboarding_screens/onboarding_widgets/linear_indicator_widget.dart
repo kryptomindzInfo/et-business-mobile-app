@@ -1,11 +1,12 @@
-import 'package:etbank_business_app/presentation/views/Onboarding/onboarding.dart';
+import 'package:etbank_business_app/constants/app_colors.dart';
+import 'package:etbank_business_app/presentation/views/onboarding_screens/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../providers/pageview_provider.dart';
 
-class LinearIndicator extends ConsumerWidget {
-  const LinearIndicator({super.key});
+class LinearIndicatorWidget extends ConsumerWidget {
+  const LinearIndicatorWidget({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -44,6 +45,6 @@ class LinearIndicator extends ConsumerWidget {
   }
 
   Color getPageIndicatorColor(int index, int activePage) {
-    return index == activePage ? Colors.green : Colors.grey;
+    return index == activePage ? AppColors.primaryColor : AppColors.grey;
   }
 }

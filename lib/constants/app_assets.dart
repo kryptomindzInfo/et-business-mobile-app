@@ -2,17 +2,16 @@ class AppAssets {
   static const imagesDir = "assets/images/";
   static const iconsDir = "assets/app_icons/";
   static const logo = "logo";
-
   // Onboarding
 
   static const onboardingBg = "assets/images/onboarding_bg.png";
   static const appBg = "assets/images/app_bg.png";
-  static const onboardingImage1 = "assets/images/onboarding_image1.png";
-  static const onboardingImage2 = "assets/images/onboarding_image2.png";
-  static const onboardingImage3 = "assets/images/onboarding_image3.png";
-  static const onboardingImage4 = "assets/images/onboarding_image4.png";
-  static const onboardingImage5 = "assets/images/onboarding_image5.png";
-  static const onboardingImage6 = "assets/images/onboarding_image6.png";
+  static const onboardingImage1 = "${imagesDir}onboarding_image1.png";
+  static const onboardingImage2 = "${imagesDir}onboarding_image2.png";
+  static const onboardingImage3 = "${imagesDir}onboarding_image3.png";
+  static const onboardingImage4 = "${imagesDir}onboarding_image4.png";
+  static const onboardingImage5 = "${imagesDir}onboarding_image5.png";
+  static const onboardingImage6 = "${imagesDir}onboarding_image6.png";
   //home screen Assets
   static const backgroundImage = "${imagesDir}etbackgrd.png";
   static const ukflag = "${imagesDir}uk.png";
@@ -34,6 +33,16 @@ class AppAssets {
   static const moreicon = "${iconsDir}moreicon.png";
   static const transactioninfoicon = "${iconsDir}transactioninfoicon.png";
   static const arrowLeft = "${iconsDir}arrow_left.png";
+
+  // SignUp Screens
+
+  static const checkEmailImage = "${imagesDir}check_email_image.png";
+  static const companyIcon = "${iconsDir}company_icon.png";
+  static const freelancerIcon = "${iconsDir}freelancer_icon.png";
+  static const personIcon = "${iconsDir}person_icon.png";
+  static const exclamationMark = "${iconsDir}exclamation_mark.png";
+  static const welcomeBackImage = "${imagesDir}welcome_back_image.png";
+  static const ufoImage = "${imagesDir}ufo_image.png";
   static const upgradeicon = "${iconsDir}upgradeicon.png";
   static const favrouriteicon = "${iconsDir}favorite.png";
   static const communicationicon = "${iconsDir}communication.png";
@@ -43,6 +52,10 @@ class AppAssets {
   static const merchantprofileicon = "${iconsDir}merchantprofile.png";
   static const statementicon = "${iconsDir}statement.png";
   static const billingicon = "${iconsDir}billing.png";
+  static const tailorExperienceImage =
+      "${imagesDir}tailor_experience_image.png";
+  static const iconArrowDownBlack = "${iconsDir}icon_arrow_down_black.png";
+  static const iconSearchBlack = "${iconsDir}icon_search_black.png";
   static const crossicon = "${iconsDir}cross.png";
   static const popularicon = "${iconsDir}popular.png";
   static const cardicon = "${iconsDir}cardicon.png";
