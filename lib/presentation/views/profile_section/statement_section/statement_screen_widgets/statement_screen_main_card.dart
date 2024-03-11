@@ -1,6 +1,7 @@
 import 'package:etbank_business_app/constants/app_api_paths.dart';
 import 'package:etbank_business_app/constants/app_assets.dart';
 import 'package:etbank_business_app/constants/app_colors.dart';
+import 'package:etbank_business_app/navigation/navigation.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/info_card_common_widget.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/info_icon_title_subtitle_text.dart';
 import 'package:etbank_business_app/resources/localization/language_constrants.dart';
@@ -17,9 +18,13 @@ class StatementScreenMainCard extends ConsumerWidget {
       child: Column(
         children: [
           InfoIconTitleSubtitleText(
-              imageicon: AppAssets.monthlystatement,
-              title: getTranslated("monthly_statement", context),
-              subtitle: getTranslated("monthly_statement_sub", context)),
+            imageicon: AppAssets.monthlystatement,
+            title: getTranslated("monthly_statement", context),
+            subtitle: getTranslated("monthly_statement_sub", context),
+            onpress: () {
+              Navigation.pushNamed("monthly_statement");
+            },
+          ),
           InfoIconTitleSubtitleText(
               imageicon: AppAssets.transaction,
               title: getTranslated("transaction_statement", context),

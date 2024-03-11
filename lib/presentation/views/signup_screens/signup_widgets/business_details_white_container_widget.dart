@@ -12,15 +12,15 @@ class BusinessDetailsWhiteContainerWidet extends ConsumerWidget {
   final VoidCallback? onTap;
   final Color? titleTextColor;
   final String? labelText;
-
+  final String? labelText;
   const BusinessDetailsWhiteContainerWidet(
       {super.key,
       required this.title,
       this.icon,
       this.onTap,
       this.titleTextColor,
+      this.labelText,
       this.labelText});
-
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return GestureDetector(
@@ -39,16 +39,27 @@ class BusinessDetailsWhiteContainerWidet extends ConsumerWidget {
                   labelText ?? 'country',
                   style: AppTextstyle.bodyTextStyle(color: AppColors.grey),
                 ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    title,
-                    style: AppTextstyle.bodyTextStyle(
-                        fontSize: 16.sp,
-                        color: titleTextColor ?? AppColors.grey),
+                    labelText ?? 'country',
+                    style: AppTextstyle.bodyTextStyle(color: AppColors.grey),
                   ),
-                  if (icon != null) icon!
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        title,
+                        style: AppTextstyle.bodyTextStyle(
+                            fontSize: 16.sp,
+                            color: titleTextColor ?? AppColors.grey),
+                      ),
+                      if (icon != null)
+                        if (icon != null) icon!
+                    ],
+                  )!
                 ],
               ),
             ],

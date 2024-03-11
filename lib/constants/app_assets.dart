@@ -18,6 +18,7 @@ class AppAssets {
   static const light = "${imagesDir}light.png";
   static const dark = "${imagesDir}dark.png";
   static const chartimage = "${imagesDir}chartimage.png";
+  static const roundukflag = "${imagesDir}rounduk.png";
 
   //app_icons
   static const earthicon = "${iconsDir}earth.png";
@@ -69,4 +70,5 @@ class AppAssets {
   static const transaction = "${iconsDir}transaction.png";
   static const addingicon = "${iconsDir}addingbutton.png";
   static const puzzleImage = "${iconsDir}puzzle_image.png";
+  static const calendericon = "${iconsDir}calender.png";
 }
