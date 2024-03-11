@@ -3,7 +3,7 @@ import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/navigation/navigation.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/app_common_widgets.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/header_icon_with_text.dart';
-import 'package:etbank_business_app/presentation/views/signup_screens/signup_email_code_screen.dart';
+import 'package:etbank_business_app/presentation/views/signup_screens/signup_otp_code_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_enable_push_notif_screen.dart';
 import 'package:etbank_business_app/providers/signup_provider.dart';
 import 'package:etbank_business_app/resources/localization/language_constrants.dart';
