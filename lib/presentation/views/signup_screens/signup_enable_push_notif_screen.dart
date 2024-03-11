@@ -32,6 +32,7 @@ class SignUpEnablePushNotifScreen extends ConsumerWidget {
                 title: getTranslated('enable_push_notif_title', context),
                 description:
                     getTranslated('enable_push_notif_subtitle', context),
+                imageicon: AppAssets.arrowLeft,
               ),
               57.spaceY,
               Image.asset(

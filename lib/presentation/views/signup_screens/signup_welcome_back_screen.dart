@@ -30,6 +30,7 @@ class SignUpWelcomeBackScreen extends ConsumerWidget {
               HeaderIconWithTitle(
                 title: getTranslated('welcome_back_title', context),
                 description: getTranslated('welcome_back_subtitle', context),
+                imageicon: AppAssets.arrowLeft,
               ),
               57.spaceY,
               Center(

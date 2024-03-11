@@ -33,6 +33,7 @@ class SignUpCreatePassword extends ConsumerWidget {
               HeaderIconWithTitle(
                 title: getTranslated('create_password_title', context),
                 description: getTranslated('create_password_subtitle', context),
+                imageicon: AppAssets.arrowLeft,
               ),
               Row(
                 children: [

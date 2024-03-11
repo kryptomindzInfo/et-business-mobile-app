@@ -32,6 +32,7 @@ class SignUpCheckEmailScreen extends ConsumerWidget {
               HeaderIconWithTitle(
                 title: getTranslated('check_email_title', context),
                 description: getTranslated('check_email_subtitle', context),
+                imageicon: AppAssets.arrowLeft,
               ),
               57.spaceY,
               Image.asset(

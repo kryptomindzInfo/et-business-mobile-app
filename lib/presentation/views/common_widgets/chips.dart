@@ -9,7 +9,9 @@ class Chips extends ConsumerWidget {
   final String? title;
   final String? imageicon;
   final VoidCallback? onpress;
-  const Chips({super.key, this.title, this.onpress, this.imageicon});
+  final Color? color;
+  const Chips(
+      {super.key, this.title, this.onpress, this.imageicon, this.color});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -22,7 +24,7 @@ class Chips extends ConsumerWidget {
         margin: EdgeInsets.only(right: 20),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(100),
-            color: AppColors.mateBlackColor),
+            color: color != null ? color : AppColors.mateBlackColor),
         child: Row(children: [
           imageicon != null
               ? Image.asset(
@@ -35,7 +37,7 @@ class Chips extends ConsumerWidget {
               style: AppTextstyle.bodyTextStyle(
                   fontWeight: FontWeight.w500,
                   fontSize: 16,
-                  color: AppColors.white.withOpacity(0.5)))
+                  color: AppColors.white))
         ]),
       ),
     ));

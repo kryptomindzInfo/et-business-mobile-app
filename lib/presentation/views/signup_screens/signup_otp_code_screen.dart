@@ -15,6 +15,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
+import '../../../constants/app_assets.dart';
+
 class SignUpOtpCodeScreen extends ConsumerWidget {
   static const String routeName = "signup_otp_code";
   final PinCodeScreenArgs params;
@@ -35,6 +37,7 @@ class SignUpOtpCodeScreen extends ConsumerWidget {
                 description:
                     "Code Send to ${params.value} unless you already have accounts",
                 // "${getTranslated('signup_email_code_subtitle', context)} ${params.value}",
+                imageicon: AppAssets.arrowLeft,
               ),
               32.spaceY,
               PinCodeTextField(

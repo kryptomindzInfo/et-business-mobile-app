@@ -31,6 +31,7 @@ class SignUpTailorExperienceScreen extends ConsumerWidget {
                 title: getTranslated('tailor_experience_title', context),
                 description:
                     getTranslated('tailor_experience_subtitle', context),
+                imageicon: AppAssets.arrowLeft,
               ),
               57.spaceY,
               Image.asset(

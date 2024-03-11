@@ -1,0 +1,33 @@
+import 'package:etbank_business_app/constants/app_colors.dart';
+import 'package:etbank_business_app/constants/app_textstyle.dart';
+import 'package:etbank_business_app/resources/localization/language_constrants.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+class ShareLinkButton extends ConsumerWidget {
+  final VoidCallback? onpress;
+  const ShareLinkButton({super.key, this.onpress});
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    return InkWell(
+      onTap: onpress,
+      child: Container(
+        height: 39,
+        width: 100,
+        decoration: BoxDecoration(
+            color: AppColors.tealColor,
+            borderRadius: BorderRadius.circular(70)),
+        child: Center(
+          child: Text(
+            getTranslated("share_link", context),
+            style: AppTextstyle.bodyTextStyle(
+                color: AppColors.white,
+                fontSize: 16,
+                fontWeight: FontWeight.w500),
+          ),
+        ),
+      ),
+    );
+  }
+}

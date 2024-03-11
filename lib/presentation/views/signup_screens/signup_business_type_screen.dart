@@ -26,6 +26,7 @@ class SignUpBusinessTypeScreen extends ConsumerWidget {
             children: [
               HeaderIconWithTitle(
                 title: getTranslated('business_type_title', context),
+                imageicon: AppAssets.arrowLeft,
               ),
               40.spaceY,
               BusinessTypeWidget(

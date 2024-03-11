@@ -6,13 +6,18 @@ import '../../common_widgets/chips.dart';
 class ProfileScreenChips extends ConsumerWidget {
   final String? title;
   final String? icon;
-  const ProfileScreenChips({super.key, this.icon, this.title});
+  final VoidCallback? onpress;
+  final Color? color;
+  const ProfileScreenChips(
+      {super.key, this.icon, this.title, this.onpress, this.color});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Chips(
-      title: title!,
-      imageicon: icon!,
+      title: title ?? "",
+      imageicon: icon,
+      onpress: onpress,
+      color: color,
     );
   }
 }

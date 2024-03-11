@@ -34,6 +34,7 @@ class SignUpBusinessDetailsScreen extends ConsumerWidget {
                 title: getTranslated('business_details_title', context),
                 description:
                     getTranslated('business_details_subtitle', context),
+                imageicon: AppAssets.arrowLeft,
               ),
               30.spaceY,
               BusinessDetailsWhiteContainerWidet(

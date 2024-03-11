@@ -8,6 +8,7 @@ import 'package:etbank_business_app/resources/localization/language_constrants.d
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../constants/app_assets.dart';
 import '../../../constants/app_colors.dart';
 import '../../../globals/button_color.dart';
 import 'signup_widgets/primary_button.dart';
@@ -30,6 +31,7 @@ class SignUpEmailScreen extends ConsumerWidget {
             children: [
               HeaderIconWithTitle(
                 title: getTranslated('signup_email_title', context),
+                imageicon: AppAssets.arrowLeft,
               ),
               SizedBox(
                 // width: 300.w,

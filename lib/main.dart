@@ -43,7 +43,7 @@ class MyApp extends ConsumerWidget {
         ],
         navigatorKey: navigatorKey,
         onGenerateRoute: RouteGenerator.generateRoute,
-        initialRoute: SignUpCheckEmailScreen.routeName,
+        initialRoute: Onboarding.routeName,
       ),
     );
   }

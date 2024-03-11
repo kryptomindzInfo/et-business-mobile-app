@@ -4,7 +4,8 @@ import '../../../constants/app_colors.dart';
 
 class InfoCardCommonWidget extends ConsumerWidget {
   final Widget? child;
-  const InfoCardCommonWidget({super.key, this.child});
+  final Color? color;
+  const InfoCardCommonWidget({super.key, this.child, this.color});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -13,7 +14,7 @@ class InfoCardCommonWidget extends ConsumerWidget {
         // height: 200,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(32),
-            color: AppColors.tealColor,
+            color: color ?? AppColors.tealColor,
             border: Border.all(color: AppColors.white)),
         child: child);
   }

@@ -12,6 +12,10 @@ import 'package:etbank_business_app/presentation/views/signup_screens/signup_ent
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_mobile_num_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_tailor_experience_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_welcome_back_screen.dart';
+import 'package:etbank_business_app/presentation/views/profile_section/refer_business/refer_busines_share_link_screen.dart';
+import 'package:etbank_business_app/presentation/views/profile_section/refer_business/refer_business_screen.dart';
+import 'package:etbank_business_app/presentation/views/profile_section/statement_section/statement_screen.dart';
+import 'package:etbank_business_app/presentation/views/rates_section/rate_converter_screen.dart';
 import 'package:flutter/material.dart';
 // import 'package:projtemplate/navigation/params/home_screen_args.dart';
 // import 'package:projtemplate/presentation/views/home_screen.dart';
@@ -69,6 +73,38 @@ class RouteGenerator {
 
       case ProfileScreen.routeName:
         return route(const ProfileScreen(
+            // params: settings.arguments as HomeScreenArgs?
+            ));
+      case ReferBusinessScreen.routeName:
+        return route(ReferBusinessScreen(
+            // params: settings.arguments as HomeScreenArgs?
+            ));
+      case ReferBusinessShareLinkScreen.routeName:
+        return route(ReferBusinessShareLinkScreen(
+            // params: settings.arguments as HomeScreenArgs?
+            ));
+      case StatementScreen.routeName:
+        return route(StatementScreen(
+            // params: settings.arguments as HomeScreenArgs?
+            ));
+      case ProfileScreen.routeName:
+        return route(const ProfileScreen(
+            // params: settings.arguments as HomeScreenArgs?
+            ));
+      case ReferBusinessScreen.routeName:
+        return route(ReferBusinessScreen(
+            // params: settings.arguments as HomeScreenArgs?
+            ));
+      case ReferBusinessShareLinkScreen.routeName:
+        return route(ReferBusinessShareLinkScreen(
+            // params: settings.arguments as HomeScreenArgs?
+            ));
+      case StatementScreen.routeName:
+        return route(StatementScreen(
+            // params: settings.arguments as HomeScreenArgs?
+            ));
+      case RatesAndConverterScreen.routeName:
+        return route(RatesAndConverterScreen(
             // params: settings.arguments as HomeScreenArgs?
             ));
       // case FirstScreen.routeName:

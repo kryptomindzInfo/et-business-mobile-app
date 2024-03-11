@@ -9,6 +9,7 @@ import 'package:etbank_business_app/resources/localization/language_constrants.d
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../constants/app_assets.dart';
 import '../../../constants/app_colors.dart';
 import '../../../globals/button_color.dart';
 import '../../../globals/countries_list.dart';
@@ -36,6 +37,7 @@ class SignUpMobileNoScreen extends ConsumerWidget {
                 title: getTranslated('mobile_no', context),
                 description:
                     getTranslated('mobile_no_verification_code', context),
+                imageicon: AppAssets.arrowLeft,
               ),
               Row(
                 children: [
