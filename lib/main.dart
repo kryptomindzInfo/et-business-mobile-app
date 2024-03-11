@@ -1,11 +1,4 @@
-import 'package:etbank_business_app/presentation/views/SignUp_Screens/signup_business_details_screen.dart';
 import 'package:etbank_business_app/presentation/views/onboarding_screens/onboarding_screen.dart';
-import 'package:etbank_business_app/presentation/views/signup_screens/signup_business_type_screen.dart';
-import 'package:etbank_business_app/presentation/views/signup_screens/signup_check_email_screen.dart';
-import 'package:etbank_business_app/presentation/views/signup_screens/signup_create_password_screen.dart';
-import 'package:etbank_business_app/presentation/views/signup_screens/signup_email_screen.dart';
-import 'package:etbank_business_app/presentation/views/signup_screens/signup_mobile_num_screen.dart';
-import 'package:etbank_business_app/presentation/views/signup_screens/signup_tailor_experience_screen.dart';
 import 'package:etbank_business_app/providers/localization_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -13,7 +6,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'navigation/navigator_key.dart';
 import 'navigation/route_generator.dart';
-import 'presentation/views/signup_screens/signup_role_in_the_company_screen.dart';
 import 'resources/localization/app_localization.dart';
 
 void main() {
