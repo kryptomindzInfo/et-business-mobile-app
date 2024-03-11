@@ -45,7 +45,7 @@ class MyApp extends ConsumerWidget {
         ],
         navigatorKey: navigatorKey,
         onGenerateRoute: RouteGenerator.generateRoute,
-        initialRoute: SignUpRoleInTheCompanyScreen.routeName,
+        initialRoute: Onboarding.routeName,
       ),
     );
   }
