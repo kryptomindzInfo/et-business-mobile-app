@@ -2,6 +2,7 @@ import 'package:etbank_business_app/constants/app_textstyle.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/app_common_widgets.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/header_icon_with_text.dart';
+import 'package:etbank_business_app/presentation/views/signup_screens/signup_registered_business_address_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_widgets/bottom_sheet_widget.dart';
 import 'package:etbank_business_app/providers/signup_provider.dart';
 import 'package:etbank_business_app/resources/localization/language_constrants.dart';
@@ -68,11 +69,7 @@ class SignUpBusinessDetailsScreen extends ConsumerWidget {
               16.spaceY,
               BusinessDetailsWhiteContainerWidet(
                 title: getTranslated('legal_name', context),
-                icon: Image.asset(
-                  AppAssets.iconSearchBlack,
-                  height: 18.h,
-                  width: 18.w,
-                ),
+                labelText: getTranslated('legal_name', context),
                 onTap: () {
                   showModalBottomSheet(
                       backgroundColor: AppColors.black,
@@ -90,6 +87,44 @@ class SignUpBusinessDetailsScreen extends ConsumerWidget {
                         );
                       });
                 },
+              ),
+              16.spaceY,
+              BusinessDetailsWhiteContainerWidet(
+                labelText:
+                    getTranslated('company_house_registration_number', context),
+                title: 'A1213454',
+                icon: Image.asset(
+                  AppAssets.iconSearchBlack,
+                  height: 18.h,
+                  width: 18.w,
+                ),
+                onTap: () {},
+              ),
+              8.spaceY,
+              Text(
+                getTranslated('usually_looks_like_format', context),
+                style: AppTextstyle.bodyTextStyle(
+                    fontSize: 16.sp, color: Colors.grey),
+                overflow: TextOverflow.clip,
+              ),
+              16.spaceY,
+              BusinessDetailsWhiteContainerWidet(
+                labelText: getTranslated('date_of_incorporation', context),
+                title: '02/28/2024',
+                onTap: () {},
+              ),
+              16.spaceY,
+              BusinessDetailsWhiteContainerWidet(
+                labelText: getTranslated('business_type', context),
+                title: getTranslated('private_limited_company', context),
+                onTap: () {},
+              ),
+              16.spaceY,
+              BusinessNotListedWidet(
+                title: getTranslated('known_by_different_name', context),
+                tilteStyle: AppTextstyle.bodyTextStyle(
+                  fontSize: 19.sp,
+                ),
               ),
             ],
           ),
@@ -118,7 +153,10 @@ class SignUpBusinessDetailsScreen extends ConsumerWidget {
                               fontSize: 16,
                               fontWeight: FontWeight.w500),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushNamed(context,
+                              SignUpRegisteredBusinessAddressScreen.routeName);
+                        },
                       ),
                     ),
                   ],

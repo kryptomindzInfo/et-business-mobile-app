@@ -8,14 +8,16 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class BusinessTypeWidget extends ConsumerWidget {
   final String image;
   final String title;
-  final String description;
-  VoidCallback? onPressed;
-  BusinessTypeWidget(
+  final String? description;
+  final VoidCallback? onPressed;
+  final String? labelText;
+  const BusinessTypeWidget(
       {super.key,
       required this.image,
       required this.title,
-      required this.description,
-      this.onPressed});
+      this.description,
+      this.onPressed,
+      this.labelText});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -33,21 +35,26 @@ class BusinessTypeWidget extends ConsumerWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                title,
-                style: AppTextstyle.headingTextStyle(
-                    fontSize: 16.sp,
-                    color: AppColors.white,
-                    fontWeight: FontWeight.w600),
-              ),
               SizedBox(
-                width: 198.w,
+                width: 260.w,
                 child: Text(
-                  description,
-                  style: AppTextstyle.bodyTextStyle(
-                      color: AppColors.grey, overflow: TextOverflow.clip),
+                  title,
+                  style: AppTextstyle.headingTextStyle(
+                      fontSize: 16.sp,
+                      color: AppColors.white,
+                      fontWeight: FontWeight.w600,
+                      overflow: TextOverflow.clip),
                 ),
               ),
+              if (description != null)
+                SizedBox(
+                  width: 230.w,
+                  child: Text(
+                    description ?? '',
+                    style: AppTextstyle.bodyTextStyle(
+                        color: AppColors.grey, overflow: TextOverflow.clip),
+                  ),
+                ),
             ],
           )
         ],

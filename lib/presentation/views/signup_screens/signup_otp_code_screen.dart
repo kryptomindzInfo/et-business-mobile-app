@@ -7,6 +7,7 @@ import 'package:etbank_business_app/navigation/params/pincode_screen_args.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/app_common_widgets.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/header_icon_with_text.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_business_type_screen.dart';
+import 'package:etbank_business_app/presentation/views/signup_screens/signup_create_passcode_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_create_password_screen.dart';
 import 'package:etbank_business_app/resources/localization/language_constrants.dart';
 import 'package:flutter/material.dart';
@@ -71,8 +72,12 @@ class SignUpOtpCodeScreen extends ConsumerWidget {
                   onCompleted: (value) {
                     if (params.type == PinCodeDestinationType.email) {
                       Navigation.pushNamed(SignUpBusinessTypeScreen.routeName);
-                    } else {
+                    } else if (params.type == PinCodeDestinationType.phone) {
                       Navigation.pushNamed(SignUpCreatePassword.routeName);
+                    } else if (params.type ==
+                        PinCodeDestinationType.otpForCreatePassCode) {
+                      Navigation.pushNamed(
+                          SignUpCreatePassCodeScreen.routeName);
                     }
                   }),
               20.spaceY,
