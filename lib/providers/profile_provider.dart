@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../constants/static_data/profile_screen_static_data.dart';
-import '../presentation/views/profile_section/profile_screen_bottom_sheets/profile_Chips_Bottom_Sheet.dart';
+import '../presentation/views/profile_section/profile_screen_bottom_sheets/upgrade_bottom_sheet.dart';
 
 final profilescreenProvider = ChangeNotifierProvider<ProfileScreenProvider>(
     (ref) => ProfileScreenProvider());

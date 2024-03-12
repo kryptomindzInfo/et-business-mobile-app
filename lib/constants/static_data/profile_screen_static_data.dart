@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../../navigation/navigation.dart';
 import '../../navigation/navigator_key.dart';
-import '../../presentation/views/profile_section/profile_screen_bottom_sheets/profile_Chips_Bottom_Sheet.dart';
+import '../../presentation/views/profile_section/profile_screen_bottom_sheets/upgrade_bottom_sheet.dart';
 import '../../presentation/views/profile_section/refer_business/refer_business_screen.dart';
 
 List<Map> _profileScreenOptions = [
@@ -113,3 +113,11 @@ Map _ratesScreenOptions = {
 };
 
 Map get ratesScreenOptions => _ratesScreenOptions;
+
+List<Map> _homeScreenOptions = [
+  {"title": "Dashboard", "widget": ""},
+  {"title": "Cards", "widget": ""},
+  {"title": "Team", "widget": ""}
+];
+
+List<Map> get homeOptions => _homeScreenOptions;

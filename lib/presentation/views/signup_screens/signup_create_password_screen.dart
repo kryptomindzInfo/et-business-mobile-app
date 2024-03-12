@@ -24,8 +24,8 @@ class SignUpCreatePassword extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return BackgroundImageWidget(
       child: Scaffold(
-        extendBody: true,
-         
+        // extendBody: true,
+
         body: Padding(
           padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
           child: Column(
@@ -103,7 +103,7 @@ class SignUpCreatePassword extends ConsumerWidget {
             ],
           ),
         ),
-              resizeToAvoidBottomInset: false,
+        resizeToAvoidBottomInset: false,
         backgroundColor: Colors.transparent,
         bottomNavigationBar: Builder(builder: (context) {
           final keyboardHeight = MediaQuery.of(context).viewInsets.bottom;
@@ -130,7 +130,8 @@ class SignUpCreatePassword extends ConsumerWidget {
                       onPressed: () {
                         if (ref.read(signUpStateProvider).isPasswordEmpty) {
                         } else {
-                          Navigation.pushNamed(SignUpWelcomeBackScreen.routeName);
+                          Navigation.pushNamed(
+                              SignUpWelcomeBackScreen.routeName);
                         }
                       },
                     ),

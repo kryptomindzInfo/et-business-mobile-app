@@ -24,8 +24,8 @@ class SignUpCreatePassCodeScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return BackgroundImageWidget(
       child: Scaffold(
-        extendBody: true,
-        
+        // extendBody: true,
+
         body: Padding(
           padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
           child: Column(
@@ -62,7 +62,7 @@ class SignUpCreatePassCodeScreen extends ConsumerWidget {
             ],
           ),
         ),
-              resizeToAvoidBottomInset: false,
+        resizeToAvoidBottomInset: false,
         backgroundColor: Colors.transparent,
         bottomNavigationBar: Builder(builder: (context) {
           final keyboardHeight = MediaQuery.of(context).viewInsets.bottom;
@@ -88,7 +88,8 @@ class SignUpCreatePassCodeScreen extends ConsumerWidget {
                       Navigation.pushNamed(SignUpOtpCodeScreen.routeName,
                           arguments: PinCodeScreenArgs(
                               value: '+44 23476956789',
-                              type: PinCodeDestinationType.otpForCreatePassCode));
+                              type:
+                                  PinCodeDestinationType.otpForCreatePassCode));
                     },
                   ),
                 ),

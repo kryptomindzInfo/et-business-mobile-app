@@ -71,4 +71,12 @@ class AppAssets {
   static const addingicon = "${iconsDir}addingbutton.png";
   static const puzzleImage = "${iconsDir}puzzle_image.png";
   static const calendericon = "${iconsDir}calender.png";
+  static const addmoneyicon = "${iconsDir}addmoney.png";
+  static const statementsicon = "${iconsDir}statements.png";
+  static const exchangeicon = "${iconsDir}exchange.png";
+  static const detailsicon = "${iconsDir}details.png";
+  static const plusicon = "${iconsDir}plusicon.png";
+  static const allaccountsicon = "${iconsDir}allaccoutsicon.png";
+  static const euroflag = "${iconsDir}euroflag.png";
+  static const usdflag = "${iconsDir}usdflag.png";
 }

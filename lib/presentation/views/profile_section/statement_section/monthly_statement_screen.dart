@@ -16,6 +16,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../constants/app_colors.dart';
 import '../../../../constants/app_textstyle.dart';
+import '../../common_widgets/common_button.dart';
 
 class MonthlyStatementScreen extends ConsumerWidget {
   static const String routeName = 'monthly_statement';
@@ -49,7 +50,17 @@ class MonthlyStatementScreen extends ConsumerWidget {
                   title: getTranslated("accounts", context),
                 ),
                 20.spaceY,
-                AccountsCard(),
+                AccountsCard(
+                  title: "British Pound",
+                  subtitle: "GBP . Default Account",
+                  image: AppAssets.roundukflag,
+                  widget: CommonButton(
+                    title: getTranslated("select", context),
+                    width: 66,
+                    mainButtonColor: AppColors.tealColor.withOpacity(0.5),
+                    titleColor: AppColors.tealColor,
+                  ),
+                ),
                 30.spaceY,
                 TitleText(
                   title: getTranslated("period", context),

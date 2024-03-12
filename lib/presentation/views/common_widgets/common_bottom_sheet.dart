@@ -3,7 +3,7 @@ import 'package:etbank_business_app/navigation/navigator_key.dart';
 import 'package:flutter/material.dart';
 import '../../../constants/app_colors.dart';
 
-_showCommonModalSheet(double height, Widget widget) {
+showCommonModalSheet(double height, Widget widget) {
   return showModalBottomSheet(
     context: appContext,
     builder: (context) => Container(
@@ -18,7 +18,7 @@ _showCommonModalSheet(double height, Widget widget) {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          6.spaceY,
+          10.spaceY,
           Container(
             height: 3.5,
             width: 40,
