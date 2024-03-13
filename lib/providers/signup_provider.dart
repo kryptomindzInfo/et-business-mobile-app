@@ -2,6 +2,7 @@ import 'package:etbank_business_app/constants/app_assets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../constants/static_data/signup_screen_static_data.dart';
 import '../core/app_print.dart';
 
 final signUpStateProvider = ChangeNotifierProvider((ref) => SignUpState());
@@ -85,6 +86,8 @@ class SignUpState extends ChangeNotifier {
     notifyListeners();
   }
 
+  // PostCode
+
   String? _postCode = '';
 
   String? get postCode => _postCode;
@@ -100,6 +103,8 @@ class SignUpState extends ChangeNotifier {
     notifyListeners();
   }
 
+  // Company Roles
+
   List get companyRolesList => companyRoles;
   int _selectedRole = 0;
   int get selectedRole => _selectedRole;
@@ -107,27 +112,37 @@ class SignUpState extends ChangeNotifier {
     _selectedRole = value;
     notifyListeners();
   }
-}
 
-List companyRoles = [
-  {
-    "title": "role_1_title",
-    "subtitle": "role_1_subtitle",
-    "image": AppAssets.companyIcon,
-  },
-  {
-    "title": "role_2_title",
-    "subtitle": "role_2_subtitle",
-    "image": AppAssets.freelancerIcon,
-  },
-  {
-    "title": "role_3_title",
-    "subtitle": "role_3_subtitle",
-    "image": AppAssets.personIcon,
-  },
-  {
-    "title": "not_sure_what_to_choose",
-    "subtitle": "",
-    "image": AppAssets.personIcon,
-  },
-];
+  // Reasons for UsingEtBank
+
+  List<int> selectedReasonsForUsingEtBank = [];
+  setSelectedReasonForUsingEtBank(int value) {
+    if (selectedReasonsForUsingEtBank.contains(value)) {
+      selectedReasonsForUsingEtBank.remove(value);
+    } else {
+      selectedReasonsForUsingEtBank.add(value);
+    }
+  }
+
+  // Types of Customers
+
+  List<int> selectedCustomerTypes = [];
+  setselectedCustomerTypes(int value) {
+    if (selectedCustomerTypes.contains(value)) {
+      selectedCustomerTypes.remove(value);
+    } else {
+      selectedCustomerTypes.add(value);
+    }
+  }
+
+  // How You Sell Products
+
+  List<int> howYouSellProductsOptions = [];
+  sethowYouSellProductsOptions(int value) {
+    if (howYouSellProductsOptions.contains(value)) {
+      howYouSellProductsOptions.remove(value);
+    } else {
+      howYouSellProductsOptions.add(value);
+    }
+  }
+}

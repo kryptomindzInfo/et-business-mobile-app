@@ -1,4 +1,10 @@
 import 'package:etbank_business_app/presentation/views/onboarding_screens/onboarding_screen.dart';
+import 'package:etbank_business_app/presentation/views/signup_screens/signup_describe_business_activity_screen.dart';
+import 'package:etbank_business_app/presentation/views/signup_screens/signup_email_screen.dart';
+import 'package:etbank_business_app/presentation/views/signup_screens/signup_enable_face_id_screen.dart';
+import 'package:etbank_business_app/presentation/views/signup_screens/signup_role_in_the_company_screen.dart';
+import 'package:etbank_business_app/presentation/views/signup_screens/signup_website_social_ecommerce_link_screen.dart';
+import 'package:etbank_business_app/presentation/views/signup_screens/signup_where_you_conduct_business_screen.dart';
 import 'package:etbank_business_app/providers/localization_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -37,7 +43,7 @@ class MyApp extends ConsumerWidget {
         ],
         navigatorKey: navigatorKey,
         onGenerateRoute: RouteGenerator.generateRoute,
-        initialRoute: Onboarding.routeName,
+        initialRoute: SignUpWhereYouConductBusinessScreen.routeName,
       ),
     );
   }

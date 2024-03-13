@@ -10,6 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../constants/app_textstyle.dart';
+import '../../../constants/static_data/signup_screen_static_data.dart';
 import '../../../navigation/navigation.dart';
 import '../common_widgets/primary_button.dart';
 import 'signup_create_passcode_screen.dart';
@@ -24,7 +25,7 @@ class SignUpRoleInTheCompanyScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return BackgroundImageWidget(
       child: Scaffold(
-         backgroundColor: AppColors.transparent,
+        backgroundColor: AppColors.transparent,
         extendBody: true,
         body: Padding(
           padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
@@ -100,7 +101,8 @@ class SignUpRoleInTheCompanyScreen extends ConsumerWidget {
                           fontWeight: FontWeight.w500),
                     ),
                     onPressed: () {
-                      Navigation.pushNamed(SignUpCreatePassCodeScreen.routeName);
+                      Navigation.pushNamed(
+                          SignUpCreatePassCodeScreen.routeName);
                     },
                   ),
                 ),

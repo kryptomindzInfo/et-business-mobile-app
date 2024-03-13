@@ -71,4 +71,7 @@ class AppAssets {
   static const addingicon = "${iconsDir}addingbutton.png";
   static const puzzleImage = "${iconsDir}puzzle_image.png";
   static const calendericon = "${iconsDir}calender.png";
+  static const enableFaceId = "${imagesDir}enable_face_id.png";
+  static const crossIconBlack = "${iconsDir}cross_icon_black.png";
+  static const australiaRoundImage = "${imagesDir}australia_round_image.png";
 }
