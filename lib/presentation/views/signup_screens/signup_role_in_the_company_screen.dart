@@ -24,8 +24,8 @@ class SignUpRoleInTheCompanyScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return BackgroundImageWidget(
       child: Scaffold(
-         backgroundColor: AppColors.transparent,
-        extendBody: true,
+        backgroundColor: AppColors.transparent,
+        // extendBody: true,
         body: Padding(
           padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
           child: Column(
@@ -100,7 +100,8 @@ class SignUpRoleInTheCompanyScreen extends ConsumerWidget {
                           fontWeight: FontWeight.w500),
                     ),
                     onPressed: () {
-                      Navigation.pushNamed(SignUpCreatePassCodeScreen.routeName);
+                      Navigation.pushNamed(
+                          SignUpCreatePassCodeScreen.routeName);
                     },
                   ),
                 ),

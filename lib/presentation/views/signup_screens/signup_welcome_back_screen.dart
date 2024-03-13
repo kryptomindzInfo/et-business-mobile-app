@@ -20,10 +20,9 @@ class SignUpWelcomeBackScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return BackgroundImageWidget(
-
       child: Scaffold(
         backgroundColor: AppColors.transparent,
-        extendBody: true,
+        // extendBody: true,
         body: Padding(
           padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
           child: Column(

@@ -142,7 +142,12 @@
    "share_statement":"Share statement",
    "done":"Done",
    "et_bank_business":"ET Bank Business",
-   "export":"Export"
+   "export":"Export",
+   "exchange":"Exchange",
+   "add_money":"Add Money",
+   "details":"Details",
+   "add_new_accounts":"Add new account",
+   "all_accounts":"All Accounts"
    
    
    

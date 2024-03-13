@@ -1,4 +1,4 @@
-import 'package:etbank_business_app/presentation/views/profile_section/profile_screen_bottom_sheets/profile_Chips_Bottom_Sheet.dart';
+import 'package:etbank_business_app/presentation/views/profile_section/profile_screen_bottom_sheets/upgrade_bottom_sheet.dart';
 import 'package:etbank_business_app/providers/profile_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';

@@ -27,9 +27,8 @@ class SignUpMobileNoScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return BackgroundImageWidget(
       child: Scaffold(
-        
-        extendBody: true,
-              resizeToAvoidBottomInset: false,
+        // extendBody: true,
+        // resizeToAvoidBottomInset: false,
         backgroundColor: Colors.transparent,
         body: Padding(
           padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
@@ -65,7 +64,7 @@ class SignUpMobileNoScreen extends ConsumerWidget {
                             child: DropdownButton<String>(
                               menuMaxHeight: 300,
                               isExpanded: true,
-        
+
                               hint: Text(
                                 getTranslated('country', context),
                                 style: AppTextstyle.bodyTextStyle(
@@ -82,7 +81,7 @@ class SignUpMobileNoScreen extends ConsumerWidget {
                               //         .selectedCountry.value.isNotEmpty
                               //     ? countryController.selectedCountry.value
                               //     : null,
-        
+
                               style: const TextStyle(color: AppColors.white),
                               underline: const SizedBox(),
                               borderRadius: BorderRadius.circular(4),
@@ -163,7 +162,7 @@ class SignUpMobileNoScreen extends ConsumerWidget {
                               arguments: PinCodeScreenArgs(
                                   value: '+92343242342',
                                   type: PinCodeDestinationType.phone));
-      
+
                           // Navigation.pushNamed(SignUpMobileCodeScreen.routeName);
                         }
                       },

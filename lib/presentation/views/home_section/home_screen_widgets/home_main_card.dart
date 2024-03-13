@@ -1,4 +1,6 @@
 import 'package:etbank_business_app/extensions/sized_box.dart';
+import 'package:etbank_business_app/presentation/views/common_widgets/common_bottom_sheet.dart';
+import 'package:etbank_business_app/presentation/views/home_section/home_screen_bottom_sheets/more_option_bottom_sheet.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -65,9 +67,19 @@ class HomeMainCard extends ConsumerWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  MainCardOption(AppAssets.sendicon, "Send"),
-                  MainCardOption(AppAssets.requesticon, "Request"),
-                  MainCardOption(AppAssets.moreicon, "More")
+                  MainCardOption(image: AppAssets.sendicon, title: "Send"),
+                  MainCardOption(
+                      image: AppAssets.requesticon, title: "Request"),
+                  MainCardOption(
+                    image: AppAssets.moreicon,
+                    title: "More",
+                    onpress: () => showCommonModalSheet(
+                        450,
+                        Padding(
+                          padding: const EdgeInsets.only(left: 20, top: 20),
+                          child: MoreOptionsBottomSheetWidget(),
+                        )),
+                  )
                 ],
               ),
             )

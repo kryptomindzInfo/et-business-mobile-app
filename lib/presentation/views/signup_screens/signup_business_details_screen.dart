@@ -25,7 +25,7 @@ class SignUpBusinessDetailsScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return BackgroundImageWidget(
       child: Scaffold(
-        extendBody: false,
+        // extendBody: false,
         backgroundColor: AppColors.transparent,
         body: SingleChildScrollView(
           child: Padding(
