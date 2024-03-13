@@ -1,8 +1,12 @@
 import 'package:etbank_business_app/constants/app_assets.dart';
+import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:flutter/material.dart';
 
 import '../../navigation/navigation.dart';
 import '../../navigation/navigator_key.dart';
+import '../../presentation/views/common_widgets/see_all_widget.dart';
+import '../../presentation/views/home_section/home_screen_widgets/home_main_card.dart';
+import '../../presentation/views/home_section/home_screen_widgets/home_main_info_card.dart';
 import '../../presentation/views/profile_section/profile_screen_bottom_sheets/upgrade_bottom_sheet.dart';
 import '../../presentation/views/profile_section/refer_business/refer_business_screen.dart';
 
@@ -115,9 +119,15 @@ Map _ratesScreenOptions = {
 Map get ratesScreenOptions => _ratesScreenOptions;
 
 List<Map> _homeScreenOptions = [
-  {"title": "Dashboard", "widget": ""},
-  {"title": "Cards", "widget": ""},
-  {"title": "Team", "widget": ""}
+  {
+    "title": "Dashboard",
+  },
+  {
+    "title": "Cards",
+  },
+  {
+    "title": "Team",
+  }
 ];
 
 List<Map> get homeOptions => _homeScreenOptions;
