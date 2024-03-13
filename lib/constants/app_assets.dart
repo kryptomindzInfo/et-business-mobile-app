@@ -21,6 +21,8 @@ class AppAssets {
   static const dark = "${imagesDir}dark.png";
   static const chartimage = "${imagesDir}chartimage.png";
   static const roundukflag = "${imagesDir}rounduk.png";
+  static const teamsCard = "${imagesDir}teamscard.png";
+  static const rolesicon = "${imagesDir}roles.png";
 
   //app_icons
   static const earthicon = "${iconsDir}earth.png";
@@ -81,4 +83,9 @@ class AppAssets {
   static const allaccountsicon = "${iconsDir}allaccoutsicon.png";
   static const euroflag = "${iconsDir}euroflag.png";
   static const usdflag = "${iconsDir}usdflag.png";
+  static const cardsicon = "${iconsDir}cardsicon.png";
+  static const silvercard = "${iconsDir}silvercard.png";
+  static const greencard = "${iconsDir}greencard.png";
+  static const switchicon = "${iconsDir}switchicon.png";
+  static const inviteicon = "${iconsDir}inviteicon.png";
 }

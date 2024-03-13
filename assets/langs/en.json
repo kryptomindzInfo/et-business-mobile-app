@@ -147,7 +147,12 @@
    "add_money":"Add Money",
    "details":"Details",
    "add_new_accounts":"Add new account",
-   "all_accounts":"All Accounts"
+   "all_accounts":"All Accounts",
+   "add_card":"Add card",
+   "my_cards":"My Cards",
+   "invite":"Invite",
+   "manage_role":"Manage roles",
+   "all_people":"All people"
    
    
    

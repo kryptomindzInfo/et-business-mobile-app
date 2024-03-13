@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 import '../../navigation/navigation.dart';
 import '../../navigation/navigator_key.dart';
 import '../../presentation/views/common_widgets/see_all_widget.dart';
-import '../../presentation/views/home_section/home_screen_widgets/home_main_card.dart';
-import '../../presentation/views/home_section/home_screen_widgets/home_main_info_card.dart';
+import '../../presentation/views/home_section/home_screen_widgets/dashboard_section/dashboard_main_card.dart';
+import '../../presentation/views/home_section/home_screen_widgets/dashboard_section/dashboard_main_info_card.dart';
 import '../../presentation/views/profile_section/profile_screen_bottom_sheets/upgrade_bottom_sheet.dart';
 import '../../presentation/views/profile_section/refer_business/refer_business_screen.dart';
 
@@ -127,6 +127,9 @@ List<Map> _homeScreenOptions = [
   },
   {
     "title": "Team",
+  },
+  {
+    "title": "Merchant",
   }
 ];
 

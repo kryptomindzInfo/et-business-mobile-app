@@ -1,3 +1,4 @@
+import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -16,7 +17,7 @@ class InfoTextWidget extends ConsumerWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Container(
-            width: 190,
+            // width: 190,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -24,7 +25,9 @@ class InfoTextWidget extends ConsumerWidget {
                   AppAssets.transactioninfoicon,
                   height: 34,
                 ),
+                15.spaceX,
                 Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       "Exchanged to USD",
