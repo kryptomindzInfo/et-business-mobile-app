@@ -13,7 +13,9 @@ class AppAssets {
   static const onboardingImage5 = "${imagesDir}onboarding_image5.png";
   static const onboardingImage6 = "${imagesDir}onboarding_image6.png";
   //home screen Assets
-  static const backgroundImage = "${imagesDir}etbackgrd.png";
+  static const backgroundImage1 = "${imagesDir}etbackgrd.png";
+  static const backgroundImage = "${imagesDir}etbackground2.png";
+
   static const ukflag = "${imagesDir}uk.png";
   static const light = "${imagesDir}light.png";
   static const dark = "${imagesDir}dark.png";
