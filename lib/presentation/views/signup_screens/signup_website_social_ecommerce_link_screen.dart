@@ -10,7 +10,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../constants/app_assets.dart';
 import '../../../constants/app_colors.dart';
 import 'signup_how_many_payments_each_month_screen.dart';
-import 'signup_who_are_your_customers_screen.dart';
+import 'signup_widgets/button_bottom_navigation_widget.dart';
 import 'signup_widgets/primary_button.dart';
 import 'signup_widgets/text_field_widget.dart';
 
@@ -24,7 +24,6 @@ class SignUpWebsiteSocialEcommerceLinkScreen extends ConsumerWidget {
     return BackgroundImageWidget(
       child: Scaffold(
         extendBody: true,
-        // resizeToAvoidBottomInset: false,
         backgroundColor: Colors.transparent,
         body: Padding(
           padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
@@ -58,72 +57,29 @@ class SignUpWebsiteSocialEcommerceLinkScreen extends ConsumerWidget {
             ],
           ),
         ),
-        bottomNavigationBar: Builder(builder: (context) {
-          final keyboardHeight = MediaQuery.of(context).viewInsets.bottom;
-          return Padding(
-            padding: EdgeInsets.only(bottom: keyboardHeight),
-            child: BottomAppBar(
-              elevation: 0,
-              color: AppColors.transparent,
-              child: Center(
-                child: SizedBox(
-                  height: 48.h,
-                  width: 327.w,
-                  child: PrimaryButton(
-                    color: AppColors.baseGreenColor,
-                    // buttonColor(
-                    //     ref.watch(signUpStateProvider).isEmailEmpty),
-                    text: Text(
-                      getTranslated('continue', context),
-                      style: AppTextstyle.bodyTextStyle(
-                          color: AppColors.black,
-                          // buttonTextColor(
-                          //     ref.watch(signUpStateProvider).isEmailEmpty),
-                          fontSize: 16,
-                          fontWeight: FontWeight.w500),
-                    ),
-                    onPressed: () {
-                      // if (ref.read(signUpStateProvider).isEmailEmpty) {
-                      //   // Navigation.pushNamed(SignUpCheckEmail.routeName);
-                      // } else {
-                      Navigation.pushNamed(
-                          SignUpHowManyPaymentsEachMonthScreen.routeName);
-                      // }
-                    },
-                  ),
+        bottomNavigationBar: ButtonBottomNavigationWidget(
+          children: [
+            SizedBox(
+              height: 48.h,
+              width: 327.w,
+              child: PrimaryButton(
+                color: AppColors.baseGreenColor,
+                text: Text(
+                  getTranslated('continue', context),
+                  style: AppTextstyle.bodyTextStyle(
+                      color: AppColors.black,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500),
                 ),
+                onPressed: () {
+                  Navigation.pushNamed(
+                      SignUpHowManyPaymentsEachMonthScreen.routeName);
+                },
               ),
             ),
-          );
-        }),
+          ],
+        ),
       ),
     );
-  }
-}
-
-class ButtonBottomNavigation extends ConsumerWidget {
-  final List<Widget> children;
-  const ButtonBottomNavigation({super.key, this.children = const []});
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    return Builder(builder: (context) {
-      final keyboardHeight = MediaQuery.of(context).viewInsets.bottom;
-      return Padding(
-          padding: EdgeInsets.only(bottom: keyboardHeight),
-          child: BottomAppBar(
-            elevation: 0,
-            color: Colors.transparent,
-            child: Center(
-              child: SizedBox(
-                height: 48.h,
-                width: 327.w,
-                child: Column(
-                  children: children,
-                ),
-              ),
-            ),
-          ));
-    });
   }
 }

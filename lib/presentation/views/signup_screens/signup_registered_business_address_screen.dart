@@ -13,9 +13,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../constants/app_assets.dart';
 import '../../../constants/app_colors.dart';
-import '../../../globals/countries_list.dart';
 import 'signup_widgets/business_details_white_container_widget.dart';
 import 'signup_widgets/business_not_listed_widget.dart';
+import 'signup_widgets/button_bottom_navigation_widget.dart';
 import 'signup_widgets/countries_list_widget.dart';
 import 'signup_widgets/list_of_addresses_widget.dart';
 import 'signup_widgets/primary_button.dart';
@@ -151,40 +151,27 @@ class SignUpRegisteredBusinessAddressScreen extends ConsumerWidget {
             ),
           ),
         ),
-        bottomNavigationBar: Builder(builder: (context) {
-          final keyboardHeight = MediaQuery.of(context).viewInsets.bottom;
-          return Padding(
-              padding: EdgeInsets.only(bottom: keyboardHeight),
-              child: BottomAppBar(
-                elevation: 0,
-                height: 100.h,
-                color: Colors.transparent,
-                child: Center(
-                  child: Column(
-                    children: [
-                      SizedBox(
-                        height: 48.h,
-                        width: 327.w,
-                        child: PrimaryButton(
-                          color: AppColors.primaryColor,
-                          text: Text(
-                            getTranslated('continue', context),
-                            style: AppTextstyle.bodyTextStyle(
-                                color: AppColors.black,
-                                fontSize: 16,
-                                fontWeight: FontWeight.w500),
-                          ),
-                          onPressed: () {
-                            Navigation.pushNamed(
-                                SignUpRoleInTheCompanyScreen.routeName);
-                          },
-                        ),
-                      ),
-                    ],
-                  ),
+        bottomNavigationBar: ButtonBottomNavigationWidget(
+          children: [
+            SizedBox(
+              height: 48.h,
+              width: 327.w,
+              child: PrimaryButton(
+                color: AppColors.primaryColor,
+                text: Text(
+                  getTranslated('continue', context),
+                  style: AppTextstyle.bodyTextStyle(
+                      color: AppColors.black,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500),
                 ),
-              ));
-        }),
+                onPressed: () {
+                  Navigation.pushNamed(SignUpRoleInTheCompanyScreen.routeName);
+                },
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

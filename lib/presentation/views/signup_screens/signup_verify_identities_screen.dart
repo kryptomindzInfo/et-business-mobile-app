@@ -2,7 +2,6 @@ import 'package:etbank_business_app/constants/app_textstyle.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/app_common_widgets.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/header_icon_with_text.dart';
-import 'package:etbank_business_app/presentation/views/signup_screens/signup_registered_business_address_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_widgets/director_button_widget.dart';
 import 'package:etbank_business_app/resources/localization/language_constrants.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +11,7 @@ import '../../../constants/app_assets.dart';
 import '../../../constants/app_colors.dart';
 import 'signup_verify_users_identity_screen.dart';
 import 'signup_widgets/business_details_white_container_widget.dart';
+import 'signup_widgets/button_bottom_navigation_widget.dart';
 import 'signup_widgets/primary_button.dart';
 
 class SignUpVerifyIdentitiesScreen extends ConsumerWidget {
@@ -83,40 +83,28 @@ class SignUpVerifyIdentitiesScreen extends ConsumerWidget {
             ),
           ),
         ),
-        bottomNavigationBar: Builder(builder: (context) {
-          final keyboardHeight = MediaQuery.of(context).viewInsets.bottom;
-          return Padding(
-              padding: EdgeInsets.only(bottom: keyboardHeight),
-              child: BottomAppBar(
-                elevation: 0,
-                height: 100.h,
-                color: Colors.transparent,
-                child: Center(
-                  child: Column(
-                    children: [
-                      SizedBox(
-                        height: 48.h,
-                        width: 327.w,
-                        child: PrimaryButton(
-                          color: AppColors.primaryColor,
-                          text: Text(
-                            getTranslated('confirm', context),
-                            style: AppTextstyle.bodyTextStyle(
-                                color: AppColors.black,
-                                fontSize: 16,
-                                fontWeight: FontWeight.w500),
-                          ),
-                          onPressed: () {
-                            Navigator.pushNamed(context,
-                                SignUpVerifyUserIdentityScreen.routeName);
-                          },
-                        ),
-                      ),
-                    ],
-                  ),
+        bottomNavigationBar: ButtonBottomNavigationWidget(
+          children: [
+            SizedBox(
+              height: 48.h,
+              width: 327.w,
+              child: PrimaryButton(
+                color: AppColors.primaryColor,
+                text: Text(
+                  getTranslated('confirm', context),
+                  style: AppTextstyle.bodyTextStyle(
+                      color: AppColors.black,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500),
                 ),
-              ));
-        }),
+                onPressed: () {
+                  Navigator.pushNamed(
+                      context, SignUpVerifyUserIdentityScreen.routeName);
+                },
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

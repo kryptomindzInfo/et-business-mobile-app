@@ -74,6 +74,13 @@ class SignUpState extends ChangeNotifier {
     _passCode = value;
   }
 
+  // Business Activity Controller
+
+  final TextEditingController _businessActivityController =
+      TextEditingController();
+  TextEditingController get businessActivityController =>
+      _businessActivityController;
+
   // Country of Incorporation
 
   String? _countryOfIncorporation = '';

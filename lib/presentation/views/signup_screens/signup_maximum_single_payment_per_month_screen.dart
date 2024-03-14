@@ -10,6 +10,7 @@ import '../../../constants/app_assets.dart';
 import '../../../constants/app_colors.dart';
 import 'signup_where_you_conduct_business_screen.dart';
 import 'signup_widgets/business_details_white_container_widget.dart';
+import 'signup_widgets/button_bottom_navigation_widget.dart';
 import 'signup_widgets/primary_button.dart';
 
 class SignUpMaximumSinglePaymentPerMonthScreen extends ConsumerWidget {
@@ -53,40 +54,62 @@ class SignUpMaximumSinglePaymentPerMonthScreen extends ConsumerWidget {
             ),
           ),
         ),
-        bottomNavigationBar: Builder(builder: (context) {
-          final keyboardHeight = MediaQuery.of(context).viewInsets.bottom;
-          return Padding(
-              padding: EdgeInsets.only(bottom: keyboardHeight),
-              child: BottomAppBar(
-                elevation: 0,
-                height: 100.h,
-                color: Colors.transparent,
-                child: Center(
-                  child: Column(
-                    children: [
-                      SizedBox(
-                        height: 48.h,
-                        width: 327.w,
-                        child: PrimaryButton(
-                          color: AppColors.primaryColor,
-                          text: Text(
-                            getTranslated('continue', context),
-                            style: AppTextstyle.bodyTextStyle(
-                                color: AppColors.black,
-                                fontSize: 16,
-                                fontWeight: FontWeight.w500),
-                          ),
-                          onPressed: () {
-                            Navigator.pushNamed(context,
-                                SignUpWhereYouConductBusinessScreen.routeName);
-                          },
-                        ),
-                      ),
-                    ],
-                  ),
+        bottomNavigationBar: ButtonBottomNavigationWidget(
+          children: [
+            SizedBox(
+              height: 48.h,
+              width: 327.w,
+              child: PrimaryButton(
+                color: AppColors.primaryColor,
+                text: Text(
+                  getTranslated('continue', context),
+                  style: AppTextstyle.bodyTextStyle(
+                      color: AppColors.black,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500),
                 ),
-              ));
-        }),
+                onPressed: () {
+                  Navigator.pushNamed(
+                      context, SignUpWhereYouConductBusinessScreen.routeName);
+                },
+              ),
+            ),
+          ],
+        ),
+        //  Builder(builder: (context) {
+        //   final keyboardHeight = MediaQuery.of(context).viewInsets.bottom;
+        //   return Padding(
+        //       padding: EdgeInsets.only(bottom: keyboardHeight),
+        //       child: BottomAppBar(
+        //         elevation: 0,
+        //         height: 100.h,
+        //         color: Colors.transparent,
+        //         child: Center(
+        //           child: Column(
+        //             children: [
+        //               SizedBox(
+        //                 height: 48.h,
+        //                 width: 327.w,
+        //                 child: PrimaryButton(
+        //                   color: AppColors.primaryColor,
+        //                   text: Text(
+        //                     getTranslated('continue', context),
+        //                     style: AppTextstyle.bodyTextStyle(
+        //                         color: AppColors.black,
+        //                         fontSize: 16,
+        //                         fontWeight: FontWeight.w500),
+        //                   ),
+        //                   onPressed: () {
+        //                     Navigator.pushNamed(context,
+        //                         SignUpWhereYouConductBusinessScreen.routeName);
+        //                   },
+        //                 ),
+        //               ),
+        //             ],
+        //           ),
+        //         ),
+        //       ));
+        // }),
       ),
     );
   }

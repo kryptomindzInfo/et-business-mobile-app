@@ -14,6 +14,7 @@ import '../../../constants/app_colors.dart';
 import '../../../globals/button_color.dart';
 import '../../../globals/enums.dart';
 import '../../../navigation/params/pincode_screen_args.dart';
+import 'signup_widgets/button_bottom_navigation_widget.dart';
 import 'signup_widgets/country_drop_down_button_widget.dart';
 import 'signup_widgets/primary_button.dart';
 import 'signup_widgets/text_field_widget.dart';
@@ -73,44 +74,75 @@ class SignUpMobileNoScreen extends ConsumerWidget {
             ],
           ),
         ),
-        bottomNavigationBar: Builder(builder: (context) {
-          final keyboardHeight = MediaQuery.of(context).viewInsets.bottom;
-          return Padding(
-              padding: EdgeInsets.only(bottom: keyboardHeight),
-              child: BottomAppBar(
-                elevation: 0,
-                color: Colors.transparent,
-                child: Center(
-                  child: SizedBox(
-                    height: 48.h,
-                    width: 327.w,
-                    child: PrimaryButton(
-                      color: buttonColor(
+        bottomNavigationBar: ButtonBottomNavigationWidget(
+          children: [
+            SizedBox(
+              height: 48.h,
+              width: 327.w,
+              child: PrimaryButton(
+                color:
+                    buttonColor(ref.watch(signUpStateProvider).isMobileNoEmpty),
+                text: Text(
+                  getTranslated('continue', context),
+                  style: AppTextstyle.bodyTextStyle(
+                      color: buttonTextColor(
                           ref.watch(signUpStateProvider).isMobileNoEmpty),
-                      text: Text(
-                        getTranslated('continue', context),
-                        style: AppTextstyle.bodyTextStyle(
-                            color: buttonTextColor(
-                                ref.watch(signUpStateProvider).isMobileNoEmpty),
-                            fontSize: 16,
-                            fontWeight: FontWeight.w500),
-                      ),
-                      onPressed: () {
-                        if (ref.read(signUpStateProvider).isMobileNoEmpty) {
-                        } else {
-                          Navigation.pushNamed(SignUpOtpCodeScreen.routeName,
-                              arguments: PinCodeScreenArgs(
-                                  value: '+92343242342',
-                                  type: PinCodeDestinationType.phone));
-
-                          // Navigation.pushNamed(SignUpMobileCodeScreen.routeName);
-                        }
-                      },
-                    ),
-                  ),
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500),
                 ),
-              ));
-        }),
+                onPressed: () {
+                  if (ref.read(signUpStateProvider).isMobileNoEmpty) {
+                  } else {
+                    Navigation.pushNamed(SignUpOtpCodeScreen.routeName,
+                        arguments: PinCodeScreenArgs(
+                            value: '+92343242342',
+                            type: PinCodeDestinationType.phone));
+
+                    // Navigation.pushNamed(SignUpMobileCodeScreen.routeName);
+                  }
+                },
+              ),
+            ),
+          ],
+        ),
+        //  Builder(builder: (context) {
+        //   final keyboardHeight = MediaQuery.of(context).viewInsets.bottom;
+        //   return Padding(
+        //       padding: EdgeInsets.only(bottom: keyboardHeight),
+        //       child: BottomAppBar(
+        //         elevation: 0,
+        //         color: Colors.transparent,
+        //         child: Center(
+        //           child: SizedBox(
+        //             height: 48.h,
+        //             width: 327.w,
+        //             child: PrimaryButton(
+        //               color: buttonColor(
+        //                   ref.watch(signUpStateProvider).isMobileNoEmpty),
+        //               text: Text(
+        //                 getTranslated('continue', context),
+        //                 style: AppTextstyle.bodyTextStyle(
+        //                     color: buttonTextColor(
+        //                         ref.watch(signUpStateProvider).isMobileNoEmpty),
+        //                     fontSize: 16,
+        //                     fontWeight: FontWeight.w500),
+        //               ),
+        //               onPressed: () {
+        //                 if (ref.read(signUpStateProvider).isMobileNoEmpty) {
+        //                 } else {
+        //                   Navigation.pushNamed(SignUpOtpCodeScreen.routeName,
+        //                       arguments: PinCodeScreenArgs(
+        //                           value: '+92343242342',
+        //                           type: PinCodeDestinationType.phone));
+
+        //                   // Navigation.pushNamed(SignUpMobileCodeScreen.routeName);
+        //                 }
+        //               },
+        //             ),
+        //           ),
+        //         ),
+        //       ));
+        // }),
       ),
     );
   }

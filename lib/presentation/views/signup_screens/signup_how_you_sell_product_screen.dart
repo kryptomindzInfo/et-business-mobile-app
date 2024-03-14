@@ -12,6 +12,7 @@ import '../../../constants/app_assets.dart';
 import '../../../constants/app_colors.dart';
 import '../../../constants/static_data/signup_screen_static_data.dart';
 import 'signup_widgets/black_container_widget.dart';
+import 'signup_widgets/button_bottom_navigation_widget.dart';
 import 'signup_widgets/checkbox_widget.dart';
 import 'signup_widgets/primary_button.dart';
 import 'signup_website_social_ecommerce_link_screen.dart';
@@ -66,72 +67,28 @@ class SignUpHowYouSellProductScreen extends ConsumerWidget {
             ],
           ),
         ),
-        bottomNavigationBar: Builder(builder: (context) {
-          final keyboardHeight = MediaQuery.of(context).viewInsets.bottom;
-          return Padding(
-            padding: EdgeInsets.only(bottom: keyboardHeight),
-            child: BottomAppBar(
-              elevation: 0,
-              color: AppColors.transparent,
-              child: Center(
-                child: SizedBox(
-                  height: 48.h,
-                  width: 327.w,
-                  child: PrimaryButton(
-                      color: AppColors.baseGreenColor,
-                      // buttonColor(
-                      //     ref.watch(signUpStateProvider).isEmailEmpty),
-                      text: Text(
-                        getTranslated('continue', context),
-                        style: AppTextstyle.bodyTextStyle(
-                            color: AppColors.black,
-                            // buttonTextColor(
-                            //     ref.watch(signUpStateProvider).isEmailEmpty),
-                            fontSize: 16,
-                            fontWeight: FontWeight.w500),
-                      ),
-                      onPressed: () {
-                        // if (ref.read(signUpStateProvider).isEmailEmpty) {
-                        //   // Navigation.pushNamed(SignUpCheckEmail.routeName);
-                        // } else {
-                        Navigation.pushNamed(
-                            SignUpWebsiteSocialEcommerceLinkScreen.routeName);
-                      }
-                      // },
-                      ),
-                ),
-              ),
+        bottomNavigationBar: ButtonBottomNavigationWidget(
+          children: [
+            SizedBox(
+              height: 48.h,
+              width: 327.w,
+              child: PrimaryButton(
+                  color: AppColors.baseGreenColor,
+                  text: Text(
+                    getTranslated('continue', context),
+                    style: AppTextstyle.bodyTextStyle(
+                        color: AppColors.black,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500),
+                  ),
+                  onPressed: () {
+                    Navigation.pushNamed(
+                        SignUpWebsiteSocialEcommerceLinkScreen.routeName);
+                  }),
             ),
-          );
-        }),
+          ],
+        ),
       ),
     );
-  }
-}
-
-class ButtonBottomNavigation extends ConsumerWidget {
-  final List<Widget> children;
-  const ButtonBottomNavigation({super.key, this.children = const []});
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    return Builder(builder: (context) {
-      final keyboardHeight = MediaQuery.of(context).viewInsets.bottom;
-      return Padding(
-          padding: EdgeInsets.only(bottom: keyboardHeight),
-          child: BottomAppBar(
-            elevation: 0,
-            color: Colors.transparent,
-            child: Center(
-              child: SizedBox(
-                height: 48.h,
-                width: 327.w,
-                child: Column(
-                  children: children,
-                ),
-              ),
-            ),
-          ));
-    });
   }
 }
