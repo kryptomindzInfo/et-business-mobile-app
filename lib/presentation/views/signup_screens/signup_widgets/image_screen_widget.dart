@@ -1,5 +1,6 @@
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/app_common_widgets.dart';
+import 'package:etbank_business_app/presentation/views/signup_screens/signup_widgets/button_bottom_navigation_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../constants/app_assets.dart';
@@ -42,21 +43,14 @@ class ImageScreenWidget extends StatelessWidget {
             ],
           ),
         ),
-        bottomNavigationBar: Builder(builder: (context) {
-          final keyboardHeight = MediaQuery.of(context).viewInsets.bottom;
-          return Padding(
-              padding: EdgeInsets.only(bottom: keyboardHeight),
-              child: BottomAppBar(
-                elevation: 0,
-                height: 150.h,
-                color: Colors.transparent,
-                child: Center(
-                  child: Column(
-                    children: buttons,
-                  ),
-                ),
-              ));
-        }),
+        bottomNavigationBar: ButtonBottomNavigationWidget(
+          height: 150.h,
+          children: [
+            Column(
+              children: buttons,
+            ),
+          ],
+        ),
       ),
     );
   }
