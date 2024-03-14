@@ -1,9 +1,8 @@
-import 'package:etbank_business_app/constants/app_assets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
 import '../constants/static_data/signup_screen_static_data.dart';
 import '../core/app_print.dart';
+import '../globals/countries_list.dart';
 
 final signUpStateProvider = ChangeNotifierProvider((ref) => SignUpState());
 
@@ -80,9 +79,9 @@ class SignUpState extends ChangeNotifier {
   String? _countryOfIncorporation = '';
 
   String? get countryOfIncorporation => _countryOfIncorporation;
-
-  void setcountryOfIncorporation(String? country) {
-    _countryOfIncorporation = country;
+// allCountriess=>allCountries;
+  void setcountryOfIncorporation(int index) {
+    _countryOfIncorporation = allCountries[index].name;
     notifyListeners();
   }
 
@@ -144,5 +143,50 @@ class SignUpState extends ChangeNotifier {
     } else {
       howYouSellProductsOptions.add(value);
     }
+  }
+
+  // User Personal Deatails Leagal First Name Controller
+
+  final TextEditingController _legalFirstNameController =
+      TextEditingController();
+  TextEditingController get legalFirstNameController =>
+      _legalFirstNameController;
+
+  // User Personal Deatails Leagal Last Name Controller
+
+  final TextEditingController _legalLastNameController =
+      TextEditingController();
+  TextEditingController get legalLastNameController => _legalLastNameController;
+
+  // User Personal Deatails DOB Controller
+
+  final TextEditingController _userPersonDetailsDOBController =
+      TextEditingController();
+  TextEditingController get userPersonDetailsDOBController =>
+      _userPersonDetailsDOBController;
+
+  // User Personal Deatails Nationality Controller
+
+  final TextEditingController _userPersonDetailsNationalityController =
+      TextEditingController();
+  TextEditingController get userPersonDetailsNationalityController =>
+      _userPersonDetailsNationalityController;
+
+  // User Personal Deatails Nationality Controller
+
+  final TextEditingController _userPersonDetailsEmailController =
+      TextEditingController();
+  TextEditingController get userPersonDetailsEmailController =>
+      _userPersonDetailsEmailController;
+
+  // Country of Residence
+
+  String? _countryOfResidence = '';
+
+  String? get countryOfResidence => _countryOfResidence;
+
+  void setcountryOfResidence(int index) {
+    _countryOfResidence = allCountries[index].name;
+    notifyListeners();
   }
 }

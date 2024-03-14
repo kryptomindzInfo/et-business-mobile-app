@@ -13,7 +13,9 @@ class AppAssets {
   static const onboardingImage5 = "${imagesDir}onboarding_image5.png";
   static const onboardingImage6 = "${imagesDir}onboarding_image6.png";
   //home screen Assets
-  static const backgroundImage = "${imagesDir}etbackgrd.png";
+  static const backgroundImage1 = "${imagesDir}etbackgrd.png";
+  static const backgroundImage = "${imagesDir}etbackground2.png";
+
   static const ukflag = "${imagesDir}uk.png";
   static const light = "${imagesDir}light.png";
   static const dark = "${imagesDir}dark.png";
@@ -74,4 +76,12 @@ class AppAssets {
   static const enableFaceId = "${imagesDir}enable_face_id.png";
   static const crossIconBlack = "${iconsDir}cross_icon_black.png";
   static const australiaRoundImage = "${imagesDir}australia_round_image.png";
+  static const addmoneyicon = "${iconsDir}addmoney.png";
+  static const statementsicon = "${iconsDir}statements.png";
+  static const exchangeicon = "${iconsDir}exchange.png";
+  static const detailsicon = "${iconsDir}details.png";
+  static const plusicon = "${iconsDir}plusicon.png";
+  static const allaccountsicon = "${iconsDir}allaccoutsicon.png";
+  static const euroflag = "${iconsDir}euroflag.png";
+  static const usdflag = "${iconsDir}usdflag.png";
 }

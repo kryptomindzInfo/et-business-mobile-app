@@ -27,6 +27,7 @@ class SignUpRoleInTheCompanyScreen extends ConsumerWidget {
       child: Scaffold(
         backgroundColor: AppColors.transparent,
         extendBody: true,
+        // extendBody: true,
         body: Padding(
           padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
           child: Column(

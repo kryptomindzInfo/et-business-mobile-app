@@ -25,7 +25,7 @@ class SignUpBusinessDetailsScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return BackgroundImageWidget(
       child: Scaffold(
-        extendBody: false,
+        // extendBody: false,
         backgroundColor: AppColors.transparent,
         body: SingleChildScrollView(
           child: Padding(
@@ -50,18 +50,22 @@ class SignUpBusinessDetailsScreen extends ConsumerWidget {
                           return BottomSheetWidet(
                             onChanged: (value) {},
                             onCancelTap: () {},
-                            bottomNavigationBody: const CountriesListWidget(),
+                            bottomNavigationBody: CountriesListWidget(
+                              onTap: (x) {},
+                            ),
                           );
                         });
                   },
-                  labelText:getTranslated('country', context) ,
-                  title: 
-                  ref.watch(signUpStateProvider).countryOfIncorporation ==
+                  labelText: getTranslated('country', context),
+                  title: ref
+                              .watch(signUpStateProvider)
+                              .countryOfIncorporation ==
                           ''
                       ? getTranslated('county_of_incorporation', context)
                       : ref.watch(signUpStateProvider).countryOfIncorporation!,
                   titleTextColor:
-                      ref.watch(signUpStateProvider).countryOfIncorporation == ''
+                      ref.watch(signUpStateProvider).countryOfIncorporation ==
+                              ''
                           ? Colors.grey
                           : Colors.black,
                   icon: Image.asset(
@@ -94,8 +98,8 @@ class SignUpBusinessDetailsScreen extends ConsumerWidget {
                 ),
                 16.spaceY,
                 BusinessDetailsWhiteContainerWidet(
-                  labelText:
-                      getTranslated('company_house_registration_number', context),
+                  labelText: getTranslated(
+                      'company_house_registration_number', context),
                   title: 'A1213454',
                   icon: Image.asset(
                     AppAssets.iconSearchBlack,
@@ -158,8 +162,10 @@ class SignUpBusinessDetailsScreen extends ConsumerWidget {
                                 fontWeight: FontWeight.w500),
                           ),
                           onPressed: () {
-                            Navigator.pushNamed(context,
-                                SignUpRegisteredBusinessAddressScreen.routeName);
+                            Navigator.pushNamed(
+                                context,
+                                SignUpRegisteredBusinessAddressScreen
+                                    .routeName);
                           },
                         ),
                       ),

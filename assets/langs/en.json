@@ -160,6 +160,31 @@
    "james_fork":"James Fork",
    "edit":"Edit",
    "confirm":"Confirm",
+   "verify_identities_title":"Verify identities",
+   "verify_identities_subtitle":"We need a little more information about the following people",
+   "todo":"To do",
+   "verify":"Verify",
+   "verify_james_forks_identity": "Verify James Fork’s identity",
+   "you_will_need_to_provide":"You will need to provide",
+   "personal_details":"Personal Details",
+   "personal_address":"Personal address",
+   "identity_documents":"Identity documents",
+   "james_forks_personal_details_title": "James Fork’s personal details",
+   "james_forks_personal_details_subtitle": "As stated on the official ID. We will need this to verify James Fork’s identity.",
+   "legal_first_name":"Legal first name",
+   "legal_last_name":"Legal last name",
+   "james":"James",
+   "fork":"Fork",
+   "date_of_birth":"Date of birth",
+   "nationality":"Nationality",
+   "dummy_email":"jamesfork@gmail.com",
+   "email":"Email",
+   "forks_home_address": "Fork’s home address",
+   "county_of_residence":"County of residence",
+
+
+
+
 
    "help":"Help",
    "marketing_coordinator":"Marketing Coordinator",
@@ -209,7 +234,12 @@
    "share_statement":"Share statement",
    "done":"Done",
    "et_bank_business":"ET Bank Business",
-   "export":"Export"
+   "export":"Export",
+   "exchange":"Exchange",
+   "add_money":"Add Money",
+   "details":"Details",
+   "add_new_accounts":"Add new account",
+   "all_accounts":"All Accounts"
    
    
    

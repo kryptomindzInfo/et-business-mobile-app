@@ -1,4 +1,3 @@
-
 import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/navigation/navigation.dart';
@@ -43,12 +42,6 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
             const HomeScreenSearchTextfield(),
             15.spaceY,
             const HomeScreenOptionsWidget(),
-            20.spaceY,
-            const HomeMainCard(),
-            20.spaceY,
-            const SeeAllCommonWidget("Transactions", true),
-            10.spaceY,
-            const HomeInfoCardWidget()
           ]),
         ),
         bottomNavigationBar: CustomBottomNavigation(

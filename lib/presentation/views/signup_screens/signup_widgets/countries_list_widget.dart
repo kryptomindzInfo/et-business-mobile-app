@@ -8,7 +8,8 @@ import '../../../../constants/app_textstyle.dart';
 import '../../../../globals/countries_list.dart';
 
 class CountriesListWidget extends ConsumerWidget {
-  const CountriesListWidget({super.key});
+  final Function(int) onTap;
+  const CountriesListWidget({super.key, required this.onTap});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -44,9 +45,8 @@ class CountriesListWidget extends ConsumerWidget {
         child: ListView.builder(itemBuilder: (context, index) {
           return GestureDetector(
             onTap: () {
-              ref
-                  .read(signUpStateProvider)
-                  .setcountryOfIncorporation(allCountries[index].name);
+              onTap(index);
+
               Navigator.pop(context);
             },
             child: ListTile(

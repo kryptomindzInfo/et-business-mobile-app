@@ -30,6 +30,7 @@ class SignUpOtpCodeScreen extends ConsumerWidget {
       child: Scaffold(
         extendBody: true,
         backgroundColor: AppColors.transparent,
+        // extendBody: true,
         body: Padding(
           padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
           child: Column(

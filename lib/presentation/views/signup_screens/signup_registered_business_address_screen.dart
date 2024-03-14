@@ -13,6 +13,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../constants/app_assets.dart';
 import '../../../constants/app_colors.dart';
+import '../../../globals/countries_list.dart';
 import 'signup_widgets/business_details_white_container_widget.dart';
 import 'signup_widgets/business_not_listed_widget.dart';
 import 'signup_widgets/countries_list_widget.dart';
@@ -53,7 +54,13 @@ class SignUpRegisteredBusinessAddressScreen extends ConsumerWidget {
                           return BottomSheetWidet(
                             onChanged: (value) {},
                             onCancelTap: () {},
-                            bottomNavigationBody: const CountriesListWidget(),
+                            bottomNavigationBody: CountriesListWidget(
+                              onTap: (index) {
+                                ref
+                                    .read(signUpStateProvider)
+                                    .setcountryOfIncorporation(index);
+                              },
+                            ),
                           );
                         });
                   },
@@ -92,7 +99,7 @@ class SignUpRegisteredBusinessAddressScreen extends ConsumerWidget {
                             builder: (context, ref, child) {
                               final postCode =
                                   ref.watch(signUpStateProvider).postCode;
-              
+
                               return BottomSheetWidet(
                                 hintText: getTranslated('post_code', context),
                                 onChanged: (value) {
