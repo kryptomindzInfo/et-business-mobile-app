@@ -152,7 +152,20 @@
    "my_cards":"My Cards",
    "invite":"Invite",
    "manage_role":"Manage roles",
-   "all_people":"All people"
+   "all_people":"All people",
+   "available_to_spend":"available to spend",
+   "card_low_balance":"The accounts linked to this card have a low balance.",
+   "resolve":"Resolve",
+   "spend_controls":"Spend controls",
+   "see_all":"See All",
+   "funding_account":"Funding accounts",
+   "freeze_card":"Freeze card",
+   "tap_again_unfreeze":"Tap again to unfreeze",
+   "settings":"Settings",
+   "expense_reporting":"Expense Reporting",
+   "attach_receipts":"Attach receipts, categories & review card transactions"
+
+
    
    
    

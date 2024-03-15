@@ -23,6 +23,9 @@ class AppAssets {
   static const roundukflag = "${imagesDir}rounduk.png";
   static const teamsCard = "${imagesDir}teamscard.png";
   static const rolesicon = "${imagesDir}roles.png";
+  static const greencardForslider = "${imagesDir}greencard.png";
+  static const silvercardForslider = "${imagesDir}silvercard.png";
+  static const addtoapple = "${imagesDir}addtoapplewallet.png";
 
   //app_icons
   static const earthicon = "${iconsDir}earth.png";
@@ -88,4 +91,9 @@ class AppAssets {
   static const greencard = "${iconsDir}greencard.png";
   static const switchicon = "${iconsDir}switchicon.png";
   static const inviteicon = "${iconsDir}inviteicon.png";
+  static const greencheck = "${iconsDir}greencheck.png";
+  static const markicon = "${iconsDir}mark.png";
+  static const hourglassicon = "${iconsDir}hourglass.png";
+  static const copylink = "${iconsDir}copylink.png";
+  static const freezicon = "${iconsDir}freezicon.png";
 }

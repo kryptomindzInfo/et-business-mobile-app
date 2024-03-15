@@ -13,32 +13,34 @@ class CommonTransprentButton extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return Container(
-      height: 32,
-      // width: 117,
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(9),
-          color: AppColors.tealColor.withOpacity(0.3)),
+    return FittedBox(
       child: Container(
-        margin: EdgeInsets.only(left: 10, right: 10),
-        child: Center(
-          child: Row(
-            children: [
-              imageIcon != null
-                  ? Image.asset(
-                      imageIcon!,
-                      height: 15,
-                    )
-                  : const SizedBox(),
-              imageIcon != null ? 8.spaceX : 0.spaceX,
-              Text(
-                title!,
-                style: AppTextstyle.bodyTextStyle(
-                    color: AppColors.black,
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500),
-              ),
-            ],
+        height: 32,
+        // width: 117,
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(9),
+            color: AppColors.tealColor.withOpacity(0.3)),
+        child: Container(
+          margin: EdgeInsets.only(left: 10, right: 10),
+          child: Center(
+            child: Row(
+              children: [
+                imageIcon != null
+                    ? Image.asset(
+                        imageIcon!,
+                        height: 15,
+                      )
+                    : const SizedBox(),
+                imageIcon != null ? 8.spaceX : 0.spaceX,
+                Text(
+                  title!,
+                  style: AppTextstyle.bodyTextStyle(
+                      color: AppColors.black,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500),
+                ),
+              ],
+            ),
           ),
         ),
       ),

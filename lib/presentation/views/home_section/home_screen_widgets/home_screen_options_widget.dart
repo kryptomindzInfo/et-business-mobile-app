@@ -1,6 +1,7 @@
 import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/providers/home_provider.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -34,15 +35,19 @@ class HomeScreenOptionsWidget extends ConsumerWidget {
           ),
         ),
         20.spaceY,
-        Consumer(builder: (context,ref, child) {
+        Consumer(builder: (context, ref, child) {
           return Container(
-            // height: 100,
-            child: ref
-                .read(homescreenProvider)
-                .homeScreenOptionsWidgets
-                .elementAt(
-                    ref.watch(homescreenProvider).selectedHomeScreenOption),
-          );
+              // color: AppColors.black,
+              child: ref.read(homescreenProvider).selectedHomeScreenOptionWidget
+              // Column(
+              //     // height: 445,
+              //     children: [
+
+              //       // .elementAt(ref
+              //       //     .watch(homescreenProvider)
+              //       //     .selectedHomeScreenOption),
+              //     ]),
+              );
         })
         // homeOption.elementAt(ref.watch(homescreenProvider).selectedHomeOption)
         // Column(

@@ -27,7 +27,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     return BackgroundImageWidget(
       child: Scaffold(
         backgroundColor: AppColors.transparent,
-        // extendBody: true,
+        extendBody: true,
         // resizeToAvoidBottomInset: false,
         body: Padding(
           padding: const EdgeInsets.only(left: 20, right: 20),
