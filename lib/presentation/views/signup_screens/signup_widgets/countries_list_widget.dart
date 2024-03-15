@@ -1,8 +1,6 @@
-import 'package:etbank_business_app/providers/signup_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../../../constants/app_colors.dart';
 import '../../../../constants/app_textstyle.dart';
 import '../../../../globals/countries_list.dart';
@@ -15,7 +13,6 @@ class CountriesListWidget extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Container(
       height: 650.h,
-      // width: 400,
       decoration: const BoxDecoration(
         color: AppColors.tealColor,
         borderRadius: BorderRadius.all(

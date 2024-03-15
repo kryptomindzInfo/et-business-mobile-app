@@ -26,7 +26,6 @@ class SignUpUserPersonalDetailsScreen extends ConsumerWidget {
 
     return BackgroundImageWidget(
       child: Scaffold(
-        // extendBody: false,
         backgroundColor: AppColors.transparent,
         body: SingleChildScrollView(
           child: Padding(
@@ -42,10 +41,6 @@ class SignUpUserPersonalDetailsScreen extends ConsumerWidget {
                   imageicon: AppAssets.arrowLeft,
                 ),
                 30.spaceY,
-                // CustomTextFiledWidget(
-                //   hint: getTranslated('country', context),
-                //   title: getTranslated('country', context),
-                // ),
                 UserPersonalDetailsWidget(
                   controller: signUpProvider.legalFirstNameController,
                   hint: getTranslated('james', context),
@@ -99,7 +94,6 @@ class SignUpUserPersonalDetailsScreen extends ConsumerWidget {
                   title: getTranslated('email', context),
                   onTap: () {},
                 ),
-                // 16.spaceY,
                 const CountryAndMobileNoWidget(),
               ],
             ),
@@ -127,40 +121,6 @@ class SignUpUserPersonalDetailsScreen extends ConsumerWidget {
             ),
           ],
         ),
-        // Builder(builder: (context) {
-        //   final keyboardHeight = MediaQuery.of(context).viewInsets.bottom;
-        //   return Padding(
-        //       padding: EdgeInsets.only(bottom: keyboardHeight),
-        //       child: BottomAppBar(
-        //         elevation: 0,
-        //         height: 100.h,
-        //         color: Colors.transparent,
-        //         child: Center(
-        //           child: Column(
-        //             children: [
-        //               SizedBox(
-        //                 height: 48.h,
-        //                 width: 327.w,
-        //                 child: PrimaryButton(
-        //                   color: AppColors.primaryColor,
-        //                   text: Text(
-        //                     getTranslated('continue', context),
-        //                     style: AppTextstyle.bodyTextStyle(
-        //                         color: AppColors.black,
-        //                         fontSize: 16,
-        //                         fontWeight: FontWeight.w500),
-        //                   ),
-        //                   onPressed: () {
-        //                     Navigator.pushNamed(
-        //                         context, SignUpUserHomeAddressScreen.routeName);
-        //                   },
-        //                 ),
-        //               ),
-        //             ],
-        //           ),
-        //         ),
-        //       ));
-        // }),
       ),
     );
   }

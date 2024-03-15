@@ -4,8 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../../constants/app_colors.dart';
 import '../../../../constants/app_textstyle.dart';
+import '../../../../globals/countries_list.dart';
 import '../../../../providers/signup_provider.dart';
 import '../../../../resources/localization/language_constrants.dart';
+import 'countries_list_widget.dart';
 import 'country_drop_down_button_widget.dart';
 
 class CountryAndMobileNoWidget extends ConsumerWidget {
@@ -16,10 +18,22 @@ class CountryAndMobileNoWidget extends ConsumerWidget {
     return Row(
       children: [
         CountryDropDownButtonWidget(
-          onChanged: (value) {
-            ref.read(signUpStateProvider.notifier).setSelectedCountry(value);
+          title: ref.watch(signUpStateProvider).selectedCountry != ''
+              ? ref.watch(signUpStateProvider).selectedCountry!
+              : 'Country',
+          onTap: () {
+            showModalBottomSheet(
+                context: context,
+                builder: (context) {
+                  return CountriesListWidget(
+                    onTap: (value) {
+                      ref
+                          .watch(signUpStateProvider)
+                          .setSelectedCountry(allCountries[value].flag);
+                    },
+                  );
+                });
           },
-          value: ref.watch(signUpStateProvider).selectedCountry,
         ),
         14.spaceX,
         Expanded(
