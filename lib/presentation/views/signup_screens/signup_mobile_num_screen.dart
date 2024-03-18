@@ -28,6 +28,8 @@ class SignUpMobileNoScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final selectedCountry = ref.watch(signUpStateProvider).selectedCountry;
+
     return BackgroundImageWidget(
       child: Scaffold(
         backgroundColor: Colors.transparent,
@@ -45,9 +47,8 @@ class SignUpMobileNoScreen extends ConsumerWidget {
               Row(
                 children: [
                   CountryDropDownButtonWidget(
-                    title: ref.watch(signUpStateProvider).selectedCountry != ''
-                        ? ref.watch(signUpStateProvider).selectedCountry!
-                        : 'Country',
+                    title:
+                        '${selectedCountry?.flag ?? allCountries[0].flag} ${selectedCountry?.dialCode ?? allCountries[0].dialCode}',
                     onTap: () {
                       showModalBottomSheet(
                           context: context,
@@ -55,10 +56,8 @@ class SignUpMobileNoScreen extends ConsumerWidget {
                             return CountriesListWidget(
                               onTap: (value) {
                                 ref
-                                    .watch(signUpStateProvider)
-                                    .setSelectedCountry(
-                                      allCountries[value].flag,
-                                    );
+                                    .read(signUpStateProvider)
+                                    .setSelectedCountry(value);
                               },
                             );
                           });

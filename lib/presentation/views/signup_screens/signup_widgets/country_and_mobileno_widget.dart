@@ -15,12 +15,14 @@ class CountryAndMobileNoWidget extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final userPersonalDetailsSelectedCountry =
+        ref.watch(signUpStateProvider).userPersonalDetailsSelectedCountry;
+
     return Row(
       children: [
         CountryDropDownButtonWidget(
-          title: ref.watch(signUpStateProvider).selectedCountry != ''
-              ? ref.watch(signUpStateProvider).selectedCountry!
-              : 'Country',
+          title:
+              '${userPersonalDetailsSelectedCountry?.flag ?? allCountries[0].flag} ${userPersonalDetailsSelectedCountry?.dialCode ?? allCountries[0].dialCode}',
           onTap: () {
             showModalBottomSheet(
                 context: context,
@@ -28,8 +30,8 @@ class CountryAndMobileNoWidget extends ConsumerWidget {
                   return CountriesListWidget(
                     onTap: (value) {
                       ref
-                          .watch(signUpStateProvider)
-                          .setSelectedCountry(allCountries[value].flag);
+                          .read(signUpStateProvider)
+                          .setUserPersonalDetailsSelectedCountry(value);
                     },
                   );
                 });
