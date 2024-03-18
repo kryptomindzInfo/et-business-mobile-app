@@ -49,7 +49,7 @@ class SignUpState extends ChangeNotifier {
 
   // String? get selectedCountry => _selectedCountry;
   Countries? _selectedCountry;
-  Countries? get selectedCountry => _selectedCountry;
+  Countries? get selectedCountry => _selectedCountry ?? allCountries.first;
   void setSelectedCountry(int index) {
     _selectedCountry = allCountries[index];
     notifyListeners();
@@ -57,7 +57,7 @@ class SignUpState extends ChangeNotifier {
 
   Countries? _userPersonalDetailsSelectedCountry;
   Countries? get userPersonalDetailsSelectedCountry =>
-      _userPersonalDetailsSelectedCountry;
+      _userPersonalDetailsSelectedCountry ?? allCountries.first;
   void setUserPersonalDetailsSelectedCountry(int index) {
     _userPersonalDetailsSelectedCountry = allCountries[index];
     notifyListeners();

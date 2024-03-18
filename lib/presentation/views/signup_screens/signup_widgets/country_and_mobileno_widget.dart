@@ -22,7 +22,7 @@ class CountryAndMobileNoWidget extends ConsumerWidget {
       children: [
         CountryDropDownButtonWidget(
           title:
-              '${userPersonalDetailsSelectedCountry?.flag ?? allCountries[0].flag} ${userPersonalDetailsSelectedCountry?.dialCode ?? allCountries[0].dialCode}',
+              '${userPersonalDetailsSelectedCountry?.flag} ${userPersonalDetailsSelectedCountry?.dialCode}',
           onTap: () {
             showModalBottomSheet(
                 context: context,

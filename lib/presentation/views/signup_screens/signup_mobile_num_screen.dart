@@ -48,7 +48,7 @@ class SignUpMobileNoScreen extends ConsumerWidget {
                 children: [
                   CountryDropDownButtonWidget(
                     title:
-                        '${selectedCountry?.flag ?? allCountries[0].flag} ${selectedCountry?.dialCode ?? allCountries[0].dialCode}',
+                        '${selectedCountry?.flag} ${selectedCountry?.dialCode}',
                     onTap: () {
                       showModalBottomSheet(
                           context: context,
