@@ -10,9 +10,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../constants/app_textstyle.dart';
+import '../../../constants/static_data/signup_screen_static_data.dart';
 import '../../../navigation/navigation.dart';
 import '../common_widgets/primary_button.dart';
 import 'signup_create_passcode_screen.dart';
+import 'signup_widgets/button_bottom_navigation_widget.dart';
 import 'signup_widgets/custom_radio_button_widget.dart';
 
 class SignUpRoleInTheCompanyScreen extends ConsumerWidget {
@@ -25,6 +27,7 @@ class SignUpRoleInTheCompanyScreen extends ConsumerWidget {
     return BackgroundImageWidget(
       child: Scaffold(
         backgroundColor: AppColors.transparent,
+        extendBody: true,
         // extendBody: true,
         body: Padding(
           padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
@@ -79,36 +82,27 @@ class SignUpRoleInTheCompanyScreen extends ConsumerWidget {
             ],
           ),
         ),
-        bottomNavigationBar: Builder(builder: (context) {
-          final keyboardHeight = MediaQuery.of(context).viewInsets.bottom;
-          return Padding(
-            padding: EdgeInsets.only(bottom: keyboardHeight),
-            child: BottomAppBar(
-              elevation: 0,
-              color: Colors.transparent,
-              child: Center(
-                child: SizedBox(
-                  height: 48.h,
-                  width: 327.w,
-                  child: PrimaryButton(
-                    color: AppColors.baseGreenColor,
-                    text: Text(
-                      getTranslated('continue', context),
-                      style: AppTextstyle.bodyTextStyle(
-                          color: AppColors.black,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w500),
-                    ),
-                    onPressed: () {
-                      Navigation.pushNamed(
-                          SignUpCreatePassCodeScreen.routeName);
-                    },
-                  ),
+        bottomNavigationBar: ButtonBottomNavigationWidget(
+          children: [
+            SizedBox(
+              height: 48.h,
+              width: 327.w,
+              child: PrimaryButton(
+                color: AppColors.baseGreenColor,
+                text: Text(
+                  getTranslated('continue', context),
+                  style: AppTextstyle.bodyTextStyle(
+                      color: AppColors.black,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500),
                 ),
+                onPressed: () {
+                  Navigation.pushNamed(SignUpCreatePassCodeScreen.routeName);
+                },
               ),
             ),
-          );
-        }),
+          ],
+        ),
       ),
     );
   }

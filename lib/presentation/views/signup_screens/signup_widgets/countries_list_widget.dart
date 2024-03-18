@@ -1,20 +1,18 @@
-import 'package:etbank_business_app/providers/signup_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../../../constants/app_colors.dart';
 import '../../../../constants/app_textstyle.dart';
 import '../../../../globals/countries_list.dart';
 
 class CountriesListWidget extends ConsumerWidget {
-  const CountriesListWidget({super.key});
+  final Function(int) onTap;
+  const CountriesListWidget({super.key, required this.onTap});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Container(
       height: 650.h,
-      // width: 400,
       decoration: const BoxDecoration(
         color: AppColors.tealColor,
         borderRadius: BorderRadius.all(
@@ -44,9 +42,8 @@ class CountriesListWidget extends ConsumerWidget {
         child: ListView.builder(itemBuilder: (context, index) {
           return GestureDetector(
             onTap: () {
-              ref
-                  .read(signUpStateProvider)
-                  .setcountryOfIncorporation(allCountries[index].name);
+              onTap(index);
+
               Navigator.pop(context);
             },
             child: ListTile(

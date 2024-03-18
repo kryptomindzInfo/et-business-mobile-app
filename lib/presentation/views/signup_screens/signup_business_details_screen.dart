@@ -13,6 +13,7 @@ import '../../../constants/app_assets.dart';
 import '../../../constants/app_colors.dart';
 import 'signup_widgets/business_details_white_container_widget.dart';
 import 'signup_widgets/business_not_listed_widget.dart';
+import 'signup_widgets/button_bottom_navigation_widget.dart';
 import 'signup_widgets/countries_list_widget.dart';
 import 'signup_widgets/primary_button.dart';
 
@@ -50,18 +51,22 @@ class SignUpBusinessDetailsScreen extends ConsumerWidget {
                           return BottomSheetWidet(
                             onChanged: (value) {},
                             onCancelTap: () {},
-                            bottomNavigationBody: const CountriesListWidget(),
+                            bottomNavigationBody: CountriesListWidget(
+                              onTap: (x) {},
+                            ),
                           );
                         });
                   },
-                  labelText:getTranslated('country', context) ,
-                  title: 
-                  ref.watch(signUpStateProvider).countryOfIncorporation ==
+                  labelText: getTranslated('country', context),
+                  title: ref
+                              .watch(signUpStateProvider)
+                              .countryOfIncorporation ==
                           ''
                       ? getTranslated('county_of_incorporation', context)
                       : ref.watch(signUpStateProvider).countryOfIncorporation!,
                   titleTextColor:
-                      ref.watch(signUpStateProvider).countryOfIncorporation == ''
+                      ref.watch(signUpStateProvider).countryOfIncorporation ==
+                              ''
                           ? Colors.grey
                           : Colors.black,
                   icon: Image.asset(
@@ -94,8 +99,8 @@ class SignUpBusinessDetailsScreen extends ConsumerWidget {
                 ),
                 16.spaceY,
                 BusinessDetailsWhiteContainerWidet(
-                  labelText:
-                      getTranslated('company_house_registration_number', context),
+                  labelText: getTranslated(
+                      'company_house_registration_number', context),
                   title: 'A1213454',
                   icon: Image.asset(
                     AppAssets.iconSearchBlack,
@@ -134,40 +139,28 @@ class SignUpBusinessDetailsScreen extends ConsumerWidget {
             ),
           ),
         ),
-        bottomNavigationBar: Builder(builder: (context) {
-          final keyboardHeight = MediaQuery.of(context).viewInsets.bottom;
-          return Padding(
-              padding: EdgeInsets.only(bottom: keyboardHeight),
-              child: BottomAppBar(
-                elevation: 0,
-                height: 100.h,
-                color: Colors.transparent,
-                child: Center(
-                  child: Column(
-                    children: [
-                      SizedBox(
-                        height: 48.h,
-                        width: 327.w,
-                        child: PrimaryButton(
-                          color: AppColors.primaryColor,
-                          text: Text(
-                            getTranslated('continue', context),
-                            style: AppTextstyle.bodyTextStyle(
-                                color: AppColors.black,
-                                fontSize: 16,
-                                fontWeight: FontWeight.w500),
-                          ),
-                          onPressed: () {
-                            Navigator.pushNamed(context,
-                                SignUpRegisteredBusinessAddressScreen.routeName);
-                          },
-                        ),
-                      ),
-                    ],
-                  ),
+        bottomNavigationBar: ButtonBottomNavigationWidget(
+          children: [
+            SizedBox(
+              height: 48.h,
+              width: 327.w,
+              child: PrimaryButton(
+                color: AppColors.primaryColor,
+                text: Text(
+                  getTranslated('continue', context),
+                  style: AppTextstyle.bodyTextStyle(
+                      color: AppColors.black,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500),
                 ),
-              ));
-        }),
+                onPressed: () {
+                  Navigator.pushNamed(
+                      context, SignUpRegisteredBusinessAddressScreen.routeName);
+                },
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

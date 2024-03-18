@@ -1,8 +1,8 @@
-import 'package:etbank_business_app/constants/app_assets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
+import '../constants/static_data/signup_screen_static_data.dart';
 import '../core/app_print.dart';
+import '../globals/countries_list.dart';
 
 final signUpStateProvider = ChangeNotifierProvider((ref) => SignUpState());
 
@@ -45,12 +45,21 @@ class SignUpState extends ChangeNotifier {
 
   // SelectedCountry
 
-  String? _selectedCountry;
+  // String? _selectedCountry = '';
 
-  String? get selectedCountry => _selectedCountry;
+  // String? get selectedCountry => _selectedCountry;
+  Countries? _selectedCountry;
+  Countries? get selectedCountry => _selectedCountry ?? allCountries.first;
+  void setSelectedCountry(int index) {
+    _selectedCountry = allCountries[index];
+    notifyListeners();
+  }
 
-  void setSelectedCountry(String? country) {
-    _selectedCountry = country;
+  Countries? _userPersonalDetailsSelectedCountry;
+  Countries? get userPersonalDetailsSelectedCountry =>
+      _userPersonalDetailsSelectedCountry ?? allCountries.first;
+  void setUserPersonalDetailsSelectedCountry(int index) {
+    _userPersonalDetailsSelectedCountry = allCountries[index];
     notifyListeners();
   }
 
@@ -74,16 +83,25 @@ class SignUpState extends ChangeNotifier {
     _passCode = value;
   }
 
+  // Business Activity Controller
+
+  final TextEditingController _businessActivityController =
+      TextEditingController();
+  TextEditingController get businessActivityController =>
+      _businessActivityController;
+
   // Country of Incorporation
 
   String? _countryOfIncorporation = '';
 
   String? get countryOfIncorporation => _countryOfIncorporation;
-
-  void setcountryOfIncorporation(String? country) {
-    _countryOfIncorporation = country;
+// allCountriess=>allCountries;
+  void setcountryOfIncorporation(int index) {
+    _countryOfIncorporation = allCountries[index].name;
     notifyListeners();
   }
+
+  // PostCode
 
   String? _postCode = '';
 
@@ -100,6 +118,8 @@ class SignUpState extends ChangeNotifier {
     notifyListeners();
   }
 
+  // Company Roles
+
   List get companyRolesList => companyRoles;
   int _selectedRole = 0;
   int get selectedRole => _selectedRole;
@@ -107,27 +127,82 @@ class SignUpState extends ChangeNotifier {
     _selectedRole = value;
     notifyListeners();
   }
-}
 
-List companyRoles = [
-  {
-    "title": "role_1_title",
-    "subtitle": "role_1_subtitle",
-    "image": AppAssets.companyIcon,
-  },
-  {
-    "title": "role_2_title",
-    "subtitle": "role_2_subtitle",
-    "image": AppAssets.freelancerIcon,
-  },
-  {
-    "title": "role_3_title",
-    "subtitle": "role_3_subtitle",
-    "image": AppAssets.personIcon,
-  },
-  {
-    "title": "not_sure_what_to_choose",
-    "subtitle": "",
-    "image": AppAssets.personIcon,
-  },
-];
+  // Reasons for UsingEtBank
+
+  List<int> selectedReasonsForUsingEtBank = [];
+  setSelectedReasonForUsingEtBank(int value) {
+    if (selectedReasonsForUsingEtBank.contains(value)) {
+      selectedReasonsForUsingEtBank.remove(value);
+    } else {
+      selectedReasonsForUsingEtBank.add(value);
+    }
+  }
+
+  // Types of Customers
+
+  List<int> selectedCustomerTypes = [];
+  setselectedCustomerTypes(int value) {
+    if (selectedCustomerTypes.contains(value)) {
+      selectedCustomerTypes.remove(value);
+    } else {
+      selectedCustomerTypes.add(value);
+    }
+  }
+
+  // How You Sell Products
+
+  List<int> howYouSellProductsOptions = [];
+  sethowYouSellProductsOptions(int value) {
+    if (howYouSellProductsOptions.contains(value)) {
+      howYouSellProductsOptions.remove(value);
+    } else {
+      howYouSellProductsOptions.add(value);
+    }
+  }
+
+  // User Personal Deatails Leagal First Name Controller
+
+  final TextEditingController _legalFirstNameController =
+      TextEditingController();
+  TextEditingController get legalFirstNameController =>
+      _legalFirstNameController;
+
+  // User Personal Deatails Leagal Last Name Controller
+
+  final TextEditingController _legalLastNameController =
+      TextEditingController();
+  TextEditingController get legalLastNameController => _legalLastNameController;
+
+  // User Personal Deatails DOB Controller
+
+  final TextEditingController _userPersonDetailsDOBController =
+      TextEditingController();
+  TextEditingController get userPersonDetailsDOBController =>
+      _userPersonDetailsDOBController;
+
+  // User Personal Deatails Nationality Controller
+
+  final TextEditingController _userPersonDetailsNationalityController =
+      TextEditingController();
+  TextEditingController get userPersonDetailsNationalityController =>
+      _userPersonDetailsNationalityController;
+
+  // User Personal Deatails Nationality Controller
+
+  final TextEditingController _userPersonDetailsEmailController =
+      TextEditingController();
+  TextEditingController get userPersonDetailsEmailController =>
+      _userPersonDetailsEmailController;
+
+  // Country of Residence
+
+  Countries? _countryOfResidence;
+
+  Countries get countryOfResidence => _countryOfResidence ?? allCountries.first;
+
+  void setcountryOfResidence(int index) {
+    _countryOfResidence = allCountries[index];
+    notifyListeners();
+  }
+}

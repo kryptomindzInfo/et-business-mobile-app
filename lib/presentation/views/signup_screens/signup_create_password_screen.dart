@@ -12,6 +12,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../constants/app_colors.dart';
 import '../../../globals/button_color.dart';
+import 'signup_widgets/button_bottom_navigation_widget.dart';
 import 'signup_widgets/primary_button.dart';
 import 'signup_widgets/text_field_widget.dart';
 
@@ -105,40 +106,67 @@ class SignUpCreatePassword extends ConsumerWidget {
         ),
         resizeToAvoidBottomInset: false,
         backgroundColor: Colors.transparent,
-        bottomNavigationBar: Builder(builder: (context) {
-          final keyboardHeight = MediaQuery.of(context).viewInsets.bottom;
-          return Padding(
-              padding: EdgeInsets.only(bottom: keyboardHeight),
-              child: BottomAppBar(
-                elevation: 0,
-                color: Colors.transparent,
-                child: Center(
-                  child: SizedBox(
-                    height: 48.h,
-                    width: 327.w,
-                    child: PrimaryButton(
-                      color: buttonColor(
+        bottomNavigationBar: ButtonBottomNavigationWidget(
+          children: [
+            SizedBox(
+              height: 48.h,
+              width: 327.w,
+              child: PrimaryButton(
+                color:
+                    buttonColor(ref.watch(signUpStateProvider).isPasswordEmpty),
+                text: Text(
+                  getTranslated('continue', context),
+                  style: AppTextstyle.bodyTextStyle(
+                      color: buttonTextColor(
                           ref.watch(signUpStateProvider).isPasswordEmpty),
-                      text: Text(
-                        getTranslated('continue', context),
-                        style: AppTextstyle.bodyTextStyle(
-                            color: buttonTextColor(
-                                ref.watch(signUpStateProvider).isPasswordEmpty),
-                            fontSize: 16,
-                            fontWeight: FontWeight.w500),
-                      ),
-                      onPressed: () {
-                        if (ref.read(signUpStateProvider).isPasswordEmpty) {
-                        } else {
-                          Navigation.pushNamed(
-                              SignUpWelcomeBackScreen.routeName);
-                        }
-                      },
-                    ),
-                  ),
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500),
                 ),
-              ));
-        }),
+                onPressed: () {
+                  if (ref.read(signUpStateProvider).isPasswordEmpty) {
+                  } else {
+                    Navigation.pushNamed(SignUpWelcomeBackScreen.routeName);
+                  }
+                },
+              ),
+            ),
+          ],
+        ),
+
+        // Builder(builder: (context) {
+        //   final keyboardHeight = MediaQuery.of(context).viewInsets.bottom;
+        //   return Padding(
+        //       padding: EdgeInsets.only(bottom: keyboardHeight),
+        //       child: BottomAppBar(
+        //         elevation: 0,
+        //         color: Colors.transparent,
+        //         child: Center(
+        //           child: SizedBox(
+        //             height: 48.h,
+        //             width: 327.w,
+        //             child: PrimaryButton(
+        //               color: buttonColor(
+        //                   ref.watch(signUpStateProvider).isPasswordEmpty),
+        //               text: Text(
+        //                 getTranslated('continue', context),
+        //                 style: AppTextstyle.bodyTextStyle(
+        //                     color: buttonTextColor(
+        //                         ref.watch(signUpStateProvider).isPasswordEmpty),
+        //                     fontSize: 16,
+        //                     fontWeight: FontWeight.w500),
+        //               ),
+        //               onPressed: () {
+        //                 if (ref.read(signUpStateProvider).isPasswordEmpty) {
+        //                 } else {
+        //                   Navigation.pushNamed(
+        //                       SignUpWelcomeBackScreen.routeName);
+        //                 }
+        //               },
+        //             ),
+        //           ),
+        //         ),
+        //       ));
+        // }),
       ),
     );
   }
