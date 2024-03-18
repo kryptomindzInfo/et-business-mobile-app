@@ -59,13 +59,8 @@ class SignUpUserHomeAddressScreen extends ConsumerWidget {
                           );
                         });
                   },
-                  title: ref.watch(signUpStateProvider).countryOfResidence == ''
-                      ? getTranslated('county_of_residence', context)
-                      : ref.watch(signUpStateProvider).countryOfResidence!,
-                  titleTextColor:
-                      ref.watch(signUpStateProvider).countryOfResidence == ''
-                          ? Colors.grey
-                          : Colors.black,
+                  title: ref.watch(signUpStateProvider).countryOfResidence.name,
+                  titleTextColor: Colors.black,
                   icon: Image.asset(
                     AppAssets.iconArrowDownBlack,
                     height: 11.h,

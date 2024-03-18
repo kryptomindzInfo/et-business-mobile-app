@@ -197,12 +197,12 @@ class SignUpState extends ChangeNotifier {
 
   // Country of Residence
 
-  String? _countryOfResidence = '';
+  Countries? _countryOfResidence;
 
-  String? get countryOfResidence => _countryOfResidence;
+  Countries get countryOfResidence => _countryOfResidence ?? allCountries.first;
 
   void setcountryOfResidence(int index) {
-    _countryOfResidence = allCountries[index].name;
+    _countryOfResidence = allCountries[index];
     notifyListeners();
   }
 }
