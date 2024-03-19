@@ -24,30 +24,20 @@ class HomeScreen extends ConsumerStatefulWidget {
 class _HomeScreenState extends ConsumerState<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return BackgroundImageWidget(
-      child: Scaffold(
-        backgroundColor: AppColors.transparent,
-        extendBody: true,
-        // resizeToAvoidBottomInset: false,
-        body: Padding(
-          padding: const EdgeInsets.only(left: 20, right: 20),
-          child: Column(children: [
-            60.spaceY,
-            HomeScreenHeader(
-              onpress: () {
-                Navigation.pushNamed(ProfileScreen.routeName);
-              },
-            ),
-            20.spaceY,
-            const HomeScreenSearchTextfield(),
-            15.spaceY,
-            const HomeScreenOptionsWidget(),
-          ]),
+    return Padding(
+      padding: const EdgeInsets.only(left: 20, right: 20),
+      child: Column(children: [
+        60.spaceY,
+        HomeScreenHeader(
+          onpress: () {
+            Navigation.pushNamed(ProfileScreen.routeName);
+          },
         ),
-        bottomNavigationBar: CustomBottomNavigation(
-          onTap: (p0) {},
-        ),
-      ),
+        20.spaceY,
+        const HomeScreenSearchTextfield(),
+        15.spaceY,
+        const HomeScreenOptionsWidget(),
+      ]),
     );
   }
 }

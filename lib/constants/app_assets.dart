@@ -27,6 +27,10 @@ class AppAssets {
   static const silvercardForslider = "${imagesDir}silvercard.png";
   static const addtoapple = "${imagesDir}addtoapplewallet.png";
 
+  static const nickle = "${imagesDir}nickle.png";
+  static const michel = "${imagesDir}michel.png";
+  static const oliva = "${imagesDir}oliva.png";
+  static const evelyn = "${imagesDir}evelyn.png";
   //app_icons
   static const earthicon = "${iconsDir}earth.png";
   static const globeicon = "${iconsDir}globe.png";

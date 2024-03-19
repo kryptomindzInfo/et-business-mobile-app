@@ -4,6 +4,7 @@ import 'package:etbank_business_app/constants/app_assets.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/app_common_widgets.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/header_icon_with_text.dart';
+import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/cards_section/card_section_bottom_sheets/useing_card_with_apple_pay_btm_sht.dart';
 import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/cards_section/cards_section_widgets/available_to_spend_card.dart';
 import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/cards_section/cards_section_widgets/card_swiper.dart';
 import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/cards_section/cards_section_widgets/freeze_card.dart';
@@ -38,9 +39,18 @@ class MyCardsScreen extends ConsumerWidget {
                 20.spaceY,
                 const CardsSwiper(),
                 25.spaceY,
-                Image.asset(
-                  AppAssets.addtoapple,
-                  height: 40,
+                InkWell(
+                  onTap: () {
+                    showModalBottomSheet(
+                      context: context,
+                      isScrollControlled: true,
+                      builder: (context) => UsingCardWithApplePay(),
+                    );
+                  },
+                  child: Image.asset(
+                    AppAssets.addtoapple,
+                    height: 40,
+                  ),
                 ),
                 10.spaceY,
                 AvailableToSpendCard(),

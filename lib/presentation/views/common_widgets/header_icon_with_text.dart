@@ -8,13 +8,13 @@ import '../../../constants/app_colors.dart';
 class HeaderIconWithTitle extends ConsumerWidget {
   final String? title;
   final String? description;
-  final String imageicon;
+  final String? imageicon;
   final EdgeInsetsGeometry? edgeinsets;
   const HeaderIconWithTitle(
       {super.key,
       this.title,
       this.description,
-      required this.imageicon,
+      this.imageicon,
       this.edgeinsets});
 
   @override
@@ -33,11 +33,13 @@ class HeaderIconWithTitle extends ConsumerWidget {
                 onTap: () {
                   Navigator.pop(context);
                 },
-                child: Image.asset(
-                  imageicon,
-                  width: 25.12,
-                  height: 17.94,
-                ),
+                child: imageicon != null
+                    ? Image.asset(
+                        imageicon!,
+                        width: 25.12,
+                        height: 17.94,
+                      )
+                    : SizedBox(),
               ),
             ),
           ],
@@ -54,7 +56,7 @@ class HeaderIconWithTitle extends ConsumerWidget {
                 ),
               )
             : const SizedBox(),
-        // 10.spaceY,
+        10.spaceY,
         description != null
             ? Text(
                 description!,
