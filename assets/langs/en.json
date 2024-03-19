@@ -239,7 +239,37 @@
    "add_money":"Add Money",
    "details":"Details",
    "add_new_accounts":"Add new account",
-   "all_accounts":"All Accounts"
+   "all_accounts":"All Accounts",
+   "add_card":"Add card",
+   "my_cards":"My Cards",
+   "invite":"Invite",
+   "manage_role":"Manage roles",
+   "all_people":"All people",
+   "available_to_spend":"available to spend",
+   "card_low_balance":"The accounts linked to this card have a low balance.",
+   "resolve":"Resolve",
+   "spend_controls":"Spend controls",
+   "see_all":"See All",
+   "funding_account":"Funding accounts",
+   "freeze_card":"Freeze card",
+   "tap_again_unfreeze":"Tap again to unfreeze",
+   "settings":"Settings",
+   "expense_reporting":"Expense Reporting",
+   "attach_receipts":"Attach receipts, categories & review card transactions",
+   "change_card_name":"Change card name",
+   "current_name":"Current name",
+   "owner":"Owner",
+   "choose_owner":"Choose who will be the owner of this card",
+   "team_member":"Team members",
+   "get_card":"Get Card",
+   "best_for_business":"Best for business trips and operational expenses",
+   "best_for_online":"Best for online purchases",
+   "order":"Order",
+   "donot_order":"Do not order a card",
+   "ready_to_use":"Your card is ready to be used",
+   "use_it_online":"Use it online or via Apple Pay straight away"
+
+
    
    
    

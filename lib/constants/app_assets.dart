@@ -21,6 +21,11 @@ class AppAssets {
   static const dark = "${imagesDir}dark.png";
   static const chartimage = "${imagesDir}chartimage.png";
   static const roundukflag = "${imagesDir}rounduk.png";
+  static const teamsCard = "${imagesDir}teamscard.png";
+  static const rolesicon = "${imagesDir}roles.png";
+  static const greencardForslider = "${imagesDir}greencard.png";
+  static const silvercardForslider = "${imagesDir}silvercard.png";
+  static const addtoapple = "${imagesDir}addtoapplewallet.png";
 
   //app_icons
   static const earthicon = "${iconsDir}earth.png";
@@ -84,4 +89,19 @@ class AppAssets {
   static const allaccountsicon = "${iconsDir}allaccoutsicon.png";
   static const euroflag = "${iconsDir}euroflag.png";
   static const usdflag = "${iconsDir}usdflag.png";
+  static const cardsicon = "${iconsDir}cardsicon.png";
+  static const silvercard = "${iconsDir}silvercard.png";
+  static const greencard = "${iconsDir}greencard.png";
+  static const switchicon = "${iconsDir}switchicon.png";
+  static const inviteicon = "${iconsDir}inviteicon.png";
+  static const greencheck = "${iconsDir}greencheck.png";
+  static const markicon = "${iconsDir}mark.png";
+  static const hourglassicon = "${iconsDir}hourglass.png";
+  static const copylink = "${iconsDir}copylink.png";
+  static const freezicon = "${iconsDir}freezicon.png";
+  static const editicon = "${iconsDir}edit.png";
+  static const deleteicon = "${iconsDir}delete.png";
+  static const debitCard = "${iconsDir}debit.png";
+  static const virtualCard = "${iconsDir}virtual.png";
+  static const checkout = "${iconsDir}checkout.png";
 }
