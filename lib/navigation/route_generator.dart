@@ -1,5 +1,7 @@
 import 'package:etbank_business_app/navigation/params/pincode_screen_args.dart';
 import 'package:etbank_business_app/presentation/views/onboarding_screens/onboarding_screen.dart';
+import 'package:etbank_business_app/presentation/views/sending_currency_screens/account_details_screen.dart';
+import 'package:etbank_business_app/presentation/views/sending_currency_screens/who_to_pay_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_primary_reason_for_using_etbank_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_role_in_the_company_screen.dart';
 import 'package:etbank_business_app/presentation/views/profile_section/statement_section/monthly_statement_screen.dart';
@@ -147,6 +149,12 @@ class RouteGenerator {
 
       case SignUpUserHomeAddressScreen.routeName:
         return route(const SignUpUserHomeAddressScreen());
+
+      case WhoToPayScreen.routeName:
+        return route(const WhoToPayScreen());
+
+      case AccountDetailsScreen.routeName:
+        return route(const AccountDetailsScreen());
 
       case ProfileScreen.routeName:
         return route(const ProfileScreen(

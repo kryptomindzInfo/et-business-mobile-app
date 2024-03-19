@@ -38,7 +38,7 @@ class TextFieldBlackWidget extends ConsumerWidget {
           hintStyle: AppTextstyle.bodyTextStyle(color: AppColors.grey),
           prefixIcon: const Icon(
             Icons.search,
-            color: AppColors.greywhite,
+            color: AppColors.grey,
           ),
           //  Image.asset(
           //   AppAssets.iconSearchBlack,

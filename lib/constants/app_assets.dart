@@ -84,4 +84,9 @@ class AppAssets {
   static const allaccountsicon = "${iconsDir}allaccoutsicon.png";
   static const euroflag = "${iconsDir}euroflag.png";
   static const usdflag = "${iconsDir}usdflag.png";
+
+  // Sendding Currency Flow
+
+  static const addButton2x = "${iconsDir}add_button_2x.png";
+  static const addIconBold = "${iconsDir}add_icon_bold.png";
 }

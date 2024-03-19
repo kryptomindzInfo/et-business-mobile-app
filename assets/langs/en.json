@@ -182,6 +182,21 @@
    "forks_home_address": "Fork’s home address",
    "county_of_residence":"County of residence",
 
+   "----------------------Sending Currency -----------------------":"----------------------Sending Currency----------------",
+
+   "who_to_pay_title":"Who To Pay ?",
+   "search":"Search",
+   "cant_find_who_you_are_looking_for":"Can’t find who you are looking for?",
+   "add_new_counterparty":"Add new counterparty",
+   "account_details":"Account details",
+   "individual":"Individual",
+   "united_kingdom":"United Kingdom",
+   "currency":"Currency",
+   "british_pound":"British Pound",
+   "account_number":"Account  number",
+   "sort_code":"Sort Code",
+   
+
 
 
 

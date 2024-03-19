@@ -6,3 +6,11 @@ Color buttonColor(bool value) =>
 
 Color buttonTextColor(bool value) =>
     value ? AppColors.continueTextDisabledColor : AppColors.black;
+
+// Company and Individul Buttons Selection
+
+Color companyButtonColor(bool value) =>
+    value ? AppColors.primaryColor : AppColors.grey;
+
+Color companyButtonTextColor(bool value) =>
+    value ? AppColors.black : AppColors.white;

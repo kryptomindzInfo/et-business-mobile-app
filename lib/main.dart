@@ -6,6 +6,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'navigation/navigator_key.dart';
 import 'navigation/route_generator.dart';
+import 'presentation/views/sending_currency_screens/who_to_pay_screen.dart';
 import 'resources/localization/app_localization.dart';
 
 void main() {
@@ -37,7 +38,7 @@ class MyApp extends ConsumerWidget {
         ],
         navigatorKey: navigatorKey,
         onGenerateRoute: RouteGenerator.generateRoute,
-        initialRoute: Onboarding.routeName,
+        initialRoute: WhoToPayScreen.routeName,
       ),
     );
   }
