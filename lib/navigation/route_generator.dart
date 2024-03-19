@@ -1,6 +1,8 @@
 import 'package:etbank_business_app/navigation/params/pincode_screen_args.dart';
 import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/cards_section/card_settings_screen.dart';
+import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/cards_section/get_card_screen.dart';
 import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/cards_section/my_cards_screen.dart';
+import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/teams_section/owner_screen.dart';
 import 'package:etbank_business_app/presentation/views/onboarding_screens/onboarding_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_role_in_the_company_screen.dart';
 import 'package:etbank_business_app/presentation/views/profile_section/statement_section/monthly_statement_screen.dart';
@@ -132,6 +134,14 @@ class RouteGenerator {
             ));
       case CardSettingsScreen.routeName:
         return route(CardSettingsScreen(
+            // params: settings.arguments as HomeScreenArgs?
+            ));
+      case OwnerScreen.routeName:
+        return route(OwnerScreen(
+            // params: settings.arguments as HomeScreenArgs?
+            ));
+      case GetCardScreen.routeName:
+        return route(GetCardScreen(
             // params: settings.arguments as HomeScreenArgs?
             ));
       // case FirstScreen.routeName:

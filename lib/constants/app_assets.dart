@@ -96,4 +96,9 @@ class AppAssets {
   static const hourglassicon = "${iconsDir}hourglass.png";
   static const copylink = "${iconsDir}copylink.png";
   static const freezicon = "${iconsDir}freezicon.png";
+  static const editicon = "${iconsDir}edit.png";
+  static const deleteicon = "${iconsDir}delete.png";
+  static const debitCard = "${iconsDir}debit.png";
+  static const virtualCard = "${iconsDir}virtual.png";
+  static const checkout = "${iconsDir}checkout.png";
 }

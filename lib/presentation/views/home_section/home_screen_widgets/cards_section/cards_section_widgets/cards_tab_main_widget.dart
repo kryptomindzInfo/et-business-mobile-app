@@ -35,6 +35,9 @@ class CardsMainWidget extends ConsumerWidget {
                   children: [
                     CommonTransprentButton(
                       title: "+ ${getTranslated("add_card", context)}",
+                      onpress: () {
+                        Navigation.pushNamed("get_card_Screen");
+                      },
                     ),
                     InkWell(
                       onTap: () {

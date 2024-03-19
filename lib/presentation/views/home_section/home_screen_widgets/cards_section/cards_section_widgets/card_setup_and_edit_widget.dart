@@ -1,7 +1,11 @@
 import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/white_flexible_card.dart';
+import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/cards_section/cards_section_widgets/settings_info_text.dart';
+import 'package:etbank_business_app/providers/cards_provider.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../../../constants/app_assets.dart';
@@ -33,34 +37,34 @@ class CardSetupAndEditWidget extends ConsumerWidget {
         CommonWhiteFlexibleCard(
           widget: Column(
             children: [
-              Row(
-                children: [
-                  Image.asset(
-                    AppAssets.freezicon,
-                    height: 35,
-                  ),
-                  10.spaceX,
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        getTranslated(
-                          "expense_reporting",
-                          context,
-                        ),
-                        style: AppTextstyle.bodyTextStyle(
-                            fontSize: 16, fontWeight: FontWeight.w600),
-                      ),
-                      Text(
-                        getTranslated("attach_receipts", context),
-                        style: AppTextstyle.bodyTextStyle(
-                            fontSize: 16, fontWeight: FontWeight.w400),
-                        overflow: TextOverflow.clip,
-                      ),
-                    ],
-                  )
-                ],
+              SettingsInfoText(
+                title: getTranslated(
+                  "expense_reporting",
+                  context,
+                ),
+                description: getTranslated("attach_receipts", context),
+                isButton: true,
+                imageIcon: AppAssets.freezicon,
+              ),
+              20.spaceY,
+              SettingsInfoText(
+                title: getTranslated(
+                  "change_card_name",
+                  context,
+                ),
+                description: "${getTranslated("current_name", context)}:",
+                isButton: false,
+                imageIcon: AppAssets.editicon,
+              ),
+              20.spaceY,
+              SettingsInfoText(
+                title: getTranslated(
+                  "change_card_name",
+                  context,
+                ),
+                description: "${getTranslated("current_name", context)}:",
+                isButton: false,
+                imageIcon: AppAssets.deleteicon,
               ),
             ],
           ),

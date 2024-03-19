@@ -165,3 +165,24 @@ List<Map> _merchantData = [
 ];
 
 List<Map> get merchantData => _merchantData;
+
+List<Map> _getCardsData = [
+  {
+    "title": "Debit Card",
+    "data": {
+      "description": "best_for_business",
+      "icon": AppAssets.debitCard,
+      "image": AppAssets.greencardForslider
+    }
+  },
+  {
+    "title": "Virtual Debit Card",
+    "data": {
+      "description": "best_for_online",
+      "icon": AppAssets.virtualCard,
+      "image": AppAssets.silvercardForslider
+    }
+  }
+];
+
+List<Map> get getCardsData => _getCardsData;
