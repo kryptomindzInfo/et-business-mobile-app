@@ -1,9 +1,7 @@
 import 'package:etbank_business_app/constants/app_textstyle.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
-import 'package:etbank_business_app/navigation/navigation.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/app_common_widgets.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/header_icon_with_text.dart';
-import 'package:etbank_business_app/presentation/views/signup_screens/signup_role_in_the_company_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_widgets/bottom_sheet_widget.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_widgets/text_field_widget.dart';
 import 'package:etbank_business_app/providers/signup_provider.dart';
@@ -20,10 +18,10 @@ import 'signup_widgets/countries_list_widget.dart';
 import 'signup_widgets/list_of_addresses_widget.dart';
 import 'signup_widgets/primary_button.dart';
 
-class SignUpRegisteredBusinessAddressScreen extends ConsumerWidget {
-  static const String routeName = "registered_business_address";
+class SignUpUserHomeAddressScreen extends ConsumerWidget {
+  static const String routeName = "user_home_address";
 
-  const SignUpRegisteredBusinessAddressScreen({super.key});
+  const SignUpUserHomeAddressScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -37,10 +35,7 @@ class SignUpRegisteredBusinessAddressScreen extends ConsumerWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 HeaderIconWithTitle(
-                  title: getTranslated(
-                      'registered_business_address_title', context),
-                  description: getTranslated(
-                      'registered_business_address_subtitle', context),
+                  title: getTranslated('forks_home_address', context),
                   imageicon: AppAssets.arrowLeft,
                 ),
                 30.spaceY,
@@ -58,23 +53,14 @@ class SignUpRegisteredBusinessAddressScreen extends ConsumerWidget {
                               onTap: (index) {
                                 ref
                                     .read(signUpStateProvider)
-                                    .setcountryOfIncorporation(index);
+                                    .setcountryOfResidence(index);
                               },
                             ),
                           );
                         });
                   },
-                  title: ref
-                              .watch(signUpStateProvider)
-                              .countryOfIncorporation ==
-                          ''
-                      ? getTranslated('county_of_incorporation', context)
-                      : ref.watch(signUpStateProvider).countryOfIncorporation!,
-                  titleTextColor:
-                      ref.watch(signUpStateProvider).countryOfIncorporation ==
-                              ''
-                          ? Colors.grey
-                          : Colors.black,
+                  title: ref.watch(signUpStateProvider).countryOfResidence.name,
+                  titleTextColor: Colors.black,
                   icon: Image.asset(
                     AppAssets.iconArrowDownBlack,
                     height: 11.h,
@@ -166,7 +152,8 @@ class SignUpRegisteredBusinessAddressScreen extends ConsumerWidget {
                       fontWeight: FontWeight.w500),
                 ),
                 onPressed: () {
-                  Navigation.pushNamed(SignUpRoleInTheCompanyScreen.routeName);
+                  // Navigation.pushNamed(
+                  //     SignUpRoleInTheCompanyScreen.routeName);
                 },
               ),
             ),

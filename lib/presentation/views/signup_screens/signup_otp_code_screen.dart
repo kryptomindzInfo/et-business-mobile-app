@@ -17,6 +17,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
 import '../../../constants/app_assets.dart';
+import 'signup_enable_face_id_screen.dart';
 
 class SignUpOtpCodeScreen extends ConsumerWidget {
   static const String routeName = "signup_otp_code";
@@ -27,8 +28,9 @@ class SignUpOtpCodeScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return BackgroundImageWidget(
       child: Scaffold(
-        // extendBody: true,
+        extendBody: true,
         backgroundColor: AppColors.transparent,
+        // extendBody: true,
         body: Padding(
           padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
           child: Column(
@@ -37,7 +39,7 @@ class SignUpOtpCodeScreen extends ConsumerWidget {
               HeaderIconWithTitle(
                 title: getTranslated('signup_email_code_title', context),
                 description:
-                    "Code Send to ${params.value} unless you already have accounts",
+                    "Code Sent to ${params.value} unless you already have accounts",
                 // "${getTranslated('signup_email_code_subtitle', context)} ${params.value}",
                 imageicon: AppAssets.arrowLeft,
               ),
@@ -77,8 +79,7 @@ class SignUpOtpCodeScreen extends ConsumerWidget {
                       Navigation.pushNamed(SignUpCreatePassword.routeName);
                     } else if (params.type ==
                         PinCodeDestinationType.otpForCreatePassCode) {
-                      Navigation.pushNamed(
-                          SignUpCreatePassCodeScreen.routeName);
+                      Navigation.pushNamed(SignUpEnableFaceIdScreen.routeName);
                     }
                   }),
               20.spaceY,

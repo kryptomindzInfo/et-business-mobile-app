@@ -13,6 +13,7 @@ import '../../../globals/enums.dart';
 import '../../../navigation/navigation.dart';
 import '../../../navigation/params/pincode_screen_args.dart';
 import 'signup_otp_code_screen.dart';
+import 'signup_widgets/button_bottom_navigation_widget.dart';
 import 'signup_widgets/primary_button.dart';
 
 class SignUpCreatePassCodeScreen extends ConsumerWidget {
@@ -64,39 +65,31 @@ class SignUpCreatePassCodeScreen extends ConsumerWidget {
         ),
         resizeToAvoidBottomInset: false,
         backgroundColor: Colors.transparent,
-        bottomNavigationBar: Builder(builder: (context) {
-          final keyboardHeight = MediaQuery.of(context).viewInsets.bottom;
-          return Padding(
-            padding: EdgeInsets.only(bottom: keyboardHeight),
-            child: BottomAppBar(
-              elevation: 0,
-              color: Colors.transparent,
-              child: Center(
-                child: SizedBox(
-                  height: 48.h,
-                  width: 327.w,
-                  child: PrimaryButton(
-                    color: AppColors.baseGreenColor,
-                    text: Text(
-                      getTranslated('continue', context),
-                      style: AppTextstyle.bodyTextStyle(
-                          color: AppColors.black,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w500),
-                    ),
-                    onPressed: () {
-                      Navigation.pushNamed(SignUpOtpCodeScreen.routeName,
-                          arguments: PinCodeScreenArgs(
-                              value: '+44 23476956789',
-                              type:
-                                  PinCodeDestinationType.otpForCreatePassCode));
-                    },
-                  ),
+
+        bottomNavigationBar: ButtonBottomNavigationWidget(
+          children: [
+            SizedBox(
+              height: 48.h,
+              width: 327.w,
+              child: PrimaryButton(
+                color: AppColors.baseGreenColor,
+                text: Text(
+                  getTranslated('continue', context),
+                  style: AppTextstyle.bodyTextStyle(
+                      color: AppColors.black,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500),
                 ),
+                onPressed: () {
+                  Navigation.pushNamed(SignUpOtpCodeScreen.routeName,
+                      arguments: PinCodeScreenArgs(
+                          value: '+44 23476956789',
+                          type: PinCodeDestinationType.otpForCreatePassCode));
+                },
               ),
             ),
-          );
-        }),
+          ],
+        ),
       ),
     );
   }

@@ -4,6 +4,7 @@ import 'package:etbank_business_app/presentation/views/home_section/home_screen_
 import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/cards_section/my_cards_screen.dart';
 import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/teams_section/owner_screen.dart';
 import 'package:etbank_business_app/presentation/views/onboarding_screens/onboarding_screen.dart';
+import 'package:etbank_business_app/presentation/views/signup_screens/signup_primary_reason_for_using_etbank_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_role_in_the_company_screen.dart';
 import 'package:etbank_business_app/presentation/views/profile_section/statement_section/monthly_statement_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_business_details_screen.dart';
@@ -18,6 +19,9 @@ import 'package:etbank_business_app/presentation/views/signup_screens/signup_ent
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_mobile_num_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_registered_business_address_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_tailor_experience_screen.dart';
+import 'package:etbank_business_app/presentation/views/signup_screens/signup_user_personal_details_screen.dart';
+import 'package:etbank_business_app/presentation/views/signup_screens/signup_verify_identities_screen.dart';
+import 'package:etbank_business_app/presentation/views/signup_screens/signup_verify_users_identity_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_welcome_back_screen.dart';
 import 'package:etbank_business_app/presentation/views/profile_section/refer_business/refer_busines_share_link_screen.dart';
 import 'package:etbank_business_app/presentation/views/profile_section/refer_business/refer_business_screen.dart';
@@ -29,7 +33,19 @@ import 'package:flutter/material.dart';
 
 import '../presentation/views/home_screen.dart';
 import '../presentation/views/home_section/homes_screen.dart';
+import '../presentation/views/signup_screens/signup_category_screen.dart';
 import '../presentation/views/signup_screens/signup_create_passcode_screen.dart';
+import '../presentation/views/signup_screens/signup_describe_business_activity_screen.dart';
+import '../presentation/views/signup_screens/signup_directors_screen.dart';
+import '../presentation/views/signup_screens/signup_enable_face_id_screen.dart';
+import '../presentation/views/signup_screens/signup_how_many_payments_each_month_screen.dart';
+import '../presentation/views/signup_screens/signup_how_you_sell_product_screen.dart';
+import '../presentation/views/signup_screens/signup_maximum_single_payment_per_month_screen.dart';
+import '../presentation/views/signup_screens/signup_sub_category_screen.dart';
+import '../presentation/views/signup_screens/signup_user_home_address_screen.dart';
+import '../presentation/views/signup_screens/signup_where_you_conduct_business_screen.dart';
+import '../presentation/views/signup_screens/signup_who_are_your_customers_screen.dart';
+import '../presentation/views/signup_screens/signup_website_social_ecommerce_link_screen.dart';
 
 class RouteGenerator {
   static Route generateRoute(RouteSettings settings) {
@@ -57,6 +73,21 @@ class RouteGenerator {
 
       case SignUpMobileNoScreen.routeName:
         return route(const SignUpMobileNoScreen());
+
+      case SignUpEnableFaceIdScreen.routeName:
+        return route(const SignUpEnableFaceIdScreen());
+
+      case SignPrimaryReasonForEtBankScreen.routeName:
+        return route(const SignPrimaryReasonForEtBankScreen());
+
+      case SignUpCategoryScreen.routeName:
+        return route(const SignUpCategoryScreen());
+
+      case SignUpSubCategoryScreen.routeName:
+        return route(const SignUpSubCategoryScreen());
+
+      case SignUpDescribeBusinessActivityScreen.routeName:
+        return route(const SignUpDescribeBusinessActivityScreen());
 
       // case SignUpMobileCodeScreen.routeName:
       //   return route(const SignUpMobileCodeScreen());
@@ -87,6 +118,39 @@ class RouteGenerator {
 
       case SignUpCreatePassCodeScreen.routeName:
         return route(const SignUpCreatePassCodeScreen());
+
+      case SignUpWhoAreYourCustomersScreen.routeName:
+        return route(const SignUpWhoAreYourCustomersScreen());
+
+      case SignUpHowYouSellProductScreen.routeName:
+        return route(const SignUpHowYouSellProductScreen());
+
+      case SignUpWebsiteSocialEcommerceLinkScreen.routeName:
+        return route(const SignUpWebsiteSocialEcommerceLinkScreen());
+
+      case SignUpHowManyPaymentsEachMonthScreen.routeName:
+        return route(const SignUpHowManyPaymentsEachMonthScreen());
+
+      case SignUpMaximumSinglePaymentPerMonthScreen.routeName:
+        return route(const SignUpMaximumSinglePaymentPerMonthScreen());
+
+      case SignUpWhereYouConductBusinessScreen.routeName:
+        return route(const SignUpWhereYouConductBusinessScreen());
+
+      case SignUpDirectorsScreen.routeName:
+        return route(const SignUpDirectorsScreen());
+
+      case SignUpVerifyIdentitiesScreen.routeName:
+        return route(const SignUpVerifyIdentitiesScreen());
+
+      case SignUpVerifyUserIdentityScreen.routeName:
+        return route(const SignUpVerifyUserIdentityScreen());
+
+      case SignUpUserPersonalDetailsScreen.routeName:
+        return route(const SignUpUserPersonalDetailsScreen());
+
+      case SignUpUserHomeAddressScreen.routeName:
+        return route(const SignUpUserHomeAddressScreen());
 
       case ProfileScreen.routeName:
         return route(const ProfileScreen(

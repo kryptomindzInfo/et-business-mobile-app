@@ -1,5 +1,6 @@
 import 'package:etbank_business_app/constants/app_textstyle.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
+import 'package:etbank_business_app/globals/countries_list.dart';
 import 'package:etbank_business_app/navigation/navigation.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/app_common_widgets.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/header_icon_with_text.dart';
@@ -12,9 +13,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../constants/app_assets.dart';
 import '../../../constants/app_colors.dart';
 import '../../../globals/button_color.dart';
-import '../../../globals/countries_list.dart';
 import '../../../globals/enums.dart';
 import '../../../navigation/params/pincode_screen_args.dart';
+import 'signup_widgets/button_bottom_navigation_widget.dart';
+import 'signup_widgets/countries_list_widget.dart';
+import 'signup_widgets/country_drop_down_button_widget.dart';
 import 'signup_widgets/primary_button.dart';
 import 'signup_widgets/text_field_widget.dart';
 
@@ -25,10 +28,10 @@ class SignUpMobileNoScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final selectedCountry = ref.watch(signUpStateProvider).selectedCountry;
+
     return BackgroundImageWidget(
       child: Scaffold(
-        // extendBody: true,
-        // resizeToAvoidBottomInset: false,
         backgroundColor: Colors.transparent,
         body: Padding(
           padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
@@ -43,75 +46,24 @@ class SignUpMobileNoScreen extends ConsumerWidget {
               ),
               Row(
                 children: [
-                  Padding(
-                    padding: EdgeInsets.only(top: 28.h),
-                    child: Container(
-                        height: 48.h,
-                        width: 80.h,
-                        decoration: BoxDecoration(
-                          color: AppColors.white,
-                          borderRadius: BorderRadius.circular(8),
-                        ),
-                        child: InputDecorator(
-                          decoration: const InputDecoration(
-                            contentPadding: EdgeInsets.only(
-                              left: 4,
-                              right: 4,
-                            ),
-                          ),
-                          child: SizedBox(
-                            height: 50.h,
-                            child: DropdownButton<String>(
-                              menuMaxHeight: 300,
-                              isExpanded: true,
-
-                              hint: Text(
-                                getTranslated('country', context),
-                                style: AppTextstyle.bodyTextStyle(
-                                    fontSize: 16.sp, color: AppColors.grey),
-                              ),
-                              icon: const Visibility(
-                                visible: false,
-                                child: Icon(Icons.arrow_back),
-                              ),
-                              value: ref
-                                  .watch(signUpStateProvider)
-                                  .selectedCountry,
-                              // value: countryController
-                              //         .selectedCountry.value.isNotEmpty
-                              //     ? countryController.selectedCountry.value
-                              //     : null,
-
-                              style: const TextStyle(color: AppColors.white),
-                              underline: const SizedBox(),
-                              borderRadius: BorderRadius.circular(4),
-                              dropdownColor: AppColors.grey,
-                              items: allCountries.map((Countries country) {
-                                return DropdownMenuItem<String>(
-                                  value: country.name,
-                                  child: Row(
-                                    children: <Widget>[
-                                      Text(country.flag),
-                                      4.spaceX,
-                                      Text(
-                                        country.dialCode,
-                                        style: AppTextstyle.bodyTextStyle(
-                                            color: AppColors.black),
-                                      ),
-                                    ],
-                                  ),
-                                );
-                              }).toList(),
-                              onChanged: (value) {
+                  CountryDropDownButtonWidget(
+                    title:
+                        '${selectedCountry?.flag} ${selectedCountry?.dialCode}',
+                    onTap: () {
+                      showModalBottomSheet(
+                          context: context,
+                          builder: (context) {
+                            return CountriesListWidget(
+                              onTap: (value) {
                                 ref
-                                    .read(signUpStateProvider.notifier)
+                                    .read(signUpStateProvider)
                                     .setSelectedCountry(value);
                               },
-                            ),
-                          ),
-                        )),
+                            );
+                          });
+                    },
                   ),
-                  SizedBox(width: 14.w),
+                  14.spaceX,
                   Expanded(
                     child: TextFieldWidget(
                       style: const TextStyle(color: Colors.black),
@@ -133,44 +85,35 @@ class SignUpMobileNoScreen extends ConsumerWidget {
             ],
           ),
         ),
-        bottomNavigationBar: Builder(builder: (context) {
-          final keyboardHeight = MediaQuery.of(context).viewInsets.bottom;
-          return Padding(
-              padding: EdgeInsets.only(bottom: keyboardHeight),
-              child: BottomAppBar(
-                elevation: 0,
-                color: Colors.transparent,
-                child: Center(
-                  child: SizedBox(
-                    height: 48.h,
-                    width: 327.w,
-                    child: PrimaryButton(
-                      color: buttonColor(
+        bottomNavigationBar: ButtonBottomNavigationWidget(
+          children: [
+            SizedBox(
+              height: 48.h,
+              width: 327.w,
+              child: PrimaryButton(
+                color:
+                    buttonColor(ref.watch(signUpStateProvider).isMobileNoEmpty),
+                text: Text(
+                  getTranslated('continue', context),
+                  style: AppTextstyle.bodyTextStyle(
+                      color: buttonTextColor(
                           ref.watch(signUpStateProvider).isMobileNoEmpty),
-                      text: Text(
-                        getTranslated('continue', context),
-                        style: AppTextstyle.bodyTextStyle(
-                            color: buttonTextColor(
-                                ref.watch(signUpStateProvider).isMobileNoEmpty),
-                            fontSize: 16,
-                            fontWeight: FontWeight.w500),
-                      ),
-                      onPressed: () {
-                        if (ref.read(signUpStateProvider).isMobileNoEmpty) {
-                        } else {
-                          Navigation.pushNamed(SignUpOtpCodeScreen.routeName,
-                              arguments: PinCodeScreenArgs(
-                                  value: '+92343242342',
-                                  type: PinCodeDestinationType.phone));
-
-                          // Navigation.pushNamed(SignUpMobileCodeScreen.routeName);
-                        }
-                      },
-                    ),
-                  ),
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500),
                 ),
-              ));
-        }),
+                onPressed: () {
+                  if (ref.read(signUpStateProvider).isMobileNoEmpty) {
+                  } else {
+                    Navigation.pushNamed(SignUpOtpCodeScreen.routeName,
+                        arguments: PinCodeScreenArgs(
+                            value: '+92343242342',
+                            type: PinCodeDestinationType.phone));
+                  }
+                },
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
