@@ -1,6 +1,7 @@
 import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/navigation/navigation.dart';
+import 'package:etbank_business_app/presentation/views/home_section/notification_screen.dart';
 import 'package:etbank_business_app/presentation/views/profile_section/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -31,6 +32,9 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
         HomeScreenHeader(
           onpress: () {
             Navigation.pushNamed(ProfileScreen.routeName);
+          },
+          onNotificationPress: () {
+            Navigation.pushNamed(NotificationScreen.routeName);
           },
         ),
         20.spaceY,

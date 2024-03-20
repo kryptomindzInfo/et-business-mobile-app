@@ -15,6 +15,9 @@ class AppColors {
   static const greywhite = Color(0xffFFFFFF);
   static const darkGreen = Color(0xff156144);
   static const green = Color(0xff3DFE4C);
+  static const blackish = Color(0xff2D3235);
+  static const darkTeal = Color(0xff0C2227);
+  static const grassGreen = Color(0xff07BE66);
   // static const accountDetails = Color(0xFF4B4B4C);
   // static const signInButtonColor = Color.fromRGBO(0, 73, 83, 1);
   // static const signUpButtonColor = Color.fromRGBO(0, 253, 156, 1);

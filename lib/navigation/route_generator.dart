@@ -6,6 +6,8 @@ import 'package:etbank_business_app/presentation/views/home_section/home_screen_
 import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/teams_section/invite_to_et_bank_screen.dart';
 import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/teams_section/manage_roles_screen.dart';
 import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/teams_section/owner_screen.dart';
+import 'package:etbank_business_app/presentation/views/home_section/notification_screen.dart';
+import 'package:etbank_business_app/presentation/views/hub_section/hub_section_widgets/upgrade_section/upgrade_screens.dart';
 import 'package:etbank_business_app/presentation/views/onboarding_screens/onboarding_screen.dart';
 import 'package:etbank_business_app/presentation/views/sending_currency_screens/account_details_screen.dart';
 import 'package:etbank_business_app/presentation/views/sending_currency_screens/enter_amount_screen.dart';
@@ -253,6 +255,14 @@ class RouteGenerator {
             ));
       case ManageRolesScreen.routeName:
         return route(ManageRolesScreen(
+            // params: settings.arguments as HomeScreenArgs?
+            ));
+      case UpgradeScreens.routeName:
+        return route(UpgradeScreens(
+            // params: settings.arguments as HomeScreenArgs?
+            ));
+      case NotificationScreen.routeName:
+        return route(NotificationScreen(
             // params: settings.arguments as HomeScreenArgs?
             ));
       // case FirstScreen.routeName:

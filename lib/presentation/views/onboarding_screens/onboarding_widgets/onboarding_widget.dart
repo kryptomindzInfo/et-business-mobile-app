@@ -17,13 +17,15 @@ class OnboardingWidget extends StatelessWidget {
   final String subtitle;
   final bool isButtons;
   final String image;
+  final Widget? widget;
 
   const OnboardingWidget(
       {super.key,
       required this.title,
       required this.subtitle,
       this.isButtons = false,
-      required this.image});
+      required this.image,
+      this.widget});
 
   @override
   Widget build(BuildContext context) {
@@ -99,38 +101,7 @@ class OnboardingWidget extends StatelessWidget {
                   )),
             ],
           ),
-          if (isButtons)
-            Positioned(
-              bottom: 60.h,
-              left: 50.w,
-              child: CustomButton(
-                onPressed: () {
-                  Navigation.pushNamed(BaseBottomNavBar.routeName);
-                },
-                height: 39.h,
-                width: 133.w,
-                backgroundColor: AppColors.tealColor,
-                textColor: AppColors.white,
-                borderRadius: 20,
-                text: getTranslated('sign_in', context),
-              ),
-            ),
-          if (isButtons)
-            Positioned(
-              bottom: 60.h,
-              right: 50.w,
-              child: CustomButton(
-                onPressed: () {
-                  Navigation.pushNamed(SignUpEmailScreen.routeName);
-                },
-                height: 39.h,
-                width: 133.w,
-                backgroundColor: AppColors.primaryColor,
-                textColor: AppColors.black,
-                borderRadius: 20,
-                text: getTranslated('sign_up', context),
-              ),
-            ),
+          widget != null ? widget! : SizedBox()
         ],
       ),
     );

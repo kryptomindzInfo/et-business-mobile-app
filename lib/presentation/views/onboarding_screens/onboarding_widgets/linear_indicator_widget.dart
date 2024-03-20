@@ -6,12 +6,16 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../providers/pageview_provider.dart';
 
 class LinearIndicatorWidget extends ConsumerWidget {
-  const LinearIndicatorWidget({super.key});
+  final int? activePageIndex;
+  final int? widgetListLength;
+  final double? width;
+  const LinearIndicatorWidget(
+      {super.key, this.activePageIndex, this.widgetListLength, this.width});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final pageController = ref.read(pageControllerProvider);
-    final activePage = ref.watch(activePageIndexProvider);
+    // final activePage =
 
     return Positioned(
       top: 85,
@@ -19,7 +23,7 @@ class LinearIndicatorWidget extends ConsumerWidget {
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 40.w),
         child: Row(
-          children: List<Widget>.generate(Onboarding().pages.length, (index) {
+          children: List<Widget>.generate(widgetListLength!, (index) {
             return InkWell(
               onTap: () => pageController.animateToPage(
                 index,
@@ -27,12 +31,12 @@ class LinearIndicatorWidget extends ConsumerWidget {
                 curve: Curves.easeIn,
               ),
               child: Container(
-                width: 50.w,
+                width: width,
                 height: 2.h,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(1.r),
                   border: Border.all(
-                    color: getPageIndicatorColor(index, activePage),
+                    color: getPageIndicatorColor(index, activePageIndex!),
                     width: 1.w,
                   ),
                 ),

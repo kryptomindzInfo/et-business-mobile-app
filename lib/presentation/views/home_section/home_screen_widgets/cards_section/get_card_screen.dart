@@ -8,6 +8,7 @@ import 'package:etbank_business_app/presentation/views/common_widgets/header_ico
 import 'package:etbank_business_app/presentation/views/common_widgets/ready_to_use_bottom_sheet_widget.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/white_flexible_card.dart';
 import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/cards_section/cards_section_widgets/get_cards_screen_swiper.dart';
+import 'package:etbank_business_app/presentation/views/sending_currency_screens/sending_currency_widgets/verified_bottom_sheet_widget.dart';
 import 'package:etbank_business_app/providers/cards_provider.dart';
 import 'package:etbank_business_app/resources/localization/language_constrants.dart';
 import 'package:flutter/material.dart';
@@ -29,7 +30,7 @@ class GetCardScreen extends ConsumerWidget {
           child: Column(
             children: [
               Container(
-                height: 180,
+                height: 200,
                 child: HeaderIconWithTitle(
                   imageicon: AppAssets.arrowLeft,
                   title: getTranslated("get_card", context),
@@ -71,7 +72,6 @@ class GetCardScreen extends ConsumerWidget {
                   ],
                 ),
               ),
-
               40.spaceY,
               CommonButton(
                 title: getTranslated("order", context),
@@ -79,12 +79,30 @@ class GetCardScreen extends ConsumerWidget {
                 titleColor: AppColors.black,
                 onpress: () {
                   showModalBottomSheet(
-                    context: context,
-                    builder: (context) => ReadyToUseBottomSheetWidget(
-                      title: getTranslated("ready_to_use", context),
-                      description: getTranslated("use_it_online", context),
-                    ),
-                  );
+                      context: context,
+                      builder: (context) => VerifiedBottomSheetWidget(
+                          title: Column(
+                            children: [
+                              Text(
+                                getTranslated("ready_to_use", context),
+                                style: AppTextstyle.bodyTextStyle(
+                                    fontSize: 20, fontWeight: FontWeight.bold),
+                              ),
+                            ],
+                          ),
+                          description: Column(
+                            children: [
+                              20.spaceY,
+                              Text(
+                                getTranslated("use_it_online", context),
+                                textAlign: TextAlign.center,
+                                style: AppTextstyle.bodyTextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w500,
+                                    overflow: TextOverflow.clip),
+                              )
+                            ],
+                          )));
                 },
               ),
               20.spaceY,

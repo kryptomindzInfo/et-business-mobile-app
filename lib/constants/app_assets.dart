@@ -15,7 +15,8 @@ class AppAssets {
   //home screen Assets
   static const backgroundImage1 = "${imagesDir}etbackgrd.png";
   static const backgroundImage = "${imagesDir}etbackground2.png";
-
+  static const upgrade1 = "${imagesDir}upgrade1.png";
+  static const upgrade2 = "${imagesDir}upgrade2.png";
   static const ukflag = "${imagesDir}uk.png";
   static const light = "${imagesDir}light.png";
   static const dark = "${imagesDir}dark.png";
@@ -26,7 +27,7 @@ class AppAssets {
   static const greencardForslider = "${imagesDir}greencard.png";
   static const silvercardForslider = "${imagesDir}silvercard.png";
   static const addtoapple = "${imagesDir}addtoapplewallet.png";
-
+  static const pinkbell = "${imagesDir}pinkbell.png";
   static const nickle = "${imagesDir}nickle.png";
   static const michel = "${imagesDir}michel.png";
   static const oliva = "${imagesDir}oliva.png";
@@ -95,6 +96,12 @@ class AppAssets {
   static const allaccountsicon = "${iconsDir}allaccoutsicon.png";
   static const euroflag = "${iconsDir}euroflag.png";
   static const usdflag = "${iconsDir}usdflag.png";
+  static const merchanticon = "${iconsDir}merchanticon.png";
+  static const linkedicon = "${iconsDir}linkedicon.png";
+  static const teamicon = "${iconsDir}teamicon.png";
+  static const hubcardsicon = "${iconsDir}hubcardsicon.png";
+  static const rocket = "${iconsDir}rocket.png";
+  static const computer = "${iconsDir}computer.png";
 
   // Sendding Currency Flow
 

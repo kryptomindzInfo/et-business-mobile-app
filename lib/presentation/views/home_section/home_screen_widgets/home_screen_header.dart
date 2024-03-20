@@ -9,7 +9,8 @@ import '../../../../constants/app_assets.dart';
 
 class HomeScreenHeader extends ConsumerWidget {
   final VoidCallback? onpress;
-  const HomeScreenHeader({super.key, this.onpress});
+  final VoidCallback? onNotificationPress;
+  const HomeScreenHeader({super.key, this.onpress, this.onNotificationPress});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -37,9 +38,12 @@ class HomeScreenHeader extends ConsumerWidget {
                   ),
                 ),
                 20.spaceX,
-                Image.asset(
-                  AppAssets.notificationicon,
-                  height: 25,
+                InkWell(
+                  onTap: onNotificationPress,
+                  child: Image.asset(
+                    AppAssets.notificationicon,
+                    height: 25,
+                  ),
                 )
               ],
             ),

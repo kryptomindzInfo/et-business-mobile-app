@@ -15,13 +15,13 @@ class BackgroundImageWidget extends ConsumerWidget {
     return Container(
         height: double.infinity,
         width: double.infinity,
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage(
-                AppAssets.backgroundImage), // Your background image path
-            fit: BoxFit.cover,
-          ),
-        ),
+        decoration: const BoxDecoration(color: AppColors.darkTeal
+            // image: DecorationImage(
+            //   image: AssetImage(
+            //       AppAssets.backgroundImage), // Your background image path
+            //   fit: BoxFit.cover,
+            // ),
+            ),
         child: child);
   }
 }
