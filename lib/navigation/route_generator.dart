@@ -1,8 +1,13 @@
 import 'package:etbank_business_app/navigation/params/pincode_screen_args.dart';
+import 'package:etbank_business_app/presentation/views/bottom_navigation_bar.dart';
 import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/cards_section/card_settings_screen.dart';
 import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/cards_section/get_card_screen.dart';
 import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/cards_section/my_cards_screen.dart';
+import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/teams_section/invite_to_et_bank_screen.dart';
+import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/teams_section/manage_roles_screen.dart';
 import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/teams_section/owner_screen.dart';
+import 'package:etbank_business_app/presentation/views/home_section/notification_screen.dart';
+import 'package:etbank_business_app/presentation/views/hub_section/hub_section_widgets/upgrade_section/upgrade_screens.dart';
 import 'package:etbank_business_app/presentation/views/onboarding_screens/onboarding_screen.dart';
 import 'package:etbank_business_app/presentation/views/sending_currency_screens/account_details_screen.dart';
 import 'package:etbank_business_app/presentation/views/sending_currency_screens/enter_amount_screen.dart';
@@ -35,7 +40,6 @@ import 'package:flutter/material.dart';
 // import 'package:projtemplate/navigation/params/home_screen_args.dart';
 // import 'package:projtemplate/presentation/views/home_screen.dart';
 
-import '../presentation/views/home_screen.dart';
 import '../presentation/views/home_section/homes_screen.dart';
 import '../presentation/views/sending_currency_screens/account_details_otp_code_screen.dart';
 import '../presentation/views/signup_screens/signup_category_screen.dart';
@@ -58,6 +62,10 @@ import '../presentation/views/signup_screens/signup_website_social_ecommerce_lin
 class RouteGenerator {
   static Route generateRoute(RouteSettings settings) {
     switch (settings.name) {
+      case BaseBottomNavBar.routeName:
+        return route(BaseBottomNavBar(
+            // params: settings.arguments as HomeScreenArgs?
+            ));
       case HomeScreen.routeName:
         return route(const HomeScreen(
             // params: settings.arguments as HomeScreenArgs?
@@ -239,6 +247,22 @@ class RouteGenerator {
             ));
       case GetCardScreen.routeName:
         return route(GetCardScreen(
+            // params: settings.arguments as HomeScreenArgs?
+            ));
+      case InviteToETBankScreen.routeName:
+        return route(InviteToETBankScreen(
+            // params: settings.arguments as HomeScreenArgs?
+            ));
+      case ManageRolesScreen.routeName:
+        return route(ManageRolesScreen(
+            // params: settings.arguments as HomeScreenArgs?
+            ));
+      case UpgradeScreens.routeName:
+        return route(UpgradeScreens(
+            // params: settings.arguments as HomeScreenArgs?
+            ));
+      case NotificationScreen.routeName:
+        return route(NotificationScreen(
             // params: settings.arguments as HomeScreenArgs?
             ));
       // case FirstScreen.routeName:

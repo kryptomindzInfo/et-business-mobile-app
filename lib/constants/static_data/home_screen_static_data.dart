@@ -185,3 +185,18 @@ List<Map> _getCardsData = [
 ];
 
 List<Map> get getCardsData => _getCardsData;
+
+List<Map> _paymentScreen = [
+  {"title": "transfer"},
+  {"title": "request"},
+  {"title": "shedule"},
+];
+
+List<Map> get paymentScreenopt => _paymentScreen;
+
+List<Map> _hubScreen = [
+  {"title": "My Apps"},
+  {"title": "Integration"},
+];
+
+List<Map> get hubscreenOpt => _hubScreen;

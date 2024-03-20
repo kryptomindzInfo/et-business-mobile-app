@@ -2,6 +2,7 @@ import 'package:etbank_business_app/constants/app_assets.dart';
 import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:etbank_business_app/constants/app_textstyle.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
+import 'package:etbank_business_app/presentation/views/bottom_navigation_bar.dart';
 import 'package:etbank_business_app/presentation/views/onboarding_screens/onboarding_screen.dart';
 import 'package:etbank_business_app/presentation/views/onboarding_screens/onboarding_widgets/button_widget.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_email_screen.dart';
@@ -16,13 +17,15 @@ class OnboardingWidget extends StatelessWidget {
   final String subtitle;
   final bool isButtons;
   final String image;
+  final Widget? widget;
 
   const OnboardingWidget(
       {super.key,
       required this.title,
       required this.subtitle,
       this.isButtons = false,
-      required this.image});
+      required this.image,
+      this.widget});
 
   @override
   Widget build(BuildContext context) {
@@ -98,38 +101,7 @@ class OnboardingWidget extends StatelessWidget {
                   )),
             ],
           ),
-          if (isButtons)
-            Positioned(
-              bottom: 60.h,
-              left: 50.w,
-              child: CustomButton(
-                onPressed: () {
-                  Navigation.pushNamed(HomeScreen.routeName);
-                },
-                height: 39.h,
-                width: 133.w,
-                backgroundColor: AppColors.tealColor,
-                textColor: AppColors.white,
-                borderRadius: 20,
-                text: getTranslated('sign_in', context),
-              ),
-            ),
-          if (isButtons)
-            Positioned(
-              bottom: 60.h,
-              right: 50.w,
-              child: CustomButton(
-                onPressed: () {
-                  Navigation.pushNamed(SignUpEmailScreen.routeName);
-                },
-                height: 39.h,
-                width: 133.w,
-                backgroundColor: AppColors.primaryColor,
-                textColor: AppColors.black,
-                borderRadius: 20,
-                text: getTranslated('sign_up', context),
-              ),
-            ),
+          widget != null ? widget! : SizedBox()
         ],
       ),
     );

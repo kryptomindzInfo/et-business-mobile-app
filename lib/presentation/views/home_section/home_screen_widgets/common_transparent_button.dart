@@ -39,7 +39,7 @@ class CommonTransprentButton extends ConsumerWidget {
                   Text(
                     title!,
                     style: AppTextstyle.bodyTextStyle(
-                        color: AppColors.black,
+                        color: AppColors.tealColor,
                         fontSize: 16,
                         fontWeight: FontWeight.w500),
                   ),

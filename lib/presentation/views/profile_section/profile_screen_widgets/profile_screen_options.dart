@@ -3,8 +3,8 @@ import 'package:etbank_business_app/providers/profile_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../../constants/static_data/profile_screen_static_data.dart';
-import '../../../../constants/static_data/profile_screen_static_data.dart';
+import '../../../../constants/static_data/home_screen_static_data.dart';
+import '../../../../constants/static_data/home_screen_static_data.dart';
 import 'profile_screen_chips.dart';
 
 class ProfileScreenOptionsWidget extends ConsumerWidget {

@@ -16,6 +16,7 @@ class RatesAndConverterScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return BackgroundImageWidget(
       child: Scaffold(
+        backgroundColor: Colors.transparent,
         body: Padding(
           padding: const EdgeInsets.only(left: 20, right: 20),
           child: Column(
@@ -28,7 +29,6 @@ class RatesAndConverterScreen extends ConsumerWidget {
               RatesScreenOptionsWidget(),
               20.spaceY,
               AddingCurrencyPairContainer(),
-              
             ],
           ),
         ),

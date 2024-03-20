@@ -1,4 +1,4 @@
-import 'package:etbank_business_app/constants/static_data/profile_screen_static_data.dart';
+import 'package:etbank_business_app/constants/static_data/home_screen_static_data.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
