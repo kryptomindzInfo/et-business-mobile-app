@@ -45,6 +45,8 @@ class AppAssets {
   static const moreicon = "${iconsDir}moreicon.png";
   static const transactioninfoicon = "${iconsDir}transactioninfoicon.png";
   static const arrowLeft = "${iconsDir}arrow_left.png";
+  static const gifticon = "${iconsDir}gifticon.png";
+  static const planets = "${iconsDir}planets.png";
 
   // SignUp Screens
 

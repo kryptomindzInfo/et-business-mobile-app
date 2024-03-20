@@ -1,7 +1,7 @@
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/app_common_widgets.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/header_icon_with_text.dart';
-import 'package:etbank_business_app/presentation/views/payments_section/payment_section_widgets/payment_screen_options.dart';
+import 'package:etbank_business_app/presentation/views/payments_section/payment_section_widgets/payment_screen_body.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -21,7 +21,7 @@ class PaymentScreen extends ConsumerWidget {
                 title: "Payment",
               ),
               20.spaceY,
-              PaymentScreenOptions()
+              PaymentScreenBody()
             ],
           ),
         ),

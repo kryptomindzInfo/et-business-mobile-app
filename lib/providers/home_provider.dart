@@ -1,4 +1,4 @@
-import 'package:etbank_business_app/constants/static_data/profile_screen_static_data.dart';
+import 'package:etbank_business_app/constants/static_data/home_screen_static_data.dart';
 import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/cards_section/cards_section_widgets/cards_tab_main_widget.dart';
 import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/dashboard_section/dashboard_widget.dart';
 import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/merchant_section/merchant_widget.dart';

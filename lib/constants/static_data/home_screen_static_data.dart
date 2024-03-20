@@ -193,3 +193,10 @@ List<Map> _paymentScreen = [
 ];
 
 List<Map> get paymentScreenopt => _paymentScreen;
+
+List<Map> _hubScreen = [
+  {"title": "My Apps"},
+  {"title": "Integration"},
+];
+
+List<Map> get hubscreenOpt => _hubScreen;

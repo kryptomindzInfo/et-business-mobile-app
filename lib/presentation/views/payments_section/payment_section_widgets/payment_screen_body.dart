@@ -13,8 +13,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class PaymentScreenOptions extends ConsumerWidget {
-  const PaymentScreenOptions({super.key});
+class PaymentScreenBody extends ConsumerWidget {
+  const PaymentScreenBody({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
