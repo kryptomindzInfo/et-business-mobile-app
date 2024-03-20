@@ -27,7 +27,6 @@ class PrimaryButton extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 10),
       color: color,
       disabledElevation: 0,
-      // disabledColor: Get.theme.focusColor,
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(borderRadius ?? 48)),
       elevation: 0,

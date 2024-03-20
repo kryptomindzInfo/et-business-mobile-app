@@ -24,7 +24,7 @@ class HomeScreenProvider extends ChangeNotifier {
     TeamsWidget(),
     MerchantWidget()
   ];
-  List<Widget> get homeScreenOptionsWidgets => _homeScreenOptionsWidgets;
+  // List<Widget> get homeScreenOptionsWidgets => _homeScreenOptionsWidgets;
 
   set pageIndex(int index) {
     _pageIndex = index;

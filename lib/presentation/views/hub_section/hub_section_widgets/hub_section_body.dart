@@ -1,3 +1,4 @@
+import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/presentation/views/hub_section/hub_section_widgets/hub_section_chips.dart';
 import 'package:etbank_business_app/providers/hub_provider.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +13,7 @@ class HubSectionBody extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
@@ -29,6 +31,8 @@ class HubSectionBody extends ConsumerWidget {
             );
           }).toList()),
         ),
+        20.spaceY,
+        ref.watch(hubProvider).hubScreenWidget
       ],
     );
   }

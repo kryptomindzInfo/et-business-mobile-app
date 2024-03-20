@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../../constants/app_colors.dart';
 import '../../../../constants/app_textstyle.dart';
-import '../../../../globals/countries_list.dart';
 import '../../../../providers/signup_provider.dart';
 import '../../../../resources/localization/language_constrants.dart';
 import 'countries_list_widget.dart';

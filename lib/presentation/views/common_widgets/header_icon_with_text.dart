@@ -2,47 +2,66 @@ import 'package:etbank_business_app/constants/app_textstyle.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../../constants/app_assets.dart';
 import '../../../constants/app_colors.dart';
 
 class HeaderIconWithTitle extends ConsumerWidget {
   final String? title;
   final String? description;
   final String? imageicon;
+  final double? imageIconHeight;
+  final double? imageIconWidth;
   final EdgeInsetsGeometry? edgeinsets;
+  final String? trailingImage;
+  final double? trailingImageHeight;
+  final double? trailingImageWidth;
+  final double? rightPadding;
   const HeaderIconWithTitle(
       {super.key,
       this.title,
       this.description,
       this.imageicon,
-      this.edgeinsets});
+      this.edgeinsets,
+      this.trailingImage,
+      this.trailingImageHeight,
+      this.trailingImageWidth,
+      this.rightPadding,
+      this.imageIconHeight,
+      this.imageIconWidth});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Padding(
-              padding: edgeinsets != null
-                  ? edgeinsets!
-                  : EdgeInsets.only(top: 54, right: 54),
-              child: InkWell(
-                onTap: () {
-                  Navigator.pop(context);
-                },
-                child: imageicon != null
-                    ? Image.asset(
-                        imageicon!,
-                        width: 25.12,
-                        height: 17.94,
-                      )
-                    : SizedBox(),
+        SizedBox(
+          width: double.infinity,
+          child: Padding(
+            padding: edgeinsets != null
+                ? edgeinsets!
+                : EdgeInsets.only(top: 54, right: rightPadding ?? 54),
+            child: InkWell(
+              onTap: () {
+                Navigator.pop(context);
+              },
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  if (imageicon != null)
+                    Image.asset(
+                      imageicon!,
+                      width: imageIconWidth ?? 25.12,
+                      height: imageIconHeight ?? 17.94,
+                    ),
+                  if (trailingImage != null)
+                    Image.asset(
+                      trailingImage!,
+                      height: trailingImageHeight ?? 34,
+                      width: trailingImageWidth ?? 34,
+                    ),
+                ],
               ),
             ),
-          ],
+          ),
         ),
         20.spaceY,
         title != null

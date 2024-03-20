@@ -17,7 +17,6 @@ class TextFieldBlackWidget extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return SizedBox(
-      // width: 300.w,
       height: 35.h,
       child: TextFormField(
         onChanged: onChanged,
@@ -38,7 +37,7 @@ class TextFieldBlackWidget extends ConsumerWidget {
           hintStyle: AppTextstyle.bodyTextStyle(color: AppColors.grey),
           prefixIcon: const Icon(
             Icons.search,
-            color: AppColors.greywhite,
+            color: AppColors.grey,
           ),
           //  Image.asset(
           //   AppAssets.iconSearchBlack,

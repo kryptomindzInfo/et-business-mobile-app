@@ -17,10 +17,10 @@ import 'signup_widgets/button_bottom_navigation_widget.dart';
 import 'signup_widgets/checkbox_widget.dart';
 import 'signup_widgets/primary_button.dart';
 
-class SignPrimaryReasonForEtBankScreen extends ConsumerWidget {
+class SignUpPrimaryReasonForEtBankScreen extends ConsumerWidget {
   static const String routeName = "primary_reason_for_using_et_bank";
 
-  const SignPrimaryReasonForEtBankScreen({super.key});
+  const SignUpPrimaryReasonForEtBankScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
