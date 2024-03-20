@@ -3,11 +3,10 @@ import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:etbank_business_app/constants/app_textstyle.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/app_common_widgets.dart';
-import 'package:etbank_business_app/presentation/views/common_widgets/common_bottom_sheet.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/common_button.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/header_icon_with_text.dart';
+import 'package:etbank_business_app/presentation/views/common_widgets/ready_to_use_bottom_sheet_widget.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/white_flexible_card.dart';
-import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/cards_section/card_section_bottom_sheets/ready_to_use_bottom_Sheet.dart';
 import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/cards_section/cards_section_widgets/get_cards_screen_swiper.dart';
 import 'package:etbank_business_app/providers/cards_provider.dart';
 import 'package:etbank_business_app/resources/localization/language_constrants.dart';
@@ -81,7 +80,10 @@ class GetCardScreen extends ConsumerWidget {
                 onpress: () {
                   showModalBottomSheet(
                     context: context,
-                    builder: (context) => ReadyToUseBottomSheet(),
+                    builder: (context) => ReadyToUseBottomSheetWidget(
+                      title: getTranslated("ready_to_use", context),
+                      description: getTranslated("use_it_online", context),
+                    ),
                   );
                 },
               ),

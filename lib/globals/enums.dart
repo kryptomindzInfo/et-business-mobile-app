@@ -1,1 +1,6 @@
-enum PinCodeDestinationType { phone, email, otpForCreatePassCode }
+// enum PinCodeDestinationType {
+//   phone,
+//   email,
+//   otpForCreatePassCode,
+//   sendingCurrency
+// }

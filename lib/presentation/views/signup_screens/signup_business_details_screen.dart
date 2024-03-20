@@ -26,7 +26,6 @@ class SignUpBusinessDetailsScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return BackgroundImageWidget(
       child: Scaffold(
-        // extendBody: false,
         backgroundColor: AppColors.transparent,
         body: SingleChildScrollView(
           child: Padding(
@@ -78,7 +77,6 @@ class SignUpBusinessDetailsScreen extends ConsumerWidget {
                 16.spaceY,
                 BusinessDetailsWhiteContainerWidet(
                   title: getTranslated('legal_name', context),
-                  // labelText: getTranslated('legal_name', context),
                   onTap: () {
                     showModalBottomSheet(
                         backgroundColor: AppColors.black,

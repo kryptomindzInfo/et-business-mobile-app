@@ -4,6 +4,10 @@ import 'package:etbank_business_app/presentation/views/home_section/home_screen_
 import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/cards_section/my_cards_screen.dart';
 import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/teams_section/owner_screen.dart';
 import 'package:etbank_business_app/presentation/views/onboarding_screens/onboarding_screen.dart';
+import 'package:etbank_business_app/presentation/views/sending_currency_screens/account_details_screen.dart';
+import 'package:etbank_business_app/presentation/views/sending_currency_screens/enter_amount_screen.dart';
+import 'package:etbank_business_app/presentation/views/sending_currency_screens/show_account_details_screen.dart';
+import 'package:etbank_business_app/presentation/views/sending_currency_screens/who_to_pay_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_primary_reason_for_using_etbank_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_role_in_the_company_screen.dart';
 import 'package:etbank_business_app/presentation/views/profile_section/statement_section/monthly_statement_screen.dart';
@@ -33,14 +37,18 @@ import 'package:flutter/material.dart';
 
 import '../presentation/views/home_screen.dart';
 import '../presentation/views/home_section/homes_screen.dart';
+import '../presentation/views/sending_currency_screens/account_details_otp_code_screen.dart';
 import '../presentation/views/signup_screens/signup_category_screen.dart';
+import '../presentation/views/signup_screens/signup_create_passcode_otp_screen.dart';
 import '../presentation/views/signup_screens/signup_create_passcode_screen.dart';
 import '../presentation/views/signup_screens/signup_describe_business_activity_screen.dart';
 import '../presentation/views/signup_screens/signup_directors_screen.dart';
+import '../presentation/views/signup_screens/signup_email_otp_code_screen.dart';
 import '../presentation/views/signup_screens/signup_enable_face_id_screen.dart';
 import '../presentation/views/signup_screens/signup_how_many_payments_each_month_screen.dart';
 import '../presentation/views/signup_screens/signup_how_you_sell_product_screen.dart';
 import '../presentation/views/signup_screens/signup_maximum_single_payment_per_month_screen.dart';
+import '../presentation/views/signup_screens/signup_mobile_otp_code_screen.dart';
 import '../presentation/views/signup_screens/signup_sub_category_screen.dart';
 import '../presentation/views/signup_screens/signup_user_home_address_screen.dart';
 import '../presentation/views/signup_screens/signup_where_you_conduct_business_screen.dart';
@@ -64,9 +72,22 @@ class RouteGenerator {
       case SignUpCheckEmailScreen.routeName:
         return route(const SignUpCheckEmailScreen());
 
-      case SignUpOtpCodeScreen.routeName:
-        return route(SignUpOtpCodeScreen(
-            params: settings.arguments as PinCodeScreenArgs));
+      case SignUpEmailOTPCodeScreen.routeName:
+        return route(const SignUpEmailOTPCodeScreen());
+
+      case SignUpMobileOTPCodeScreen.routeName:
+        return route(const SignUpMobileOTPCodeScreen());
+
+      case SignUpCreatePassCodeOTPCodeScreen.routeName:
+        return route(const SignUpCreatePassCodeOTPCodeScreen());
+
+      case AccountDetailsOTPCodeScreen.routeName:
+        return route(const AccountDetailsOTPCodeScreen());
+
+      // case SignUpOtpCodeScreen.routeName:
+      //   return route(SignUpOtpCodeScreen(
+      //       // params: settings.arguments as PinCodeScreenArgs
+      //       ));
 
       case SignUpBusinessTypeScreen.routeName:
         return route(const SignUpBusinessTypeScreen());
@@ -77,8 +98,8 @@ class RouteGenerator {
       case SignUpEnableFaceIdScreen.routeName:
         return route(const SignUpEnableFaceIdScreen());
 
-      case SignPrimaryReasonForEtBankScreen.routeName:
-        return route(const SignPrimaryReasonForEtBankScreen());
+      case SignUpPrimaryReasonForEtBankScreen.routeName:
+        return route(const SignUpPrimaryReasonForEtBankScreen());
 
       case SignUpCategoryScreen.routeName:
         return route(const SignUpCategoryScreen());
@@ -151,6 +172,18 @@ class RouteGenerator {
 
       case SignUpUserHomeAddressScreen.routeName:
         return route(const SignUpUserHomeAddressScreen());
+
+      case WhoToPayScreen.routeName:
+        return route(const WhoToPayScreen());
+
+      case AccountDetailsScreen.routeName:
+        return route(const AccountDetailsScreen());
+
+      case EnterAmountScreen.routeName:
+        return route(const EnterAmountScreen());
+
+      case ShowAccountDetailsScreen.routeName:
+        return route(const ShowAccountDetailsScreen());
 
       case ProfileScreen.routeName:
         return route(const ProfileScreen(

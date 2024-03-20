@@ -25,8 +25,6 @@ class SignUpCreatePassword extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return BackgroundImageWidget(
       child: Scaffold(
-        // extendBody: true,
-
         body: Padding(
           padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
           child: Column(
@@ -132,41 +130,6 @@ class SignUpCreatePassword extends ConsumerWidget {
             ),
           ],
         ),
-
-        // Builder(builder: (context) {
-        //   final keyboardHeight = MediaQuery.of(context).viewInsets.bottom;
-        //   return Padding(
-        //       padding: EdgeInsets.only(bottom: keyboardHeight),
-        //       child: BottomAppBar(
-        //         elevation: 0,
-        //         color: Colors.transparent,
-        //         child: Center(
-        //           child: SizedBox(
-        //             height: 48.h,
-        //             width: 327.w,
-        //             child: PrimaryButton(
-        //               color: buttonColor(
-        //                   ref.watch(signUpStateProvider).isPasswordEmpty),
-        //               text: Text(
-        //                 getTranslated('continue', context),
-        //                 style: AppTextstyle.bodyTextStyle(
-        //                     color: buttonTextColor(
-        //                         ref.watch(signUpStateProvider).isPasswordEmpty),
-        //                     fontSize: 16,
-        //                     fontWeight: FontWeight.w500),
-        //               ),
-        //               onPressed: () {
-        //                 if (ref.read(signUpStateProvider).isPasswordEmpty) {
-        //                 } else {
-        //                   Navigation.pushNamed(
-        //                       SignUpWelcomeBackScreen.routeName);
-        //                 }
-        //               },
-        //             ),
-        //           ),
-        //         ),
-        //       ));
-        // }),
       ),
     );
   }

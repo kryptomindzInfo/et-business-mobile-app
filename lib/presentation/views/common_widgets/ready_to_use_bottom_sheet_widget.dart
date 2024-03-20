@@ -1,12 +1,14 @@
 import 'package:etbank_business_app/constants/app_assets.dart';
 import 'package:etbank_business_app/constants/app_textstyle.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
-import 'package:etbank_business_app/resources/localization/language_constrants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class ReadyToUseBottomSheet extends ConsumerWidget {
-  const ReadyToUseBottomSheet({super.key});
+class ReadyToUseBottomSheetWidget extends ConsumerWidget {
+  final String title;
+  final String description;
+  const ReadyToUseBottomSheetWidget(
+      {super.key, required this.title, required this.description});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -23,13 +25,13 @@ class ReadyToUseBottomSheet extends ConsumerWidget {
           ),
           20.spaceY,
           Text(
-            getTranslated("ready_to_use", context),
+            title,
             style: AppTextstyle.bodyTextStyle(
                 fontSize: 20, fontWeight: FontWeight.bold),
           ),
           20.spaceY,
           Text(
-            getTranslated("use_it_online", context),
+            description,
             textAlign: TextAlign.center,
             style: AppTextstyle.bodyTextStyle(
                 fontSize: 16,

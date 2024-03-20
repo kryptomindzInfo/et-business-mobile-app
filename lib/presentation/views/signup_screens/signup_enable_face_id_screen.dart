@@ -53,7 +53,7 @@ class SignUpEnableFaceIdScreen extends ConsumerWidget {
             ),
             onPressed: () {
               Navigation.pushNamed(
-                SignPrimaryReasonForEtBankScreen.routeName,
+                SignUpPrimaryReasonForEtBankScreen.routeName,
               );
             },
           ),

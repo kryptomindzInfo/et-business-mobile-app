@@ -89,6 +89,11 @@ class AppAssets {
   static const allaccountsicon = "${iconsDir}allaccoutsicon.png";
   static const euroflag = "${iconsDir}euroflag.png";
   static const usdflag = "${iconsDir}usdflag.png";
+
+  // Sendding Currency Flow
+
+  static const addButton2x = "${iconsDir}add_button_2x.png";
+  static const addIconBold = "${iconsDir}add_icon_bold.png";
   static const cardsicon = "${iconsDir}cardsicon.png";
   static const silvercard = "${iconsDir}silvercard.png";
   static const greencard = "${iconsDir}greencard.png";
@@ -104,4 +109,6 @@ class AppAssets {
   static const debitCard = "${iconsDir}debit.png";
   static const virtualCard = "${iconsDir}virtual.png";
   static const checkout = "${iconsDir}checkout.png";
+  static const rkImgae = "${iconsDir}rk_image.png";
+  static const trustPayee = "${imagesDir}trust_payee.png";
 }

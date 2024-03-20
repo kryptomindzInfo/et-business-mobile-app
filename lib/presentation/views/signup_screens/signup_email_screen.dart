@@ -24,8 +24,6 @@ class SignUpEmailScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return BackgroundImageWidget(
       child: Scaffold(
-        // extendBody: true,
-        // resizeToAvoidBottomInset: false,
         backgroundColor: Colors.transparent,
         body: Padding(
           padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
@@ -37,8 +35,6 @@ class SignUpEmailScreen extends ConsumerWidget {
                 imageicon: AppAssets.arrowLeft,
               ),
               SizedBox(
-                // width: 300.w,
-                // height: 50.h,
                 child: TextFieldWidget(
                   style: const TextStyle(color: Colors.black),
                   controller: ref.read(signUpStateProvider).emailController,
@@ -56,7 +52,6 @@ class SignUpEmailScreen extends ConsumerWidget {
             ],
           ),
         ),
-
         bottomNavigationBar: ButtonBottomNavigationWidget(
           children: [
             SizedBox(
@@ -74,7 +69,6 @@ class SignUpEmailScreen extends ConsumerWidget {
                 ),
                 onPressed: () {
                   if (ref.read(signUpStateProvider).isEmailEmpty) {
-                    // Navigation.pushNamed(SignUpCheckEmail.routeName);
                   } else {
                     Navigation.pushNamed(SignUpCheckEmailScreen.routeName);
                   }
