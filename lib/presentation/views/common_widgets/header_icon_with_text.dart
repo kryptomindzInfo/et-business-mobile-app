@@ -1,8 +1,6 @@
 import 'package:etbank_business_app/constants/app_textstyle.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../constants/app_colors.dart';
 
@@ -10,6 +8,9 @@ class HeaderIconWithTitle extends ConsumerWidget {
   final String? title;
   final String? description;
   final String imageicon;
+  final double? imageIconHeight;
+  final double? imageIconWidth;
+
   final EdgeInsetsGeometry? edgeinsets;
   final String? trailingImage;
   final double? trailingImageHeight;
@@ -24,7 +25,9 @@ class HeaderIconWithTitle extends ConsumerWidget {
       this.trailingImage,
       this.trailingImageHeight,
       this.trailingImageWidth,
-      this.rightPadding});
+      this.rightPadding,
+      this.imageIconHeight,
+      this.imageIconWidth});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -46,8 +49,8 @@ class HeaderIconWithTitle extends ConsumerWidget {
                 children: [
                   Image.asset(
                     imageicon,
-                    width: 25.12,
-                    height: 17.94,
+                    width: imageIconWidth ?? 25.12,
+                    height: imageIconHeight ?? 17.94,
                   ),
                   if (trailingImage != null)
                     Image.asset(

@@ -137,6 +137,7 @@ class SignUpState extends ChangeNotifier {
     } else {
       selectedReasonsForUsingEtBank.add(value);
     }
+    notifyListeners();
   }
 
   // Types of Customers
@@ -148,6 +149,7 @@ class SignUpState extends ChangeNotifier {
     } else {
       selectedCustomerTypes.add(value);
     }
+    notifyListeners();
   }
 
   // How You Sell Products
@@ -159,6 +161,7 @@ class SignUpState extends ChangeNotifier {
     } else {
       howYouSellProductsOptions.add(value);
     }
+    notifyListeners();
   }
 
   // User Personal Deatails Leagal First Name Controller

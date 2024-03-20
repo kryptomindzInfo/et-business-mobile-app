@@ -12,6 +12,7 @@ class SendingCurrencyProvider extends ChangeNotifier {
 
   setCompanySelected(bool value) {
     _companySelected = value;
+    notifyListeners();
   }
 
   // Country Contoller

@@ -1,3 +1,4 @@
+import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:etbank_business_app/constants/app_textstyle.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -32,7 +33,8 @@ class TextFieldWidget extends StatelessWidget {
       this.autofocus,
       this.focusColor,
       this.controller,
-      this.fillColor})
+      this.fillColor,
+      this.bottomContentPadding})
       : super(key: key);
 
   final TextEditingController? controller;
@@ -62,6 +64,7 @@ class TextFieldWidget extends StatelessWidget {
   final bool? autofocus;
   final Color? focusColor;
   final Color? fillColor;
+  final double? bottomContentPadding;
 
   @override
   Widget build(BuildContext context) {
@@ -103,40 +106,43 @@ class TextFieldWidget extends StatelessWidget {
             textAlign: textAlign ?? TextAlign.start,
             obscuringCharacter: '●',
             decoration: InputDecoration(
-                fillColor: fillColor ?? Colors.white,
-                filled: true,
-                hintText: hintText ?? '',
+              fillColor: fillColor ?? Colors.white,
+              filled: true,
+              hintText: hintText ?? '',
 
-                // suffix: suffix,
-                errorText: errorText,
-                //   iconData: iconData,
-                contentPadding: const EdgeInsets.only(
-                  left: 10,
-                  top: 10,
-                ),
-                hintStyle: hintStyle ??
-                    AppTextstyle.bodyTextStyle(color: const Color(0xff191D23)),
-                // const TextStyle(
-                //     fontSize: 14,
-                //     fontFamily: 'WorkSans',
-                //     fontStyle: FontStyle.normal,
-                //     fontWeight: FontWeight.w400,
-                //     color: Color(0xff191D23)),
-                // suffixIcon:
-                //     GestureDetector(onTap: onSuffixIconTap, child: suffixIcon),
-                enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(8),
-                  // borderSide: BorderSide(color: AppColors.textFieldBorderColor),
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(8),
-                  // borderSide: BorderSide(
-                  //     color: focusColor ?? AppColors.textFieldBorderColor),
-                ),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(8),
-                  // borderSide: BorderSide(color: AppColors.textFieldBorderColor),
-                )),
+              // suffix: suffix,
+              errorText: errorText,
+              //   iconData: iconData,
+              contentPadding: EdgeInsets.only(
+                left: 10,
+                // top: 10,
+                bottom: bottomContentPadding ?? 0,
+              ),
+              hintStyle: hintStyle ??
+                  AppTextstyle.bodyTextStyle(color: const Color(0xff191D23)),
+              // const TextStyle(
+              //     fontSize: 14,
+              //     fontFamily: 'WorkSans',
+              //     fontStyle: FontStyle.normal,
+              //     fontWeight: FontWeight.w400,
+              //     color: Color(0xff191D23)),
+              // suffixIcon:
+              //     GestureDetector(onTap: onSuffixIconTap, child: suffixIcon),
+              enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(8),
+                borderSide: BorderSide(color: AppColors.transparent),
+              ),
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(8),
+                borderSide:
+                    BorderSide(color: focusColor ?? AppColors.transparent),
+              ),
+              // border: OutlineInputBorder(
+              //   borderRadius: BorderRadius.circular(8),
+              //   // borderSide: BorderSide(color: AppColors.textFieldBorderColor),
+              // ),
+              border: InputBorder.none,
+            ),
           ),
         ],
       ),

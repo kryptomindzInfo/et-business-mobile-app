@@ -1,5 +1,6 @@
 import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:etbank_business_app/constants/app_textstyle.dart';
+import 'package:etbank_business_app/core/app_print.dart';
 import 'package:etbank_business_app/providers/sending_currency_provider.dart';
 import 'package:etbank_business_app/resources/localization/language_constrants.dart';
 import 'package:flutter/material.dart';
@@ -11,6 +12,8 @@ class AccountDetailsButtonsWidget extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    var sendCurrencyPro = ref.read(sendingCurrencyProvider);
+
     return Container(
       decoration: BoxDecoration(
         color: AppColors.grey,
@@ -21,51 +24,59 @@ class AccountDetailsButtonsWidget extends ConsumerWidget {
           Expanded(
             child: GestureDetector(
               onTap: () {
-                ref.read(sendingCurrencyProvider).setCompanySelected(true);
+                sendCurrencyPro.setCompanySelected(true);
               },
-              child: Container(
-                decoration: BoxDecoration(
-                  color: companyButtonColor(
-                      ref.watch(sendingCurrencyProvider).companySelected),
-                  borderRadius: BorderRadius.circular(70),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.fromLTRB(44, 12, 44, 12),
-                  child: Text(
-                    getTranslated('company', context),
-                    style: AppTextstyle.bodyTextStyle(
-                      fontSize: 16,
-                      color: companyButtonTextColor(
-                          ref.watch(sendingCurrencyProvider).companySelected),
+              child: Consumer(builder: (context, ref, child) {
+                var sendingCurrencyProW = ref.watch(sendingCurrencyProvider);
+                return Container(
+                  decoration: BoxDecoration(
+                    color:
+                        companyButtonColor(sendingCurrencyProW.companySelected),
+                    borderRadius: BorderRadius.circular(70),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(44, 12, 44, 12),
+                    child: Text(
+                      getTranslated('company', context),
+                      style: AppTextstyle.bodyTextStyle(
+                        fontSize: 16,
+                        color: companyButtonTextColor(
+                            sendingCurrencyProW.companySelected),
+                      ),
                     ),
                   ),
-                ),
-              ),
+                );
+              }),
             ),
           ),
           Expanded(
             child: GestureDetector(
               onTap: () {
-                ref.read(sendingCurrencyProvider).setCompanySelected(false);
+                sendCurrencyPro.setCompanySelected(false);
               },
-              child: Container(
-                decoration: BoxDecoration(
-                  color: companyButtonColor(
-                      !ref.watch(sendingCurrencyProvider).companySelected),
-                  borderRadius: BorderRadius.circular(70),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.fromLTRB(44, 12, 44, 12),
-                  child: Text(
-                    getTranslated('individual', context),
-                    style: AppTextstyle.bodyTextStyle(
-                      fontSize: 16,
-                      color: companyButtonTextColor(
-                          !ref.watch(sendingCurrencyProvider).companySelected),
+              child: Consumer(builder: (context, ref, child) {
+                var sendingCurrencyProW = ref.watch(sendingCurrencyProvider);
+
+                return Container(
+                  decoration: BoxDecoration(
+                    color: companyButtonColor(
+                        !sendingCurrencyProW.companySelected),
+                    borderRadius: BorderRadius.circular(70),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(44, 12, 44, 12),
+                    child: Text(
+                      getTranslated('individual', context),
+                      style: AppTextstyle.bodyTextStyle(
+                        fontSize: 16,
+                        color: companyButtonTextColor(!ref
+                            .watch(sendingCurrencyProvider)
+                            .companySelected),
+                      ),
                     ),
                   ),
-                ),
-              ),
+                );
+              }),
             ),
           ),
         ],

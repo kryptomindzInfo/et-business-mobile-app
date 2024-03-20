@@ -74,7 +74,6 @@ class SignUpEmailScreen extends ConsumerWidget {
                 ),
                 onPressed: () {
                   if (ref.read(signUpStateProvider).isEmailEmpty) {
-                    // Navigation.pushNamed(SignUpCheckEmail.routeName);
                   } else {
                     Navigation.pushNamed(SignUpCheckEmailScreen.routeName);
                   }

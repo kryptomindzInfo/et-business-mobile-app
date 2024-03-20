@@ -4,13 +4,13 @@ import 'package:etbank_business_app/presentation/views/home_section/home_screen_
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../../constants/app_assets.dart';
-import '../../../../constants/app_colors.dart';
-import '../../../../constants/app_textstyle.dart';
-import 'home_screen_main_card_options.dart';
+import '../../../../../constants/app_assets.dart';
+import '../../../../../constants/app_colors.dart';
+import '../../../../../constants/app_textstyle.dart';
+import '../home_screen_main_card_options.dart';
 
-class HomeMainCard extends ConsumerWidget {
-  const HomeMainCard({super.key});
+class DashboardMainCard extends ConsumerWidget {
+  const DashboardMainCard({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

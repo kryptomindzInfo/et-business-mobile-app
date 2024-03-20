@@ -39,6 +39,8 @@ dependencies:
   flutter_riverpod: ^2.4.10
   flutter_screenutil: ^5.9.0
   pin_code_fields: ^8.0.1
+  card_swiper: ^3.0.1
+  dots_indicator: ^2.1.1
 
 dev_dependencies:
   flutter_test:

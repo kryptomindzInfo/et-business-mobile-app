@@ -1,11 +1,12 @@
 import 'package:etbank_business_app/constants/app_assets.dart';
+import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:flutter/material.dart';
 import '../../navigation/navigation.dart';
 import '../../navigation/navigator_key.dart';
 import '../../presentation/views/common_widgets/see_all_widget.dart';
-import '../../presentation/views/home_section/home_screen_widgets/home_main_card.dart';
-import '../../presentation/views/home_section/home_screen_widgets/home_main_info_card.dart';
+import '../../presentation/views/home_section/home_screen_widgets/dashboard_section/dashboard_main_card.dart';
+import '../../presentation/views/home_section/home_screen_widgets/dashboard_section/dashboard_main_info_card.dart';
 import '../../presentation/views/profile_section/profile_screen_bottom_sheets/upgrade_bottom_sheet.dart';
 import '../../presentation/views/profile_section/refer_business/refer_business_screen.dart';
 
@@ -126,7 +127,61 @@ List<Map> _homeScreenOptions = [
   },
   {
     "title": "Team",
+  },
+  {
+    "title": "Merchant",
   }
 ];
 
 List<Map> get homeOptions => _homeScreenOptions;
+
+List<Map> _merchantData = [
+  {
+    "title": "Business owners failed",
+    "desc": "Please retry",
+    "icon": AppAssets.markicon,
+    "color": {AppColors.red}
+  },
+  {
+    "title": "Choose a plan and order a card",
+    "desc": "",
+    "icon": "",
+    "color": {AppColors.black}
+  },
+  {"title": "Submit documentation", "desc": "", "icon": "", "color": ""},
+  {
+    "title": "Verifying business details",
+    "desc": "Ready to submit",
+    "icon": AppAssets.hourglassicon,
+    "color": {AppColors.black}
+  },
+  // {
+  //   "title": "Identity",
+  //   "desc": "Verified",
+  //   "icon": AppAssets.greencheck,
+  //   "color": AppColors.green
+  // }
+];
+
+List<Map> get merchantData => _merchantData;
+
+List<Map> _getCardsData = [
+  {
+    "title": "Debit Card",
+    "data": {
+      "description": "best_for_business",
+      "icon": AppAssets.debitCard,
+      "image": AppAssets.greencardForslider
+    }
+  },
+  {
+    "title": "Virtual Debit Card",
+    "data": {
+      "description": "best_for_online",
+      "icon": AppAssets.virtualCard,
+      "image": AppAssets.silvercardForslider
+    }
+  }
+];
+
+List<Map> get getCardsData => _getCardsData;

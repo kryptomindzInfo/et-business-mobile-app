@@ -21,7 +21,6 @@
    "----------------------SIGN UP TEXTS-----------":"",
 
    "signup_email_title": "Enter Email Address",
-   "continue": "Continue",
    "check_email_title": "Check your email on this device",
    "check_email_subtitle": "We've sent a confirmation email to abc12@gmail.com. Tap the button in the email to return to ET Bank Business",
    "go_to_inbox":"Go to inbox",
@@ -195,10 +194,31 @@
    "british_pound":"British Pound",
    "account_number":"Account  number",
    "sort_code":"Sort Code",
-   
-
-
-
+   "account_name_matched_title":"Account name matched",
+   "account_name_matched_subtitle":"The recipient’s bank told us the name you entered matches the name on the account",
+   "payment_notif_title":"Payment Notification",
+   "payment_notif_subtitle":"Add recipient’s email and we can automatically notify them for you when you pay them",
+   "recipient_email":"Recipient email",
+   "gbp":"GBP",
+   "reference": "Reference",
+   "do_you_know_and_trust_this_payee":"Do you know and trust this payee?",
+   "unsure_about_payee":"if you’re unsure, don’t pay them, as you may never get your money back. Remember, fraudsters can impersonate others, and we will never ask you to make a payment.",
+   "no_go_back": "No, go back",
+   "yes_continue": "Yes, continue",
+   "et_bank": "ET Bank",
+   "arriving": "Arriving",
+   "today": "Today",
+   "amount":"Amount",
+   "transfer_fee":"Transfer fee",
+   "no_fee": "No fee",
+   "account_type":"Account type",
+   "send": "Send",
+   "email_otp_text":"Code sent to abc12@gmail.com unless you already have accounts",
+   "mobile_otp_text":"Code sent to +44 3456432342 unless you already have accounts",
+   "account_details_otp_text":"We’ve sent an SMS with confirmation code to your phone +44 3456432342",
+   "code_hasnt_arrived":"Code hasn’t arrived?",
+   "you_can_retry_in_58":"You can retry in 0:58",
+   "Youve_sent":"You’ve sent ",
 
 
    "help":"Help",
@@ -254,7 +274,37 @@
    "add_money":"Add Money",
    "details":"Details",
    "add_new_accounts":"Add new account",
-   "all_accounts":"All Accounts"
+   "all_accounts":"All Accounts",
+   "add_card":"Add card",
+   "my_cards":"My Cards",
+   "invite":"Invite",
+   "manage_role":"Manage roles",
+   "all_people":"All people",
+   "available_to_spend":"available to spend",
+   "card_low_balance":"The accounts linked to this card have a low balance.",
+   "resolve":"Resolve",
+   "spend_controls":"Spend controls",
+   "see_all":"See All",
+   "funding_account":"Funding accounts",
+   "freeze_card":"Freeze card",
+   "tap_again_unfreeze":"Tap again to unfreeze",
+   "settings":"Settings",
+   "expense_reporting":"Expense Reporting",
+   "attach_receipts":"Attach receipts, categories & review card transactions",
+   "change_card_name":"Change card name",
+   "current_name":"Current name",
+   "owner":"Owner",
+   "choose_owner":"Choose who will be the owner of this card",
+   "team_member":"Team members",
+   "get_card":"Get Card",
+   "best_for_business":"Best for business trips and operational expenses",
+   "best_for_online":"Best for online purchases",
+   "order":"Order",
+   "donot_order":"Do not order a card",
+   "ready_to_use":"Your card is ready to be used",
+   "use_it_online":"Use it online or via Apple Pay straight away"
+
+
    
    
    

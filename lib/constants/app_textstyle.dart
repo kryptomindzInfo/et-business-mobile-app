@@ -3,11 +3,12 @@ import 'package:flutter/widgets.dart';
 import 'app_colors.dart';
 
 class AppTextstyle {
-  static headingTextStyle(
-          {FontWeight fontWeight = FontWeight.normal,
-          double fontSize = 14,
-          Color color = AppColors.black,
-          TextOverflow overflow = TextOverflow.ellipsis}) =>
+  static headingTextStyle({
+    FontWeight fontWeight = FontWeight.normal,
+    double fontSize = 14,
+    Color color = AppColors.black,
+    TextOverflow overflow = TextOverflow.ellipsis,
+  }) =>
       _normalText(
         fontFamily: 'Sora',
         fontSize: fontSize,

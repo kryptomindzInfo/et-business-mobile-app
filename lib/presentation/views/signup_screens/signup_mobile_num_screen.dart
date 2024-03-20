@@ -4,6 +4,7 @@ import 'package:etbank_business_app/globals/countries_list.dart';
 import 'package:etbank_business_app/navigation/navigation.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/app_common_widgets.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/header_icon_with_text.dart';
+import 'package:etbank_business_app/presentation/views/signup_screens/signup_mobile_otp_code_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_otp_code_screen.dart';
 import 'package:etbank_business_app/providers/signup_provider.dart';
 import 'package:etbank_business_app/resources/localization/language_constrants.dart';
@@ -104,10 +105,7 @@ class SignUpMobileNoScreen extends ConsumerWidget {
                 onPressed: () {
                   if (ref.read(signUpStateProvider).isMobileNoEmpty) {
                   } else {
-                    Navigation.pushNamed(SignUpOtpCodeScreen.routeName,
-                        arguments: PinCodeScreenArgs(
-                            value: '+92343242342',
-                            type: PinCodeDestinationType.phone));
+                    Navigation.pushNamed(SignUpMobileOTPCodeScreen.routeName);
                   }
                 },
               ),
