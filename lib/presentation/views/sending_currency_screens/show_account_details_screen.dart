@@ -5,15 +5,11 @@ import 'package:etbank_business_app/presentation/views/sending_currency_screens/
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../../constants/app_assets.dart';
 import '../../../constants/app_textstyle.dart';
-import '../../../globals/enums.dart';
 import '../../../navigation/navigation.dart';
-import '../../../navigation/params/pincode_screen_args.dart';
 import '../../../resources/localization/language_constrants.dart';
 import '../common_widgets/header_icon_with_text.dart';
-import '../signup_screens/signup_otp_code_screen.dart';
 import '../signup_screens/signup_widgets/button_bottom_navigation_widget.dart';
 import '../signup_screens/signup_widgets/primary_button.dart';
 import 'sending_currency_widgets/show_account_details_widget.dart';

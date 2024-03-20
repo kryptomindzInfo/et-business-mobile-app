@@ -23,7 +23,6 @@ class SignUpCategoryScreen extends ConsumerWidget {
     return BackgroundImageWidget(
       child: Scaffold(
         extendBody: true,
-        // resizeToAvoidBottomInset: false,
         backgroundColor: Colors.transparent,
         body: Padding(
           padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),

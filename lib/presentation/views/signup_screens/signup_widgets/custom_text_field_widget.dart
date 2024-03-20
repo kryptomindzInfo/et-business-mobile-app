@@ -1,8 +1,6 @@
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../../../constants/app_colors.dart';
 import '../../../../constants/app_textstyle.dart';
 
@@ -71,19 +69,15 @@ class _CustomTextFiledState extends State<CustomTextFiledWidget> {
           )),
       4.spaceY,
       Container(
-          height: widget.height,
-          decoration: BoxDecoration(
-              color: widget.backgroundColor ?? theme.highlightColor,
-              border: Border.all(
-                  color: widget.borderColor ?? AppColors.transparent),
-              borderRadius: BorderRadius.circular(6)),
-          child: Row(children: [
+        height: widget.height,
+        decoration: BoxDecoration(
+            color: widget.backgroundColor ?? theme.highlightColor,
+            border:
+                Border.all(color: widget.borderColor ?? AppColors.transparent),
+            borderRadius: BorderRadius.circular(6)),
+        child: Row(
+          children: [
             SizedBox(width: widget.padding),
-            // if (isNotNull(widget.prefixIcon))
-            //   Icon(widget.prefixIcon,
-            //       color: fieldNode.hasFocus
-            //           ? Theme.of(context).primaryColor
-            //           : AppColors.white),
             Flexible(
                 child: Theme(
               data: Theme.of(context).copyWith(
@@ -103,26 +97,16 @@ class _CustomTextFiledState extends State<CustomTextFiledWidget> {
                 style: AppTextstyle.bodyTextStyle(),
                 decoration: InputDecoration(
                   border: InputBorder.none,
-                  // contentPadding:
-                  //     const EdgeInsets.only(left: 8, right: 19), //, top: 13),
                   hintText: widget.hint,
                   hintStyle: AppTextstyle.bodyTextStyle(
                     fontSize: 16,
-                    // color: theme.inputDecorationTheme.hintStyle!.color!,
                   ),
                 ),
               ),
             )),
-            // if (isNotNull(widget.suffixIcon))
-            //   InkWell(
-            //       onTap: widget.isSuffixClickable
-            //           ? () => setState(() => obscureText = !obscureText)
-            //           : null,
-            //       child: Icon(
-            //           obscureText ? PhosphorIcons.eye_slash : widget.suffixIcon,
-            //           color: AppColors.textFieldIcon)),
-            // 12.spaceX
-          ]))
+          ],
+        ),
+      ),
     ]);
   }
 }

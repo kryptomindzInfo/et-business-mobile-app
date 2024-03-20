@@ -1,6 +1,5 @@
 import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:etbank_business_app/constants/app_textstyle.dart';
-import 'package:etbank_business_app/core/app_print.dart';
 import 'package:etbank_business_app/providers/sending_currency_provider.dart';
 import 'package:etbank_business_app/resources/localization/language_constrants.dart';
 import 'package:flutter/material.dart';

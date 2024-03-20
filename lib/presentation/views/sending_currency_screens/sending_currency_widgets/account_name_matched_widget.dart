@@ -12,7 +12,7 @@ class AccountNameMatchedWidget extends ConsumerWidget {
         color: AppColors.white,
         borderRadius: BorderRadius.circular(28),
       ),
-      child: Column(
+      child: const Column(
         children: [],
       ),
     );

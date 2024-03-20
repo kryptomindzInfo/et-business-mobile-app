@@ -10,10 +10,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../constants/app_assets.dart';
 import '../../../constants/app_colors.dart';
-import '../../../globals/enums.dart';
 import '../../../navigation/navigation.dart';
-import '../../../navigation/params/pincode_screen_args.dart';
-import 'signup_otp_code_screen.dart';
 import 'signup_widgets/button_bottom_navigation_widget.dart';
 import 'signup_widgets/primary_button.dart';
 
@@ -26,8 +23,6 @@ class SignUpCreatePassCodeScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return BackgroundImageWidget(
       child: Scaffold(
-        // extendBody: true,
-
         body: Padding(
           padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
           child: Column(
@@ -42,9 +37,6 @@ class SignUpCreatePassCodeScreen extends ConsumerWidget {
               TextFormField(
                 onChanged: (value) {
                   ref.read(signUpStateProvider).setPassCode(value);
-                  // if (value.length == 4) {
-                  //   Navigation.pushNamed(SignUpEnablePushNotifScreen.routeName);
-                  // }
                 },
                 autofocus: true,
                 decoration: InputDecoration(
@@ -66,7 +58,6 @@ class SignUpCreatePassCodeScreen extends ConsumerWidget {
         ),
         resizeToAvoidBottomInset: false,
         backgroundColor: Colors.transparent,
-
         bottomNavigationBar: ButtonBottomNavigationWidget(
           children: [
             SizedBox(

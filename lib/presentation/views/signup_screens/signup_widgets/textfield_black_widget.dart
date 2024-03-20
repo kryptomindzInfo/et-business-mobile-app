@@ -17,7 +17,6 @@ class TextFieldBlackWidget extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return SizedBox(
-      // width: 300.w,
       height: 35.h,
       child: TextFormField(
         onChanged: onChanged,

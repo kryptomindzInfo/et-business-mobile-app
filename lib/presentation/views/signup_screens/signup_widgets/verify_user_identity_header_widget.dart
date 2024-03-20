@@ -54,7 +54,6 @@ class VerifyUserIdentityHeaderWidget extends ConsumerWidget {
                 ),
               )
             : const SizedBox(),
-        // 10.spaceY,
         description != null
             ? Text(
                 description!,

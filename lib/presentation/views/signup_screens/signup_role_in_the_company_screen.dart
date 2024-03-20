@@ -28,7 +28,6 @@ class SignUpRoleInTheCompanyScreen extends ConsumerWidget {
       child: Scaffold(
         backgroundColor: AppColors.transparent,
         extendBody: true,
-        // extendBody: true,
         body: Padding(
           padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
           child: Column(
@@ -62,12 +61,9 @@ class SignUpRoleInTheCompanyScreen extends ConsumerWidget {
                             8.spaceX,
                             BusinessTypeWidget(
                               image: companyRoles[index]['image'],
-                              //  AppAssets.companyIcon,
                               title: getTranslated(
                                   companyRoles[index]['title'], context),
-                              // getTranslated('company', context),
                               description:
-                                  // getTranslated('company', context),
                                   getTranslated(
                                       companyRoles[index]['subtitle'], context),
                               onPressed: () => ref

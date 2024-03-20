@@ -24,21 +24,8 @@ class VerifiedBottomSheetWidget extends ConsumerWidget {
           ),
           20.spaceY,
           title,
-          // Text(
-          //   title,
-          //   style: AppTextstyle.bodyTextStyle(
-          //       fontSize: 20, fontWeight: FontWeight.bold),
-          // ),
           20.spaceY,
           description,
-          // Text(
-          //   description,
-          //   textAlign: TextAlign.center,
-          //   style: AppTextstyle.bodyTextStyle(
-          //       fontSize: 16,
-          //       fontWeight: FontWeight.w500,
-          //       overflow: TextOverflow.clip),
-          // ),
         ],
       ),
     );
