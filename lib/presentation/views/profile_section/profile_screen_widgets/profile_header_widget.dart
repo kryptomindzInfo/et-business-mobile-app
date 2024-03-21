@@ -10,17 +10,20 @@ class ProfileHeaderWidget extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return const Row(
+    return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       crossAxisAlignment: CrossAxisAlignment.end,
       children: [
-        HeaderIconWithTitle(
-          title: "Brooklyn Simmons",
-          description: "Louis Vuitton",
-          imageicon: AppAssets.arrowLeft,
+        Container(
+          width: 250,
+          child: HeaderIconWithTitle(
+            title: "Brooklyn Simmons",
+            description: "Louis Vuitton",
+            imageicon: AppAssets.arrowLeft,
+          ),
         ),
         Padding(
-          padding: EdgeInsets.only(bottom: 18),
+          padding: EdgeInsets.only(bottom: 40),
           child: ProfilePicWidget(
             image: AppAssets.profileicon,
           ),
