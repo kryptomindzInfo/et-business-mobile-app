@@ -33,7 +33,7 @@ class Chips extends ConsumerWidget {
                 )
               : SizedBox(),
           5.spaceX,
-          Text(title!,
+          Text(title ?? "",
               style: AppTextstyle.bodyTextStyle(
                   fontWeight: FontWeight.w500,
                   fontSize: 16,

@@ -320,8 +320,12 @@
    "upgrade_plan":"Upgrade plan",
    "inbox":"Inbox",
    "caught_up":"You’re all caught up",
-   "check_back_later":"Check back later for promotions and recommendations to keep your account up to date"
-   
+   "check_back_later":"Check back later for promotions and recommendations to keep your account up to date",
+   "choose_currency_pair":"Choose a currency pair to compare their live rates",
+   "lowest":"Lowest",
+   "current":"Current",
+   "highest":"Highest"
+
 
    
    

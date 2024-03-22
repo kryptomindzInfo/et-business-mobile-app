@@ -7,9 +7,11 @@ import '../../../constants/app_colors.dart';
 class HeaderIconWithTitle extends ConsumerWidget {
   final String? title;
   final String? description;
+  final String? greenDescription;
   final String? imageicon;
   final double? imageIconHeight;
   final double? imageIconWidth;
+  final double? fontsize;
   final EdgeInsetsGeometry? edgeinsets;
   final String? trailingImage;
   final double? trailingImageHeight;
@@ -19,8 +21,10 @@ class HeaderIconWithTitle extends ConsumerWidget {
       {super.key,
       this.title,
       this.description,
+      this.greenDescription,
       this.imageicon,
       this.edgeinsets,
+      this.fontsize,
       this.trailingImage,
       this.trailingImageHeight,
       this.trailingImageWidth,
@@ -69,7 +73,7 @@ class HeaderIconWithTitle extends ConsumerWidget {
                 title!,
                 style: AppTextstyle.headingTextStyle(
                   color: AppColors.white,
-                  fontSize: 24,
+                  fontSize: fontsize ?? 24,
                   fontWeight: FontWeight.bold,
                   overflow: TextOverflow.clip,
                 ),
@@ -86,7 +90,15 @@ class HeaderIconWithTitle extends ConsumerWidget {
                   overflow: TextOverflow.clip,
                 ),
               )
-            : const SizedBox(),
+            : Text(
+                greenDescription!,
+                style: AppTextstyle.bodyTextStyle(
+                  color: AppColors.primaryColor,
+                  fontSize: 21,
+                  fontWeight: FontWeight.normal,
+                  overflow: TextOverflow.clip,
+                ),
+              ),
       ],
     );
   }

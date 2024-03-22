@@ -110,13 +110,13 @@ List<Map> _upgradeData = [
 
 List<Map> get getupgradeData => _upgradeData;
 
-Map _ratesScreenOptions = {
-  "title1": "Rates",
-  "title2": "Coverter",
-  "title3": "Actions"
-};
+List<Map> _ratesScreenOptions = [
+  {"title": "Rates"},
+  {"title": "Coverter"},
+  {"title": "Actions"}
+];
 
-Map get ratesScreenOptions => _ratesScreenOptions;
+List<Map> get ratesScreenOptions => _ratesScreenOptions;
 
 List<Map> _homeScreenOptions = [
   {

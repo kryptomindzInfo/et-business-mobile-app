@@ -123,5 +123,9 @@ class AppAssets {
   static const virtualCard = "${iconsDir}virtual.png";
   static const checkout = "${iconsDir}checkout.png";
   static const rkImgae = "${iconsDir}rk_image.png";
+  static const addgreenbutton = "${iconsDir}addgreenbutton.png";
+  static const greenrightarrow = "${iconsDir}greenrightarrow.png";
+  static const currencyexchangeicon = "${iconsDir}exchangeicon.png";
+  static const currencydelete = "${iconsDir}currencydelete.png";
   static const trustPayee = "${imagesDir}trust_payee.png";
 }
