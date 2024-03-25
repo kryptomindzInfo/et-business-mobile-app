@@ -5,7 +5,7 @@ import 'package:etbank_business_app/presentation/views/profile_section/refer_bus
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../constants/static_data/profile_screen_static_data.dart';
+import '../constants/static_data/home_screen_static_data.dart';
 import '../presentation/views/profile_section/profile_screen_bottom_sheets/upgrade_bottom_sheet.dart';
 
 final profilescreenProvider = ChangeNotifierProvider<ProfileScreenProvider>(

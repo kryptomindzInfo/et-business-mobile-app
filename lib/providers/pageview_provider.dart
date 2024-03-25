@@ -8,3 +8,7 @@ final pageControllerProvider = Provider<PageController>((ref) {
 final activePageIndexProvider = StateProvider<int>((ref) {
   return 0; // Initial active page index is 0
 });
+
+final upgradeScreenIndexProvider = StateProvider<int>((ref) {
+  return 0; // Initial active page index is 0
+});

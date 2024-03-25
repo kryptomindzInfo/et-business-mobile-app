@@ -4,10 +4,11 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class CommonWhiteFlexibleCard extends ConsumerWidget {
   final Widget? widget;
+  final Color? color;
   final double? borderRadius;
   final EdgeInsetsGeometry? padding;
   const CommonWhiteFlexibleCard(
-      {super.key, this.widget, this.borderRadius, this.padding});
+      {super.key, this.widget, this.color, this.borderRadius, this.padding});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

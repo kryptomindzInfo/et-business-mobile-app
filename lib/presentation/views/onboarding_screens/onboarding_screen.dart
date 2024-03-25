@@ -1,8 +1,16 @@
 import 'package:etbank_business_app/constants/app_assets.dart';
+import 'package:etbank_business_app/extensions/sized_box.dart';
+import 'package:etbank_business_app/navigation/navigator_key.dart';
 import 'package:etbank_business_app/providers/pageview_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../../../constants/app_colors.dart';
+import '../../../navigation/navigation.dart';
+import '../../../resources/localization/language_constrants.dart';
+import '../bottom_navigation_bar.dart';
+import '../signup_screens/signup_email_screen.dart';
+import 'onboarding_widgets/button_widget.dart';
 import 'onboarding_widgets/linear_indicator_widget.dart';
 import 'onboarding_widgets/onboarding_widget.dart';
 
@@ -34,11 +42,43 @@ class Onboarding extends ConsumerWidget {
       subtitle: 'onboarding5_subtitle',
       image: AppAssets.onboardingImage5,
     ),
-    const OnboardingWidget(
+    OnboardingWidget(
       title: 'onboarding6_title',
       subtitle: 'onboarding6_subtitle',
       image: AppAssets.onboardingImage6,
       isButtons: true,
+      widget: Positioned(
+        bottom: 60.h,
+        right: 50.w,
+        left: 50.w,
+        child: Row(
+          children: [
+            CustomButton(
+              onPressed: () {
+                Navigation.pushNamed(BaseBottomNavBar.routeName);
+              },
+              height: 39.h,
+              width: 133.w,
+              backgroundColor: AppColors.tealColor,
+              textColor: AppColors.white,
+              borderRadius: 20,
+              text: getTranslated('sign_in', appContext),
+            ),
+            20.spaceX,
+            CustomButton(
+              onPressed: () {
+                Navigation.pushNamed(SignUpEmailScreen.routeName);
+              },
+              height: 39.h,
+              width: 133.w,
+              backgroundColor: AppColors.primaryColor,
+              textColor: AppColors.black,
+              borderRadius: 20,
+              text: getTranslated('sign_up', appContext),
+            ),
+          ],
+        ),
+      ),
     ),
   ];
 
@@ -61,7 +101,11 @@ class Onboarding extends ConsumerWidget {
               itemBuilder: (context, index) => pages[index % pages.length],
             ),
           ),
-          const LinearIndicatorWidget(),
+          LinearIndicatorWidget(
+            activePageIndex: ref.watch(activePageIndexProvider),
+            widgetListLength: pages.length,
+            width: 50.w,
+          ),
         ],
       ),
     );

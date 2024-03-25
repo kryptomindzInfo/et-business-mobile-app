@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../constants/app_assets.dart';
-import '../constants/static_data/profile_screen_static_data.dart';
+import '../constants/static_data/home_screen_static_data.dart';
 
 final cardscreenProvider =
     ChangeNotifierProvider<CardsProvider>((ref) => CardsProvider());

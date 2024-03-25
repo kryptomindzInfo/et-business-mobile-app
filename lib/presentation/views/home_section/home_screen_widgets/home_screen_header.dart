@@ -1,6 +1,7 @@
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/navigation/navigation.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/profile_pic_widget.dart';
+import 'package:etbank_business_app/presentation/views/rates_section/rate_converter_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -8,7 +9,8 @@ import '../../../../constants/app_assets.dart';
 
 class HomeScreenHeader extends ConsumerWidget {
   final VoidCallback? onpress;
-  const HomeScreenHeader({super.key, this.onpress});
+  final VoidCallback? onNotificationPress;
+  const HomeScreenHeader({super.key, this.onpress, this.onNotificationPress});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -28,7 +30,7 @@ class HomeScreenHeader extends ConsumerWidget {
               children: [
                 InkWell(
                   onTap: () {
-                    Navigation.pushNamed("rates_screen");
+                    Navigation.pushNamed(RatesAndConverterScreen.routeName);
                   },
                   child: Image.asset(
                     AppAssets.charticon,
@@ -36,9 +38,12 @@ class HomeScreenHeader extends ConsumerWidget {
                   ),
                 ),
                 20.spaceX,
-                Image.asset(
-                  AppAssets.notificationicon,
-                  height: 25,
+                InkWell(
+                  onTap: onNotificationPress,
+                  child: Image.asset(
+                    AppAssets.notificationicon,
+                    height: 25,
+                  ),
                 )
               ],
             ),

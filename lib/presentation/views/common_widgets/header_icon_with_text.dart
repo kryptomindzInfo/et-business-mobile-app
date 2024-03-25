@@ -7,10 +7,9 @@ import '../../../constants/app_colors.dart';
 class HeaderIconWithTitle extends ConsumerWidget {
   final String? title;
   final String? description;
-  final String imageicon;
+  final String? imageicon;
   final double? imageIconHeight;
   final double? imageIconWidth;
-
   final EdgeInsetsGeometry? edgeinsets;
   final String? trailingImage;
   final double? trailingImageHeight;
@@ -21,7 +20,7 @@ class HeaderIconWithTitle extends ConsumerWidget {
       {super.key,
       this.title,
       this.description,
-      required this.imageicon,
+      this.imageicon,
       this.edgeinsets,
       this.trailingImage,
       this.trailingImageHeight,
@@ -49,11 +48,12 @@ class HeaderIconWithTitle extends ConsumerWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Image.asset(
-                    imageicon,
-                    width: imageIconWidth ?? 25.12,
-                    height: imageIconHeight ?? 17.94,
-                  ),
+                  if (imageicon != null)
+                    Image.asset(
+                      imageicon!,
+                      width: imageIconWidth ?? 25.12,
+                      height: imageIconHeight ?? 17.94,
+                    ),
                   if (trailingImage != null)
                     Image.asset(
                       trailingImage!,
@@ -77,7 +77,7 @@ class HeaderIconWithTitle extends ConsumerWidget {
                 ),
               )
             : const SizedBox(),
-        // 10.spaceY,
+        10.spaceY,
         description != null
             ? Text(
                 description!,
