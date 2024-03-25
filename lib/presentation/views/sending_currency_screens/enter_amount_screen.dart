@@ -37,7 +37,7 @@ class EnterAmountScreen extends ConsumerWidget {
               ),
               40.spaceY,
               const CurrencyTextFieldWidget(),
-              5.spaceY,
+              16.spaceY,
               TextFieldWidget(
                 hintText: getTranslated('reference', context),
                 hintStyle: AppTextstyle.bodyTextStyle(
