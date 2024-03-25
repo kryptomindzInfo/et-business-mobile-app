@@ -10,6 +10,7 @@ class DirectorButtonWidget extends ConsumerWidget {
   final TextStyle? titleTextStyle;
   final String? leadingImage;
   final EdgeInsetsGeometry? padding;
+  final double? width;
 
   const DirectorButtonWidget(
       {super.key,
@@ -17,11 +18,13 @@ class DirectorButtonWidget extends ConsumerWidget {
       this.buttonColor,
       this.titleTextStyle,
       this.leadingImage,
-      this.padding});
+      this.padding,
+      this.width});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Container(
+      width: width,
       decoration: BoxDecoration(
         color: buttonColor ?? AppColors.tealColor,
         borderRadius: const BorderRadius.all(

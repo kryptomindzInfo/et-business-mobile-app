@@ -126,11 +126,13 @@ class SignUpRegisteredBusinessAddressScreen extends ConsumerWidget {
                         });
                   },
                 ),
+                16.spaceY,
                 TextFieldWidget(
                   hintText: getTranslated('address_line_01', context),
                   hintStyle: AppTextstyle.bodyTextStyle(color: AppColors.grey),
                   style: AppTextstyle.bodyTextStyle(color: AppColors.black),
                 ),
+                16.spaceY,
                 TextFieldWidget(
                   hintText: getTranslated('address_line_01', context),
                   hintStyle: AppTextstyle.bodyTextStyle(color: AppColors.grey),
@@ -142,6 +144,7 @@ class SignUpRegisteredBusinessAddressScreen extends ConsumerWidget {
                       fontSize: 16.sp, color: Colors.grey),
                   overflow: TextOverflow.clip,
                 ),
+                16.spaceY,
                 TextFieldWidget(
                   hintText: getTranslated('city', context),
                   hintStyle: AppTextstyle.bodyTextStyle(color: AppColors.grey),

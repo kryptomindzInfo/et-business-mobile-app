@@ -29,7 +29,6 @@ import 'package:etbank_business_app/presentation/views/signup_screens/signup_bus
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_business_type_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_check_email_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_create_password_screen.dart';
-import 'package:etbank_business_app/presentation/views/signup_screens/signup_otp_code_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_email_screen.dart';
 import 'package:etbank_business_app/presentation/views/profile_section/profile_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_enable_push_notif_screen.dart';

@@ -41,13 +41,15 @@ class SignUpMobileNoScreen extends ConsumerWidget {
                     getTranslated('mobile_no_verification_code', context),
                 imageicon: AppAssets.arrowLeft,
               ),
-              Row(
-                children: [
-                  CountryDropDownButtonWidget(
-                    title:
-                        '${selectedCountry?.flag} ${selectedCountry?.dialCode}',
-                    onTap: () {
-                      showModalBottomSheet(
+              Padding(
+                padding: const EdgeInsets.only(top: 32),
+                child: Row(
+                  children: [
+                    CountryDropDownButtonWidget(
+                      title:
+                          '${selectedCountry?.flag} ${selectedCountry?.dialCode}',
+                      onTap: () {
+                        showModalBottomSheet(
                           context: context,
                           builder: (context) {
                             return CountriesListWidget(
@@ -57,27 +59,29 @@ class SignUpMobileNoScreen extends ConsumerWidget {
                                     .setSelectedCountry(value);
                               },
                             );
-                          });
-                    },
-                  ),
-                  14.spaceX,
-                  Expanded(
-                    child: TextFieldWidget(
-                      style: const TextStyle(color: Colors.black),
-                      controller:
-                          ref.read(signUpStateProvider).mobileNoController,
-                      hintText: getTranslated('mobile_no', context),
-                      hintStyle: AppTextstyle.bodyTextStyle(
-                        color: AppColors.grey,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w400,
-                      ),
-                      onChanged: (value) {
-                        ref.read(signUpStateProvider).notify();
+                          },
+                        );
                       },
                     ),
-                  ),
-                ],
+                    14.spaceX,
+                    Expanded(
+                      child: TextFieldWidget(
+                        style: const TextStyle(color: Colors.black),
+                        controller:
+                            ref.read(signUpStateProvider).mobileNoController,
+                        hintText: getTranslated('mobile_no', context),
+                        hintStyle: AppTextstyle.bodyTextStyle(
+                          color: AppColors.grey,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w400,
+                        ),
+                        onChanged: (value) {
+                          ref.read(signUpStateProvider).notify();
+                        },
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ],
           ),

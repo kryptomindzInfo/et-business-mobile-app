@@ -38,7 +38,7 @@ class SignUpUserHomeAddressScreen extends ConsumerWidget {
                   title: getTranslated('forks_home_address', context),
                   imageicon: AppAssets.arrowLeft,
                 ),
-                30.spaceY,
+                32.spaceY,
                 BusinessDetailsWhiteContainerWidet(
                   onTap: () {
                     showModalBottomSheet(
@@ -112,11 +112,13 @@ class SignUpUserHomeAddressScreen extends ConsumerWidget {
                         });
                   },
                 ),
+                16.spaceY,
                 TextFieldWidget(
                   hintText: getTranslated('address_line_01', context),
                   hintStyle: AppTextstyle.bodyTextStyle(color: AppColors.grey),
                   style: AppTextstyle.bodyTextStyle(color: AppColors.black),
                 ),
+                16.spaceY,
                 TextFieldWidget(
                   hintText: getTranslated('address_line_01', context),
                   hintStyle: AppTextstyle.bodyTextStyle(color: AppColors.grey),
@@ -128,6 +130,7 @@ class SignUpUserHomeAddressScreen extends ConsumerWidget {
                       fontSize: 16.sp, color: Colors.grey),
                   overflow: TextOverflow.clip,
                 ),
+                16.spaceY,
                 TextFieldWidget(
                   hintText: getTranslated('city', context),
                   hintStyle: AppTextstyle.bodyTextStyle(color: AppColors.grey),
