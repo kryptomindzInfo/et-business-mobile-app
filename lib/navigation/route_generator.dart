@@ -3,6 +3,15 @@ import 'package:etbank_business_app/presentation/views/home_section/home_screen_
 import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/cards_section/get_card_screen.dart';
 import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/cards_section/my_cards_screen.dart';
 import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/teams_section/owner_screen.dart';
+import 'package:etbank_business_app/presentation/views/invoice_and_request_screens/add_customer_screen.dart';
+import 'package:etbank_business_app/presentation/views/invoice_and_request_screens/add_items_screen.dart';
+import 'package:etbank_business_app/presentation/views/invoice_and_request_screens/add_new_customer_screen.dart';
+import 'package:etbank_business_app/presentation/views/invoice_and_request_screens/automatic_reminders_screen.dart';
+import 'package:etbank_business_app/presentation/views/invoice_and_request_screens/billing_details_screen.dart';
+import 'package:etbank_business_app/presentation/views/invoice_and_request_screens/email_message_screen.dart';
+import 'package:etbank_business_app/presentation/views/invoice_and_request_screens/invoice_number_screen.dart';
+import 'package:etbank_business_app/presentation/views/invoice_and_request_screens/invoice_screen.dart';
+import 'package:etbank_business_app/presentation/views/invoice_and_request_screens/mark_as_paid_screen.dart';
 import 'package:etbank_business_app/presentation/views/onboarding_screens/onboarding_screen.dart';
 import 'package:etbank_business_app/presentation/views/sending_currency_screens/account_details_screen.dart';
 import 'package:etbank_business_app/presentation/views/sending_currency_screens/enter_amount_screen.dart';
@@ -109,6 +118,33 @@ class RouteGenerator {
 
       case SignUpDescribeBusinessActivityScreen.routeName:
         return route(const SignUpDescribeBusinessActivityScreen());
+
+      case InvoiceSreen.routeName:
+        return route(const InvoiceSreen());
+
+      case AddCustomerScreen.routeName:
+        return route(const AddCustomerScreen());
+
+      case AddNewCustomerScreen.routeName:
+        return route(const AddNewCustomerScreen());
+
+      case BillingDetailsScreen.routeName:
+        return route(const BillingDetailsScreen());
+
+      case EmailMessageScreen.routeName:
+        return route(const EmailMessageScreen());
+
+      case AddItemsScreen.routeName:
+        return route(const AddItemsScreen());
+
+      case AutomaticRemindersScreen.routeName:
+        return route(const AutomaticRemindersScreen());
+
+      case InvoiceNumberScreen.routeName:
+        return route(const InvoiceNumberScreen());
+
+      case MarkAsPaidScreen.routeName:
+        return route(const MarkAsPaidScreen());
 
       // case SignUpMobileCodeScreen.routeName:
       //   return route(const SignUpMobileCodeScreen());

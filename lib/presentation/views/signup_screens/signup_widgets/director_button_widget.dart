@@ -8,8 +8,16 @@ class DirectorButtonWidget extends ConsumerWidget {
   final String title;
   final Color? buttonColor;
   final TextStyle? titleTextStyle;
+  final String? leadingImage;
+  final EdgeInsetsGeometry? padding;
+
   const DirectorButtonWidget(
-      {super.key, required this.title, this.buttonColor, this.titleTextStyle});
+      {super.key,
+      required this.title,
+      this.buttonColor,
+      this.titleTextStyle,
+      this.leadingImage,
+      this.padding});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -21,12 +29,25 @@ class DirectorButtonWidget extends ConsumerWidget {
         ),
       ),
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Text(
-          title,
-          style: titleTextStyle ??
-              AppTextstyle.bodyTextStyle(
-                  color: AppColors.white, fontSize: 16.sp),
+        padding: padding ?? const EdgeInsets.all(8.0),
+        child: Row(
+          children: [
+            if (leadingImage != null)
+              Padding(
+                padding: const EdgeInsets.only(right: 8),
+                child: Image.asset(
+                  leadingImage ?? '',
+                  height: 12,
+                  width: 17,
+                ),
+              ),
+            Text(
+              title,
+              style: titleTextStyle ??
+                  AppTextstyle.bodyTextStyle(
+                      color: AppColors.white, fontSize: 16.sp),
+            ),
+          ],
         ),
       ),
     );

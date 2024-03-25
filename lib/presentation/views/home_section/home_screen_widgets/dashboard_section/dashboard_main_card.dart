@@ -7,6 +7,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../../../constants/app_assets.dart';
 import '../../../../../constants/app_colors.dart';
 import '../../../../../constants/app_textstyle.dart';
+import '../../../invoice_and_request_screens/invoice_and_request_widgets/request_money_bottomsheet_widget.dart';
 import '../home_screen_main_card_options.dart';
 
 class DashboardMainCard extends ConsumerWidget {
@@ -22,7 +23,7 @@ class DashboardMainCard extends ConsumerWidget {
           border: Border.all(color: AppColors.white),
           color: AppColors.primaryColor),
       child: Container(
-        margin: EdgeInsets.only(left: 25, right: 20),
+        margin: const EdgeInsets.only(left: 25, right: 20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -63,20 +64,36 @@ class DashboardMainCard extends ConsumerWidget {
             ),
             20.spaceY,
             Container(
-              margin: EdgeInsets.only(left: 35, right: 22),
+              margin: const EdgeInsets.only(left: 35, right: 22),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  MainCardOption(image: AppAssets.sendicon, title: "Send"),
+                  const MainCardOption(
+                      image: AppAssets.sendicon, title: "Send"),
                   MainCardOption(
-                      image: AppAssets.requesticon, title: "Request"),
+                    image: AppAssets.requesticon,
+                    title: "Request",
+                    onpress: () {
+                      showCommonModalSheet(
+                        700,
+                        const RequestMoneyBottomSheetWidget(),
+                      );
+                      // showModalBottomSheet(
+                      //   context: context,
+                      //   backgroundColor: AppColors.black,
+                      //   builder: (BuildContext context) {
+                      //     return const RequestMoneyBottomSheetWidget();
+                      //   },
+                      // );
+                    },
+                  ),
                   MainCardOption(
                     image: AppAssets.moreicon,
                     title: "More",
                     onpress: () => showCommonModalSheet(
                         450,
-                        Padding(
-                          padding: const EdgeInsets.only(left: 20, top: 20),
+                        const Padding(
+                          padding: EdgeInsets.only(left: 20, top: 20),
                           child: MoreOptionsBottomSheetWidget(),
                         )),
                   )

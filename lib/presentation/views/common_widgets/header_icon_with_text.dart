@@ -16,6 +16,7 @@ class HeaderIconWithTitle extends ConsumerWidget {
   final double? trailingImageHeight;
   final double? trailingImageWidth;
   final double? rightPadding;
+  final TextStyle? descriptionTextStyle;
   const HeaderIconWithTitle(
       {super.key,
       this.title,
@@ -27,7 +28,8 @@ class HeaderIconWithTitle extends ConsumerWidget {
       this.trailingImageWidth,
       this.rightPadding,
       this.imageIconHeight,
-      this.imageIconWidth});
+      this.imageIconWidth,
+      this.descriptionTextStyle});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -79,12 +81,13 @@ class HeaderIconWithTitle extends ConsumerWidget {
         description != null
             ? Text(
                 description!,
-                style: AppTextstyle.bodyTextStyle(
-                  color: AppColors.white,
-                  fontSize: 16,
-                  fontWeight: FontWeight.w500,
-                  overflow: TextOverflow.clip,
-                ),
+                style: descriptionTextStyle ??
+                    AppTextstyle.bodyTextStyle(
+                      color: AppColors.white,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500,
+                      overflow: TextOverflow.clip,
+                    ),
               )
             : const SizedBox(),
       ],

@@ -111,4 +111,17 @@ class AppAssets {
   static const checkout = "${iconsDir}checkout.png";
   static const rkImgae = "${iconsDir}rk_image.png";
   static const trustPayee = "${imagesDir}trust_payee.png";
+
+  // Invoice and Request
+
+  static const eye = "${iconsDir}eye.png";
+  static const qrCode = "${iconsDir}qr_code.png";
+  static const cardReader = "${iconsDir}card_reader.png";
+  static const invoice = "${iconsDir}invoice.png";
+  static const paymentLink = "${iconsDir}payment_link.png";
+  static const bin = "${iconsDir}bin.png";
+  static const person = "${iconsDir}person.png";
+  static const addItems = "${iconsDir}add_items.png";
+  static const excalamation = "${iconsDir}excalamation.png";
+  static const tick = "${iconsDir}tick.png";
 }

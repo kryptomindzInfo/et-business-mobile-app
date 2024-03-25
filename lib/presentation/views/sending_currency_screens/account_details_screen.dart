@@ -37,7 +37,9 @@ class AccountDetailsScreen extends ConsumerWidget {
                 imageicon: AppAssets.arrowLeft,
               ),
               8.spaceY,
-              const AccountDetailsButtonsWidget(),
+              AccountDetailsButtonsWidget(
+                provider: sendingCurrencyProvider,
+              ),
               32.spaceY,
               UserPersonalDetailsWidget(
                 readOnly: true,

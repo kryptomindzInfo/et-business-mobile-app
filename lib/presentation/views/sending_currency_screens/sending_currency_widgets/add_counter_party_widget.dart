@@ -8,7 +8,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class AddCounterPartyWidget extends ConsumerWidget {
   final Function() onTap;
-  const AddCounterPartyWidget({super.key, required this.onTap});
+  final String title;
+  const AddCounterPartyWidget(
+      {super.key, required this.onTap, required this.title});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -30,7 +32,7 @@ class AddCounterPartyWidget extends ConsumerWidget {
               ),
               16.spaceX,
               Text(
-                getTranslated('add_new_counterparty', context),
+                getTranslated(title, context),
                 style: AppTextstyle.headingTextStyle(
                     fontSize: 16, fontWeight: FontWeight.w600),
               )

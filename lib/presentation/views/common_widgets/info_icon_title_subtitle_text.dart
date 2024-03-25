@@ -24,6 +24,7 @@ class InfoIconTitleSubtitleText extends ConsumerWidget {
     return InkWell(
       onTap: onpress,
       child: Container(
+        color: AppColors.white,
         margin: EdgeInsets.only(top: 20, right: 15, left: 15, bottom: 20),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
