@@ -79,26 +79,27 @@ class HeaderIconWithTitle extends ConsumerWidget {
                 ),
               )
             : const SizedBox(),
-        10.spaceY,
-        description != null
-            ? Text(
-                description!,
-                style: AppTextstyle.bodyTextStyle(
-                  color: AppColors.white,
-                  fontSize: 16,
-                  fontWeight: FontWeight.w500,
-                  overflow: TextOverflow.clip,
-                ),
-              )
-            : Text(
-                greenDescription!,
-                style: AppTextstyle.bodyTextStyle(
-                  color: AppColors.primaryColor,
-                  fontSize: 21,
-                  fontWeight: FontWeight.normal,
-                  overflow: TextOverflow.clip,
-                ),
-              ),
+        // 10.spaceY,
+        if (description != null)
+          Text(
+            description!,
+            style: AppTextstyle.bodyTextStyle(
+              color: AppColors.white.withOpacity(0.6),
+              fontSize: 14,
+              fontWeight: FontWeight.w500,
+              overflow: TextOverflow.clip,
+            ),
+          ),
+        if (greenDescription != null)
+          Text(
+            greenDescription!,
+            style: AppTextstyle.bodyTextStyle(
+              color: AppColors.primaryColor,
+              fontSize: 21,
+              fontWeight: FontWeight.normal,
+              overflow: TextOverflow.clip,
+            ),
+          ),
       ],
     );
   }

@@ -6,6 +6,9 @@ import 'package:etbank_business_app/presentation/views/converting_currency/rates
 import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/cards_section/card_settings_screen.dart';
 import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/cards_section/get_card_screen.dart';
 import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/cards_section/my_cards_screen.dart';
+import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/teams_section/admin_screen.dart';
+import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/teams_section/assign_role_screen.dart';
+import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/teams_section/contractor_screen.dart';
 import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/teams_section/invite_to_et_bank_screen.dart';
 import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/teams_section/manage_roles_screen.dart';
 import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/teams_section/owner_screen.dart';
@@ -280,6 +283,18 @@ class RouteGenerator {
         return route(CurrencySellScreen(
             // params: settings.arguments as HomeScreenArgs?
             ));
+      case AssignRoleScreen.routeName:
+        return route(AssignRoleScreen(
+            // params: settings.arguments as HomeScreenArgs?
+            ));
+      case AdminScreen.routeName:
+        return route(AdminScreen(
+            // params: settings.arguments as HomeScreenArgs?
+            ));
+      case ContractorScreen.routeName:
+        return route(ContractorScreen(
+            // params: settings.arguments as HomeScreenArgs?
+            )); 
       // case FirstScreen.routeName:
       //   return route(FirstScreen(
       //       firstScreenArgs: settings.arguments as FirstScreenArgs));

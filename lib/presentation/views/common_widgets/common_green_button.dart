@@ -1,20 +1,17 @@
-import 'package:etbank_business_app/constants/app_colors.dart';
-import 'package:etbank_business_app/constants/app_textstyle.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class CommonGreyButton extends ConsumerWidget {
+import '../../../constants/app_colors.dart';
+import '../../../constants/app_textstyle.dart';
+
+class CommonGreenButton extends ConsumerWidget {
   final String? title;
   final String? imageIcon;
   final VoidCallback? onpress;
-  final double? imageIconHeight;
-  const CommonGreyButton(
-      {super.key,
-      this.title,
-      this.imageIcon,
-      this.onpress,
-      this.imageIconHeight});
+  final double? imageHeight;
+  const CommonGreenButton(
+      {super.key, this.title, this.imageIcon, this.onpress, this.imageHeight});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -22,30 +19,31 @@ class CommonGreyButton extends ConsumerWidget {
       onTap: onpress,
       child: FittedBox(
         child: Container(
-          height: 32,
-          // width: 117,
+          height: 60,
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(64),
-              color: AppColors.grey,
-              border: Border.all(color: AppColors.primaryColor)),
-
-          child: Container(
-            margin: EdgeInsets.only(left: 10, right: 10),
-            child: Center(
+              borderRadius: BorderRadius.circular(17),
+              border: Border.all(color: AppColors.white),
+              color: AppColors.primaryColor),
+          margin: EdgeInsets.only(right: 5),
+          child: Center(
+            child: Padding(
+              padding: const EdgeInsets.only(left: 11, right: 11),
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   if (imageIcon != null)
                     Image.asset(
                       imageIcon!,
-                      height: imageIconHeight ?? 15,
+                      height: imageHeight ?? 25,
                     ),
                   if (title != null) 8.spaceX,
                   if (title != null)
                     Text(
-                      " ${title!}   ",
+                      title!,
                       style: AppTextstyle.bodyTextStyle(
-                          color: AppColors.white,
-                          fontSize: 14,
+                          color: AppColors.black,
+                          fontSize: 16,
                           fontWeight: FontWeight.w500),
                     ),
                 ],
