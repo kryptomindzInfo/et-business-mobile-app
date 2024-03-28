@@ -136,4 +136,6 @@ class AppAssets {
   static const accounticon = "${iconsDir}accounticon.png";
   static const merchant = "${iconsDir}merchant.png";
   static const cards = "${iconsDir}cards.png";
+  static const greencheckround = "${iconsDir}greencheckround.png";
+  static const greenarrowleft = "${iconsDir}greenarrowleft.png";
 }

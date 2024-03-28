@@ -1,5 +1,6 @@
 import 'package:etbank_business_app/constants/app_textstyle.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
+import 'package:etbank_business_app/navigation/navigation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../constants/app_colors.dart';
@@ -17,6 +18,7 @@ class HeaderIconWithTitle extends ConsumerWidget {
   final double? trailingImageHeight;
   final double? trailingImageWidth;
   final double? rightPadding;
+  final VoidCallback? onTrailingiconPress;
   const HeaderIconWithTitle(
       {super.key,
       this.title,
@@ -30,7 +32,8 @@ class HeaderIconWithTitle extends ConsumerWidget {
       this.trailingImageWidth,
       this.rightPadding,
       this.imageIconHeight,
-      this.imageIconWidth});
+      this.imageIconWidth,
+      this.onTrailingiconPress});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -43,27 +46,30 @@ class HeaderIconWithTitle extends ConsumerWidget {
             padding: edgeinsets != null
                 ? edgeinsets!
                 : EdgeInsets.only(top: 54, right: rightPadding ?? 54),
-            child: InkWell(
-              onTap: () {
-                Navigator.pop(context);
-              },
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  if (imageicon != null)
-                    Image.asset(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                if (imageicon != null)
+                  InkWell(
+                    onTap: () {
+                      Navigation.pop();
+                    },
+                    child: Image.asset(
                       imageicon!,
                       width: imageIconWidth ?? 25.12,
                       height: imageIconHeight ?? 17.94,
                     ),
-                  if (trailingImage != null)
-                    Image.asset(
+                  ),
+                if (trailingImage != null)
+                  InkWell(
+                    onTap: onTrailingiconPress,
+                    child: Image.asset(
                       trailingImage!,
                       height: trailingImageHeight ?? 34,
                       width: trailingImageWidth ?? 34,
                     ),
-                ],
-              ),
+                  ),
+              ],
             ),
           ),
         ),

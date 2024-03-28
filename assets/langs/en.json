@@ -341,7 +341,12 @@
    "save_a_copy":"Save a copy",
    "rename":"Rename",
    "cant_find":"Can’t find who you are looking for?",
-   "account":"Account"
+   "account":"Account",
+   "payments":"Payments",
+   "update_admin":"Update Admin",
+   "request":"Request",
+   "create_new_role":"Create a new role",
+   "new_role_name":"New Roles Name"
    
    
 
