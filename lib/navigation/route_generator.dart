@@ -6,6 +6,15 @@ import 'package:etbank_business_app/presentation/views/home_section/home_screen_
 import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/teams_section/invite_to_et_bank_screen.dart';
 import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/teams_section/manage_roles_screen.dart';
 import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/teams_section/owner_screen.dart';
+import 'package:etbank_business_app/presentation/views/invoice_and_request_screens/add_customer_screen.dart';
+import 'package:etbank_business_app/presentation/views/invoice_and_request_screens/add_items_screen.dart';
+import 'package:etbank_business_app/presentation/views/invoice_and_request_screens/add_new_customer_screen.dart';
+import 'package:etbank_business_app/presentation/views/invoice_and_request_screens/automatic_reminders_screen.dart';
+import 'package:etbank_business_app/presentation/views/invoice_and_request_screens/billing_details_screen.dart';
+import 'package:etbank_business_app/presentation/views/invoice_and_request_screens/email_message_screen.dart';
+import 'package:etbank_business_app/presentation/views/invoice_and_request_screens/invoice_number_screen.dart';
+import 'package:etbank_business_app/presentation/views/invoice_and_request_screens/invoice_screen.dart';
+import 'package:etbank_business_app/presentation/views/invoice_and_request_screens/mark_as_paid_screen.dart';
 import 'package:etbank_business_app/presentation/views/home_section/notification_screen.dart';
 import 'package:etbank_business_app/presentation/views/hub_section/hub_section_widgets/upgrade_section/upgrade_screens.dart';
 import 'package:etbank_business_app/presentation/views/onboarding_screens/onboarding_screen.dart';
@@ -20,7 +29,6 @@ import 'package:etbank_business_app/presentation/views/signup_screens/signup_bus
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_business_type_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_check_email_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_create_password_screen.dart';
-import 'package:etbank_business_app/presentation/views/signup_screens/signup_otp_code_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_email_screen.dart';
 import 'package:etbank_business_app/presentation/views/profile_section/profile_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_enable_push_notif_screen.dart';
@@ -117,6 +125,33 @@ class RouteGenerator {
 
       case SignUpDescribeBusinessActivityScreen.routeName:
         return route(const SignUpDescribeBusinessActivityScreen());
+
+      case InvoiceSreen.routeName:
+        return route(const InvoiceSreen());
+
+      case AddCustomerScreen.routeName:
+        return route(const AddCustomerScreen());
+
+      case AddNewCustomerScreen.routeName:
+        return route(const AddNewCustomerScreen());
+
+      case BillingDetailsScreen.routeName:
+        return route(const BillingDetailsScreen());
+
+      case EmailMessageScreen.routeName:
+        return route(const EmailMessageScreen());
+
+      case AddItemsScreen.routeName:
+        return route(const AddItemsScreen());
+
+      case AutomaticRemindersScreen.routeName:
+        return route(const AutomaticRemindersScreen());
+
+      case InvoiceNumberScreen.routeName:
+        return route(const InvoiceNumberScreen());
+
+      case MarkAsPaidScreen.routeName:
+        return route(const MarkAsPaidScreen());
 
       // case SignUpMobileCodeScreen.routeName:
       //   return route(const SignUpMobileCodeScreen());

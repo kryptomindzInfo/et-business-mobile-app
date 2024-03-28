@@ -39,6 +39,7 @@ class SignUpDirectorsScreen extends ConsumerWidget {
                 16.spaceY,
                 DirectorButtonWidget(
                   title: getTranslated('add_director', context),
+                  width: 130,
                 ),
                 32.spaceY,
                 BusinessDetailsWhiteContainerWidet(

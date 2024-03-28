@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../globals/countries_list.dart';
+
 final sendingCurrencyProvider =
     ChangeNotifierProvider((ref) => SendingCurrencyProvider());
 
@@ -34,4 +36,13 @@ class SendingCurrencyProvider extends ChangeNotifier {
 
   final TextEditingController _sortCodeController = TextEditingController();
   TextEditingController get sortCodeController => _sortCodeController;
+
+  // Selected Country
+
+  Countries? _selectedCountry;
+  Countries? get selectedCountry => _selectedCountry;
+  void setSelectedCountry(int index) {
+    _selectedCountry = allCountries[index];
+    notifyListeners();
+  }
 }

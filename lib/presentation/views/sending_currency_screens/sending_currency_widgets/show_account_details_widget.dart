@@ -6,10 +6,11 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class ShowAccountDetailsWidget extends ConsumerWidget {
   final String title;
-  final String subTitle;
+  final String? subTitle;
+  final TextStyle? subTitleStyle;
 
   const ShowAccountDetailsWidget(
-      {super.key, required this.title, required this.subTitle});
+      {super.key, required this.title, this.subTitle, this.subTitleStyle});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -19,7 +20,7 @@ class ShowAccountDetailsWidget extends ConsumerWidget {
         borderRadius: BorderRadius.circular(8),
       ),
       child: Padding(
-        padding: const EdgeInsets.fromLTRB(11, 14, 11, 14),
+        padding: const EdgeInsets.fromLTRB(11, 14, 14, 14),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -29,8 +30,8 @@ class ShowAccountDetailsWidget extends ConsumerWidget {
                   fontSize: 16, color: AppColors.grey),
             ),
             Text(
-              getTranslated(subTitle, context),
-              style: AppTextstyle.bodyTextStyle(fontSize: 16),
+              getTranslated(subTitle ?? '', context),
+              style: subTitleStyle ?? AppTextstyle.bodyTextStyle(fontSize: 16),
             ),
           ],
         ),

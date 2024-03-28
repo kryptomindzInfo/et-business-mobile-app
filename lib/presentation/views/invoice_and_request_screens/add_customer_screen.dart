@@ -3,19 +3,19 @@ import 'package:etbank_business_app/constants/app_textstyle.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/navigation/navigation.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/app_common_widgets.dart';
-import 'package:etbank_business_app/presentation/views/sending_currency_screens/account_details_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_widgets/textfield_black_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../constants/app_assets.dart';
 import '../../../resources/localization/language_constrants.dart';
 import '../common_widgets/header_icon_with_text.dart';
-import 'sending_currency_widgets/add_counter_party_widget.dart';
+import '../sending_currency_screens/sending_currency_widgets/add_counter_party_widget.dart';
+import 'add_new_customer_screen.dart';
 
-class WhoToPayScreen extends ConsumerWidget {
-  static const String routeName = "WHO_TO_PAY";
+class AddCustomerScreen extends ConsumerWidget {
+  static const String routeName = "ADD_CUSTOMER";
 
-  const WhoToPayScreen({super.key});
+  const AddCustomerScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -28,7 +28,7 @@ class WhoToPayScreen extends ConsumerWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               HeaderIconWithTitle(
-                title: getTranslated('who_to_pay_title', context),
+                title: getTranslated('add_customer', context),
                 imageicon: AppAssets.arrowLeft,
                 trailingImage: AppAssets.addIconBold,
                 rightPadding: 0,
@@ -50,9 +50,9 @@ class WhoToPayScreen extends ConsumerWidget {
               ),
               18.spaceY,
               AddCounterPartyWidget(
-                title: 'add_new_counterparty-',
+                title: 'add_new_customer',
                 onTap: () {
-                  Navigation.pushNamed(AccountDetailsScreen.routeName);
+                  Navigation.pushNamed(AddNewCustomerScreen.routeName);
                 },
               ),
             ],
