@@ -33,7 +33,9 @@ class TextFieldWidget extends StatelessWidget {
       this.focusColor,
       this.controller,
       this.fillColor,
-      this.bottomContentPadding})
+      this.bottomContentPadding,
+      this.contentPadding,
+      this.labelStyle})
       : super(key: key);
 
   final TextEditingController? controller;
@@ -64,25 +66,34 @@ class TextFieldWidget extends StatelessWidget {
   final Color? focusColor;
   final Color? fillColor;
   final double? bottomContentPadding;
+  final EdgeInsetsGeometry? contentPadding;
+  final TextStyle? labelStyle;
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
       width: 360.w,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(8),
+        color: labelText != null ? AppColors.white : null,
+      ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            labelText ?? "",
-            style: const TextStyle(
-                fontWeight: FontWeight.w600,
-                fontFamily: 'WorkSans',
-                color: Color(0xff191D23)),
-            textAlign: textAlign ?? TextAlign.start,
-          ),
-          const SizedBox(
-            height: 5,
-          ),
+          if (labelText != null) ...{
+            Padding(
+              padding: const EdgeInsets.fromLTRB(10, 8, 0, 0),
+              child: Text(
+                labelText ?? "",
+                style: labelStyle ??
+                    const TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontFamily: 'WorkSans',
+                        color: AppColors.black),
+                textAlign: textAlign ?? TextAlign.start,
+              ),
+            )
+          },
           TextFormField(
             controller: controller,
             autofocus: autofocus ?? false,
@@ -105,10 +116,11 @@ class TextFieldWidget extends StatelessWidget {
               filled: true,
               hintText: hintText ?? '',
               errorText: errorText,
-              contentPadding: EdgeInsets.only(
-                left: 10,
-                bottom: bottomContentPadding ?? 0,
-              ),
+              contentPadding: contentPadding ??
+                  EdgeInsets.only(
+                    left: 10,
+                    bottom: bottomContentPadding ?? 0,
+                  ),
               hintStyle: hintStyle ??
                   AppTextstyle.bodyTextStyle(color: const Color(0xff191D23)),
               enabledBorder: OutlineInputBorder(

@@ -5,15 +5,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class CheckBoxWidget extends ConsumerWidget {
-  final bool checkBoxValue;
+class SwitchButtonWidget extends ConsumerWidget {
+  final bool value;
   final String title;
   final TextStyle? titleTextStyle;
   final void Function(bool?)? onChanged;
 
-  const CheckBoxWidget(
+  const SwitchButtonWidget(
       {super.key,
-      required this.checkBoxValue,
+      required this.value,
       required this.title,
       required this.onChanged,
       this.titleTextStyle});
@@ -22,13 +22,7 @@ class CheckBoxWidget extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Row(
       children: [
-        Checkbox(
-          value: checkBoxValue,
-          onChanged: onChanged,
-          activeColor: AppColors.baseGreenColor,
-          checkColor: AppColors.black,
-        ),
-        8.spaceX,
+        16.spaceX,
         SizedBox(
           width: 250.h,
           child: Text(
@@ -38,6 +32,12 @@ class CheckBoxWidget extends ConsumerWidget {
                     color: AppColors.white, fontSize: 16.sp),
             overflow: TextOverflow.clip,
           ),
+        ),
+        8.spaceX,
+        Switch(
+          value: value,
+          onChanged: onChanged,
+          activeColor: AppColors.baseGreenColor,
         ),
       ],
     );

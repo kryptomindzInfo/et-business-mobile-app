@@ -18,6 +18,7 @@ class HeaderIconWithTitle extends ConsumerWidget {
   final double? trailingImageHeight;
   final double? trailingImageWidth;
   final double? rightPadding;
+  final TextStyle? descriptionTextStyle;
   final VoidCallback? onTrailingiconPress;
   const HeaderIconWithTitle(
       {super.key,
@@ -33,6 +34,7 @@ class HeaderIconWithTitle extends ConsumerWidget {
       this.rightPadding,
       this.imageIconHeight,
       this.imageIconWidth,
+      this.descriptionTextStyle,
       this.onTrailingiconPress});
 
   @override
@@ -85,27 +87,19 @@ class HeaderIconWithTitle extends ConsumerWidget {
                 ),
               )
             : const SizedBox(),
-        // 10.spaceY,
-        if (description != null)
-          Text(
-            description!,
-            style: AppTextstyle.bodyTextStyle(
-              color: AppColors.white.withOpacity(0.6),
-              fontSize: 14,
-              fontWeight: FontWeight.w500,
-              overflow: TextOverflow.clip,
-            ),
-          ),
-        if (greenDescription != null)
-          Text(
-            greenDescription!,
-            style: AppTextstyle.bodyTextStyle(
-              color: AppColors.primaryColor,
-              fontSize: 21,
-              fontWeight: FontWeight.normal,
-              overflow: TextOverflow.clip,
-            ),
-          ),
+        10.spaceY,
+        description != null
+            ? Text(
+                description!,
+                style: descriptionTextStyle ??
+                    AppTextstyle.bodyTextStyle(
+                      color: AppColors.white,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500,
+                      overflow: TextOverflow.clip,
+                    ),
+              )
+            : const SizedBox(),
       ],
     );
   }

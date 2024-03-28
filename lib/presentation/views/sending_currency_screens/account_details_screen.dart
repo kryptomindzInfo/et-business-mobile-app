@@ -37,7 +37,9 @@ class AccountDetailsScreen extends ConsumerWidget {
                 imageicon: AppAssets.arrowLeft,
               ),
               8.spaceY,
-              const AccountDetailsButtonsWidget(),
+              AccountDetailsButtonsWidget(
+                provider: sendingCurrencyProvider,
+              ),
               32.spaceY,
               UserPersonalDetailsWidget(
                 readOnly: true,
@@ -48,7 +50,7 @@ class AccountDetailsScreen extends ConsumerWidget {
                 hint: getTranslated('united_kingdom', context),
                 onTap: () {},
               ),
-              22.spaceY,
+              16.spaceY,
               UserPersonalDetailsWidget(
                 readOnly: true,
                 enableInteraction: false,
@@ -58,7 +60,7 @@ class AccountDetailsScreen extends ConsumerWidget {
                 hint: getTranslated('british_pound', context),
                 onTap: () {},
               ),
-              22.spaceY,
+              16.spaceY,
               UserPersonalDetailsWidget(
                 readOnly: true,
                 enableInteraction: false,
@@ -68,6 +70,7 @@ class AccountDetailsScreen extends ConsumerWidget {
                 hint: getTranslated('##############', context),
                 onTap: () {},
               ),
+              16.spaceY,
               TextFieldWidget(
                 hintText: getTranslated('sort_code', context),
               ),

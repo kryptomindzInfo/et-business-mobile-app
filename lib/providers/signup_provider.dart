@@ -45,9 +45,6 @@ class SignUpState extends ChangeNotifier {
 
   // SelectedCountry
 
-  // String? _selectedCountry = '';
-
-  // String? get selectedCountry => _selectedCountry;
   Countries? _selectedCountry;
   Countries? get selectedCountry => _selectedCountry ?? allCountries.first;
   void setSelectedCountry(int index) {

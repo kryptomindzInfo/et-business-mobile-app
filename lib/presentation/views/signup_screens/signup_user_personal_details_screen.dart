@@ -40,7 +40,7 @@ class SignUpUserPersonalDetailsScreen extends ConsumerWidget {
                       'james_forks_personal_details_subtitle', context),
                   imageicon: AppAssets.arrowLeft,
                 ),
-                30.spaceY,
+                32.spaceY,
                 UserPersonalDetailsWidget(
                   controller: signUpProvider.legalFirstNameController,
                   hint: getTranslated('james', context),
@@ -71,7 +71,6 @@ class SignUpUserPersonalDetailsScreen extends ConsumerWidget {
                   enableInteraction: false,
                   onTap: () {},
                 ),
-                8.spaceY,
                 16.spaceY,
                 UserPersonalDetailsWidget(
                   controller:
@@ -94,6 +93,7 @@ class SignUpUserPersonalDetailsScreen extends ConsumerWidget {
                   title: getTranslated('email', context),
                   onTap: () {},
                 ),
+                16.spaceY,
                 const CountryAndMobileNoWidget(),
               ],
             ),

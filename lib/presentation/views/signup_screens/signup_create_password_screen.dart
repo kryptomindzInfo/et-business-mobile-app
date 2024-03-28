@@ -35,6 +35,7 @@ class SignUpCreatePassword extends ConsumerWidget {
                 description: getTranslated('create_password_subtitle', context),
                 imageicon: AppAssets.arrowLeft,
               ),
+              32.spaceY,
               Row(
                 children: [
                   Expanded(
