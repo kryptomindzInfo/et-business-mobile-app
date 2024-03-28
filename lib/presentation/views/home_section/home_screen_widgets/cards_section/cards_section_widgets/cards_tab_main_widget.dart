@@ -33,7 +33,7 @@ class CardsMainWidget extends ConsumerWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    CommonTransprentButton(
+                    CommonGreyButton(
                       title: "+ ${getTranslated("add_card", context)}",
                       onpress: () {
                         Navigation.pushNamed("get_card_Screen");

@@ -371,8 +371,36 @@
    "upgrade_plan":"Upgrade plan",
    "inbox":"Inbox",
    "caught_up":"You’re all caught up",
-   "check_back_later":"Check back later for promotions and recommendations to keep your account up to date"
+   "check_back_later":"Check back later for promotions and recommendations to keep your account up to date",
+   "choose_currency_pair":"Choose a currency pair to compare their live rates",
+   "lowest":"Lowest",
+   "current":"Current",
+   "highest":"Highest",
+   "assign_role":"Assign role",
+   "select_role":"Select a role to define their rights and permission. Individual are always able to view their own information",
+   "admin":"Admin",
+   "no_one_assigned":"No one assigned",
+   "contractor":"Contractor",
+   "accountant":"Accountant",
+   "member":"Member",
+   "viewer":"Viewer",
+   "custom_role":"Custom role",
+   "view":"View",
+   "complete_access_to_account":"Complete access to account",
+   "costume_role":"Costume role",
+   "read_only":"Read_only access",
+   "save_a_copy":"Save a copy",
+   "rename":"Rename",
+   "cant_find":"Can’t find who you are looking for?",
+   "account":"Account",
+   "payments":"Payments",
+   "update_admin":"Update Admin",
+   "request":"Request",
+   "create_new_role":"Create a new role",
+   "new_role_name":"New Roles Name"
    
+   
+
 
    
    

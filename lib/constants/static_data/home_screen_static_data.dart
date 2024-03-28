@@ -110,13 +110,13 @@ List<Map> _upgradeData = [
 
 List<Map> get getupgradeData => _upgradeData;
 
-Map _ratesScreenOptions = {
-  "title1": "Rates",
-  "title2": "Coverter",
-  "title3": "Actions"
-};
+List<Map> _ratesScreenOptions = [
+  {"title": "Rates"},
+  {"title": "Coverter"},
+  {"title": "Actions"}
+];
 
-Map get ratesScreenOptions => _ratesScreenOptions;
+List<Map> get ratesScreenOptions => _ratesScreenOptions;
 
 List<Map> _homeScreenOptions = [
   {
@@ -200,3 +200,21 @@ List<Map> _hubScreen = [
 ];
 
 List<Map> get hubscreenOpt => _hubScreen;
+
+List<Map> _rolesData = [
+  {"title": "accountant", "desc": "custom_role", "id": "0"},
+  {"title": "admin", "desc": "complete_access_to_account", "id": "1"},
+  {"title": "member", "desc": "costume_role", "id": "2"},
+  {"title": "viewer", "desc": "read_only", "id": "3"},
+];
+
+List<Map> get rolesData => _rolesData;
+
+List<Map> _adminData = [
+  {"title": "account", "icon": AppAssets.accounticon, "id": "0"},
+  {"title": "cards", "icon": AppAssets.cards, "id": "1"},
+  {"title": "team", "icon": AppAssets.teamicon, "id": "2"},
+  {"title": "merchant", "icon": AppAssets.merchant, "id": "3"},
+];
+
+List<Map> get admindata => _adminData;
