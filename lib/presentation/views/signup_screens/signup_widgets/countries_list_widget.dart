@@ -6,8 +6,9 @@ import '../../../../constants/app_textstyle.dart';
 import '../../../../globals/countries_list.dart';
 
 class CountriesListWidget extends ConsumerWidget {
-  final Function(int) onTap;
-  const CountriesListWidget({super.key, required this.onTap});
+  final Function(int)? onTap;
+  final VoidCallback? onpress;
+  const CountriesListWidget({super.key,  this.onTap, this.onpress});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -41,11 +42,12 @@ class CountriesListWidget extends ConsumerWidget {
         padding: const EdgeInsets.fromLTRB(35, 20, 20, 0),
         child: ListView.builder(itemBuilder: (context, index) {
           return GestureDetector(
-            onTap: () {
-              onTap(index);
+            onTap: onpress ??
+                () {
+                  onTap!(index);
 
-              Navigator.pop(context);
-            },
+                  Navigator.pop(context);
+                },
             child: ListTile(
                 leading: CircleAvatar(child: Text(allCountries[index].flag)),
                 title: Text(

@@ -1,7 +1,9 @@
 import 'package:etbank_business_app/constants/app_assets.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
+import 'package:etbank_business_app/navigation/navigation.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/app_common_widgets.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/header_icon_with_text.dart';
+import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/teams_section/assign_role_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_widgets/user_personal_details_widget.dart';
 import 'package:etbank_business_app/resources/localization/language_constrants.dart';
 import 'package:flutter/material.dart';
@@ -43,7 +45,9 @@ class InviteToETBankScreen extends ConsumerWidget {
             title: getTranslated("continue", context),
             mainButtonColor: AppColors.continueButtonDisabledColor,
             titleColor: AppColors.continueTextDisabledColor,
-            onpress: () {},
+            onpress: () {
+              Navigation.pushNamed(AssignRoleScreen.routeName);
+            },
           ),
         ),
       ),

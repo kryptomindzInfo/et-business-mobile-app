@@ -36,7 +36,7 @@ class InvoiceSreen extends ConsumerWidget {
                 HeaderIconWithTitle(
                   title: getTranslated('invoice_INV_2', context),
                   imageicon: AppAssets.arrowLeft,
-                  trailingImage: Image.asset(
+                  widget: Image.asset(
                     AppAssets.addIconBold,
                     height: 34,
                     width: 34,

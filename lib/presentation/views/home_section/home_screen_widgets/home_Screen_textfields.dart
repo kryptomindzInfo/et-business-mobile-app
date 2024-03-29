@@ -4,16 +4,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class HomeScreenSearchTextfield extends ConsumerWidget {
-  const HomeScreenSearchTextfield({super.key});
+  final Color? color;
+  const HomeScreenSearchTextfield({super.key, this.color});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Container(
-      height: 35,
+      height: 38,
       width: double.infinity,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(28),
-          color: AppColors.mateBlackColor),
+          color: color ?? AppColors.mateBlackColor),
       child: TextField(
         decoration: InputDecoration(
             disabledBorder: InputBorder.none,
@@ -23,13 +24,17 @@ class HomeScreenSearchTextfield extends ConsumerWidget {
               padding: const EdgeInsets.only(left: 10),
               child: Icon(
                 Icons.search,
-                color: AppColors.greywhite.withOpacity(0.5),
+                color: color != null
+                    ? AppColors.black.withOpacity(0.6)
+                    : AppColors.greywhite.withOpacity(0.5),
                 size: 18,
               ),
             ),
             hintText: "Search",
             hintStyle: AppTextstyle.bodyTextStyle(
-              color: AppColors.greywhite.withOpacity(0.5),
+              color: color != null
+                  ? AppColors.black.withOpacity(0.6)
+                  : AppColors.greywhite.withOpacity(0.5),
             )),
       ),
     );

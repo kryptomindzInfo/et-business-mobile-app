@@ -1,9 +1,11 @@
 import 'package:etbank_business_app/presentation/views/home_section/homes_screen.dart';
 import 'package:etbank_business_app/presentation/views/invoice_and_request_screens/invoice_screen.dart';
+import 'package:device_preview/device_preview.dart';
 import 'package:etbank_business_app/presentation/views/onboarding_screens/onboarding_screen.dart';
 import 'package:etbank_business_app/presentation/views/sending_currency_screens/who_to_pay_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_email_screen.dart';
 import 'package:etbank_business_app/providers/localization_provider.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -43,7 +45,7 @@ class MyApp extends ConsumerWidget {
         ],
         navigatorKey: navigatorKey,
         onGenerateRoute: RouteGenerator.generateRoute,
-        initialRoute: WhoToPayScreen.routeName,
+        initialRoute: Onboarding.routeName,
       ),
     );
   }

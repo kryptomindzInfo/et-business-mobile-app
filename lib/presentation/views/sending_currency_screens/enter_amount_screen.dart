@@ -28,9 +28,9 @@ class EnterAmountScreen extends ConsumerWidget {
           padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
           child: Column(
             children: [
-               HeaderIconWithTitle(
+              HeaderIconWithTitle(
                 imageicon: AppAssets.arrowLeft,
-                trailingImage: Image.asset(
+                widget: Image.asset(
                   AppAssets.rkImgae,
                   height: 34,
                   width: 34,

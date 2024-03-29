@@ -30,7 +30,7 @@ class WhoToPayScreen extends ConsumerWidget {
               HeaderIconWithTitle(
                 title: getTranslated('who_to_pay_title', context),
                 imageicon: AppAssets.arrowLeft,
-                trailingImage: Image.asset(
+                widget: Image.asset(
                   AppAssets.addIconBold,
                   height: 34,
                   width: 34,
