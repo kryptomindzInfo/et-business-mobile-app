@@ -29,80 +29,93 @@ class InvoiceSreen extends ConsumerWidget {
         backgroundColor: AppColors.transparent,
         body: Padding(
           padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              HeaderIconWithTitle(
-                title: getTranslated('invoice_INV_2', context),
-                imageicon: AppAssets.arrowLeft,
-                trailingImage: AppAssets.addIconBold,
-                trailingImageHeight: 28,
-                trailingImageWidth: 28,
-                rightPadding: 0,
-              ),
-              16.spaceY,
-              Row(
-                children: [
-                  DirectorButtonWidget(
-                    leadingImage: AppAssets.eye,
-                    title: getTranslated('preview_email', context),
-                    buttonColor: AppColors.green,
-                    titleTextStyle:
-                        AppTextstyle.bodyTextStyle(color: AppColors.black),
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                HeaderIconWithTitle(
+                  title: getTranslated('invoice_INV_2', context),
+                  imageicon: AppAssets.arrowLeft,
+                  trailingImage: Image.asset(
+                    AppAssets.addIconBold,
+                    height: 34,
+                    width: 34,
                   ),
-                  8.spaceX,
-                  DirectorButtonWidget(
-                    leadingImage: AppAssets.bin,
-                    title: getTranslated('delete', context),
-                    buttonColor: AppColors.transparent,
-                    titleTextStyle:
-                        AppTextstyle.bodyTextStyle(color: AppColors.green),
-                  ),
-                ],
-              ),
-              24.spaceY,
-              Text(
-                getTranslated('bill_to', context),
-                style: AppTextstyle.bodyTextStyle(
-                    color: AppColors.green,
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold),
-              ),
-              12.spaceY,
-              const RequestMoneyWhiteContainerWidget(
-                  imageicon: AppAssets.person,
-                  title: 'add_customer',
-                  subtitle: 'required'),
-              16.spaceY,
-              const RequestMoneyWhiteContainerWidget(
-                  title: 'add_an_email_message',
-                  subtitle: 'appears_on_the_email_your_costumer_receives'),
-              32.spaceY,
-              Text(
-                getTranslated('items', context),
-                style: AppTextstyle.bodyTextStyle(
-                    color: AppColors.green,
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold),
-              ),
-              12.spaceY,
-              ShowAccountDetailsWidget(
-                title: getTranslated('currency', context),
-                subTitle: getTranslated('GBP_british_pound', context),
-                subTitleStyle: AppTextstyle.bodyTextStyle(
-                    fontSize: 16, color: AppColors.darkGreen),
-              ),
-              16.spaceY,
-              const RequestMoneyWhiteContainerWidget(
-                  imageicon: AppAssets.addItems,
-                  title: 'add_items',
-                  subtitle: 'required'),
-              16.spaceY,
-              ShowAccountDetailsWidget(
-                title: getTranslated('sub_total', context),
-                subTitle: getTranslated('£0', context),
-              ),
-            ],
+                  // trailingImage: AppAssets.addIconBold,
+                  trailingImageHeight: 28,
+                  trailingImageWidth: 28,
+                  rightPadding: 0,
+                ),
+                16.spaceY,
+                Row(
+                  children: [
+                    DirectorButtonWidget(
+                      leadingImage: AppAssets.eye,
+                      title: getTranslated('preview_email', context),
+                      buttonColor: AppColors.green,
+                      titleTextStyle:
+                          AppTextstyle.bodyTextStyle(color: AppColors.black),
+                    ),
+                    8.spaceX,
+                    DirectorButtonWidget(
+                      leadingImage: AppAssets.bin,
+                      title: getTranslated('delete', context),
+                      buttonColor: AppColors.transparent,
+                      titleTextStyle:
+                          AppTextstyle.bodyTextStyle(color: AppColors.green),
+                    ),
+                  ],
+                ),
+                24.spaceY,
+                Text(
+                  getTranslated('bill_to', context),
+                  style: AppTextstyle.bodyTextStyle(
+                      color: AppColors.green,
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold),
+                ),
+                12.spaceY,
+                RequestMoneyWhiteContainerWidget(
+                    imageicon: Image.asset(
+                      AppAssets.person,
+                      height: 25,
+                    ),
+                    title: 'add_customer',
+                    subtitle: 'required'),
+                16.spaceY,
+                const RequestMoneyWhiteContainerWidget(
+                    title: 'add_an_email_message',
+                    subtitle: 'appears_on_the_email_your_costumer_receives'),
+                32.spaceY,
+                Text(
+                  getTranslated('items', context),
+                  style: AppTextstyle.bodyTextStyle(
+                      color: AppColors.green,
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold),
+                ),
+                12.spaceY,
+                ShowAccountDetailsWidget(
+                  title: getTranslated('currency', context),
+                  subTitle: getTranslated('GBP_british_pound', context),
+                  subTitleStyle: AppTextstyle.bodyTextStyle(
+                      fontSize: 16, color: AppColors.darkGreen),
+                ),
+                16.spaceY,
+                RequestMoneyWhiteContainerWidget(
+                    imageicon: Image.asset(
+                      AppAssets.addItems,
+                      height: 25,
+                    ),
+                    title: 'add_items',
+                    subtitle: 'required'),
+                16.spaceY,
+                ShowAccountDetailsWidget(
+                  title: getTranslated('sub_total', context),
+                  subTitle: getTranslated('£0', context),
+                ),
+              ],
+            ),
           ),
         ),
         bottomNavigationBar: ButtonBottomNavigationWidget(

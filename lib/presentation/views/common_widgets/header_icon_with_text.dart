@@ -11,7 +11,7 @@ class HeaderIconWithTitle extends ConsumerWidget {
   final double? imageIconHeight;
   final double? imageIconWidth;
   final EdgeInsetsGeometry? edgeinsets;
-  final String? trailingImage;
+  final Widget? trailingImage;
   final double? trailingImageHeight;
   final double? trailingImageWidth;
   final double? rightPadding;
@@ -54,12 +54,12 @@ class HeaderIconWithTitle extends ConsumerWidget {
                       width: imageIconWidth ?? 25.12,
                       height: imageIconHeight ?? 17.94,
                     ),
-                  if (trailingImage != null)
-                    Image.asset(
-                      trailingImage!,
-                      height: trailingImageHeight ?? 34,
-                      width: trailingImageWidth ?? 34,
-                    ),
+                  if (trailingImage != null) trailingImage!,
+                  // Image.asset(
+                  //   trailingImage!,
+                  //   height: trailingImageHeight ?? 34,
+                  //   width: trailingImageWidth ?? 34,
+                  // ),
                 ],
               ),
             ),
