@@ -39,7 +39,12 @@ class BillingDetailsScreen extends ConsumerWidget {
                 title: getTranslated('billing_details_title', context),
                 description: getTranslated('billing_details_subtitle', context),
                 imageicon: AppAssets.arrowLeft,
-                trailingImage: AppAssets.addIconBold,
+                widget: Image.asset(
+                  AppAssets.addIconBold,
+                  height: 34,
+                  width: 34,
+                ),
+                // trailingImage: AppAssets.addIconBold,
                 rightPadding: 0,
               ),
               if (sendingCurrencyProviderW.selectedCountry?.name == null) ...{

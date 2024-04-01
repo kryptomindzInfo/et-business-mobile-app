@@ -20,23 +20,25 @@ class HeaderIconWithTitle extends ConsumerWidget {
   final double? rightPadding;
   final TextStyle? descriptionTextStyle;
   final VoidCallback? onTrailingiconPress;
-  const HeaderIconWithTitle(
-      {super.key,
-      this.title,
-      this.description,
-      this.greenDescription,
-      this.imageicon,
-      this.edgeinsets,
-      this.fontsize,
-      this.trailingImage,
-      this.trailingImageHeight,
-      this.trailingImageWidth,
-      this.rightPadding,
-      this.imageIconHeight,
-      this.imageIconWidth,
-      this.descriptionTextStyle,
-      this.onTrailingiconPress});
-
+  final Widget? widget;
+  const HeaderIconWithTitle({
+    super.key,
+    this.title,
+    this.description,
+    this.greenDescription,
+    this.imageicon,
+    this.edgeinsets,
+    this.fontsize,
+    this.trailingImage,
+    this.trailingImageHeight,
+    this.trailingImageWidth,
+    this.rightPadding,
+    this.imageIconHeight,
+    this.imageIconWidth,
+    this.descriptionTextStyle,
+    this.onTrailingiconPress,
+    this.widget,
+  });
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Column(
@@ -62,7 +64,7 @@ class HeaderIconWithTitle extends ConsumerWidget {
                       height: imageIconHeight ?? 17.94,
                     ),
                   ),
-                if (trailingImage != null)
+                if (trailingImage != null && widget == null)
                   InkWell(
                     onTap: onTrailingiconPress,
                     child: Image.asset(
@@ -71,6 +73,8 @@ class HeaderIconWithTitle extends ConsumerWidget {
                       width: trailingImageWidth ?? 34,
                     ),
                   ),
+                if (widget != null && trailingImage == null)
+                  InkWell(onTap: onTrailingiconPress, child: widget!)
               ],
             ),
           ),
