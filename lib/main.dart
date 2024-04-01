@@ -6,6 +6,7 @@ import 'package:etbank_business_app/presentation/views/sending_currency_screens/
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_email_screen.dart';
 import 'package:etbank_business_app/providers/localization_provider.dart';
 import 'package:flutter/foundation.dart';
+import 'package:etbank_business_app/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -31,10 +32,9 @@ class MyApp extends ConsumerWidget {
       splitScreenMode: true,
       builder: (context, child) => MaterialApp(
         title: 'ET Bank Business',
-        theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-          useMaterial3: true,
-        ),
+        themeMode: ThemeMode.light,
+        theme: ThemeData(extensions: [AppTheme()]),
+        darkTheme: ThemeData(extensions: [AppTheme.dark()]),
         supportedLocales: AppLocalization.supportedLocales,
         locale: ref.watch(localizationProvider).locale,
         localizationsDelegates: const [
