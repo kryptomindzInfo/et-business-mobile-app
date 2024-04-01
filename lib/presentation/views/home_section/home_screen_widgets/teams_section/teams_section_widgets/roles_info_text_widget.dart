@@ -34,7 +34,7 @@ class RolesInfoTextWidget extends ConsumerWidget {
               )
             ],
           ),
-          CommonTransprentButton(
+          CommonGreyButton(
             title: getTranslated("view", context),
           )
         ],

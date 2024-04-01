@@ -1,8 +1,14 @@
 import 'package:etbank_business_app/navigation/params/pincode_screen_args.dart';
 import 'package:etbank_business_app/presentation/views/bottom_navigation_bar.dart';
+import 'package:etbank_business_app/presentation/views/converting_currency/rates_tab_section/currencies_chart_screen.dart';
+import 'package:etbank_business_app/presentation/views/converting_currency/rates_tab_section/currency_exchange_converter_screen.dart';
+import 'package:etbank_business_app/presentation/views/converting_currency/rates_tab_section/currency_sell_screen.dart';
 import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/cards_section/card_settings_screen.dart';
 import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/cards_section/get_card_screen.dart';
 import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/cards_section/my_cards_screen.dart';
+import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/teams_section/admin_screen.dart';
+import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/teams_section/assign_role_screen.dart';
+import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/teams_section/contractor_screen.dart';
 import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/teams_section/invite_to_et_bank_screen.dart';
 import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/teams_section/manage_roles_screen.dart';
 import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/teams_section/owner_screen.dart';
@@ -43,7 +49,7 @@ import 'package:etbank_business_app/presentation/views/signup_screens/signup_wel
 import 'package:etbank_business_app/presentation/views/profile_section/refer_business/refer_busines_share_link_screen.dart';
 import 'package:etbank_business_app/presentation/views/profile_section/refer_business/refer_business_screen.dart';
 import 'package:etbank_business_app/presentation/views/profile_section/statement_section/statement_screen.dart';
-import 'package:etbank_business_app/presentation/views/rates_section/rate_converter_screen.dart';
+import 'package:etbank_business_app/presentation/views/converting_currency/currency_converter_screen.dart';
 import 'package:flutter/material.dart';
 // import 'package:projtemplate/navigation/params/home_screen_args.dart';
 // import 'package:projtemplate/presentation/views/home_screen.dart';
@@ -260,8 +266,8 @@ class RouteGenerator {
         return route(const StatementScreen(
             // params: settings.arguments as HomeScreenArgs?
             ));
-      case RatesAndConverterScreen.routeName:
-        return route(const RatesAndConverterScreen(
+      case ConverterCurrencyScreen.routeName:
+        return route(const ConverterCurrencyScreen(
             // params: settings.arguments as HomeScreenArgs?
             ));
       case MonthlyStatementScreen.routeName:
@@ -300,6 +306,30 @@ class RouteGenerator {
         return route(NotificationScreen(
             // params: settings.arguments as HomeScreenArgs?
             ));
+      case CurrenciesChartScreen.routeName:
+        return route(CurrenciesChartScreen(
+            // params: settings.arguments as HomeScreenArgs?
+            ));
+      case CurrencyExchangeConverterScreen.routeName:
+        return route(CurrencyExchangeConverterScreen(
+            // params: settings.arguments as HomeScreenArgs?
+            ));
+      case CurrencySellScreen.routeName:
+        return route(CurrencySellScreen(
+            // params: settings.arguments as HomeScreenArgs?
+            ));
+      case AssignRoleScreen.routeName:
+        return route(AssignRoleScreen(
+            // params: settings.arguments as HomeScreenArgs?
+            ));
+      case AdminScreen.routeName:
+        return route(AdminScreen(
+            // params: settings.arguments as HomeScreenArgs?
+            ));
+      case ContractorScreen.routeName:
+        return route(ContractorScreen(
+            // params: settings.arguments as HomeScreenArgs?
+            )); 
       // case FirstScreen.routeName:
       //   return route(FirstScreen(
       //       firstScreenArgs: settings.arguments as FirstScreenArgs));

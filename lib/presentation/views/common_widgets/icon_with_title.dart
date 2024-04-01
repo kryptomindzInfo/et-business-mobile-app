@@ -1,3 +1,4 @@
+import 'package:etbank_business_app/constants/icon_container.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -25,9 +26,8 @@ class IconWithTitle extends ConsumerWidget {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Image.asset(
-              imageicon,
-              height: 35,
+            IconContainer(
+              image: imageicon,
             ),
             15.spaceX,
             Text(

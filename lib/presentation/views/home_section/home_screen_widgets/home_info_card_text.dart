@@ -1,3 +1,4 @@
+import 'package:etbank_business_app/constants/icon_container.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -12,7 +13,7 @@ class InfoTextWidget extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Container(
-      margin: EdgeInsets.only(left: 15, right: 15, top: 15, bottom: 5),
+      margin: EdgeInsets.only(top: 15, bottom: 5),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -21,9 +22,8 @@ class InfoTextWidget extends ConsumerWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Image.asset(
-                  AppAssets.transactioninfoicon,
-                  height: 34,
+                IconContainer(
+                  image: AppAssets.transactioninfoicon,
                 ),
                 15.spaceX,
                 Column(

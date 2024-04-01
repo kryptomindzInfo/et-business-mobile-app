@@ -42,7 +42,8 @@ class RequestMoneyBottomSheetWidget extends ConsumerWidget {
                   RequestMoneyWhiteContainerWidget(
                     imageicon: AppAssets.paymentLink,
                     title: 'payment_link',
-                    subtitle: 'share_a_link_and_get_paid_online',
+                    subtitle: 'share_a_link_and_get_paid_online' +
+                        "dddddddddddddddddddddd",
                     onpress: () {},
                   ),
                   8.spaceY,

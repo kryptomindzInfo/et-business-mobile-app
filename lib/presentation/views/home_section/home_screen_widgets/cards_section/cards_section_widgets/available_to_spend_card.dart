@@ -41,7 +41,7 @@ class AvailableToSpendCard extends ConsumerWidget {
             overflow: TextOverflow.clip,
           ),
           15.spaceY,
-          CommonTransprentButton(
+          CommonGreyButton(
             title: getTranslated("resolve", context),
           )
         ],

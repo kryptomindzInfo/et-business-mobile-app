@@ -14,11 +14,7 @@ class DashboardInfoCardWidget extends ConsumerWidget {
         child: Column(
       children: [
         // 20.spaceY,
-        InfoTextWidget(),
-        // 10.spaceY,
-        InfoTextWidget(),
-        // 10.spaceY,
-        InfoTextWidget(),
+        
         // 20.spaceY,
       ],
     ));

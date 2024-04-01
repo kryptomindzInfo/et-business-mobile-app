@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../constants/app_colors.dart';
 import '../../../../constants/app_textstyle.dart';
+import '../../../../constants/icon_container.dart';
 
 class ProfileInfoTextWidget extends ConsumerWidget {
   final String? image;
@@ -19,9 +20,8 @@ class ProfileInfoTextWidget extends ConsumerWidget {
         margin: EdgeInsets.only(left: 15, right: 15, top: 12, bottom: 10),
         child: Row(
           children: [
-            Image.asset(
-              image!,
-              height: 35,
+            IconContainer(
+              image: image!,
             ),
             15.spaceX,
             Text(

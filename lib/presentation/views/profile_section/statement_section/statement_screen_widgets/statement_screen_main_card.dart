@@ -14,7 +14,7 @@ class StatementScreenMainCard extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return InfoCardCommonWidget(
-      color: AppColors.primaryColor,
+      color: AppColors.darkTeal,
       child: Column(
         children: [
           InfoIconTitleSubtitleText(

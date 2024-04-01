@@ -32,6 +32,7 @@ class AppAssets {
   static const michel = "${imagesDir}michel.png";
   static const oliva = "${imagesDir}oliva.png";
   static const evelyn = "${imagesDir}evelyn.png";
+  static const trustPayee = "${imagesDir}trust_payee.png";
   //app_icons
   static const earthicon = "${iconsDir}earth.png";
   static const globeicon = "${iconsDir}globe.png";
@@ -102,7 +103,8 @@ class AppAssets {
   static const hubcardsicon = "${iconsDir}hubcardsicon.png";
   static const rocket = "${iconsDir}rocket.png";
   static const computer = "${iconsDir}computer.png";
-
+  static const shareicon = "${iconsDir}shareicon.png";
+  static const plus = "${iconsDir}plus.png";
   // Sendding Currency Flow
 
   static const addButton2x = "${iconsDir}add_button_2x.png";
@@ -123,7 +125,20 @@ class AppAssets {
   static const virtualCard = "${iconsDir}virtual.png";
   static const checkout = "${iconsDir}checkout.png";
   static const rkImgae = "${iconsDir}rk_image.png";
-  static const trustPayee = "${imagesDir}trust_payee.png";
+  static const addgreenbutton = "${iconsDir}addgreenbutton.png";
+  static const greenrightarrow = "${iconsDir}greenrightarrow.png";
+  static const currencyexchangeicon = "${iconsDir}exchangeicon.png";
+  static const currencydelete = "${iconsDir}currencydelete.png";
+  static const switchfieldsicon = "${iconsDir}switchfields.png";
+  static const poepleicon = "${iconsDir}peopleicon.png";
+  static const invitepeople = "${iconsDir}invitepeople.png";
+  static const managerole = "${iconsDir}managerole.png";
+  static const menudots = "${iconsDir}menudots.png";
+  static const accounticon = "${iconsDir}accounticon.png";
+  static const merchant = "${iconsDir}merchant.png";
+  static const cards = "${iconsDir}cards.png";
+  static const greencheckround = "${iconsDir}greencheckround.png";
+  static const arrowleft = "${iconsDir}arrowleft.png";
 
   // Invoice and Request
 

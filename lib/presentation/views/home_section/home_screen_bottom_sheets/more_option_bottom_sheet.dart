@@ -16,7 +16,7 @@ class MoreOptionsBottomSheetWidget extends ConsumerWidget {
     return Column(
       children: [
         IconWithTitle(
-          imageicon: AppAssets.exchangeicon,
+          imageicon: AppAssets.transactioninfoicon,
           title: getTranslated("exchange", context),
           titleColor: AppColors.white,
         ),
@@ -36,7 +36,7 @@ class MoreOptionsBottomSheetWidget extends ConsumerWidget {
           titleColor: AppColors.white,
         ),
         IconWithTitle(
-          imageicon: AppAssets.addingicon,
+          imageicon: AppAssets.plus,
           title: getTranslated("add_new_accounts", context),
           titleColor: AppColors.white,
           onpress: () {

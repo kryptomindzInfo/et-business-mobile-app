@@ -14,15 +14,12 @@ class SeeAllCommonWidget extends ConsumerWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Padding(
-          padding: const EdgeInsets.only(left: 15),
-          child: Text(
-            title,
-            style: AppTextstyle.bodyTextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w600,
-                color: AppColors.white),
-          ),
+        Text(
+          title,
+          style: AppTextstyle.bodyTextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.w600,
+              color: AppColors.white),
         ),
         isSeeAll
             ? Padding(

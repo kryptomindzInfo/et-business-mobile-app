@@ -20,6 +20,7 @@ class ProfileInfoCard extends ConsumerWidget {
         SeeAllCommonWidget("Profile", true),
         5.spaceY,
         InfoCardCommonWidget(
+          color: Colors.transparent,
           child: Column(
             children: [
               ProfileInfoTextWidget(
@@ -45,6 +46,7 @@ class ProfileInfoCard extends ConsumerWidget {
                 image: AppAssets.statementicon,
                 title: getTranslated("statement", context),
                 onpress: () {
+                  print("dddddddd");
                   Navigation.pushNamed(StatementScreen.routeName);
                 },
               ),

@@ -7,8 +7,11 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../../../constants/app_assets.dart';
 import '../../../../../constants/app_colors.dart';
 import '../../../../../constants/app_textstyle.dart';
+import '../../../common_widgets/see_all_widget.dart';
 import '../../../invoice_and_request_screens/invoice_and_request_widgets/request_money_bottomsheet_widget.dart';
+import '../home_info_card_text.dart';
 import '../home_screen_main_card_options.dart';
+import 'dashboard_main_info_card.dart';
 
 class DashboardMainCard extends ConsumerWidget {
   const DashboardMainCard({super.key});
@@ -16,14 +19,14 @@ class DashboardMainCard extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Container(
-      height: 196,
+      // height: 196,
       width: double.infinity,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(28),
-          border: Border.all(color: AppColors.white),
-          color: AppColors.primaryColor),
+          border: Border.all(color: AppColors.tealColor),
+          color: Colors.transparent),
       child: Container(
-        margin: const EdgeInsets.only(left: 25, right: 20),
+        margin: const EdgeInsets.only(left: 18, right: 18),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -39,20 +42,32 @@ class DashboardMainCard extends ConsumerWidget {
                         Text(
                           "£1",
                           style: AppTextstyle.headingTextStyle(
-                              fontSize: 48, fontWeight: FontWeight.w700),
+                              fontSize: 48,
+                              fontWeight: FontWeight.w700,
+                              color: AppColors.white),
                         ),
-                        Image.asset(
-                          AppAssets.dropdownicon,
-                          height: 22,
+                        Container(
+                          height: 16,
+                          width: 16,
+                          decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: AppColors.tealColor),
+                          child: Center(
+                            child: Icon(
+                              Icons.keyboard_arrow_down_sharp,
+                              size: 16,
+                              color: AppColors.white,
+                            ),
+                          ),
                         )
                       ],
                     ),
                     Text(
                       "GBP . Default Account",
-                      style: AppTextstyle.headingTextStyle(
-                          fontSize: 12,
+                      style: AppTextstyle.bodyTextStyle(
+                          fontSize: 16,
                           fontWeight: FontWeight.w500,
-                          color: AppColors.mateBlackColor.withOpacity(0.4)),
+                          color: AppColors.white),
                     )
                   ],
                 ),
@@ -62,7 +77,7 @@ class DashboardMainCard extends ConsumerWidget {
                 )
               ],
             ),
-            20.spaceY,
+            10.spaceY,
             Container(
               margin: const EdgeInsets.only(left: 35, right: 22),
               child: Row(
@@ -78,13 +93,6 @@ class DashboardMainCard extends ConsumerWidget {
                         700,
                         const RequestMoneyBottomSheetWidget(),
                       );
-                      // showModalBottomSheet(
-                      //   context: context,
-                      //   backgroundColor: AppColors.black,
-                      //   builder: (BuildContext context) {
-                      //     return const RequestMoneyBottomSheetWidget();
-                      //   },
-                      // );
                     },
                   ),
                   MainCardOption(
@@ -99,7 +107,15 @@ class DashboardMainCard extends ConsumerWidget {
                   )
                 ],
               ),
-            )
+            ),
+            20.spaceY,
+            const SeeAllCommonWidget("Transactions", true),
+            InfoTextWidget(),
+            // 10.spaceY,
+            InfoTextWidget(),
+            // 10.spaceY,
+            InfoTextWidget(),
+            20.spaceY,
           ],
         ),
       ),

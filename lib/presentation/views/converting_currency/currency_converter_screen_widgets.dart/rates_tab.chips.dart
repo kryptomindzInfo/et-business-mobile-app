@@ -4,15 +4,16 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class RatesScreenChips extends ConsumerWidget {
   final String? title;
-  const RatesScreenChips({
-    super.key,
-    this.title,
-  });
+  final VoidCallback? onpress;
+  final Color? color;
+  const RatesScreenChips({super.key, this.title, this.onpress, this.color});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Chips(
       title: title,
+      color: color,
+      onpress: onpress,
     );
   }
 }

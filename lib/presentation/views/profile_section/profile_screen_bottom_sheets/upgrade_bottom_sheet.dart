@@ -72,6 +72,7 @@ class UpgradeBottomSheet extends ConsumerWidget {
             const SeeAllCommonWidget("Get more from your plan", false),
             15.spaceY,
             InfoCardCommonWidget(
+              color: AppColors.black,
               child: Column(
                 children: [
                   ...(upgradePlanslist[profileProviderWatch.selectedPlan]
