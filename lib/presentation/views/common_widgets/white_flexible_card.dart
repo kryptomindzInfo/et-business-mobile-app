@@ -1,4 +1,5 @@
 import 'package:etbank_business_app/constants/app_colors.dart';
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -16,7 +17,8 @@ class CommonWhiteFlexibleCard extends ConsumerWidget {
       width: double.infinity,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(borderRadius ?? 28),
-          color: color ?? AppColors.white),
+          color: context.theme.colorTheme.transparentToColor,
+          border: Border.all(color: context.theme.colorTheme.borderColor)),
       child: Padding(
         padding: padding ??
             const EdgeInsets.only(left: 20, right: 20, top: 20, bottom: 20),

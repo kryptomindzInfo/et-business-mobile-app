@@ -1,6 +1,7 @@
 import 'package:etbank_business_app/constants/app_assets.dart';
 import 'package:etbank_business_app/constants/app_textstyle.dart';
 import 'package:etbank_business_app/constants/icon_container.dart';
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/resources/localization/language_constrants.dart';
 import 'package:flutter/material.dart';
@@ -18,8 +19,8 @@ class ReferBusinessShareLinkMainCard extends ConsumerWidget {
       width: double.infinity,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(28),
-          color: Colors.transparent,
-          border: Border.all(color: AppColors.tealColor)),
+          color: AppColors.transparent,
+          border: Border.all(color: context.theme.colorTheme.borderColor)),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -37,14 +38,14 @@ class ReferBusinessShareLinkMainCard extends ConsumerWidget {
                 style: AppTextstyle.bodyTextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w600,
-                    color: AppColors.yellowGreen),
+                    color: context.theme.colorTheme.titleColor),
               ),
               Text(
                 getTranslated("quickly_invite_contact", context),
                 style: AppTextstyle.bodyTextStyle(
                     fontSize: 12,
                     fontWeight: FontWeight.w600,
-                    color: AppColors.white),
+                    color: context.theme.colorTheme.normalTextColor),
               )
             ],
           )

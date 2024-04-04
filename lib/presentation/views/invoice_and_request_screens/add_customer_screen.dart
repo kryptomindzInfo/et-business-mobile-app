@@ -21,7 +21,7 @@ class AddCustomerScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return BackgroundImageWidget(
       child: Scaffold(
-        backgroundColor: Colors.transparent,
+        backgroundColor: AppColors.transparent,
         body: Padding(
           padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
           child: Column(
@@ -30,7 +30,13 @@ class AddCustomerScreen extends ConsumerWidget {
               HeaderIconWithTitle(
                 title: getTranslated('add_customer', context),
                 imageicon: AppAssets.arrowLeft,
-                trailingImage: AppAssets.addIconBold,
+                widget: Image.asset(
+                  AppAssets.addIconBold,
+                  height: 34,
+                  width: 34,
+                ),
+
+                // trailingImage: AppAssets.addIconBold,
                 rightPadding: 0,
               ),
               32.spaceY,

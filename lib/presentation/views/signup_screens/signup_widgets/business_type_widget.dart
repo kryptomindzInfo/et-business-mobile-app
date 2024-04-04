@@ -1,5 +1,6 @@
 import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:etbank_business_app/constants/app_textstyle.dart';
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -41,7 +42,7 @@ class BusinessTypeWidget extends ConsumerWidget {
                   title,
                   style: AppTextstyle.headingTextStyle(
                       fontSize: 16.sp,
-                      color: AppColors.white,
+                      color: context.theme.colorTheme.normalTextColor,
                       fontWeight: FontWeight.w600,
                       overflow: TextOverflow.clip),
                 ),
@@ -52,7 +53,8 @@ class BusinessTypeWidget extends ConsumerWidget {
                   child: Text(
                     description ?? '',
                     style: AppTextstyle.bodyTextStyle(
-                        color: AppColors.grey, overflow: TextOverflow.clip),
+                        color: context.theme.colorTheme.greyDescription,
+                        overflow: TextOverflow.clip),
                   ),
                 ),
             ],

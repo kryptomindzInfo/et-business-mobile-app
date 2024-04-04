@@ -1,4 +1,6 @@
 import 'package:etbank_business_app/constants/app_colors.dart';
+import 'package:etbank_business_app/constants/app_textstyle.dart';
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/navigation/navigator_key.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/primary_button.dart';
@@ -23,8 +25,13 @@ statementBottomSheet() {
           StatementContainer(),
           20.spaceY,
           PrimaryButton(
-            color: AppColors.primaryColor,
-            text: Text(getTranslated("export", context)),
+            color: context.theme.colorTheme.buttonColor,
+            text: Text(
+              getTranslated("export", context),
+              style: AppTextstyle.bodyTextStyle(
+                color: context.theme.colorTheme.whiteAndBlack,
+              ),
+            ),
             onPressed: () {},
             minwidth: 250,
           )

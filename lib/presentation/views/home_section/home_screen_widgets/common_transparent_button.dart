@@ -1,5 +1,6 @@
 import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:etbank_business_app/constants/app_textstyle.dart';
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -26,8 +27,9 @@ class CommonGreyButton extends ConsumerWidget {
           // width: 117,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(64),
-              color: AppColors.grey,
-              border: Border.all(color: AppColors.primaryColor)),
+              color: context.theme.colorTheme.buttonColor
+              // border: Border.all(color: AppColors.primaryColor)
+              ),
 
           child: Container(
             margin: EdgeInsets.only(left: 10, right: 10),
@@ -38,13 +40,14 @@ class CommonGreyButton extends ConsumerWidget {
                     Image.asset(
                       imageIcon!,
                       height: imageIconHeight ?? 15,
+                      color: context.theme.colorTheme.whiteAndBlack,
                     ),
                   if (title != null) 8.spaceX,
                   if (title != null)
                     Text(
                       " ${title!}   ",
                       style: AppTextstyle.bodyTextStyle(
-                          color: AppColors.white,
+                          color: context.theme.colorTheme.whiteAndBlack,
                           fontSize: 14,
                           fontWeight: FontWeight.w500),
                     ),

@@ -1,3 +1,4 @@
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/white_flexible_card.dart';
 import 'package:etbank_business_app/presentation/views/converting_currency/currency_converter_screen_widgets.dart/currency_value_with_status_text.dart';
 import 'package:flutter/material.dart';
@@ -9,6 +10,7 @@ class CurrencyChartWhiteCard extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return CommonWhiteFlexibleCard(
+      color: context.theme.colorTheme.blackAndWhite,
       widget: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [

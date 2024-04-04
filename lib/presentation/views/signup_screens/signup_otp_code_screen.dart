@@ -1,5 +1,6 @@
 import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:etbank_business_app/constants/app_textstyle.dart';
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/app_common_widgets.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/header_icon_with_text.dart';
@@ -46,6 +47,7 @@ class OTPVerification extends ConsumerWidget {
                 title: getTranslated('signup_email_code_title', context),
                 description: getTranslated(description, context),
                 imageicon: AppAssets.arrowLeft,
+                etBankLogo: true,
               ),
               32.spaceY,
               PinCodeTextField(
@@ -56,6 +58,8 @@ class OTPVerification extends ConsumerWidget {
                 autoDisposeControllers: false,
                 animationType: AnimationType.fade,
                 mainAxisAlignment: MainAxisAlignment.center,
+                textStyle:
+                    TextStyle(color: context.theme.colorTheme.blackAndWhite),
                 pinTheme: PinTheme(
                   shape: PinCodeFieldShape.box,
                   borderRadius: BorderRadius.circular(8),
@@ -63,12 +67,14 @@ class OTPVerification extends ConsumerWidget {
                   fieldHeight: 48.h,
                   fieldWidth: 34.w,
                   borderWidth: 1,
-                  activeFillColor: AppColors.white,
-                  selectedFillColor: AppColors.white,
-                  inactiveFillColor: AppColors.white,
+                  activeFillColor: context.theme.colorTheme.transparentToColor,
+                  selectedFillColor:
+                      context.theme.colorTheme.transparentToColor,
+                  inactiveFillColor:
+                      context.theme.colorTheme.transparentToColor,
                   activeColor: AppColors.tealColor,
                   selectedColor: AppColors.tealColor,
-                  inactiveColor: AppColors.white,
+                  inactiveColor: context.theme.colorTheme.borderColor,
                 ),
                 inputFormatters: [FilteringTextInputFormatter.digitsOnly],
                 keyboardType: TextInputType.number,
@@ -81,7 +87,9 @@ class OTPVerification extends ConsumerWidget {
               Text(
                 getTranslated(text1 ?? 'resend_code', context),
                 style: AppTextstyle.bodyTextStyle(
-                    fontSize: 16.sp, color: text1Color ?? AppColors.white),
+                  fontSize: 16.sp,
+                  color: text1Color ?? context.theme.colorTheme.normalTextColor,
+                ),
               ),
               RichText(
                 text: TextSpan(
@@ -91,14 +99,15 @@ class OTPVerification extends ConsumerWidget {
                           text2 ?? 'already_have_account', context),
                       style: AppTextstyle.bodyTextStyle(
                         fontSize: 16.sp,
-                        color: text2Color ?? AppColors.primaryColor,
+                        color: text2Color ??
+                            context.theme.colorTheme.normalTextColor,
                       ),
                     ),
                     TextSpan(
                       text: getTranslated(text3 ?? 'login', context),
                       style: AppTextstyle.bodyTextStyle(
                         fontSize: 16.sp,
-                        color: AppColors.primaryColor,
+                        color: context.theme.colorTheme.normalTextColor,
                         fontWeight: FontWeight.w600,
                       ),
                     ),

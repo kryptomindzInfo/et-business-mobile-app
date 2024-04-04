@@ -34,6 +34,7 @@ class SignUpCreatePassword extends ConsumerWidget {
                 title: getTranslated('create_password_title', context),
                 description: getTranslated('create_password_subtitle', context),
                 imageicon: AppAssets.arrowLeft,
+                etBankLogo: true,
               ),
               32.spaceY,
               Row(
@@ -104,7 +105,7 @@ class SignUpCreatePassword extends ConsumerWidget {
           ),
         ),
         resizeToAvoidBottomInset: false,
-        backgroundColor: Colors.transparent,
+        backgroundColor: AppColors.transparent,
         bottomNavigationBar: ButtonBottomNavigationWidget(
           children: [
             SizedBox(

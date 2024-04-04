@@ -40,7 +40,10 @@ class RequestMoneyBottomSheetWidget extends ConsumerWidget {
               child: Column(
                 children: [
                   RequestMoneyWhiteContainerWidget(
-                    imageicon: AppAssets.paymentLink,
+                    imageicon: Image.asset(
+                      AppAssets.paymentLink,
+                      // height: 20,
+                    ), //AppAssets.paymentLink,
                     title: 'payment_link',
                     subtitle: 'share_a_link_and_get_paid_online' +
                         "dddddddddddddddddddddd",
@@ -48,7 +51,10 @@ class RequestMoneyBottomSheetWidget extends ConsumerWidget {
                   ),
                   8.spaceY,
                   RequestMoneyWhiteContainerWidget(
-                    imageicon: AppAssets.invoice,
+                    imageicon: Image.asset(
+                      AppAssets.invoice,
+                      // height: 20,
+                    ),
                     title: 'invoice',
                     subtitle: 'create_and_send_an_invoice',
                     onpress: () {
@@ -56,14 +62,20 @@ class RequestMoneyBottomSheetWidget extends ConsumerWidget {
                     },
                   ),
                   8.spaceY,
-                  const RequestMoneyWhiteContainerWidget(
-                    imageicon: AppAssets.cardReader,
+                  RequestMoneyWhiteContainerWidget(
+                    imageicon: Image.asset(
+                      AppAssets.cardReader,
+                      // height: 20,
+                    ),
                     title: 'card_reader',
                     subtitle: 'get_paid_with_cards',
                   ),
                   8.spaceY,
-                  const RequestMoneyWhiteContainerWidget(
-                    imageicon: AppAssets.qrCode,
+                  RequestMoneyWhiteContainerWidget(
+                    imageicon: Image.asset(
+                      AppAssets.qrCode,
+                      height: 25,
+                    ),
                     title: 'qr_code',
                     subtitle: 'show_to_get_paid_in_person',
                   ),

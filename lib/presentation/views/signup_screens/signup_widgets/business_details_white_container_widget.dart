@@ -1,6 +1,7 @@
 import 'package:etbank_business_app/constants/app_assets.dart';
 import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:etbank_business_app/constants/app_textstyle.dart';
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -30,9 +31,12 @@ class BusinessDetailsWhiteContainerWidet extends ConsumerWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        decoration: const BoxDecoration(
-            color: AppColors.white,
-            borderRadius: BorderRadius.all(Radius.circular(8))),
+        decoration: BoxDecoration(
+            color: context.theme.colorTheme.transparentToColor,
+            border: Border.all(color: context.theme.colorTheme.borderColor),
+            borderRadius: BorderRadius.all(
+              Radius.circular(8),
+            )),
         child: Padding(
           padding: const EdgeInsets.all(15),
           child: Column(
@@ -41,7 +45,8 @@ class BusinessDetailsWhiteContainerWidet extends ConsumerWidget {
               if (labelText != null)
                 Text(
                   labelText ?? 'country',
-                  style: AppTextstyle.bodyTextStyle(color: AppColors.grey),
+                  style: AppTextstyle.bodyTextStyle(
+                      color: context.theme.colorTheme.blackAndWhite),
                 ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -64,7 +69,8 @@ class BusinessDetailsWhiteContainerWidet extends ConsumerWidget {
                             style: titleTextStyle ??
                                 AppTextstyle.bodyTextStyle(
                                     fontSize: 16.sp,
-                                    color: titleTextColor ?? AppColors.grey),
+                                    color: titleTextColor ??
+                                        context.theme.colorTheme.blackAndWhite),
                           ),
                         ],
                       ),

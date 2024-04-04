@@ -57,7 +57,7 @@ class SignUpCreatePassCodeScreen extends ConsumerWidget {
           ),
         ),
         resizeToAvoidBottomInset: false,
-        backgroundColor: Colors.transparent,
+        backgroundColor: AppColors.transparent,
         bottomNavigationBar: ButtonBottomNavigationWidget(
           children: [
             SizedBox(

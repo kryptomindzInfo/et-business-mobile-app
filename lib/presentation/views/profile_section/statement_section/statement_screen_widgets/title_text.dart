@@ -1,3 +1,4 @@
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -13,7 +14,9 @@ class TitleText extends ConsumerWidget {
     return Text(
       title!,
       style: AppTextstyle.bodyTextStyle(
-          fontSize: 16, fontWeight: FontWeight.w600, color: AppColors.white),
+          fontSize: 16,
+          fontWeight: FontWeight.w600,
+          color: context.theme.colorTheme.normalTextColor),
     );
   }
 }

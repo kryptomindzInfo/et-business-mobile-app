@@ -35,10 +35,15 @@ class ImageScreenWidget extends StatelessWidget {
                 imageicon: AppAssets.arrowLeft,
               ),
               57.spaceY,
-              Image.asset(
-                image,
-                height: 306.h,
-                width: 306.w,
+              Padding(
+                padding: const EdgeInsets.only(
+                  right: 25,
+                ),
+                child: Image.asset(
+                  image,
+                  height: 306.h,
+                  width: 306.w,
+                ),
               ),
             ],
           ),

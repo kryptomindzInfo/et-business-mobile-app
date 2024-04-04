@@ -1,6 +1,7 @@
 import 'package:etbank_business_app/constants/app_assets.dart';
 import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:etbank_business_app/constants/app_textstyle.dart';
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/resources/localization/language_constrants.dart';
 import 'package:flutter/material.dart';
@@ -27,7 +28,7 @@ class AddingButtonWithTitle extends ConsumerWidget {
               getTranslated("add_currency_pair", context),
               style: AppTextstyle.bodyTextStyle(
                   fontWeight: FontWeight.normal,
-                  color: AppColors.white,
+                  color: context.theme.colorTheme.normalTextColor,
                   fontSize: 16),
             )
           ],

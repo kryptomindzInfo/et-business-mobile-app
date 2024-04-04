@@ -9,6 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../constants/app_assets.dart';
+import '../../../constants/app_colors.dart';
 import '../../../constants/static_data/signup_screen_static_data.dart';
 import 'signup_widgets/category_widget.dart';
 import 'signup_widgets/textfield_black_widget.dart';
@@ -23,7 +24,7 @@ class SignUpCategoryScreen extends ConsumerWidget {
     return BackgroundImageWidget(
       child: Scaffold(
         extendBody: true,
-        backgroundColor: Colors.transparent,
+        backgroundColor: AppColors.transparent,
         body: Padding(
           padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
           child: Column(

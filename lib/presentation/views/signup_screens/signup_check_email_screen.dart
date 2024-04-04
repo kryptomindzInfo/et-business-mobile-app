@@ -1,4 +1,5 @@
 import 'package:etbank_business_app/constants/app_textstyle.dart';
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/navigation/navigation.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_email_otp_code_screen.dart';
@@ -27,11 +28,11 @@ class SignUpCheckEmailScreen extends ConsumerWidget {
           height: 48.h,
           width: 327.w,
           child: PrimaryButton(
-            color: AppColors.primaryColor,
+            color: context.theme.colorTheme.buttonColor,
             text: Text(
               getTranslated('go_to_inbox', context),
               style: AppTextstyle.bodyTextStyle(
-                  color: AppColors.black,
+                  color: context.theme.colorTheme.blackColor,
                   fontSize: 16,
                   fontWeight: FontWeight.w500),
             ),
@@ -43,11 +44,11 @@ class SignUpCheckEmailScreen extends ConsumerWidget {
           height: 48.h,
           width: 327.w,
           child: PrimaryButton(
-            color: AppColors.primaryColor.withOpacity(0.5),
+            color: context.theme.colorTheme.normallyUsedTealColor,
             text: Text(
               getTranslated('enter_code_manually', context),
               style: AppTextstyle.bodyTextStyle(
-                  color: AppColors.primaryColor,
+                  color: context.theme.colorTheme.whiteColor.withOpacity(0.5),
                   fontSize: 16,
                   fontWeight: FontWeight.w500),
             ),

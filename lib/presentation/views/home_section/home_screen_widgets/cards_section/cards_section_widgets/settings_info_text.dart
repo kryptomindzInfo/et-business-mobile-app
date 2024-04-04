@@ -1,3 +1,5 @@
+import 'package:etbank_business_app/constants/icon_container.dart';
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -27,10 +29,13 @@ class SettingsInfoText extends ConsumerWidget {
     var proWatch = ref.watch(cardscreenProvider);
     return Row(
       children: [
-        Image.asset(
-          imageIcon,
-          height: 35,
+        IconContainer(
+          image: imageIcon,
         ),
+        // Image.asset(
+        //   imageIcon,
+        //   height: 35,
+        // ),
         10.spaceX,
         Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -39,7 +44,9 @@ class SettingsInfoText extends ConsumerWidget {
             Text(
               title!,
               style: AppTextstyle.bodyTextStyle(
-                  fontSize: 16, fontWeight: FontWeight.w600),
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
+                  color: context.theme.colorTheme.normalTextColor),
             ),
             Row(
               children: [
@@ -49,7 +56,9 @@ class SettingsInfoText extends ConsumerWidget {
                   child: Text(
                     description!,
                     style: AppTextstyle.bodyTextStyle(
-                        fontSize: 16, fontWeight: FontWeight.w400),
+                        fontSize: 16,
+                        fontWeight: FontWeight.w400,
+                        color: context.theme.colorTheme.normalTextColor),
                     overflow: TextOverflow.clip,
                   ),
                 ),
@@ -65,7 +74,7 @@ class SettingsInfoText extends ConsumerWidget {
                             onChanged: (value) {
                               proRead.expenseReportingSwitch(value);
                             },
-                            activeColor: AppColors.tealColor,
+                            activeColor: context.theme.colorTheme.indigoToColor,
                           ),
                         ),
                       )

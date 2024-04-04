@@ -18,7 +18,7 @@ class ConverterCurrencyScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return BackgroundImageWidget(
       child: Scaffold(
-        backgroundColor: Colors.transparent,
+        backgroundColor: const Color.fromRGBO(0, 0, 0, 0),
         body: Padding(
           padding: const EdgeInsets.only(left: 20, right: 20),
           child: Column(
@@ -26,6 +26,7 @@ class ConverterCurrencyScreen extends ConsumerWidget {
               HeaderIconWithTitle(
                 imageicon: AppAssets.arrowLeft,
                 title: getTranslated("rates", context),
+                etBankLogo: true,
               ),
               20.spaceY,
               RatesScreenOptionsWidget(),

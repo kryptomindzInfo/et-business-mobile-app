@@ -72,8 +72,9 @@ class _CustomTextFiledState extends State<CustomTextFiledWidget> {
         height: widget.height,
         decoration: BoxDecoration(
             color: widget.backgroundColor ?? theme.highlightColor,
-            border:
-                Border.all(color: widget.borderColor ?? AppColors.transparent),
+            border: Border.all(
+              color: widget.borderColor ?? AppColors.transparent,
+            ),
             borderRadius: BorderRadius.circular(6)),
         child: Row(
           children: [

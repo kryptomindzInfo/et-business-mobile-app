@@ -2,6 +2,7 @@ import 'package:etbank_business_app/constants/app_api_paths.dart';
 import 'package:etbank_business_app/constants/app_assets.dart';
 import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:etbank_business_app/constants/app_textstyle.dart';
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/white_flexible_card.dart';
 import 'package:etbank_business_app/resources/localization/language_constrants.dart';
@@ -22,14 +23,16 @@ class FundingAmountCard extends ConsumerWidget {
               Text(
                 getTranslated("spend_controls", context),
                 style: AppTextstyle.bodyTextStyle(
-                    fontSize: 12, fontWeight: FontWeight.w500),
+                    fontSize: 12,
+                    fontWeight: FontWeight.w500,
+                    color: context.theme.colorTheme.normalTextColor),
               ),
               Text(
                 getTranslated("see_all", context),
                 style: AppTextstyle.bodyTextStyle(
                     fontSize: 12,
                     fontWeight: FontWeight.w500,
-                    color: AppColors.tealColor),
+                    color: context.theme.colorTheme.grassGreen),
               )
             ],
           ),
@@ -42,6 +45,7 @@ class FundingAmountCard extends ConsumerWidget {
                 child: Image.asset(
                   AppAssets.copylink,
                   height: 12,
+                  color: context.theme.colorTheme.indigoToColor,
                 ),
               ),
               10.spaceX,
@@ -55,12 +59,16 @@ class FundingAmountCard extends ConsumerWidget {
                       context,
                     ),
                     style: AppTextstyle.bodyTextStyle(
-                        fontSize: 16, fontWeight: FontWeight.w600),
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600,
+                        color: context.theme.colorTheme.normalTextColor),
                   ),
                   Text(
                     getTranslated("all_accounts", context),
                     style: AppTextstyle.bodyTextStyle(
-                        fontSize: 16, fontWeight: FontWeight.w400),
+                        fontSize: 16,
+                        fontWeight: FontWeight.w400,
+                        color: context.theme.colorTheme.normalTextColor),
                     overflow: TextOverflow.clip,
                   ),
                 ],

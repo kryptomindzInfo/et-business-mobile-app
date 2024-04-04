@@ -22,9 +22,10 @@ class DashboardMainCard extends ConsumerWidget {
       // height: 196,
       width: double.infinity,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(28),
-          border: Border.all(color: AppColors.tealColor),
-          color: Colors.transparent),
+        borderRadius: BorderRadius.circular(28),
+        border: Border.all(color: AppColors.tealColor),
+        color: AppColors.transparent,
+      ),
       child: Container(
         margin: const EdgeInsets.only(left: 18, right: 18),
         child: Column(

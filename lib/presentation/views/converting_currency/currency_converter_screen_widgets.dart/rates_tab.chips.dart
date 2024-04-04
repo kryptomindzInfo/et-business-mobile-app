@@ -6,7 +6,9 @@ class RatesScreenChips extends ConsumerWidget {
   final String? title;
   final VoidCallback? onpress;
   final Color? color;
-  const RatesScreenChips({super.key, this.title, this.onpress, this.color});
+  final Color? titleColor;
+  const RatesScreenChips(
+      {super.key, this.title, this.onpress, this.color, this.titleColor});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -14,6 +16,7 @@ class RatesScreenChips extends ConsumerWidget {
       title: title,
       color: color,
       onpress: onpress,
+      titleColor: titleColor,
     );
   }
 }

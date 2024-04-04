@@ -1,4 +1,5 @@
 import 'package:etbank_business_app/constants/icon_container.dart';
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -42,7 +43,7 @@ class InfoIconTitleSubtitleText extends ConsumerWidget {
                   style: AppTextstyle.bodyTextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w600,
-                      color: AppColors.white),
+                      color: context.theme.colorTheme.normalTextColor),
                 ),
                 Container(
                   height: 30,
@@ -52,7 +53,7 @@ class InfoIconTitleSubtitleText extends ConsumerWidget {
                     style: AppTextstyle.bodyTextStyle(
                         fontSize: 12,
                         fontWeight: FontWeight.w600,
-                        color: AppColors.white,
+                        color: context.theme.colorTheme.normalTextColor,
                         overflow: TextOverflow.clip),
                   ),
                 ),

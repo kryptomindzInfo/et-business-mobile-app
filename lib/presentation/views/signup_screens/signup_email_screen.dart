@@ -24,7 +24,7 @@ class SignUpEmailScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return BackgroundImageWidget(
       child: Scaffold(
-        backgroundColor: Colors.transparent,
+        backgroundColor: AppColors.transparent,
         body: Padding(
           padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
           child: Column(
@@ -33,6 +33,7 @@ class SignUpEmailScreen extends ConsumerWidget {
               HeaderIconWithTitle(
                 title: getTranslated('signup_email_title', context),
                 imageicon: AppAssets.arrowLeft,
+                etBankLogo: true,
               ),
               SizedBox(
                 child: TextFieldWidget(

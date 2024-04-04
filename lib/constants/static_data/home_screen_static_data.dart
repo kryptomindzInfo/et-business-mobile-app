@@ -171,7 +171,7 @@ List<Map> _getCardsData = [
     "data": {
       "description": "best_for_business",
       "icon": AppAssets.debitCard,
-      "image": AppAssets.greencardForslider
+      "image": AppAssets.greencardForslider,
     }
   },
   {
@@ -179,7 +179,7 @@ List<Map> _getCardsData = [
     "data": {
       "description": "best_for_online",
       "icon": AppAssets.virtualCard,
-      "image": AppAssets.silvercardForslider
+      "image": AppAssets.silvercardForslider,
     }
   }
 ];

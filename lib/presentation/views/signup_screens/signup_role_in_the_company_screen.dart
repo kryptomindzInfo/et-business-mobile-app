@@ -63,9 +63,8 @@ class SignUpRoleInTheCompanyScreen extends ConsumerWidget {
                               image: companyRoles[index]['image'],
                               title: getTranslated(
                                   companyRoles[index]['title'], context),
-                              description:
-                                  getTranslated(
-                                      companyRoles[index]['subtitle'], context),
+                              description: getTranslated(
+                                  companyRoles[index]['subtitle'], context),
                               onPressed: () => ref
                                   .read(signUpStateProvider)
                                   .changeRole(index),

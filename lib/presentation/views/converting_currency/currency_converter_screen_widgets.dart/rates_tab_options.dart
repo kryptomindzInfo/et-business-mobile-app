@@ -1,4 +1,5 @@
 import 'package:etbank_business_app/constants/app_colors.dart';
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/presentation/views/converting_currency/currency_converter_screen_widgets.dart/rates_tab.chips.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -25,8 +26,13 @@ class RatesScreenOptionsWidget extends ConsumerWidget {
             color:
                 ref.watch(currencyScreenProvider).currencyConverterTabIndex ==
                         index
-                    ? AppColors.tealColor
-                    : AppColors.black,
+                    ? context.theme.colorTheme.activeChipColor
+                    : context.theme.colorTheme.chipsColor,
+            titleColor:
+                ref.watch(currencyScreenProvider).currencyConverterTabIndex ==
+                        index
+                    ? context.theme.colorTheme.blackColor
+                    : context.theme.colorTheme.whiteColor,
           );
         },
       ),

@@ -10,8 +10,14 @@ class Chips extends ConsumerWidget {
   final String? imageicon;
   final VoidCallback? onpress;
   final Color? color;
+  final Color? titleColor;
   const Chips(
-      {super.key, this.title, this.onpress, this.imageicon, this.color});
+      {super.key,
+      this.title,
+      this.onpress,
+      this.imageicon,
+      this.color,
+      this.titleColor});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -37,7 +43,7 @@ class Chips extends ConsumerWidget {
               style: AppTextstyle.bodyTextStyle(
                   fontWeight: FontWeight.w500,
                   fontSize: 16,
-                  color: AppColors.white))
+                  color: titleColor ?? AppColors.white))
         ]),
       ),
     ));

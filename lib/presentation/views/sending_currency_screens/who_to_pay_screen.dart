@@ -21,7 +21,7 @@ class WhoToPayScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return BackgroundImageWidget(
       child: Scaffold(
-        backgroundColor: Colors.transparent,
+        backgroundColor: AppColors.transparent,
         body: Padding(
           padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
           child: Column(
@@ -30,7 +30,12 @@ class WhoToPayScreen extends ConsumerWidget {
               HeaderIconWithTitle(
                 title: getTranslated('who_to_pay_title', context),
                 imageicon: AppAssets.arrowLeft,
-                trailingImage: AppAssets.addIconBold,
+                widget: Image.asset(
+                  AppAssets.addIconBold,
+                  height: 34,
+                  width: 34,
+                ),
+                // trailingImage: AppAssets.addIconBold,
                 rightPadding: 0,
               ),
               32.spaceY,
@@ -50,7 +55,7 @@ class WhoToPayScreen extends ConsumerWidget {
               ),
               18.spaceY,
               AddCounterPartyWidget(
-                title: 'add_new_counterparty-',
+                title: 'add_new_counterparty',
                 onTap: () {
                   Navigation.pushNamed(AccountDetailsScreen.routeName);
                 },

@@ -29,7 +29,7 @@ class SignUpMobileNoScreen extends ConsumerWidget {
 
     return BackgroundImageWidget(
       child: Scaffold(
-        backgroundColor: Colors.transparent,
+        backgroundColor: AppColors.transparent,
         body: Padding(
           padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
           child: Column(
@@ -40,6 +40,7 @@ class SignUpMobileNoScreen extends ConsumerWidget {
                 description:
                     getTranslated('mobile_no_verification_code', context),
                 imageicon: AppAssets.arrowLeft,
+                etBankLogo: true,
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 32),
@@ -47,7 +48,7 @@ class SignUpMobileNoScreen extends ConsumerWidget {
                   children: [
                     CountryDropDownButtonWidget(
                       title:
-                          '${selectedCountry?.flag} ${selectedCountry?.dialCode}',
+                          '${selectedCountry?.flag} ${selectedCountry?.code} ${selectedCountry?.dialCode}',
                       onTap: () {
                         showModalBottomSheet(
                           context: context,

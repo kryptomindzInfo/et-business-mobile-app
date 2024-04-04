@@ -10,6 +10,8 @@ import 'package:etbank_business_app/resources/localization/language_constrants.d
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../../constants/app_colors.dart';
+
 class ProfileInfoCard extends ConsumerWidget {
   const ProfileInfoCard({super.key});
 
@@ -20,7 +22,7 @@ class ProfileInfoCard extends ConsumerWidget {
         SeeAllCommonWidget("Profile", true),
         5.spaceY,
         InfoCardCommonWidget(
-          color: Colors.transparent,
+          color: AppColors.transparent,
           child: Column(
             children: [
               ProfileInfoTextWidget(
@@ -28,7 +30,7 @@ class ProfileInfoCard extends ConsumerWidget {
                 title: getTranslated("personal_profile", context),
                 onpress: () {
                   showModalBottomSheet(
-                    backgroundColor: Colors.transparent,
+                    backgroundColor: AppColors.transparent,
                     context: context,
                     builder: (context) => ThemeBottomSheet(),
                   );
