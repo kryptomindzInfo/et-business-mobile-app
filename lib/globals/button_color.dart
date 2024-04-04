@@ -3,13 +3,13 @@ import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/navigation/navigator_key.dart';
 import 'package:flutter/material.dart';
 
-Color buttonColor(bool value) => value
-    ? appContext.theme.colorTheme.disableButtonColor
-    : appContext.theme.colorTheme.yellowGreenColor;
+// Color buttonColor(bool value) => value
+//     ? appContext.theme.colorTheme.disableButtonColor
+//     : appContext.theme.colorTheme.yellowGreenColor;
 
-Color buttonTextColor(bool value) => value
-    ? appContext.theme.colorTheme.disableButtonTextColor
-    : appContext.theme.colorTheme.whiteAndBlack;
+// Color buttonTextColor(bool value) => value
+//     ? appContext.theme.colorTheme.disableButtonTextColor
+//     : appContext.theme.colorTheme.whiteAndBlack;
 
 // Company and Individul Buttons Selection
 

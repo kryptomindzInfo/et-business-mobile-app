@@ -1,4 +1,5 @@
 import 'package:etbank_business_app/constants/app_textstyle.dart';
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/navigation/navigation.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/app_common_widgets.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/header_icon_with_text.dart';
@@ -59,12 +60,16 @@ class SignUpEmailScreen extends ConsumerWidget {
               height: 48.h,
               width: 327.w,
               child: PrimaryButton(
-                color: buttonColor(ref.watch(signUpStateProvider).isEmailEmpty),
+                color: ref.watch(signUpStateProvider).isEmailEmpty
+                    ? context.theme.colorTheme.disableButtonColor
+                    : context.theme.colorTheme.yellowGreenColor,
+                // buttonColor(ref.watch(signUpStateProvider).isEmailEmpty),
                 text: Text(
                   getTranslated('continue', context),
                   style: AppTextstyle.bodyTextStyle(
-                      color: buttonTextColor(
-                          ref.watch(signUpStateProvider).isEmailEmpty),
+                      color: ref.watch(signUpStateProvider).isEmailEmpty
+                          ? context.theme.colorTheme.disableButtonTextColor
+                          : context.theme.colorTheme.whiteAndBlack,
                       fontSize: 16,
                       fontWeight: FontWeight.w500),
                 ),

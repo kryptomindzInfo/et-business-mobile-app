@@ -1,5 +1,6 @@
 import 'package:etbank_business_app/constants/app_assets.dart';
 import 'package:etbank_business_app/constants/app_textstyle.dart';
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/navigation/navigation.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/app_common_widgets.dart';
@@ -112,13 +113,18 @@ class SignUpCreatePassword extends ConsumerWidget {
               height: 48.h,
               width: 327.w,
               child: PrimaryButton(
-                color:
-                    buttonColor(ref.watch(signUpStateProvider).isPasswordEmpty),
+                color: ref.watch(signUpStateProvider).isPasswordEmpty
+                    ? context.theme.colorTheme.disableButtonColor
+                    : context.theme.colorTheme.yellowGreenColor,
+                // buttonColor(ref.watch(signUpStateProvider).isPasswordEmpty),
                 text: Text(
                   getTranslated('continue', context),
                   style: AppTextstyle.bodyTextStyle(
-                      color: buttonTextColor(
-                          ref.watch(signUpStateProvider).isPasswordEmpty),
+                      color: ref.watch(signUpStateProvider).isPasswordEmpty
+                          ? context.theme.colorTheme.disableButtonTextColor
+                          : context.theme.colorTheme.whiteAndBlack,
+                      // buttonTextColor(
+                      //     ref.watch(signUpStateProvider).isPasswordEmpty),
                       fontSize: 16,
                       fontWeight: FontWeight.w500),
                 ),
