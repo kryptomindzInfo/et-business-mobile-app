@@ -33,6 +33,7 @@ class AppAssets {
   static const oliva = "${imagesDir}oliva.png";
   static const evelyn = "${imagesDir}evelyn.png";
   static const trustPayee = "${imagesDir}trust_payee.png";
+  static const appbarLogo = "${imagesDir}appbarlogo.png";
   //app_icons
   static const earthicon = "${iconsDir}earth.png";
   static const globeicon = "${iconsDir}globe.png";
@@ -103,7 +104,9 @@ class AppAssets {
   static const hubcardsicon = "${iconsDir}hubcardsicon.png";
   static const rocket = "${iconsDir}rocket.png";
   static const computer = "${iconsDir}computer.png";
-
+  static const shareicon = "${iconsDir}shareicon.png";
+  static const plus = "${iconsDir}plus.png";
+  static const etbankrocket = "${iconsDir}etbankrocket.png";
   // Sendding Currency Flow
 
   static const addButton2x = "${iconsDir}add_button_2x.png";
@@ -137,7 +140,7 @@ class AppAssets {
   static const merchant = "${iconsDir}merchant.png";
   static const cards = "${iconsDir}cards.png";
   static const greencheckround = "${iconsDir}greencheckround.png";
-  static const greenarrowleft = "${iconsDir}greenarrowleft.png";
+  static const arrowleft = "${iconsDir}arrowleft.png";
 
   // Invoice and Request
 

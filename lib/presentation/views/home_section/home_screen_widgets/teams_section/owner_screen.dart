@@ -8,6 +8,8 @@ import 'package:etbank_business_app/resources/localization/language_constrants.d
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../../../constants/app_colors.dart';
+
 class OwnerScreen extends ConsumerWidget {
   static const String routeName = "owner_screen";
   const OwnerScreen({super.key});
@@ -16,7 +18,7 @@ class OwnerScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return BackgroundImageWidget(
       child: Scaffold(
-        backgroundColor: Colors.transparent,
+        backgroundColor: AppColors.transparent,
         body: Padding(
           padding: const EdgeInsets.only(left: 20, right: 20),
           child: Column(

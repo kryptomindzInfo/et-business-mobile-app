@@ -1,5 +1,8 @@
+import 'package:etbank_business_app/constants/app_assets.dart';
 import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:etbank_business_app/constants/app_textstyle.dart';
+import 'package:etbank_business_app/extensions/build_context.dart';
+import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/resources/localization/language_constrants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -14,17 +17,27 @@ class ShareLinkButton extends ConsumerWidget {
       onTap: onpress,
       child: Container(
         height: 39,
-        width: 100,
+        width: 120,
         decoration: BoxDecoration(
-            color: AppColors.tealColor,
+            color: context.theme.colorTheme.buttonColor,
             borderRadius: BorderRadius.circular(70)),
         child: Center(
-          child: Text(
-            getTranslated("share_link", context),
-            style: AppTextstyle.bodyTextStyle(
-                color: AppColors.white,
-                fontSize: 16,
-                fontWeight: FontWeight.w500),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image.asset(
+                AppAssets.shareicon,
+                height: 17,
+              ),
+              5.spaceX,
+              Text(
+                getTranslated("share_link", context),
+                style: AppTextstyle.bodyTextStyle(
+                    color: context.theme.colorTheme.buttonTitleColor,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500),
+              ),
+            ],
           ),
         ),
       ),

@@ -1,5 +1,6 @@
 import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:etbank_business_app/constants/app_textstyle.dart';
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -15,7 +16,8 @@ class BackgroundImageWidget extends ConsumerWidget {
     return Container(
         height: double.infinity,
         width: double.infinity,
-        decoration: const BoxDecoration(color: AppColors.darkTeal
+        decoration: BoxDecoration(
+            color: context.theme.colorTheme.backgroundColor
             // image: DecorationImage(
             //   image: AssetImage(
             //       AppAssets.backgroundImage), // Your background image path

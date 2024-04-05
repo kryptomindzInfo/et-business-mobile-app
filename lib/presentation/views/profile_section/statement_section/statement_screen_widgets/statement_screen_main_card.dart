@@ -4,6 +4,7 @@ import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:etbank_business_app/navigation/navigation.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/info_card_common_widget.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/info_icon_title_subtitle_text.dart';
+import 'package:etbank_business_app/presentation/views/profile_section/statement_section/monthly_statement_screen.dart';
 import 'package:etbank_business_app/resources/localization/language_constrants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -14,7 +15,7 @@ class StatementScreenMainCard extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return InfoCardCommonWidget(
-      color: AppColors.primaryColor,
+      color: AppColors.transparent,
       child: Column(
         children: [
           InfoIconTitleSubtitleText(
@@ -22,7 +23,7 @@ class StatementScreenMainCard extends ConsumerWidget {
             title: getTranslated("monthly_statement", context),
             subtitle: getTranslated("monthly_statement_sub", context),
             onpress: () {
-              Navigation.pushNamed("monthly_statement");
+              Navigation.pushNamed(MonthlyStatementScreen.routeName);
             },
           ),
           InfoIconTitleSubtitleText(

@@ -56,7 +56,7 @@ class SignUpEnterPassCodeScreen extends ConsumerWidget {
             ],
           ),
         ),
-        backgroundColor: Colors.transparent,
+        backgroundColor: AppColors.transparent,
         bottomNavigationBar: Builder(builder: (context) {
           final keyboardHeight = MediaQuery.of(context).viewInsets.bottom;
           return Padding(
@@ -64,7 +64,7 @@ class SignUpEnterPassCodeScreen extends ConsumerWidget {
               child: BottomAppBar(
                 elevation: 0,
                 height: 100.h,
-                color: Colors.transparent,
+                color: AppColors.transparent,
                 child: Center(
                   child: Column(
                     children: [

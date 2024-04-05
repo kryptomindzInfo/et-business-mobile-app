@@ -1,4 +1,5 @@
 import 'package:etbank_business_app/constants/app_api_paths.dart';
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -32,7 +33,7 @@ class CardsInfoDetailsWidget extends ConsumerWidget {
                 Text(
                   title!,
                   style: AppTextstyle.bodyTextStyle(
-                      color: AppColors.black,
+                      color: context.theme.colorTheme.normalTextColor,
                       fontSize: 16,
                       fontWeight: FontWeight.w500),
                 ),

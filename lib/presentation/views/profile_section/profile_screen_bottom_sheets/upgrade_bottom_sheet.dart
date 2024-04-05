@@ -1,4 +1,5 @@
 import 'package:etbank_business_app/constants/app_colors.dart';
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/header_icon_with_text.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/info_card_common_widget.dart';
@@ -55,8 +56,11 @@ class UpgradeBottomSheet extends ConsumerWidget {
                   child: ProfileScreenChips(
                     title: e["title"],
                     color: index == profileProviderWatch.selectedPlan
-                        ? AppColors.tealColor
-                        : AppColors.mateBlackColor,
+                        ? context.theme.colorTheme.activeChipColor
+                        : context.theme.colorTheme.chipsColor,
+                    titleColor: index == profileProviderWatch.selectedPlan
+                        ? context.theme.colorTheme.blackColor
+                        : context.theme.colorTheme.whiteColor,
                   ),
                 );
               }).toList(),
@@ -72,6 +76,7 @@ class UpgradeBottomSheet extends ConsumerWidget {
             const SeeAllCommonWidget("Get more from your plan", false),
             15.spaceY,
             InfoCardCommonWidget(
+              color: AppColors.black,
               child: Column(
                 children: [
                   ...(upgradePlanslist[profileProviderWatch.selectedPlan]
@@ -87,7 +92,7 @@ class UpgradeBottomSheet extends ConsumerWidget {
                   PrimaryButton(
                       height: 34,
                       minwidth: 288,
-                      color: AppColors.primaryColor,
+                      color: context.theme.colorTheme.buttonColor,
                       text: Text(
                           "Get Grow for £${upgradePlanslist[profileProviderWatch.selectedPlan]["price"]} Free"),
                       onPressed: () {

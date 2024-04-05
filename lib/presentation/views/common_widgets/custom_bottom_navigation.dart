@@ -18,13 +18,13 @@ class CustomBottomNavigation extends StatelessWidget {
       'icon': AppAssets.ufoicon,
     },
   ];
-  
+
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
     return BottomAppBar(
       elevation: 0,
-      color: Colors.transparent,
+      color: AppColors.transparent,
       child: SizedBox(
         height: 72,
         child: Row(children: [

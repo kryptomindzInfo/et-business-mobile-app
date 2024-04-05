@@ -1,5 +1,6 @@
 import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:etbank_business_app/constants/app_textstyle.dart';
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/navigation/navigation.dart';
 import 'package:etbank_business_app/presentation/views/profile_section/refer_business/refer_busines_share_link_screen.dart';
 import 'package:etbank_business_app/presentation/views/profile_section/refer_business/refer_business_wdigets/get_started_button.dart';
@@ -30,9 +31,11 @@ class GetStartedSection extends ConsumerWidget {
               child: Text(
                 getTranslated("free_instant_transfer", context),
                 style: AppTextstyle.bodyTextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.normal,
-                    overflow: TextOverflow.clip),
+                  fontSize: 14,
+                  fontWeight: FontWeight.normal,
+                  overflow: TextOverflow.clip,
+                  color: context.theme.colorTheme.normalTextColor,
+                ),
               ),
             ),
             GetStartedButton(

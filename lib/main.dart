@@ -11,6 +11,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'constants/app_colors.dart';
 import 'navigation/navigator_key.dart';
 import 'navigation/route_generator.dart';
 import 'presentation/views/bottom_navigation_bar.dart';
@@ -32,9 +33,17 @@ class MyApp extends ConsumerWidget {
       splitScreenMode: true,
       builder: (context, child) => MaterialApp(
         title: 'ET Bank Business',
-        themeMode: ThemeMode.light,
-        theme: ThemeData(extensions: [AppTheme()]),
-        darkTheme: ThemeData(extensions: [AppTheme.dark()]),
+        themeMode: ThemeMode.dark,
+        theme: ThemeData(
+          extensions: [AppTheme()],
+          splashColor: AppColors.transparent,
+          highlightColor: AppColors.transparent,
+        ),
+        darkTheme: ThemeData(
+          extensions: [AppTheme.dark()],
+          splashColor: AppColors.transparent,
+          highlightColor: AppColors.transparent,
+        ),
         supportedLocales: AppLocalization.supportedLocales,
         locale: ref.watch(localizationProvider).locale,
         localizationsDelegates: const [

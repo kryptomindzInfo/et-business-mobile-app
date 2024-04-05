@@ -397,7 +397,10 @@
    "update_admin":"Update Admin",
    "request":"Request",
    "create_new_role":"Create a new role",
-   "new_role_name":"New Roles Name"
+   "new_role_name":"New Roles Name",
+   "using_card_with_apple_pay":"Start using your card with Apple Pay",
+   "add_card_apple_wallet":"Add your card to Apple Wallet to use it right away with your iPhone or Apple Watch",
+   "make_sure_you_have_entered_correct_email":"Make sure you have entered the correct email address. Also check your spam folder."
    
    
 

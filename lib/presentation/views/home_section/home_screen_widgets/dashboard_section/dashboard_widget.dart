@@ -14,10 +14,7 @@ class DashBoardWidget extends ConsumerWidget {
     return Column(
       children: [
         const DashboardMainCard(),
-        20.spaceY,
-        const SeeAllCommonWidget("Transactions", true),
-        10.spaceY,
-        const DashboardInfoCardWidget(),
+      
       ],
     );
   }

@@ -1,3 +1,5 @@
+import 'package:etbank_business_app/constants/icon_container.dart';
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -24,14 +26,13 @@ class InfoIconTitleSubtitleText extends ConsumerWidget {
     return InkWell(
       onTap: onpress,
       child: Container(
-        color: AppColors.white,
+        // color: AppColors.white,
         margin: EdgeInsets.only(top: 20, right: 15, left: 15, bottom: 20),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Image.asset(
-              imageicon,
-              height: 35,
+            IconContainer(
+              image: imageicon,
             ),
             20.spaceX,
             Column(
@@ -42,7 +43,7 @@ class InfoIconTitleSubtitleText extends ConsumerWidget {
                   style: AppTextstyle.bodyTextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w600,
-                      color: AppColors.black),
+                      color: context.theme.colorTheme.normalTextColor),
                 ),
                 Container(
                   height: 30,
@@ -52,7 +53,7 @@ class InfoIconTitleSubtitleText extends ConsumerWidget {
                     style: AppTextstyle.bodyTextStyle(
                         fontSize: 12,
                         fontWeight: FontWeight.w600,
-                        color: AppColors.black.withOpacity(0.4),
+                        color: context.theme.colorTheme.normalTextColor,
                         overflow: TextOverflow.clip),
                   ),
                 ),

@@ -8,8 +8,14 @@ class ProfileScreenChips extends ConsumerWidget {
   final String? icon;
   final VoidCallback? onpress;
   final Color? color;
+  final Color? titleColor;
   const ProfileScreenChips(
-      {super.key, this.icon, this.title, this.onpress, this.color});
+      {super.key,
+      this.icon,
+      this.title,
+      this.onpress,
+      this.color,
+      this.titleColor});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -18,6 +24,7 @@ class ProfileScreenChips extends ConsumerWidget {
       imageicon: icon,
       onpress: onpress,
       color: color,
+      titleColor: titleColor,
     );
   }
 }

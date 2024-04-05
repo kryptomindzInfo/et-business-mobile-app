@@ -1,4 +1,5 @@
 import 'package:etbank_business_app/constants/app_assets.dart';
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/app_common_widgets.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/header_icon_with_text.dart';
@@ -44,6 +45,7 @@ class MonthlyStatementScreen extends ConsumerWidget {
                     icon: Image.asset(
                       AppAssets.iconArrowDownBlack,
                       height: 11,
+                      color: context.theme.colorTheme.blackAndWhite,
                     )),
                 30.spaceY,
                 TitleText(
@@ -57,8 +59,9 @@ class MonthlyStatementScreen extends ConsumerWidget {
                   widget: CommonButton(
                     title: getTranslated("select", context),
                     width: 66,
-                    mainButtonColor: AppColors.tealColor.withOpacity(0.5),
-                    titleColor: AppColors.tealColor,
+                    mainButtonColor:
+                        context.theme.colorTheme.normalButtonsColor,
+                    titleColor: context.theme.colorTheme.primaryColor,
                   ),
                 ),
                 30.spaceY,
@@ -81,11 +84,11 @@ class MonthlyStatementScreen extends ConsumerWidget {
                 ),
                 100.spaceY,
                 PrimaryButton(
-                  color: AppColors.primaryColor,
+                  color: context.theme.colorTheme.buttonColor,
                   text: Text(
                     getTranslated("get_statement", context),
                     style: AppTextstyle.bodyTextStyle(
-                        color: AppColors.black,
+                        color: context.theme.colorTheme.whiteAndBlack,
                         fontSize: 16,
                         fontWeight: FontWeight.w500),
                   ),
@@ -96,11 +99,11 @@ class MonthlyStatementScreen extends ConsumerWidget {
                 ),
                 10.spaceY,
                 PrimaryButton(
-                  color: AppColors.darkGreen,
+                  color: context.theme.colorTheme.buttonDisabledColor,
                   text: Text(
                     getTranslated("share_statement", context),
                     style: AppTextstyle.bodyTextStyle(
-                        color: AppColors.primaryColor.withOpacity(0.6),
+                        color: context.theme.colorTheme.blackAndWhite,
                         fontSize: 16,
                         fontWeight: FontWeight.w500),
                   ),

@@ -14,7 +14,7 @@ class CountryDropDownButtonWidget extends ConsumerWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        width: 80.h,
+        width: 100.h,
         decoration: BoxDecoration(
           color: AppColors.white,
           borderRadius: BorderRadius.circular(8),

@@ -6,6 +6,7 @@ import 'package:etbank_business_app/providers/home_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../constants/app_colors.dart';
 import 'common_widgets/custom_bottom_navigation.dart';
 
 // ignore: must_be_immutable
@@ -23,7 +24,7 @@ class BaseBottomNavBar extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return BackgroundImageWidget(
       child: Scaffold(
-        backgroundColor: Colors.transparent,
+        backgroundColor: AppColors.transparent,
         body: navBarWidget[ref.watch(homescreenProvider).pageIndex],
         bottomNavigationBar: CustomBottomNavigation(
           selected: ref.watch(homescreenProvider).pageIndex,

@@ -1,4 +1,6 @@
+import 'package:etbank_business_app/constants/app_assets.dart';
 import 'package:etbank_business_app/constants/app_textstyle.dart';
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/navigation/navigation.dart';
 import 'package:flutter/material.dart';
@@ -21,24 +23,26 @@ class HeaderIconWithTitle extends ConsumerWidget {
   final TextStyle? descriptionTextStyle;
   final VoidCallback? onTrailingiconPress;
   final Widget? widget;
-  const HeaderIconWithTitle({
-    super.key,
-    this.title,
-    this.description,
-    this.greenDescription,
-    this.imageicon,
-    this.edgeinsets,
-    this.fontsize,
-    this.trailingImage,
-    this.trailingImageHeight,
-    this.trailingImageWidth,
-    this.rightPadding,
-    this.imageIconHeight,
-    this.imageIconWidth,
-    this.descriptionTextStyle,
-    this.onTrailingiconPress,
-    this.widget,
-  });
+  final bool? etBankLogo;
+  const HeaderIconWithTitle(
+      {super.key,
+      this.title,
+      this.description,
+      this.greenDescription,
+      this.imageicon,
+      this.edgeinsets,
+      this.fontsize,
+      this.trailingImage,
+      this.trailingImageHeight,
+      this.trailingImageWidth,
+      this.rightPadding,
+      this.imageIconHeight,
+      this.imageIconWidth,
+      this.descriptionTextStyle,
+      this.onTrailingiconPress,
+      this.widget,
+      this.etBankLogo});
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Column(
@@ -62,6 +66,15 @@ class HeaderIconWithTitle extends ConsumerWidget {
                       imageicon!,
                       width: imageIconWidth ?? 25.12,
                       height: imageIconHeight ?? 17.94,
+                      color: context.theme.colorTheme.blackAndWhite,
+                    ),
+                  ),
+                if (etBankLogo != null && etBankLogo == true)
+                  Padding(
+                    padding: const EdgeInsets.only(right: 45),
+                    child: Image.asset(
+                      AppAssets.appbarLogo,
+                      height: 40,
                     ),
                   ),
                 if (trailingImage != null && widget == null)
@@ -84,7 +97,7 @@ class HeaderIconWithTitle extends ConsumerWidget {
             ? Text(
                 title!,
                 style: AppTextstyle.headingTextStyle(
-                  color: AppColors.white,
+                  color: context.theme.colorTheme.appbarTitleColor,
                   fontSize: fontsize ?? 24,
                   fontWeight: FontWeight.bold,
                   overflow: TextOverflow.clip,
@@ -97,7 +110,7 @@ class HeaderIconWithTitle extends ConsumerWidget {
                 description!,
                 style: descriptionTextStyle ??
                     AppTextstyle.bodyTextStyle(
-                      color: AppColors.white,
+                      color: context.theme.colorTheme.appbarTitleColor,
                       fontSize: 16,
                       fontWeight: FontWeight.w500,
                       overflow: TextOverflow.clip,

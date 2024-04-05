@@ -1,5 +1,5 @@
 import 'package:etbank_business_app/constants/app_colors.dart';
-import 'package:etbank_business_app/presentation/views/onboarding_screens/onboarding_screen.dart';
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -36,7 +36,8 @@ class LinearIndicatorWidget extends ConsumerWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(1.r),
                   border: Border.all(
-                    color: getPageIndicatorColor(index, activePageIndex!),
+                    color:
+                        getPageIndicatorColor(context, index, activePageIndex!),
                     width: 1.w,
                   ),
                 ),
@@ -48,7 +49,9 @@ class LinearIndicatorWidget extends ConsumerWidget {
     );
   }
 
-  Color getPageIndicatorColor(int index, int activePage) {
-    return index == activePage ? AppColors.primaryColor : AppColors.grey;
+  Color getPageIndicatorColor(BuildContext context, int index, int activePage) {
+    return index == activePage
+        ? context.theme.colorTheme.activeChipColor
+        : AppColors.grey;
   }
 }

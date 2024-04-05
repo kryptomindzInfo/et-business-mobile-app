@@ -1,4 +1,5 @@
 import 'package:etbank_business_app/constants/app_colors.dart';
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/providers/home_provider.dart';
 import 'package:flutter/cupertino.dart';
@@ -25,11 +26,16 @@ class HomeScreenOptionsWidget extends ConsumerWidget {
                 title: e["title"],
                 color: ref.read(homescreenProvider).selectedHomeScreenOption ==
                         index
-                    ? AppColors.tealColor
-                    : Colors.black,
+                    ? context.theme.colorTheme.activeChipColor
+                    : context.theme.colorTheme.chipsColor,
                 onpress: () {
                   ref.watch(homescreenProvider).selectedHomeOption(index);
                 },
+                titleColor:
+                    ref.read(homescreenProvider).selectedHomeScreenOption ==
+                            index
+                        ? context.theme.colorTheme.blackColor
+                        : context.theme.colorTheme.whiteColor,
               );
             }).toList(),
           ),

@@ -27,7 +27,7 @@ class SignUpPrimaryReasonForEtBankScreen extends ConsumerWidget {
     return BackgroundImageWidget(
       child: Scaffold(
         extendBody: true,
-        backgroundColor: Colors.transparent,
+        backgroundColor: AppColors.transparent,
         body: Padding(
           padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
           child: Column(

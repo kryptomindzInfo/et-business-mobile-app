@@ -1,4 +1,5 @@
 import 'package:etbank_business_app/constants/app_assets.dart';
+import 'package:etbank_business_app/constants/icon_container.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/resources/localization/language_constrants.dart';
 import 'package:flutter/material.dart';
@@ -30,17 +31,18 @@ class ProfileScreenMainCard extends ConsumerWidget {
           height: 148,
           width: double.infinity,
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(28),
-              color: AppColors.primaryColor),
+            borderRadius: BorderRadius.circular(28),
+            border: Border.all(color: AppColors.tealColor),
+            color: AppColors.transparent,
+          ),
           child: Container(
             margin: EdgeInsets.only(left: 20, top: 25),
             child: Column(
               children: [
                 Row(
                   children: [
-                    Image.asset(
-                      AppAssets.communicationicon,
-                      height: 35,
+                    IconContainer(
+                      image: AppAssets.communicationicon,
                     ),
                     20.spaceX,
                     Text(
@@ -48,16 +50,15 @@ class ProfileScreenMainCard extends ConsumerWidget {
                       style: AppTextstyle.bodyTextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.w600,
-                          color: AppColors.black),
+                          color: AppColors.white),
                     ),
                   ],
                 ),
                 20.spaceY,
                 Row(
                   children: [
-                    Image.asset(
-                      AppAssets.marketingicon,
-                      height: 35,
+                    IconContainer(
+                      image: AppAssets.marketingicon,
                     ),
                     20.spaceX,
                     Column(
@@ -68,14 +69,14 @@ class ProfileScreenMainCard extends ConsumerWidget {
                           style: AppTextstyle.bodyTextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.w600,
-                              color: AppColors.black),
+                              color: AppColors.white),
                         ),
                         Text(
                           getTranslated('caring_marketing', context),
                           style: AppTextstyle.bodyTextStyle(
                               fontSize: 12,
                               fontWeight: FontWeight.w600,
-                              color: AppColors.black.withOpacity(0.4)),
+                              color: AppColors.white),
                         ),
                       ],
                     ),

@@ -1,4 +1,5 @@
 import 'package:etbank_business_app/constants/app_colors.dart';
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/presentation/views/converting_currency/currency_converter_screen_widgets.dart/adding_button_with_title.dart';
 import 'package:etbank_business_app/presentation/views/converting_currency/currency_converter_screen_widgets.dart/currency_pair_card.dart';
@@ -16,7 +17,10 @@ class AddingCurrencyPairContainer extends ConsumerWidget {
       height: 550,
       margin: EdgeInsets.only(left: 15, right: 15),
       decoration: BoxDecoration(
-          color: AppColors.black, borderRadius: BorderRadius.circular(24)),
+        color: AppColors.transparent,
+        border: Border.all(color: context.theme.colorTheme.borderColor),
+        borderRadius: BorderRadius.circular(24),
+      ),
       child: Column(
         children: [
           Consumer(builder: (context, ref, child) {

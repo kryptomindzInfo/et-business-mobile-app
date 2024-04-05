@@ -1,4 +1,5 @@
 import 'package:etbank_business_app/constants/app_textstyle.dart';
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/navigation/navigation.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/app_common_widgets.dart';
@@ -29,7 +30,7 @@ class SignUpMobileNoScreen extends ConsumerWidget {
 
     return BackgroundImageWidget(
       child: Scaffold(
-        backgroundColor: Colors.transparent,
+        backgroundColor: AppColors.transparent,
         body: Padding(
           padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
           child: Column(
@@ -40,6 +41,7 @@ class SignUpMobileNoScreen extends ConsumerWidget {
                 description:
                     getTranslated('mobile_no_verification_code', context),
                 imageicon: AppAssets.arrowLeft,
+                etBankLogo: true,
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 32),
@@ -47,7 +49,7 @@ class SignUpMobileNoScreen extends ConsumerWidget {
                   children: [
                     CountryDropDownButtonWidget(
                       title:
-                          '${selectedCountry?.flag} ${selectedCountry?.dialCode}',
+                          '${selectedCountry?.flag} ${selectedCountry?.code} ${selectedCountry?.dialCode}',
                       onTap: () {
                         showModalBottomSheet(
                           context: context,
@@ -92,13 +94,16 @@ class SignUpMobileNoScreen extends ConsumerWidget {
               height: 48.h,
               width: 327.w,
               child: PrimaryButton(
-                color:
-                    buttonColor(ref.watch(signUpStateProvider).isMobileNoEmpty),
+                color: ref.watch(signUpStateProvider).isMobileNoEmpty
+                    ? context.theme.colorTheme.disableButtonColor
+                    : context.theme.colorTheme.yellowGreenColor,
+                // buttonColor(ref.watch(signUpStateProvider).isEmailEmpty),
                 text: Text(
                   getTranslated('continue', context),
                   style: AppTextstyle.bodyTextStyle(
-                      color: buttonTextColor(
-                          ref.watch(signUpStateProvider).isMobileNoEmpty),
+                      color: ref.watch(signUpStateProvider).isMobileNoEmpty
+                          ? context.theme.colorTheme.disableButtonTextColor
+                          : context.theme.colorTheme.whiteAndBlack,
                       fontSize: 16,
                       fontWeight: FontWeight.w500),
                 ),

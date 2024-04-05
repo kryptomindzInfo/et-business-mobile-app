@@ -24,7 +24,7 @@ class AssignRoleScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return BackgroundImageWidget(
       child: Scaffold(
-        backgroundColor: Colors.transparent,
+        backgroundColor: AppColors.transparent,
         body: Padding(
           padding: const EdgeInsets.only(left: 20, right: 20),
           child: Column(
@@ -33,7 +33,16 @@ class AssignRoleScreen extends ConsumerWidget {
                 imageicon: AppAssets.arrowLeft,
                 title: getTranslated("assign_role", context),
                 description: getTranslated("select_role", context),
-                trailingImage: AppAssets.addgreenbutton,
+                // trailingImage: AppAssets.addgreenbutton,
+                widget: Container(
+                  height: 28,
+                  width: 28,
+                  decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: AppColors.primaryColor,
+                      image: DecorationImage(
+                          image: AssetImage(AppAssets.plusicon), scale: 2)),
+                ),
                 rightPadding: 10,
                 trailingImageHeight: 30,
               ),

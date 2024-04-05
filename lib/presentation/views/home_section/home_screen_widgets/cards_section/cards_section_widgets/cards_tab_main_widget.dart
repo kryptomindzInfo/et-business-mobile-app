@@ -1,8 +1,10 @@
 import 'package:etbank_business_app/constants/app_assets.dart';
 import 'package:etbank_business_app/constants/app_colors.dart';
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/navigation/navigation.dart';
 import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/cards_section/card_settings_screen.dart';
+import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/cards_section/get_card_screen.dart';
 import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/cards_section/my_cards_screen.dart';
 import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/common_transparent_button.dart';
 import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/cards_section/cards_section_widgets/cards_info_details_widget.dart';
@@ -23,7 +25,9 @@ class CardsMainWidget extends ConsumerWidget {
           height: 352,
           width: double.infinity,
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(28), color: AppColors.white),
+              borderRadius: BorderRadius.circular(28),
+              color: context.theme.colorTheme.transparentToColor,
+              border: Border.all(color: context.theme.colorTheme.borderColor)),
           child: Padding(
             padding: const EdgeInsets.only(left: 15, right: 25),
             child: Column(
@@ -36,7 +40,7 @@ class CardsMainWidget extends ConsumerWidget {
                     CommonGreyButton(
                       title: "+ ${getTranslated("add_card", context)}",
                       onpress: () {
-                        Navigation.pushNamed("get_card_Screen");
+                        Navigation.pushNamed(GetCardScreen.routeName);
                       },
                     ),
                     InkWell(
@@ -54,7 +58,7 @@ class CardsMainWidget extends ConsumerWidget {
                 Text(
                   "${getTranslated("my_cards", context)} . 2",
                   style: AppTextstyle.bodyTextStyle(
-                      color: AppColors.black,
+                      color: context.theme.colorTheme.normalTextColor,
                       fontSize: 16,
                       fontWeight: FontWeight.w500),
                 ),
@@ -80,7 +84,7 @@ class CardsMainWidget extends ConsumerWidget {
                 Text(
                   "${getTranslated("my_cards", context)} . 2",
                   style: AppTextstyle.bodyTextStyle(
-                      color: AppColors.black,
+                      color: context.theme.colorTheme.normalTextColor,
                       fontSize: 16,
                       fontWeight: FontWeight.w500),
                 ),
@@ -88,6 +92,7 @@ class CardsMainWidget extends ConsumerWidget {
                 Image.asset(
                   AppAssets.teamsCard,
                   height: 25,
+                  color: context.theme.colorTheme.buttonColor,
                 )
               ],
             ),

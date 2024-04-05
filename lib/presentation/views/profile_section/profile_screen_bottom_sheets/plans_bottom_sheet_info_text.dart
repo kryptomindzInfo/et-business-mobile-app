@@ -1,3 +1,4 @@
+import 'package:etbank_business_app/constants/icon_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -21,9 +22,8 @@ class PlansBottomSheetInfoText extends ConsumerWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          Image.asset(
-            imageicon,
-            height: 35,
+          IconContainer(
+            image: imageicon,
           ),
           Column(
             children: [

@@ -24,10 +24,20 @@ class AdminscreenListview extends ConsumerWidget {
               Container(
                 child: Row(
                   children: [
-                    Image.asset(
-                      ref.watch(teamscreenProvider).adminScreenData[index]
-                          ["icon"],
-                      height: 30,
+                    Container(
+                      height: 32,
+                      width: 33,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(5),
+                          color: AppColors.primaryColor,
+                          image: DecorationImage(
+                              image: AssetImage(
+                                ref
+                                    .watch(teamscreenProvider)
+                                    .adminScreenData[index]["icon"],
+                              ),
+                              scale: 2)),
+
                     ),
                     15.spaceX,
                     Text(

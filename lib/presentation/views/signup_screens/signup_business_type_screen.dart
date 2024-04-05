@@ -29,6 +29,7 @@ class SignUpBusinessTypeScreen extends ConsumerWidget {
               HeaderIconWithTitle(
                 title: getTranslated('business_type_title', context),
                 imageicon: AppAssets.arrowLeft,
+                etBankLogo: true,
               ),
               40.spaceY,
               BusinessTypeWidget(

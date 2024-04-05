@@ -1,3 +1,4 @@
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/presentation/views/profile_section/profile_screen_bottom_sheets/popular_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -17,8 +18,8 @@ class UpgradeBottomSheetMainCard extends ConsumerWidget {
       width: double.infinity,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(28),
-          color: AppColors.primaryColor,
-          border: Border.all(color: AppColors.white)),
+          // color: AppColors.primaryColor,
+          border: Border.all(color: context.theme.colorTheme.cardBorderColor)),
       child: Container(
         margin: EdgeInsets.only(
           left: 20,
@@ -35,14 +36,16 @@ class UpgradeBottomSheetMainCard extends ConsumerWidget {
                 Text(
                   title!,
                   style: AppTextstyle.headingTextStyle(
-                      fontSize: 48, fontWeight: FontWeight.bold),
+                      fontSize: 48,
+                      fontWeight: FontWeight.bold,
+                      color: context.theme.colorTheme.boldTextColor),
                 ),
                 Text(
                   subtitle!,
                   style: AppTextstyle.headingTextStyle(
                       fontSize: 12,
                       fontWeight: FontWeight.bold,
-                      color: AppColors.black.withOpacity(0.5)),
+                      color: context.theme.colorTheme.normalTextColor),
                 ),
               ],
             ),

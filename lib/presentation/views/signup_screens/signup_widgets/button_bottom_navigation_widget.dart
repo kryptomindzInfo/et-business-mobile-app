@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../constants/app_colors.dart';
+
 class ButtonBottomNavigationWidget extends ConsumerWidget {
   final List<Widget> children;
   final double? height;
@@ -16,7 +18,7 @@ class ButtonBottomNavigationWidget extends ConsumerWidget {
         child: BottomAppBar(
           elevation: 0,
           height: height ?? 90.h,
-          color: Colors.transparent,
+          color: AppColors.transparent,
           child: Center(
             child: Column(
               children: children,

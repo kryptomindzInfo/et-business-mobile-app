@@ -28,7 +28,7 @@ class RequestMoneyWhiteContainerWidget extends ConsumerWidget {
           color: AppColors.white,
         ),
         child: Padding(
-          padding: const EdgeInsets.fromLTRB(16, 16, 0, 10),
+          padding: const EdgeInsets.fromLTRB(16, 16, 16, 10),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -41,19 +41,18 @@ class RequestMoneyWhiteContainerWidget extends ConsumerWidget {
                   widget: imageicon ?? const Text(''),
                 ),
               20.spaceX,
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    getTranslated(title, context),
-                    style: AppTextstyle.bodyTextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600,
-                        color: AppColors.black),
-                  ),
-                  SizedBox(
-                    width: 250,
-                    child: Text(
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      getTranslated(title, context),
+                      style: AppTextstyle.bodyTextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600,
+                          color: AppColors.black),
+                    ),
+                    Text(
                       getTranslated(subtitle, context),
                       style: AppTextstyle.bodyTextStyle(
                           fontSize: 12,
@@ -61,8 +60,8 @@ class RequestMoneyWhiteContainerWidget extends ConsumerWidget {
                           color: AppColors.black.withOpacity(0.4),
                           overflow: TextOverflow.clip),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ],
           ),
