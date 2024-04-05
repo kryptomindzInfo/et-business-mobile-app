@@ -1,4 +1,5 @@
 import 'package:etbank_business_app/constants/app_colors.dart';
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -30,18 +31,19 @@ class Chips extends ConsumerWidget {
         margin: EdgeInsets.only(right: 20),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(100),
-            color: color != null ? color : AppColors.mateBlackColor),
+            color: color != null ? color : context.theme.colorTheme.chipsColor),
         child: Row(children: [
-          imageicon != null
-              ? Image.asset(
-                  imageicon!,
-                  height: 20,
-                )
-              : SizedBox(),
-          5.spaceX,
+          //?
+          if (imageicon != null)
+            Image.asset(
+              imageicon!,
+              height: 20,
+            ),
+          // : SizedBox(),
+          if (imageicon != null) 5.spaceX,
           Text(title ?? "",
               style: AppTextstyle.bodyTextStyle(
-                  fontWeight: FontWeight.w500,
+                  fontWeight: FontWeight.w400,
                   fontSize: 16,
                   color: titleColor ?? AppColors.white))
         ]),

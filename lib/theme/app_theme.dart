@@ -34,6 +34,7 @@ class AppTheme extends ThemeExtension<AppTheme> {
   final Color disableButtonTextColor;
   final Color normallyUsedTealColor;
   final Color greyDescription;
+  final Color appBackgroundColor;
 
   // final Color scaffoldBgColor;
   // final Color headingColor;
@@ -72,7 +73,8 @@ class AppTheme extends ThemeExtension<AppTheme> {
       this.disableButtonColor = AppColors.continueButtonDisabledColor,
       this.disableButtonTextColor = AppColors.continueTextDisabledColor,
       this.normallyUsedTealColor = AppColors.tealColor,
-      this.greyDescription = AppColors.grey
+      this.greyDescription = AppColors.grey,
+      this.appBackgroundColor = AppColors.darkTeal
 
       // this.scaffoldBgColor=AppColors.lightGreyColor,
       // this.headingColor=AppColors.black,
@@ -112,7 +114,8 @@ class AppTheme extends ThemeExtension<AppTheme> {
         disableButtonColor: AppColors.continueButtonDisabledColor,
         disableButtonTextColor: AppColors.continueTextDisabledColor,
         normallyUsedTealColor: AppColors.tealColor,
-        greyDescription: AppColors.grey);
+        greyDescription: AppColors.grey,
+        appBackgroundColor: AppColors.darkTeal);
   }
 
   @override

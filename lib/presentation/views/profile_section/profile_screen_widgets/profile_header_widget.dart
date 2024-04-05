@@ -22,14 +22,16 @@ class ProfileHeaderWidget extends ConsumerWidget {
             title: "Brooklyn Simmons",
             description: "Louis Vuitton",
             imageicon: AppAssets.arrowLeft,
+            etBankLogo: true,
+            profilePicWidget: true,
           ),
         ),
-        Padding(
-          padding: EdgeInsets.only(bottom: 40),
-          child: ProfilePicWidget(
-            image: AppAssets.profileicon,
-          ),
-        ),
+        // Padding(
+        //   padding: EdgeInsets.only(bottom: 40),
+        //   child: ProfilePicWidget(
+        //     image: AppAssets.profileicon,
+        //   ),
+        // ),
       ],
     );
   }

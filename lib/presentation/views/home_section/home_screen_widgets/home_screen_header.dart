@@ -25,6 +25,13 @@ class HomeScreenHeader extends ConsumerWidget {
               image: AppAssets.profileicon,
             ),
           ),
+          Padding(
+            padding: const EdgeInsets.only(left: 15),
+            child: Image.asset(
+              AppAssets.appbarLogo,
+              height: 40,
+            ),
+          ),
           Container(
             child: Row(
               children: [
