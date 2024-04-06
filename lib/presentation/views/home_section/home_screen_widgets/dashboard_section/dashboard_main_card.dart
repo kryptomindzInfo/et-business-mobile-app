@@ -1,3 +1,4 @@
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/common_bottom_sheet.dart';
 import 'package:etbank_business_app/presentation/views/home_section/home_screen_bottom_sheets/more_option_bottom_sheet.dart';
@@ -11,7 +12,6 @@ import '../../../common_widgets/see_all_widget.dart';
 import '../../../invoice_and_request_screens/invoice_and_request_widgets/request_money_bottomsheet_widget.dart';
 import '../home_info_card_text.dart';
 import '../home_screen_main_card_options.dart';
-import 'dashboard_main_info_card.dart';
 
 class DashboardMainCard extends ConsumerWidget {
   const DashboardMainCard({super.key});
@@ -23,8 +23,8 @@ class DashboardMainCard extends ConsumerWidget {
       width: double.infinity,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(28),
-        border: Border.all(color: AppColors.tealColor),
-        color: AppColors.transparent,
+        border: Border.all(color: context.theme.colorTheme.borderColor),
+        color: context.theme.colorTheme.transparentToColor,
       ),
       child: Container(
         margin: const EdgeInsets.only(left: 18, right: 18),
@@ -45,7 +45,7 @@ class DashboardMainCard extends ConsumerWidget {
                           style: AppTextstyle.headingTextStyle(
                               fontSize: 48,
                               fontWeight: FontWeight.w700,
-                              color: AppColors.white),
+                              color: context.theme.colorTheme.normalTextColor),
                         ),
                         Container(
                           height: 16,
@@ -68,7 +68,7 @@ class DashboardMainCard extends ConsumerWidget {
                       style: AppTextstyle.bodyTextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.w500,
-                          color: AppColors.white),
+                          color: context.theme.colorTheme.normalTextColor),
                     )
                   ],
                 ),
@@ -91,7 +91,7 @@ class DashboardMainCard extends ConsumerWidget {
                     title: "Request",
                     onpress: () {
                       showCommonModalSheet(
-                        700,
+                        460,
                         const RequestMoneyBottomSheetWidget(),
                       );
                     },

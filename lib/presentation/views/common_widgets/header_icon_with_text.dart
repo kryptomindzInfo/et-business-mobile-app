@@ -3,6 +3,7 @@ import 'package:etbank_business_app/constants/app_textstyle.dart';
 import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/navigation/navigation.dart';
+import 'package:etbank_business_app/presentation/views/common_widgets/profile_pic_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../constants/app_colors.dart';
@@ -24,6 +25,7 @@ class HeaderIconWithTitle extends ConsumerWidget {
   final VoidCallback? onTrailingiconPress;
   final Widget? widget;
   final bool? etBankLogo;
+  final bool? profilePicWidget;
   const HeaderIconWithTitle(
       {super.key,
       this.title,
@@ -41,7 +43,8 @@ class HeaderIconWithTitle extends ConsumerWidget {
       this.descriptionTextStyle,
       this.onTrailingiconPress,
       this.widget,
-      this.etBankLogo});
+      this.etBankLogo,
+      this.profilePicWidget});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -69,7 +72,7 @@ class HeaderIconWithTitle extends ConsumerWidget {
                       color: context.theme.colorTheme.blackAndWhite,
                     ),
                   ),
-                if (etBankLogo != null && etBankLogo == true)
+                if (etBankLogo != null)
                   Padding(
                     padding: const EdgeInsets.only(right: 45),
                     child: Image.asset(
@@ -93,8 +96,11 @@ class HeaderIconWithTitle extends ConsumerWidget {
           ),
         ),
         20.spaceY,
-        title != null
-            ? Text(
+        if (title != null)
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
                 title!,
                 style: AppTextstyle.headingTextStyle(
                   color: context.theme.colorTheme.appbarTitleColor,
@@ -102,8 +108,13 @@ class HeaderIconWithTitle extends ConsumerWidget {
                   fontWeight: FontWeight.bold,
                   overflow: TextOverflow.clip,
                 ),
-              )
-            : const SizedBox(),
+              ),
+              if (profilePicWidget == true)
+                ProfilePicWidget(
+                  image: AppAssets.profileicon,
+                ),
+            ],
+          ),
         10.spaceY,
         description != null
             ? Text(

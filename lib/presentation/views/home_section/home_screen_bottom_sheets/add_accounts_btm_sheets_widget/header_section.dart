@@ -33,7 +33,7 @@ class AddAccountsBSheaderSection extends ConsumerWidget {
             children: [
               Image.asset(
                 AppAssets.plusicon,
-                height: 18,
+                height: 17,
               ),
               5.spaceX,
               Text(
@@ -41,7 +41,7 @@ class AddAccountsBSheaderSection extends ConsumerWidget {
                 style: AppTextstyle.bodyTextStyle(
                     fontSize: 16,
                     color: context.theme.colorTheme.blackColor,
-                    fontWeight: FontWeight.w500),
+                    fontWeight: FontWeight.w400),
               )
             ],
           ),

@@ -36,6 +36,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
           onNotificationPress: () {
             Navigation.pushNamed(NotificationScreen.routeName);
           },
+          
         ),
         20.spaceY,
         const HomeScreenSearchTextfield(),

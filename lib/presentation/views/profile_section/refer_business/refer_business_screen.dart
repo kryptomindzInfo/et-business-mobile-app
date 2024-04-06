@@ -27,7 +27,7 @@ class ReferBusinessScreen extends ConsumerWidget {
                 title: getTranslated("refer_business", context),
               ),
               20.spaceY,
-              ReferBusinessMainCard()
+              const ReferBusinessMainCard()
             ],
           ),
         ),

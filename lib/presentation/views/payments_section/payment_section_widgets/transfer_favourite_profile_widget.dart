@@ -1,3 +1,4 @@
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -33,9 +34,10 @@ class TransferFavouriteProfileWidget extends ConsumerWidget {
                     Text(
                       title!,
                       style: AppTextstyle.bodyTextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w600,
-                          color: AppColors.white),
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600,
+                        color: context.theme.colorTheme.normalTextColor,
+                      ),
                     ),
                     Text(
                       "Active",
@@ -52,9 +54,10 @@ class TransferFavouriteProfileWidget extends ConsumerWidget {
           Text(
             "Owner",
             style: AppTextstyle.bodyTextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
-                color: AppColors.white),
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
+              color: context.theme.colorTheme.blackAndWhite,
+            ),
           ),
         ],
       ),

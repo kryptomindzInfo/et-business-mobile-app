@@ -27,10 +27,13 @@ class UpgradeBottomSheet extends ConsumerWidget {
     List<Map<dynamic, dynamic>> upgradePlanslist =
         profileProviderWatch.upgradeData;
     return Container(
-      height: 700,
+      height: MediaQuery.of(context).size.height / 1.05,
       color: AppColors.black,
       child: Padding(
-        padding: const EdgeInsets.only(left: 15, right: 15),
+        padding: const EdgeInsets.only(
+          left: 15,
+          right: 15,
+        ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [

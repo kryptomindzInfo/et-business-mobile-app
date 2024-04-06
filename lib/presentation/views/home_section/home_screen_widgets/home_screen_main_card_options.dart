@@ -1,3 +1,4 @@
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -23,7 +24,7 @@ class MainCardOption extends ConsumerWidget {
             decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 color: AppColors.black.withOpacity(0.28),
-                border: Border.all(color: AppColors.tealColor),
+                border: Border.all(color: context.theme.colorTheme.borderColor),
                 image: DecorationImage(image: AssetImage(image!), scale: 2)),
             // child: Center(
             //   child: Image.asset(image!),
@@ -35,7 +36,7 @@ class MainCardOption extends ConsumerWidget {
             style: AppTextstyle.bodyTextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.w500,
-                color: AppColors.white),
+                color: context.theme.colorTheme.normalTextColor),
           )
         ],
       ),

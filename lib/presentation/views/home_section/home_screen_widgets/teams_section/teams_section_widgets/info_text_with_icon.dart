@@ -2,6 +2,8 @@ import 'package:etbank_business_app/constants/app_api_paths.dart';
 import 'package:etbank_business_app/constants/app_assets.dart';
 import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:etbank_business_app/constants/app_textstyle.dart';
+import 'package:etbank_business_app/constants/icon_container.dart';
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -20,9 +22,8 @@ class InfoTextWithIcon extends ConsumerWidget {
         Container(
           child: Row(
             children: [
-              Image.asset(
-                imageicon,
-                height: 40,
+              IconContainer(
+                image: imageicon,
               ),
               15.spaceX,
               Column(
@@ -31,7 +32,9 @@ class InfoTextWithIcon extends ConsumerWidget {
                   Text(
                     "James Fork",
                     style: AppTextstyle.bodyTextStyle(
-                        fontSize: 16, fontWeight: FontWeight.w500),
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500,
+                        color: context.theme.colorTheme.normalTextColor),
                   ),
                   Text(
                     "Active",

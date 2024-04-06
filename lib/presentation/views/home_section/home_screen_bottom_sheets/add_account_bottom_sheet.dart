@@ -1,4 +1,5 @@
 import 'package:etbank_business_app/constants/app_assets.dart';
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/presentation/views/home_section/home_screen_bottom_sheets/add_accounts_btm_sheets_widget/all_accounts_card.dart';
 import 'package:etbank_business_app/presentation/views/home_section/home_screen_bottom_sheets/add_accounts_btm_sheets_widget/header_section.dart';
@@ -41,16 +42,16 @@ class AddAccountsBottomSheet extends ConsumerWidget {
                       Text(
                         "£1",
                         style: AppTextstyle.roboto(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w500,
-                        ),
+                            fontSize: 16,
+                            fontWeight: FontWeight.w500,
+                            color: context.theme.colorTheme.normalTextColor),
                       ),
                       Text(
                         "£0",
                         style: AppTextstyle.roboto(
                             fontSize: 12,
                             fontWeight: FontWeight.w500,
-                            color: AppColors.black.withOpacity(0.6)),
+                            color: context.theme.colorTheme.normalTextColor),
                       ),
                     ],
                   ),
@@ -66,16 +67,16 @@ class AddAccountsBottomSheet extends ConsumerWidget {
                       Text(
                         "€0",
                         style: AppTextstyle.roboto(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w500,
-                        ),
+                            fontSize: 16,
+                            fontWeight: FontWeight.w500,
+                            color: context.theme.colorTheme.normalTextColor),
                       ),
                       Text(
                         "£0",
                         style: AppTextstyle.roboto(
                             fontSize: 12,
                             fontWeight: FontWeight.w500,
-                            color: AppColors.black.withOpacity(0.6)),
+                            color: context.theme.colorTheme.normalTextColor),
                       ),
                     ],
                   ),
@@ -91,16 +92,16 @@ class AddAccountsBottomSheet extends ConsumerWidget {
                       Text(
                         "\$1.36",
                         style: AppTextstyle.roboto(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w500,
-                        ),
+                            fontSize: 16,
+                            fontWeight: FontWeight.w500,
+                            color: context.theme.colorTheme.normalTextColor),
                       ),
                       Text(
                         "£0.99",
                         style: AppTextstyle.roboto(
                             fontSize: 12,
                             fontWeight: FontWeight.w500,
-                            color: AppColors.black.withOpacity(0.6)),
+                            color: context.theme.colorTheme.normalTextColor),
                       ),
                     ],
                   ),

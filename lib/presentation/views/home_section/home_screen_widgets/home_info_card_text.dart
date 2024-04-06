@@ -1,4 +1,5 @@
 import 'package:etbank_business_app/constants/icon_container.dart';
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -33,14 +34,15 @@ class InfoTextWidget extends ConsumerWidget {
                       "Exchanged to USD",
                       style: AppTextstyle.bodyTextStyle(
                           fontSize: 16,
-                          color: AppColors.white,
+                          color: context.theme.colorTheme.normalTextColor,
                           fontWeight: FontWeight.w600),
                     ),
                     Text(
                       "GBP . Default Account",
                       style: AppTextstyle.bodyTextStyle(
                           fontSize: 12,
-                          color: AppColors.white.withOpacity(0.4),
+                          color: context.theme.colorTheme.normalTextColor
+                              .withOpacity(0.4),
                           fontWeight: FontWeight.w400),
                     )
                   ],
@@ -54,14 +56,15 @@ class InfoTextWidget extends ConsumerWidget {
                 "-£1",
                 style: AppTextstyle.bodyTextStyle(
                     fontSize: 16,
-                    color: AppColors.white,
+                    color: context.theme.colorTheme.normalTextColor,
                     fontWeight: FontWeight.w600),
               ),
               Text(
                 "+\$1.36",
                 style: AppTextstyle.bodyTextStyle(
                     fontSize: 12,
-                    color: AppColors.white.withOpacity(0.4),
+                    color: context.theme.colorTheme.normalTextColor
+                        .withOpacity(0.4),
                     fontWeight: FontWeight.w400),
               )
             ],

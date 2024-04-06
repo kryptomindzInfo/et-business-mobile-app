@@ -1,5 +1,6 @@
 import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:etbank_business_app/constants/app_textstyle.dart';
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_widgets/custom_radio_button_widget.dart';
 import 'package:etbank_business_app/resources/localization/language_constrants.dart';
@@ -41,7 +42,7 @@ class RolesWithDetails extends ConsumerWidget {
                       style: AppTextstyle.headingTextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.w600,
-                          color: AppColors.white),
+                          color: context.theme.colorTheme.normalTextColor),
                     ),
                     10.spaceY,
                     Text(
@@ -49,7 +50,8 @@ class RolesWithDetails extends ConsumerWidget {
                       style: AppTextstyle.bodyTextStyle(
                           fontSize: 14,
                           fontWeight: FontWeight.normal,
-                          color: AppColors.white.withOpacity(0.6)),
+                          color: context.theme.colorTheme.normalTextColor
+                              .withOpacity(0.6)),
                     ),
                   ],
                 ),
@@ -60,12 +62,15 @@ class RolesWithDetails extends ConsumerWidget {
             height: 28,
             width: 64,
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(5), color: AppColors.white),
+                borderRadius: BorderRadius.circular(5),
+                color: context.theme.colorTheme.blackAndWhite),
             child: Center(
               child: Text(
                 getTranslated("view", context),
                 style: AppTextstyle.bodyTextStyle(
-                    fontSize: 14, fontWeight: FontWeight.w500),
+                    fontSize: 14,
+                    fontWeight: FontWeight.w500,
+                    color: context.theme.colorTheme.whiteAndBlack),
               ),
             ),
           )

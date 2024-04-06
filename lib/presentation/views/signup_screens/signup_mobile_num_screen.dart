@@ -12,7 +12,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../constants/app_assets.dart';
 import '../../../constants/app_colors.dart';
-import '../../../globals/button_color.dart';
 import 'signup_widgets/button_bottom_navigation_widget.dart';
 import 'signup_widgets/countries_list_widget.dart';
 import 'signup_widgets/country_drop_down_button_widget.dart';

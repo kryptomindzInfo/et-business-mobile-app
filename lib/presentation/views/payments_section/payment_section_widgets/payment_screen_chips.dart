@@ -6,7 +6,9 @@ class PaymentScreenChips extends ConsumerWidget {
   final String? title;
   final Color? color;
   final VoidCallback? onpress;
-  const PaymentScreenChips({super.key, this.title, this.color, this.onpress});
+  final Color? titleColor;
+  const PaymentScreenChips(
+      {super.key, this.title, this.color, this.onpress, this.titleColor});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -15,6 +17,7 @@ class PaymentScreenChips extends ConsumerWidget {
         title: title,
         color: color,
         onpress: onpress,
+        titleColor: titleColor,
       ),
     );
   }
