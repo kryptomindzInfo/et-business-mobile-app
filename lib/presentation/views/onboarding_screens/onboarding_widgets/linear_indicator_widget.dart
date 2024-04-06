@@ -15,8 +15,6 @@ class LinearIndicatorWidget extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final pageController = ref.read(pageControllerProvider);
-    // final activePage =
-
     return Positioned(
       top: 85,
       height: 20.h,

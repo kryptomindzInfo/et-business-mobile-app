@@ -32,29 +32,25 @@ class OnboardingWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: context.theme.colorTheme.backgroundColor,
       body: Stack(
         children: [
-          Image.asset(
-            AppAssets.appBg,
-            fit: BoxFit.cover,
-            width: 420.w,
-          ),
+          // Image.asset(
+          //   AppAssets.appBg,
+          //   fit: BoxFit.cover,
+          //   width: 420.w,
+          // ),
           20.spaceY,
           Padding(
             padding: EdgeInsets.only(top: 70.h),
             child: SizedBox(
               width: 420.w,
               height: 805.h,
-              child: ClipRRect(
-                borderRadius: const BorderRadius.only(
-                    topLeft: Radius.circular(20),
-                    topRight: Radius.circular(20)),
-                child: Image.asset(
-                  AppAssets.onboardingBg,
-                  fit: BoxFit.cover,
-                  width: 420.w,
-                  height: 391.h,
-                ),
+              child: Image.asset(
+                AppAssets.onboardingBg,
+                fit: BoxFit.cover,
+                width: 420.w,
+                height: 391.h,
               ),
             ),
           ),
