@@ -2,6 +2,7 @@ import 'package:etbank_business_app/constants/icon_container.dart';
 import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../constants/app_assets.dart';
@@ -35,20 +36,18 @@ class InfoIconTitleSubtitleText extends ConsumerWidget {
               image: imageicon,
             ),
             20.spaceX,
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  title,
-                  style: AppTextstyle.bodyTextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600,
-                      color: context.theme.colorTheme.normalTextColor),
-                ),
-                Container(
-                  height: 30,
-                  width: 200,
-                  child: Text(
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    title,
+                    style: AppTextstyle.bodyTextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600,
+                        color: context.theme.colorTheme.normalTextColor),
+                  ),
+                  Text(
                     subtitle,
                     style: AppTextstyle.bodyTextStyle(
                         fontSize: 12,
@@ -56,9 +55,9 @@ class InfoIconTitleSubtitleText extends ConsumerWidget {
                         color: context.theme.colorTheme.normalTextColor,
                         overflow: TextOverflow.clip),
                   ),
-                ),
-                // 20.spaceY
-              ],
+                  // 20.spaceY
+                ],
+              ),
             ),
           ],
         ),

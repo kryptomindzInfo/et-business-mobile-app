@@ -32,13 +32,14 @@ class OnboardingWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: context.theme.colorTheme.appBackgroundColor,
       body: Stack(
         children: [
-          Image.asset(
-            AppAssets.appBg,
-            fit: BoxFit.cover,
-            width: 420.w,
-          ),
+          // Image.asset(
+          //   AppAssets.appBg,
+          //   fit: BoxFit.cover,
+          //   width: 420.w,
+          // ),
           20.spaceY,
           Padding(
             padding: EdgeInsets.only(top: 70.h),
@@ -72,7 +73,7 @@ class OnboardingWidget extends StatelessWidget {
                       style: AppTextstyle.headingTextStyle(
                           fontSize: 32.sp,
                           fontWeight: FontWeight.w700,
-                          color: AppColors.white,
+                          color: context.theme.colorTheme.normalTextColor,
                           overflow: TextOverflow.clip),
                     ),
                   ),

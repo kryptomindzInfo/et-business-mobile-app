@@ -1,4 +1,5 @@
 import 'package:etbank_business_app/constants/app_colors.dart';
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/resources/localization/language_constrants.dart';
 import 'package:flutter/material.dart';
@@ -37,7 +38,6 @@ class AdminscreenListview extends ConsumerWidget {
                                     .adminScreenData[index]["icon"],
                               ),
                               scale: 2)),
-
                     ),
                     15.spaceX,
                     Text(
@@ -46,9 +46,10 @@ class AdminscreenListview extends ConsumerWidget {
                               ["title"],
                           context),
                       style: AppTextstyle.headingTextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w600,
-                          color: AppColors.white),
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600,
+                        color: context.theme.colorTheme.normalTextColor,
+                      ),
                     ),
                   ],
                 ),
@@ -64,9 +65,10 @@ class AdminscreenListview extends ConsumerWidget {
                     Text(
                       "Full access",
                       style: AppTextstyle.bodyTextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w600,
-                          color: AppColors.white),
+                        fontSize: 14,
+                        fontWeight: FontWeight.w600,
+                        color: context.theme.colorTheme.normalTextColor,
+                      ),
                     ),
                   ],
                 ),

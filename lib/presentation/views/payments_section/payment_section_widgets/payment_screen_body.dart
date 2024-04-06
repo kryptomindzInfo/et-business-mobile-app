@@ -1,6 +1,7 @@
 import 'package:etbank_business_app/constants/app_assets.dart';
 import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:etbank_business_app/constants/app_textstyle.dart';
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/see_all_widget.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/white_flexible_card.dart';
@@ -33,8 +34,12 @@ class PaymentScreenBody extends ConsumerWidget {
               },
               color:
                   ref.watch(paymentProvider).paymentScreenOptionIndex == index
-                      ? AppColors.tealColor
-                      : AppColors.black,
+                      ? context.theme.colorTheme.activeChipColor
+                      : context.theme.colorTheme.chipsColor,
+              titleColor:
+                  ref.watch(paymentProvider).paymentScreenOptionIndex == index
+                      ? context.theme.colorTheme.whiteAndBlack
+                      : context.theme.colorTheme.blackAndWhite,
             );
           }).toList()),
         ),

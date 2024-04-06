@@ -26,6 +26,7 @@ class CardSettingsScreen extends ConsumerWidget {
               HeaderIconWithTitle(
                 imageicon: AppAssets.arrowLeft,
                 title: getTranslated("settings", context),
+                etBankLogo: true,
               ),
               30.spaceY,
               SettingsScreenHeaderCard(),

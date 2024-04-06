@@ -6,6 +6,7 @@ import '../../../constants/app_colors.dart';
 showCommonModalSheet(double height, Widget widget) {
   return showModalBottomSheet(
     context: appContext,
+    isScrollControlled: true,
     builder: (context) => Container(
       height: height,
       width: double.infinity,
