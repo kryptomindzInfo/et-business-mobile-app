@@ -73,7 +73,7 @@ class OnboardingWidget extends StatelessWidget {
                       style: AppTextstyle.headingTextStyle(
                           fontSize: 32.sp,
                           fontWeight: FontWeight.w700,
-                          color: AppColors.white,
+                          color: context.theme.colorTheme.normalTextColor,
                           overflow: TextOverflow.clip),
                     ),
                   ),
