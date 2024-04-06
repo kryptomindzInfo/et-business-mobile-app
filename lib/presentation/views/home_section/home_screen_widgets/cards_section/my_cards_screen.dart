@@ -35,6 +35,7 @@ class MyCardsScreen extends ConsumerWidget {
                 HeaderIconWithTitle(
                   imageicon: AppAssets.arrowLeft,
                   title: getTranslated("my_cards", context),
+                  etBankLogo: true,
                 ),
                 20.spaceY,
                 const CardsSwiper(),

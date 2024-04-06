@@ -31,7 +31,7 @@ class GetCardScreen extends ConsumerWidget {
           child: Column(
             children: [
               Container(
-                height: 200,
+                height: 215,
                 child: HeaderIconWithTitle(
                   imageicon: AppAssets.arrowLeft,
                   title: getTranslated("get_card", context),
@@ -39,6 +39,7 @@ class GetCardScreen extends ConsumerWidget {
                       proWatch.getCardsScreenData[proWatch.getCardsScreenIndex]
                           ["data"]["description"],
                       context),
+                  etBankLogo: true,
                 ),
               ),
               // 10.spaceY,
@@ -73,7 +74,7 @@ class GetCardScreen extends ConsumerWidget {
                       ),
                     ),
                     GetCardsScreenSwiper(),
-                    50.spaceY,
+                    40.spaceY,
                   ],
                 ),
               ),
