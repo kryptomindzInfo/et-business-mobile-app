@@ -3,7 +3,6 @@ import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../../constants/app_assets.dart';
 import '../../../../constants/app_colors.dart';
 import '../../../../constants/app_textstyle.dart';
 
@@ -15,7 +14,7 @@ class TransferFavouriteProfileWidget extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Container(
-      margin: EdgeInsets.only(top: 10, bottom: 7),
+      margin: const EdgeInsets.only(top: 10, bottom: 7),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.start,

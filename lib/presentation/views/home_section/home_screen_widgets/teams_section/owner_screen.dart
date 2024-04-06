@@ -29,9 +29,9 @@ class OwnerScreen extends ConsumerWidget {
                 description: getTranslated("choose_owner", context),
               ),
               15.spaceY,
-              HomeScreenSearchTextfield(),
+              const HomeScreenSearchTextfield(),
               20.spaceY,
-              TeamMemebersWidget()
+              const TeamMemebersWidget()
             ],
           ),
         ),

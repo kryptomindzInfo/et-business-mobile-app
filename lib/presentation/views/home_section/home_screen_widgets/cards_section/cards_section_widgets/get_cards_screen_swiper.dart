@@ -22,12 +22,12 @@ class GetCardsScreenSwiper extends ConsumerWidget {
           decorator: DotsDecorator(
             color: Colors.grey.withOpacity(0.8), // Inactive color
             activeColor: AppColors.black,
-            size: Size.square(10),
-            activeSize: Size.square(10),
+            size: const Size.square(10),
+            activeSize: const Size.square(10),
           ),
         ),
         20.spaceY,
-        Container(
+        SizedBox(
           height: 170,
           child: Swiper(
             itemCount: cardsProRead.getCardsScreenData.length,

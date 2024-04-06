@@ -1,5 +1,3 @@
-import 'package:card_swiper/card_swiper.dart';
-import 'package:dots_indicator/dots_indicator.dart';
 import 'package:etbank_business_app/constants/app_assets.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/app_common_widgets.dart';
@@ -10,7 +8,6 @@ import 'package:etbank_business_app/presentation/views/home_section/home_screen_
 import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/cards_section/cards_section_widgets/freeze_card.dart';
 import 'package:etbank_business_app/resources/localization/language_constrants.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../../constants/app_colors.dart';
@@ -45,7 +42,7 @@ class MyCardsScreen extends ConsumerWidget {
                     showModalBottomSheet(
                       context: context,
                       isScrollControlled: true,
-                      builder: (context) => UsingCardWithApplePay(),
+                      builder: (context) => const UsingCardWithApplePay(),
                     );
                   },
                   child: Image.asset(
@@ -54,11 +51,11 @@ class MyCardsScreen extends ConsumerWidget {
                   ),
                 ),
                 10.spaceY,
-                AvailableToSpendCard(),
+                const AvailableToSpendCard(),
                 10.spaceY,
-                FundingAmountCard(),
+                const FundingAmountCard(),
                 10.spaceY,
-                FreezeCard(),
+                const FreezeCard(),
                 10.spaceY,
               ],
             ),

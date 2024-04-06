@@ -1,18 +1,10 @@
 import 'package:etbank_business_app/constants/app_assets.dart';
-import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:etbank_business_app/constants/app_textstyle.dart';
 import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
-import 'package:etbank_business_app/presentation/views/bottom_navigation_bar.dart';
-import 'package:etbank_business_app/presentation/views/onboarding_screens/onboarding_screen.dart';
-import 'package:etbank_business_app/presentation/views/onboarding_screens/onboarding_widgets/button_widget.dart';
-import 'package:etbank_business_app/presentation/views/signup_screens/signup_email_screen.dart';
 import 'package:etbank_business_app/resources/localization/language_constrants.dart';
-import 'package:etbank_business_app/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../navigation/navigation.dart';
-import '../../home_section/homes_screen.dart';
 
 class OnboardingWidget extends StatelessWidget {
   final String title;
@@ -99,7 +91,7 @@ class OnboardingWidget extends StatelessWidget {
                   )),
             ],
           ),
-          widget != null ? widget! : SizedBox()
+          widget != null ? widget! : const SizedBox()
         ],
       ),
     );

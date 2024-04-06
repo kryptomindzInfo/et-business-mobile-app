@@ -25,7 +25,7 @@ class ReferBusinessShareLinkMainCard extends ConsumerWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          IconContainer(
+          const IconContainer(
             image: AppAssets.contactpermission,
           ),
           10.spaceX,

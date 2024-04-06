@@ -1,4 +1,3 @@
-import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/presentation/views/converting_currency/currency_converter_screen_widgets.dart/rates_tab.chips.dart';
 import 'package:flutter/material.dart';
@@ -11,7 +10,7 @@ class RatesScreenOptionsWidget extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return Container(
+    return SizedBox(
       height: 40,
       width: double.infinity,
       child: ListView.builder(

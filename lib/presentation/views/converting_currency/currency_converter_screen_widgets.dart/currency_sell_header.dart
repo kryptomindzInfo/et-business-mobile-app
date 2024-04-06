@@ -13,7 +13,7 @@ class CurrencySellHeader extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Row(
       children: [
-        Expanded(
+        const Expanded(
           child: HeaderIconWithTitle(
             imageicon: AppAssets.arrowLeft,
             title: "+\$1.35",

@@ -1,6 +1,5 @@
 import 'package:etbank_business_app/constants/app_assets.dart';
 import 'package:etbank_business_app/constants/app_colors.dart';
-import 'package:etbank_business_app/constants/app_textstyle.dart';
 import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/see_all_widget.dart';
@@ -44,13 +43,13 @@ class PaymentScreenBody extends ConsumerWidget {
           }).toList()),
         ),
         20.spaceY,
-        TransferMainWhiteCard(),
+        const TransferMainWhiteCard(),
         25.spaceY,
         SeeAllCommonWidget(getTranslated("favourite", context), true),
         10.spaceY,
         CommonWhiteFlexibleCard(
           color: AppColors.grey.withOpacity(0.5),
-          widget: Column(
+          widget: const Column(
             children: [
               TransferFavouriteProfileWidget(
                 imageIcon: AppAssets.nickle,

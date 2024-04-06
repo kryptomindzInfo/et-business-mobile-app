@@ -11,11 +11,11 @@ class CurrencyChartWhiteCard extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return CommonWhiteFlexibleCard(
       color: context.theme.colorTheme.blackAndWhite,
-      widget: Row(
+      widget: const Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           Padding(
-            padding: const EdgeInsets.only(right: 20),
+            padding: EdgeInsets.only(right: 20),
             child: CurrencyValueWithStatusText(
               digitalValue: "1.3275",
               status: "lowest",
@@ -26,7 +26,7 @@ class CurrencyChartWhiteCard extends ConsumerWidget {
             status: "current",
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 20),
+            padding: EdgeInsets.only(left: 20),
             child: CurrencyValueWithStatusText(
               digitalValue: "1.3603",
               status: "highest",

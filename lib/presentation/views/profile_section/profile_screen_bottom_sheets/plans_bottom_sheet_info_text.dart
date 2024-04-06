@@ -18,7 +18,7 @@ class PlansBottomSheetInfoText extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Container(
-      margin: EdgeInsets.only(left: 15, right: 15, top: 15, bottom: 5),
+      margin: const EdgeInsets.only(left: 15, right: 15, top: 15, bottom: 5),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
@@ -27,7 +27,7 @@ class PlansBottomSheetInfoText extends ConsumerWidget {
           ),
           Column(
             children: [
-              Container(
+              SizedBox(
                 width: 210,
                 child: Text(
                   title,
@@ -38,7 +38,7 @@ class PlansBottomSheetInfoText extends ConsumerWidget {
                   overflow: TextOverflow.clip,
                 ),
               ),
-              Container(
+              SizedBox(
                 width: 200,
                 child: Text(
                   subtitle,

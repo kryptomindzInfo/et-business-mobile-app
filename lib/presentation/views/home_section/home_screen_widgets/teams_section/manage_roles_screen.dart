@@ -28,7 +28,7 @@ class ManageRolesScreen extends ConsumerWidget {
                 title: getTranslated("roles", context),
               ),
               20.spaceY,
-              CommonWhiteFlexibleCard(
+              const CommonWhiteFlexibleCard(
                 widget: Column(
                   children: [
                     RolesInfoTextWidget(

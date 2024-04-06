@@ -66,7 +66,7 @@ class MyAppTabMainCard extends ConsumerWidget {
           ),
           Container(
             height: 84,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
                 color: AppColors.blackish,
                 borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(28),
@@ -76,7 +76,7 @@ class MyAppTabMainCard extends ConsumerWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Container(
+                  SizedBox(
                     width: 180,
                     child: Text(
                       getTranslated("enjoy_higher_limits", context),

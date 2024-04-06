@@ -13,7 +13,7 @@ class CurrencyExchangeTextfield extends ConsumerWidget {
       decoration: BoxDecoration(
           border: Border.all(color: AppColors.primaryColor),
           borderRadius: BorderRadius.circular(28)),
-      child: TextField(
+      child: const TextField(
         decoration: InputDecoration(
             focusedBorder: InputBorder.none,
             disabledBorder: InputBorder.none,

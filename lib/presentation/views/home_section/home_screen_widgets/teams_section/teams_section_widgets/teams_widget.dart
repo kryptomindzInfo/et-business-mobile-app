@@ -2,17 +2,14 @@ import 'package:etbank_business_app/constants/app_assets.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/navigation/navigation.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/common_green_button.dart';
-import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/common_transparent_button.dart';
 import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/teams_section/invite_to_et_bank_screen.dart';
 import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/teams_section/manage_roles_screen.dart';
 import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/teams_section/owner_screen.dart';
-import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/teams_section/teams_section_widgets/info_text_with_icon.dart';
 import 'package:etbank_business_app/resources/localization/language_constrants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../../../constants/app_colors.dart';
-import '../../../../../../constants/app_textstyle.dart';
 import '../../../../common_widgets/see_all_widget.dart';
 import '../../../../common_widgets/white_flexible_card.dart';
 import '../../../../payments_section/payment_section_widgets/transfer_favourite_profile_widget.dart';

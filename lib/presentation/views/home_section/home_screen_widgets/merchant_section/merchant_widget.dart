@@ -11,10 +11,10 @@ class MerchantWidget extends ConsumerWidget {
     return GridView(
       // physics: NeverScrollableScrollPhysics(),
       shrinkWrap: true,
-      padding: EdgeInsets.only(bottom: 0),
+      padding: const EdgeInsets.only(bottom: 0),
 
       gridDelegate:
-          SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+          const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
       // runSpacing: 10,
       // spacing: 10,
       children: ref

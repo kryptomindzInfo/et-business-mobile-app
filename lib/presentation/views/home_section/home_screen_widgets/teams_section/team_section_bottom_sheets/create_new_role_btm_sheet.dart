@@ -1,7 +1,6 @@
 import 'package:etbank_business_app/constants/app_assets.dart';
 import 'package:etbank_business_app/constants/app_textstyle.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
-import 'package:etbank_business_app/navigation/navigation.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/header_icon_with_text.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/primary_button.dart';
 import 'package:etbank_business_app/presentation/views/sending_currency_screens/sending_currency_widgets/verified_bottom_sheet_widget.dart';
@@ -42,7 +41,7 @@ class CreateNewRoleBottomSheet extends ConsumerWidget {
                 showModalBottomSheet(
                     context: context,
                     builder: (context) => VerifiedBottomSheetWidget(
-                          title: Column(
+                          title: const Column(
                             children: [],
                           ),
                           description: Text(

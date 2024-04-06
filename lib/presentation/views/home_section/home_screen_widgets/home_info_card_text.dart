@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../constants/app_assets.dart';
-import '../../../../constants/app_colors.dart';
 import '../../../../constants/app_textstyle.dart';
 
 class InfoTextWidget extends ConsumerWidget {
@@ -14,7 +13,7 @@ class InfoTextWidget extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Container(
-      margin: EdgeInsets.only(top: 15, bottom: 5),
+      margin: const EdgeInsets.only(top: 15, bottom: 5),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -23,7 +22,7 @@ class InfoTextWidget extends ConsumerWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                IconContainer(
+                const IconContainer(
                   image: AppAssets.transactioninfoicon,
                 ),
                 15.spaceX,

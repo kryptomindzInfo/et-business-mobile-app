@@ -15,8 +15,8 @@ class ThemeBottomSheet extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Container(
       height: 310,
-      margin: EdgeInsets.only(left: 10, right: 10),
-      decoration: BoxDecoration(
+      margin: const EdgeInsets.only(left: 10, right: 10),
+      decoration: const BoxDecoration(
           color: AppColors.tealColor,
           border: Border(
             left: BorderSide(width: 1, color: AppColors.white),

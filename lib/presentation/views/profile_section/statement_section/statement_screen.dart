@@ -7,7 +7,6 @@ import 'package:etbank_business_app/resources/localization/language_constrants.d
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../../constants/app_colors.dart';
 
 class StatementScreen extends ConsumerWidget {
   static const String routeName = "statement_screen";
@@ -27,7 +26,7 @@ class StatementScreen extends ConsumerWidget {
                 title: getTranslated("statements", context),
               ),
               30.spaceY,
-              StatementScreenMainCard()
+              const StatementScreenMainCard()
             ],
           ),
         ),

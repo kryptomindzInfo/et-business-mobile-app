@@ -1,6 +1,5 @@
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/app_common_widgets.dart';
-import 'package:etbank_business_app/presentation/views/common_widgets/header_icon_with_text.dart';
 import 'package:etbank_business_app/presentation/views/profile_section/profile_screen_widgets/profile_header_widget.dart';
 import 'package:etbank_business_app/presentation/views/profile_section/profile_screen_widgets/profile_screen_info_card.dart';
 import 'package:etbank_business_app/presentation/views/profile_section/profile_screen_widgets/profile_screen_main_card.dart';
@@ -29,13 +28,13 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                ProfileHeaderWidget(),
+                const ProfileHeaderWidget(),
                 20.spaceY,
-                ProfileScreenOptionsWidget(),
+                const ProfileScreenOptionsWidget(),
                 20.spaceY,
-                ProfileScreenMainCard(),
+                const ProfileScreenMainCard(),
                 20.spaceY,
-                ProfileInfoCard()
+                const ProfileInfoCard()
               ],
             ),
           ),

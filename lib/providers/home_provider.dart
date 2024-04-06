@@ -19,10 +19,10 @@ class HomeScreenProvider extends ChangeNotifier {
       _homeScreenOptionsWidgets.elementAt(_selectedHomeScreenOption);
   List<Map> get merchatndataList => merchantData;
   final List<Widget> _homeScreenOptionsWidgets = [
-    DashBoardWidget(),
-    CardsMainWidget(),
-    TeamsWidget(),
-    MerchantWidget()
+    const DashBoardWidget(),
+    const CardsMainWidget(),
+    const TeamsWidget(),
+    const MerchantWidget()
   ];
   // List<Widget> get homeScreenOptionsWidgets => _homeScreenOptionsWidgets;
 

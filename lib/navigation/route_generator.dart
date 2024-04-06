@@ -1,4 +1,3 @@
-import 'package:etbank_business_app/navigation/params/pincode_screen_args.dart';
 import 'package:etbank_business_app/presentation/views/bottom_navigation_bar.dart';
 import 'package:etbank_business_app/presentation/views/converting_currency/rates_tab_section/currencies_chart_screen.dart';
 import 'package:etbank_business_app/presentation/views/converting_currency/rates_tab_section/currency_exchange_converter_screen.dart';
@@ -275,27 +274,27 @@ class RouteGenerator {
             // params: settings.arguments as HomeScreenArgs?
             ));
       case MyCardsScreen.routeName:
-        return route(MyCardsScreen(
+        return route(const MyCardsScreen(
             // params: settings.arguments as HomeScreenArgs?
             ));
       case CardSettingsScreen.routeName:
-        return route(CardSettingsScreen(
+        return route(const CardSettingsScreen(
             // params: settings.arguments as HomeScreenArgs?
             ));
       case OwnerScreen.routeName:
-        return route(OwnerScreen(
+        return route(const OwnerScreen(
             // params: settings.arguments as HomeScreenArgs?
             ));
       case GetCardScreen.routeName:
-        return route(GetCardScreen(
+        return route(const GetCardScreen(
             // params: settings.arguments as HomeScreenArgs?
             ));
       case InviteToETBankScreen.routeName:
-        return route(InviteToETBankScreen(
+        return route(const InviteToETBankScreen(
             // params: settings.arguments as HomeScreenArgs?
             ));
       case ManageRolesScreen.routeName:
-        return route(ManageRolesScreen(
+        return route(const ManageRolesScreen(
             // params: settings.arguments as HomeScreenArgs?
             ));
       case UpgradeScreens.routeName:
@@ -303,7 +302,7 @@ class RouteGenerator {
             // params: settings.arguments as HomeScreenArgs?
             ));
       case NotificationScreen.routeName:
-        return route(NotificationScreen(
+        return route(const NotificationScreen(
             // params: settings.arguments as HomeScreenArgs?
             ));
       case CurrenciesChartScreen.routeName:
@@ -311,23 +310,23 @@ class RouteGenerator {
             // params: settings.arguments as HomeScreenArgs?
             ));
       case CurrencyExchangeConverterScreen.routeName:
-        return route(CurrencyExchangeConverterScreen(
+        return route(const CurrencyExchangeConverterScreen(
             // params: settings.arguments as HomeScreenArgs?
             ));
       case CurrencySellScreen.routeName:
-        return route(CurrencySellScreen(
+        return route(const CurrencySellScreen(
             // params: settings.arguments as HomeScreenArgs?
             ));
       case AssignRoleScreen.routeName:
-        return route(AssignRoleScreen(
+        return route(const AssignRoleScreen(
             // params: settings.arguments as HomeScreenArgs?
             ));
       case AdminScreen.routeName:
-        return route(AdminScreen(
+        return route(const AdminScreen(
             // params: settings.arguments as HomeScreenArgs?
             ));
       case ContractorScreen.routeName:
-        return route(ContractorScreen(
+        return route(const ContractorScreen(
             // params: settings.arguments as HomeScreenArgs?
             )); 
       // case FirstScreen.routeName:

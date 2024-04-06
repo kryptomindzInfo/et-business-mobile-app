@@ -9,7 +9,6 @@ import 'package:etbank_business_app/resources/localization/language_constrants.d
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
-import 'package:syncfusion_flutter_charts/sparkcharts.dart';
 
 class CurrenciesChartScreen extends ConsumerWidget {
   static const String routeName = "Currency_chart_Screen";
@@ -39,9 +38,9 @@ class CurrenciesChartScreen extends ConsumerWidget {
               padding: const EdgeInsets.only(left: 20, right: 20),
               child: Column(
                 children: [
-                  CurrencyChartHeader(),
+                  const CurrencyChartHeader(),
                   20.spaceY,
-                  CurrencyChartWhiteCard(),
+                  const CurrencyChartWhiteCard(),
                 ],
               ),
             ),

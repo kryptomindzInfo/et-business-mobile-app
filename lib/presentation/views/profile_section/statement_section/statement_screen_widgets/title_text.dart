@@ -2,7 +2,6 @@ import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../../../constants/app_colors.dart';
 import '../../../../../constants/app_textstyle.dart';
 
 class TitleText extends ConsumerWidget {

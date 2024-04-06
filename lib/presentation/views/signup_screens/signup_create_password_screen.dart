@@ -12,7 +12,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../constants/app_colors.dart';
-import '../../../globals/button_color.dart';
 import 'signup_widgets/button_bottom_navigation_widget.dart';
 import 'signup_widgets/primary_button.dart';
 import 'signup_widgets/text_field_widget.dart';

@@ -6,7 +6,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../../../constants/app_assets.dart';
 import '../../../../../../constants/app_textstyle.dart';
-import '../../../../../../resources/localization/language_constrants.dart';
 
 class SettingsScreenHeaderCard extends ConsumerWidget {
   const SettingsScreenHeaderCard({super.key});

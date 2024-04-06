@@ -14,7 +14,7 @@ class CardsSwiper extends ConsumerWidget {
     var cardsProWatch = ref.watch(cardscreenProvider);
     return Column(
       children: [
-        Container(
+        SizedBox(
           height: 170,
           child: Swiper(
             itemCount: cardsProRead.cards.length,
@@ -37,8 +37,8 @@ class CardsSwiper extends ConsumerWidget {
           decorator: DotsDecorator(
             color: Colors.white.withOpacity(0.8), // Inactive color
             activeColor: AppColors.primaryColor,
-            size: Size.square(10),
-            activeSize: Size.square(10),
+            size: const Size.square(10),
+            activeSize: const Size.square(10),
           ),
         )
       ],

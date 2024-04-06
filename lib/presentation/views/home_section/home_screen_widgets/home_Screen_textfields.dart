@@ -22,7 +22,7 @@ class HomeScreenSearchTextfield extends ConsumerWidget {
             disabledBorder: InputBorder.none,
             enabledBorder: InputBorder.none,
             focusedBorder: InputBorder.none,
-            contentPadding: EdgeInsets.only(bottom: 19),
+            contentPadding: const EdgeInsets.only(bottom: 19),
             prefixIcon: Padding(
               padding: const EdgeInsets.only(left: 10),
               child: Icon(

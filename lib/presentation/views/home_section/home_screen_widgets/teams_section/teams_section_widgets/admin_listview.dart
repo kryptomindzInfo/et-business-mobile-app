@@ -18,7 +18,7 @@ class AdminscreenListview extends ConsumerWidget {
       child: ListView.builder(
         itemCount: ref.watch(teamscreenProvider).adminScreenData.length,
         itemBuilder: (context, index) => Container(
-          margin: EdgeInsets.only(bottom: 25),
+          margin: const EdgeInsets.only(bottom: 25),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [

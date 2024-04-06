@@ -7,7 +7,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../constants/app_assets.dart';
 import '../../../constants/app_textstyle.dart';
-import '../../../navigation/navigation.dart';
 import '../../../resources/localization/language_constrants.dart';
 import '../common_widgets/header_icon_with_text.dart';
 import '../sending_currency_screens/sending_currency_widgets/show_account_details_widget.dart';

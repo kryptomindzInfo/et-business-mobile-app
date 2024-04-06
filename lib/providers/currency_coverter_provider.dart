@@ -15,7 +15,7 @@ final currencyScreenProvider =
 
 class CurrencyConverterProvider extends ChangeNotifier {
   List<Map> get ratesOptions => ratesScreenOptions;
-  List<Widget> _currencyPairCards = [];
+  final List<Widget> _currencyPairCards = [];
   List<Widget> get currencyPairCards => _currencyPairCards;
   int _currencyConverterTabIndex = 0;
   int get currencyConverterTabIndex => _currencyConverterTabIndex;
@@ -32,7 +32,7 @@ class CurrencyConverterProvider extends ChangeNotifier {
         onTap: () {
           Navigation.pushNamed(CurrenciesChartScreen.routeName);
         },
-        child: CurrencyPairCard()));
+        child: const CurrencyPairCard()));
     notifyListeners();
   }
 

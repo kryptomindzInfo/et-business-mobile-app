@@ -28,10 +28,10 @@ class Chips extends ConsumerWidget {
       onTap: onpress,
       child: Container(
         padding: const EdgeInsets.all(10),
-        margin: EdgeInsets.only(right: 20),
+        margin: const EdgeInsets.only(right: 20),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(100),
-            color: color != null ? color : context.theme.colorTheme.chipsColor),
+            color: color ?? context.theme.colorTheme.chipsColor),
         child: Row(children: [
           //?
           if (imageicon != null)

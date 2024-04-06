@@ -10,7 +10,7 @@ class TermsAndConditionsText extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Container(
-      margin: EdgeInsets.only(left: 10, right: 10, top: 200),
+      margin: const EdgeInsets.only(left: 10, right: 10, top: 200),
       child: RichText(
           textAlign: TextAlign.center,
           text: TextSpan(children: [

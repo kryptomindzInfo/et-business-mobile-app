@@ -15,8 +15,8 @@ class HubProvider extends ChangeNotifier {
       _hubScreenOptionWidgets.elementAt(_hubSectionOptionIndex);
 
   final List<Widget> _hubScreenOptionWidgets = [
-    MyAppTabWidget(),
-    IntegrationTabWidget()
+    const MyAppTabWidget(),
+    const IntegrationTabWidget()
   ];
 
   selectedHubOptionsIndex(int val) {

@@ -15,7 +15,7 @@ class RolesInfoTextWidget extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Container(
-      margin: EdgeInsets.only(bottom: 20, top: 10),
+      margin: const EdgeInsets.only(bottom: 20, top: 10),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

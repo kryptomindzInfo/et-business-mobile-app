@@ -7,7 +7,7 @@ final teamscreenProvider =
     ChangeNotifierProvider<TeamProvider>((ref) => TeamProvider());
 
 class TeamProvider extends ChangeNotifier {
-  TextEditingController _invitationController = TextEditingController();
+  final TextEditingController _invitationController = TextEditingController();
   TextEditingController get invitationController => _invitationController;
   List<Map> get assignRoleData => rolesData;
   int? _roleId;

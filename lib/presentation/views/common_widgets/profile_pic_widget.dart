@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../constants/app_assets.dart';
 
 class ProfilePicWidget extends ConsumerWidget {
   final String? image;

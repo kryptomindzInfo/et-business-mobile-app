@@ -14,14 +14,14 @@ class HomeScreenHeader extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return Container(
+    return SizedBox(
       width: double.infinity,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           InkWell(
             onTap: onpress,
-            child: ProfilePicWidget(
+            child: const ProfilePicWidget(
               image: AppAssets.profileicon,
             ),
           ),

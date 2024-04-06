@@ -23,7 +23,7 @@ class UsingCardWithApplePay extends ConsumerWidget {
               imageicon: AppAssets.crossicon,
               title: getTranslated("using_card_with_apple_pay", context),
               description: getTranslated("add_card_apple_wallet", context),
-              edgeinsets: EdgeInsets.only(top: 20),
+              edgeinsets: const EdgeInsets.only(top: 20),
             ),
             50.spaceY,
             Image.asset(AppAssets.silvercardForslider),

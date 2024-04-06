@@ -20,9 +20,9 @@ class AddAccountsBottomSheet extends ConsumerWidget {
       child: Column(
         children: [
           20.spaceY,
-          AddAccountsBSheaderSection(),
+          const AddAccountsBSheaderSection(),
           15.spaceY,
-          AllAccountsCardBS(),
+          const AllAccountsCardBS(),
           15.spaceY,
           Container(
             width: double.infinity,

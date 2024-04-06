@@ -3,7 +3,6 @@ import 'package:etbank_business_app/presentation/views/profile_section/profile_s
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../../constants/app_colors.dart';
 import '../../../../constants/app_textstyle.dart';
 
 class UpgradeBottomSheetMainCard extends ConsumerWidget {
@@ -21,7 +20,7 @@ class UpgradeBottomSheetMainCard extends ConsumerWidget {
           // color: AppColors.primaryColor,
           border: Border.all(color: context.theme.colorTheme.cardBorderColor)),
       child: Container(
-        margin: EdgeInsets.only(
+        margin: const EdgeInsets.only(
           left: 20,
           right: 20,
         ),
@@ -49,7 +48,7 @@ class UpgradeBottomSheetMainCard extends ConsumerWidget {
                 ),
               ],
             ),
-            PopularWidget()
+            const PopularWidget()
           ],
         ),
       ),

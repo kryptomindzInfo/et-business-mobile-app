@@ -23,26 +23,26 @@ class CurrencyExchangeConverterScreen extends ConsumerWidget {
           padding: const EdgeInsets.only(left: 20, right: 20),
           child: Column(
             children: [
-              HeaderIconWithTitle(
+              const HeaderIconWithTitle(
                 imageicon: AppAssets.arrowLeft,
                 title: "SELL GBP",
                 greenDescription: "£1 = 1.3601",
                 fontsize: 31,
               ),
               10.spaceY,
-              CurrencyExchangeTextfield(),
+              const CurrencyExchangeTextfield(),
               10.spaceY,
               Image.asset(
                 AppAssets.switchfieldsicon,
                 height: 32,
               ),
               10.spaceY,
-              CurrencyExchangeTextfield(),
+              const CurrencyExchangeTextfield(),
               50.spaceY,
               PrimaryButton(
                   minwidth: 288,
                   color: AppColors.primaryColor,
-                  text: Text("Review Order"),
+                  text: const Text("Review Order"),
                   onPressed: () {
                     Navigation.pushNamed(CurrencySellScreen.routeName);
                   })

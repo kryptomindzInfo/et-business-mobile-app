@@ -20,7 +20,7 @@ class AdminOptions extends ConsumerWidget {
           title: getTranslated("rename", context),
           imageIcon: AppAssets.editicon,
         ),
-        CommonGreyButton(
+        const CommonGreyButton(
           // title: getTranslated("rename", context),
           imageIcon: AppAssets.menudots, imageIconHeight: 4,
         )

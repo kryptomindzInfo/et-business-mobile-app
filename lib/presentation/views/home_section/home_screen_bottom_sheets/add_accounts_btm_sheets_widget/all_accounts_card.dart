@@ -27,7 +27,7 @@ class AllAccountsCardBS extends ConsumerWidget {
             child: Container(
               child: Row(
                 children: [
-                  IconContainer(
+                  const IconContainer(
                     image: AppAssets.allaccountsicon,
                   ),
                   15.spaceX,
