@@ -26,7 +26,8 @@ class MyApp extends ConsumerWidget {
       builder: (context, child) => MaterialApp(
         title: 'ET Bank Business',
         themeMode: ThemeMode.dark,
-        theme: ThemeData(
+        theme: 
+        ThemeData(
           extensions: [AppTheme()],
           splashColor: AppColors.transparent,
           highlightColor: AppColors.transparent,
