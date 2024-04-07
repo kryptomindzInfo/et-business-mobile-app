@@ -1,6 +1,7 @@
 import 'package:etbank_business_app/constants/app_textstyle.dart';
 import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/navigation/navigation.dart';
+import 'package:etbank_business_app/presentation/views/common_widgets/app_common_appbar.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/app_common_widgets.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/header_icon_with_text.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_check_email_screen.dart';
@@ -26,16 +27,17 @@ class SignUpEmailScreen extends ConsumerWidget {
     return BackgroundImageWidget(
       child: Scaffold(
         backgroundColor: AppColors.transparent,
+        appBar: CommonAppBar(),
         body: Padding(
           padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              HeaderIconWithTitle(
-                title: getTranslated('signup_email_title', context),
-                imageicon: AppAssets.arrowLeft,
-                etBankLogo: true,
-              ),
+              // HeaderIconWithTitle(
+              //   title: getTranslated('signup_email_title', context),
+              //   imageicon: AppAssets.arrowLeft,
+              //   etBankLogo: true,
+              // ),
               SizedBox(
                 child: TextFieldWidget(
                   style: const TextStyle(color: Colors.black),
