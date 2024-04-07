@@ -1,5 +1,4 @@
 import 'package:etbank_business_app/presentation/views/common_widgets/company_individual_tabs_widget.dart';
-import 'package:etbank_business_app/providers/sending_currency_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

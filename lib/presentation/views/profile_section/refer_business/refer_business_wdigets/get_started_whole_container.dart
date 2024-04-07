@@ -16,17 +16,17 @@ class GetStartedSection extends ConsumerWidget {
     return Container(
       height: 84,
       width: double.infinity,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
           color: AppColors.tealColor,
           borderRadius: BorderRadius.only(
               bottomLeft: Radius.circular(28),
               bottomRight: Radius.circular(28))),
       child: Container(
-        margin: EdgeInsets.only(left: 15, right: 15),
+        margin: const EdgeInsets.only(left: 15, right: 15),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Container(
+            SizedBox(
               width: 160,
               child: Text(
                 getTranslated("free_instant_transfer", context),

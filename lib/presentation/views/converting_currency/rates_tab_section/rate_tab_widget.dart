@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../constants/app_colors.dart';
-import '../../../../providers/sending_currency_provider.dart';
 import '../../signup_screens/signup_widgets/bottom_sheet_widget.dart';
 import '../../signup_screens/signup_widgets/countries_list_widget.dart';
 import '../currency_converter_screen_widgets.dart/adding_currency_pair_container.dart';
@@ -34,7 +33,7 @@ class RatesTabWidget extends ConsumerWidget {
                     isScrollControlled: true,
                     backgroundColor: AppColors.transparent,
                     builder: (context) {
-                      return AddingCurrencyPairContainer();
+                      return const AddingCurrencyPairContainer();
                     },
                   );
                 },

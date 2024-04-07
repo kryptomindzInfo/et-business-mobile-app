@@ -1,12 +1,8 @@
 import 'package:etbank_business_app/constants/app_assets.dart';
 import 'package:etbank_business_app/constants/app_colors.dart';
-import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:flutter/material.dart';
 import '../../navigation/navigation.dart';
 import '../../navigation/navigator_key.dart';
-import '../../presentation/views/common_widgets/see_all_widget.dart';
-import '../../presentation/views/home_section/home_screen_widgets/dashboard_section/dashboard_main_card.dart';
-import '../../presentation/views/home_section/home_screen_widgets/dashboard_section/dashboard_main_info_card.dart';
 import '../../presentation/views/profile_section/profile_screen_bottom_sheets/upgrade_bottom_sheet.dart';
 import '../../presentation/views/profile_section/refer_business/refer_business_screen.dart';
 
@@ -18,7 +14,7 @@ List<Map> _profileScreenOptions = [
       showModalBottomSheet(
         context: appContext,
         isScrollControlled: true,
-        builder: (context) => UpgradeBottomSheet(),
+        builder: (context) => const UpgradeBottomSheet(),
       );
     }
   },

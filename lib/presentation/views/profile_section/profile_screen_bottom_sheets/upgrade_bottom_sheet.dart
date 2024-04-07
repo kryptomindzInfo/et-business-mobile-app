@@ -7,7 +7,6 @@ import 'package:etbank_business_app/presentation/views/common_widgets/primary_bu
 import 'package:etbank_business_app/presentation/views/common_widgets/see_all_widget.dart';
 import 'package:etbank_business_app/presentation/views/profile_section/profile_screen_bottom_sheets/confirmation_bottom_sheet.dart';
 import 'package:etbank_business_app/presentation/views/profile_section/profile_screen_bottom_sheets/plans_bottom_sheet_info_text.dart';
-import 'package:etbank_business_app/presentation/views/profile_section/profile_screen_bottom_sheets/popular_widget.dart';
 import 'package:etbank_business_app/presentation/views/profile_section/profile_screen_bottom_sheets/upgrade_btm_sheet_main_Card.dart';
 import 'package:etbank_business_app/presentation/views/profile_section/profile_screen_widgets/profile_screen_chips.dart';
 import 'package:etbank_business_app/providers/profile_provider.dart';
@@ -16,7 +15,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../constants/app_assets.dart';
-import '../../../../constants/app_textstyle.dart';
 
 class UpgradeBottomSheet extends ConsumerWidget {
   const UpgradeBottomSheet({super.key});
@@ -42,7 +40,7 @@ class UpgradeBottomSheet extends ConsumerWidget {
               child: HeaderIconWithTitle(
                 title: getTranslated("select_plan", context),
                 imageicon: AppAssets.crossicon,
-                edgeinsets: EdgeInsets.only(top: 20),
+                edgeinsets: const EdgeInsets.only(top: 20),
               ),
             ),
             10.spaceY,
@@ -102,7 +100,7 @@ class UpgradeBottomSheet extends ConsumerWidget {
                         showModalBottomSheet(
                           isScrollControlled: true,
                           context: context,
-                          builder: (context) => ConfirmationBottomSheet(),
+                          builder: (context) => const ConfirmationBottomSheet(),
                         );
                       }),
                   15.spaceY,

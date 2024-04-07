@@ -2,14 +2,10 @@ import 'package:etbank_business_app/constants/icon_container.dart';
 import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../../../../constants/app_assets.dart';
-import '../../../../../../constants/app_colors.dart';
 import '../../../../../../constants/app_textstyle.dart';
 import '../../../../../../providers/cards_provider.dart';
-import '../../../../../../resources/localization/language_constrants.dart';
 
 class SettingsInfoText extends ConsumerWidget {
   final String? title;
@@ -50,7 +46,7 @@ class SettingsInfoText extends ConsumerWidget {
             ),
             Row(
               children: [
-                Container(
+                SizedBox(
                   // margin: EdgeInsets.only(right: 10),
                   width: 180,
                   child: Text(
@@ -66,7 +62,7 @@ class SettingsInfoText extends ConsumerWidget {
                 isButton
                     ? Padding(
                         padding: const EdgeInsets.only(bottom: 50),
-                        child: Container(
+                        child: SizedBox(
                           height: 20,
                           width: 20,
                           child: CupertinoSwitch(
@@ -78,7 +74,7 @@ class SettingsInfoText extends ConsumerWidget {
                           ),
                         ),
                       )
-                    : SizedBox()
+                    : const SizedBox()
               ],
             ),
           ],

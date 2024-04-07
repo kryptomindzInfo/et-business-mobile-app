@@ -8,7 +8,6 @@ import 'package:etbank_business_app/presentation/views/signup_screens/signup_des
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_widgets/black_container_widget.dart';
 import 'package:etbank_business_app/resources/localization/language_constrants.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../constants/app_assets.dart';

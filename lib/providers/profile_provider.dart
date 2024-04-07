@@ -1,12 +1,7 @@
-import 'package:etbank_business_app/constants/app_assets.dart';
-import 'package:etbank_business_app/navigation/navigation.dart';
-import 'package:etbank_business_app/navigation/navigator_key.dart';
-import 'package:etbank_business_app/presentation/views/profile_section/refer_business/refer_business_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../constants/static_data/home_screen_static_data.dart';
-import '../presentation/views/profile_section/profile_screen_bottom_sheets/upgrade_bottom_sheet.dart';
 
 final profilescreenProvider = ChangeNotifierProvider<ProfileScreenProvider>(
     (ref) => ProfileScreenProvider());

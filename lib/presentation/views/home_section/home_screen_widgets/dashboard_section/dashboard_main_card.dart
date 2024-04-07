@@ -50,10 +50,10 @@ class DashboardMainCard extends ConsumerWidget {
                         Container(
                           height: 16,
                           width: 16,
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                               shape: BoxShape.circle,
                               color: AppColors.tealColor),
-                          child: Center(
+                          child: const Center(
                             child: Icon(
                               Icons.keyboard_arrow_down_sharp,
                               size: 16,
@@ -111,11 +111,11 @@ class DashboardMainCard extends ConsumerWidget {
             ),
             20.spaceY,
             const SeeAllCommonWidget("Transactions", true),
-            InfoTextWidget(),
+            const InfoTextWidget(),
             // 10.spaceY,
-            InfoTextWidget(),
+            const InfoTextWidget(),
             // 10.spaceY,
-            InfoTextWidget(),
+            const InfoTextWidget(),
             20.spaceY,
           ],
         ),

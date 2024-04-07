@@ -19,7 +19,7 @@ class ProfileInfoCard extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Column(
       children: [
-        SeeAllCommonWidget("Profile", true),
+        const SeeAllCommonWidget("Profile", true),
         5.spaceY,
         InfoCardCommonWidget(
           color: AppColors.transparent,
@@ -32,7 +32,7 @@ class ProfileInfoCard extends ConsumerWidget {
                   showModalBottomSheet(
                     backgroundColor: AppColors.transparent,
                     context: context,
-                    builder: (context) => ThemeBottomSheet(),
+                    builder: (context) => const ThemeBottomSheet(),
                   );
                 },
               ),

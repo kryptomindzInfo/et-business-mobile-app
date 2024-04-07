@@ -34,7 +34,7 @@ class AdminFooterSection extends ConsumerWidget {
           ),
           20.spaceY,
           Container(
-            margin: EdgeInsets.only(bottom: 25),
+            margin: const EdgeInsets.only(bottom: 25),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -47,7 +47,7 @@ class AdminFooterSection extends ConsumerWidget {
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(5),
                             color: AppColors.primaryColor,
-                            image: DecorationImage(
+                            image: const DecorationImage(
                                 image: AssetImage(
                                   AppAssets.arrowleft,
                                 ),

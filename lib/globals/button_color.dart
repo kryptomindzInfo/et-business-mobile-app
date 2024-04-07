@@ -1,6 +1,4 @@
 import 'package:etbank_business_app/constants/app_colors.dart';
-import 'package:etbank_business_app/extensions/build_context.dart';
-import 'package:etbank_business_app/navigation/navigator_key.dart';
 import 'package:flutter/material.dart';
 
 // Color buttonColor(bool value) => value

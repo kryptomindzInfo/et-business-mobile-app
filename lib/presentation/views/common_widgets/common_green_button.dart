@@ -24,7 +24,7 @@ class CommonGreenButton extends ConsumerWidget {
               borderRadius: BorderRadius.circular(17),
               border: Border.all(color: AppColors.white),
               color: AppColors.primaryColor),
-          margin: EdgeInsets.only(right: 5),
+          margin: const EdgeInsets.only(right: 5),
           child: Center(
             child: Padding(
               padding: const EdgeInsets.only(left: 11, right: 11),

@@ -14,7 +14,7 @@ class IntegrationTabMainCard extends ConsumerWidget {
       child: Container(
         height: 235,
         width: double.infinity,
-        margin: EdgeInsets.only(bottom: 10),
+        margin: const EdgeInsets.only(bottom: 10),
         decoration: BoxDecoration(
             border: Border.all(color: AppColors.grassGreen),
             borderRadius: BorderRadius.circular(28)),

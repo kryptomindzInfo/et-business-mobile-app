@@ -6,7 +6,6 @@ import 'package:etbank_business_app/navigation/navigation.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/profile_pic_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../../constants/app_colors.dart';
 
 class HeaderIconWithTitle extends ConsumerWidget {
   final String? title;
@@ -110,7 +109,7 @@ class HeaderIconWithTitle extends ConsumerWidget {
                 ),
               ),
               if (profilePicWidget == true)
-                ProfilePicWidget(
+                const ProfilePicWidget(
                   image: AppAssets.profileicon,
                 ),
             ],

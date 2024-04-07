@@ -1,7 +1,6 @@
 import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/app_common_widgets.dart';
-import 'package:etbank_business_app/presentation/views/common_widgets/header_icon_with_text.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/primary_button.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/white_flexible_card.dart';
 import 'package:etbank_business_app/presentation/views/converting_currency/currency_converter_screen_widgets.dart/currency_sell_detail_texts.dart';
@@ -25,9 +24,9 @@ class CurrencySellScreen extends ConsumerWidget {
           padding: const EdgeInsets.only(left: 20, right: 20),
           child: Column(
             children: [
-              CurrencySellHeader(),
+              const CurrencySellHeader(),
               25.spaceY,
-              CommonWhiteFlexibleCard(
+              const CommonWhiteFlexibleCard(
                 widget: Column(
                   children: [
                     CurrencySellDetailTexts(
@@ -54,7 +53,7 @@ class CurrencySellScreen extends ConsumerWidget {
                 ),
               ),
               25.spaceY,
-              CurrencySellGreenCard(),
+              const CurrencySellGreenCard(),
               100.spaceY,
               PrimaryButton(
                   color: AppColors.primaryColor,

@@ -29,7 +29,7 @@ class BlackCommonBottomSheet extends ConsumerWidget {
               imageicon: AppAssets.crossicon,
               title: getTranslated(title!, context),
               description: getTranslated(subtitle!, context),
-              edgeinsets: EdgeInsets.only(top: 20),
+              edgeinsets: const EdgeInsets.only(top: 20),
             ),
             50.spaceY,
             Image.asset(

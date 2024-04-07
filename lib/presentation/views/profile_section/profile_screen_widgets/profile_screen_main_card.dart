@@ -36,12 +36,12 @@ class ProfileScreenMainCard extends ConsumerWidget {
             color: AppColors.transparent,
           ),
           child: Container(
-            margin: EdgeInsets.only(left: 20, top: 25),
+            margin: const EdgeInsets.only(left: 20, top: 25),
             child: Column(
               children: [
                 Row(
                   children: [
-                    IconContainer(
+                    const IconContainer(
                       image: AppAssets.communicationicon,
                     ),
                     20.spaceX,
@@ -57,7 +57,7 @@ class ProfileScreenMainCard extends ConsumerWidget {
                 20.spaceY,
                 Row(
                   children: [
-                    IconContainer(
+                    const IconContainer(
                       image: AppAssets.marketingicon,
                     ),
                     20.spaceX,

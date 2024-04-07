@@ -6,7 +6,6 @@ import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/app_common_widgets.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/common_button.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/header_icon_with_text.dart';
-import 'package:etbank_business_app/presentation/views/common_widgets/ready_to_use_bottom_sheet_widget.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/white_flexible_card.dart';
 import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/cards_section/cards_section_widgets/get_cards_screen_swiper.dart';
 import 'package:etbank_business_app/presentation/views/sending_currency_screens/sending_currency_widgets/verified_bottom_sheet_widget.dart';
@@ -30,7 +29,7 @@ class GetCardScreen extends ConsumerWidget {
           padding: const EdgeInsets.only(left: 20, right: 20),
           child: Column(
             children: [
-              Container(
+              SizedBox(
                 height: 215,
                 child: HeaderIconWithTitle(
                   imageicon: AppAssets.arrowLeft,
@@ -60,7 +59,7 @@ class GetCardScreen extends ConsumerWidget {
                           fontWeight: FontWeight.w600,
                           color: context.theme.colorTheme.normalTextColor),
                     ),
-                    Container(
+                    SizedBox(
                       height: 40,
                       child: Text(
                         getTranslated(
@@ -73,7 +72,7 @@ class GetCardScreen extends ConsumerWidget {
                             color: context.theme.colorTheme.normalTextColor),
                       ),
                     ),
-                    GetCardsScreenSwiper(),
+                    const GetCardsScreenSwiper(),
                     40.spaceY,
                   ],
                 ),

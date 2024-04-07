@@ -32,7 +32,7 @@ class SeeAllCommonWidget extends ConsumerWidget {
                       color: AppColors.primaryColor),
                 ),
               )
-            : SizedBox()
+            : const SizedBox()
       ],
     );
   }

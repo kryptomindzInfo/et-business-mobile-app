@@ -9,7 +9,7 @@ class StatementContainer extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Container(
       height: 450,
-      margin: EdgeInsets.only(left: 20, right: 20),
+      margin: const EdgeInsets.only(left: 20, right: 20),
       decoration: BoxDecoration(
           color: AppColors.grey, borderRadius: BorderRadius.circular(28)),
     );

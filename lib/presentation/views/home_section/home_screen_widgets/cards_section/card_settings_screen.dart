@@ -29,9 +29,9 @@ class CardSettingsScreen extends ConsumerWidget {
                 etBankLogo: true,
               ),
               30.spaceY,
-              SettingsScreenHeaderCard(),
+              const SettingsScreenHeaderCard(),
               30.spaceY,
-              CardSetupAndEditWidget()
+              const CardSetupAndEditWidget()
             ],
           ),
         ),

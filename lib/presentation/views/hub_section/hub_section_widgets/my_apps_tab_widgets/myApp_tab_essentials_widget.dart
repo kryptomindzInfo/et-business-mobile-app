@@ -28,7 +28,7 @@ class MyApptabEssentialWidget extends ConsumerWidget {
                   overflow: TextOverflow.clip),
             ),
             15.spaceY,
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 EssentialIconWithTitle(

@@ -11,7 +11,7 @@ class MyAppTabWidget extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      children: [MyAppTabMainCard(), 20.spaceY, MyApptabEssentialWidget()],
+      children: [const MyAppTabMainCard(), 20.spaceY, const MyApptabEssentialWidget()],
     );
   }
 }

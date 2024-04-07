@@ -16,7 +16,7 @@ class IntegrationTabWidget extends ConsumerWidget {
               onpress: () => showModalBottomSheet(
                     context: context,
                     isScrollControlled: true,
-                    builder: (context) => BlackCommonBottomSheet(
+                    builder: (context) => const BlackCommonBottomSheet(
                       title: "get_app_in_browser",
                       subtitle: "login_from_computer_browser",
                       buttonTitle: "done",

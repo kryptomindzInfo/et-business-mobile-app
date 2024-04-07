@@ -29,7 +29,7 @@ class CurrencySellGreenCard extends ConsumerWidget {
                   color: AppColors.black.withOpacity(0.5)),
             ),
           ),
-          Column(
+          const Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Icon(

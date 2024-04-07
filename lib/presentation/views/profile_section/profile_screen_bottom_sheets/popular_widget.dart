@@ -23,7 +23,7 @@ class PopularWidget extends ConsumerWidget {
               shape: BoxShape.circle,
               color: AppColors.black.withOpacity(0.28),
               border: Border.all(color: AppColors.tealColor),
-              image: DecorationImage(
+              image: const DecorationImage(
                   image: AssetImage(AppAssets.popularicon), scale: 2)),
           // child: Center(
           //   child: Image.asset(image!),

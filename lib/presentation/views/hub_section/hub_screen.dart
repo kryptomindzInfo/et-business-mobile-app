@@ -25,7 +25,7 @@ class HubScreen extends ConsumerWidget {
                 title: getTranslated("hub", context),
               ),
               20.spaceY,
-              HubSectionBody()
+              const HubSectionBody()
             ],
           ),
         ),

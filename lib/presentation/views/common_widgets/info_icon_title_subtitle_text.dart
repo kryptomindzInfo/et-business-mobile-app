@@ -2,13 +2,9 @@ import 'package:etbank_business_app/constants/icon_container.dart';
 import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../constants/app_assets.dart';
-import '../../../constants/app_colors.dart';
 import '../../../constants/app_textstyle.dart';
-import '../../../resources/localization/language_constrants.dart';
 
 class InfoIconTitleSubtitleText extends ConsumerWidget {
   final String imageicon;
@@ -28,7 +24,7 @@ class InfoIconTitleSubtitleText extends ConsumerWidget {
       onTap: onpress,
       child: Container(
         // color: AppColors.white,
-        margin: EdgeInsets.only(top: 20, right: 15, left: 15, bottom: 20),
+        margin: const EdgeInsets.only(top: 20, right: 15, left: 15, bottom: 20),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

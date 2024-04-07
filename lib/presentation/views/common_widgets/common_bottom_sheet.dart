@@ -10,7 +10,7 @@ showCommonModalSheet(double height, Widget widget) {
     builder: (context) => Container(
       height: height,
       width: double.infinity,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: AppColors.black,
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(20),

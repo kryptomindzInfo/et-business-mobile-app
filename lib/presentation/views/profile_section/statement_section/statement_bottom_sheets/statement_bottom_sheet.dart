@@ -20,9 +20,9 @@ statementBottomSheet() {
       child: Column(
         children: [
           20.spaceY,
-          StatementBottomSheetHeader(),
+          const StatementBottomSheetHeader(),
           15.spaceY,
-          StatementContainer(),
+          const StatementContainer(),
           20.spaceY,
           PrimaryButton(
             color: context.theme.colorTheme.buttonColor,
