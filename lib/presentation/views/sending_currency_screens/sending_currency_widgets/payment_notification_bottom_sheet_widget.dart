@@ -34,9 +34,9 @@ class PaymentNotificationBottomSheetWidget extends ConsumerWidget {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: HeaderIconWithTitle(
-                    imageicon: AppAssets.crossicon,
-                    imageIconHeight: 14,
-                    imageIconWidth: 14,
+                    // imageicon: AppAssets.crossicon,
+                    // imageIconHeight: 14,
+                    // imageIconWidth: 14,
                     title: getTranslated('payment_notif_title', context),
                     description:
                         getTranslated('payment_notif_subtitle', context),

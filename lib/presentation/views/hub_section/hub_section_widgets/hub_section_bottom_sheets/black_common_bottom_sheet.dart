@@ -26,7 +26,7 @@ class BlackCommonBottomSheet extends ConsumerWidget {
         child: Column(
           children: [
             HeaderIconWithTitle(
-              imageicon: AppAssets.crossicon,
+              // imageicon: AppAssets.crossicon,
               title: getTranslated(title!, context),
               description: getTranslated(subtitle!, context),
               edgeinsets: const EdgeInsets.only(top: 20),

@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../providers/currency_coverter_provider.dart';
+import '../common_widgets/app_common_appbar.dart';
 
 class ConverterCurrencyScreen extends ConsumerWidget {
   static const String routeName = "converter_currency_screen";
@@ -18,14 +19,17 @@ class ConverterCurrencyScreen extends ConsumerWidget {
     return BackgroundImageWidget(
       child: Scaffold(
         backgroundColor: const Color.fromRGBO(0, 0, 0, 0),
+        appBar: CommonAppBar(
+          etBankLogo: true,
+        ),
         body: Padding(
           padding: const EdgeInsets.only(left: 20, right: 20),
           child: Column(
             children: [
               HeaderIconWithTitle(
-                imageicon: AppAssets.arrowLeft,
+                // imageicon: AppAssets.arrowLeft,
                 title: getTranslated("rates", context),
-                etBankLogo: true,
+                // etBankLogo: true,
               ),
               20.spaceY,
               const RatesScreenOptionsWidget(),

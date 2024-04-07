@@ -9,6 +9,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../constants/app_assets.dart';
 import '../../../constants/app_colors.dart';
+import '../common_widgets/app_common_appbar.dart';
 import 'signup_user_home_address_screen.dart';
 import 'signup_widgets/button_bottom_navigation_widget.dart';
 import 'signup_widgets/country_and_mobileno_widget.dart';
@@ -27,6 +28,9 @@ class SignUpUserPersonalDetailsScreen extends ConsumerWidget {
     return BackgroundImageWidget(
       child: Scaffold(
         backgroundColor: AppColors.transparent,
+        appBar: CommonAppBar(
+          etBankLogo: true,
+        ),
         body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
@@ -38,7 +42,7 @@ class SignUpUserPersonalDetailsScreen extends ConsumerWidget {
                       'james_forks_personal_details_title', context),
                   description: getTranslated(
                       'james_forks_personal_details_subtitle', context),
-                  imageicon: AppAssets.arrowLeft,
+                  // imageicon: AppAssets.arrowLeft,
                 ),
                 32.spaceY,
                 UserPersonalDetailsWidget(

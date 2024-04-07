@@ -15,7 +15,7 @@ class CurrencySellHeader extends ConsumerWidget {
       children: [
         const Expanded(
           child: HeaderIconWithTitle(
-            imageicon: AppAssets.arrowLeft,
+            // imageicon: AppAssets.arrowLeft,
             title: "+\$1.35",
             greenDescription: "Sell £1",
             fontsize: 31,

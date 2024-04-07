@@ -1,5 +1,6 @@
 import 'package:etbank_business_app/constants/app_textstyle.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
+import 'package:etbank_business_app/presentation/views/common_widgets/app_common_appbar.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/app_common_widgets.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/header_icon_with_text.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_registered_business_address_screen.dart';
@@ -27,6 +28,9 @@ class SignUpBusinessDetailsScreen extends ConsumerWidget {
     return BackgroundImageWidget(
       child: Scaffold(
         backgroundColor: AppColors.transparent,
+        appBar: CommonAppBar(
+          etBankLogo: true,
+        ),
         body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
@@ -37,7 +41,7 @@ class SignUpBusinessDetailsScreen extends ConsumerWidget {
                   title: getTranslated('business_details_title', context),
                   description:
                       getTranslated('business_details_subtitle', context),
-                  imageicon: AppAssets.arrowLeft,
+                  // imageicon: AppAssets.arrowLeft,
                 ),
                 30.spaceY,
                 BusinessDetailsWhiteContainerWidet(

@@ -10,6 +10,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../constants/app_assets.dart';
 import '../../../constants/app_colors.dart';
+import '../common_widgets/app_common_appbar.dart';
 import 'signup_how_many_payments_each_month_screen.dart';
 import 'signup_widgets/button_bottom_navigation_widget.dart';
 import 'signup_widgets/primary_button.dart';
@@ -26,6 +27,9 @@ class SignUpWebsiteSocialEcommerceLinkScreen extends ConsumerWidget {
       child: Scaffold(
         extendBody: true,
         backgroundColor: AppColors.transparent,
+        appBar: CommonAppBar(
+          etBankLogo: true,
+        ),
         body: Padding(
           padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
           child: Column(
@@ -35,7 +39,7 @@ class SignUpWebsiteSocialEcommerceLinkScreen extends ConsumerWidget {
                 title: getTranslated('website_social_ecommerce_title', context),
                 description:
                     getTranslated('website_social_ecommerce_subtitle', context),
-                imageicon: AppAssets.arrowLeft,
+                // imageicon: AppAssets.arrowLeft,
               ),
               32.spaceY,
               TextFieldWidget(

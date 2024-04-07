@@ -9,6 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../constants/app_assets.dart';
 import '../../../resources/localization/language_constrants.dart';
+import '../common_widgets/app_common_appbar.dart';
 import '../common_widgets/header_icon_with_text.dart';
 import 'sending_currency_widgets/add_counter_party_widget.dart';
 
@@ -22,6 +23,9 @@ class WhoToPayScreen extends ConsumerWidget {
     return BackgroundImageWidget(
       child: Scaffold(
         backgroundColor: AppColors.transparent,
+        appBar: CommonAppBar(
+          etBankLogo: true,
+        ),
         body: Padding(
           padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
           child: Column(
@@ -29,7 +33,7 @@ class WhoToPayScreen extends ConsumerWidget {
             children: [
               HeaderIconWithTitle(
                 title: getTranslated('who_to_pay_title', context),
-                imageicon: AppAssets.arrowLeft,
+                // imageicon: AppAssets.arrowLeft,
                 widget: Image.asset(
                   AppAssets.addIconBold,
                   height: 34,

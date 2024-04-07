@@ -1,6 +1,7 @@
 import 'package:etbank_business_app/constants/app_textstyle.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/navigation/navigation.dart';
+import 'package:etbank_business_app/presentation/views/common_widgets/app_common_appbar.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/app_common_widgets.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/header_icon_with_text.dart';
 import 'package:etbank_business_app/providers/signup_provider.dart';
@@ -28,6 +29,9 @@ class SignUpWhoAreYourCustomersScreen extends ConsumerWidget {
       child: Scaffold(
         extendBody: true,
         backgroundColor: AppColors.transparent,
+        appBar: CommonAppBar(
+          etBankLogo: true,
+        ),
         body: Padding(
           padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
           child: Column(
@@ -35,7 +39,7 @@ class SignUpWhoAreYourCustomersScreen extends ConsumerWidget {
             children: [
               HeaderIconWithTitle(
                 title: getTranslated('who_are_your_customers', context),
-                imageicon: AppAssets.arrowLeft,
+                // imageicon: AppAssets.arrowLeft,
               ),
               36.spaceY,
               BlackContainerWidget(

@@ -20,7 +20,7 @@ class ProfileHeaderWidget extends ConsumerWidget {
           child: HeaderIconWithTitle(
             title: "Brooklyn Simmons",
             description: "Louis Vuitton",
-            imageicon: AppAssets.arrowLeft,
+            // imageicon: AppAssets.arrowLeft,
             etBankLogo: true,
             profilePicWidget: true,
           ),

@@ -1,4 +1,5 @@
 import 'package:etbank_business_app/extensions/sized_box.dart';
+import 'package:etbank_business_app/presentation/views/common_widgets/app_common_appbar.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/app_common_widgets.dart';
 import 'package:etbank_business_app/presentation/views/profile_section/profile_screen_widgets/profile_header_widget.dart';
 import 'package:etbank_business_app/presentation/views/profile_section/profile_screen_widgets/profile_screen_info_card.dart';
@@ -23,6 +24,9 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
     return BackgroundImageWidget(
       child: Scaffold(
         backgroundColor: AppColors.transparent,
+        appBar: CommonAppBar(
+          etBankLogo: true,
+        ),
         body: Padding(
           padding: const EdgeInsets.only(left: 20, right: 20),
           child: SingleChildScrollView(

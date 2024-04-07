@@ -12,6 +12,7 @@ import '../../../constants/app_assets.dart';
 import '../../../navigation/navigation.dart';
 import '../../../providers/invoice_request_provider.dart';
 import '../../../resources/localization/language_constrants.dart';
+import '../common_widgets/app_common_appbar.dart';
 import '../common_widgets/header_icon_with_text.dart';
 import '../signup_screens/signup_widgets/button_bottom_navigation_widget.dart';
 import '../signup_screens/signup_widgets/primary_button.dart';
@@ -30,6 +31,9 @@ class EmailMessageScreen extends ConsumerWidget {
     return BackgroundImageWidget(
       child: Scaffold(
         backgroundColor: AppColors.transparent,
+        appBar: CommonAppBar(
+          etBankLogo: true,
+        ),
         body: Padding(
           padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
           child: Column(
@@ -40,7 +44,7 @@ class EmailMessageScreen extends ConsumerWidget {
                 description: getTranslated('email_message_subtitle', context),
                 descriptionTextStyle: AppTextstyle.headingTextStyle(
                     fontSize: 14, color: AppColors.grey),
-                imageicon: AppAssets.arrowLeft,
+                // imageicon: AppAssets.arrowLeft,
               ),
               18.spaceY,
               TextFieldWidget(

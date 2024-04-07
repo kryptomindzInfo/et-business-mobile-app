@@ -33,7 +33,7 @@ class SignUpCategoryScreen extends ConsumerWidget {
               HeaderIconWithTitle(
                 title: getTranslated('category_title', context),
                 description: getTranslated('category_subtitle', context),
-                imageicon: AppAssets.arrowLeft,
+                // imageicon: AppAssets.arrowLeft,
               ),
               23.spaceY,
               TextFieldBlackWidget(

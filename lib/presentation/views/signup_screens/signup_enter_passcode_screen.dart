@@ -1,6 +1,8 @@
 import 'package:etbank_business_app/constants/app_textstyle.dart';
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/navigation/navigation.dart';
+import 'package:etbank_business_app/presentation/views/common_widgets/app_common_appbar.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/app_common_widgets.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/header_icon_with_text.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_enable_push_notif_screen.dart';
@@ -21,6 +23,17 @@ class SignUpEnterPassCodeScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return BackgroundImageWidget(
       child: Scaffold(
+        appBar: CommonAppBar(
+          // etBankLogo: true,
+          widget: Text(
+            getTranslated("enter_passcode", context),
+            style: AppTextstyle.headingTextStyle(
+                fontSize: 26,
+                fontWeight: FontWeight.w400,
+                color: context.theme.colorTheme.appbarTitleColor),
+          ),
+          // textTitle: "enter_passcode",
+        ),
         body: Padding(
           padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
           child: Column(
@@ -28,7 +41,7 @@ class SignUpEnterPassCodeScreen extends ConsumerWidget {
             children: [
               HeaderIconWithTitle(
                 title: getTranslated('enter_passcode', context),
-                imageicon: AppAssets.arrowLeft,
+                // imageicon: AppAssets.arrowLeft,
               ),
               220.spaceY,
               TextFormField(

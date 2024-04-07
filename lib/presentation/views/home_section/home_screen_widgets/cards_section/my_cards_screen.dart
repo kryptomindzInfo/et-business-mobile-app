@@ -11,6 +11,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../../constants/app_colors.dart';
+import '../../../common_widgets/app_common_appbar.dart';
 import 'cards_section_widgets/funding_amount_card.dart';
 
 // ignore: must_be_immutable
@@ -24,13 +25,16 @@ class MyCardsScreen extends ConsumerWidget {
     return BackgroundImageWidget(
       child: Scaffold(
         backgroundColor: AppColors.transparent,
+        appBar: CommonAppBar(
+          etBankLogo: true,
+        ),
         body: Padding(
           padding: const EdgeInsets.only(left: 20, right: 20),
           child: SingleChildScrollView(
             child: Column(
               children: [
                 HeaderIconWithTitle(
-                  imageicon: AppAssets.arrowLeft,
+                  // imageicon: AppAssets.arrowLeft,
                   title: getTranslated("my_cards", context),
                   etBankLogo: true,
                 ),

@@ -9,6 +9,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../constants/app_assets.dart';
 import '../../../navigation/navigation.dart';
 import '../../../resources/localization/language_constrants.dart';
+import '../common_widgets/app_common_appbar.dart';
 import '../common_widgets/header_icon_with_text.dart';
 import '../sending_currency_screens/sending_currency_widgets/currency_textfield_widget.dart';
 import '../sending_currency_screens/sending_currency_widgets/quantity_description_widget.dart';
@@ -25,6 +26,9 @@ class AddItemsScreen extends ConsumerWidget {
     return BackgroundImageWidget(
       child: Scaffold(
         backgroundColor: AppColors.transparent,
+        appBar: CommonAppBar(
+          etBankLogo: true,
+        ),
         body: Padding(
           padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
           child: Column(
@@ -32,7 +36,7 @@ class AddItemsScreen extends ConsumerWidget {
             children: [
               HeaderIconWithTitle(
                 title: getTranslated('add_items', context),
-                imageicon: AppAssets.arrowLeft,
+                // imageicon: AppAssets.arrowLeft,
               ),
               18.spaceY,
               const CurrencyTextFieldWidget(),

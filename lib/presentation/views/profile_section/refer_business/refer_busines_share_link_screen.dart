@@ -9,6 +9,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../constants/app_colors.dart';
 import '../../../../resources/localization/language_constrants.dart';
+import '../../common_widgets/app_common_appbar.dart';
 
 class ReferBusinessShareLinkScreen extends ConsumerWidget {
   static const String routeName = 'ReferBusinessShareLink_Screen';
@@ -19,20 +20,25 @@ class ReferBusinessShareLinkScreen extends ConsumerWidget {
     return BackgroundImageWidget(
       child: Scaffold(
         backgroundColor: AppColors.transparent,
+        appBar: CommonAppBar(
+          etBankLogo: true,
+        ),
         body: Padding(
           padding: const EdgeInsets.only(left: 20, right: 20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               HeaderIconWithTitle(
-                imageicon: AppAssets.arrowLeft,
+                // imageicon: AppAssets.arrowLeft,
                 title: getTranslated("refer_business", context),
                 description:
                     getTranslated("get_unlimited_free_transfer", context),
               ),
               10.spaceY,
               ShareLinkButton(
-                onpress: () {},
+                onpress: () {
+                  
+                },
               ),
               30.spaceY,
               const ReferBusinessShareLinkMainCard()

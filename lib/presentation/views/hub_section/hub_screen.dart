@@ -21,6 +21,7 @@ class HubScreen extends ConsumerWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              60.spaceY,
               HeaderIconWithTitle(
                 title: getTranslated("hub", context),
               ),

@@ -9,6 +9,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../constants/app_assets.dart';
 import '../../../constants/app_colors.dart';
+import '../common_widgets/app_common_appbar.dart';
 import 'signup_widgets/business_details_white_container_widget.dart';
 import 'signup_widgets/button_bottom_navigation_widget.dart';
 import 'signup_widgets/primary_button.dart';
@@ -24,6 +25,9 @@ class SignUpWhereYouConductBusinessScreen extends ConsumerWidget {
       child: Scaffold(
         extendBody: false,
         backgroundColor: AppColors.transparent,
+        appBar: CommonAppBar(
+          etBankLogo: true,
+        ),
         body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
@@ -35,7 +39,7 @@ class SignUpWhereYouConductBusinessScreen extends ConsumerWidget {
                       'where_do_you_conduct_business_title', context),
                   description: getTranslated(
                       'where_do_you_conduct_business_subtitle', context),
-                  imageicon: AppAssets.arrowLeft,
+                  // imageicon: AppAssets.arrowLeft,
                 ),
                 11.spaceY,
                 Text(

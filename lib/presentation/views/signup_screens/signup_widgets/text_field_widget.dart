@@ -1,5 +1,6 @@
 import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:etbank_business_app/constants/app_textstyle.dart';
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -74,9 +75,9 @@ class TextFieldWidget extends StatelessWidget {
     return Container(
       width: 360.w,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(8),
-        color: labelText != null ? AppColors.white : null,
-      ),
+          borderRadius: BorderRadius.circular(8),
+          // color: labelText != null ? AppColors.white : null,
+          border: Border.all(color: context.theme.colorTheme.borderColor)),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -112,8 +113,8 @@ class TextFieldWidget extends StatelessWidget {
             textAlign: textAlign ?? TextAlign.start,
             obscuringCharacter: '●',
             decoration: InputDecoration(
-              fillColor: fillColor ?? Colors.white,
-              filled: true,
+              // fillColor: fillColor ?? Colors.white,
+              // filled: true,
               hintText: hintText ?? '',
               errorText: errorText,
               contentPadding: contentPadding ??
@@ -123,18 +124,8 @@ class TextFieldWidget extends StatelessWidget {
                   ),
               hintStyle: hintStyle ??
                   AppTextstyle.bodyTextStyle(color: const Color(0xff191D23)),
-              enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(8),
-                borderSide: const BorderSide(
-                  color:AppColors.transparent,
-                ),
-              ),
-              focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(8),
-                borderSide: BorderSide(
-                  color: focusColor ?? AppColors.transparent,
-                ),
-              ),
+              enabledBorder: InputBorder.none,
+              focusedBorder: InputBorder.none,
               border: InputBorder.none,
             ),
           ),

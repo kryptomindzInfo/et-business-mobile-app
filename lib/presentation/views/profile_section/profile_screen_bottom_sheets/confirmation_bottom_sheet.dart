@@ -28,7 +28,7 @@ class ConfirmationBottomSheet extends ConsumerWidget {
                     child: HeaderIconWithTitle(
                       title: getTranslated("confirmation", context),
                       description: getTranslated("charge", context),
-                      imageicon: AppAssets.arrowLeft,
+                      // imageicon: AppAssets.arrowLeft,
                       edgeinsets: const EdgeInsets.only(top: 20),
                     ),
                   ),
@@ -40,7 +40,8 @@ class ConfirmationBottomSheet extends ConsumerWidget {
                         borderRadius: BorderRadius.circular(28),
                         color: AppColors.primaryColor),
                     child: Container(
-                      margin: const EdgeInsets.only(left: 25, right: 25, top: 30),
+                      margin:
+                          const EdgeInsets.only(left: 25, right: 25, top: 30),
                       child: Column(
                         children: [
                           Row(

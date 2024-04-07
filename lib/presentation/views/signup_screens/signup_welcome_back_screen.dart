@@ -22,6 +22,7 @@ class SignUpWelcomeBackScreen extends ConsumerWidget {
         title: 'welcome_back_title',
         subtitle: 'welcome_back_subtitle',
         image: AppAssets.welcomeBackImage,
+        isLogo: false,
         buttons: [
           SizedBox(
             height: 48.h,

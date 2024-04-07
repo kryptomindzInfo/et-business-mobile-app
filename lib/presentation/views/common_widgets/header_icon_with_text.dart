@@ -5,20 +5,16 @@ import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/navigation/navigation.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/profile_pic_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class HeaderIconWithTitle extends ConsumerWidget {
   final String? title;
   final String? description;
   final String? greenDescription;
-  final String? imageicon;
-  final double? imageIconHeight;
-  final double? imageIconWidth;
   final double? fontsize;
+  final String? imageicon;
   final EdgeInsetsGeometry? edgeinsets;
-  final String? trailingImage;
-  final double? trailingImageHeight;
-  final double? trailingImageWidth;
   final double? rightPadding;
   final TextStyle? descriptionTextStyle;
   final VoidCallback? onTrailingiconPress;
@@ -30,15 +26,10 @@ class HeaderIconWithTitle extends ConsumerWidget {
       this.title,
       this.description,
       this.greenDescription,
-      this.imageicon,
       this.edgeinsets,
+      this.imageicon,
       this.fontsize,
-      this.trailingImage,
-      this.trailingImageHeight,
-      this.trailingImageWidth,
       this.rightPadding,
-      this.imageIconHeight,
-      this.imageIconWidth,
       this.descriptionTextStyle,
       this.onTrailingiconPress,
       this.widget,
@@ -60,17 +51,17 @@ class HeaderIconWithTitle extends ConsumerWidget {
         //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
         //       children: [
         //         if (imageicon != null)
-        //           InkWell(
-        //             onTap: () {
-        //               Navigation.pop();
-        //             },
-        //             child: Image.asset(
-        //               imageicon!,
-        //               width: imageIconWidth ?? 25.12,
-        //               height: imageIconHeight ?? 17.94,
-        //               color: context.theme.colorTheme.blackAndWhite,
-        //             ),
-        //           ),
+        // InkWell(
+        //   onTap: () {
+        //     Navigation.pop();
+        //   },
+        //   child: Image.asset(
+        //     imageicon!,
+        //     width: imageIconWidth ?? 25.12,
+        //     height: imageIconHeight ?? 17.94,
+        //     color: context.theme.colorTheme.blackAndWhite,
+        //   ),
+        // ),
         //         if (etBankLogo != null)
         //           Padding(
         //             padding: const EdgeInsets.only(right: 45),
@@ -95,17 +86,37 @@ class HeaderIconWithTitle extends ConsumerWidget {
         //   ),
         // ),
         // 20.spaceY,
+        if (imageicon != null) 10.spaceY,
+        if (imageicon != null)
+          Row(
+            children: [
+              InkWell(
+                onTap: () {
+                  Navigation.pop();
+                },
+                child: Image.asset(
+                  imageicon!,
+                  width: 25.12,
+                  height: 17.94,
+                  color: context.theme.colorTheme.blackAndWhite,
+                ),
+              ),
+            ],
+          ),
+        if (imageicon != null) 20.spaceY,
         if (title != null)
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
-                title!,
-                style: AppTextstyle.headingTextStyle(
-                  color: context.theme.colorTheme.appbarTitleColor,
-                  fontSize: fontsize ?? 24,
-                  fontWeight: FontWeight.bold,
-                  overflow: TextOverflow.clip,
+              Expanded(
+                child: Text(
+                  title!,
+                  style: AppTextstyle.headingTextStyle(
+                    color: context.theme.colorTheme.appbarTitleColor,
+                    fontSize: fontsize ?? 24,
+                    fontWeight: FontWeight.bold,
+                    overflow: TextOverflow.clip,
+                  ),
                 ),
               ),
               if (profilePicWidget == true)
@@ -120,9 +131,9 @@ class HeaderIconWithTitle extends ConsumerWidget {
                 description!,
                 style: descriptionTextStyle ??
                     AppTextstyle.bodyTextStyle(
-                      color: context.theme.colorTheme.appbarTitleColor,
+                      color: context.theme.colorTheme.headerDescriptionColor,
                       fontSize: 16,
-                      fontWeight: FontWeight.w500,
+                      fontWeight: FontWeight.w400,
                       overflow: TextOverflow.clip,
                     ),
               )
