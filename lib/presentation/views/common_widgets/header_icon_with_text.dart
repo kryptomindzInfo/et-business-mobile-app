@@ -50,51 +50,51 @@ class HeaderIconWithTitle extends ConsumerWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SizedBox(
-          width: double.infinity,
-          child: Padding(
-            padding: edgeinsets != null
-                ? edgeinsets!
-                : EdgeInsets.only(top: 54, right: rightPadding ?? 54),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                if (imageicon != null)
-                  InkWell(
-                    onTap: () {
-                      Navigation.pop();
-                    },
-                    child: Image.asset(
-                      imageicon!,
-                      width: imageIconWidth ?? 25.12,
-                      height: imageIconHeight ?? 17.94,
-                      color: context.theme.colorTheme.blackAndWhite,
-                    ),
-                  ),
-                if (etBankLogo != null)
-                  Padding(
-                    padding: const EdgeInsets.only(right: 45),
-                    child: Image.asset(
-                      AppAssets.appbarLogo,
-                      height: 40,
-                    ),
-                  ),
-                if (trailingImage != null && widget == null)
-                  InkWell(
-                    onTap: onTrailingiconPress,
-                    child: Image.asset(
-                      trailingImage!,
-                      height: trailingImageHeight ?? 34,
-                      width: trailingImageWidth ?? 34,
-                    ),
-                  ),
-                if (widget != null && trailingImage == null)
-                  InkWell(onTap: onTrailingiconPress, child: widget!)
-              ],
-            ),
-          ),
-        ),
-        20.spaceY,
+        // SizedBox(
+        //   width: double.infinity,
+        //   child: Padding(
+        //     padding: edgeinsets != null
+        //         ? edgeinsets!
+        //         : EdgeInsets.only(top: 54, right: rightPadding ?? 54),
+        //     child: Row(
+        //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        //       children: [
+        //         if (imageicon != null)
+        //           InkWell(
+        //             onTap: () {
+        //               Navigation.pop();
+        //             },
+        //             child: Image.asset(
+        //               imageicon!,
+        //               width: imageIconWidth ?? 25.12,
+        //               height: imageIconHeight ?? 17.94,
+        //               color: context.theme.colorTheme.blackAndWhite,
+        //             ),
+        //           ),
+        //         if (etBankLogo != null)
+        //           Padding(
+        //             padding: const EdgeInsets.only(right: 45),
+        //             child: Image.asset(
+        //               AppAssets.appbarLogo,
+        //               height: 40,
+        //             ),
+        //           ),
+        //         if (trailingImage != null && widget == null)
+        //           InkWell(
+        //             onTap: onTrailingiconPress,
+        //             child: Image.asset(
+        //               trailingImage!,
+        //               height: trailingImageHeight ?? 34,
+        //               width: trailingImageWidth ?? 34,
+        //             ),
+        //           ),
+        //         if (widget != null && trailingImage == null)
+        //           InkWell(onTap: onTrailingiconPress, child: widget!)
+        //       ],
+        //     ),
+        //   ),
+        // ),
+        // 20.spaceY,
         if (title != null)
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
