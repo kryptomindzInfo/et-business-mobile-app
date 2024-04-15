@@ -26,7 +26,9 @@ class SignUpEmailScreen extends ConsumerWidget {
     return BackgroundImageWidget(
         child: Scaffold(
       backgroundColor: AppColors.transparent,
-      appBar: CommonAppBar(),
+      appBar: CommonAppBar(
+        etBankLogo: true,
+      ),
       body: Padding(
         padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
         child: Column(
@@ -34,7 +36,7 @@ class SignUpEmailScreen extends ConsumerWidget {
           children: [
             HeaderIconWithTitle(
               title: getTranslated('signup_email_title', context),
-              imageicon: AppAssets.arrowLeft,
+              // imageicon: AppAssets.arrowLeft,
               etBankLogo: true,
             ),
             SizedBox(
@@ -77,6 +79,8 @@ class SignUpEmailScreen extends ConsumerWidget {
               onPressed: () {
                 if (ref.read(signUpStateProvider).isEmailEmpty) {
                 } else {
+                  FocusScope.of(context).unfocus();
+
                   Navigation.pushNamed(SignUpCheckEmailScreen.routeName);
                 }
               },

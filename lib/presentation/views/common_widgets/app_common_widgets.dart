@@ -25,6 +25,10 @@ class BackgroundImageWidget extends ConsumerWidget {
         //   fit: BoxFit.cover,
         // ),
         // ),
-        child: child);
+        child: GestureDetector(
+            onTap: () {
+              FocusScope.of(context).unfocus();
+            },
+            child: child));
   }
 }

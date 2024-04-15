@@ -21,7 +21,8 @@ class SignUpEnablePushNotifScreen extends ConsumerWidget {
     return ImageScreenWidget(
         title: 'enable_push_notif_title',
         subtitle: 'enable_push_notif_subtitle',
-        image: AppAssets.ufoImage,
+        // image: AppAssets.ufoImage,
+        isLogo: false,
         buttons: [
           SizedBox(
             height: 48.h,

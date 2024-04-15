@@ -21,6 +21,7 @@ class SignUpTailorExperienceScreen extends ConsumerWidget {
       title: 'tailor_experience_title',
       subtitle: 'tailor_experience_subtitle',
       image: AppAssets.tailorExperienceImage,
+      isLogo: true,
       buttons: [
         SizedBox(
           height: 48.h,

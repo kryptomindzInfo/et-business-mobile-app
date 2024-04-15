@@ -22,6 +22,7 @@ class SignUpEnableFaceIdScreen extends ConsumerWidget {
       title: 'enable_face_id_title',
       subtitle: 'enable_face_id_subtitle',
       image: AppAssets.enableFaceId,
+      isLogo: true,
       buttons: [
         SizedBox(
           height: 48.h,

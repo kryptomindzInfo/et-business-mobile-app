@@ -12,6 +12,7 @@ import 'package:etbank_business_app/resources/localization/language_constrants.d
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../common_widgets/app_common_appbar.dart';
 import '../home_Screen_textfields.dart';
 
 class AssignRoleScreen extends ConsumerWidget {
@@ -23,12 +24,15 @@ class AssignRoleScreen extends ConsumerWidget {
     return BackgroundImageWidget(
       child: Scaffold(
         backgroundColor: AppColors.transparent,
+        appBar: CommonAppBar(
+          etBankLogo: true,
+        ),
         body: Padding(
           padding: const EdgeInsets.only(left: 20, right: 20),
           child: Column(
             children: [
               HeaderIconWithTitle(
-                imageicon: AppAssets.arrowLeft,
+                // imageicon: AppAssets.arrowLeft,
                 title: getTranslated("assign_role", context),
                 description: getTranslated("select_role", context),
                 // trailingImage: AppAssets.addgreenbutton,
@@ -42,7 +46,7 @@ class AssignRoleScreen extends ConsumerWidget {
                           image: AssetImage(AppAssets.plusicon), scale: 2)),
                 ),
                 rightPadding: 10,
-                trailingImageHeight: 30,
+                // trailingImageHeight: 30,
               ),
               20.spaceY,
               const HomeScreenSearchTextfield(

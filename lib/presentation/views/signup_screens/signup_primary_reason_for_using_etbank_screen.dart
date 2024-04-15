@@ -36,7 +36,7 @@ class SignUpPrimaryReasonForEtBankScreen extends ConsumerWidget {
               HeaderIconWithTitle(
                 title:
                     getTranslated('primary_reason_for_using_et_bank', context),
-                imageicon: AppAssets.arrowLeft,
+                // imageicon: AppAssets.arrowLeft,
               ),
               36.spaceY,
               BlackContainerWidget(

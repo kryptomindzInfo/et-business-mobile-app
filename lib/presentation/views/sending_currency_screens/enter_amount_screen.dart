@@ -9,6 +9,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../constants/app_assets.dart';
 import '../../../resources/localization/language_constrants.dart';
+import '../common_widgets/app_common_appbar.dart';
 import '../common_widgets/header_icon_with_text.dart';
 import '../signup_screens/signup_widgets/button_bottom_navigation_widget.dart';
 import '../signup_screens/signup_widgets/primary_button.dart';
@@ -24,20 +25,23 @@ class EnterAmountScreen extends ConsumerWidget {
     return BackgroundImageWidget(
       child: Scaffold(
         backgroundColor: AppColors.transparent,
+        appBar: CommonAppBar(
+          etBankLogo: true,
+        ),
         body: Padding(
           padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
           child: Column(
             children: [
               HeaderIconWithTitle(
-                imageicon: AppAssets.arrowLeft,
+                // imageicon: AppAssets.arrowLeft,
                 widget: Image.asset(
                   AppAssets.rkImgae,
                   height: 34,
                   width: 34,
                 ),
                 // trailingImage: AppAssets.rkImgae,
-                trailingImageHeight: 53,
-                trailingImageWidth: 53,
+                // trailingImageHeight: 53,
+                // trailingImageWidth: 53,
                 rightPadding: 0,
               ),
               40.spaceY,

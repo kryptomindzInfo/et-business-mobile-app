@@ -31,7 +31,7 @@ class TrustThisPayeeBottomSheetWidget extends ConsumerWidget {
             Column(
               children: [
                 40.spaceY,
-                const HeaderIconWithTitle(imageicon: AppAssets.crossicon),
+                const HeaderIconWithTitle(),
                 Image.asset(
                   AppAssets.trustPayee,
                   height: 100.h,

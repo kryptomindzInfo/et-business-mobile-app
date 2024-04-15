@@ -10,6 +10,8 @@ import 'package:etbank_business_app/presentation/views/converting_currency/rates
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../common_widgets/app_common_appbar.dart';
+
 class CurrencyExchangeConverterScreen extends ConsumerWidget {
   static const String routeName = 'exchange_screen';
   const CurrencyExchangeConverterScreen({super.key});
@@ -19,12 +21,15 @@ class CurrencyExchangeConverterScreen extends ConsumerWidget {
     return BackgroundImageWidget(
       child: Scaffold(
         backgroundColor: AppColors.transparent,
+        appBar: CommonAppBar(
+          etBankLogo: true,
+        ),
         body: Padding(
           padding: const EdgeInsets.only(left: 20, right: 20),
           child: Column(
             children: [
               const HeaderIconWithTitle(
-                imageicon: AppAssets.arrowLeft,
+                // imageicon: AppAssets.arrowLeft,
                 title: "SELL GBP",
                 greenDescription: "£1 = 1.3601",
                 fontsize: 31,

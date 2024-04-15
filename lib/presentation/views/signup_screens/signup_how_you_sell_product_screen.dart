@@ -11,6 +11,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../constants/app_assets.dart';
 import '../../../constants/app_colors.dart';
 import '../../../constants/static_data/signup_screen_static_data.dart';
+import '../common_widgets/app_common_appbar.dart';
 import 'signup_widgets/black_container_widget.dart';
 import 'signup_widgets/button_bottom_navigation_widget.dart';
 import 'signup_widgets/checkbox_widget.dart';
@@ -28,6 +29,9 @@ class SignUpHowYouSellProductScreen extends ConsumerWidget {
       child: Scaffold(
         extendBody: true,
         backgroundColor: AppColors.transparent,
+        appBar: CommonAppBar(
+          etBankLogo: true,
+        ),
         body: Padding(
           padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
           child: Column(
@@ -36,7 +40,7 @@ class SignUpHowYouSellProductScreen extends ConsumerWidget {
               HeaderIconWithTitle(
                 title: getTranslated(
                     'how_do_you_sell_your_product_or_service', context),
-                imageicon: AppAssets.arrowLeft,
+                // imageicon: AppAssets.arrowLeft,
               ),
               36.spaceY,
               BlackContainerWidget(

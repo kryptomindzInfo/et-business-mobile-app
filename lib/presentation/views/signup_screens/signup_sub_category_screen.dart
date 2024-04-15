@@ -34,7 +34,7 @@ class SignUpSubCategoryScreen extends ConsumerWidget {
               HeaderIconWithTitle(
                 title: getTranslated('sub_category_title', context),
                 description: getTranslated('sub_category_subtitle', context),
-                imageicon: AppAssets.arrowLeft,
+                // imageicon: AppAssets.arrowLeft,
               ),
               8.spaceY,
               Text(

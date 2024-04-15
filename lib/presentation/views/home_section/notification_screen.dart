@@ -8,6 +8,8 @@ import 'package:etbank_business_app/resources/localization/language_constrants.d
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../common_widgets/app_common_appbar.dart';
+
 class NotificationScreen extends ConsumerWidget {
   static const String routeName = "Notification_screen";
   const NotificationScreen({super.key});
@@ -17,13 +19,16 @@ class NotificationScreen extends ConsumerWidget {
     return BackgroundImageWidget(
       child: Scaffold(
         backgroundColor: AppColors.transparent,
+        appBar: CommonAppBar(
+          etBankLogo: true,
+        ),
         body: Padding(
           padding: const EdgeInsets.only(left: 20, right: 20),
           child: Column(
             children: [
               HeaderIconWithTitle(
                 title: getTranslated("inbox", context),
-                imageicon: AppAssets.arrowLeft,
+                // imageicon: AppAssets.arrowLeft,
               ),
               80.spaceY,
               Image.asset(

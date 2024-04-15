@@ -24,7 +24,7 @@ class CreateNewRoleBottomSheet extends ConsumerWidget {
         child: Column(
           children: [
             HeaderIconWithTitle(
-              imageicon: AppAssets.crossicon,
+              // imageicon: AppAssets.crossicon,
               title: getTranslated("create_new_role", context),
             ),
             70.spaceY,

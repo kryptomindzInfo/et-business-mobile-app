@@ -36,6 +36,7 @@ class AppTheme extends ThemeExtension<AppTheme> {
   final Color greyDescription;
   final Color appBackgroundColor;
   final Color appBarColor;
+  final Color headerDescriptionColor;
 
   // final Color scaffoldBgColor;
   // final Color headingColor;
@@ -76,7 +77,8 @@ class AppTheme extends ThemeExtension<AppTheme> {
       this.normallyUsedTealColor = AppColors.tealColor,
       this.greyDescription = AppColors.grey,
       this.appBackgroundColor = AppColors.darkTeal,
-      this.appBarColor = AppColors.darkTeal
+      this.appBarColor = AppColors.darkTeal,
+      this.headerDescriptionColor = AppColors.headerDescColor
 
       // this.scaffoldBgColor=AppColors.lightGreyColor,
       // this.headingColor=AppColors.black,
@@ -118,7 +120,8 @@ class AppTheme extends ThemeExtension<AppTheme> {
         normallyUsedTealColor: AppColors.tealColor,
         greyDescription: AppColors.grey,
         appBackgroundColor: AppColors.darkTeal,
-        appBarColor: AppColors.darkTeal);
+        appBarColor: AppColors.darkTeal,
+        headerDescriptionColor: AppColors.headerDescColor);
   }
 
   @override

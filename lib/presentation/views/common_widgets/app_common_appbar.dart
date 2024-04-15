@@ -1,4 +1,6 @@
+import 'package:etbank_business_app/constants/app_textstyle.dart';
 import 'package:etbank_business_app/extensions/build_context.dart';
+import 'package:etbank_business_app/resources/localization/language_constrants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -6,20 +8,24 @@ import '../../../constants/app_assets.dart';
 import '../../../constants/app_colors.dart';
 
 class CommonAppBar extends StatelessWidget implements PreferredSizeWidget {
-  final Color? bgColor;
-  final Color? logoColor;
-  const CommonAppBar({super.key, this.bgColor, this.logoColor});
+  final bool? etBankLogo;
+  final Widget? widget;
+  const CommonAppBar({super.key, this.etBankLogo, this.widget});
   @override
   Widget build(BuildContext context) {
     // ThemeData theme = Theme.of(context);
     return AppBar(
-      title: Image.asset(
-        AppAssets.appbarLogo,
-        height: 40,
-      ),
+      title: etBankLogo == true
+          ? Image.asset(
+              AppAssets.appbarLogo,
+              height: 40,
+            )
+          : widget != null
+              ? widget
+              : SizedBox(),
       centerTitle: true,
-      surfaceTintColor: AppColors.transparent,
-      elevation: 0,
+      // surfaceTintColor: AppColors.transparent,
+      // elevation: 10,
       iconTheme: IconThemeData(color: context.theme.colorTheme.blackAndWhite),
       // systemOverlayStyle: SystemUiOverlayStyle(
       //     // statusBarColor: context.theme.colorTheme.appBarColor,
@@ -29,5 +35,5 @@ class CommonAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => const Size(double.infinity, 70);
+  Size get preferredSize => const Size(double.infinity, 50);
 }

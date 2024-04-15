@@ -14,6 +14,8 @@ import 'package:etbank_business_app/resources/localization/language_constrants.d
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../common_widgets/app_common_appbar.dart';
+
 class GetCardScreen extends ConsumerWidget {
   static const String routeName = "get_card_Screen";
   const GetCardScreen({super.key});
@@ -25,20 +27,23 @@ class GetCardScreen extends ConsumerWidget {
     return BackgroundImageWidget(
       child: Scaffold(
         backgroundColor: AppColors.transparent,
+        appBar: CommonAppBar(
+          etBankLogo: true,
+        ),
         body: Padding(
           padding: const EdgeInsets.only(left: 20, right: 20),
           child: Column(
             children: [
               SizedBox(
-                height: 215,
+                height: 110,
                 child: HeaderIconWithTitle(
-                  imageicon: AppAssets.arrowLeft,
+                  // imageicon: AppAssets.arrowLeft,
                   title: getTranslated("get_card", context),
                   description: getTranslated(
                       proWatch.getCardsScreenData[proWatch.getCardsScreenIndex]
                           ["data"]["description"],
                       context),
-                  etBankLogo: true,
+                  // etBankLogo: true,
                 ),
               ),
               // 10.spaceY,
