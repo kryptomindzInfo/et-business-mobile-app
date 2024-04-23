@@ -37,6 +37,17 @@ class AppTheme extends ThemeExtension<AppTheme> {
   final Color appBackgroundColor;
   final Color appBarColor;
   final Color headerDescriptionColor;
+  final Color textfieldborderColor;
+  final Color subGrayColor;
+  final Color inActiveButtonColor;
+  final Color whiteButtonTitleColor;
+  final Color signUpContainerColor;
+  final Color whiteButtonColor;
+  final Color darkWhiteThemesheetColor;
+  final Color yellowTextColor;
+  final Color textGrassGreenColor;
+  final Color iconColor;
+  final Color commonBottomSheetColor;
 
   // final Color scaffoldBgColor;
   // final Color headingColor;
@@ -45,7 +56,7 @@ class AppTheme extends ThemeExtension<AppTheme> {
   // final Color subTitleColor;
 
   AppTheme(
-      {this.primaryColor = AppColors.primaryColor,
+      {this.primaryColor = AppColors.grassGreen,
       this.secondaryColor = AppColors.white,
       this.appbarTitleColor = AppColors.black,
       this.chipsColor = AppColors.baseGreenColor,
@@ -59,7 +70,7 @@ class AppTheme extends ThemeExtension<AppTheme> {
       this.boldTextColor = AppColors.yellowGreen,
       this.normalTextColor = AppColors.black,
       this.buttonColor = AppColors.yellowGreen,
-      this.borderColor = AppColors.tealColor,
+      this.borderColor = AppColors.black,
       this.buttonTitleColor = AppColors.black,
       this.titleColor = AppColors.yellowGreen,
       this.blackAndWhite = AppColors.black,
@@ -78,7 +89,18 @@ class AppTheme extends ThemeExtension<AppTheme> {
       this.greyDescription = AppColors.grey,
       this.appBackgroundColor = AppColors.darkTeal,
       this.appBarColor = AppColors.darkTeal,
-      this.headerDescriptionColor = AppColors.headerDescColor
+      this.headerDescriptionColor = AppColors.headerDescColor,
+      this.textfieldborderColor = AppColors.yellowGreen,
+      this.subGrayColor = AppColors.grey,
+      this.inActiveButtonColor = AppColors.grey,
+      this.whiteButtonTitleColor = AppColors.black,
+      this.signUpContainerColor = AppColors.tealColor,
+      this.whiteButtonColor = AppColors.white,
+      this.darkWhiteThemesheetColor = AppColors.darkTeal,
+      this.yellowTextColor = AppColors.yellowGreen,
+      this.textGrassGreenColor = AppColors.grassGreen,
+      this.iconColor = AppColors.white,
+      this.commonBottomSheetColor = AppColors.white
 
       // this.scaffoldBgColor=AppColors.lightGreyColor,
       // this.headingColor=AppColors.black,
@@ -89,39 +111,51 @@ class AppTheme extends ThemeExtension<AppTheme> {
 
   factory AppTheme.dark() {
     return AppTheme(
-        primaryColor: AppColors.primaryColor,
-        secondaryColor: AppColors.white,
-        chipsColor: AppColors.tealColor,
-        appbarTitleColor: AppColors.white,
-        activeChipColor: AppColors.yellowGreen,
-        blackColor: AppColors.black,
-        whiteColor: AppColors.white,
-        backgroundColor: AppColors.darkTeal,
-        yellowGreenColor: AppColors.yellowGreen,
-        cardBorderColor: AppColors.tealColor,
-        boldTextColor: AppColors.yellowGreen,
-        normalTextColor: AppColors.white,
-        buttonColor: AppColors.yellowGreen,
-        borderColor: AppColors.tealColor,
-        buttonTitleColor: AppColors.black,
-        titleColor: AppColors.yellowGreen,
-        blackAndWhite: AppColors.white,
-        whiteAndBlack: AppColors.black,
-        iconBgColor: AppColors.tealColor,
-        iconWithTitleColor: AppColors.white,
-        cardColor: AppColors.white,
-        transparentToColor: AppColors.transparent,
-        normalButtonsColor: AppColors.tealColor,
-        buttonDisabledColor: AppColors.grey,
-        indigoToColor: AppColors.indigo,
-        grassGreen: AppColors.grassGreen,
-        disableButtonColor: AppColors.continueButtonDisabledColor,
-        disableButtonTextColor: AppColors.continueTextDisabledColor,
-        normallyUsedTealColor: AppColors.tealColor,
-        greyDescription: AppColors.grey,
-        appBackgroundColor: AppColors.darkTeal,
-        appBarColor: AppColors.darkTeal,
-        headerDescriptionColor: AppColors.headerDescColor);
+      primaryColor: AppColors.primaryColor,
+      secondaryColor: AppColors.white,
+      chipsColor: AppColors.tealColor,
+      appbarTitleColor: AppColors.white,
+      activeChipColor: AppColors.yellowGreen,
+      blackColor: AppColors.black,
+      whiteColor: AppColors.white,
+      backgroundColor: AppColors.darkTeal,
+      yellowGreenColor: AppColors.yellowGreen,
+      cardBorderColor: AppColors.tealColor,
+      boldTextColor: AppColors.yellowGreen,
+      normalTextColor: AppColors.white,
+      buttonColor: AppColors.yellowGreen,
+      borderColor: AppColors.tealColor,
+      buttonTitleColor: AppColors.black,
+      titleColor: AppColors.yellowGreen,
+      blackAndWhite: AppColors.white,
+      whiteAndBlack: AppColors.black,
+      iconBgColor: AppColors.tealColor,
+      iconWithTitleColor: AppColors.white,
+      cardColor: AppColors.white,
+      transparentToColor: AppColors.transparent,
+      normalButtonsColor: AppColors.tealColor,
+      buttonDisabledColor: AppColors.grey,
+      indigoToColor: AppColors.indigo,
+      grassGreen: AppColors.grassGreen,
+      disableButtonColor: AppColors.continueButtonDisabledColor,
+      disableButtonTextColor: AppColors.continueTextDisabledColor,
+      normallyUsedTealColor: AppColors.tealColor,
+      greyDescription: AppColors.grey,
+      appBackgroundColor: AppColors.darkTeal,
+      appBarColor: AppColors.darkTeal,
+      headerDescriptionColor: AppColors.headerDescColor,
+      textfieldborderColor: AppColors.yellowGreen,
+      subGrayColor: AppColors.grey,
+      inActiveButtonColor: AppColors.grey,
+      whiteButtonTitleColor: AppColors.black,
+      signUpContainerColor: AppColors.tealColor,
+      whiteButtonColor: AppColors.white,
+      darkWhiteThemesheetColor: AppColors.darkTeal,
+      yellowTextColor: AppColors.yellowGreen,
+      textGrassGreenColor: AppColors.grassGreen,
+      iconColor: AppColors.white,
+      commonBottomSheetColor: AppColors.darkTeal,
+    );
   }
 
   @override

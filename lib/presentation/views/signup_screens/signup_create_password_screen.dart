@@ -7,12 +7,12 @@ import 'package:etbank_business_app/presentation/views/common_widgets/app_common
 import 'package:etbank_business_app/presentation/views/common_widgets/app_common_widgets.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/header_icon_with_text.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_welcome_back_screen.dart';
-import 'package:etbank_business_app/providers/signup_provider.dart';
 import 'package:etbank_business_app/resources/localization/language_constrants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../constants/app_colors.dart';
+import '../../../providers/signup_provider.dart';
 import 'signup_widgets/button_bottom_navigation_widget.dart';
 import 'signup_widgets/primary_button.dart';
 import 'signup_widgets/text_field_widget.dart';
@@ -86,9 +86,12 @@ class SignUpCreatePassword extends ConsumerWidget {
               15.spaceY,
               ref.watch(signUpStateProvider).containsSpecialCharacters
                   ? Text(
-                      getTranslated('password_conditon', context),
+                      getTranslated(
+                          'password_must_contain_special_characters', context),
                       style: AppTextstyle.bodyTextStyle(
-                          fontSize: 12.sp, color: AppColors.grey),
+                          fontSize: 12.sp,
+                          color: AppColors.grey,
+                          overflow: TextOverflow.clip),
                     )
                   : Row(
                       children: [

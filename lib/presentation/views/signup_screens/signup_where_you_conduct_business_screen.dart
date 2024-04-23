@@ -1,4 +1,5 @@
 import 'package:etbank_business_app/constants/app_textstyle.dart';
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/app_common_widgets.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/header_icon_with_text.dart';
@@ -26,8 +27,8 @@ class SignUpWhereYouConductBusinessScreen extends ConsumerWidget {
         extendBody: false,
         backgroundColor: AppColors.transparent,
         appBar: CommonAppBar(
-          etBankLogo: true,
-        ),
+            // etBankLogo: true,
+            ),
         body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
@@ -45,12 +46,12 @@ class SignUpWhereYouConductBusinessScreen extends ConsumerWidget {
                 Text(
                   getTranslated('which_countries_should_I_list', context),
                   style: AppTextstyle.bodyTextStyle(
-                      color: AppColors.baseGreenColor),
+                      color: context.theme.colorTheme.primaryColor),
                 ),
                 32.spaceY,
                 BusinessDetailsWhiteContainerWidet(
                   title: getTranslated('add_countries', context),
-                  titleTextColor: AppColors.baseGreenColor,
+                  titleTextColor: context.theme.colorTheme.primaryColor,
                 ),
                 32.spaceY,
                 Text(
@@ -63,7 +64,9 @@ class SignUpWhereYouConductBusinessScreen extends ConsumerWidget {
                   image: AppAssets.australiaRoundImage,
                   title: getTranslated('australia', context),
                   titleTextStyle: AppTextstyle.bodyTextStyle(
-                      fontWeight: FontWeight.w600, fontSize: 16),
+                      fontWeight: FontWeight.w600,
+                      fontSize: 16,
+                      color: context.theme.colorTheme.headerDescriptionColor),
                   icon: Image.asset(
                     AppAssets.crossIconBlack,
                     height: 24.h,
@@ -81,11 +84,11 @@ class SignUpWhereYouConductBusinessScreen extends ConsumerWidget {
               height: 48.h,
               width: 327.w,
               child: PrimaryButton(
-                color: AppColors.primaryColor,
+                color: context.theme.colorTheme.buttonColor,
                 text: Text(
                   getTranslated('continue', context),
                   style: AppTextstyle.bodyTextStyle(
-                      color: AppColors.black,
+                      color: context.theme.colorTheme.blackColor,
                       fontSize: 16,
                       fontWeight: FontWeight.w500),
                 ),

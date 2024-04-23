@@ -27,26 +27,34 @@ class Chips extends ConsumerWidget {
       borderRadius: BorderRadius.circular(15),
       onTap: onpress,
       child: Container(
-        padding: const EdgeInsets.all(10),
-        margin: const EdgeInsets.only(right: 20),
+        // width: 100,
+        height: 39,
+        padding: const EdgeInsets.only(left: 10, right: 10),
+        margin: const EdgeInsets.only(right: 15),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(100),
             color: color ?? context.theme.colorTheme.chipsColor),
-        child: Row(children: [
-          //?
-          if (imageicon != null)
-            Image.asset(
-              imageicon!,
-              height: 20,
-            ),
-          // : SizedBox(),
-          if (imageicon != null) 5.spaceX,
-          Text(title ?? "",
-              style: AppTextstyle.bodyTextStyle(
-                  fontWeight: FontWeight.w400,
-                  fontSize: 16,
-                  color: titleColor ?? AppColors.black))
-        ]),
+        child: Center(
+          child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                //?
+                if (imageicon != null)
+                  Image.asset(
+                    imageicon!,
+                    height: 20,
+                  ),
+                // : SizedBox(),
+                if (imageicon != null) 5.spaceX,
+                Text(title ?? "",
+                    style: AppTextstyle.bodyTextStyle(
+                        fontWeight: FontWeight.w400,
+                        fontSize: 16,
+                        color: titleColor ?? AppColors.black)),
+                if (imageicon != null) 5.spaceX,
+              ]),
+        ),
       ),
     ));
   }

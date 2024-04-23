@@ -15,7 +15,7 @@ import 'onboarding_widgets/linear_indicator_widget.dart';
 import 'onboarding_widgets/onboarding_widget.dart';
 
 class Onboarding extends ConsumerWidget {
-  static const String routeName = "my_page_view";
+  static const String routeName = "signIn_SignUp_screen";
   final List<Widget> pages = [
     const OnboardingWidget(
       title: 'onboarding1_title',
@@ -45,7 +45,7 @@ class Onboarding extends ConsumerWidget {
     OnboardingWidget(
       title: 'onboarding6_title',
       subtitle: 'onboarding6_subtitle',
-      image: AppAssets.onboardingImage6,
+      // image: AppAssets.onboardingImage6,
       isButtons: true,
       widget: Positioned(
         bottom: 60.h,

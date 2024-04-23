@@ -34,6 +34,8 @@ class AppAssets {
   static const evelyn = "${imagesDir}evelyn.png";
   static const trustPayee = "${imagesDir}trust_payee.png";
   static const appbarLogo = "${imagesDir}appbarlogo.png";
+  static const registrationImage = "${imagesDir}registrationimage.png";
+  static const greenplasticcard = "${imagesDir}greenplasticcard.png";
   //app_icons
   static const earthicon = "${iconsDir}earth.png";
   static const globeicon = "${iconsDir}globe.png";
@@ -50,6 +52,7 @@ class AppAssets {
   static const arrowLeft = "${iconsDir}arrow_left.png";
   static const gifticon = "${iconsDir}gifticon.png";
   static const planets = "${iconsDir}planets.png";
+  static const convertericon = "${iconsDir}converticon.png";
 
   // SignUp Screens
 
@@ -107,6 +110,19 @@ class AppAssets {
   static const shareicon = "${iconsDir}shareicon.png";
   static const plus = "${iconsDir}plus.png";
   static const etbankrocket = "${iconsDir}etbankrocket.png";
+  static const plancardicon = "${iconsDir}plancard.png";
+  static const submitdocicon = "${iconsDir}submitdoc.png";
+  static const verifybusinessdetailsicon =
+      "${iconsDir}verifybusinessdetails.png";
+  static const verifybusinessownersicon = "${iconsDir}verifybusinessowners.png";
+  static const identityicon = "${iconsDir}identity.png";
+  static const whitehourglass = "${iconsDir}whitehourglass.png";
+  static const letterhead = "${iconsDir}letterhead.png";
+  static const erroricon = "${iconsDir}erroricon.png";
+  static const cameraicon = "${iconsDir}cameraicon.png";
+  static const galleryicon = "${iconsDir}galleryicon.png";
+  static const docicon = "${iconsDir}docicon.png";
+  static const greendeleteicon = "${iconsDir}greendeleteicon.png";
   // Sendding Currency Flow
 
   static const addButton2x = "${iconsDir}add_button_2x.png";

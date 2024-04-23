@@ -2,6 +2,7 @@ import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:etbank_business_app/constants/app_textstyle.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -20,13 +21,17 @@ class CategoryWidget extends ConsumerWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          SizedBox(
-            width: 280.w,
-            child: Text(
-              title,
-              style: AppTextstyle.bodyTextStyle(
-                  fontSize: 16.sp, color: AppColors.white),
-              overflow: TextOverflow.clip,
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  title,
+                  style: AppTextstyle.bodyTextStyle(
+                      fontSize: 16.sp, color: AppColors.white),
+                  overflow: TextOverflow.clip,
+                ),
+              ],
             ),
           ),
           8.spaceX,

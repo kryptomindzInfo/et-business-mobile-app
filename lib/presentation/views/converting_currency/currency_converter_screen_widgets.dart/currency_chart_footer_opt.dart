@@ -23,10 +23,14 @@ class CurrencyChartFooterOpt extends ConsumerWidget {
             width: 46,
             decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: AppColors.mateBlackColor.withOpacity(0.4)),
-            child: Center(
-              child: Image.asset(image!),
-            ),
+                image: DecorationImage(image: AssetImage(image!), scale: 2),
+                color: AppColors.grey.withOpacity(0.6)),
+            // child: Center(
+            //   child: Image.asset(
+            //     image!,
+            //     fit: BoxFit.fill,
+            //   ),
+            // ),
           ),
           5.spaceY,
           Text(

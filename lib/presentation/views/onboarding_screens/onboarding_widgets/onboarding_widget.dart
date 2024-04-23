@@ -10,7 +10,7 @@ class OnboardingWidget extends StatelessWidget {
   final String title;
   final String subtitle;
   final bool isButtons;
-  final String image;
+  final String? image;
   final Widget? widget;
 
   const OnboardingWidget(
@@ -18,7 +18,7 @@ class OnboardingWidget extends StatelessWidget {
       required this.title,
       required this.subtitle,
       this.isButtons = false,
-      required this.image,
+      this.image,
       this.widget});
 
   @override
@@ -81,14 +81,15 @@ class OnboardingWidget extends StatelessWidget {
                 ],
               ),
               20.spaceY,
-              SizedBox(
-                  width: 390.w,
-                  height: 391.h,
-                  child: Image.asset(
-                    image,
-                    width: 388.w,
-                    height: 388.h,
-                  )),
+              if (image != null)
+                SizedBox(
+                    width: 390.w,
+                    height: 391.h,
+                    child: Image.asset(
+                      image!,
+                      width: 388.w,
+                      height: 388.h,
+                    )),
             ],
           ),
           widget != null ? widget! : const SizedBox()

@@ -19,7 +19,7 @@ class ReferBusinessMainCard extends ConsumerWidget {
       width: double.infinity,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(28),
-          color: AppColors.transparent,
+          // color: AppColors.transparent,
           border: Border.all(color: context.theme.colorTheme.borderColor)),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.end,

@@ -48,7 +48,7 @@ class MoreOptionsBottomSheetWidget extends ConsumerWidget {
           onpress: () {
             // Navigator.pop(context);
             // Navigation.pop();
-            showCommonModalSheet(450, const AddAccountsBottomSheet());
+            showCommonModalSheet(context, 450, const AddAccountsBottomSheet());
           },
         )
       ],

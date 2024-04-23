@@ -34,9 +34,11 @@ class DashboardMainCard extends ConsumerWidget {
             5.spaceY,
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Row(
                       children: [
@@ -72,9 +74,12 @@ class DashboardMainCard extends ConsumerWidget {
                     )
                   ],
                 ),
-                Image.asset(
-                  AppAssets.ukflag,
-                  height: 45,
+                Padding(
+                  padding: const EdgeInsets.only(top: 15),
+                  child: Image.asset(
+                    AppAssets.ukflag,
+                    height: 45,
+                  ),
                 )
               ],
             ),
@@ -91,15 +96,16 @@ class DashboardMainCard extends ConsumerWidget {
                     title: "Request",
                     onpress: () {
                       showCommonModalSheet(
+                        context,
                         460,
-                        const RequestMoneyBottomSheetWidget(),
+                        RequestMoneyBottomSheetWidget(),
                       );
                     },
                   ),
                   MainCardOption(
                     image: AppAssets.moreicon,
                     title: "More",
-                    onpress: () => showCommonModalSheet(
+                    onpress: () => showCommonModalSheet(  context,
                         450,
                         const Padding(
                           padding: EdgeInsets.only(left: 20, top: 20),

@@ -1,3 +1,4 @@
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/navigation/navigation.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_enable_face_id_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_otp_code_screen.dart';
@@ -16,6 +17,7 @@ class SignUpCreatePassCodeOTPCodeScreen extends ConsumerWidget {
       onCompleted: (value) {
         Navigation.pushNamed(SignUpEnableFaceIdScreen.routeName);
       },
+      text2Color: context.theme.colorTheme.primaryColor,
     );
   }
 }

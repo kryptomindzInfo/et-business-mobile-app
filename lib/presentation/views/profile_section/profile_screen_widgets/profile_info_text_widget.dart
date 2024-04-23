@@ -4,7 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../constants/app_colors.dart';
 import '../../../../constants/app_textstyle.dart';
-import '../../../../constants/icon_container.dart';
+import '../../common_widgets/icon_container.dart';
 
 class ProfileInfoTextWidget extends ConsumerWidget {
   final String? image;

@@ -23,7 +23,7 @@ class CommonButton extends ConsumerWidget {
     return InkWell(
       onTap: onpress,
       child: Container(
-        height: 40,
+        height: 38,
         width: width,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(70),

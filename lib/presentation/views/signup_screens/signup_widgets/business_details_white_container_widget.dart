@@ -16,6 +16,7 @@ class BusinessDetailsWhiteContainerWidet extends ConsumerWidget {
   final String? labelText;
   final String? image;
   final TextStyle? titleTextStyle;
+  final Color? borderColor;
   const BusinessDetailsWhiteContainerWidet(
       {super.key,
       required this.title,
@@ -24,7 +25,8 @@ class BusinessDetailsWhiteContainerWidet extends ConsumerWidget {
       this.titleTextColor,
       this.labelText,
       this.image,
-      this.titleTextStyle});
+      this.titleTextStyle,
+      this.borderColor});
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return GestureDetector(
@@ -32,7 +34,8 @@ class BusinessDetailsWhiteContainerWidet extends ConsumerWidget {
       child: Container(
         decoration: BoxDecoration(
             color: context.theme.colorTheme.transparentToColor,
-            border: Border.all(color: context.theme.colorTheme.borderColor),
+            border: Border.all(
+                color: borderColor ?? context.theme.colorTheme.borderColor),
             borderRadius: const BorderRadius.all(
               Radius.circular(8),
             )),
@@ -56,10 +59,23 @@ class BusinessDetailsWhiteContainerWidet extends ConsumerWidget {
                       Row(
                         children: [
                           if (image != null) ...[
-                            Image.asset(
-                              image ?? AppAssets.accountconfirmation,
-                              height: 42.h,
-                              width: 42.w,
+                            Container(
+                              height: 34,
+                              width: 34,
+                              decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: context.theme.colorTheme.blackColor
+                                      .withOpacity(0.5),
+                                  image: DecorationImage(
+                                      image: AssetImage(
+                                        image ?? AppAssets.accountconfirmation,
+                                      ),
+                                      scale: 2)),
+                              // child: Image.asset(
+
+                              //   height: 42.h,
+                              //   width: 42.w,
+                              // ),
                             ),
                             16.spaceX
                           ],

@@ -1,4 +1,5 @@
 import 'package:etbank_business_app/constants/app_textstyle.dart';
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/navigation/navigation.dart';
 import 'package:etbank_business_app/resources/localization/language_constrants.dart';
@@ -28,11 +29,11 @@ class SignUpWelcomeBackScreen extends ConsumerWidget {
             height: 48.h,
             width: 327.w,
             child: PrimaryButton(
-              color: AppColors.black,
+              color: context.theme.colorTheme.buttonColor,
               text: Text(
                 getTranslated('yes_confirm', context),
                 style: AppTextstyle.bodyTextStyle(
-                    color: AppColors.white,
+                    color: context.theme.colorTheme.whiteColor,
                     fontSize: 16,
                     fontWeight: FontWeight.w500),
               ),
@@ -46,11 +47,11 @@ class SignUpWelcomeBackScreen extends ConsumerWidget {
             height: 48.h,
             width: 327.w,
             child: PrimaryButton(
-              color: AppColors.white,
+              color: context.theme.colorTheme.inActiveButtonColor,
               text: Text(
                 getTranslated('no_not_me', context),
                 style: AppTextstyle.bodyTextStyle(
-                    color: AppColors.black,
+                    color: context.theme.colorTheme.blackAndWhite,
                     fontSize: 16,
                     fontWeight: FontWeight.w500),
               ),

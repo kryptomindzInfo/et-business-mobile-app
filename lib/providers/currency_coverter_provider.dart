@@ -14,12 +14,18 @@ final currencyScreenProvider =
         (ref) => CurrencyConverterProvider());
 
 class CurrencyConverterProvider extends ChangeNotifier {
+  final TextEditingController _firstCurrencyController =
+      TextEditingController();
+  TextEditingController get firstCurrencyController => _firstCurrencyController;
+  final TextEditingController _secondCurrencyController =
+      TextEditingController();
+  TextEditingController get secondCurrencyController =>
+      _secondCurrencyController;
   List<Map> get ratesOptions => ratesScreenOptions;
   final List<Widget> _currencyPairCards = [];
   List<Widget> get currencyPairCards => _currencyPairCards;
   int _currencyConverterTabIndex = 0;
   int get currencyConverterTabIndex => _currencyConverterTabIndex;
-
   Widget get selectedCurrencyConverterTabWidget =>
       _currencyConverterWidgets.elementAt(_currencyConverterTabIndex);
   final List<Widget> _currencyConverterWidgets = [
@@ -27,6 +33,8 @@ class CurrencyConverterProvider extends ChangeNotifier {
     const ConverterTabWidget(),
     const ActionsTabWidget()
   ];
+  bool _activateButton = false;
+  bool get activateButton => _activateButton;
   addCurrencyPairCard() {
     _currencyPairCards.add(InkWell(
         onTap: () {
@@ -38,6 +46,19 @@ class CurrencyConverterProvider extends ChangeNotifier {
 
   setCCtabIndex(int val) {
     _currencyConverterTabIndex = val;
+    notifyListeners();
+  }
+
+  activateButtonFtn() {
+    if (_firstCurrencyController.text.isNotEmpty &&
+        _secondCurrencyController.text.isNotEmpty) {
+      print("ddddddddddd");
+      _activateButton = true;
+    } else {
+      print("555555555555");
+      _activateButton = false;
+    }
+    print("///////////");
     notifyListeners();
   }
 }

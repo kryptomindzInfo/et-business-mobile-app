@@ -1,4 +1,5 @@
 import 'package:etbank_business_app/constants/app_colors.dart';
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_widgets/custom_text_field_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -33,9 +34,12 @@ class UserPersonalDetailsWidget extends ConsumerWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        decoration: const BoxDecoration(
-            color: AppColors.white,
-            borderRadius: BorderRadius.all(Radius.circular(8))),
+        decoration: BoxDecoration(
+            // color: AppColors.white,
+            borderRadius: BorderRadius.all(
+              Radius.circular(8),
+            ),
+            border: Border.all(color: context.theme.colorTheme.borderColor)),
         child: Padding(
           padding: const EdgeInsets.fromLTRB(15, 8, 15, 0),
           child: Column(
@@ -52,7 +56,7 @@ class UserPersonalDetailsWidget extends ConsumerWidget {
                           controller: controller,
                           title: title,
                           hint: hint,
-                          backgroundColor: AppColors.white,
+                          // backgroundColor: AppColors.white,
                           padding: 0,
                           readOnly: readOnly ?? false,
                           enableInteraction: enableInteraction ?? true,

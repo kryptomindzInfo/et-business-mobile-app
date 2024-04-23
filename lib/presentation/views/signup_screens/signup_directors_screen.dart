@@ -1,4 +1,5 @@
 import 'package:etbank_business_app/constants/app_textstyle.dart';
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/app_common_widgets.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/header_icon_with_text.dart';
@@ -27,8 +28,8 @@ class SignUpDirectorsScreen extends ConsumerWidget {
         extendBody: false,
         backgroundColor: AppColors.transparent,
         appBar: CommonAppBar(
-          etBankLogo: true,
-        ),
+            // etBankLogo: true,
+            ),
         body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
@@ -50,7 +51,9 @@ class SignUpDirectorsScreen extends ConsumerWidget {
                   image: AppAssets.contactpermission,
                   title: getTranslated('james_fork', context),
                   titleTextStyle: AppTextstyle.bodyTextStyle(
-                      fontWeight: FontWeight.w600, fontSize: 16),
+                      fontWeight: FontWeight.w600,
+                      fontSize: 16,
+                      color: context.theme.colorTheme.normalTextColor),
                   icon: DirectorButtonWidget(
                     title: getTranslated('edit', context),
                     buttonColor: AppColors.tealColor.withOpacity(0.3),
@@ -69,11 +72,11 @@ class SignUpDirectorsScreen extends ConsumerWidget {
               height: 48.h,
               width: 327.w,
               child: PrimaryButton(
-                color: AppColors.primaryColor,
+                color: context.theme.colorTheme.buttonColor,
                 text: Text(
-                  getTranslated('confirm', context),
+                  getTranslated('continue', context),
                   style: AppTextstyle.bodyTextStyle(
-                      color: AppColors.black,
+                      color: context.theme.colorTheme.blackColor,
                       fontSize: 16,
                       fontWeight: FontWeight.w500),
                 ),

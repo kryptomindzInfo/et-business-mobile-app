@@ -6,13 +6,13 @@ import 'package:etbank_business_app/presentation/views/common_widgets/app_common
 import 'package:etbank_business_app/presentation/views/common_widgets/app_common_widgets.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/header_icon_with_text.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_enable_push_notif_screen.dart';
-import 'package:etbank_business_app/providers/signup_provider.dart';
 import 'package:etbank_business_app/resources/localization/language_constrants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../constants/app_assets.dart';
 import '../../../constants/app_colors.dart';
+import '../../../providers/signup_provider.dart';
 
 class SignUpEnterPassCodeScreen extends ConsumerWidget {
   static const String routeName = "signup_enter_passcode";
@@ -85,7 +85,7 @@ class SignUpEnterPassCodeScreen extends ConsumerWidget {
                         child: Text(
                           getTranslated('forgot_passcode', context),
                           style: AppTextstyle.bodyTextStyle(
-                            color: AppColors.baseGreenColor,
+                            color: context.theme.colorTheme.primaryColor,
                             fontSize: 16.sp,
                           ),
                         ),

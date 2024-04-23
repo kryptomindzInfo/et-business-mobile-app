@@ -6,13 +6,13 @@ import 'package:etbank_business_app/presentation/views/common_widgets/app_common
 import 'package:etbank_business_app/presentation/views/common_widgets/app_common_widgets.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/header_icon_with_text.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_mobile_otp_code_screen.dart';
-import 'package:etbank_business_app/providers/signup_provider.dart';
 import 'package:etbank_business_app/resources/localization/language_constrants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../constants/app_assets.dart';
 import '../../../constants/app_colors.dart';
+import '../../../providers/signup_provider.dart';
 import 'signup_widgets/button_bottom_navigation_widget.dart';
 import 'signup_widgets/countries_list_widget.dart';
 import 'signup_widgets/country_drop_down_button_widget.dart';

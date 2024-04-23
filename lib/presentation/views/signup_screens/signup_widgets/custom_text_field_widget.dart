@@ -1,3 +1,4 @@
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -100,8 +101,8 @@ class _CustomTextFiledState extends State<CustomTextFiledWidget> {
                   border: InputBorder.none,
                   hintText: widget.hint,
                   hintStyle: AppTextstyle.bodyTextStyle(
-                    fontSize: 16,
-                  ),
+                      fontSize: 16,
+                      color: context.theme.colorTheme.headerDescriptionColor),
                 ),
               ),
             )),

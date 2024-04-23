@@ -2,6 +2,7 @@ import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:etbank_business_app/constants/app_textstyle.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/navigation/navigation.dart';
+import 'package:etbank_business_app/presentation/views/common_widgets/app_common_appbar.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/app_common_widgets.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/header_icon_with_text.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_describe_business_activity_screen.dart';
@@ -26,6 +27,7 @@ class SignUpSubCategoryScreen extends ConsumerWidget {
       child: Scaffold(
         extendBody: true,
         backgroundColor: AppColors.transparent,
+        appBar: CommonAppBar(),
         body: Padding(
           padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
           child: Column(

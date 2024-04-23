@@ -48,7 +48,7 @@ class ImageScreenWidget extends StatelessWidget {
                 child: image != null
                     ? Image.asset(
                         image!,
-                        height: 306.h,
+                        height: 200.h,
                         width: 306.w,
                       )
                     : SizedBox(),

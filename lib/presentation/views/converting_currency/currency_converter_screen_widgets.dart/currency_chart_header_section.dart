@@ -36,6 +36,7 @@ class CurrencyChartHeader extends ConsumerWidget {
                 Image.asset(
                   AppAssets.greenrightarrow,
                   height: 15,
+                  color: AppColors.yellowGreen,
                 ),
                 10.spaceX,
                 Text(

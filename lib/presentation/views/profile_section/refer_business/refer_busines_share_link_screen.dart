@@ -36,9 +36,7 @@ class ReferBusinessShareLinkScreen extends ConsumerWidget {
               ),
               10.spaceY,
               ShareLinkButton(
-                onpress: () {
-                  
-                },
+                onpress: () {},
               ),
               30.spaceY,
               const ReferBusinessShareLinkMainCard()
