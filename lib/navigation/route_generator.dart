@@ -1,3 +1,4 @@
+import 'package:etbank_business_app/navigation/params/onboarding_args.dart';
 import 'package:etbank_business_app/presentation/views/bottom_navigation_bar.dart';
 import 'package:etbank_business_app/presentation/views/converting_currency/rates_tab_section/currencies_chart_screen.dart';
 import 'package:etbank_business_app/presentation/views/converting_currency/rates_tab_section/currency_exchange_converter_screen.dart';
@@ -27,6 +28,7 @@ import 'package:etbank_business_app/presentation/views/sending_currency_screens/
 import 'package:etbank_business_app/presentation/views/sending_currency_screens/enter_amount_screen.dart';
 import 'package:etbank_business_app/presentation/views/sending_currency_screens/show_account_details_screen.dart';
 import 'package:etbank_business_app/presentation/views/sending_currency_screens/who_to_pay_screen.dart';
+import 'package:etbank_business_app/presentation/views/signup_screens/business_details/get_more_from_business_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/captured_picture_of_document_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/get_plastic_card_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/sign_in_sign_up_screen.dart';
@@ -95,7 +97,7 @@ class RouteGenerator {
             ));
 
       case Onboarding.routeName:
-        return route(Onboarding());
+        return route(Onboarding(params: settings.arguments as OnboardingArgs));
       case SignInSignUpScreen.routeName:
         return route(const SignInSignUpScreen());
 
@@ -375,6 +377,10 @@ class RouteGenerator {
             ));
       case ReviewScreen.routeName:
         return route(const ReviewScreen(
+            // params: settings.arguments as HomeScreenArgs?
+            ));
+      case GetMoreFromBusinessScreen.routeName:
+        return route(const GetMoreFromBusinessScreen(
             // params: settings.arguments as HomeScreenArgs?
             ));
       // case FirstScreen.routeName:

@@ -1,6 +1,7 @@
 import 'package:etbank_business_app/constants/app_assets.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/navigation/navigator_key.dart';
+import 'package:etbank_business_app/navigation/params/onboarding_args.dart';
 import 'package:etbank_business_app/providers/pageview_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -14,6 +15,7 @@ import 'onboarding_widgets/button_widget.dart';
 import 'onboarding_widgets/linear_indicator_widget.dart';
 import 'onboarding_widgets/onboarding_widget.dart';
 
+// ignore: must_be_immutable
 class Onboarding extends ConsumerWidget {
   static const String routeName = "signIn_SignUp_screen";
   final List<Widget> pages = [
@@ -81,12 +83,14 @@ class Onboarding extends ConsumerWidget {
       ),
     ),
   ];
-
-  Onboarding({super.key});
+  OnboardingArgs? params;
+  Onboarding({super.key, this.params});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final pageController = ref.read(pageControllerProvider);
+    print(params!.screens);
+    print("dddddddddddd");
 
     return Scaffold(
       body: Stack(
@@ -97,14 +101,20 @@ class Onboarding extends ConsumerWidget {
               controller: pageController,
               onPageChanged: (index) =>
                   ref.read(activePageIndexProvider.notifier).state = index,
-              itemCount: pages.length,
-              itemBuilder: (context, index) => pages[index % pages.length],
+              itemCount: params!.screens!.isNotEmpty
+                  ? params!.screens!.length
+                  : pages.length,
+              itemBuilder: (context, index) => params!.screens!.isNotEmpty
+                  ? params!.screens![index % pages.length]
+                  : pages[index % pages.length],
             ),
           ),
           LinearIndicatorWidget(
             activePageIndex: ref.watch(activePageIndexProvider),
-            widgetListLength: pages.length,
-            width: 50.w,
+            widgetListLength: params!.screens!.isNotEmpty
+                ? params!.screens!.length
+                : pages.length,
+            width: params!.width ?? 50.w,
           ),
         ],
       ),

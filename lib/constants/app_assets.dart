@@ -123,6 +123,8 @@ class AppAssets {
   static const galleryicon = "${iconsDir}galleryicon.png";
   static const docicon = "${iconsDir}docicon.png";
   static const greendeleteicon = "${iconsDir}greendeleteicon.png";
+  static const getmoreicon = "${iconsDir}getmoreicon.png";
+  static const exchangemoneyicon = "${iconsDir}exchangemoneyicon.png";
   // Sendding Currency Flow
 
   static const addButton2x = "${iconsDir}add_button_2x.png";
@@ -157,7 +159,9 @@ class AppAssets {
   static const cards = "${iconsDir}cards.png";
   static const greencheckround = "${iconsDir}greencheckround.png";
   static const arrowleft = "${iconsDir}arrowleft.png";
-
+  static const ulimitedaccounticon = "${iconsDir}ulimitedaccounticon.png";
+  static const internationpaymenticon = "${iconsDir}internationpaymenticon.png";
+  static const armouricon = "${iconsDir}armour.png";
   // Invoice and Request
 
   static const eye = "${iconsDir}eye.png";

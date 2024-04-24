@@ -4,6 +4,7 @@ import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/navigation/navigation.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/common_button.dart';
 import 'package:etbank_business_app/presentation/views/profile_section/refer_business/refer_business_screen.dart';
+import 'package:etbank_business_app/presentation/views/signup_screens/business_details/get_more_from_business_screen.dart';
 import 'package:etbank_business_app/resources/localization/language_constrants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -43,7 +44,7 @@ class BusinessDetailsBottomSheet extends ConsumerWidget {
               title: getTranslated("submit", context),
               width: 320,
               onpress: () {
-                // Navigation.pushNamed(ReferBusinessScreen.routeName);
+                Navigation.pushNamed(GetMoreFromBusinessScreen.routeName);
               },
             )
           ],
