@@ -1,3 +1,4 @@
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/providers/profile_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -22,6 +23,7 @@ class ProfileScreenOptionsWidget extends ConsumerWidget {
             title: item["title"],
             icon: item["icon"],
             onpress: item["ontap"],
+            titleColor: context.theme.colorTheme.normalTextColor,
           );
         },
       ),

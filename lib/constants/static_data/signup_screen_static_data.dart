@@ -1,3 +1,11 @@
+import 'package:etbank_business_app/navigation/navigation.dart';
+import 'package:etbank_business_app/navigation/navigator_key.dart';
+import 'package:etbank_business_app/presentation/views/common_widgets/common_bottom_sheet.dart';
+import 'package:etbank_business_app/presentation/views/profile_section/profile_screen_bottom_sheets/upgrade_bottom_sheet.dart';
+import 'package:etbank_business_app/presentation/views/signup_screens/signup_widgets/bottom_sheets/business_details_bottom_sheet.dart';
+import 'package:etbank_business_app/presentation/views/signup_screens/upload_documentation/signup_submit_documents_screen.dart';
+import 'package:flutter/material.dart';
+
 import '../app_assets.dart';
 
 List companyRoles = [
@@ -155,3 +163,53 @@ List paymentRanges = [
   '£10,000 - £100,000',
   '£100,000+',
 ];
+
+List<Map> _verificationData = [
+  {
+    "title": "submit_doc",
+    "icon": AppAssets.submitdocicon,
+    "status": "",
+    "statusicon": "",
+    "ontap": () {
+      Navigation.pushNamed(SignUpSubmitDocumentScreen.routeName);
+    }
+  },
+  {
+    "title": "verify_business",
+    "icon": AppAssets.verifybusinessdetailsicon,
+    "status": "ready_to_submit",
+    "statusicon": AppAssets.whitehourglass,
+    "ontap": () {}
+  },
+  {
+    "title": "business_details",
+    "icon": AppAssets.verifybusinessownersicon,
+    "status": "verified",
+    "statusicon": AppAssets.greencheck,
+    "ontap": () {
+      showCommonModalSheet(appContext, 300, BusinessDetailsBottomSheet());
+    }
+  },
+  {
+    "title": "order_card",
+    "icon": AppAssets.plancardicon,
+    "status": "done",
+    "statusicon": AppAssets.greencheck,
+    "ontap": () {
+      showModalBottomSheet(
+        context: appContext,
+        isScrollControlled: true,
+        builder: (context) => UpgradeBottomSheet(),
+      );
+    }
+  },
+  {
+    "title": "identity",
+    "icon": AppAssets.identityicon,
+    "status": "verified",
+    "statusicon": AppAssets.greencheck,
+    "ontap": () {}
+  }
+];
+
+List<Map> get verificationData => _verificationData;

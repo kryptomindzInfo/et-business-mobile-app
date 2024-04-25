@@ -1,8 +1,15 @@
+import 'dart:io';
+
+import 'package:etbank_business_app/navigation/navigation.dart';
+import 'package:etbank_business_app/presentation/views/signup_screens/captured_picture_of_document_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../constants/static_data/signup_screen_static_data.dart';
 import '../core/app_print.dart';
 import '../globals/countries_list.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:camera/camera.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 final signUpStateProvider = ChangeNotifierProvider((ref) => SignUpState());
 
@@ -203,6 +210,39 @@ class SignUpState extends ChangeNotifier {
 
   void setcountryOfResidence(int index) {
     _countryOfResidence = allCountries[index];
+    notifyListeners();
+  }
+
+  Future<void> requestCameraPermission() async {
+    final status = await Permission.camera.request();
+    if (status == PermissionStatus.granted) {
+      // Proceed with camera usage
+    } else if (status.isDenied) {
+      await Permission.camera.request();
+    } else if (status.isPermanentlyDenied) {
+      // Open app settings to grant permission
+      openAppSettings();
+    }
+  }
+
+  File? _idCapture;
+  File? get idCapture => _idCapture;
+
+  getCapturedDocImage(File val) {
+    _idCapture = val;
+    if (_idCapture != null) {
+      Navigation.pushNamed(CapturedImageOfDocument.routeName);
+      notifyListeners();
+    }
+  }
+
+  //verification_screen_card_data
+  List<Map> get verificationCardData => verificationData;
+  bool _isPlaceofBusiness = false;
+  bool get isPlaceOfBusiness => _isPlaceofBusiness;
+
+  isplaceOfBusinessOrNot(bool val) {
+    _isPlaceofBusiness = val;
     notifyListeners();
   }
 }

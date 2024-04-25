@@ -20,8 +20,8 @@ class ReferBusinessScreen extends ConsumerWidget {
       child: Scaffold(
         backgroundColor: AppColors.transparent,
         appBar: CommonAppBar(
-          etBankLogo: true,
-        ),
+            // etBankLogo: true,
+            ),
         body: Padding(
           padding: const EdgeInsets.only(left: 20, right: 20),
           child: Column(

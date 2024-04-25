@@ -9,7 +9,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class GetStartedSection extends ConsumerWidget {
-  const GetStartedSection({super.key});
+  final String? title;
+  final VoidCallback? onpress;
+  const GetStartedSection({super.key, this.title, this.onpress});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -29,7 +31,7 @@ class GetStartedSection extends ConsumerWidget {
             SizedBox(
               width: 160,
               child: Text(
-                getTranslated("free_instant_transfer", context),
+                title ?? getTranslated("free_instant_transfer", context),
                 style: AppTextstyle.bodyTextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.normal,
@@ -39,8 +41,9 @@ class GetStartedSection extends ConsumerWidget {
               ),
             ),
             GetStartedButton(
-              onpress: () =>
-                  Navigation.pushNamed(ReferBusinessShareLinkScreen.routeName),
+              onpress: onpress ??
+                  () => Navigation.pushNamed(
+                      ReferBusinessShareLinkScreen.routeName),
             )
           ],
         ),

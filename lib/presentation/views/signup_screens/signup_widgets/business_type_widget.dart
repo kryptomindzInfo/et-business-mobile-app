@@ -40,7 +40,7 @@ class BusinessTypeWidget extends ConsumerWidget {
                 child: Text(
                   title,
                   style: AppTextstyle.headingTextStyle(
-                      fontSize: 16.sp,
+                      fontSize: 18.sp,
                       color: context.theme.colorTheme.normalTextColor,
                       fontWeight: FontWeight.w600,
                       overflow: TextOverflow.clip),
@@ -52,7 +52,7 @@ class BusinessTypeWidget extends ConsumerWidget {
                   child: Text(
                     description ?? '',
                     style: AppTextstyle.bodyTextStyle(
-                        color: context.theme.colorTheme.greyDescription,
+                        color: context.theme.colorTheme.headerDescriptionColor,
                         overflow: TextOverflow.clip),
                   ),
                 ),

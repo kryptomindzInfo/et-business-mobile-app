@@ -1,3 +1,5 @@
+import 'package:etbank_business_app/extensions/build_context.dart';
+import 'package:etbank_business_app/resources/localization/language_constrants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -15,16 +17,27 @@ class TermsAndConditionsText extends ConsumerWidget {
           textAlign: TextAlign.center,
           text: TextSpan(children: [
             TextSpan(
-                text:
-                    "Your first month on the plan will be free. At the end of the trial period you will be transitioned to monthly plan. Plastic and virtual cards are included in all our plans. If you order a metal card (subject to availability in your country), a cancellation fee of £49 will be charged if you don't stay on your paid plan for a minimum of 3 months.",
+                text: getTranslated("terms1", context),
                 style: AppTextstyle.headingTextStyle(
                     color: AppColors.white.withOpacity(0.5),
                     fontSize: 12,
                     fontWeight: FontWeight.w500)),
             TextSpan(
-                text: "Terms & Conditions",
+                text: "£49 ",
                 style: AppTextstyle.headingTextStyle(
-                    color: AppColors.primaryColor,
+                    color: context.theme.colorTheme.yellowTextColor,
+                    fontSize: 12,
+                    fontWeight: FontWeight.w500)),
+            TextSpan(
+                text: getTranslated("terms2", context),
+                style: AppTextstyle.headingTextStyle(
+                    color: AppColors.white.withOpacity(0.5),
+                    fontSize: 12,
+                    fontWeight: FontWeight.w500)),
+            TextSpan(
+                text: getTranslated("terms3", context),
+                style: AppTextstyle.headingTextStyle(
+                    color: context.theme.colorTheme.yellowTextColor,
                     fontSize: 12,
                     fontWeight: FontWeight.w500))
           ])),

@@ -1,4 +1,5 @@
 import 'package:etbank_business_app/constants/app_textstyle.dart';
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/navigation/navigation.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/app_common_appbar.dart';
@@ -7,13 +8,13 @@ import 'package:etbank_business_app/presentation/views/common_widgets/header_ico
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_role_in_the_company_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_widgets/bottom_sheet_widget.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_widgets/text_field_widget.dart';
-import 'package:etbank_business_app/providers/signup_provider.dart';
 import 'package:etbank_business_app/resources/localization/language_constrants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../constants/app_assets.dart';
 import '../../../constants/app_colors.dart';
+import '../../../providers/signup_provider.dart';
 import 'signup_widgets/business_details_white_container_widget.dart';
 import 'signup_widgets/business_not_listed_widget.dart';
 import 'signup_widgets/button_bottom_navigation_widget.dart';
@@ -83,6 +84,7 @@ class SignUpRegisteredBusinessAddressScreen extends ConsumerWidget {
                     AppAssets.iconArrowDownBlack,
                     height: 11.h,
                     width: 22.w,
+                    color: AppColors.grey,
                   ),
                 ),
                 16.spaceY,
@@ -90,8 +92,9 @@ class SignUpRegisteredBusinessAddressScreen extends ConsumerWidget {
                   title: getTranslated('post_code', context),
                   icon: Image.asset(
                     AppAssets.iconSearchBlack,
-                    height: 14.h,
-                    width: 14.w,
+                    height: 18.h,
+                    width: 18.w,
+                    color: AppColors.grey,
                   ),
                   onTap: () {
                     showModalBottomSheet(
@@ -164,11 +167,11 @@ class SignUpRegisteredBusinessAddressScreen extends ConsumerWidget {
               height: 48.h,
               width: 327.w,
               child: PrimaryButton(
-                color: AppColors.primaryColor,
+                color: context.theme.colorTheme.buttonColor,
                 text: Text(
                   getTranslated('continue', context),
                   style: AppTextstyle.bodyTextStyle(
-                      color: AppColors.black,
+                      color: context.theme.colorTheme.blackColor,
                       fontSize: 16,
                       fontWeight: FontWeight.w500),
                 ),

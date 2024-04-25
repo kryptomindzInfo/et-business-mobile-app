@@ -45,7 +45,7 @@ class SignUpHowManyPaymentsEachMonthScreen extends ConsumerWidget {
               36.spaceY,
               BlackContainerWidget(
                 child: SizedBox(
-                  height: 280.h,
+                  height: 220.h,
                   child: ListView.builder(
                       itemCount: paymentRanges.length,
                       itemBuilder: (context, index) {

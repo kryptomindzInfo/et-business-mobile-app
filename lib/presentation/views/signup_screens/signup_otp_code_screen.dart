@@ -107,14 +107,14 @@ class OTPVerification extends ConsumerWidget {
                             context.theme.colorTheme.normalTextColor,
                       ),
                     ),
-                    TextSpan(
-                      text: getTranslated(text3 ?? 'login', context),
-                      style: AppTextstyle.bodyTextStyle(
-                        fontSize: 16.sp,
-                        color: context.theme.colorTheme.normalTextColor,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
+                    // TextSpan(
+                    //   text: getTranslated(text3 ?? 'login', context),
+                    //   style: AppTextstyle.bodyTextStyle(
+                    //     fontSize: 16.sp,
+                    //     color: context.theme.colorTheme.primaryColor,
+                    //     fontWeight: FontWeight.w600,
+                    //   ),
+                    // ),
                   ],
                 ),
               ),

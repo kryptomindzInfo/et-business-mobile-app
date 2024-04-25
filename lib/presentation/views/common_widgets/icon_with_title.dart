@@ -1,4 +1,4 @@
-import 'package:etbank_business_app/constants/icon_container.dart';
+import 'package:etbank_business_app/presentation/views/common_widgets/icon_container.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -9,19 +9,22 @@ class IconWithTitle extends ConsumerWidget {
   final String title;
   final VoidCallback? onpress;
   final Color? titleColor;
+  final double? topSpacing;
   const IconWithTitle(
       {super.key,
       required this.imageicon,
       required this.title,
       this.onpress,
-      this.titleColor});
+      this.titleColor,
+      this.topSpacing});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return InkWell(
       onTap: onpress,
       child: Container(
-        margin: const EdgeInsets.only(top: 20, right: 15, left: 15, bottom: 20),
+        margin: EdgeInsets.only(
+            top: topSpacing ?? 20, right: 15, left: 15, bottom: 20),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [

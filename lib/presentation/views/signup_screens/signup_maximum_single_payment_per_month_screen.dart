@@ -1,4 +1,5 @@
 import 'package:etbank_business_app/constants/app_textstyle.dart';
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/app_common_widgets.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/header_icon_with_text.dart';
@@ -64,11 +65,11 @@ class SignUpMaximumSinglePaymentPerMonthScreen extends ConsumerWidget {
               height: 48.h,
               width: 327.w,
               child: PrimaryButton(
-                color: AppColors.primaryColor,
+                color: context.theme.colorTheme.buttonColor,
                 text: Text(
                   getTranslated('continue', context),
                   style: AppTextstyle.bodyTextStyle(
-                      color: AppColors.black,
+                      color: context.theme.colorTheme.blackColor,
                       fontSize: 16,
                       fontWeight: FontWeight.w500),
                 ),

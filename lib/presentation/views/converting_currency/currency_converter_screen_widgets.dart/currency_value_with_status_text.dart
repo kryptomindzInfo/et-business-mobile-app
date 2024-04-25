@@ -22,7 +22,7 @@ class CurrencyValueWithStatusText extends ConsumerWidget {
             style: AppTextstyle.bodyTextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.w600,
-                color: context.theme.colorTheme.whiteAndBlack),
+                color: context.theme.colorTheme.normalTextColor),
           ),
           5.spaceY,
           Text(
@@ -30,7 +30,7 @@ class CurrencyValueWithStatusText extends ConsumerWidget {
             style: AppTextstyle.bodyTextStyle(
                 fontSize: 12,
                 fontWeight: FontWeight.w500,
-                color: context.theme.colorTheme.whiteAndBlack),
+                color: context.theme.colorTheme.normalTextColor),
           )
         ],
       ),

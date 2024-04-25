@@ -1,3 +1,4 @@
+import 'package:etbank_business_app/navigation/params/onboarding_args.dart';
 import 'package:etbank_business_app/presentation/views/bottom_navigation_bar.dart';
 import 'package:etbank_business_app/presentation/views/converting_currency/rates_tab_section/currencies_chart_screen.dart';
 import 'package:etbank_business_app/presentation/views/converting_currency/rates_tab_section/currency_exchange_converter_screen.dart';
@@ -27,7 +28,13 @@ import 'package:etbank_business_app/presentation/views/sending_currency_screens/
 import 'package:etbank_business_app/presentation/views/sending_currency_screens/enter_amount_screen.dart';
 import 'package:etbank_business_app/presentation/views/sending_currency_screens/show_account_details_screen.dart';
 import 'package:etbank_business_app/presentation/views/sending_currency_screens/who_to_pay_screen.dart';
+import 'package:etbank_business_app/presentation/views/signup_screens/business_details/get_more_from_business_screen.dart';
+import 'package:etbank_business_app/presentation/views/signup_screens/captured_picture_of_document_screen.dart';
+import 'package:etbank_business_app/presentation/views/signup_screens/get_plastic_card_screen.dart';
+import 'package:etbank_business_app/presentation/views/signup_screens/sign_in_sign_up_screen.dart';
+import 'package:etbank_business_app/presentation/views/signup_screens/signup_confirm_delivery_address.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_primary_reason_for_using_etbank_screen.dart';
+import 'package:etbank_business_app/presentation/views/signup_screens/signup_proof_residency_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_role_in_the_company_screen.dart';
 import 'package:etbank_business_app/presentation/views/profile_section/statement_section/monthly_statement_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_business_details_screen.dart';
@@ -40,8 +47,13 @@ import 'package:etbank_business_app/presentation/views/signup_screens/signup_ena
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_enter_passcode_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_mobile_num_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_registered_business_address_screen.dart';
+import 'package:etbank_business_app/presentation/views/signup_screens/upload_documentation/choose_document_screen.dart';
+import 'package:etbank_business_app/presentation/views/signup_screens/upload_documentation/incorporation_document_screen.dart';
+import 'package:etbank_business_app/presentation/views/signup_screens/upload_documentation/review_screen.dart';
+import 'package:etbank_business_app/presentation/views/signup_screens/upload_documentation/signup_submit_documents_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_tailor_experience_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_user_personal_details_screen.dart';
+import 'package:etbank_business_app/presentation/views/signup_screens/signup_verifications_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_verify_identities_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_verify_users_identity_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_welcome_back_screen.dart';
@@ -85,7 +97,9 @@ class RouteGenerator {
             ));
 
       case Onboarding.routeName:
-        return route(Onboarding());
+        return route(Onboarding(params: settings.arguments as OnboardingArgs));
+      case SignInSignUpScreen.routeName:
+        return route(const SignInSignUpScreen());
 
       case SignUpEmailScreen.routeName:
         return route(const SignUpEmailScreen());
@@ -328,7 +342,47 @@ class RouteGenerator {
       case ContractorScreen.routeName:
         return route(const ContractorScreen(
             // params: settings.arguments as HomeScreenArgs?
-            )); 
+            ));
+      case ProofOfResidencyScreen.routeName:
+        return route(const ProofOfResidencyScreen(
+            // params: settings.arguments as HomeScreenArgs?
+            ));
+      case CapturedImageOfDocument.routeName:
+        return route(const CapturedImageOfDocument(
+            // params: settings.arguments as HomeScreenArgs?
+            ));
+      case SignUpVerificationsScreen.routeName:
+        return route(const SignUpVerificationsScreen(
+            // params: settings.arguments as HomeScreenArgs?
+            ));
+      case GetPlasticCardScreen.routeName:
+        return route(const GetPlasticCardScreen(
+            // params: settings.arguments as HomeScreenArgs?
+            ));
+      case SignupConfirmDeliveryAddress.routeName:
+        return route(const SignupConfirmDeliveryAddress(
+            // params: settings.arguments as HomeScreenArgs?
+            ));
+      case SignUpSubmitDocumentScreen.routeName:
+        return route(const SignUpSubmitDocumentScreen(
+            // params: settings.arguments as HomeScreenArgs?
+            ));
+      case ChooseDocumentScreen.routeName:
+        return route(const ChooseDocumentScreen(
+            // params: settings.arguments as HomeScreenArgs?
+            ));
+      case IncorporationDocumentScreen.routeName:
+        return route(const IncorporationDocumentScreen(
+            // params: settings.arguments as HomeScreenArgs?
+            ));
+      case ReviewScreen.routeName:
+        return route(const ReviewScreen(
+            // params: settings.arguments as HomeScreenArgs?
+            ));
+      case GetMoreFromBusinessScreen.routeName:
+        return route(const GetMoreFromBusinessScreen(
+            // params: settings.arguments as HomeScreenArgs?
+            ));
       // case FirstScreen.routeName:
       //   return route(FirstScreen(
       //       firstScreenArgs: settings.arguments as FirstScreenArgs));

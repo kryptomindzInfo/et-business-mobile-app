@@ -1,4 +1,5 @@
 import 'package:etbank_business_app/constants/app_textstyle.dart';
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/app_common_widgets.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/header_icon_with_text.dart';
@@ -50,15 +51,20 @@ class SignUpVerifyIdentitiesScreen extends ConsumerWidget {
                 16.spaceY,
                 Container(
                   decoration: BoxDecoration(
-                      color: AppColors.white,
-                      borderRadius: BorderRadius.circular(8)),
+                      color: AppColors.transparent,
+                      borderRadius: BorderRadius.circular(8),
+                      border: Border.all(
+                          color: context.theme.colorTheme.borderColor)),
                   child: Column(
                     children: [
                       BusinessDetailsWhiteContainerWidet(
                         image: AppAssets.contactpermission,
                         title: getTranslated('james_fork', context),
                         titleTextStyle: AppTextstyle.bodyTextStyle(
-                            fontWeight: FontWeight.w600, fontSize: 16),
+                          fontWeight: FontWeight.w600,
+                          fontSize: 16,
+                          color: context.theme.colorTheme.normalTextColor,
+                        ),
                         icon: DirectorButtonWidget(
                           title: getTranslated('verify', context),
                           buttonColor: AppColors.tealColor.withOpacity(0.3),
@@ -66,19 +72,25 @@ class SignUpVerifyIdentitiesScreen extends ConsumerWidget {
                               color: AppColors.tealColor, fontSize: 16.sp),
                         ),
                         onTap: () {},
+                        borderColor: Colors.transparent,
                       ),
                       BusinessDetailsWhiteContainerWidet(
                         image: AppAssets.contactpermission,
                         title: getTranslated('james_fork', context),
                         titleTextStyle: AppTextstyle.bodyTextStyle(
-                            fontWeight: FontWeight.w600, fontSize: 16),
+                          fontWeight: FontWeight.w600,
+                          fontSize: 16,
+                          color: context.theme.colorTheme.normalTextColor,
+                        ),
                         icon: DirectorButtonWidget(
                           title: getTranslated('verify', context),
                           buttonColor: AppColors.tealColor.withOpacity(0.3),
                           titleTextStyle: AppTextstyle.bodyTextStyle(
                               color: AppColors.tealColor, fontSize: 16.sp),
                         ),
+                        // titleTextColor:
                         onTap: () {},
+                        borderColor: Colors.transparent,
                       ),
                     ],
                   ),
@@ -93,11 +105,11 @@ class SignUpVerifyIdentitiesScreen extends ConsumerWidget {
               height: 48.h,
               width: 327.w,
               child: PrimaryButton(
-                color: AppColors.primaryColor,
+                color: context.theme.colorTheme.buttonColor,
                 text: Text(
                   getTranslated('confirm', context),
                   style: AppTextstyle.bodyTextStyle(
-                      color: AppColors.black,
+                      color: context.theme.colorTheme.buttonTitleColor,
                       fontSize: 16,
                       fontWeight: FontWeight.w500),
                 ),
