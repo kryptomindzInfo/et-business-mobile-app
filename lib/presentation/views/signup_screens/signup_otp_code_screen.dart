@@ -87,7 +87,7 @@ class OTPVerification extends ConsumerWidget {
                 enablePinAutofill: true,
                 onCompleted: onCompleted,
               ),
-              20.spaceY,
+              // 10.spaceY,
               Text(
                 getTranslated(text1 ?? 'resend_code', context),
                 style: AppTextstyle.bodyTextStyle(
@@ -95,6 +95,7 @@ class OTPVerification extends ConsumerWidget {
                   color: text1Color ?? context.theme.colorTheme.normalTextColor,
                 ),
               ),
+              10.spaceY,
               RichText(
                 text: TextSpan(
                   children: [
@@ -104,7 +105,7 @@ class OTPVerification extends ConsumerWidget {
                       style: AppTextstyle.bodyTextStyle(
                         fontSize: 16.sp,
                         color: text2Color ??
-                            context.theme.colorTheme.normalTextColor,
+                            context.theme.colorTheme.headerDescriptionColor,
                       ),
                     ),
                     // TextSpan(

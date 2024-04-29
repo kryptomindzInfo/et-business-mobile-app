@@ -55,13 +55,13 @@ class SignUpRoleInTheCompanyScreen extends ConsumerWidget {
                           children: [
                             Padding(
                               padding: const EdgeInsets.only(top: 8.0),
-                              child: CustomRadioButtonWidget(
-                                isSelected: index ==
-                                    ref.watch(signUpStateProvider).selectedRole,
-                                onTap: () => ref
-                                    .read(signUpStateProvider)
-                                    .changeRole(index),
-                              ),
+                              child: CustomCheckBox(
+                                  // isSelected: index ==
+                                  //     ref.watch(signUpStateProvider).selectedRole,
+                                  // onTap: () => ref
+                                  //     .read(signUpStateProvider)
+                                  //     .changeRole(index),
+                                  ),
                             ),
                             8.spaceX,
                             BusinessTypeWidget(

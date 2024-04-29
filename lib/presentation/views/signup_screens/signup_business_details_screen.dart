@@ -46,40 +46,39 @@ class SignUpBusinessDetailsScreen extends ConsumerWidget {
                 ),
                 30.spaceY,
                 BusinessDetailsWhiteContainerWidet(
-                  onTap: () {
-                    showModalBottomSheet(
-                        backgroundColor: AppColors.black,
-                        isScrollControlled: true,
-                        context: context,
-                        builder: (context) {
-                          return BottomSheetWidet(
-                            onChanged: (value) {},
-                            onCancelTap: () {},
-                            bottomNavigationBody: CountriesListWidget(
-                              onTap: (x) {},
-                            ),
-                          );
-                        });
-                  },
-                  labelText: getTranslated('country', context),
-                  title: ref
-                              .watch(signUpStateProvider)
-                              .countryOfIncorporation ==
-                          ''
-                      ? getTranslated('county_of_incorporation', context)
-                      : ref.watch(signUpStateProvider).countryOfIncorporation!,
-                  titleTextColor:
-                      ref.watch(signUpStateProvider).countryOfIncorporation ==
-                              ''
-                          ? Colors.grey
-                          : Colors.black,
-                  icon: Image.asset(
-                    AppAssets.iconArrowDownBlack,
-                    height: 11.h,
-                    width: 22.w,
-                    color: AppColors.grey,
-                  ),
-                ),
+                    onTap: () {
+                      showModalBottomSheet(
+                          backgroundColor: AppColors.black,
+                          isScrollControlled: true,
+                          context: context,
+                          builder: (context) {
+                            return BottomSheetWidet(
+                              onChanged: (value) {},
+                              onCancelTap: () {},
+                              bottomNavigationBody: CountriesListWidget(
+                                onTap: (x) {},
+                              ),
+                            );
+                          });
+                    },
+                    labelText: getTranslated('country', context),
+                    title:
+                        ref.watch(signUpStateProvider).countryOfIncorporation ==
+                                ''
+                            ? getTranslated('county_of_incorporation', context)
+                            : ref
+                                .watch(signUpStateProvider)
+                                .countryOfIncorporation!,
+                    titleTextColor:
+                        ref.watch(signUpStateProvider).countryOfIncorporation ==
+                                ''
+                            ? context.theme.colorTheme.normalTextColor
+                            : Colors.black,
+                    icon: Icon(
+                      Icons.keyboard_arrow_down_outlined,
+                      size: 35,
+                      color: context.theme.colorTheme.iconColor,
+                    )),
                 16.spaceY,
                 BusinessDetailsWhiteContainerWidet(
                   title: getTranslated('legal_name', context),
@@ -104,7 +103,7 @@ class SignUpBusinessDetailsScreen extends ConsumerWidget {
                     AppAssets.iconSearchBlack,
                     height: 18.h,
                     width: 18.w,
-                    color: AppColors.grey,
+                    color: context.theme.colorTheme.iconColor,
                   ),
                 ),
                 16.spaceY,
@@ -113,6 +112,10 @@ class SignUpBusinessDetailsScreen extends ConsumerWidget {
                       'company_house_registration_number', context),
                   title: 'A1213454',
                   onTap: () {},
+                  icon: Image.asset(
+                    AppAssets.whitecross,
+                    scale: 2,
+                  ),
                 ),
                 8.spaceY,
                 Text(
@@ -129,17 +132,23 @@ class SignUpBusinessDetailsScreen extends ConsumerWidget {
                 ),
                 16.spaceY,
                 BusinessDetailsWhiteContainerWidet(
-                  labelText: getTranslated('business_type', context),
-                  title: getTranslated('private_limited_company', context),
-                  onTap: () {},
-                ),
+                    labelText: getTranslated('business_type', context),
+                    title: getTranslated('private_limited_company', context),
+                    onTap: () {},
+                    icon: Icon(
+                      Icons.keyboard_arrow_down_outlined,
+                      size: 35,
+                      color: context.theme.colorTheme.iconColor,
+                    )),
                 16.spaceY,
                 BusinessNotListedWidet(
                   title: getTranslated('known_by_different_name', context),
                   tilteStyle: AppTextstyle.bodyTextStyle(
-                    fontSize: 19.sp,
-                  ),
+                      fontSize: 16.sp,
+                      color: context.theme.colorTheme.normalTextColor),
+                  isRadioButton: true,
                 ),
+                20.spaceY,
               ],
             ),
           ),

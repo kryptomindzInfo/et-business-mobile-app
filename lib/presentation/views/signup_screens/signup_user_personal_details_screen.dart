@@ -99,7 +99,7 @@ class SignUpUserPersonalDetailsScreen extends ConsumerWidget {
                   onTap: () {},
                 ),
                 16.spaceY,
-                const CountryAndMobileNoWidget(),
+                // const CountryAndMobileNoWidget(),
               ],
             ),
           ),

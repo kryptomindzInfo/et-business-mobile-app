@@ -1,3 +1,4 @@
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -16,21 +17,26 @@ class TextFieldBlackWidget extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return SizedBox(
+    return Container(
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(30),
+          border: Border.all(color: context.theme.colorTheme.borderColor)),
       height: 35.h,
       child: TextFormField(
         onChanged: onChanged,
         style: AppTextstyle.bodyTextStyle(color: AppColors.white),
         decoration: InputDecoration(
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(28.0),
-          ),
+          // border: OutlineInputBorder(
+          //   borderRadius: BorderRadius.circular(28.0),
+          // ),
           contentPadding: EdgeInsets.symmetric(
-            horizontal: 114.w,
-          ),
-          filled: true,
-
-          fillColor: AppColors.mateBlackColor,
+              // horizontal: 90.w,
+              vertical: 9),
+          // filled: true,
+          disabledBorder: InputBorder.none,
+          enabledBorder: InputBorder.none,
+          focusedBorder: InputBorder.none,
+          // fillColor: AppColors.mateBlackColor,
           // prefixIconConstraints:
           //     BoxConstraints(maxHeight: 14.h, maxWidth: 14.w),
           hintText: hintText ?? getTranslated('search_country', context),

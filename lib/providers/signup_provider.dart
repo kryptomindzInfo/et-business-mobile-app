@@ -245,4 +245,18 @@ class SignUpState extends ChangeNotifier {
     _isPlaceofBusiness = val;
     notifyListeners();
   }
+
+  bool _knowByDifferentName = false;
+  bool get knownByDifferentName => _knowByDifferentName;
+
+  setknownByDifferentName() {
+    _knowByDifferentName = !_knowByDifferentName;
+    notifyListeners();
+  }
+
+  // set knownByDifferentName(bool val) {
+  //   _knowByDifferentName = val;
+  //   print(_knowByDifferentName);
+  //   notifyListeners();
+  // }
 }

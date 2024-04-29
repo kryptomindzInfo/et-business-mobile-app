@@ -20,8 +20,11 @@ class CountryAndMobileNoWidget extends ConsumerWidget {
     return Row(
       children: [
         CountryDropDownButtonWidget(
-          title:
-              '${userPersonalDetailsSelectedCountry?.flag}${userPersonalDetailsSelectedCountry?.name.substring(0, 3)} ${userPersonalDetailsSelectedCountry?.dialCode}',
+          countryCode: userPersonalDetailsSelectedCountry?.dialCode,
+          countryFlag: userPersonalDetailsSelectedCountry?.flag,
+          countryName: userPersonalDetailsSelectedCountry?.name.substring(0, 3),
+          // title:
+          //     '${}${} ${}',
           onTap: () {
             showModalBottomSheet(
                 context: context,

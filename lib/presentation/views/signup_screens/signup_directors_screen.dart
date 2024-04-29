@@ -58,7 +58,8 @@ class SignUpDirectorsScreen extends ConsumerWidget {
                     title: getTranslated('edit', context),
                     buttonColor: AppColors.tealColor.withOpacity(0.3),
                     titleTextStyle: AppTextstyle.bodyTextStyle(
-                        color: AppColors.tealColor, fontSize: 16.sp),
+                        color: context.theme.colorTheme.whiteColor,
+                        fontSize: 16.sp),
                   ),
                   onTap: () {},
                 ),

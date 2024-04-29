@@ -21,6 +21,9 @@ class AppColors {
   static const yellowGreen = Color(0xffDEFC65);
   static const indigo = Color(0xff8B8CE6);
   static const headerDescColor = Color(0xffBEBEBE);
+  static const darkGrassGreen = Color(0xff00804F);
+
+  static const iconGreyColor = Color(0xff6F6F70);
   // static const accountDetails = Color(0xFF4B4B4C);
   // static const signInButtonColor = Color.fromRGBO(0, 73, 83, 1);
   // static const signUpButtonColor = Color.fromRGBO(0, 253, 156, 1);

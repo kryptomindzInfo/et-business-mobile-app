@@ -51,8 +51,10 @@ class SignUpMobileNoScreen extends ConsumerWidget {
                 child: Row(
                   children: [
                     CountryDropDownButtonWidget(
-                      title:
-                          '${selectedCountry?.flag} ${selectedCountry?.code} ${selectedCountry?.dialCode}',
+                      countryFlag: selectedCountry?.flag,
+                      countryCode: selectedCountry?.dialCode,
+                      countryName: selectedCountry?.code,
+                      // '${selectedCountry?.flag} ${selectedCountry?.code} ${selectedCountry?.dialCode}',
                       onTap: () {
                         showModalBottomSheet(
                           context: context,
@@ -71,7 +73,10 @@ class SignUpMobileNoScreen extends ConsumerWidget {
                     14.spaceX,
                     Expanded(
                       child: TextFieldWidget(
-                        style: const TextStyle(color: Colors.black),
+                        style: AppTextstyle.bodyTextStyle(
+                            color: context.theme.colorTheme.normalTextColor,
+                            fontSize: 16,
+                            fontWeight: FontWeight.w400),
                         controller:
                             ref.read(signUpStateProvider).mobileNoController,
                         hintText: getTranslated('mobile_no', context),

@@ -32,7 +32,7 @@ class RequestMoneyWhiteContainerWidget extends ConsumerWidget {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              if (imageicon != null) 
+              if (imageicon != null)
                 // Image.asset(
                 //   imageicon ?? '',
                 //   height: 35,

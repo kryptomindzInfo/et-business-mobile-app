@@ -69,7 +69,8 @@ class SignUpVerifyIdentitiesScreen extends ConsumerWidget {
                           title: getTranslated('verify', context),
                           buttonColor: AppColors.tealColor.withOpacity(0.3),
                           titleTextStyle: AppTextstyle.bodyTextStyle(
-                              color: AppColors.tealColor, fontSize: 16.sp),
+                              color: context.theme.colorTheme.whiteColor,
+                              fontSize: 16.sp),
                         ),
                         onTap: () {},
                         borderColor: Colors.transparent,
@@ -86,7 +87,8 @@ class SignUpVerifyIdentitiesScreen extends ConsumerWidget {
                           title: getTranslated('verify', context),
                           buttonColor: AppColors.tealColor.withOpacity(0.3),
                           titleTextStyle: AppTextstyle.bodyTextStyle(
-                              color: AppColors.tealColor, fontSize: 16.sp),
+                              color: context.theme.colorTheme.whiteColor,
+                              fontSize: 16.sp),
                         ),
                         // titleTextColor:
                         onTap: () {},

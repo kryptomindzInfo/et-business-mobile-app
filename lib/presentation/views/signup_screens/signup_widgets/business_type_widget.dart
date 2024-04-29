@@ -1,6 +1,7 @@
 import 'package:etbank_business_app/constants/app_textstyle.dart';
 import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
+import 'package:etbank_business_app/presentation/views/common_widgets/icon_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -26,10 +27,13 @@ class BusinessTypeWidget extends ConsumerWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Image.asset(
-            image,
-            height: 34.h,
-            width: 34.w,
+          // Image.asset(
+          //   image,
+          //   height: 34.h,
+          //   width: 34.w,
+          // ),
+          IconContainer(
+            image: image,
           ),
           16.spaceX,
           Column(

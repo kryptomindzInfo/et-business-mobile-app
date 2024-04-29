@@ -45,7 +45,7 @@ class RequestMoneyBottomSheetWidget extends ConsumerWidget {
                       // height: 20,
                     ), //AppAssets.paymentLink,
                     title: 'payment_link',
-                    subtitle: 'share_a_link_and_get_paid_online' "dddddddddddddddddddddd",
+                    subtitle: 'share_a_link_and_get_paid_online',
                     onpress: () {},
                   ),
                   8.spaceY,

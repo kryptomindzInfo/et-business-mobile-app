@@ -50,7 +50,7 @@ class MyApp extends ConsumerWidget {
         ],
         navigatorKey: navigatorKey,
         onGenerateRoute: RouteGenerator.generateRoute,
-        initialRoute: SignUpEmailScreen.routeName,
+        initialRoute: SignInSignUpScreen.routeName,
         // initialRoute: SignUpVerificationsScreen.routeName,
       ),
     );

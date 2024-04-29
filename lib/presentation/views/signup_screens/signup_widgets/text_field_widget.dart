@@ -73,9 +73,11 @@ class TextFieldWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 59,
       width: 360.w,
+      padding: EdgeInsets.symmetric(vertical: 3),
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(8),
+          borderRadius: BorderRadius.circular(12),
           // color: labelText != null ? AppColors.white : null,
           border: Border.all(color: context.theme.colorTheme.borderColor)),
       child: Column(
@@ -112,22 +114,38 @@ class TextFieldWidget extends StatelessWidget {
             obscureText: obscureText ?? false,
             textAlign: textAlign ?? TextAlign.start,
             obscuringCharacter: '●',
+            // cursorHeight: 30,
+
             decoration: InputDecoration(
-              // fillColor: fillColor ?? Colors.white,
-              // filled: true,
-              hintText: hintText ?? '',
-              errorText: errorText,
-              contentPadding: contentPadding ??
-                  EdgeInsets.only(
-                    left: 10,
-                    bottom: bottomContentPadding ?? 0,
-                  ),
-              hintStyle: hintStyle ??
-                  AppTextstyle.bodyTextStyle(color: const Color(0xff191D23)),
-              enabledBorder: InputBorder.none,
-              focusedBorder: InputBorder.none,
-              border: InputBorder.none,
-            ),
+                // fillColor: fillColor ?? Colors.white,
+                // filled: true,
+                // floatingLabelAlignment: FloatingLabelAlignment.start,
+                // alignLabelWithHint: true,
+                floatingLabelBehavior: FloatingLabelBehavior.auto,
+                label: Text(
+                  hintText ?? '',
+                  style: hintStyle ??
+                      AppTextstyle.bodyTextStyle(
+                          color:
+                              context.theme.colorTheme.headerDescriptionColor,
+                          fontSize: 16),
+                ),
+                // hintText: hintText ?? '',
+                errorText: errorText,
+                suffixIcon: suffixIcon != null
+                    ? InkWell(onTap: onSuffixIconTap, child: suffixIcon)
+                    : null,
+                contentPadding: contentPadding ??
+                    EdgeInsets.only(
+                      left: 15,
+                      bottom: bottomContentPadding ?? 0,
+                    ),
+                hintStyle: hintStyle ??
+                    AppTextstyle.bodyTextStyle(color: const Color(0xff191D23)),
+                enabledBorder: InputBorder.none,
+                focusedBorder: InputBorder.none,
+                border: InputBorder.none,
+                constraints: BoxConstraints(maxHeight: 200)),
           ),
         ],
       ),

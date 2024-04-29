@@ -8,7 +8,8 @@ import '../../../../constants/app_assets.dart';
 import '../../../../constants/app_textstyle.dart';
 
 class InfoTextWidget extends ConsumerWidget {
-  const InfoTextWidget({super.key});
+  final Color? marketPriceColor;
+  const InfoTextWidget({super.key, this.marketPriceColor});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -62,8 +63,8 @@ class InfoTextWidget extends ConsumerWidget {
                 "+\$1.36",
                 style: AppTextstyle.bodyTextStyle(
                     fontSize: 12,
-                    color: context.theme.colorTheme.normalTextColor
-                        .withOpacity(0.4),
+                    color: marketPriceColor ??
+                        context.theme.colorTheme.normalTextColor,
                     fontWeight: FontWeight.w400),
               )
             ],

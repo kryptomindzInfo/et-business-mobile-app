@@ -38,7 +38,7 @@ class SignUpSubmitDocumentScreen extends ConsumerWidget {
               getTranslated("to_do", context),
               style: AppTextstyle.bodyTextStyle(
                   fontSize: 16,
-                  color: context.theme.colorTheme.normalTextColor),
+                  color: context.theme.colorTheme.headerDescriptionColor),
             ),
             10.spaceY,
             CommonWhiteFlexibleCard(
@@ -48,7 +48,8 @@ class SignUpSubmitDocumentScreen extends ConsumerWidget {
                 children: [
                   CommonIconTitleIconButton(
                     iconImage: AppAssets.letterhead,
-                    title: getTranslated("shareholder_structure", context),isForwardIcon: true,
+                    title: getTranslated("shareholder_structure", context),
+                    isForwardIcon: true,
                     onpress: () {
                       Navigation.pushNamed(ChooseDocumentScreen.routeName);
                     },
@@ -56,7 +57,8 @@ class SignUpSubmitDocumentScreen extends ConsumerWidget {
                   CommonIconTitleIconButton(
                     iconImage: AppAssets.letterhead,
                     title: getTranslated("director_structure", context),
-                    onpress: () {},isForwardIcon: true,
+                    onpress: () {},
+                    isForwardIcon: true,
                   )
                 ],
               ),

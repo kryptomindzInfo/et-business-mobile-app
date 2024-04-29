@@ -41,11 +41,14 @@ class SignUpEmailScreen extends ConsumerWidget {
             ),
             SizedBox(
               child: TextFieldWidget(
-                style: const TextStyle(color: Colors.black),
+                style: AppTextstyle.bodyTextStyle(
+                    color: context.theme.colorTheme.normalTextColor,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w400),
                 controller: ref.read(signUpStateProvider).emailController,
                 hintText: getTranslated('signup_email_title', context),
                 hintStyle: AppTextstyle.bodyTextStyle(
-                  color: AppColors.grey,
+                  color: context.theme.colorTheme.headerDescriptionColor,
                   fontSize: 16,
                   fontWeight: FontWeight.w400,
                 ),

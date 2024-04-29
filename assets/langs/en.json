@@ -468,13 +468,10 @@
    "create_accounts":"Create unlimited accounts",
    "create_accounts_description":"Stay organised with as many accounts as you need for your business. Create one for each team member or client",
    "recieve_international_payment":"Receive international payments",
-   "recieve_international_payment_description":"Get local and international account details to receive payments in different currencies"
-
-   
-   
-
-
-   
-   
-   
+   "recieve_international_payment_description":"Get local and international account details to receive payments in different currencies",
+   "account_manager":"Account manager",
+   "get_in_touch":"Get in touch to opimise your plane",
+   "email_hasnt_arrived":"Email hasn’t arrived? You can retry in ",
+   "enter_manually":"Enter manually",
+   "send_invitaion":"Send Invitation"
 }

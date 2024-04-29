@@ -78,13 +78,13 @@ class SignUpRegisteredBusinessAddressScreen extends ConsumerWidget {
                   titleTextColor:
                       ref.watch(signUpStateProvider).countryOfIncorporation ==
                               ''
-                          ? Colors.grey
+                          ? context.theme.colorTheme.normalTextColor
                           : Colors.black,
                   icon: Image.asset(
                     AppAssets.iconArrowDownBlack,
                     height: 11.h,
                     width: 22.w,
-                    color: AppColors.grey,
+                    color: context.theme.colorTheme.iconColor,
                   ),
                 ),
                 16.spaceY,
@@ -94,7 +94,7 @@ class SignUpRegisteredBusinessAddressScreen extends ConsumerWidget {
                     AppAssets.iconSearchBlack,
                     height: 18.h,
                     width: 18.w,
-                    color: AppColors.grey,
+                    color: context.theme.colorTheme.iconColor,
                   ),
                   onTap: () {
                     showModalBottomSheet(
@@ -145,13 +145,14 @@ class SignUpRegisteredBusinessAddressScreen extends ConsumerWidget {
                   hintStyle: AppTextstyle.bodyTextStyle(color: AppColors.grey),
                   style: AppTextstyle.bodyTextStyle(color: AppColors.black),
                 ),
+                16.spaceY,
                 Text(
                   getTranslated('optional', context),
                   style: AppTextstyle.bodyTextStyle(
                       fontSize: 16.sp, color: Colors.grey),
                   overflow: TextOverflow.clip,
                 ),
-                16.spaceY,
+                2.spaceY,
                 TextFieldWidget(
                   hintText: getTranslated('city', context),
                   hintStyle: AppTextstyle.bodyTextStyle(color: AppColors.grey),

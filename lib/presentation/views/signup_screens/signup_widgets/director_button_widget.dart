@@ -1,5 +1,6 @@
 import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:etbank_business_app/constants/app_textstyle.dart';
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -26,11 +27,11 @@ class DirectorButtonWidget extends ConsumerWidget {
     return Container(
       width: width,
       decoration: BoxDecoration(
-        color: buttonColor ?? AppColors.tealColor,
-        borderRadius: const BorderRadius.all(
-          Radius.circular(8),
-        ),
-      ),
+          color: buttonColor ?? AppColors.tealColor,
+          borderRadius: const BorderRadius.all(
+            Radius.circular(8),
+          ),
+          border: Border.all(color: context.theme.colorTheme.borderColor)),
       child: Padding(
         padding: padding ?? const EdgeInsets.all(8.0),
         child: Row(
@@ -48,7 +49,8 @@ class DirectorButtonWidget extends ConsumerWidget {
               title,
               style: titleTextStyle ??
                   AppTextstyle.bodyTextStyle(
-                      color: AppColors.white, fontSize: 16.sp),
+                      color: context.theme.colorTheme.whiteColor,
+                      fontSize: 16.sp),
             ),
           ],
         ),

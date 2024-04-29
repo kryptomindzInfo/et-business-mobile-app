@@ -23,6 +23,7 @@ class SignUpCheckEmailScreen extends ConsumerWidget {
       subtitle: 'check_email_subtitle',
       image: AppAssets.checkEmailImage,
       isLogo: true,
+      isEmailArrivedText: true,
       buttons: [
         SizedBox(
           height: 48.h,

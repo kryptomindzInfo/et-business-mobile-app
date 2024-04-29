@@ -1,4 +1,5 @@
 import 'package:etbank_business_app/constants/app_assets.dart';
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/icon_container.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/resources/localization/language_constrants.dart';
@@ -23,7 +24,7 @@ class ProfileScreenMainCard extends ConsumerWidget {
             style: AppTextstyle.bodyTextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.w600,
-                color: AppColors.white),
+                color: context.theme.colorTheme.normalTextColor),
           ),
         ),
         10.spaceY,
@@ -50,7 +51,7 @@ class ProfileScreenMainCard extends ConsumerWidget {
                       style: AppTextstyle.bodyTextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.w600,
-                          color: AppColors.white),
+                          color: context.theme.colorTheme.normalTextColor),
                     ),
                   ],
                 ),
@@ -58,25 +59,25 @@ class ProfileScreenMainCard extends ConsumerWidget {
                 Row(
                   children: [
                     const IconContainer(
-                      image: AppAssets.marketingicon,
+                      image: AppAssets.singlewhiteperson,
                     ),
                     20.spaceX,
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          getTranslated('marketing_coordinator', context),
+                          getTranslated('account_manager', context),
                           style: AppTextstyle.bodyTextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.w600,
-                              color: AppColors.white),
+                              color: context.theme.colorTheme.normalTextColor),
                         ),
                         Text(
-                          getTranslated('caring_marketing', context),
+                          getTranslated('get_in_touch', context),
                           style: AppTextstyle.bodyTextStyle(
                               fontSize: 12,
                               fontWeight: FontWeight.w600,
-                              color: AppColors.white),
+                              color: context.theme.colorTheme.iconBgColor),
                         ),
                       ],
                     ),

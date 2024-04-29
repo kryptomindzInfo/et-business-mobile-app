@@ -58,6 +58,7 @@ class SignUpDescribeBusinessActivityScreen extends ConsumerWidget {
                   ref.read(signUpStateProvider).notify();
                 },
               ),
+              20.spaceY,
               Text(
                 getTranslated('please_provide_at_least_50_characters', context),
                 style: AppTextstyle.bodyTextStyle(

@@ -56,10 +56,13 @@ class SignUpWebsiteSocialEcommerceLinkScreen extends ConsumerWidget {
                   ref.read(signUpStateProvider).notify();
                 },
               ),
-              Text(
-                getTranslated('dont_have_a_website', context),
-                style: AppTextstyle.bodyTextStyle(
-                  color: context.theme.colorTheme.primaryColor,
+              20.spaceY,
+              Center(
+                child: Text(
+                  getTranslated('dont_have_a_website', context),
+                  style: AppTextstyle.bodyTextStyle(
+                    color: context.theme.colorTheme.grassGreen,
+                  ),
                 ),
               ),
             ],

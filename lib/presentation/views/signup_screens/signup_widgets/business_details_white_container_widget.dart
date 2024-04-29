@@ -37,64 +37,73 @@ class BusinessDetailsWhiteContainerWidet extends ConsumerWidget {
             border: Border.all(
                 color: borderColor ?? context.theme.colorTheme.borderColor),
             borderRadius: const BorderRadius.all(
-              Radius.circular(8),
+              Radius.circular(12),
             )),
         child: Padding(
           padding: const EdgeInsets.all(15),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              if (labelText != null)
-                Text(
-                  labelText ?? 'country',
-                  style: AppTextstyle.bodyTextStyle(
-                      color: context.theme.colorTheme.blackAndWhite),
-                ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  if (labelText != null)
+                    Text(
+                      labelText ?? 'country',
+                      style: AppTextstyle.bodyTextStyle(
+                          color:
+                              context.theme.colorTheme.headerDescriptionColor),
+                    ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          if (image != null) ...[
-                            Container(
-                              height: 34,
-                              width: 34,
-                              decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  color: context.theme.colorTheme.blackColor
-                                      .withOpacity(0.5),
-                                  image: DecorationImage(
-                                      image: AssetImage(
-                                        image ?? AppAssets.accountconfirmation,
-                                      ),
-                                      scale: 2)),
-                              // child: Image.asset(
+                          Row(
+                            children: [
+                              if (image != null) ...[
+                                Container(
+                                  height: 34,
+                                  width: 34,
+                                  decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      color: context.theme.colorTheme.blackColor
+                                          .withOpacity(0.5),
+                                      image: DecorationImage(
+                                          image: AssetImage(
+                                            image ??
+                                                AppAssets.accountconfirmation,
+                                          ),
+                                          scale: 2)),
+                                  // child: Image.asset(
 
-                              //   height: 42.h,
-                              //   width: 42.w,
-                              // ),
-                            ),
-                            16.spaceX
-                          ],
-                          Text(
-                            title,
-                            style: titleTextStyle ??
-                                AppTextstyle.bodyTextStyle(
-                                    fontSize: 16.sp,
-                                    color: titleTextColor ??
-                                        context.theme.colorTheme.blackAndWhite),
+                                  //   height: 42.h,
+                                  //   width: 42.w,
+                                  // ),
+                                ),
+                                16.spaceX
+                              ],
+                              Text(
+                                title,
+                                style: titleTextStyle ??
+                                    AppTextstyle.bodyTextStyle(
+                                        fontSize: 16.sp,
+                                        color: titleTextColor ??
+                                            context.theme.colorTheme
+                                                .normalTextColor),
+                              ),
+                            ],
                           ),
+                          // if (icon != null)
                         ],
                       ),
-                      if (icon != null)
-                        if (icon != null) icon!
                     ],
                   ),
                 ],
               ),
+              if (icon != null) icon!,
             ],
           ),
         ),

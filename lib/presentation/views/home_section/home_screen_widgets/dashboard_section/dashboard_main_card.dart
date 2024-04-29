@@ -105,7 +105,8 @@ class DashboardMainCard extends ConsumerWidget {
                   MainCardOption(
                     image: AppAssets.moreicon,
                     title: "More",
-                    onpress: () => showCommonModalSheet(  context,
+                    onpress: () => showCommonModalSheet(
+                        context,
                         450,
                         const Padding(
                           padding: EdgeInsets.only(left: 20, top: 20),
@@ -117,11 +118,17 @@ class DashboardMainCard extends ConsumerWidget {
             ),
             20.spaceY,
             const SeeAllCommonWidget("Transactions", true),
-            const InfoTextWidget(),
+            InfoTextWidget(
+              marketPriceColor: context.theme.colorTheme.grassGreen,
+            ),
             // 10.spaceY,
-            const InfoTextWidget(),
+            InfoTextWidget(
+              marketPriceColor: context.theme.colorTheme.redColor,
+            ),
             // 10.spaceY,
-            const InfoTextWidget(),
+            InfoTextWidget(
+              marketPriceColor: context.theme.colorTheme.redColor,
+            ),
             20.spaceY,
           ],
         ),

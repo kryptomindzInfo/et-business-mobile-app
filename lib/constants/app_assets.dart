@@ -53,6 +53,7 @@ class AppAssets {
   static const gifticon = "${iconsDir}gifticon.png";
   static const planets = "${iconsDir}planets.png";
   static const convertericon = "${iconsDir}converticon.png";
+  static const singlewhiteperson = "${iconsDir}singlewhiteperson.png";
 
   // SignUp Screens
 
@@ -125,6 +126,7 @@ class AppAssets {
   static const greendeleteicon = "${iconsDir}greendeleteicon.png";
   static const getmoreicon = "${iconsDir}getmoreicon.png";
   static const exchangemoneyicon = "${iconsDir}exchangemoneyicon.png";
+  static const whitecross = "${iconsDir}whitecross.png";
   // Sendding Currency Flow
 
   static const addButton2x = "${iconsDir}add_button_2x.png";

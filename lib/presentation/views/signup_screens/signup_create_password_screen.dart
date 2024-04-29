@@ -51,8 +51,9 @@ class SignUpCreatePassword extends ConsumerWidget {
                           ref.watch(signUpStateProvider).isObscured
                               ? Icons.visibility_off
                               : Icons.visibility,
-                          color: AppColors.grey,
+                          color: AppColors.white,
                         ),
+                        // suffix: Icon(Icons.remove_red_eye),
                         fillColor: ref
                                 .watch(signUpStateProvider)
                                 .containsSpecialCharacters
@@ -63,7 +64,10 @@ class SignUpCreatePassword extends ConsumerWidget {
                               .read(signUpStateProvider)
                               .togglePasswordVisibility();
                         },
-                        style: const TextStyle(color: Colors.black),
+                        style: AppTextstyle.bodyTextStyle(
+                            color: context.theme.colorTheme.normalTextColor,
+                            fontSize: 16,
+                            fontWeight: FontWeight.w400),
                         controller:
                             ref.read(signUpStateProvider).passwordController,
                         hintText: getTranslated('password', context),

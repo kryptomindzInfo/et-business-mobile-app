@@ -35,7 +35,7 @@ class CommonIconTitleIconButton extends ConsumerWidget {
                   Text(
                     title!,
                     style: AppTextstyle.bodyTextStyle(
-                        color: context.theme.colorTheme.normalTextColor,
+                        color: context.theme.colorTheme.headerDescriptionColor,
                         fontSize: 16,
                         fontWeight: FontWeight.normal),
                   ),
@@ -45,7 +45,8 @@ class CommonIconTitleIconButton extends ConsumerWidget {
             isForwardIcon
                 ? Icon(
                     Icons.arrow_forward_ios,
-                    color: context.theme.colorTheme.iconColor,
+                    color: context.theme.colorTheme.headerDescriptionColor,
+                    size: 18,
                   )
                 : SizedBox()
           ],

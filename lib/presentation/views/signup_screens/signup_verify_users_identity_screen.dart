@@ -111,7 +111,7 @@ class SignUpVerifyUserIdentityScreen extends ConsumerWidget {
               child: PrimaryButton(
                 color: context.theme.colorTheme.buttonColor,
                 text: Text(
-                  getTranslated('confirm', context),
+                  getTranslated('enter_manually', context),
                   style: AppTextstyle.bodyTextStyle(
                       color: context.theme.colorTheme.buttonTitleColor,
                       fontSize: 16,
@@ -128,11 +128,11 @@ class SignUpVerifyUserIdentityScreen extends ConsumerWidget {
               height: 48.h,
               width: 327.w,
               child: PrimaryButton(
-                color: context.theme.colorTheme.whiteButtonColor,
+                color: context.theme.colorTheme.disableButtonColor,
                 text: Text(
-                  getTranslated('not_now', context),
+                  getTranslated('send_invitaion', context),
                   style: AppTextstyle.bodyTextStyle(
-                      color: context.theme.colorTheme.whiteButtonTitleColor,
+                      color: context.theme.colorTheme.whiteColor,
                       fontSize: 16,
                       fontWeight: FontWeight.w500),
                 ),
