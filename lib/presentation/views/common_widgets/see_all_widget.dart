@@ -22,14 +22,17 @@ class SeeAllCommonWidget extends ConsumerWidget {
               color: AppColors.white),
         ),
         isSeeAll
-            ? Text(
-                "See All",
-                style: AppTextstyle.bodyTextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w400,
-                    color: AppColors.primaryColor),
+            ? Padding(
+                padding: const EdgeInsets.only(right: 15),
+                child: Text(
+                  "See All",
+                  style: AppTextstyle.bodyTextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w400,
+                      color: AppColors.primaryColor),
+                ),
               )
-            : SizedBox()
+            : const SizedBox()
       ],
     );
   }
