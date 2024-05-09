@@ -4,11 +4,20 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../common_widgets/chips.dart';
 
 class HomeChips extends ConsumerWidget {
-  final String title;
-  const HomeChips(this.title, {super.key});
+  final String? title;
+  final Color? color;
+  final Color? titleColor;
+  final VoidCallback? onpress;
+  const HomeChips(
+      {super.key, this.title, this.color, this.onpress, this.titleColor});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return Chips(title);
+    return Chips(
+      title: title,
+      color: color,
+      onpress: onpress,
+      titleColor: titleColor,
+    );
   }
 }
