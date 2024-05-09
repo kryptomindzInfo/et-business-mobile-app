@@ -1,4 +1,3 @@
-import 'package:etbank_business_app/constants/app_assets.dart';
 import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
@@ -29,7 +28,7 @@ class SignUpRoleInTheCompanyScreen extends ConsumerWidget {
     return BackgroundImageWidget(
       child: Scaffold(
         backgroundColor: AppColors.transparent,
-        appBar: CommonAppBar(
+        appBar: const CommonAppBar(
           etBankLogo: true,
         ),
         extendBody: true,
@@ -53,15 +52,9 @@ class SignUpRoleInTheCompanyScreen extends ConsumerWidget {
                         child: Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Padding(
-                              padding: const EdgeInsets.only(top: 8.0),
-                              child: CustomCheckBox(
-                                  // isSelected: index ==
-                                  //     ref.watch(signUpStateProvider).selectedRole,
-                                  // onTap: () => ref
-                                  //     .read(signUpStateProvider)
-                                  //     .changeRole(index),
-                                  ),
+                            const Padding(
+                              padding: EdgeInsets.only(top: 8.0),
+                              child: CustomCheckBox(),
                             ),
                             8.spaceX,
                             BusinessTypeWidget(

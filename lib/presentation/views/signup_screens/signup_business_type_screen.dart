@@ -22,7 +22,7 @@ class SignUpBusinessTypeScreen extends ConsumerWidget {
     return BackgroundImageWidget(
       child: Scaffold(
         backgroundColor: AppColors.transparent,
-        appBar: CommonAppBar(
+        appBar: const CommonAppBar(
           etBankLogo: true,
         ),
         body: Padding(
@@ -35,24 +35,28 @@ class SignUpBusinessTypeScreen extends ConsumerWidget {
                 // imageicon: AppAssets.arrowLeft,
                 etBankLogo: true,
               ),
-              40.spaceY,
+              10.spaceY,
               BusinessTypeWidget(
                 image: AppAssets.companyIcon,
                 title: getTranslated('company', context),
                 description: getTranslated('company_desc', context),
+                arrowForward: true,
                 onPressed: () {
                   Navigation.pushNamed(SignUpMobileNoScreen.routeName);
                 },
               ),
               32.spaceY,
               BusinessTypeWidget(
-                  image: AppAssets.freelancerIcon,
-                  title: getTranslated('freelancer', context),
-                  description: getTranslated('freelancer_desc', context)),
+                image: AppAssets.freelancerIcon,
+                title: getTranslated('freelancer', context),
+                description: getTranslated('freelancer_desc', context),
+                arrowForward: true,
+              ),
               32.spaceY,
               BusinessTypeWidget(
                   image: AppAssets.personIcon,
                   title: getTranslated('dont_have_business', context),
+                  arrowForward: true,
                   description:
                       getTranslated('dont_have_business_desc', context))
             ],

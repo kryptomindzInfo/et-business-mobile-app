@@ -9,7 +9,6 @@ import 'package:etbank_business_app/resources/localization/language_constrants.d
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../constants/app_assets.dart';
 import '../../../constants/app_colors.dart';
 import '../../../providers/signup_provider.dart';
 import 'signup_who_are_your_customers_screen.dart';
@@ -28,7 +27,7 @@ class SignUpDescribeBusinessActivityScreen extends ConsumerWidget {
       child: Scaffold(
         extendBody: true,
         backgroundColor: AppColors.transparent,
-        appBar: CommonAppBar(
+        appBar: const CommonAppBar(
             // etBankLogo: true,
             ),
         body: Padding(
@@ -39,13 +38,14 @@ class SignUpDescribeBusinessActivityScreen extends ConsumerWidget {
               HeaderIconWithTitle(
                 title: getTranslated(
                     'describe_your_business_activity_title', context),
+                spaceBtw: 0,
                 description: getTranslated(
                     'describe_your_business_activity_subtitle', context),
                 // imageicon: AppAssets.arrowLeft,
               ),
-              32.spaceY,
+              48.spaceY,
               TextFieldWidget(
-                style: const TextStyle(color: Colors.black),
+                style: const TextStyle(color: Colors.white),
                 controller:
                     ref.read(signUpStateProvider).businessActivityController,
                 hintText: getTranslated('description', context),
@@ -58,11 +58,12 @@ class SignUpDescribeBusinessActivityScreen extends ConsumerWidget {
                   ref.read(signUpStateProvider).notify();
                 },
               ),
-              20.spaceY,
+              12.spaceY,
               Text(
                 getTranslated('please_provide_at_least_50_characters', context),
                 style: AppTextstyle.bodyTextStyle(
-                    color: context.theme.colorTheme.headerDescriptionColor),
+                    color: context.theme.colorTheme.headerDescriptionColor,
+                    fontSize: 12),
               ),
             ],
           ),

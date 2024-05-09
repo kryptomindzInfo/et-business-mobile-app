@@ -8,9 +8,10 @@ import 'package:etbank_business_app/presentation/views/common_widgets/header_ico
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_enable_push_notif_screen.dart';
 import 'package:etbank_business_app/resources/localization/language_constrants.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../constants/app_assets.dart';
+import 'package:pin_code_fields/pin_code_fields.dart';
 import '../../../constants/app_colors.dart';
 import '../../../providers/signup_provider.dart';
 
@@ -23,16 +24,8 @@ class SignUpEnterPassCodeScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return BackgroundImageWidget(
       child: Scaffold(
-        appBar: CommonAppBar(
-          // etBankLogo: true,
-          widget: Text(
-            getTranslated("enter_passcode", context),
-            style: AppTextstyle.headingTextStyle(
-                fontSize: 26,
-                fontWeight: FontWeight.w400,
-                color: context.theme.colorTheme.appbarTitleColor),
-          ),
-          // textTitle: "enter_passcode",
+        appBar: const CommonAppBar(
+          etBankLogo: true,
         ),
         body: Padding(
           padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
@@ -40,32 +33,72 @@ class SignUpEnterPassCodeScreen extends ConsumerWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               HeaderIconWithTitle(
-                title: getTranslated('enter_passcode', context),
+                title: getTranslated('ET_bank_passcode', context),
+                spaceBtw: 4,
+                description:
+                    getTranslated('used_for_your_personal_account', context),
                 // imageicon: AppAssets.arrowLeft,
               ),
-              220.spaceY,
-              TextFormField(
-                onChanged: (value) {
-                  ref.read(signUpStateProvider).setPassCode(value);
-                  if (value.length == 4) {
+              120.spaceY,
+
+              PinCodeTextField(
+                  appContext: context,
+                  length: 4,
+                  obscureText: true,
+                  autoFocus: true,
+                  autoDisposeControllers: false,
+                  animationType: AnimationType.fade,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  textStyle:
+                      TextStyle(color: context.theme.colorTheme.blackAndWhite),
+                  pinTheme: PinTheme(
+                    shape: PinCodeFieldShape.box,
+                    borderRadius: BorderRadius.circular(12),
+                    fieldOuterPadding:
+                        const EdgeInsets.symmetric(horizontal: 8),
+                    fieldHeight: 48.h,
+                    fieldWidth: 34.w,
+                    borderWidth: 0,
+                    activeFillColor:
+                        context.theme.colorTheme.transparentToColor,
+                    selectedFillColor:
+                        context.theme.colorTheme.transparentToColor,
+                    inactiveFillColor:
+                        context.theme.colorTheme.transparentToColor,
+                    activeColor: AppColors.transparent,
+                    selectedColor: AppColors.transparent,
+                    inactiveColor: context.theme.colorTheme.transparentToColor,
+                  ),
+                  inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+                  keyboardType: TextInputType.number,
+                  animationDuration: const Duration(milliseconds: 300),
+                  enableActiveFill: true,
+                  enablePinAutofill: true,
+                  onCompleted: (value) {
                     Navigation.pushNamed(SignUpEnablePushNotifScreen.routeName);
-                  }
-                },
-                autofocus: true,
-                decoration: InputDecoration(
-                  border: InputBorder.none,
-                  hintText: getTranslated('enter_passcode_to_login', context),
-                  hintStyle: AppTextstyle.bodyTextStyle(
-                      color: AppColors.grey, fontSize: 16.sp),
-                ),
-                obscureText: true,
-                textAlign: TextAlign.center,
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 30,
-                ),
-                keyboardType: TextInputType.number,
-              ),
+                  }),
+              // TextFormField(
+              //   onChanged: (value) {
+              //     ref.read(signUpStateProvider).setPassCode(value);
+              //     if (value.length == 4) {
+              //       Navigation.pushNamed(SignUpEnablePushNotifScreen.routeName);
+              //     }
+              //   },
+              //   autofocus: true,
+              //   decoration: InputDecoration(
+              //     border: InputBorder.none,
+              //     hintText: getTranslated('. . . . ', context),
+              //     hintStyle: AppTextstyle.bodyTextStyle(
+              //         color: AppColors.grey, fontSize: 80.sp),
+              //   ),
+              //   obscureText: true,
+              //   textAlign: TextAlign.center,
+              //   style: const TextStyle(
+              //     color: Colors.white,
+              //     fontSize: 30,
+              //   ),
+              //   keyboardType: TextInputType.number,
+              // ),
             ],
           ),
         ),

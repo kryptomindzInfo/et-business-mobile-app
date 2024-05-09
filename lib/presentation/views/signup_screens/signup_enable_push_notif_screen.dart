@@ -7,7 +7,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../constants/app_assets.dart';
-import '../../../constants/app_colors.dart';
 import 'signup_tailor_experience_screen.dart';
 import 'signup_widgets/image_screen_widget.dart';
 import 'signup_widgets/primary_button.dart';
@@ -22,8 +21,8 @@ class SignUpEnablePushNotifScreen extends ConsumerWidget {
     return ImageScreenWidget(
         title: 'enable_push_notif_title',
         subtitle: 'enable_push_notif_subtitle',
-        // image: AppAssets.ufoImage,
-        isLogo: false,
+        image: AppAssets.bellIcon,
+        isLogo: true,
         buttons: [
           SizedBox(
             height: 48.h,

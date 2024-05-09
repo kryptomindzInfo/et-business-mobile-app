@@ -49,7 +49,7 @@ class SignUpCheckEmailScreen extends ConsumerWidget {
             text: Text(
               getTranslated('enter_code_manually', context),
               style: AppTextstyle.bodyTextStyle(
-                  color: context.theme.colorTheme.whiteColor.withOpacity(0.5),
+                  color: context.theme.colorTheme.buttonHalfWhiteText,
                   fontSize: 16,
                   fontWeight: FontWeight.w500),
             ),

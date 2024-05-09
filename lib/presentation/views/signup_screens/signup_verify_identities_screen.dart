@@ -27,7 +27,7 @@ class SignUpVerifyIdentitiesScreen extends ConsumerWidget {
       child: Scaffold(
         extendBody: false,
         backgroundColor: AppColors.transparent,
-        appBar: CommonAppBar(
+        appBar: const CommonAppBar(
           etBankLogo: true,
         ),
         body: SingleChildScrollView(

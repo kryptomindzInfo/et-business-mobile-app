@@ -26,7 +26,7 @@ class SignUpCreatePassword extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return BackgroundImageWidget(
       child: Scaffold(
-        appBar: CommonAppBar(
+        appBar: const CommonAppBar(
           etBankLogo: true,
         ),
         body: Padding(
@@ -36,6 +36,7 @@ class SignUpCreatePassword extends ConsumerWidget {
             children: [
               HeaderIconWithTitle(
                 title: getTranslated('create_password_title', context),
+                spaceBtw: 0,
                 description: getTranslated('create_password_subtitle', context),
                 // imageicon: AppAssets.arrowLeft,
                 etBankLogo: true,

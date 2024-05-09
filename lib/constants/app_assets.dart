@@ -127,6 +127,10 @@ class AppAssets {
   static const getmoreicon = "${iconsDir}getmoreicon.png";
   static const exchangemoneyicon = "${iconsDir}exchangemoneyicon.png";
   static const whitecross = "${iconsDir}whitecross.png";
+  static const profilePic = "${imagesDir}profile_pic.png";
+  static const bellIcon = "${imagesDir}bell.png";
+  static const userCard = "${imagesDir}user_card.png";
+
   // Sendding Currency Flow
 
   static const addButton2x = "${iconsDir}add_button_2x.png";

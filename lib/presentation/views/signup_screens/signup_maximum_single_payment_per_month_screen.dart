@@ -26,7 +26,7 @@ class SignUpMaximumSinglePaymentPerMonthScreen extends ConsumerWidget {
       child: Scaffold(
         extendBody: false,
         backgroundColor: AppColors.transparent,
-        appBar: CommonAppBar(
+        appBar: const CommonAppBar(
           etBankLogo: true,
         ),
         body: SingleChildScrollView(
@@ -38,11 +38,12 @@ class SignUpMaximumSinglePaymentPerMonthScreen extends ConsumerWidget {
                 HeaderIconWithTitle(
                   title: getTranslated(
                       'maximum_single_payment_per_month_title', context),
+                  spaceBtw: 0,
                   description: getTranslated(
                       'maximum_single_payment_per_month_subtitle', context),
                   // imageicon: AppAssets.arrowLeft,
                 ),
-                23.spaceY,
+                30.spaceY,
                 BusinessDetailsWhiteContainerWidet(
                   labelText:
                       getTranslated('maximum_single_payment_in_GBP', context),

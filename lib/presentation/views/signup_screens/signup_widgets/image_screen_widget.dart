@@ -42,6 +42,7 @@ class ImageScreenWidget extends StatelessWidget {
             children: [
               HeaderIconWithTitle(
                 title: getTranslated(title, context),
+                spaceBtw: 12,
                 description: getTranslated(subtitle, context),
                 // imageicon: AppAssets.arrowLeft,
               ),
@@ -56,20 +57,23 @@ class ImageScreenWidget extends StatelessWidget {
                       fontSize: 14,
                       fontWeight: FontWeight.normal),
                 ),
-              40.spaceY,
+              75.spaceY,
               image != null
                   ? Center(
                       child: Image.asset(
                         image!,
-                        scale: 2.50,
+                        height: 175,
+                        width: 184,
+                        fit: BoxFit.contain,
+                        // scale: 1,
                       ),
                     )
-                  : SizedBox(),
+                  : const SizedBox(),
             ],
           ),
         ),
         bottomNavigationBar: ButtonBottomNavigationWidget(
-          height: 150.h,
+          height: buttons.length != 1 ? 150.h : 100.h,
           children: [
             Column(
               children: buttons,

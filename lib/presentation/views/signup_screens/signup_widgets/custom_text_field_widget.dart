@@ -24,6 +24,7 @@ class CustomTextFiledWidget extends StatefulWidget {
   final double height;
   final int maxLines;
   final double titleSize;
+  final TextStyle? textStyle;
   const CustomTextFiledWidget(
       {super.key,
       required this.title,
@@ -43,7 +44,8 @@ class CustomTextFiledWidget extends StatefulWidget {
       this.controller,
       this.height = 48,
       this.maxLines = 1,
-      this.titleSize = 14});
+      this.titleSize = 14,
+      this.textStyle});
 
   @override
   State<CustomTextFiledWidget> createState() => _CustomTextFiledState();
@@ -96,7 +98,7 @@ class _CustomTextFiledState extends State<CustomTextFiledWidget> {
                 inputFormatters: widget.inputFormatters,
                 enableInteractiveSelection: widget.enableInteraction,
                 keyboardType: widget.textInputType,
-                style: AppTextstyle.bodyTextStyle(),
+                style: widget.textStyle ?? AppTextstyle.bodyTextStyle(),
                 decoration: InputDecoration(
                   border: InputBorder.none,
                   hintText: widget.hint,

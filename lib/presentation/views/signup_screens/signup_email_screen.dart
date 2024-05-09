@@ -1,5 +1,6 @@
 import 'package:etbank_business_app/constants/app_textstyle.dart';
 import 'package:etbank_business_app/extensions/build_context.dart';
+import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/navigation/navigation.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/app_common_appbar.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/app_common_widgets.dart';
@@ -26,19 +27,21 @@ class SignUpEmailScreen extends ConsumerWidget {
     return BackgroundImageWidget(
         child: Scaffold(
       backgroundColor: AppColors.transparent,
-      appBar: CommonAppBar(
+      appBar: const CommonAppBar(
         etBankLogo: true,
       ),
       body: Padding(
-        padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
+        padding: const EdgeInsets.fromLTRB(20, 26, 20, 0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             HeaderIconWithTitle(
               title: getTranslated('signup_email_title', context),
+              spaceBtw: 5,
               // imageicon: AppAssets.arrowLeft,
               etBankLogo: true,
             ),
+            20.spaceY,
             SizedBox(
               child: TextFieldWidget(
                 style: AppTextstyle.bodyTextStyle(
@@ -74,7 +77,7 @@ class SignUpEmailScreen extends ConsumerWidget {
                 getTranslated('continue', context),
                 style: AppTextstyle.bodyTextStyle(
                     color: ref.watch(signUpStateProvider).isEmailEmpty
-                        ? context.theme.colorTheme.disableButtonTextColor
+                        ? context.theme.colorTheme.buttonHalfWhiteText
                         : context.theme.colorTheme.whiteAndBlack,
                     fontSize: 16,
                     fontWeight: FontWeight.w500),

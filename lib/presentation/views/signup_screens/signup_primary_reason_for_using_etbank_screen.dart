@@ -9,7 +9,6 @@ import 'package:etbank_business_app/resources/localization/language_constrants.d
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../constants/app_assets.dart';
 import '../../../constants/app_colors.dart';
 import '../../../constants/static_data/signup_screen_static_data.dart';
 import '../../../providers/signup_provider.dart';

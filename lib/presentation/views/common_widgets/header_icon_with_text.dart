@@ -21,6 +21,7 @@ class HeaderIconWithTitle extends ConsumerWidget {
   final Widget? widget;
   final bool? etBankLogo;
   final bool? profilePicWidget;
+  final int? spaceBtw;
   const HeaderIconWithTitle(
       {super.key,
       this.title,
@@ -34,7 +35,8 @@ class HeaderIconWithTitle extends ConsumerWidget {
       this.onTrailingiconPress,
       this.widget,
       this.etBankLogo,
-      this.profilePicWidget});
+      this.profilePicWidget,
+      this.spaceBtw});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -113,7 +115,7 @@ class HeaderIconWithTitle extends ConsumerWidget {
                   title!,
                   style: AppTextstyle.headingTextStyle(
                     color: context.theme.colorTheme.appbarTitleColor,
-                    fontSize: fontsize ?? 24,
+                    fontSize: fontsize ?? 32,
                     fontWeight: FontWeight.bold,
                     overflow: TextOverflow.clip,
                   ),
@@ -125,7 +127,9 @@ class HeaderIconWithTitle extends ConsumerWidget {
                 ),
             ],
           ),
-        10.spaceY,
+
+        if (spaceBtw != null) spaceBtw!.spaceY, //  spaceBtw.spaceY ?
+        if (spaceBtw == null) 0.spaceY,
         description != null
             ? Text(
                 description!,

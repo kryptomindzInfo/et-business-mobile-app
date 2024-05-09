@@ -2,15 +2,13 @@ import 'package:etbank_business_app/constants/app_textstyle.dart';
 import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/navigation/navigation.dart';
+import 'package:etbank_business_app/presentation/views/signup_screens/signup_widgets/icon_button_widget.dart';
 import 'package:etbank_business_app/resources/localization/language_constrants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../constants/app_assets.dart';
-import '../../../constants/app_colors.dart';
 import 'signup_enter_passcode_screen.dart';
 import 'signup_widgets/image_screen_widget.dart';
-import 'signup_widgets/primary_button.dart';
 
 class SignUpWelcomeBackScreen extends ConsumerWidget {
   static const String routeName = "signup_welcome_back";
@@ -22,41 +20,42 @@ class SignUpWelcomeBackScreen extends ConsumerWidget {
     return ImageScreenWidget(
         title: 'welcome_back_title',
         subtitle: 'welcome_back_subtitle',
-        image: AppAssets.welcomeBackImage,
-        isLogo: false,
+        image: AppAssets.profilePic,
+        isLogo: true,
         buttons: [
-          SizedBox(
-            height: 48.h,
-            width: 327.w,
-            child: PrimaryButton(
-              color: context.theme.colorTheme.buttonColor,
-              text: Text(
-                getTranslated('yes_confirm', context),
-                style: AppTextstyle.bodyTextStyle(
-                    color: context.theme.colorTheme.whiteColor,
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500),
+          Row(
+            children: [
+              IconButtonWidget(
+                color: context.theme.colorTheme.inActiveButtonColor,
+                image: Icon(
+                  Icons.close,
+                  color: context.theme.colorTheme.whiteColor,
+                ),
+                text: Text(
+                  getTranslated('no_not_me', context),
+                  style: AppTextstyle.bodyTextStyle(
+                      color: context.theme.colorTheme.blackAndWhite,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500),
+                ),
+                onPressed: () {},
               ),
-              onPressed: () {
-                Navigation.pushNamed(SignUpEnterPassCodeScreen.routeName);
-              },
-            ),
-          ),
-          16.spaceY,
-          SizedBox(
-            height: 48.h,
-            width: 327.w,
-            child: PrimaryButton(
-              color: context.theme.colorTheme.inActiveButtonColor,
-              text: Text(
-                getTranslated('no_not_me', context),
-                style: AppTextstyle.bodyTextStyle(
-                    color: context.theme.colorTheme.blackAndWhite,
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500),
+              16.spaceX,
+              IconButtonWidget(
+                color: context.theme.colorTheme.buttonColor,
+                image: const Icon(Icons.check),
+                text: Text(
+                  getTranslated('yes_confirm', context),
+                  style: AppTextstyle.bodyTextStyle(
+                      color: context.theme.colorTheme.blackColor,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500),
+                ),
+                onPressed: () {
+                  Navigation.pushNamed(SignUpEnterPassCodeScreen.routeName);
+                },
               ),
-              onPressed: () {},
-            ),
+            ],
           ),
         ]);
   }

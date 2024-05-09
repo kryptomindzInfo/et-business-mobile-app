@@ -17,7 +17,7 @@ class SignUpMobileOTPCodeScreen extends ConsumerWidget {
       onCompleted: (value) {
         Navigation.pushNamed(SignUpCreatePassword.routeName);
       },
-      text1: "",
+      // text1: "a",
       text2: "${getTranslated("code_hasnt_arrived_retry", context)} 0:58",
     );
   }

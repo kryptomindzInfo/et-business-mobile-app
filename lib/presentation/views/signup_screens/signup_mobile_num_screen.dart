@@ -10,7 +10,6 @@ import 'package:etbank_business_app/resources/localization/language_constrants.d
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../constants/app_assets.dart';
 import '../../../constants/app_colors.dart';
 import '../../../providers/signup_provider.dart';
 import 'signup_widgets/button_bottom_navigation_widget.dart';
@@ -31,7 +30,7 @@ class SignUpMobileNoScreen extends ConsumerWidget {
     return BackgroundImageWidget(
       child: Scaffold(
         backgroundColor: AppColors.transparent,
-        appBar: CommonAppBar(
+        appBar: const CommonAppBar(
           etBankLogo: true,
         ),
         body: Padding(
@@ -41,6 +40,7 @@ class SignUpMobileNoScreen extends ConsumerWidget {
             children: [
               HeaderIconWithTitle(
                 title: getTranslated('mobile_no', context),
+                spaceBtw: 5,
                 description:
                     getTranslated('mobile_no_verification_code', context),
                 // imageicon: AppAssets.arrowLeft,
@@ -110,7 +110,7 @@ class SignUpMobileNoScreen extends ConsumerWidget {
                   getTranslated('continue', context),
                   style: AppTextstyle.bodyTextStyle(
                       color: ref.watch(signUpStateProvider).isMobileNoEmpty
-                          ? context.theme.colorTheme.disableButtonTextColor
+                          ? context.theme.colorTheme.buttonHalfWhiteText
                           : context.theme.colorTheme.whiteAndBlack,
                       fontSize: 16,
                       fontWeight: FontWeight.w500),

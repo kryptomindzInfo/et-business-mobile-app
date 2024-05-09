@@ -1,11 +1,6 @@
-import 'package:etbank_business_app/constants/app_textstyle.dart';
 import 'package:etbank_business_app/extensions/build_context.dart';
-import 'package:etbank_business_app/resources/localization/language_constrants.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-
 import '../../../constants/app_assets.dart';
-import '../../../constants/app_colors.dart';
 
 class CommonAppBar extends StatelessWidget implements PreferredSizeWidget {
   final bool? etBankLogo;
@@ -18,11 +13,10 @@ class CommonAppBar extends StatelessWidget implements PreferredSizeWidget {
       title: etBankLogo == true
           ? Image.asset(
               AppAssets.appbarLogo,
-              height: 40,
+              height: 46,
+              width: 154,
             )
-          : widget != null
-              ? widget
-              : SizedBox(),
+          : widget ?? const SizedBox(),
       centerTitle: true,
       // surfaceTintColor: AppColors.transparent,
       // elevation: 10,

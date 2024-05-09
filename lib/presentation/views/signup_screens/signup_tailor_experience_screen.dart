@@ -7,7 +7,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../constants/app_assets.dart';
-import '../../../constants/app_colors.dart';
 import 'signup_widgets/image_screen_widget.dart';
 import 'signup_widgets/primary_button.dart';
 

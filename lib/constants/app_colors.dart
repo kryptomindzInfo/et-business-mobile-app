@@ -4,6 +4,7 @@ class AppColors {
   static const baseGreenColor = Color(0xff21dcba);
   static const black = Colors.black;
   static const white = Colors.white;
+  static const halfWhite = Color(0xffDADADA);
   static const grey = Color(0xff5E5E5E);
   static const blue = Color(0xff0094FF);
   static const red = Colors.red;
@@ -27,7 +28,7 @@ class AppColors {
   // static const accountDetails = Color(0xFF4B4B4C);
   // static const signInButtonColor = Color.fromRGBO(0, 73, 83, 1);
   // static const signUpButtonColor = Color.fromRGBO(0, 253, 156, 1);
-  static const continueButtonDisabledColor = Color(0xFF8DB0A3);
+  static const continueButtonDisabledColor = Color(0xFF6F6F70);
   // static const continueButtonEnabledColor = Color(0xFF00FF9D);
   static const continueTextDisabledColor = Color(0xFF7E7878);
   // static const continueTextEnabledColor = Color(0xFF000000);

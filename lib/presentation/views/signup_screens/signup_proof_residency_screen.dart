@@ -23,7 +23,6 @@ class _ProofOfResidencyScreenState
     extends ConsumerState<ProofOfResidencyScreen> {
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     ref.read(signUpStateProvider).requestCameraPermission();
   }
@@ -32,7 +31,9 @@ class _ProofOfResidencyScreenState
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: context.theme.colorTheme.backgroundColor,
-      appBar: CommonAppBar(),
+      appBar: const CommonAppBar(
+        etBankLogo: true,
+      ),
       body: Padding(
         padding: const EdgeInsets.only(left: 20, right: 20),
         child: Column(
@@ -40,10 +41,10 @@ class _ProofOfResidencyScreenState
             HeaderIconWithTitle(
               title: getTranslated("proof_residency", context),
             ),
-            20.spaceY,
+            5.spaceY,
             const NationalityWidget(),
             30.spaceY,
-            SelectDocumentWidget()
+            const SelectDocumentWidget()
           ],
         ),
       ),
