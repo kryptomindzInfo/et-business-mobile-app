@@ -39,7 +39,7 @@ class UpgradeBottomSheet extends ConsumerWidget {
               padding: const EdgeInsets.only(left: 20),
               child: HeaderIconWithTitle(
                 title: getTranslated("select_plan", context),
-                imageicon: AppAssets.crossicon,
+                imageicon: AppAssets.arrowLeftShort,
                 edgeinsets: const EdgeInsets.only(top: 20),
               ),
             ),
@@ -74,7 +74,7 @@ class UpgradeBottomSheet extends ConsumerWidget {
                   "1 month free . £${upgradePlanslist[profileProviderWatch.selectedPlan]["price"]}/month",
             ),
             25.spaceY,
-            const SeeAllCommonWidget("Get more from your plan", false),
+            const SeeAllCommonWidget("Gathered for you", false),
             15.spaceY,
             InfoCardCommonWidget(
               color: AppColors.black,
@@ -89,9 +89,9 @@ class UpgradeBottomSheet extends ConsumerWidget {
                             subtitle: e["subtitle"]),
                       )
                       .toList(),
-                  15.spaceY,
+                  20.spaceY,
                   PrimaryButton(
-                      height: 34,
+                      height: 38,
                       minwidth: 288,
                       color: context.theme.colorTheme.buttonColor,
                       text: Text(
@@ -103,7 +103,7 @@ class UpgradeBottomSheet extends ConsumerWidget {
                           builder: (context) => const ConfirmationBottomSheet(),
                         );
                       }),
-                  15.spaceY,
+                  26.spaceY,
                 ],
               ),
             ),

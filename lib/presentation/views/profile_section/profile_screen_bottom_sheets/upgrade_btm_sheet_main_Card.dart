@@ -1,4 +1,5 @@
 import 'package:etbank_business_app/extensions/build_context.dart';
+import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/presentation/views/profile_section/profile_screen_bottom_sheets/popular_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -35,10 +36,11 @@ class UpgradeBottomSheetMainCard extends ConsumerWidget {
                 Text(
                   title!,
                   style: AppTextstyle.headingTextStyle(
-                      fontSize: 48,
+                      fontSize: 40,
                       fontWeight: FontWeight.bold,
                       color: context.theme.colorTheme.boldTextColor),
                 ),
+                8.spaceY,
                 Text(
                   subtitle!,
                   style: AppTextstyle.headingTextStyle(

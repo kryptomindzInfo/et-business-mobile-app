@@ -130,6 +130,7 @@ class AppAssets {
   static const profilePic = "${imagesDir}profile_pic.png";
   static const bellIcon = "${imagesDir}bell.png";
   static const userCard = "${imagesDir}user_card.png";
+  static const arrowLeftShort = "${iconsDir}arrow_left_short.png";
 
   // Sendding Currency Flow
 

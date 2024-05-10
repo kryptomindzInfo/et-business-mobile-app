@@ -1,6 +1,9 @@
 import 'dart:io';
 
+import 'package:capture_identity/capture_identity.dart';
 import 'package:etbank_business_app/navigation/navigation.dart';
+import 'package:etbank_business_app/navigation/navigator_key.dart';
+import 'package:etbank_business_app/navigation/params/captured_image_of_document_args.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/captured_picture_of_document_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -10,6 +13,8 @@ import '../globals/countries_list.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:camera/camera.dart';
 import 'package:permission_handler/permission_handler.dart';
+
+import '../presentation/views/signup_screens/signup_verifications_screen.dart';
 
 final signUpStateProvider = ChangeNotifierProvider((ref) => SignUpState());
 
@@ -213,7 +218,7 @@ class SignUpState extends ChangeNotifier {
     notifyListeners();
   }
 
-  Future<void> requestCameraPermission() async { 
+  Future<void> requestCameraPermission() async {
     final status = await Permission.camera.request();
     if (status == PermissionStatus.granted) {
       // Proceed with camera usage
@@ -225,13 +230,60 @@ class SignUpState extends ChangeNotifier {
     }
   }
 
-  File? _idCapture;
-  File? get idCapture => _idCapture;
+  File? _idCaptureFront;
+  File? get idCaptureFront => _idCaptureFront;
 
-  getCapturedDocImage(File val) {
-    _idCapture = val;
-    if (_idCapture != null) {
-      Navigation.pushNamed(CapturedImageOfDocument.routeName);
+  getCapturedDocImageFront(File? val) {
+    _idCaptureFront = val;
+    if (_idCaptureFront != null) {
+      Navigation.pushNamed(
+        CapturedImageOfDocument.routeName,
+        arguments: CapturedImageOfDocumentArgs(
+          onPressLicenceReadable: () async {
+            File? image = await showCapture(
+              context: appContext,
+              title: "Back of driving licence",
+              hideIdWidget: true,
+            );
+            getCapturedDocImageBack(image!);
+            // Navigation.pushNamed(SignUpVerificationsScreen.routeName);
+          },
+          onPressTakeNewPic: () async {
+            File? image = await showCapture(
+              context: appContext,
+              title: "Front of driving licence",
+              hideIdWidget: true,
+            );
+            getCapturedDocImageFront(image!);
+          },
+        ),
+      );
+      notifyListeners();
+    }
+  }
+
+  File? _idCaptureBack;
+  File? get idCaptureBack => _idCaptureBack;
+
+  getCapturedDocImageBack(File val) {
+    _idCaptureBack = val;
+    if (_idCaptureBack != null) {
+      Navigation.pushNamed(
+        CapturedImageOfDocument.routeName,
+        arguments: CapturedImageOfDocumentArgs(
+          onPressLicenceReadable: () {
+            Navigation.pushNamed(SignUpVerificationsScreen.routeName);
+          },
+          onPressTakeNewPic: () async {
+            File? image = await showCapture(
+              context: appContext,
+              title: "Back of driving licence",
+              hideIdWidget: true,
+            );
+            getCapturedDocImageBack(image!);
+          },
+        ),
+      );
       notifyListeners();
     }
   }

@@ -20,7 +20,7 @@ class IncorporationDocumentScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       backgroundColor: context.theme.colorTheme.backgroundColor,
-      appBar: CommonAppBar(
+      appBar: const CommonAppBar(
         etBankLogo: true,
       ),
       body: SingleChildScrollView(
@@ -33,14 +33,14 @@ class IncorporationDocumentScreen extends ConsumerWidget {
                 description: getTranslated("doc_clearly_describing", context),
               ),
               20.spaceY,
-              ProviderValidDocWidget(),
+              const ProviderValidDocWidget(),
               20.spaceY,
-              UploadDocWidget(),
+              const UploadDocWidget(),
               30.spaceY,
               CommonButton(
                 title: getTranslated("continue", context),
                 mainButtonColor: context.theme.colorTheme.disableButtonColor,
-                titleColor: context.theme.colorTheme.disableButtonTextColor,
+                titleColor: context.theme.colorTheme.whiteColor,
                 onpress: () {
                   Navigation.pushNamed(ReviewScreen.routeName);
                 },

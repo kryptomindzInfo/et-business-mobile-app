@@ -15,9 +15,10 @@ class CommonWhiteFlexibleCard extends ConsumerWidget {
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(borderRadius ?? 28),
-          color: context.theme.colorTheme.transparentToColor,
-          border: Border.all(color: context.theme.colorTheme.borderColor)),
+        borderRadius: BorderRadius.circular(borderRadius ?? 28),
+        color: context.theme.colorTheme.transparentToColor,
+        border: Border.all(color: context.theme.colorTheme.borderColor),
+      ),
       child: Padding(
         padding: padding ??
             const EdgeInsets.only(left: 20, right: 20, top: 20, bottom: 20),

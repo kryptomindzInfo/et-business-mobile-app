@@ -1,3 +1,4 @@
+import 'package:etbank_business_app/navigation/params/captured_image_of_document_args.dart';
 import 'package:etbank_business_app/navigation/params/onboarding_args.dart';
 import 'package:etbank_business_app/presentation/views/bottom_navigation_bar.dart';
 import 'package:etbank_business_app/presentation/views/converting_currency/rates_tab_section/currencies_chart_screen.dart';
@@ -83,6 +84,7 @@ import '../presentation/views/signup_screens/signup_user_home_address_screen.dar
 import '../presentation/views/signup_screens/signup_where_you_conduct_business_screen.dart';
 import '../presentation/views/signup_screens/signup_who_are_your_customers_screen.dart';
 import '../presentation/views/signup_screens/signup_website_social_ecommerce_link_screen.dart';
+import 'params/home_screen_args.dart';
 
 class RouteGenerator {
   static Route generateRoute(RouteSettings settings) {
@@ -348,9 +350,8 @@ class RouteGenerator {
             // params: settings.arguments as HomeScreenArgs?
             ));
       case CapturedImageOfDocument.routeName:
-        return route(const CapturedImageOfDocument(
-            // params: settings.arguments as HomeScreenArgs?
-            ));
+        return route(CapturedImageOfDocument(
+            params: settings.arguments as CapturedImageOfDocumentArgs?));
       case SignUpVerificationsScreen.routeName:
         return route(const SignUpVerificationsScreen(
             // params: settings.arguments as HomeScreenArgs?

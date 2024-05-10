@@ -40,14 +40,14 @@ class SelectDocumentWidget extends ConsumerWidget {
             children: [
               CommonIconTitleIconButton(
                 title: getTranslated("passport", context),
-                onpress: () async {
-                  File? image = await showCapture(
-                    context: context,
-                    title: "Scan ID",
-                    hideIdWidget: true,
-                  );
-                  ref.watch(signUpStateProvider).getCapturedDocImage(image!);
-                },
+                // onpress: () async {
+                //   File? image = await showCapture(
+                //     context: context,
+                //     title: "",
+                //     hideIdWidget: true,
+                //   );
+                //   ref.watch(signUpStateProvider).getCapturedDocImageFront(image!);
+                // },
                 isForwardIcon: true,
               ),
               CommonIconTitleIconButton(
@@ -55,10 +55,12 @@ class SelectDocumentWidget extends ConsumerWidget {
                 onpress: () async {
                   File? image = await showCapture(
                     context: context,
-                    title: "Scan ID",
+                    title: "Front of driving licence",
                     hideIdWidget: true,
                   );
-                  ref.watch(signUpStateProvider).getCapturedDocImage(image!);
+                  ref
+                      .watch(signUpStateProvider)
+                      .getCapturedDocImageFront(image!);
                 },
                 isForwardIcon: true,
               )

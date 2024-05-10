@@ -10,20 +10,22 @@ class CommonButton extends ConsumerWidget {
   final double? width;
   final Color? mainButtonColor;
   final Color? titleColor;
+  final double? height;
   const CommonButton(
       {super.key,
       this.onpress,
       this.title,
       this.width,
       this.mainButtonColor,
-      this.titleColor});
+      this.titleColor,
+      this.height});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return InkWell(
       onTap: onpress,
       child: Container(
-        height: 38,
+        height: height ?? 38,
         width: width,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(70),

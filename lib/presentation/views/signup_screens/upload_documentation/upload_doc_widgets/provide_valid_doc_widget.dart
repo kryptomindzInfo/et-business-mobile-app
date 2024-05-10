@@ -14,7 +14,7 @@ class ProviderValidDocWidget extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return CommonWhiteFlexibleCard(
-      padding: EdgeInsets.only(left: 16, right: 10, bottom: 20, top: 20),
+      padding: const EdgeInsets.only(left: 16, right: 10, bottom: 20, top: 20),
       widget: Column(
         children: [
           Row(
@@ -39,7 +39,8 @@ class ProviderValidDocWidget extends ConsumerWidget {
                           "please_provide_valid_shareholder_structure_description",
                           context),
                       style: AppTextstyle.bodyTextStyle(
-                          color: context.theme.colorTheme.normalTextColor,
+                          color: context.theme.colorTheme.whiteColor
+                              .withOpacity(0.8),
                           fontSize: 16,
                           fontWeight: FontWeight.normal,
                           overflow: TextOverflow.clip),

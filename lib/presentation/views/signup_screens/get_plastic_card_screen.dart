@@ -19,7 +19,7 @@ class GetPlasticCardScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       backgroundColor: context.theme.colorTheme.backgroundColor,
-      appBar: CommonAppBar(
+      appBar: const CommonAppBar(
         etBankLogo: true,
       ),
       body: Padding(
@@ -34,7 +34,7 @@ class GetPlasticCardScreen extends ConsumerWidget {
                     AppAssets.greenplasticcard,
                     scale: 3,
                   ),
-                  35.spaceY,
+                  60.spaceY,
                   Text(
                     getTranslated("plastic_card", context),
                     style: AppTextstyle.headingTextStyle(
@@ -47,17 +47,17 @@ class GetPlasticCardScreen extends ConsumerWidget {
                     getTranslated("card_speciality", context),
                     textAlign: TextAlign.center,
                     style: AppTextstyle.headingTextStyle(
-                        color: context.theme.colorTheme.normalTextColor,
+                        color: context.theme.colorTheme.buttonHalfWhiteText,
                         fontWeight: FontWeight.normal,
                         fontSize: 14,
                         overflow: TextOverflow.clip),
                   ),
-                  20.spaceY,
+                  // 20.spaceY,
                 ],
               ),
-              padding: EdgeInsets.only(top: 30, right: 12, left: 12),
+              // padding: const EdgeInsets.only(top: 30, right: 12, left: 12),
             ),
-            30.spaceY,
+            78.spaceY,
             CommonButton(
               width: 288,
               title: getTranslated("get_plastic_card", context),

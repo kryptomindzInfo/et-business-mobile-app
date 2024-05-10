@@ -1,3 +1,5 @@
+import 'package:etbank_business_app/constants/app_colors.dart';
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/navigation/navigation.dart';
 import 'package:etbank_business_app/navigation/navigator_key.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/common_bottom_sheet.dart';
@@ -166,13 +168,28 @@ List paymentRanges = [
 
 List<Map> _verificationData = [
   {
+    "title": "choose_a_plan_and_order_a_card",
+    "icon": AppAssets.plancardicon,
+    "status": "",
+    "statusicon": AppAssets.greencheck,
+    "ontap": () {
+      showModalBottomSheet(
+        context: appContext,
+        isScrollControlled: true,
+        builder: (context) => const UpgradeBottomSheet(),
+      );
+    },
+    "color": appContext.theme.colorTheme.grassGreen,
+  },
+  {
     "title": "submit_doc",
     "icon": AppAssets.submitdocicon,
     "status": "",
     "statusicon": "",
     "ontap": () {
       Navigation.pushNamed(SignUpSubmitDocumentScreen.routeName);
-    }
+    },
+    "color": appContext.theme.colorTheme.grassGreen,
   },
   {
     "title": "verify_business",
@@ -182,25 +199,12 @@ List<Map> _verificationData = [
     "ontap": () {}
   },
   {
-    "title": "business_details",
+    "title": "verify_business_details",
     "icon": AppAssets.verifybusinessownersicon,
-    "status": "verified",
-    "statusicon": AppAssets.greencheck,
+    "status": "ready_to_submit",
+    "statusicon": AppAssets.whitehourglass,
     "ontap": () {
-      showCommonModalSheet(appContext, 300, BusinessDetailsBottomSheet());
-    }
-  },
-  {
-    "title": "order_card",
-    "icon": AppAssets.plancardicon,
-    "status": "done",
-    "statusicon": AppAssets.greencheck,
-    "ontap": () {
-      showModalBottomSheet(
-        context: appContext,
-        isScrollControlled: true,
-        builder: (context) => UpgradeBottomSheet(),
-      );
+      showCommonModalSheet(appContext, 300, const BusinessDetailsBottomSheet());
     }
   },
   {

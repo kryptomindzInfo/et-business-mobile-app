@@ -3,6 +3,7 @@ import 'package:etbank_business_app/presentation/views/signup_screens/captured_p
 import 'package:etbank_business_app/presentation/views/signup_screens/sign_in_sign_up_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_email_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_role_in_the_company_screen.dart';
+import 'package:etbank_business_app/presentation/views/signup_screens/signup_user_home_address_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_verifications_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_welcome_back_screen.dart';
 import 'package:etbank_business_app/providers/localization_provider.dart';
@@ -52,7 +53,7 @@ class MyApp extends ConsumerWidget {
         ],
         navigatorKey: navigatorKey,
         onGenerateRoute: RouteGenerator.generateRoute,
-        initialRoute: SignUpRoleInTheCompanyScreen.routeName,
+        initialRoute: SignUpVerificationsScreen.routeName,
         // initialRoute: SignUpVerificationsScreen.routeName,
       ),
     );

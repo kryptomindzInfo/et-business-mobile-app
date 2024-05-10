@@ -45,7 +45,7 @@ class PlansBottomSheetInfoText extends ConsumerWidget {
                   subtitle,
                   style: AppTextstyle.bodyTextStyle(
                       fontSize: 12,
-                      color: AppColors.white.withOpacity(0.4),
+                      color: AppColors.white.withOpacity(0.8),
                       fontWeight: FontWeight.w400),
                   overflow: TextOverflow.clip,
                   // overflow: TextOverflow.ellipsis,

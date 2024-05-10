@@ -9,12 +9,16 @@ class CommonGreyButton extends ConsumerWidget {
   final String? imageIcon;
   final VoidCallback? onpress;
   final double? imageIconHeight;
+  final Color? titleColor;
+  final Color? buttonColor;
   const CommonGreyButton(
       {super.key,
       this.title,
       this.imageIcon,
       this.onpress,
-      this.imageIconHeight});
+      this.imageIconHeight,
+      this.titleColor,
+      this.buttonColor});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -26,7 +30,7 @@ class CommonGreyButton extends ConsumerWidget {
           // width: 117,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(64),
-              color: context.theme.colorTheme.buttonColor
+              color: buttonColor ?? context.theme.colorTheme.buttonColor
               // border: Border.all(color: AppColors.primaryColor)
               ),
 
@@ -46,7 +50,8 @@ class CommonGreyButton extends ConsumerWidget {
                     Text(
                       " ${title!}   ",
                       style: AppTextstyle.bodyTextStyle(
-                          color: context.theme.colorTheme.whiteAndBlack,
+                          color: titleColor ??
+                              context.theme.colorTheme.whiteAndBlack,
                           fontSize: 14,
                           fontWeight: FontWeight.w500),
                     ),

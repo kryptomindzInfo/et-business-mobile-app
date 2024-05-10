@@ -25,7 +25,10 @@ class VerifiedBottomSheetWidget extends ConsumerWidget {
           20.spaceY,
           title,
           20.spaceY,
-          description,
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 70),
+            child: description,
+          ),
         ],
       ),
     );

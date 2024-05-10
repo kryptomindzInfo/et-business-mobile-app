@@ -29,7 +29,7 @@ class Chips extends ConsumerWidget {
       child: Container(
         // width: 100,
         height: 39,
-        padding: const EdgeInsets.only(left: 10, right: 10),
+        padding: const EdgeInsets.only(left: 20, right: 20),
         margin: const EdgeInsets.only(right: 15),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(100),
