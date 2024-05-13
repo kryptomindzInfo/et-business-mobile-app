@@ -46,7 +46,9 @@ class SignUpVerifyIdentitiesScreen extends ConsumerWidget {
                 Text(
                   getTranslated('todo', context),
                   style: AppTextstyle.bodyTextStyle(
-                      color: AppColors.greywhite, fontSize: 16.sp),
+                      color:
+                          context.theme.colorTheme.whiteColor.withOpacity(0.5),
+                      fontSize: 16.sp),
                 ),
                 16.spaceY,
                 Container(

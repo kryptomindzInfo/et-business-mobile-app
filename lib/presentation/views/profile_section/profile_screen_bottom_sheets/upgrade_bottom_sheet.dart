@@ -15,6 +15,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../constants/app_assets.dart';
+import '../../signup_screens/get_plastic_card_screen.dart';
 
 class UpgradeBottomSheet extends ConsumerWidget {
   const UpgradeBottomSheet({super.key});
@@ -95,12 +96,16 @@ class UpgradeBottomSheet extends ConsumerWidget {
                       minwidth: 288,
                       color: context.theme.colorTheme.buttonColor,
                       text: Text(
-                          "Get Grow for £${upgradePlanslist[profileProviderWatch.selectedPlan]["price"]} Free"),
+                        "Get Grow for £${upgradePlanslist[profileProviderWatch.selectedPlan]["price"]} Free",
+                        // style:
+                        //     TextStyle(decoration: TextDecoration.lineThrough),
+                      ),
                       onPressed: () {
                         showModalBottomSheet(
                           isScrollControlled: true,
                           context: context,
-                          builder: (context) => const ConfirmationBottomSheet(),
+                          // builder: (context) => const ConfirmationBottomSheet(),
+                          builder: (context) => const GetPlasticCardScreen(),
                         );
                       }),
                   26.spaceY,

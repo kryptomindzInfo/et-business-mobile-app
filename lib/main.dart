@@ -1,4 +1,5 @@
 import 'package:etbank_business_app/presentation/views/onboarding_screens/onboarding_screen.dart';
+import 'package:etbank_business_app/presentation/views/signup_screens/business_details/get_more_from_business_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/captured_picture_of_document_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/sign_in_sign_up_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_email_screen.dart';
@@ -53,7 +54,7 @@ class MyApp extends ConsumerWidget {
         ],
         navigatorKey: navigatorKey,
         onGenerateRoute: RouteGenerator.generateRoute,
-        initialRoute: SignUpVerificationsScreen.routeName,
+        initialRoute: GetMoreFromBusinessScreen.routeName,
         // initialRoute: SignUpVerificationsScreen.routeName,
       ),
     );

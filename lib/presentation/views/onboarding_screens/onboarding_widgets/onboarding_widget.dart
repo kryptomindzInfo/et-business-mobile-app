@@ -44,24 +44,22 @@ class OnboardingWidget extends StatelessWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Container(
-                              child: Row(
-                                children: [
-                                  Image.asset(
-                                    AppAssets.armouricon,
-                                    scale: 2,
-                                  ),
-                                  5.spaceX,
-                                  Text(
-                                    getTranslated("account", context),
-                                    style: AppTextstyle.bodyTextStyle(
-                                        fontSize: 13,
-                                        color: context
-                                            .theme.colorTheme.normalTextColor,
-                                        fontWeight: FontWeight.w400),
-                                  )
-                                ],
-                              ),
+                            Row(
+                              children: [
+                                Image.asset(
+                                  AppAssets.armouricon,
+                                  scale: 2,
+                                ),
+                                5.spaceX,
+                                Text(
+                                  getTranslated("account", context),
+                                  style: AppTextstyle.bodyTextStyle(
+                                      fontSize: 13,
+                                      color: context
+                                          .theme.colorTheme.normalTextColor,
+                                      fontWeight: FontWeight.w400),
+                                )
+                              ],
                             ),
                             InkWell(
                               onTap: () {
@@ -90,7 +88,7 @@ class OnboardingWidget extends StatelessWidget {
                         getTranslated(title, context),
                         style: AppTextstyle.headingTextStyle(
                             fontSize: 32.sp,
-                            fontWeight: FontWeight.w700,
+                            fontWeight: FontWeight.w500,
                             color: context.theme.colorTheme.normalTextColor,
                             overflow: TextOverflow.clip),
                       ),
@@ -108,7 +106,8 @@ class OnboardingWidget extends StatelessWidget {
                         style: AppTextstyle.bodyTextStyle(
                             fontSize: 16.sp,
                             fontWeight: FontWeight.w500,
-                            color: context.theme.colorTheme.normalTextColor,
+                            color: context.theme.colorTheme.normalTextColor
+                                .withOpacity(0.5),
                             overflow: TextOverflow.clip),
                       ),
                     ),

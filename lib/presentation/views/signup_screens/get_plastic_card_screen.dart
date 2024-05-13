@@ -20,6 +20,7 @@ class GetPlasticCardScreen extends ConsumerWidget {
     return Scaffold(
       backgroundColor: context.theme.colorTheme.backgroundColor,
       appBar: const CommonAppBar(
+        topPadding: 20,
         etBankLogo: true,
       ),
       body: Padding(

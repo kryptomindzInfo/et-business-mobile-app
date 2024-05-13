@@ -1,4 +1,3 @@
-import 'package:etbank_business_app/constants/app_assets.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/app_common_widgets.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/header_icon_with_text.dart';
@@ -20,7 +19,7 @@ class ReferBusinessShareLinkScreen extends ConsumerWidget {
     return BackgroundImageWidget(
       child: Scaffold(
         backgroundColor: AppColors.transparent,
-        appBar: CommonAppBar(
+        appBar: const CommonAppBar(
           etBankLogo: true,
         ),
         body: Padding(

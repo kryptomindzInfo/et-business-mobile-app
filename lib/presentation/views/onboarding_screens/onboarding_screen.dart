@@ -1,4 +1,5 @@
 import 'package:etbank_business_app/constants/app_assets.dart';
+import 'package:etbank_business_app/core/app_print.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/navigation/navigator_key.dart';
 import 'package:etbank_business_app/navigation/params/onboarding_args.dart';
@@ -89,8 +90,8 @@ class Onboarding extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final pageController = ref.read(pageControllerProvider);
-    print(params!.screens);
-    print("dddddddddddd");
+    console(params!.screens);
+    console("dddddddddddd");
 
     return Scaffold(
       body: Stack(

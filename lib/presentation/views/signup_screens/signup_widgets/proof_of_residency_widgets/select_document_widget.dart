@@ -58,12 +58,12 @@ class SelectDocumentWidget extends ConsumerWidget {
                     title: "Front of driving licence",
                     hideIdWidget: true,
                   );
-                  ref
-                      .watch(signUpStateProvider)
-                      .getCapturedDocImageFront(image!);
+                  // ref
+                  //     .watch(signUpStateProvider)
+                  //     .getCapturedDocImageFront(image!);
                 },
                 isForwardIcon: true,
-              )
+              ),
             ],
           ),
         )

@@ -16,7 +16,7 @@ class GetStartedSection extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Container(
-      height: 84,
+      // height: 84,
       width: double.infinity,
       decoration: const BoxDecoration(
           color: AppColors.tealColor,
@@ -25,18 +25,20 @@ class GetStartedSection extends ConsumerWidget {
               bottomRight: Radius.circular(28))),
       child: Container(
         margin: const EdgeInsets.only(left: 15, right: 15),
+        padding: const EdgeInsets.only(top: 25, bottom: 15),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             SizedBox(
-              width: 160,
+              width: 180,
               child: Text(
                 title ?? getTranslated("free_instant_transfer", context),
                 style: AppTextstyle.bodyTextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.normal,
                   overflow: TextOverflow.clip,
-                  color: context.theme.colorTheme.normalTextColor,
+                  color:
+                      context.theme.colorTheme.normalTextColor.withOpacity(0.5),
                 ),
               ),
             ),
