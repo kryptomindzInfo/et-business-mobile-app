@@ -25,12 +25,21 @@ class PaymentNotificationBottomSheetWidget extends ConsumerWidget {
         borderRadius: BorderRadius.circular(28),
       ),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
+        padding: const EdgeInsets.fromLTRB(20, 82, 20, 50),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                const Padding(
+                  padding: EdgeInsets.only(left: 20),
+                  child: Icon(
+                    Icons.close,
+                    color: AppColors.white,
+                  ),
+                ),
+                26.spaceY,
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: HeaderIconWithTitle(
@@ -38,6 +47,7 @@ class PaymentNotificationBottomSheetWidget extends ConsumerWidget {
                     // imageIconHeight: 14,
                     // imageIconWidth: 14,
                     title: getTranslated('payment_notif_title', context),
+                    spaceBtw: 8,
                     description:
                         getTranslated('payment_notif_subtitle', context),
                   ),
@@ -45,7 +55,7 @@ class PaymentNotificationBottomSheetWidget extends ConsumerWidget {
                 40.spaceY,
                 TextFieldWidget(
                   hintText: getTranslated('recipient_email', context),
-                  style: const TextStyle(color: AppColors.black),
+                  style: const TextStyle(color: AppColors.white),
                 ),
               ],
             ),
@@ -55,7 +65,7 @@ class PaymentNotificationBottomSheetWidget extends ConsumerWidget {
                   height: 48.h,
                   width: 327.w,
                   child: PrimaryButton(
-                    color: AppColors.green,
+                    color: AppColors.yellowGreen,
                     text: Text(
                       getTranslated('continue', context),
                       style: AppTextstyle.bodyTextStyle(

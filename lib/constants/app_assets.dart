@@ -181,4 +181,8 @@ class AppAssets {
   static const addItems = "${iconsDir}add_items.png";
   static const excalamation = "${iconsDir}excalamation.png";
   static const tick = "${iconsDir}tick.png";
+  static const exchangeUsd = "${imagesDir}exchange_usd.png";
+  static const transferTo = "${imagesDir}transfer_to.png";
+  static const paymentFrom = "${imagesDir}payment_from.png";
+  static const addYellow = "${iconsDir}add_yellow.png";
 }

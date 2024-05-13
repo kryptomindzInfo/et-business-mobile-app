@@ -54,11 +54,12 @@ class SignUpCreatePassword extends ConsumerWidget {
                               : Icons.visibility,
                           color: AppColors.white,
                         ),
+                        // contentPadding: EdgeInsets.all(0),
                         // suffix: Icon(Icons.remove_red_eye),
                         fillColor: ref
                                 .watch(signUpStateProvider)
                                 .containsSpecialCharacters
-                            ? AppColors.white
+                            ? AppColors.transparent
                             : AppColors.lightRed,
                         onSuffixIconTap: () {
                           ref

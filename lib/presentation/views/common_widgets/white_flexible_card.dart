@@ -7,8 +7,14 @@ class CommonWhiteFlexibleCard extends ConsumerWidget {
   final Color? color;
   final double? borderRadius;
   final EdgeInsetsGeometry? padding;
+  final BoxBorder? border;
   const CommonWhiteFlexibleCard(
-      {super.key, this.widget, this.color, this.borderRadius, this.padding});
+      {super.key,
+      this.widget,
+      this.color,
+      this.borderRadius,
+      this.padding,
+      this.border});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -16,8 +22,9 @@ class CommonWhiteFlexibleCard extends ConsumerWidget {
       width: double.infinity,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(borderRadius ?? 28),
-        color: context.theme.colorTheme.transparentToColor,
-        border: Border.all(color: context.theme.colorTheme.borderColor),
+        color: color ?? context.theme.colorTheme.transparentToColor,
+        border:
+            border ?? Border.all(color: context.theme.colorTheme.borderColor),
       ),
       child: Padding(
         padding: padding ??

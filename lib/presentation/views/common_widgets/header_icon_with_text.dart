@@ -142,6 +142,16 @@ class HeaderIconWithTitle extends ConsumerWidget {
                     ),
               )
             : const SizedBox(),
+        if (greenDescription != null)
+          Text(
+            greenDescription!,
+            style: AppTextstyle.bodyTextStyle(
+              color: context.theme.colorTheme.yellowGreenColor,
+              fontSize: 16,
+              fontWeight: FontWeight.w400,
+              overflow: TextOverflow.clip,
+            ),
+          )
       ],
     );
   }

@@ -69,7 +69,7 @@ class BusinessNotListedWidet extends ConsumerWidget {
                 style: tilteStyle ??
                     AppTextstyle.bodyTextStyle(
                         fontSize: 16.sp,
-                        color: titleTextColor ?? AppColors.blue,
+                        color: titleTextColor ?? AppColors.baseGreenColor,
                         fontWeight: FontWeight.w600),
               ),
             ],

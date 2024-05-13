@@ -77,6 +77,8 @@ class SignUpMobileNoScreen extends ConsumerWidget {
                             color: context.theme.colorTheme.normalTextColor,
                             fontSize: 16,
                             fontWeight: FontWeight.w400),
+                        keyboardType: TextInputType.number,
+                        // fillColor: AppColors.darkTeal,
                         controller:
                             ref.read(signUpStateProvider).mobileNoController,
                         hintText: getTranslated('mobile_no', context),

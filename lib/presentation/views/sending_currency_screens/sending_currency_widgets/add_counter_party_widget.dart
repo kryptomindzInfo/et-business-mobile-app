@@ -18,8 +18,12 @@ class AddCounterPartyWidget extends ConsumerWidget {
       onTap: onTap,
       child: Container(
         decoration: BoxDecoration(
-          color: AppColors.white,
+          color: AppColors.transparent,
           borderRadius: BorderRadius.circular(28),
+          border: Border.all(
+            color: AppColors.tealColor,
+            width: 1,
+          ),
         ),
         child: Padding(
           padding: const EdgeInsets.fromLTRB(25, 25, 0, 25),
@@ -34,7 +38,9 @@ class AddCounterPartyWidget extends ConsumerWidget {
               Text(
                 getTranslated(title, context),
                 style: AppTextstyle.headingTextStyle(
-                    fontSize: 16, fontWeight: FontWeight.w600),
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600,
+                    color: AppColors.white),
               )
             ],
           ),

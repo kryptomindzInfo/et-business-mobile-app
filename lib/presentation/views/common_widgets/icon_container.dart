@@ -9,8 +9,8 @@ class IconContainer extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Container(
-      height: 34,
-      width: 34,
+      height: 38,
+      width: 38,
       decoration: BoxDecoration(
           shape: BoxShape.circle,
           color: context.theme.colorTheme.iconBgColor,

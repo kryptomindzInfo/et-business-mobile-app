@@ -36,6 +36,7 @@ class TrustThisPayeeBottomSheetWidget extends ConsumerWidget {
                   AppAssets.trustPayee,
                   height: 100.h,
                   width: 100.w,
+                  color: Colors.yellow,
                 ),
                 54.spaceY,
                 Text(
@@ -62,7 +63,7 @@ class TrustThisPayeeBottomSheetWidget extends ConsumerWidget {
                       style: AppTextstyle.headingTextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 24,
-                          color: AppColors.green),
+                          color: AppColors.yellowGreen),
                     ),
                   ],
                 ),
@@ -81,42 +82,46 @@ class TrustThisPayeeBottomSheetWidget extends ConsumerWidget {
                 ),
               ],
             ),
-            Column(
-              children: [
-                SizedBox(
-                  height: 48.h,
-                  width: 327.w,
-                  child: PrimaryButton(
-                    color: AppColors.green,
-                    text: Text(
-                      getTranslated('no_go_back', context),
-                      style: AppTextstyle.bodyTextStyle(
-                          color: AppColors.black,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w500),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 50),
+              child: Column(
+                children: [
+                  SizedBox(
+                    height: 48.h,
+                    width: 327.w,
+                    child: PrimaryButton(
+                      color: AppColors.yellowGreen,
+                      text: Text(
+                        getTranslated('no_go_back', context),
+                        style: AppTextstyle.bodyTextStyle(
+                            color: AppColors.black,
+                            fontSize: 16,
+                            fontWeight: FontWeight.w500),
+                      ),
+                      onPressed: () {},
                     ),
-                    onPressed: () {},
                   ),
-                ),
-                8.spaceY,
-                SizedBox(
-                  height: 48.h,
-                  width: 327.w,
-                  child: PrimaryButton(
-                    color: AppColors.black,
-                    text: Text(
-                      getTranslated('yes_continue', context),
-                      style: AppTextstyle.bodyTextStyle(
-                          color: AppColors.green,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w500),
+                  8.spaceY,
+                  SizedBox(
+                    height: 48.h,
+                    width: 327.w,
+                    child: PrimaryButton(
+                      color: AppColors.black,
+                      text: Text(
+                        getTranslated('yes_continue', context),
+                        style: AppTextstyle.bodyTextStyle(
+                            color: AppColors.yellowGreen,
+                            fontSize: 16,
+                            fontWeight: FontWeight.w500),
+                      ),
+                      onPressed: () {
+                        Navigation.pushNamed(
+                            ShowAccountDetailsScreen.routeName);
+                      },
                     ),
-                    onPressed: () {
-                      Navigation.pushNamed(ShowAccountDetailsScreen.routeName);
-                    },
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ],
         ),

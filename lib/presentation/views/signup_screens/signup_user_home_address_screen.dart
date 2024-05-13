@@ -79,6 +79,7 @@ class SignUpUserHomeAddressScreen extends ConsumerWidget {
                 16.spaceY,
                 BusinessDetailsWhiteContainerWidet(
                   title: getTranslated('post_code', context),
+                  titleTextColor: AppColors.grey,
                   icon: Image.asset(
                     AppAssets.iconSearchBlack,
                     height: 14.h,

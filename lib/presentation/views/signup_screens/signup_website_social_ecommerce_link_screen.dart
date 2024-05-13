@@ -44,7 +44,7 @@ class SignUpWebsiteSocialEcommerceLinkScreen extends ConsumerWidget {
               ),
               32.spaceY,
               TextFieldWidget(
-                style: const TextStyle(color: Colors.black),
+                style: const TextStyle(color: Colors.white),
                 controller: ref.read(signUpStateProvider).emailController,
                 hintText: getTranslated('link', context),
                 hintStyle: AppTextstyle.bodyTextStyle(

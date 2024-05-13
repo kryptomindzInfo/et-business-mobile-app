@@ -88,7 +88,7 @@ class OTPVerification extends ConsumerWidget {
                 enablePinAutofill: true,
                 onCompleted: onCompleted,
               ),
-              // 10.spaceY,
+              10.spaceY,
               if (text1 != null)
                 Text(
                   getTranslated(text1 ?? 'resend_code', context),

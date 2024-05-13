@@ -14,6 +14,7 @@ class CurrencyExchangeTextfield extends ConsumerWidget {
     return Container(
       height: 97,
       width: double.infinity,
+      padding: const EdgeInsets.only(left: 20),
       decoration: BoxDecoration(
           border:
               Border.all(color: context.theme.colorTheme.textfieldborderColor),
@@ -24,11 +25,12 @@ class CurrencyExchangeTextfield extends ConsumerWidget {
         children: [
           TextField(
             controller: controller,
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
               border: OutlineInputBorder(),
               contentPadding:
                   EdgeInsets.symmetric(vertical: 15, horizontal: 10),
               hintText: 'GBP',
+              hintStyle: TextStyle(fontSize: 22, color: AppColors.white),
 
               focusedBorder: InputBorder.none,
               disabledBorder: InputBorder.none,
@@ -51,12 +53,15 @@ class CurrencyExchangeTextfield extends ConsumerWidget {
           //     ),
           //   ),
           // ),
-          Text(
-            'GBP : £1',
-            style: AppTextstyle.headingTextStyle(
-              color: context.theme.colorTheme.subGrayColor,
-              fontSize: 13,
-              fontWeight: FontWeight.normal,
+          Padding(
+            padding: const EdgeInsets.only(left: 8.0),
+            child: Text(
+              'GBP : £1',
+              style: AppTextstyle.headingTextStyle(
+                color: context.theme.colorTheme.buttonHalfWhiteText,
+                fontSize: 14,
+                fontWeight: FontWeight.normal,
+              ),
             ),
           ),
         ],

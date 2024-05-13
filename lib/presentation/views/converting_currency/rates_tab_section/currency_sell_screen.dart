@@ -9,6 +9,7 @@ import 'package:etbank_business_app/resources/localization/language_constrants.d
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../common_widgets/app_common_appbar.dart';
 import '../currency_converter_screen_widgets.dart/currency_sell_header.dart';
 
 class CurrencySellScreen extends ConsumerWidget {
@@ -20,14 +21,20 @@ class CurrencySellScreen extends ConsumerWidget {
     return BackgroundImageWidget(
       child: Scaffold(
         backgroundColor: AppColors.transparent,
+        appBar: const CommonAppBar(
+          etBankLogo: true,
+        ),
         body: Padding(
           padding: const EdgeInsets.only(left: 20, right: 20),
           child: Column(
             children: [
+              28.spaceY,
               const CurrencySellHeader(),
               25.spaceY,
-              const CommonWhiteFlexibleCard(
-                widget: Column(
+              CommonWhiteFlexibleCard(
+                color: AppColors.white,
+                border: Border.all(color: AppColors.transparent),
+                widget: const Column(
                   children: [
                     CurrencySellDetailTexts(
                       title: "Price",
@@ -53,10 +60,18 @@ class CurrencySellScreen extends ConsumerWidget {
                 ),
               ),
               25.spaceY,
-              const CurrencySellGreenCard(),
-              100.spaceY,
+              const CommonWhiteFlexibleCard(
+                color: AppColors.white,
+                padding: EdgeInsets.all(10),
+                widget: CurrencySellDetailTexts(
+                  title: "To",
+                  value: "USD",
+                ),
+              ),
+              // const CurrencySellGreenCard(),
+              170.spaceY,
               PrimaryButton(
-                  color: AppColors.primaryColor,
+                  color: AppColors.yellowGreen,
                   minwidth: 280,
                   text: Text(getTranslated("continue", context)),
                   onPressed: () {})

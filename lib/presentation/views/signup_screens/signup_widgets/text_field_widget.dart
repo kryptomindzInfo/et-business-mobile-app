@@ -36,7 +36,8 @@ class TextFieldWidget extends StatelessWidget {
       this.fillColor,
       this.bottomContentPadding,
       this.contentPadding,
-      this.labelStyle})
+      this.labelStyle,
+      this.border})
       : super(key: key);
 
   final TextEditingController? controller;
@@ -69,17 +70,19 @@ class TextFieldWidget extends StatelessWidget {
   final double? bottomContentPadding;
   final EdgeInsetsGeometry? contentPadding;
   final TextStyle? labelStyle;
+  final BoxBorder? border;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       height: 59,
       width: 360.w,
-      padding: EdgeInsets.symmetric(vertical: 3),
+      padding: const EdgeInsets.symmetric(vertical: 3),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
           // color: labelText != null ? AppColors.white : null,
-          border: Border.all(color: context.theme.colorTheme.borderColor)),
+          border: border ??
+              Border.all(color: context.theme.colorTheme.borderColor)),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -117,8 +120,9 @@ class TextFieldWidget extends StatelessWidget {
             // cursorHeight: 30,
 
             decoration: InputDecoration(
-                // fillColor: fillColor ?? Colors.white,
-                // filled: true,
+                fillColor: fillColor ?? Colors.transparent,
+                filled: true,
+
                 // floatingLabelAlignment: FloatingLabelAlignment.start,
                 // alignLabelWithHint: true,
                 floatingLabelBehavior: FloatingLabelBehavior.auto,
@@ -145,7 +149,7 @@ class TextFieldWidget extends StatelessWidget {
                 enabledBorder: InputBorder.none,
                 focusedBorder: InputBorder.none,
                 border: InputBorder.none,
-                constraints: BoxConstraints(maxHeight: 200)),
+                constraints: const BoxConstraints(maxHeight: 200)),
           ),
         ],
       ),

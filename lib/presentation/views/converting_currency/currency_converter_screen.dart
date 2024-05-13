@@ -19,7 +19,7 @@ class ConverterCurrencyScreen extends ConsumerWidget {
     return BackgroundImageWidget(
       child: Scaffold(
         backgroundColor: const Color.fromRGBO(0, 0, 0, 0),
-        appBar: CommonAppBar(
+        appBar: const CommonAppBar(
           etBankLogo: true,
         ),
         body: Padding(

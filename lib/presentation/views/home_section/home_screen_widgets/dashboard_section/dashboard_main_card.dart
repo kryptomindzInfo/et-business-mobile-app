@@ -45,24 +45,24 @@ class DashboardMainCard extends ConsumerWidget {
                         Text(
                           "£1",
                           style: AppTextstyle.headingTextStyle(
-                              fontSize: 48,
-                              fontWeight: FontWeight.w700,
+                              fontSize: 38,
+                              fontWeight: FontWeight.bold,
                               color: context.theme.colorTheme.normalTextColor),
                         ),
                         Container(
-                          height: 16,
-                          width: 16,
+                          height: 21,
+                          width: 21,
                           decoration: const BoxDecoration(
                               shape: BoxShape.circle,
                               color: AppColors.tealColor),
                           child: const Center(
                             child: Icon(
                               Icons.keyboard_arrow_down_sharp,
-                              size: 16,
+                              size: 21,
                               color: AppColors.white,
                             ),
                           ),
-                        )
+                        ),
                       ],
                     ),
                     Text(
@@ -77,13 +77,13 @@ class DashboardMainCard extends ConsumerWidget {
                 Padding(
                   padding: const EdgeInsets.only(top: 15),
                   child: Image.asset(
-                    AppAssets.ukflag,
+                    AppAssets.roundukflag,
                     height: 45,
                   ),
                 )
               ],
             ),
-            10.spaceY,
+            29.spaceY,
             Container(
               margin: const EdgeInsets.only(left: 35, right: 22),
               child: Row(
@@ -98,7 +98,7 @@ class DashboardMainCard extends ConsumerWidget {
                       showCommonModalSheet(
                         context,
                         460,
-                        RequestMoneyBottomSheetWidget(),
+                        const RequestMoneyBottomSheetWidget(),
                       );
                     },
                   ),
@@ -118,16 +118,28 @@ class DashboardMainCard extends ConsumerWidget {
             ),
             20.spaceY,
             const SeeAllCommonWidget("Transactions", true),
+            30.spaceY,
             InfoTextWidget(
-              marketPriceColor: context.theme.colorTheme.grassGreen,
+              marketPriceColor: context.theme.colorTheme.greyDescription,
+              image: AppAssets.exchangeUsd,
+              title: 'Exchanged to USD',
+              subTitle: 'Today, 9:29 PM',
+              price1: '-£1',
+              price2: '+S1.36',
             ),
             // 10.spaceY,
-            InfoTextWidget(
-              marketPriceColor: context.theme.colorTheme.redColor,
+            const InfoTextWidget(
+              image: AppAssets.transferTo,
+              title: 'Transfer to Brooklyn',
+              price1: '-£1',
+              subTitle: 'Today, 9:13 PM',
             ),
             // 10.spaceY,
-            InfoTextWidget(
-              marketPriceColor: context.theme.colorTheme.redColor,
+            const InfoTextWidget(
+              image: AppAssets.paymentFrom,
+              title: 'Payment from jhon deo',
+              price1: '-£1',
+              subTitle: 'Today, 9:09 PM',
             ),
             20.spaceY,
           ],

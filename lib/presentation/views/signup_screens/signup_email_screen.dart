@@ -48,10 +48,11 @@ class SignUpEmailScreen extends ConsumerWidget {
                     color: context.theme.colorTheme.normalTextColor,
                     fontSize: 16,
                     fontWeight: FontWeight.w400),
+                // fillColor: AppColors.darkTeal,
                 controller: ref.read(signUpStateProvider).emailController,
-                hintText: getTranslated('signup_email_title', context),
+                hintText: getTranslated('enter_email_address', context),
                 hintStyle: AppTextstyle.bodyTextStyle(
-                  color: context.theme.colorTheme.headerDescriptionColor,
+                  color: context.theme.colorTheme.whiteColor.withOpacity(0.5),
                   fontSize: 16,
                   fontWeight: FontWeight.w400,
                 ),
