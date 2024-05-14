@@ -96,10 +96,8 @@ class DashboardMainCard extends ConsumerWidget {
                     title: "Request",
                     onpress: () {
                       showCommonModalSheet(
-                        context,
-                        460,
-                        const RequestMoneyBottomSheetWidget(),
-                      );
+                          context, 460, const RequestMoneyBottomSheetWidget(),
+                          color: AppColors.black);
                     },
                   ),
                   MainCardOption(

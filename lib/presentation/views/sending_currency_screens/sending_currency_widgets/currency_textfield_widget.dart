@@ -7,7 +7,8 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class CurrencyTextFieldWidget extends ConsumerWidget {
-  const CurrencyTextFieldWidget({super.key});
+  final EdgeInsetsGeometry? padding;
+  const CurrencyTextFieldWidget({super.key, this.padding});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -18,7 +19,7 @@ class CurrencyTextFieldWidget extends ConsumerWidget {
         border: Border.all(color: AppColors.tealColor, width: 1),
       ),
       child: Padding(
-        padding: const EdgeInsets.fromLTRB(12, 15, 8, 15),
+        padding: padding ?? const EdgeInsets.fromLTRB(12, 15, 8, 15),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [

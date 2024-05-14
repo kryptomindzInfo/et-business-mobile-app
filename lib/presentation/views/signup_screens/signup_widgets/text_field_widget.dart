@@ -37,7 +37,8 @@ class TextFieldWidget extends StatelessWidget {
       this.bottomContentPadding,
       this.contentPadding,
       this.labelStyle,
-      this.border})
+      this.border,
+      this.height})
       : super(key: key);
 
   final TextEditingController? controller;
@@ -71,11 +72,12 @@ class TextFieldWidget extends StatelessWidget {
   final EdgeInsetsGeometry? contentPadding;
   final TextStyle? labelStyle;
   final BoxBorder? border;
+  final double? height;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 59,
+      height: height ?? 59,
       width: 360.w,
       padding: const EdgeInsets.symmetric(vertical: 3),
       decoration: BoxDecoration(

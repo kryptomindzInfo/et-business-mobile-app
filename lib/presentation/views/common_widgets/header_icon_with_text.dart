@@ -127,6 +127,7 @@ class HeaderIconWithTitle extends ConsumerWidget {
                 const ProfilePicWidget(
                   image: AppAssets.profileicon,
                 ),
+              if (trailing != null) trailing ?? SizedBox(),
             ],
           ),
 

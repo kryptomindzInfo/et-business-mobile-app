@@ -29,7 +29,7 @@ class AddNewCustomerScreen extends ConsumerWidget {
     return BackgroundImageWidget(
       child: Scaffold(
         backgroundColor: AppColors.transparent,
-        appBar: CommonAppBar(
+        appBar: const CommonAppBar(
           etBankLogo: true,
         ),
         body: Padding(
@@ -74,7 +74,7 @@ class AddNewCustomerScreen extends ConsumerWidget {
               height: 48.h,
               width: 327.w,
               child: PrimaryButton(
-                color: AppColors.green,
+                color: AppColors.yellowGreen,
                 text: Text(
                   getTranslated('continue', context),
                   style: AppTextstyle.bodyTextStyle(

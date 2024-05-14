@@ -11,12 +11,18 @@ class RequestMoneyWhiteContainerWidget extends ConsumerWidget {
   final String title;
   final String subtitle;
   final VoidCallback? onpress;
+  final Color? color;
+  final Color? titleColor;
+  final Color? subTitlecolor;
   const RequestMoneyWhiteContainerWidget(
       {super.key,
       this.imageicon,
       required this.title,
       required this.subtitle,
-      this.onpress});
+      this.onpress,
+      this.color,
+      this.titleColor,
+      this.subTitlecolor});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -25,7 +31,7 @@ class RequestMoneyWhiteContainerWidget extends ConsumerWidget {
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
-          color: AppColors.white,
+          color: color ?? AppColors.white,
         ),
         child: Padding(
           padding: const EdgeInsets.fromLTRB(16, 16, 16, 10),
@@ -50,14 +56,15 @@ class RequestMoneyWhiteContainerWidget extends ConsumerWidget {
                       style: AppTextstyle.bodyTextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.w600,
-                          color: AppColors.black),
+                          color: titleColor ?? AppColors.black),
                     ),
                     Text(
                       getTranslated(subtitle, context),
                       style: AppTextstyle.bodyTextStyle(
                           fontSize: 12,
                           fontWeight: FontWeight.w600,
-                          color: AppColors.black.withOpacity(0.4),
+                          color:
+                              subTitlecolor ?? AppColors.black.withOpacity(0.4),
                           overflow: TextOverflow.clip),
                     ),
                   ],

@@ -10,6 +10,7 @@ class ShowAccountDetailsWidget extends ConsumerWidget {
   final TextStyle? subTitleStyle;
   final Color? color;
   final BoxBorder? border;
+  final Color? titleColor;
 
   const ShowAccountDetailsWidget(
       {super.key,
@@ -17,7 +18,8 @@ class ShowAccountDetailsWidget extends ConsumerWidget {
       this.subTitle,
       this.subTitleStyle,
       this.color,
-      this.border});
+      this.border,
+      this.titleColor});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -35,7 +37,7 @@ class ShowAccountDetailsWidget extends ConsumerWidget {
             Text(
               getTranslated(title, context),
               style: AppTextstyle.bodyTextStyle(
-                  fontSize: 16, color: AppColors.halfWhite),
+                  fontSize: 16, color: titleColor ?? AppColors.halfWhite),
             ),
             Text(
               getTranslated(subTitle ?? '', context),

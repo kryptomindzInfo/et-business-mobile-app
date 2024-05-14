@@ -32,6 +32,7 @@ class CurrencySellScreen extends ConsumerWidget {
               const CurrencySellHeader(),
               25.spaceY,
               CommonWhiteFlexibleCard(
+                borderRadius: 12,
                 color: AppColors.white,
                 border: Border.all(color: AppColors.transparent),
                 widget: const Column(

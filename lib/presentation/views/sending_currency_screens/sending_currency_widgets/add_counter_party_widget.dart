@@ -9,8 +9,14 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 class AddCounterPartyWidget extends ConsumerWidget {
   final Function() onTap;
   final String title;
+  final double? borderRadius;
+  final EdgeInsetsGeometry? padding;
   const AddCounterPartyWidget(
-      {super.key, required this.onTap, required this.title});
+      {super.key,
+      required this.onTap,
+      required this.title,
+      this.borderRadius,
+      this.padding});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -19,14 +25,14 @@ class AddCounterPartyWidget extends ConsumerWidget {
       child: Container(
         decoration: BoxDecoration(
           color: AppColors.transparent,
-          borderRadius: BorderRadius.circular(28),
+          borderRadius: BorderRadius.circular(borderRadius ?? 28),
           border: Border.all(
             color: AppColors.tealColor,
             width: 1,
           ),
         ),
         child: Padding(
-          padding: const EdgeInsets.fromLTRB(25, 25, 0, 25),
+          padding: padding ?? const EdgeInsets.fromLTRB(25, 25, 0, 25),
           child: Row(
             children: [
               Image.asset(

@@ -185,4 +185,5 @@ class AppAssets {
   static const transferTo = "${imagesDir}transfer_to.png";
   static const paymentFrom = "${imagesDir}payment_from.png";
   static const addYellow = "${iconsDir}add_yellow.png";
+  static const clock = "${iconsDir}clock.png";
 }
