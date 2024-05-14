@@ -302,9 +302,8 @@ class RouteGenerator {
             // params: settings.arguments as HomeScreenArgs?
             ));
       case GetCardScreen.routeName:
-        return route(const GetCardScreen(
-            // params: settings.arguments as HomeScreenArgs?
-            ));
+        return route(
+            GetCardScreen(params: settings.arguments as GetCardScreenArgs));
       case InviteToETBankScreen.routeName:
         return route(const InviteToETBankScreen(
             // params: settings.arguments as HomeScreenArgs?

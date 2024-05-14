@@ -1,4 +1,4 @@
-import 'package:etbank_business_app/constants/app_assets.dart';
+import 'package:etbank_business_app/constants/app_textstyle.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/navigation/navigation.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/app_common_widgets.dart';
@@ -8,7 +8,6 @@ import 'package:etbank_business_app/presentation/views/signup_screens/signup_wid
 import 'package:etbank_business_app/resources/localization/language_constrants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
 import '../../../../../constants/app_colors.dart';
 import '../../../../../providers/team_provider.dart';
 import '../../../common_widgets/app_common_appbar.dart';
@@ -23,7 +22,7 @@ class InviteToETBankScreen extends ConsumerWidget {
     return BackgroundImageWidget(
       child: Scaffold(
         backgroundColor: AppColors.transparent,
-        appBar: CommonAppBar(
+        appBar: const CommonAppBar(
           etBankLogo: true,
         ),
         body: Padding(
@@ -34,10 +33,11 @@ class InviteToETBankScreen extends ConsumerWidget {
                 // imageicon: AppAssets.arrowLeft,
                 title: getTranslated("invite_to_et_bank", context),
               ),
-              30.spaceY,
+              24.spaceY,
               UserPersonalDetailsWidget(
                   title: getTranslated("email", context),
-                  hint: "jamesfork@gmail.com",
+                  hint: "Type or past multiple at once",
+                  hintStyle: AppTextstyle.bodyTextStyle(color: AppColors.grey),
                   controller:
                       ref.read(teamscreenProvider).invitationController),
             ],
@@ -46,9 +46,10 @@ class InviteToETBankScreen extends ConsumerWidget {
         bottomNavigationBar: Padding(
           padding: const EdgeInsets.only(bottom: 50, left: 20, right: 20),
           child: CommonButton(
+            height: 38,
             title: getTranslated("continue", context),
-            mainButtonColor: AppColors.continueButtonDisabledColor,
-            titleColor: AppColors.continueTextDisabledColor,
+            mainButtonColor: AppColors.yellowGreen,
+            titleColor: AppColors.mateBlackColor,
             onpress: () {
               Navigation.pushNamed(AssignRoleScreen.routeName);
             },

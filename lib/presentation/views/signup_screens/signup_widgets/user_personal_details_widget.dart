@@ -17,6 +17,7 @@ class UserPersonalDetailsWidget extends ConsumerWidget {
   final bool? readOnly;
   final bool? enableInteraction;
   final TextEditingController controller;
+  final TextStyle? hintStyle;
 
   final TextStyle? titleTextStyle;
   const UserPersonalDetailsWidget(
@@ -29,7 +30,8 @@ class UserPersonalDetailsWidget extends ConsumerWidget {
       this.titleTextStyle,
       this.readOnly,
       this.enableInteraction,
-      required this.controller});
+      required this.controller,
+      this.hintStyle});
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return GestureDetector(
@@ -59,6 +61,7 @@ class UserPersonalDetailsWidget extends ConsumerWidget {
                           controller: controller,
                           title: title,
                           hint: hint,
+                          hintStyle: hintStyle,
                           padding: 0,
                           readOnly: readOnly ?? false,
                           enableInteraction: enableInteraction ?? true,

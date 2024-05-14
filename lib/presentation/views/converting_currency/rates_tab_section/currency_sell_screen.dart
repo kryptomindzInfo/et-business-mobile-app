@@ -4,9 +4,9 @@ import 'package:etbank_business_app/presentation/views/common_widgets/app_common
 import 'package:etbank_business_app/presentation/views/common_widgets/primary_button.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/white_flexible_card.dart';
 import 'package:etbank_business_app/presentation/views/converting_currency/currency_converter_screen_widgets.dart/currency_sell_detail_texts.dart';
-import 'package:etbank_business_app/presentation/views/converting_currency/currency_converter_screen_widgets.dart/currency_sell_green_card.dart';
 import 'package:etbank_business_app/resources/localization/language_constrants.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../common_widgets/app_common_appbar.dart';
@@ -61,8 +61,9 @@ class CurrencySellScreen extends ConsumerWidget {
               ),
               25.spaceY,
               const CommonWhiteFlexibleCard(
+                borderRadius: 12,
                 color: AppColors.white,
-                padding: EdgeInsets.all(10),
+                padding: EdgeInsets.symmetric(horizontal: 28, vertical: 14),
                 widget: CurrencySellDetailTexts(
                   title: "To",
                   value: "USD",
@@ -71,6 +72,7 @@ class CurrencySellScreen extends ConsumerWidget {
               // const CurrencySellGreenCard(),
               170.spaceY,
               PrimaryButton(
+                  height: 38,
                   color: AppColors.yellowGreen,
                   minwidth: 280,
                   text: Text(getTranslated("continue", context)),

@@ -22,6 +22,7 @@ class HeaderIconWithTitle extends ConsumerWidget {
   final bool? etBankLogo;
   final bool? profilePicWidget;
   final int? spaceBtw;
+  final Widget? trailing;
   const HeaderIconWithTitle(
       {super.key,
       this.title,
@@ -36,7 +37,8 @@ class HeaderIconWithTitle extends ConsumerWidget {
       this.widget,
       this.etBankLogo,
       this.profilePicWidget,
-      this.spaceBtw});
+      this.spaceBtw,
+      this.trailing});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

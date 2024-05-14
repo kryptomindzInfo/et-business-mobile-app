@@ -1,7 +1,9 @@
 import 'package:etbank_business_app/constants/static_data/home_screen_static_data.dart';
+import 'package:etbank_business_app/presentation/views/bottom_navigation_bar.dart';
 import 'package:etbank_business_app/presentation/views/converting_currency/currency_converter_screen_widgets.dart/add_currency_pair_widget.dart';
 import 'package:etbank_business_app/presentation/views/converting_currency/currency_converter_screen_widgets.dart/rates_tab.chips.dart';
 import 'package:etbank_business_app/presentation/views/converting_currency/rates_tab_section/rate_tab_widget.dart';
+import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/teams_section/invite_to_et_bank_screen.dart';
 import 'package:etbank_business_app/presentation/views/onboarding_screens/onboarding_screen.dart';
 import 'package:etbank_business_app/presentation/views/sending_currency_screens/who_to_pay_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/business_details/get_more_from_business_screen.dart';
@@ -39,6 +41,7 @@ class MyApp extends ConsumerWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) => MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'ET Bank Business',
         themeMode: ThemeMode.dark,
         theme: ThemeData(
@@ -61,7 +64,7 @@ class MyApp extends ConsumerWidget {
         ],
         navigatorKey: navigatorKey,
         onGenerateRoute: RouteGenerator.generateRoute,
-        initialRoute: CurrencyExchangeConverterScreen.routeName,
+        initialRoute: BaseBottomNavBar.routeName,
         // initialRoute: SignUpVerificationsScreen.routeName,
       ),
     );

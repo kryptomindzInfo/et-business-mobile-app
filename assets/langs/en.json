@@ -480,5 +480,6 @@
    "get_in_touch":"Get in touch to opimise your plane",
    "email_hasnt_arrived":"Email hasn’t arrived? You can retry in ",
    "enter_manually":"Enter manually",
-   "send_invitaion":"Send Invitation"
+   "send_invitaion":"Send Invitation",
+   "invite_to_et_bank": "Invite to ET Bank Business"
 }
