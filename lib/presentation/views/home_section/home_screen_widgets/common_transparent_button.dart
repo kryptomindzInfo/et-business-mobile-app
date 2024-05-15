@@ -11,6 +11,7 @@ class CommonGreyButton extends ConsumerWidget {
   final double? imageIconHeight;
   final Color? titleColor;
   final Color? buttonColor;
+  final double? borderRadius;
   const CommonGreyButton(
       {super.key,
       this.title,
@@ -18,7 +19,8 @@ class CommonGreyButton extends ConsumerWidget {
       this.onpress,
       this.imageIconHeight,
       this.titleColor,
-      this.buttonColor});
+      this.buttonColor,
+      this.borderRadius});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -29,7 +31,7 @@ class CommonGreyButton extends ConsumerWidget {
           height: 32,
           // width: 117,
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(64),
+              borderRadius: BorderRadius.circular(borderRadius ?? 64),
               color: buttonColor ?? context.theme.colorTheme.buttonColor
               // border: Border.all(color: AppColors.primaryColor)
               ),

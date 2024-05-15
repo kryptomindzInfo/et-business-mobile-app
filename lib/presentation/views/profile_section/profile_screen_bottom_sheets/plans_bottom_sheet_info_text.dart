@@ -1,3 +1,4 @@
+import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/icon_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -39,6 +40,7 @@ class PlansBottomSheetInfoText extends ConsumerWidget {
                   overflow: TextOverflow.clip,
                 ),
               ),
+              8.spaceY,
               SizedBox(
                 width: 200,
                 child: Text(

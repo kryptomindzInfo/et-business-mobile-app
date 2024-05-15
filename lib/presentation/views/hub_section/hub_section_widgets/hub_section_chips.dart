@@ -1,3 +1,4 @@
+import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -7,16 +8,17 @@ class HubSectionChipe extends ConsumerWidget {
   final String? title;
   final Color? color;
   final VoidCallback? onpress;
-  const HubSectionChipe({super.key, this.title, this.color, this.onpress});
+  final Color? titleColor;
+  const HubSectionChipe(
+      {super.key, this.title, this.color, this.onpress, this.titleColor});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return Container(
-      child: Chips(
-        title: title,
-        color: color,
-        onpress: onpress,
-      ),
+    return Chips(
+      title: title,
+      titleColor: titleColor ?? AppColors.black,
+      color: color,
+      onpress: onpress,
     );
   }
 }

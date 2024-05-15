@@ -19,11 +19,19 @@ class ProfileScreenOptionsWidget extends ConsumerWidget {
         itemBuilder: (context, index) {
           final item =
               ref.read(profilescreenProvider).profileScreenOptions[index];
+
           return ProfileScreenChips(
+            // color:
+            // index == 0 ? context.theme.colorTheme.yellowGreenColor : null,
             title: item["title"],
             icon: item["icon"],
             onpress: item["ontap"],
-            titleColor: context.theme.colorTheme.normalTextColor,
+            titleColor:
+                // index == 0
+                //     ?
+                // context.theme.colorTheme.blackColor
+                // :
+                context.theme.colorTheme.normalTextColor,
           );
         },
       ),

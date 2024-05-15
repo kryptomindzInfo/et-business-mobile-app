@@ -12,7 +12,6 @@ import 'package:etbank_business_app/presentation/views/signup_screens/signup_wid
 import 'package:etbank_business_app/resources/localization/language_constrants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
 import '../../../../constants/app_colors.dart';
 import '../../../../constants/app_textstyle.dart';
 import '../../common_widgets/app_common_appbar.dart';
@@ -27,11 +26,11 @@ class MonthlyStatementScreen extends ConsumerWidget {
     return BackgroundImageWidget(
       child: Scaffold(
         backgroundColor: AppColors.transparent,
-        appBar: CommonAppBar(
+        appBar: const CommonAppBar(
           etBankLogo: true,
         ),
         body: Padding(
-          padding: const EdgeInsets.only(left: 20, right: 20),
+          padding: const EdgeInsets.only(left: 20, right: 20, top: 28),
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -40,7 +39,7 @@ class MonthlyStatementScreen extends ConsumerWidget {
                   // imageicon: AppAssets.arrowLeft,
                   title: getTranslated("monthly_statement", context),
                 ),
-                20.spaceY,
+                64.spaceY,
                 BusinessDetailsWhiteContainerWidet(
                     title: "PDF",
                     labelText: getTranslated("file_type", context),
@@ -59,6 +58,7 @@ class MonthlyStatementScreen extends ConsumerWidget {
                   subtitle: "GBP . Default Account",
                   image: AppAssets.roundukflag,
                   widget: CommonButton(
+                    borderRadius: 8,
                     title: getTranslated("select", context),
                     width: 66,
                     mainButtonColor:
@@ -66,11 +66,11 @@ class MonthlyStatementScreen extends ConsumerWidget {
                     titleColor: context.theme.colorTheme.primaryColor,
                   ),
                 ),
-                30.spaceY,
+                32.spaceY,
                 TitleText(
                   title: getTranslated("period", context),
                 ),
-                20.spaceY,
+                16.spaceY,
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -84,7 +84,7 @@ class MonthlyStatementScreen extends ConsumerWidget {
                     ),
                   ],
                 ),
-                100.spaceY,
+                90.spaceY,
                 PrimaryButton(
                   color: context.theme.colorTheme.buttonColor,
                   text: Text(
@@ -101,7 +101,7 @@ class MonthlyStatementScreen extends ConsumerWidget {
                 ),
                 10.spaceY,
                 PrimaryButton(
-                  color: context.theme.colorTheme.buttonDisabledColor,
+                  color: context.theme.colorTheme.disableButtonColor,
                   text: Text(
                     getTranslated("share_statement", context),
                     style: AppTextstyle.bodyTextStyle(

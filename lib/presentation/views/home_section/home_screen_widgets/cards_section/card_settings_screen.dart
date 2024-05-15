@@ -20,7 +20,7 @@ class CardSettingsScreen extends ConsumerWidget {
     return BackgroundImageWidget(
       child: Scaffold(
         backgroundColor: AppColors.transparent,
-        appBar: CommonAppBar(
+        appBar: const CommonAppBar(
           etBankLogo: true,
         ),
         body: Padding(
@@ -32,9 +32,9 @@ class CardSettingsScreen extends ConsumerWidget {
                 title: getTranslated("settings", context),
                 etBankLogo: true,
               ),
-              30.spaceY,
+              22.spaceY,
               const SettingsScreenHeaderCard(),
-              30.spaceY,
+              32.spaceY,
               const CardSetupAndEditWidget()
             ],
           ),

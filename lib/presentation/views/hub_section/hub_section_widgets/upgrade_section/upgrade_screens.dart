@@ -18,34 +18,43 @@ class UpgradeScreens extends ConsumerWidget {
     const OnboardingWidget(
       title: 'upgrade1title',
       subtitle: 'upgrade1subtitle',
-      image: AppAssets.upgrade1,
+      subTitleColor: AppColors.yellowGreen,
+      image: AppAssets.saveMoney,
+      scale: 2,
     ),
     OnboardingWidget(
       title: 'upgrade2title',
       subtitle: 'upgrade2subtitle',
-      image: AppAssets.upgrade2,
+      subTitleColor: AppColors.yellowGreen,
+      image: AppAssets.offers,
+      scale: 2,
       isButtons: true,
-      widget: Positioned(
-        bottom: 60.h,
-        right: 50.w,
-        left: 50.w,
-        child: CommonButton(
-          title: getTranslated("get_started", appContext),
-          mainButtonColor: AppColors.white,
-          titleColor: AppColors.black,
-          width: double.infinity,
-          onpress: () {
-            showModalBottomSheet(
-              isScrollControlled: true,
-              context: appContext,
-              builder: (context) => const BlackCommonBottomSheet(
-                title: "your_plan_doesnt",
-                subtitle: "Upgrade_your_plan",
-                buttonTitle: "upgrade_plan",
-                image: AppAssets.rocket,
-              ),
-            );
-          },
+      widget: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        child: Positioned(
+          bottom: 60.h,
+          right: 50.w,
+          left: 50.w,
+          child: CommonButton(
+            borderRadius: 12,
+            height: 50,
+            title: getTranslated("get_started", appContext),
+            mainButtonColor: AppColors.white,
+            titleColor: AppColors.black,
+            width: double.infinity,
+            onpress: () {
+              showModalBottomSheet(
+                isScrollControlled: true,
+                context: appContext,
+                builder: (context) => const BlackCommonBottomSheet(
+                  title: "your_plan_doesnt",
+                  subtitle: "Upgrade_your_plan",
+                  buttonTitle: "upgrade_plan",
+                  image: AppAssets.rocket,
+                ),
+              );
+            },
+          ),
         ),
       ),
     ),

@@ -32,8 +32,9 @@ class CardSetupAndEditWidget extends ConsumerWidget {
                 color: context.theme.colorTheme.normalTextColor),
           ),
         ),
-        10.spaceY,
+        16.spaceY,
         CommonWhiteFlexibleCard(
+          borderRadius: 12,
           widget: Column(
             children: [
               SettingsInfoText(
@@ -45,7 +46,7 @@ class CardSetupAndEditWidget extends ConsumerWidget {
                 isButton: true,
                 imageIcon: AppAssets.freezicon,
               ),
-              20.spaceY,
+              32.spaceY,
               SettingsInfoText(
                 title: getTranslated(
                   "change_card_name",
@@ -55,13 +56,14 @@ class CardSetupAndEditWidget extends ConsumerWidget {
                 isButton: false,
                 imageIcon: AppAssets.editicon,
               ),
-              20.spaceY,
+              32.spaceY,
               SettingsInfoText(
                 title: getTranslated(
-                  "change_card_name",
+                  "Terminate card",
                   context,
                 ),
-                description: "${getTranslated("current_name", context)}:",
+                description:
+                    "${getTranslated("Card will be deactivated but stay in your account", context)}:",
                 isButton: false,
                 imageIcon: AppAssets.deleteicon,
               ),

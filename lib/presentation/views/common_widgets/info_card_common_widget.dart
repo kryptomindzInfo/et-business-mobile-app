@@ -13,8 +13,9 @@ class InfoCardCommonWidget extends ConsumerWidget {
     return Container(
         width: double.infinity,
         // height: 200,
+        padding: const EdgeInsets.symmetric(vertical: 12),
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(32),
+            borderRadius: BorderRadius.circular(12),
             color: color ?? AppColors.tealColor,
             border: Border.all(color: context.theme.colorTheme.borderColor)),
         child: child);

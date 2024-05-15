@@ -22,12 +22,15 @@ class HubSectionBody extends ConsumerWidget {
             int index = ref.read(hubProvider).hubScreenOptions.indexOf(e);
             return HubSectionChipe(
               title: getTranslated(e["title"], context),
+              titleColor: ref.watch(hubProvider).hubSectionOptionIndex == index
+                  ? AppColors.black
+                  : AppColors.white,
               onpress: () {
                 ref.read(hubProvider).selectedHubOptionsIndex(index);
               },
               color: ref.watch(hubProvider).hubSectionOptionIndex == index
-                  ? AppColors.tealColor
-                  : AppColors.black,
+                  ? AppColors.yellowGreen
+                  : AppColors.tealColor,
             );
           }).toList()),
         ),

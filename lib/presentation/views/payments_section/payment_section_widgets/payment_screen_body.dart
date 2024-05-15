@@ -42,34 +42,31 @@ class PaymentScreenBody extends ConsumerWidget {
             );
           }).toList()),
         ),
-        20.spaceY,
+        45.spaceY,
         const TransferMainWhiteCard(),
-        25.spaceY,
-        SeeAllCommonWidget(getTranslated("favourite", context), true),
-        10.spaceY,
-        CommonWhiteFlexibleCard(
-          color: AppColors.grey.withOpacity(0.5),
-          widget: const Column(
-            children: [
-              TransferFavouriteProfileWidget(
-                imageIcon: AppAssets.nickle,
-                title: "Nickle",
-              ),
-              TransferFavouriteProfileWidget(
-                imageIcon: AppAssets.michel,
-                title: "Michel",
-              ),
-              TransferFavouriteProfileWidget(
-                imageIcon: AppAssets.evelyn,
-                title: "Evelyn",
-              ),
-              TransferFavouriteProfileWidget(
-                imageIcon: AppAssets.oliva,
-                title: "Oliva",
-              )
-            ],
-          ),
-        )
+        // 25.spaceY,
+        // SeeAllCommonWidget(getTranslated("favourite", context), true),
+        // 10.spaceY,
+        // CommonWhiteFlexibleCard(
+        //   color: AppColors.grey.withOpacity(0.5),
+        //   widget: const Column(
+        //     children: [
+
+        //       TransferFavouriteProfileWidget(
+        //         imageIcon: AppAssets.michel,
+        //         title: "Michel",
+        //       ),
+        //       TransferFavouriteProfileWidget(
+        //         imageIcon: AppAssets.evelyn,
+        //         title: "Evelyn",
+        //       ),
+        //       TransferFavouriteProfileWidget(
+        //         imageIcon: AppAssets.oliva,
+        //         title: "Oliva",
+        //       )
+        //     ],
+        //   ),
+        // )
       ],
     );
   }

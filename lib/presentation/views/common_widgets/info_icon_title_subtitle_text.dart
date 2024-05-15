@@ -11,12 +11,14 @@ class InfoIconTitleSubtitleText extends ConsumerWidget {
   final String title;
   final String subtitle;
   final VoidCallback? onpress;
+  final Widget? trailing;
   const InfoIconTitleSubtitleText(
       {super.key,
       required this.imageicon,
       required this.title,
       required this.subtitle,
-      this.onpress});
+      this.onpress,
+      this.trailing});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -55,6 +57,7 @@ class InfoIconTitleSubtitleText extends ConsumerWidget {
                 ],
               ),
             ),
+            if (trailing != null) trailing!,
           ],
         ),
       ),

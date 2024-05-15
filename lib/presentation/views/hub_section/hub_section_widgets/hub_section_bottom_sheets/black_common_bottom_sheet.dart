@@ -18,16 +18,30 @@ class BlackCommonBottomSheet extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Container(
-      height: 650,
+      height: 750,
       width: double.infinity,
-      color: AppColors.black,
+      decoration: const BoxDecoration(
+        color: AppColors.black,
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(24),
+          topRight: Radius.circular(24),
+        ),
+      ),
       child: Padding(
         padding: const EdgeInsets.only(left: 20, right: 20),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            36.spaceY,
+            const Icon(
+              Icons.close,
+              color: AppColors.white,
+            ),
+            42.spaceY,
             HeaderIconWithTitle(
               // imageicon: AppAssets.crossicon,
               title: getTranslated(title!, context),
+              spaceBtw: 10,
               description: getTranslated(subtitle!, context),
               edgeinsets: const EdgeInsets.only(top: 20),
             ),

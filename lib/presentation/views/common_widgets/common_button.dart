@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
 import '../../../constants/app_colors.dart';
 import '../../../constants/app_textstyle.dart';
 
@@ -11,6 +10,7 @@ class CommonButton extends ConsumerWidget {
   final Color? mainButtonColor;
   final Color? titleColor;
   final double? height;
+  final double? borderRadius;
   const CommonButton(
       {super.key,
       this.onpress,
@@ -18,7 +18,8 @@ class CommonButton extends ConsumerWidget {
       this.width,
       this.mainButtonColor,
       this.titleColor,
-      this.height});
+      this.height,
+      this.borderRadius});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -28,7 +29,7 @@ class CommonButton extends ConsumerWidget {
         height: height ?? 38,
         width: width,
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(70),
+            borderRadius: BorderRadius.circular(borderRadius ?? 70),
             color: mainButtonColor ?? AppColors.black),
         child: Center(
           child: Text(

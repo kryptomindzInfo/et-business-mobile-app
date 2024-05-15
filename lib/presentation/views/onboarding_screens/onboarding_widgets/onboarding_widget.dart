@@ -14,6 +14,7 @@ class OnboardingWidget extends StatelessWidget {
   final String? image;
   final Widget? widget;
   final double? scale;
+  final Color? subTitleColor;
 
   const OnboardingWidget(
       {super.key,
@@ -22,7 +23,8 @@ class OnboardingWidget extends StatelessWidget {
       this.isButtons = false,
       this.image,
       this.widget,
-      this.scale});
+      this.scale,
+      this.subTitleColor});
 
   @override
   Widget build(BuildContext context) {
@@ -106,8 +108,9 @@ class OnboardingWidget extends StatelessWidget {
                         style: AppTextstyle.bodyTextStyle(
                             fontSize: 16.sp,
                             fontWeight: FontWeight.w500,
-                            color: context.theme.colorTheme.normalTextColor
-                                .withOpacity(0.5),
+                            color: subTitleColor ??
+                                context.theme.colorTheme.normalTextColor
+                                    .withOpacity(0.5),
                             overflow: TextOverflow.clip),
                       ),
                     ),

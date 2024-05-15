@@ -15,33 +15,60 @@ class StatementScreenMainCard extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return InfoCardCommonWidget(
       color: AppColors.transparent,
-      child: Column(
-        children: [
-          InfoIconTitleSubtitleText(
-            imageicon: AppAssets.monthlystatement,
-            title: getTranslated("monthly_statement", context),
-            subtitle: getTranslated("monthly_statement_sub", context),
-            onpress: () {
-              Navigation.pushNamed(MonthlyStatementScreen.routeName);
-            },
-          ),
-          InfoIconTitleSubtitleText(
+      child: Padding(
+        padding: const EdgeInsets.only(left: 8),
+        child: Column(
+          children: [
+            InfoIconTitleSubtitleText(
+              imageicon: AppAssets.monthlystatement,
+              title: getTranslated("monthly_statement", context),
+              subtitle: getTranslated("monthly_statement_sub", context),
+              trailing: const Icon(
+                Icons.arrow_forward_ios,
+                color: AppColors.white,
+              ),
+              onpress: () {
+                Navigation.pushNamed(MonthlyStatementScreen.routeName);
+              },
+            ),
+            InfoIconTitleSubtitleText(
               imageicon: AppAssets.transaction,
               title: getTranslated("transaction_statement", context),
-              subtitle: getTranslated("transaction_statement_sub", context)),
-          InfoIconTitleSubtitleText(
+              subtitle: getTranslated("transaction_statement_sub", context),
+              trailing: const Icon(
+                Icons.arrow_forward_ios,
+                color: AppColors.white,
+              ),
+            ),
+            InfoIconTitleSubtitleText(
               imageicon: AppAssets.balancestatement,
               title: getTranslated("statement_balance", context),
-              subtitle: getTranslated("statement_balance_sub", context)),
-          InfoIconTitleSubtitleText(
+              subtitle: getTranslated("statement_balance_sub", context),
+              trailing: const Icon(
+                Icons.arrow_forward_ios,
+                color: AppColors.white,
+              ),
+            ),
+            InfoIconTitleSubtitleText(
               imageicon: AppAssets.accountconfirmation,
               title: getTranslated("account_confirmation", context),
-              subtitle: getTranslated("account_confirmation_sub", context)),
-          InfoIconTitleSubtitleText(
+              subtitle: getTranslated("account_confirmation_sub", context),
+              trailing: const Icon(
+                Icons.arrow_forward_ios,
+                color: AppColors.white,
+              ),
+            ),
+            InfoIconTitleSubtitleText(
               imageicon: AppAssets.auditicon,
               title: getTranslated("audit_confirmation", context),
-              subtitle: getTranslated("audit_confirmation_sub", context))
-        ],
+              subtitle: getTranslated("audit_confirmation_sub", context),
+              trailing: const Icon(
+                Icons.arrow_forward_ios,
+                color: AppColors.white,
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

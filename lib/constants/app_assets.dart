@@ -186,4 +186,18 @@ class AppAssets {
   static const paymentFrom = "${imagesDir}payment_from.png";
   static const addYellow = "${iconsDir}add_yellow.png";
   static const clock = "${iconsDir}clock.png";
+  static const popularBlack = "${iconsDir}popular_black.png";
+  static const rocketImage = "${imagesDir}rocket_image.png";
+  static const export = "${iconsDir}export.png";
+  static const cardsIcon = "${iconsDir}cards_icon.png";
+  static const arrowRightShort = "${iconsDir}arrow_right_short.png";
+  static const hubCards = "${iconsDir}hub_card.png";
+  static const hubTeam = "${iconsDir}hub_team.png";
+  static const hubMerchant = "${iconsDir}hub_merchant.png";
+  static const hubLinked = "${iconsDir}hub_linked.png";
+  static const hubTransfer = "${iconsDir}hub_transfer.png";
+  static const hubRequest = "${iconsDir}hub_request.png";
+  static const hubSchedule = "${iconsDir}hub_schedule.png";
+  static const saveMoney = "${imagesDir}save_money.png";
+  static const offers = "${imagesDir}offers.png";
 }

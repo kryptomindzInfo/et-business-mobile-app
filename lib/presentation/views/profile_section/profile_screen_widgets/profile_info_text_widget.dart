@@ -9,27 +9,42 @@ import '../../common_widgets/icon_container.dart';
 class ProfileInfoTextWidget extends ConsumerWidget {
   final String? image;
   final String? title;
+  final String? subTitle;
   final VoidCallback? onpress;
   const ProfileInfoTextWidget(
-      {super.key, this.image, this.title, this.onpress});
+      {super.key, this.image, this.title, this.onpress, this.subTitle});
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return InkWell(
       onTap: onpress,
       child: Container(
-        margin: const EdgeInsets.only(left: 15, right: 15, top: 12, bottom: 10),
+        margin: const EdgeInsets.only(left: 24, right: 24, top: 12, bottom: 12),
         child: Row(
           children: [
             IconContainer(
               image: image!,
             ),
             15.spaceX,
-            Text(
-              title!,
-              style: AppTextstyle.bodyTextStyle(
-                  fontSize: 16,
-                  color: AppColors.white,
-                  fontWeight: FontWeight.w600),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  title!,
+                  style: AppTextstyle.bodyTextStyle(
+                      fontSize: 16,
+                      color: AppColors.white,
+                      fontWeight: FontWeight.w600),
+                ),
+                if (subTitle != null) ...{
+                  Text(
+                    subTitle!,
+                    style: AppTextstyle.bodyTextStyle(
+                        // fontSize: 16,
+                        color: AppColors.grey,
+                        fontWeight: FontWeight.w600),
+                  ),
+                }
+              ],
             ),
           ],
         ),

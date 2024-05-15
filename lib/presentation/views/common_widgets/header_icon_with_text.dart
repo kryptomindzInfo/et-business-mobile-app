@@ -23,9 +23,11 @@ class HeaderIconWithTitle extends ConsumerWidget {
   final bool? profilePicWidget;
   final int? spaceBtw;
   final Widget? trailing;
+  final TextStyle? titleStyle;
   const HeaderIconWithTitle(
       {super.key,
       this.title,
+      this.titleStyle,
       this.description,
       this.greenDescription,
       this.edgeinsets,
@@ -115,12 +117,13 @@ class HeaderIconWithTitle extends ConsumerWidget {
               Expanded(
                 child: Text(
                   title!,
-                  style: AppTextstyle.headingTextStyle(
-                    color: context.theme.colorTheme.appbarTitleColor,
-                    fontSize: fontsize ?? 32,
-                    fontWeight: FontWeight.bold,
-                    overflow: TextOverflow.clip,
-                  ),
+                  style: titleStyle ??
+                      AppTextstyle.headingTextStyle(
+                        color: context.theme.colorTheme.appbarTitleColor,
+                        fontSize: fontsize ?? 32,
+                        fontWeight: FontWeight.bold,
+                        overflow: TextOverflow.clip,
+                      ),
                 ),
               ),
               if (profilePicWidget == true)

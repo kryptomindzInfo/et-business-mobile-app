@@ -5,7 +5,6 @@ import 'package:etbank_business_app/presentation/views/profile_section/refer_bus
 import 'package:etbank_business_app/presentation/views/profile_section/refer_business/refer_business_wdigets/share_link_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
 import '../../../../constants/app_colors.dart';
 import '../../../../resources/localization/language_constrants.dart';
 import '../../common_widgets/app_common_appbar.dart';
@@ -19,26 +18,25 @@ class ReferBusinessShareLinkScreen extends ConsumerWidget {
     return BackgroundImageWidget(
       child: Scaffold(
         backgroundColor: AppColors.transparent,
-        appBar: const CommonAppBar(
-          etBankLogo: true,
-        ),
+        appBar: const CommonAppBar(),
         body: Padding(
-          padding: const EdgeInsets.only(left: 20, right: 20),
+          padding: const EdgeInsets.only(left: 20, right: 20, top: 20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               HeaderIconWithTitle(
                 // imageicon: AppAssets.arrowLeft,
                 title: getTranslated("refer_business", context),
+                spaceBtw: 8,
                 description:
                     getTranslated("get_unlimited_free_transfer", context),
               ),
-              10.spaceY,
+              28.spaceY,
               ShareLinkButton(
                 onpress: () {},
               ),
               30.spaceY,
-              const ReferBusinessShareLinkMainCard()
+              const ReferBusinessShareLinkMainCard(),
             ],
           ),
         ),

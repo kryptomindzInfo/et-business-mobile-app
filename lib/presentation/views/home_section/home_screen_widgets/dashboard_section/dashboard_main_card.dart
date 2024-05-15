@@ -106,6 +106,7 @@ class DashboardMainCard extends ConsumerWidget {
                     onpress: () => showCommonModalSheet(
                         context,
                         450,
+                        color: AppColors.black,
                         const Padding(
                           padding: EdgeInsets.only(left: 20, top: 20),
                           child: MoreOptionsBottomSheetWidget(),
