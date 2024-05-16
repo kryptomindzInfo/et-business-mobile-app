@@ -62,22 +62,7 @@ class _SelectDocumentWidgetState extends ConsumerState<SelectDocumentWidget> {
               CommonIconTitleIconButton(
                 title: getTranslated("driving_license", context),
                 onpress: () async {
-                  Navigation.pushNamed(
-                    CameraPreviewScreen.routeName,
-                    arguments: CameraPreviewScreenArgs(
-                        // onTap: (){
-                        //   ref
-                        // .watch(signUpStateProvider)
-                        // .getCapturedDocImageFront(image!);
-                        // }
-                        // child: GestureDetector(
-                        //   onTap: () {},
-                        //   child: const CircleAvatar(
-                        //     child: Text('Take Pic'),
-                        //   ),
-                        // ),
-                        ),
-                  );
+                  Navigation.pushNamed(CameraPreviewScreen.routeName);
                   // CameraPreview(controller);
                   // File? image =
                   // await showCapture(

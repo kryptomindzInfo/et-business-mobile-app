@@ -1,4 +1,6 @@
 import 'package:camera/camera.dart';
+import 'package:etbank_business_app/constants/app_colors.dart';
+import 'package:etbank_business_app/navigation/navigation.dart';
 import 'package:flutter/material.dart';
 import '../../../../../navigation/params/camera_preview_screen_args.dart';
 
@@ -58,31 +60,57 @@ class _CameraPreviewScreenState extends State<CameraPreviewScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: controller == null
-          ? const Text('camera initiating ...')
-          : Center(
-              child: CameraPreview(
-                controller!,
-                child: GestureDetector(
-                  onTap: () {
-                    Future<XFile> image = controller!.takePicture();
+      body: Stack(
+        children: [
+          controller == null
+              ? const Text('camera initiating ...')
+              : Center(
+                  child: CameraPreview(
+                    controller!,
+                    child: Positioned(
+                      bottom: 4,
+                      left: 160,
+                      child: GestureDetector(
+                        onTap: () {
+                          Future<XFile> image = controller!.takePicture();
 
-                    // File? image =
-                    // await showCapture(
-                    //   context: context,
-                    //   title: "Front of driving licence",
-                    //   hideIdWidget: true,
-                    // );
-                    // ref
-                    //     .watch(signUpStateProvider)
-                    //     .getCapturedDocImageFront(image!);
-                  },
-                  child: const CircleAvatar(
-                    child: Text('Take Pic'),
+                          // File? image =
+                          // await showCapture(
+                          //   context: context,
+                          //   title: "Front of driving licence",
+                          //   hideIdWidget: true,
+                          // );
+                          // ref
+                          //     .watch(signUpStateProvider)
+                          //     .getCapturedDocImageFront(image!);
+                        },
+                        child: Container(
+                          width: 80,
+                          height: 80,
+                          padding: const EdgeInsets.all(8),
+                          decoration: BoxDecoration(
+                            color: AppColors.white,
+                            borderRadius: BorderRadius.circular(100),
+                          ),
+                          child: Container(
+                            width: 100,
+                            height: 100,
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                color: AppColors.black,
+                                width: 2,
+                              ),
+                              color: AppColors.white,
+                              borderRadius: BorderRadius.circular(100),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
                   ),
                 ),
-              ),
-            ),
+        ],
+      ),
     );
   }
 }
