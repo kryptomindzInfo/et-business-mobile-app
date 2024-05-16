@@ -1,3 +1,4 @@
+import 'package:etbank_business_app/navigation/params/camera_preview_screen_args.dart';
 import 'package:etbank_business_app/navigation/params/captured_image_of_document_args.dart';
 import 'package:etbank_business_app/navigation/params/onboarding_args.dart';
 import 'package:etbank_business_app/presentation/views/bottom_navigation_bar.dart';
@@ -48,6 +49,7 @@ import 'package:etbank_business_app/presentation/views/signup_screens/signup_ena
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_enter_passcode_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_mobile_num_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_registered_business_address_screen.dart';
+import 'package:etbank_business_app/presentation/views/signup_screens/signup_widgets/proof_of_residency_widgets/camera_preview_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/upload_documentation/choose_document_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/upload_documentation/incorporation_document_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/upload_documentation/review_screen.dart';
@@ -383,6 +385,13 @@ class RouteGenerator {
         return route(const GetMoreFromBusinessScreen(
             // params: settings.arguments as HomeScreenArgs?
             ));
+
+      case CameraPreviewScreen.routeName:
+        return route(
+          const CameraPreviewScreen(
+              // params: settings.arguments as CameraPreviewScreenArgs?,
+              ),
+        );
       // case FirstScreen.routeName:
       //   return route(FirstScreen(
       //       firstScreenArgs: settings.arguments as FirstScreenArgs));

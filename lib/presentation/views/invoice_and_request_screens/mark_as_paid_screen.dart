@@ -6,7 +6,6 @@ import 'package:etbank_business_app/presentation/views/common_widgets/green_circ
 import 'package:etbank_business_app/presentation/views/common_widgets/white_flexible_card.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_widgets/director_button_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../constants/app_assets.dart';

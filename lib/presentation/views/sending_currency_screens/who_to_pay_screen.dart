@@ -24,10 +24,15 @@ class WhoToPayScreen extends ConsumerWidget {
       child: Scaffold(
         backgroundColor: AppColors.transparent,
         appBar: CommonAppBar(
-          leading: Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Image.asset(
-              AppAssets.arrowLeftShort,
+          leading: GestureDetector(
+            onTap: () {
+              Navigator.pop(context);
+            },
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Image.asset(
+                AppAssets.arrowLeftShort,
+              ),
             ),
           ),
           actions: [

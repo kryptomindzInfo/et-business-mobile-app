@@ -1,4 +1,3 @@
-import 'package:etbank_business_app/constants/app_assets.dart';
 import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/common_button.dart';
@@ -12,8 +11,14 @@ class BlackCommonBottomSheet extends ConsumerWidget {
   final String? subtitle;
   final String? image;
   final String? buttonTitle;
+  final Widget? buttonPadding;
   const BlackCommonBottomSheet(
-      {super.key, this.title, this.image, this.buttonTitle, this.subtitle});
+      {super.key,
+      this.title,
+      this.image,
+      this.buttonTitle,
+      this.subtitle,
+      this.buttonPadding});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -46,16 +51,20 @@ class BlackCommonBottomSheet extends ConsumerWidget {
               edgeinsets: const EdgeInsets.only(top: 20),
             ),
             50.spaceY,
-            Image.asset(
-              image!,
-              height: 250,
+            Center(
+              child: Image.asset(
+                image!,
+                height: 250,
+              ),
             ),
-            80.spaceY,
-            CommonButton(
-              title: getTranslated(buttonTitle!, context),
-              mainButtonColor: AppColors.primaryColor,
-              titleColor: AppColors.black,
-              width: 280,
+            buttonPadding ?? 80.spaceY,
+            Center(
+              child: CommonButton(
+                title: getTranslated(buttonTitle!, context),
+                mainButtonColor: AppColors.yellowGreen,
+                titleColor: AppColors.black,
+                width: 288,
+              ),
             )
           ],
         ),

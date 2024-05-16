@@ -10,9 +10,7 @@ import 'package:etbank_business_app/presentation/views/home_section/home_screen_
 import 'package:etbank_business_app/providers/team_provider.dart';
 import 'package:etbank_business_app/resources/localization/language_constrants.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
 import '../../../common_widgets/app_common_appbar.dart';
 import '../../../common_widgets/white_flexible_card.dart';
 import '../home_Screen_textfields.dart';
@@ -57,7 +55,7 @@ class AssignRoleScreen extends ConsumerWidget {
                   ),
               30.spaceY,
               CommonWhiteFlexibleCard(
-                widget: Container(
+                widget: SizedBox(
                   height: 250,
                   child: ListView.builder(
                     itemCount:

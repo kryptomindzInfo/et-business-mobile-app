@@ -1,11 +1,14 @@
+import 'package:camera/camera.dart';
 import 'package:etbank_business_app/constants/static_data/home_screen_static_data.dart';
 import 'package:etbank_business_app/presentation/views/bottom_navigation_bar.dart';
 import 'package:etbank_business_app/presentation/views/converting_currency/currency_converter_screen.dart';
 import 'package:etbank_business_app/presentation/views/converting_currency/currency_converter_screen_widgets.dart/add_currency_pair_widget.dart';
 import 'package:etbank_business_app/presentation/views/converting_currency/currency_converter_screen_widgets.dart/rates_tab.chips.dart';
 import 'package:etbank_business_app/presentation/views/converting_currency/rates_tab_section/rate_tab_widget.dart';
+import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/teams_section/assign_role_screen.dart';
 import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/teams_section/invite_to_et_bank_screen.dart';
 import 'package:etbank_business_app/presentation/views/invoice_and_request_screens/add_new_customer_screen.dart';
+import 'package:etbank_business_app/presentation/views/invoice_and_request_screens/mark_as_paid_screen.dart';
 import 'package:etbank_business_app/presentation/views/onboarding_screens/onboarding_screen.dart';
 import 'package:etbank_business_app/presentation/views/sending_currency_screens/who_to_pay_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/business_details/get_more_from_business_screen.dart';
@@ -13,6 +16,7 @@ import 'package:etbank_business_app/presentation/views/signup_screens/captured_p
 import 'package:etbank_business_app/presentation/views/signup_screens/sign_in_sign_up_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_create_password_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_email_screen.dart';
+import 'package:etbank_business_app/presentation/views/signup_screens/signup_proof_residency_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_role_in_the_company_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_user_home_address_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_verifications_screen.dart';
@@ -29,7 +33,9 @@ import 'navigation/route_generator.dart';
 import 'presentation/views/converting_currency/rates_tab_section/currency_exchange_converter_screen.dart';
 import 'resources/localization/app_localization.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
   runApp(const ProviderScope(child: MyApp()));
 }
 
@@ -66,7 +72,7 @@ class MyApp extends ConsumerWidget {
         ],
         navigatorKey: navigatorKey,
         onGenerateRoute: RouteGenerator.generateRoute,
-        initialRoute: BaseBottomNavBar.routeName,
+        initialRoute: SignUpUserHomeAddressScreen.routeName,
         // initialRoute: SignUpVerificationsScreen.routeName,
       ),
     );

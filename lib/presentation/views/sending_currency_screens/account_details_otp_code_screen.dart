@@ -1,5 +1,7 @@
 import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
+import 'package:etbank_business_app/navigation/navigation.dart';
+import 'package:etbank_business_app/presentation/views/bottom_navigation_bar.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_otp_code_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -64,7 +66,9 @@ class AccountDetailsOTPCodeScreen extends ConsumerWidget {
                         fontSize: 16,
                         fontWeight: FontWeight.w500),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigation.pushNamed(BaseBottomNavBar.routeName);
+                  },
                 ),
               ),
             );

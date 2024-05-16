@@ -12,13 +12,15 @@ class Chips extends ConsumerWidget {
   final VoidCallback? onpress;
   final Color? color;
   final Color? titleColor;
+  final Color? imageIconColor;
   const Chips(
       {super.key,
       this.title,
       this.onpress,
       this.imageicon,
       this.color,
-      this.titleColor});
+      this.titleColor,
+      this.imageIconColor});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -30,7 +32,7 @@ class Chips extends ConsumerWidget {
         // width: 100,
         height: 39,
         padding: const EdgeInsets.only(left: 20, right: 20),
-        margin: const EdgeInsets.only(right: 15),
+        margin: const EdgeInsets.only(right: 10),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(100),
             color: color ?? context.theme.colorTheme.chipsColor),
@@ -43,6 +45,7 @@ class Chips extends ConsumerWidget {
                 if (imageicon != null)
                   Image.asset(
                     imageicon!,
+                    color: imageIconColor,
                     height: 20,
                   ),
                 // : SizedBox(),

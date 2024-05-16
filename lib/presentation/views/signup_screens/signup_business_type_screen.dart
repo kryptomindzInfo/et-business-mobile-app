@@ -35,7 +35,7 @@ class SignUpBusinessTypeScreen extends ConsumerWidget {
                 // imageicon: AppAssets.arrowLeft,
                 etBankLogo: true,
               ),
-              10.spaceY,
+              37.spaceY,
               BusinessTypeWidget(
                 image: AppAssets.companyIcon,
                 title: getTranslated('company', context),

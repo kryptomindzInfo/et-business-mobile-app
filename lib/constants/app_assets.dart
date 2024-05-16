@@ -200,4 +200,6 @@ class AppAssets {
   static const hubSchedule = "${iconsDir}hub_schedule.png";
   static const saveMoney = "${imagesDir}save_money.png";
   static const offers = "${imagesDir}offers.png";
+  static const appInBrowser = "${imagesDir}app_in_browser.png";
+  static const notifImage = "${imagesDir}notif_image.png";
 }

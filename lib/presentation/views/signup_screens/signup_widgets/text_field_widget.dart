@@ -38,7 +38,8 @@ class TextFieldWidget extends StatelessWidget {
       this.contentPadding,
       this.labelStyle,
       this.border,
-      this.height})
+      this.height,
+      this.containerColor})
       : super(key: key);
 
   final TextEditingController? controller;
@@ -73,6 +74,7 @@ class TextFieldWidget extends StatelessWidget {
   final TextStyle? labelStyle;
   final BoxBorder? border;
   final double? height;
+  final Color? containerColor;
 
   @override
   Widget build(BuildContext context) {
@@ -81,10 +83,12 @@ class TextFieldWidget extends StatelessWidget {
       width: 360.w,
       padding: const EdgeInsets.symmetric(vertical: 3),
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(12),
-          // color: labelText != null ? AppColors.white : null,
-          border: border ??
-              Border.all(color: context.theme.colorTheme.borderColor)),
+        borderRadius: BorderRadius.circular(12),
+        color: containerColor,
+        // color: labelText != null ? AppColors.white : null,
+        border:
+            border ?? Border.all(color: context.theme.colorTheme.borderColor),
+      ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

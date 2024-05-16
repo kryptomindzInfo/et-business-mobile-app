@@ -1,4 +1,5 @@
 import 'package:etbank_business_app/constants/app_colors.dart';
+import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/navigation/navigator_key.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/common_button.dart';
 import 'package:etbank_business_app/presentation/views/hub_section/hub_section_widgets/hub_section_bottom_sheets/black_common_bottom_sheet.dart';
@@ -46,11 +47,12 @@ class UpgradeScreens extends ConsumerWidget {
               showModalBottomSheet(
                 isScrollControlled: true,
                 context: appContext,
-                builder: (context) => const BlackCommonBottomSheet(
+                builder: (context) => BlackCommonBottomSheet(
                   title: "your_plan_doesnt",
                   subtitle: "Upgrade_your_plan",
                   buttonTitle: "upgrade_plan",
-                  image: AppAssets.rocket,
+                  image: AppAssets.rocketImage,
+                  buttonPadding: 120.spaceY,
                 ),
               );
             },

@@ -21,17 +21,16 @@ class ProfileScreenOptionsWidget extends ConsumerWidget {
               ref.read(profilescreenProvider).profileScreenOptions[index];
 
           return ProfileScreenChips(
-            // color:
-            // index == 0 ? context.theme.colorTheme.yellowGreenColor : null,
+            color:
+                index == 0 ? context.theme.colorTheme.yellowGreenColor : null,
             title: item["title"],
             icon: item["icon"],
+            imageIconColor:
+                index == 0 ? context.theme.colorTheme.blackColor : null,
             onpress: item["ontap"],
-            titleColor:
-                // index == 0
-                //     ?
-                // context.theme.colorTheme.blackColor
-                // :
-                context.theme.colorTheme.normalTextColor,
+            titleColor: index == 0
+                ? context.theme.colorTheme.blackColor
+                : context.theme.colorTheme.normalTextColor,
           );
         },
       ),

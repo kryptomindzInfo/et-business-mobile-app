@@ -43,37 +43,35 @@ class NationalityWidget extends ConsumerWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Container(
-                child: Row(
-                  children: [
-                    20.spaceX,
-                    Container(
-                      height: 32,
-                      width: 32,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                      ),
-                      child: Text(
-                        ref.watch(signUpStateProvider).countryOfResidence.flag,
-                        style: AppTextstyle.bodyTextStyle(fontSize: 25),
-                      ),
+              Row(
+                children: [
+                  20.spaceX,
+                  Container(
+                    height: 32,
+                    width: 32,
+                    decoration: const BoxDecoration(
+                      shape: BoxShape.circle,
                     ),
-                    // CircleAvatar(
-                    //   backgroundImage: AssetImage(ref
-                    //       .watch(signUpStateProvider)
-                    //       .countryOfResidence
-                    //       .flag),
-                    // ),
-                    20.spaceX,
-                    Text(
-                      ref.watch(signUpStateProvider).countryOfResidence.name,
-                      style: AppTextstyle.bodyTextStyle(
-                          color: context.theme.colorTheme.normalTextColor,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w400),
+                    child: Text(
+                      ref.watch(signUpStateProvider).countryOfResidence.flag,
+                      style: AppTextstyle.bodyTextStyle(fontSize: 25),
                     ),
-                  ],
-                ),
+                  ),
+                  // CircleAvatar(
+                  //   backgroundImage: AssetImage(ref
+                  //       .watch(signUpStateProvider)
+                  //       .countryOfResidence
+                  //       .flag),
+                  // ),
+                  20.spaceX,
+                  Text(
+                    ref.watch(signUpStateProvider).countryOfResidence.name,
+                    style: AppTextstyle.bodyTextStyle(
+                        color: context.theme.colorTheme.normalTextColor,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w400),
+                  ),
+                ],
               ),
               InkWell(
                 onTap: () {
@@ -84,7 +82,9 @@ class NationalityWidget extends ConsumerWidget {
                       builder: (context) {
                         return BottomSheetWidet(
                           onChanged: (value) {},
-                          onCancelTap: () {},
+                          onCancelTap: () {
+                            Navigator.pop(context);
+                          },
                           bottomNavigationBody: CountriesListWidget(
                             onTap: (index) {
                               ref

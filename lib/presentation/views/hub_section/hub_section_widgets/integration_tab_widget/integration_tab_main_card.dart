@@ -5,7 +5,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class IntegrationTabMainCard extends ConsumerWidget {
   final VoidCallback? onpress;
-  const IntegrationTabMainCard({super.key, this.onpress});
+  final String title;
+  const IntegrationTabMainCard({super.key, this.onpress, required this.title});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -14,7 +15,7 @@ class IntegrationTabMainCard extends ConsumerWidget {
       child: Container(
         height: 235,
         width: double.infinity,
-        margin: const EdgeInsets.only(bottom: 10),
+        // margin: const EdgeInsets.only(bottom: 10),
         decoration: BoxDecoration(
             border: Border.all(color: AppColors.grassGreen),
             borderRadius: BorderRadius.circular(28)),
@@ -25,7 +26,7 @@ class IntegrationTabMainCard extends ConsumerWidget {
             Padding(
               padding: const EdgeInsets.only(left: 20, top: 20),
               child: Text(
-                "Accounting",
+                title,
                 style: AppTextstyle.bodyTextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w500,

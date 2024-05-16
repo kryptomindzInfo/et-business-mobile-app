@@ -1,4 +1,5 @@
 import 'package:etbank_business_app/constants/app_assets.dart';
+import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/navigation/navigation.dart';
@@ -48,9 +49,14 @@ class MoreOptionsBottomSheetWidget extends ConsumerWidget {
           title: getTranslated("add_new_accounts", context),
           titleColor: context.theme.colorTheme.iconWithTitleColor,
           onpress: () {
-            // Navigator.pop(context);
+            Navigator.pop(context);
             // Navigation.pop();
-            showCommonModalSheet(context, 450, const AddAccountsBottomSheet());
+            showCommonModalSheet(
+              color: AppColors.black,
+              context,
+              500,
+              const AddAccountsBottomSheet(),
+            );
           },
         )
       ],

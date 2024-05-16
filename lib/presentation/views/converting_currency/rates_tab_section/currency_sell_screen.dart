@@ -1,5 +1,7 @@
 import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
+import 'package:etbank_business_app/navigation/navigation.dart';
+import 'package:etbank_business_app/presentation/views/bottom_navigation_bar.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/app_common_widgets.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/primary_button.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/white_flexible_card.dart';
@@ -77,7 +79,9 @@ class CurrencySellScreen extends ConsumerWidget {
                   color: AppColors.yellowGreen,
                   minwidth: 280,
                   text: Text(getTranslated("continue", context)),
-                  onPressed: () {})
+                  onPressed: () {
+                    Navigation.pushNamed(BaseBottomNavBar.routeName);
+                  }),
             ],
           ),
         ),

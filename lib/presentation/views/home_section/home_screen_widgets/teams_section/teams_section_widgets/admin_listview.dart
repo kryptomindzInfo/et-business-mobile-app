@@ -2,7 +2,9 @@ import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:etbank_business_app/core/app_print.dart';
 import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
+import 'package:etbank_business_app/navigation/navigation.dart';
 import 'package:etbank_business_app/navigation/params/home_screen_args.dart';
+import 'package:etbank_business_app/presentation/views/bottom_navigation_bar.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/primary_button.dart';
 import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/cards_section/get_card_screen.dart';
 import 'package:etbank_business_app/resources/localization/language_constrants.dart';
@@ -66,7 +68,10 @@ class AdminscreenListview extends ConsumerWidget {
                               minwidth: 288,
                               text: const Text('Invite someone else'),
                               color: AppColors.yellowGreen,
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigation.pushNamed(
+                                    BaseBottomNavBar.routeName);
+                              },
                             ),
                             20.spaceY,
                           ],

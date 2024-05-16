@@ -56,11 +56,16 @@ class SignUpCreatePassword extends ConsumerWidget {
                         ),
                         // contentPadding: EdgeInsets.all(0),
                         // suffix: Icon(Icons.remove_red_eye),
-                        fillColor: ref
+                        containerColor: ref
                                 .watch(signUpStateProvider)
                                 .containsSpecialCharacters
                             ? AppColors.transparent
                             : AppColors.lightRed,
+                        // fillColor: ref
+                        //         .watch(signUpStateProvider)
+                        //         .containsSpecialCharacters
+                        //     ? AppColors.transparent
+                        //     : AppColors.lightRed,
                         onSuffixIconTap: () {
                           ref
                               .read(signUpStateProvider)
@@ -133,7 +138,7 @@ class SignUpCreatePassword extends ConsumerWidget {
                   getTranslated('continue', context),
                   style: AppTextstyle.bodyTextStyle(
                       color: ref.watch(signUpStateProvider).isPasswordEmpty
-                          ? context.theme.colorTheme.disableButtonTextColor
+                          ? context.theme.colorTheme.whiteColor
                           : context.theme.colorTheme.whiteAndBlack,
                       // buttonTextColor(
                       //     ref.watch(signUpStateProvider).isPasswordEmpty),

@@ -1,3 +1,4 @@
+import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:etbank_business_app/constants/app_textstyle.dart';
 import 'package:flutter/material.dart';
 
@@ -31,6 +32,7 @@ class CustomButton extends StatelessWidget {
         decoration: BoxDecoration(
           color: backgroundColor,
           borderRadius: BorderRadius.circular(borderRadius),
+          border: Border.all(color: AppColors.white),
         ),
         child: Center(
           child: Text(

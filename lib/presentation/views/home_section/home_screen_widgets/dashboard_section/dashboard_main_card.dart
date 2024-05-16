@@ -1,10 +1,11 @@
 import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
+import 'package:etbank_business_app/navigation/navigation.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/common_bottom_sheet.dart';
 import 'package:etbank_business_app/presentation/views/home_section/home_screen_bottom_sheets/more_option_bottom_sheet.dart';
+import 'package:etbank_business_app/presentation/views/sending_currency_screens/who_to_pay_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
 import '../../../../../constants/app_assets.dart';
 import '../../../../../constants/app_colors.dart';
 import '../../../../../constants/app_textstyle.dart';
@@ -89,8 +90,13 @@ class DashboardMainCard extends ConsumerWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const MainCardOption(
-                      image: AppAssets.sendicon, title: "Send"),
+                  MainCardOption(
+                    image: AppAssets.sendicon,
+                    title: "Send",
+                    onpress: () {
+                      Navigation.pushNamed(WhoToPayScreen.routeName);
+                    },
+                  ),
                   MainCardOption(
                     image: AppAssets.requesticon,
                     title: "Request",
@@ -103,14 +109,16 @@ class DashboardMainCard extends ConsumerWidget {
                   MainCardOption(
                     image: AppAssets.moreicon,
                     title: "More",
-                    onpress: () => showCommonModalSheet(
-                        context,
-                        450,
-                        color: AppColors.black,
-                        const Padding(
-                          padding: EdgeInsets.only(left: 20, top: 20),
-                          child: MoreOptionsBottomSheetWidget(),
-                        )),
+                    onpress: () {
+                      showCommonModalSheet(
+                          context,
+                          450,
+                          color: AppColors.black,
+                          const Padding(
+                            padding: EdgeInsets.only(left: 20, top: 20),
+                            child: MoreOptionsBottomSheetWidget(),
+                          ));
+                    },
                   )
                 ],
               ),
