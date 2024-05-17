@@ -19,12 +19,12 @@ class CapturedImageOfDocument extends ConsumerWidget {
   static const String routeName = "captured_image_screen";
   const CapturedImageOfDocument({
     super.key,
-    this.params,
+    required this.params,
     // required this.onPressLicenceReadable,
     // required this.onPressTakeNewPic
   });
 
-  final CapturedImageOfDocumentArgs? params;
+  final CapturedImageOfDocumentArgs params;
   // final Function()? onPressLicenceReadable;
   // final Function()? onPressTakeNewPic;
 
@@ -47,7 +47,7 @@ class CapturedImageOfDocument extends ConsumerWidget {
           ),
           70.spaceY,
           CapturedImageContainer(
-            capturedFile: ref.watch(signUpStateProvider).idCaptureFront,
+            imagePath: params.imagePath,
           ),
           90.spaceY,
           CommonButton(
@@ -56,7 +56,7 @@ class CapturedImageOfDocument extends ConsumerWidget {
             title: getTranslated("license_readable", context),
             titleColor: context.theme.colorTheme.buttonTitleColor,
             mainButtonColor: context.theme.colorTheme.buttonColor,
-            onpress: params!.onPressLicenceReadable,
+            onpress: params.onPressLicenceReadable,
             // () async {
             //   File? image = await showCapture(
             //     context: context,

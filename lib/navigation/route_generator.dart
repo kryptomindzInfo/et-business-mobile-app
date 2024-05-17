@@ -352,7 +352,7 @@ class RouteGenerator {
             ));
       case CapturedImageOfDocument.routeName:
         return route(CapturedImageOfDocument(
-            params: settings.arguments as CapturedImageOfDocumentArgs?));
+            params: settings.arguments as CapturedImageOfDocumentArgs));
       case SignUpVerificationsScreen.routeName:
         return route(const SignUpVerificationsScreen(
             // params: settings.arguments as HomeScreenArgs?
@@ -388,9 +388,9 @@ class RouteGenerator {
 
       case CameraPreviewScreen.routeName:
         return route(
-          const CameraPreviewScreen(
-              // params: settings.arguments as CameraPreviewScreenArgs?,
-              ),
+          CameraPreviewScreen(
+            params: settings.arguments as CameraPreviewScreenArgs,
+          ),
         );
       // case FirstScreen.routeName:
       //   return route(FirstScreen(

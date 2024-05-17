@@ -1,17 +1,18 @@
 import 'package:camera/camera.dart';
 import 'package:etbank_business_app/constants/app_colors.dart';
-import 'package:etbank_business_app/navigation/navigation.dart';
+import 'package:etbank_business_app/core/app_print.dart';
 import 'package:flutter/material.dart';
 import '../../../../../navigation/params/camera_preview_screen_args.dart';
+import 'capture_widget.dart';
 
 class CameraPreviewScreen extends StatefulWidget {
   static const String routeName = 'CameraPr_Screen';
 
-  final CameraPreviewScreenArgs? params;
+  final CameraPreviewScreenArgs params;
 
   const CameraPreviewScreen({
     super.key,
-    this.params,
+    required this.params,
   });
 
   @override
@@ -20,39 +21,42 @@ class CameraPreviewScreen extends StatefulWidget {
 
 class _CameraPreviewScreenState extends State<CameraPreviewScreen> {
   CameraController? controller;
-  late List<CameraDescription> cameras;
-
-  initializeCameras() async {
-    cameras = await availableCameras();
-  }
-
   @override
   void initState() {
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      initializeCamera();
+    });
     super.initState();
-    initializeCameras().then((_) {
-      controller = CameraController(cameras[0], ResolutionPreset.max);
-      controller?.initialize().then((_) {
-        if (!mounted) {
-          return;
+  }
+
+  initializeCamera() async {
+    List<CameraDescription> cameras = await availableCameras();
+    console(cameras.length);
+    controller = CameraController(cameras[0], ResolutionPreset.max);
+    controller?.initialize().then((_) {
+      if (!mounted) {
+        return;
+      }
+      setState(() {});
+    }).catchError((Object e) {
+      console('catchhhhhhhhhhhhhhhhh');
+      console(e);
+      if (e is CameraException) {
+        switch (e.code) {
+          case 'CameraAccessDenied':
+            // Handle access errors here.
+            break;
+          default:
+            // Handle other errors here.
+            break;
         }
-        setState(() {});
-      }).catchError((Object e) {
-        if (e is CameraException) {
-          switch (e.code) {
-            case 'CameraAccessDenied':
-              // Handle access errors here.
-              break;
-            default:
-              // Handle other errors here.
-              break;
-          }
-        }
-      });
+      }
     });
   }
 
   @override
   void dispose() {
+    console('disposeeeeeeeeeeeeeeeeeeeeeeeeeeeee');
     controller?.dispose();
     super.dispose();
   }
@@ -60,57 +64,63 @@ class _CameraPreviewScreenState extends State<CameraPreviewScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
-        children: [
-          controller == null
-              ? const Text('camera initiating ...')
-              : Center(
-                  child: CameraPreview(
-                    controller!,
-                    child: Positioned(
-                      bottom: 4,
-                      left: 160,
-                      child: GestureDetector(
-                        onTap: () {
-                          Future<XFile> image = controller!.takePicture();
-
-                          // File? image =
-                          // await showCapture(
-                          //   context: context,
-                          //   title: "Front of driving licence",
-                          //   hideIdWidget: true,
-                          // );
-                          // ref
-                          //     .watch(signUpStateProvider)
-                          //     .getCapturedDocImageFront(image!);
-                        },
-                        child: Container(
-                          width: 80,
-                          height: 80,
-                          padding: const EdgeInsets.all(8),
-                          decoration: BoxDecoration(
-                            color: AppColors.white,
-                            borderRadius: BorderRadius.circular(100),
-                          ),
-                          child: Container(
-                            width: 100,
-                            height: 100,
-                            decoration: BoxDecoration(
-                              border: Border.all(
-                                color: AppColors.black,
-                                width: 2,
-                              ),
-                              color: AppColors.white,
-                              borderRadius: BorderRadius.circular(100),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
+      backgroundColor: AppColors.black,
+      extendBodyBehindAppBar: true,
+      appBar: AppBar(
+        backgroundColor: AppColors.black,
+        iconTheme: const IconThemeData(color: AppColors.white),
+        actions: [
+          IconButton(
+              onPressed: () {
+                controller?.setFlashMode(FlashMode.torch);
+              },
+              icon: Icon(Icons.flash_on))
         ],
+      ),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        child: Stack(
+          children: [
+            Center(
+              child: controller == null
+                  ? const SizedBox()
+                  : CameraPreview(
+                      controller!,
+                    ),
+            ),
+            Column(
+              children: [
+                expanded(),
+                Container(
+                  decoration: BoxDecoration(
+                      color: AppColors.transparent,
+                      border: Border.all(color: AppColors.white, width: 1)),
+                  height: 220,
+                ),
+                expanded(),
+              ],
+            ),
+            CaptureWidget(
+              title: widget.params.title,
+              subTitle: widget.params.desc,
+              onTap: () async {
+                XFile? image = await controller?.takePicture();
+                if (image != null) {
+                  widget.params.onCapture(image.path);
+                }
+              },
+            ),
+          ],
+        ),
       ),
     );
   }
+}
+
+expanded() {
+  return Expanded(
+    child: Container(
+      color: AppColors.black,
+    ),
+  );
 }

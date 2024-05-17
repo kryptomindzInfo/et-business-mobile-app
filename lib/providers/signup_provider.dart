@@ -230,63 +230,63 @@ class SignUpState extends ChangeNotifier {
     }
   }
 
-  File? _idCaptureFront;
-  File? get idCaptureFront => _idCaptureFront;
+  // File? _idCaptureFront;
+  // File? get idCaptureFront => _idCaptureFront;
 
-  getCapturedDocImageFront(File? val) {
-    _idCaptureFront = val;
-    if (_idCaptureFront != null) {
-      Navigation.pushNamed(
-        CapturedImageOfDocument.routeName,
-        arguments: CapturedImageOfDocumentArgs(
-          onPressLicenceReadable: () async {
-            File? image = await showCapture(
-              context: appContext,
-              title: "Back of driving licence",
-              hideIdWidget: true,
-            );
-            getCapturedDocImageBack(image!);
-            // Navigation.pushNamed(SignUpVerificationsScreen.routeName);
-          },
-          onPressTakeNewPic: () async {
-            File? image = await showCapture(
-              context: appContext,
-              title: "Front of driving licence",
-              hideIdWidget: true,
-            );
-            getCapturedDocImageFront(image!);
-          },
-        ),
-      );
-      notifyListeners();
-    }
-  }
+  // getCapturedDocImageFront(File? val) {
+  //   _idCaptureFront = val;
+  //   if (_idCaptureFront != null) {
+  //     Navigation.pushNamed(
+  //       CapturedImageOfDocument.routeName,
+  //       arguments: CapturedImageOfDocumentArgs(
+  //         onPressLicenceReadable: () async {
+  //           File? image = await showCapture(
+  //             context: appContext,
+  //             title: "Back of driving licence",
+  //             hideIdWidget: true,
+  //           );
+  //           getCapturedDocImageBack(image!);
+  //           // Navigation.pushNamed(SignUpVerificationsScreen.routeName);
+  //         },
+  //         onPressTakeNewPic: () async {
+  //           File? image = await showCapture(
+  //             context: appContext,
+  //             title: "Front of driving licence",
+  //             hideIdWidget: true,
+  //           );
+  //           getCapturedDocImageFront(image!);
+  //         },
+  //       ),
+  //     );
+  //     notifyListeners();
+  //   }
+  // }
 
-  File? _idCaptureBack;
-  File? get idCaptureBack => _idCaptureBack;
+  // File? _idCaptureBack;
+  // File? get idCaptureBack => _idCaptureBack;
 
-  getCapturedDocImageBack(File val) {
-    _idCaptureBack = val;
-    if (_idCaptureBack != null) {
-      Navigation.pushNamed(
-        CapturedImageOfDocument.routeName,
-        arguments: CapturedImageOfDocumentArgs(
-          onPressLicenceReadable: () {
-            Navigation.pushNamed(SignUpVerificationsScreen.routeName);
-          },
-          onPressTakeNewPic: () async {
-            File? image = await showCapture(
-              context: appContext,
-              title: "Back of driving licence",
-              hideIdWidget: true,
-            );
-            getCapturedDocImageBack(image!);
-          },
-        ),
-      );
-      notifyListeners();
-    }
-  }
+  // getCapturedDocImageBack(File val) {
+  //   _idCaptureBack = val;
+  //   if (_idCaptureBack != null) {
+  //     Navigation.pushNamed(
+  //       CapturedImageOfDocument.routeName,
+  //       arguments: CapturedImageOfDocumentArgs(
+  //         onPressLicenceReadable: () {
+  //           Navigation.pushNamed(SignUpVerificationsScreen.routeName);
+  //         },
+  //         onPressTakeNewPic: () async {
+  //           File? image = await showCapture(
+  //             context: appContext,
+  //             title: "Back of driving licence",
+  //             hideIdWidget: true,
+  //           );
+  //           getCapturedDocImageBack(image!);
+  //         },
+  //       ),
+  //     );
+  //     notifyListeners();
+  //   }
+  // }
 
   //verification_screen_card_data
   List<Map> get verificationCardData => verificationData;

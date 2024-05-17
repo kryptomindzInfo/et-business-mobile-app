@@ -1,10 +1,7 @@
-import 'package:flutter/material.dart';
-
 class CameraPreviewScreenArgs {
-  final Widget? child;
-  final Function()? onTap;
-  CameraPreviewScreenArgs({
-    this.child,
-    this.onTap,
-  });
+  final Function(String) onCapture;
+  final String title;
+  final String desc;
+  CameraPreviewScreenArgs(
+      {required this.onCapture, required this.title, required this.desc});
 }
