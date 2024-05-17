@@ -41,10 +41,11 @@ class SignUpRoleInTheCompanyScreen extends ConsumerWidget {
                 title: getTranslated('role_in_the_company', context),
                 // imageicon: AppAssets.arrowLeft,
               ),
-              20.spaceY,
+              34.spaceY,
               SizedBox(
                 height: 600.h,
                 child: ListView.builder(
+                    physics: const NeverScrollableScrollPhysics(),
                     itemCount: companyRoles.length,
                     itemBuilder: (context, index) {
                       return Padding(
@@ -56,7 +57,7 @@ class SignUpRoleInTheCompanyScreen extends ConsumerWidget {
                               padding: EdgeInsets.only(top: 8.0),
                               child: CustomCheckBox(),
                             ),
-                            8.spaceX,
+                            12.spaceX,
                             BusinessTypeWidget(
                               image: companyRoles[index]['image'],
                               title: getTranslated(

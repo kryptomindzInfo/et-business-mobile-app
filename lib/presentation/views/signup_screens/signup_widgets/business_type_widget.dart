@@ -60,9 +60,12 @@ class BusinessTypeWidget extends ConsumerWidget {
             ],
           ),
           if (arrowForward == true)
-            Icon(
-              Icons.arrow_forward_ios,
-              color: context.theme.colorTheme.whiteColor,
+            Padding(
+              padding: const EdgeInsets.only(top: 20),
+              child: Icon(
+                Icons.arrow_forward_ios,
+                color: context.theme.colorTheme.whiteColor,
+              ),
             ),
         ],
       ),

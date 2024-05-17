@@ -17,42 +17,39 @@ class InfoTextWithIcon extends ConsumerWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Container(
-          child: Row(
-            children: [
-              IconContainer(
-                image: imageicon,
-              ),
-              15.spaceX,
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    "James Fork",
-                    style: AppTextstyle.bodyTextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w500,
-                        color: context.theme.colorTheme.normalTextColor),
-                  ),
-                  Text(
-                    "Active",
-                    style: AppTextstyle.bodyTextStyle(
-                        fontSize: 12,
-                        fontWeight: FontWeight.w400,
-                        color:
-                            subtitleColor ?? AppColors.grey.withOpacity(0.6)),
-                  )
-                ],
-              ),
-            ],
-          ),
+        Row(
+          children: [
+            IconContainer(
+              image: imageicon,
+            ),
+            15.spaceX,
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "James Fork",
+                  style: AppTextstyle.bodyTextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500,
+                      color: context.theme.colorTheme.normalTextColor),
+                ),
+                Text(
+                  "Active",
+                  style: AppTextstyle.bodyTextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.w400,
+                      color: subtitleColor ?? AppColors.grey.withOpacity(0.6)),
+                )
+              ],
+            ),
+          ],
         ),
         Text(
           "Owner",
           style: AppTextstyle.bodyTextStyle(
-            fontSize: 16,
-            fontWeight: FontWeight.w400,
-          ),
+              fontSize: 16,
+              fontWeight: FontWeight.w400,
+              color: AppColors.white),
         ),
       ],
     );

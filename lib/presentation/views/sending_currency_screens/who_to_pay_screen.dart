@@ -75,6 +75,7 @@ class WhoToPayScreen extends ConsumerWidget {
               ),
               18.spaceY,
               AddCounterPartyWidget(
+                borderRadius: 12,
                 title: 'add_new_counterparty',
                 onTap: () {
                   Navigation.pushNamed(AccountDetailsScreen.routeName);

@@ -25,7 +25,7 @@ class NationalityWidget extends ConsumerWidget {
               fontWeight: FontWeight.normal,
               color: context.theme.colorTheme.headerDescriptionColor),
         ),
-        20.spaceY,
+        32.spaceY,
         Text(
           getTranslated("nationality", context),
           style: AppTextstyle.bodyTextStyle(
@@ -33,7 +33,7 @@ class NationalityWidget extends ConsumerWidget {
               fontWeight: FontWeight.normal,
               color: context.theme.colorTheme.headerDescriptionColor),
         ),
-        2.spaceY,
+        16.spaceY,
         Container(
           height: 48,
           width: double.infinity,

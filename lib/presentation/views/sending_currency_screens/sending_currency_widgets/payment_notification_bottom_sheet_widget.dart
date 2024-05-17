@@ -25,7 +25,7 @@ class PaymentNotificationBottomSheetWidget extends ConsumerWidget {
         borderRadius: BorderRadius.circular(28),
       ),
       child: Padding(
-        padding: const EdgeInsets.fromLTRB(20, 82, 20, 50),
+        padding: const EdgeInsets.fromLTRB(0, 82, 20, 50),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -53,9 +53,12 @@ class PaymentNotificationBottomSheetWidget extends ConsumerWidget {
                   ),
                 ),
                 40.spaceY,
-                TextFieldWidget(
-                  hintText: getTranslated('recipient_email', context),
-                  style: const TextStyle(color: AppColors.white),
+                Padding(
+                  padding: const EdgeInsets.only(left: 20),
+                  child: TextFieldWidget(
+                    hintText: getTranslated('recipient_email', context),
+                    style: const TextStyle(color: AppColors.white),
+                  ),
                 ),
               ],
             ),

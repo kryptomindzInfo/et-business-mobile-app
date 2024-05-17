@@ -151,20 +151,20 @@ List<Map> _merchantData = [
     "title": "Business owners failed",
     "desc": "Please retry",
     "icon": AppAssets.markicon,
-    "color": {AppColors.red}
+    "color": AppColors.red
   },
   {
     "title": "Choose a plan and order a card",
-    "desc": "",
-    "icon": "",
-    "color": {AppColors.black}
+    "desc": null,
+    "icon": null,
+    "color": AppColors.black
   },
-  {"title": "Submit documentation", "desc": "", "icon": "", "color": ""},
+  {"title": "Submit documentation", "desc": null, "icon": null, "color": null},
   {
     "title": "Verifying business details",
     "desc": "Ready to submit",
     "icon": AppAssets.hourglassicon,
-    "color": {AppColors.black}
+    "color": AppColors.white
   },
   // {
   //   "title": "Identity",

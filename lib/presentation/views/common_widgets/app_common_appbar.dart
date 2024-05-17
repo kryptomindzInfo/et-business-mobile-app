@@ -19,7 +19,7 @@ class CommonAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     // ThemeData theme = Theme.of(context);
     return Padding(
-      padding: EdgeInsets.only(top: topPadding ?? 0, left: 10, right: 20),
+      padding: EdgeInsets.only(top: topPadding ?? 0, left: 0, right: 20),
       child: AppBar(
         leading: leading,
         actions: actions,

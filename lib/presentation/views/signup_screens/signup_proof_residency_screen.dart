@@ -7,7 +7,6 @@ import 'package:etbank_business_app/presentation/views/signup_screens/signup_wid
 import 'package:etbank_business_app/resources/localization/language_constrants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
 import '../../../providers/signup_provider.dart';
 
 class ProofOfResidencyScreen extends ConsumerStatefulWidget {
@@ -38,12 +37,13 @@ class _ProofOfResidencyScreenState
         padding: const EdgeInsets.only(left: 20, right: 20),
         child: Column(
           children: [
+            10.spaceY,
             HeaderIconWithTitle(
               title: getTranslated("proof_residency", context),
             ),
             5.spaceY,
             const NationalityWidget(),
-            30.spaceY,
+            40.spaceY,
             const SelectDocumentWidget()
           ],
         ),

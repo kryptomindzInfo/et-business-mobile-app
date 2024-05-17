@@ -15,11 +15,11 @@ class CurrencyTextFieldWidget extends ConsumerWidget {
     return Container(
       decoration: BoxDecoration(
         // color: AppColors.white,
-        borderRadius: BorderRadius.circular(8),
+        borderRadius: BorderRadius.circular(12),
         border: Border.all(color: AppColors.tealColor, width: 1),
       ),
       child: Padding(
-        padding: padding ?? const EdgeInsets.fromLTRB(12, 15, 8, 15),
+        padding: padding ?? const EdgeInsets.fromLTRB(12, 0, 8, 0),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [

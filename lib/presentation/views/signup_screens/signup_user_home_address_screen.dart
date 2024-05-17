@@ -135,6 +135,7 @@ class SignUpUserHomeAddressScreen extends ConsumerWidget {
                   hintStyle: AppTextstyle.bodyTextStyle(color: AppColors.grey),
                   style: AppTextstyle.bodyTextStyle(color: AppColors.black),
                 ),
+                4.spaceY,
                 Text(
                   getTranslated('optional', context),
                   style: AppTextstyle.bodyTextStyle(
