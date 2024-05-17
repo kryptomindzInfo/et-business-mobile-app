@@ -10,12 +10,11 @@ ThemeData lightTheme = ThemeData(
     brightness: Brightness.light,
     appBarTheme: const AppBarTheme(
         systemOverlayStyle: SystemUiOverlayStyle(
-      statusBarColor: Colors.white,
-      statusBarBrightness: Brightness.light,
-      statusBarIconBrightness: Brightness.dark,
-      systemNavigationBarColor: Colors.white,
-      systemNavigationBarIconBrightness: Brightness.light,
-    )),
+            statusBarColor: Colors.white,
+            statusBarBrightness: Brightness.light,
+            statusBarIconBrightness: Brightness.dark,
+            systemNavigationBarColor: Colors.white,
+            systemNavigationBarIconBrightness: Brightness.light)),
     extensions: [AppTheme()]);
 
 ThemeData darkTheme = ThemeData(
@@ -24,10 +23,9 @@ ThemeData darkTheme = ThemeData(
     highlightColor: AppColors.transparent,
     appBarTheme: const AppBarTheme(
         systemOverlayStyle: SystemUiOverlayStyle(
-      statusBarColor: AppColors.darkTeal,
-      statusBarBrightness: Brightness.dark,
-      statusBarIconBrightness: Brightness.light,
-      systemNavigationBarColor: AppColors.darkTeal,
-      systemNavigationBarIconBrightness: Brightness.dark,
-    )),
+            statusBarColor: AppColors.darkTeal,
+            statusBarBrightness: Brightness.dark,
+            statusBarIconBrightness: Brightness.light,
+            systemNavigationBarColor: AppColors.darkTeal,
+            systemNavigationBarIconBrightness: Brightness.dark)),
     extensions: [AppTheme.dark()]);

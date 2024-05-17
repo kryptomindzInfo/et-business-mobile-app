@@ -28,7 +28,9 @@ class ThemeProvider extends Notifier<Themes> {
 class Themes {
   final ThemeMode? themeMode;
   final int? themeId;
+
   Themes({this.themeId, this.themeMode});
+
   Themes copyWith({ThemeMode? themeMode, int? themeId}) {
     return Themes(
         themeMode: themeMode ?? this.themeMode,
