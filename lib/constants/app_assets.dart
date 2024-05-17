@@ -127,6 +127,11 @@ class AppAssets {
   static const getmoreicon = "${iconsDir}getmoreicon.png";
   static const exchangemoneyicon = "${iconsDir}exchangemoneyicon.png";
   static const whitecross = "${iconsDir}whitecross.png";
+  static const profilePic = "${imagesDir}profile_pic.png";
+  static const bellIcon = "${imagesDir}bell.png";
+  static const userCard = "${imagesDir}user_card.png";
+  static const arrowLeftShort = "${iconsDir}arrow_left_short.png";
+
   // Sendding Currency Flow
 
   static const addButton2x = "${iconsDir}add_button_2x.png";
@@ -176,4 +181,25 @@ class AppAssets {
   static const addItems = "${iconsDir}add_items.png";
   static const excalamation = "${iconsDir}excalamation.png";
   static const tick = "${iconsDir}tick.png";
+  static const exchangeUsd = "${imagesDir}exchange_usd.png";
+  static const transferTo = "${imagesDir}transfer_to.png";
+  static const paymentFrom = "${imagesDir}payment_from.png";
+  static const addYellow = "${iconsDir}add_yellow.png";
+  static const clock = "${iconsDir}clock.png";
+  static const popularBlack = "${iconsDir}popular_black.png";
+  static const rocketImage = "${imagesDir}rocket_image.png";
+  static const export = "${iconsDir}export.png";
+  static const cardsIcon = "${iconsDir}cards_icon.png";
+  static const arrowRightShort = "${iconsDir}arrow_right_short.png";
+  static const hubCards = "${iconsDir}hub_card.png";
+  static const hubTeam = "${iconsDir}hub_team.png";
+  static const hubMerchant = "${iconsDir}hub_merchant.png";
+  static const hubLinked = "${iconsDir}hub_linked.png";
+  static const hubTransfer = "${iconsDir}hub_transfer.png";
+  static const hubRequest = "${iconsDir}hub_request.png";
+  static const hubSchedule = "${iconsDir}hub_schedule.png";
+  static const saveMoney = "${imagesDir}save_money.png";
+  static const offers = "${imagesDir}offers.png";
+  static const appInBrowser = "${imagesDir}app_in_browser.png";
+  static const notifImage = "${imagesDir}notif_image.png";
 }

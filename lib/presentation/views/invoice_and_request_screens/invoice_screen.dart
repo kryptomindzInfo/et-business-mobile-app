@@ -1,14 +1,15 @@
 import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:etbank_business_app/constants/app_textstyle.dart';
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/app_common_widgets.dart';
+import 'package:etbank_business_app/presentation/views/common_widgets/white_flexible_card.dart';
 import 'package:etbank_business_app/presentation/views/invoice_and_request_screens/add_customer_screen.dart';
 import 'package:etbank_business_app/presentation/views/invoice_and_request_screens/invoice_and_request_widgets/request_money_white_container_widget.dart';
 import 'package:etbank_business_app/presentation/views/sending_currency_screens/sending_currency_widgets/show_account_details_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../../constants/app_assets.dart';
 import '../../../navigation/navigation.dart';
 import '../../../resources/localization/language_constrants.dart';
@@ -28,7 +29,7 @@ class InvoiceSreen extends ConsumerWidget {
     return BackgroundImageWidget(
       child: Scaffold(
         backgroundColor: AppColors.transparent,
-        appBar: CommonAppBar(
+        appBar: const CommonAppBar(
           etBankLogo: true,
         ),
         body: Padding(
@@ -56,17 +57,18 @@ class InvoiceSreen extends ConsumerWidget {
                     DirectorButtonWidget(
                       leadingImage: AppAssets.eye,
                       title: getTranslated('preview_email', context),
-                      buttonColor: AppColors.green,
+                      buttonColor: context.theme.colorTheme.yellowGreenColor,
                       titleTextStyle:
                           AppTextstyle.bodyTextStyle(color: AppColors.black),
                     ),
                     8.spaceX,
                     DirectorButtonWidget(
                       leadingImage: AppAssets.bin,
+                      imageColor: AppColors.black,
                       title: getTranslated('delete', context),
-                      buttonColor: AppColors.transparent,
+                      buttonColor: context.theme.colorTheme.yellowGreenColor,
                       titleTextStyle:
-                          AppTextstyle.bodyTextStyle(color: AppColors.green),
+                          AppTextstyle.bodyTextStyle(color: AppColors.black),
                     ),
                   ],
                 ),
@@ -74,47 +76,74 @@ class InvoiceSreen extends ConsumerWidget {
                 Text(
                   getTranslated('bill_to', context),
                   style: AppTextstyle.bodyTextStyle(
-                      color: AppColors.green,
+                      color: context.theme.colorTheme.yellowGreenColor,
                       fontSize: 16,
                       fontWeight: FontWeight.bold),
                 ),
                 12.spaceY,
-                RequestMoneyWhiteContainerWidget(
-                    imageicon: Image.asset(
-                      AppAssets.person,
-                      height: 25,
-                    ),
-                    title: 'add_customer',
-                    subtitle: 'required'),
+                CommonWhiteFlexibleCard(
+                  padding: const EdgeInsets.all(0),
+                  borderRadius: 12,
+                  widget: RequestMoneyWhiteContainerWidget(
+                      color: context.theme.colorTheme.transparentToColor,
+                      titleColor: context.theme.colorTheme.whiteColor,
+                      subTitlecolor: AppColors.grey,
+                      imageicon: Image.asset(
+                        color: context.theme.colorTheme.whiteColor,
+                        AppAssets.person,
+                        height: 25,
+                      ),
+                      title: 'add_customer',
+                      subtitle: 'required'),
+                ),
                 16.spaceY,
-                const RequestMoneyWhiteContainerWidget(
+                CommonWhiteFlexibleCard(
+                  padding: const EdgeInsets.all(0),
+                  borderRadius: 12,
+                  widget: RequestMoneyWhiteContainerWidget(
+                    color: context.theme.colorTheme.transparentToColor,
+                    titleColor: context.theme.colorTheme.whiteColor,
+                    subTitlecolor: AppColors.grey,
                     title: 'add_an_email_message',
-                    subtitle: 'appears_on_the_email_your_costumer_receives'),
+                    subtitle: 'appears_on_the_email_your_costumer_receives',
+                  ),
+                ),
                 32.spaceY,
                 Text(
                   getTranslated('items', context),
                   style: AppTextstyle.bodyTextStyle(
-                      color: AppColors.green,
+                      color: AppColors.yellowGreen,
                       fontSize: 16,
                       fontWeight: FontWeight.bold),
                 ),
-                12.spaceY,
+                22.spaceY,
                 ShowAccountDetailsWidget(
+                  color: AppColors.transparent,
                   title: getTranslated('currency', context),
+                  titleColor: AppColors.grey,
                   subTitle: getTranslated('GBP_british_pound', context),
                   subTitleStyle: AppTextstyle.bodyTextStyle(
                       fontSize: 16, color: AppColors.darkGreen),
                 ),
                 16.spaceY,
-                RequestMoneyWhiteContainerWidget(
-                    imageicon: Image.asset(
-                      AppAssets.addItems,
-                      height: 25,
-                    ),
-                    title: 'add_items',
-                    subtitle: 'required'),
+                CommonWhiteFlexibleCard(
+                  padding: const EdgeInsets.all(0),
+                  borderRadius: 12,
+                  widget: RequestMoneyWhiteContainerWidget(
+                      color: context.theme.colorTheme.transparentToColor,
+                      titleColor: context.theme.colorTheme.whiteColor,
+                      subTitlecolor: AppColors.grey,
+                      imageicon: Image.asset(
+                        AppAssets.addItems,
+                        height: 25,
+                      ),
+                      title: 'add_items',
+                      subtitle: 'required'),
+                ),
                 16.spaceY,
                 ShowAccountDetailsWidget(
+                  color: AppColors.transparent,
+                  titleColor: AppColors.grey,
                   title: getTranslated('sub_total', context),
                   subTitle: getTranslated('£0', context),
                 ),
@@ -128,7 +157,7 @@ class InvoiceSreen extends ConsumerWidget {
               height: 48.h,
               width: 327.w,
               child: PrimaryButton(
-                color: AppColors.green,
+                color: AppColors.yellowGreen,
                 text: Text(
                   getTranslated('send', context),
                   style: AppTextstyle.bodyTextStyle(

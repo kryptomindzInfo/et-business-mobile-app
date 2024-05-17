@@ -8,7 +8,6 @@ import 'package:etbank_business_app/presentation/views/signup_screens/signup_wid
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../constants/app_assets.dart';
 import '../../../navigation/navigation.dart';
 import '../../../providers/invoice_request_provider.dart';
 import '../../../resources/localization/language_constrants.dart';
@@ -31,7 +30,7 @@ class AutomaticRemindersScreen extends ConsumerWidget {
     return BackgroundImageWidget(
       child: Scaffold(
         backgroundColor: AppColors.transparent,
-        appBar: CommonAppBar(
+        appBar: const CommonAppBar(
           etBankLogo: true,
         ),
         body: Padding(
@@ -49,7 +48,7 @@ class AutomaticRemindersScreen extends ConsumerWidget {
                     overflow: TextOverflow.clip),
                 // imageicon: AppAssets.arrowLeft,
               ),
-              18.spaceY,
+              22.spaceY,
               CommonWhiteFlexibleCard(
                 borderRadius: 8,
                 padding: const EdgeInsets.fromLTRB(6, 6, 6, 6),
@@ -57,7 +56,7 @@ class AutomaticRemindersScreen extends ConsumerWidget {
                   value: invoiceRequestProviderW.sendAutomaticReminders,
                   title: getTranslated('send_automatically_reminders', context),
                   titleTextStyle: AppTextstyle.bodyTextStyle(
-                      fontSize: 16, color: AppColors.black),
+                      fontSize: 16, color: AppColors.white),
                   onChanged: (value) {
                     invoiceRequestProviderR.toggleSendAutomaticReminders();
                   },
@@ -72,7 +71,7 @@ class AutomaticRemindersScreen extends ConsumerWidget {
                       invoiceRequestProviderW.automaticRemindersSetAsDefault,
                   title: getTranslated('set_as_default', context),
                   titleTextStyle: AppTextstyle.bodyTextStyle(
-                      fontSize: 16, color: AppColors.black),
+                      fontSize: 16, color: AppColors.white),
                   onChanged: (value) {
                     invoiceRequestProviderR
                         .toggleAutomaticRemindersSetAsDefault();
@@ -88,7 +87,7 @@ class AutomaticRemindersScreen extends ConsumerWidget {
               height: 48.h,
               width: 327.w,
               child: PrimaryButton(
-                color: AppColors.green,
+                color: AppColors.yellowGreen,
                 text: Text(
                   getTranslated('save', context),
                   style: AppTextstyle.bodyTextStyle(

@@ -4,12 +4,23 @@ import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../../constants/app_assets.dart';
 import '../../../../constants/app_textstyle.dart';
 
 class InfoTextWidget extends ConsumerWidget {
   final Color? marketPriceColor;
-  const InfoTextWidget({super.key, this.marketPriceColor});
+  final String image;
+  final String title;
+  final String subTitle;
+  final String price1;
+  final String? price2;
+  const InfoTextWidget(
+      {super.key,
+      this.marketPriceColor,
+      required this.image,
+      required this.title,
+      required this.subTitle,
+      required this.price1,
+      this.price2});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -18,57 +29,56 @@ class InfoTextWidget extends ConsumerWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Container(
-            // width: 190,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                const IconContainer(
-                  image: AppAssets.transactioninfoicon,
-                ),
-                15.spaceX,
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Exchanged to USD",
-                      style: AppTextstyle.bodyTextStyle(
-                          fontSize: 16,
-                          color: context.theme.colorTheme.normalTextColor,
-                          fontWeight: FontWeight.w600),
-                    ),
-                    Text(
-                      "GBP . Default Account",
-                      style: AppTextstyle.bodyTextStyle(
-                          fontSize: 12,
-                          color: context.theme.colorTheme.normalTextColor
-                              .withOpacity(0.4),
-                          fontWeight: FontWeight.w400),
-                    )
-                  ],
-                ),
-              ],
-            ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              IconContainer(
+                // image: AppAssets.transactioninfoicon,
+                image: image,
+              ),
+              15.spaceX,
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    title,
+                    style: AppTextstyle.bodyTextStyle(
+                        fontSize: 18,
+                        color: context.theme.colorTheme.normalTextColor,
+                        fontWeight: FontWeight.w600),
+                  ),
+                  5.spaceY,
+                  Text(
+                    subTitle,
+                    style: AppTextstyle.bodyTextStyle(
+                        fontSize: 14,
+                        color: context.theme.colorTheme.greyDescription,
+                        fontWeight: FontWeight.w400),
+                  )
+                ],
+              ),
+            ],
           ),
           Column(
             children: [
               Text(
-                "-£1",
+                price1,
                 style: AppTextstyle.bodyTextStyle(
-                    fontSize: 16,
+                    fontSize: 18,
                     color: context.theme.colorTheme.normalTextColor,
                     fontWeight: FontWeight.w600),
               ),
               Text(
-                "+\$1.36",
+                // "+\$1.36",
+                price2 ?? '',
                 style: AppTextstyle.bodyTextStyle(
-                    fontSize: 12,
+                    fontSize: 14,
                     color: marketPriceColor ??
                         context.theme.colorTheme.normalTextColor,
                     fontWeight: FontWeight.w400),
               )
             ],
-          )
+          ),
         ],
       ),
     );

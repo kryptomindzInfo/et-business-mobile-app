@@ -24,6 +24,24 @@ class WhoToPayScreen extends ConsumerWidget {
       child: Scaffold(
         backgroundColor: AppColors.transparent,
         appBar: CommonAppBar(
+          leading: GestureDetector(
+            onTap: () {
+              Navigator.pop(context);
+            },
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Image.asset(
+                AppAssets.arrowLeftShort,
+              ),
+            ),
+          ),
+          actions: [
+            Image.asset(
+              AppAssets.addYellow,
+              height: 28,
+              width: 28,
+            ),
+          ],
           etBankLogo: true,
         ),
         body: Padding(
@@ -48,17 +66,16 @@ class WhoToPayScreen extends ConsumerWidget {
                 onChanged: (value) {},
               ),
               54.spaceY,
-              Center(
-                child: Text(
-                  getTranslated('cant_find_who_you_are_looking_for', context),
-                  style: AppTextstyle.headingTextStyle(
-                    color: AppColors.white,
-                    fontSize: 16,
-                  ),
+              Text(
+                getTranslated('cant_find_who_you_are_looking_for', context),
+                style: AppTextstyle.headingTextStyle(
+                  color: AppColors.greywhite,
+                  fontSize: 16,
                 ),
               ),
               18.spaceY,
               AddCounterPartyWidget(
+                borderRadius: 12,
                 title: 'add_new_counterparty',
                 onTap: () {
                   Navigation.pushNamed(AccountDetailsScreen.routeName);

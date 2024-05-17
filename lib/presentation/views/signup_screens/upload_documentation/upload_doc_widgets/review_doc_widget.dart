@@ -24,11 +24,12 @@ class ReviewDocWidget extends ConsumerWidget {
               fontWeight: FontWeight.w400,
               color: context.theme.colorTheme.normalTextColor),
         ),
+        12.spaceY,
         CommonWhiteFlexibleCard(
           widget: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              IconContainer(
+              const IconContainer(
                 image: AppAssets.letterhead,
               ),
               8.spaceX,
@@ -49,12 +50,13 @@ class ReviewDocWidget extends ConsumerWidget {
                       style: AppTextstyle.bodyTextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.w400,
-                          color: context.theme.colorTheme.normalTextColor),
+                          color: context.theme.colorTheme.normalTextColor
+                              .withOpacity(0.5)),
                     )
                   ],
                 ),
               ),
-              5.spaceX,
+              26.spaceX,
               Padding(
                 padding: const EdgeInsets.only(top: 30),
                 child: Image.asset(

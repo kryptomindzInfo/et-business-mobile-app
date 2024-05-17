@@ -10,13 +10,15 @@ class SignUpVerificationCard extends ConsumerWidget {
   final String? statusIcon;
   final String? status;
   final VoidCallback? onpress;
+  final Color? color;
   const SignUpVerificationCard(
       {super.key,
       this.imageIcon,
       this.cardtitle,
       this.statusIcon,
       this.status,
-      this.onpress});
+      this.onpress,
+      this.color});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -26,6 +28,7 @@ class SignUpVerificationCard extends ConsumerWidget {
         // height: 179,
         // width: 164,
         decoration: BoxDecoration(
+            color: color ?? Colors.transparent,
             borderRadius: BorderRadius.circular(28),
             border: Border.all(color: context.theme.colorTheme.borderColor)),
         child: Padding(
@@ -34,7 +37,7 @@ class SignUpVerificationCard extends ConsumerWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               30.spaceY,
-              Container(
+              SizedBox(
                 height: 55,
                 // color: Colors.red,
                 child: Align(
@@ -64,6 +67,7 @@ class SignUpVerificationCard extends ConsumerWidget {
                           statusIcon!,
                           scale: 1.70,
                         ),
+                        8.spaceX,
                         Text(
                           status!,
                           style: AppTextstyle.bodyTextStyle(
@@ -73,7 +77,7 @@ class SignUpVerificationCard extends ConsumerWidget {
                         )
                       ],
                     )
-                  : SizedBox()
+                  : const SizedBox()
             ],
           ),
         ),

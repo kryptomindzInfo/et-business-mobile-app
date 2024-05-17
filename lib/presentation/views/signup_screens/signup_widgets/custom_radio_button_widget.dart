@@ -21,7 +21,7 @@ class CustomRadioButtonWidget extends ConsumerWidget {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
           border: Border.all(
-            color: AppColors.baseGreenColor,
+            color: isSelected ? AppColors.yellowGreen : AppColors.white,
             width: 2,
           ),
         ),
@@ -31,10 +31,10 @@ class CustomRadioButtonWidget extends ConsumerWidget {
                 height: 18.h,
                 width: 18.w,
                 decoration: BoxDecoration(
-                  color: AppColors.baseGreenColor,
+                  color: AppColors.yellowGreen,
                   borderRadius: BorderRadius.circular(20),
                   border: Border.all(
-                    color: AppColors.baseGreenColor,
+                    color: AppColors.yellowGreen,
                     width: 2,
                   ),
                 ),
@@ -57,7 +57,7 @@ class _CustomCheckBoxState extends ConsumerState<CustomCheckBox> {
   late final Function()? onTap;
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
         height: 20.h,
         width: 20.w,
         // decoration: BoxDecoration(

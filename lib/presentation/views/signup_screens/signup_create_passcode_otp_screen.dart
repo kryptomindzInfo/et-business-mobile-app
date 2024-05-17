@@ -17,7 +17,8 @@ class SignUpCreatePassCodeOTPCodeScreen extends ConsumerWidget {
       onCompleted: (value) {
         Navigation.pushNamed(SignUpEnableFaceIdScreen.routeName);
       },
-      text2Color: context.theme.colorTheme.primaryColor,
+      text2: 'Code hasn’t arrived? you can retry in 0:58',
+      text2Color: context.theme.colorTheme.whiteColor,
     );
   }
 }

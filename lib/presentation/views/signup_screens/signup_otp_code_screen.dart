@@ -39,7 +39,7 @@ class OTPVerification extends ConsumerWidget {
       child: Scaffold(
         extendBody: true,
         backgroundColor: AppColors.transparent,
-        appBar: CommonAppBar(
+        appBar: const CommonAppBar(
           etBankLogo: true,
         ),
         body: Padding(
@@ -49,6 +49,7 @@ class OTPVerification extends ConsumerWidget {
             children: [
               HeaderIconWithTitle(
                 title: getTranslated('signup_email_code_title', context),
+                spaceBtw: 5,
                 description: getTranslated(description, context),
                 // imageicon: AppAssets.arrowLeft,
                 etBankLogo: true,
@@ -66,7 +67,7 @@ class OTPVerification extends ConsumerWidget {
                     TextStyle(color: context.theme.colorTheme.blackAndWhite),
                 pinTheme: PinTheme(
                   shape: PinCodeFieldShape.box,
-                  borderRadius: BorderRadius.circular(8),
+                  borderRadius: BorderRadius.circular(12),
                   fieldOuterPadding: const EdgeInsets.symmetric(horizontal: 8),
                   fieldHeight: 48.h,
                   fieldWidth: 34.w,
@@ -87,15 +88,17 @@ class OTPVerification extends ConsumerWidget {
                 enablePinAutofill: true,
                 onCompleted: onCompleted,
               ),
-              // 10.spaceY,
-              Text(
-                getTranslated(text1 ?? 'resend_code', context),
-                style: AppTextstyle.bodyTextStyle(
-                  fontSize: 16.sp,
-                  color: text1Color ?? context.theme.colorTheme.normalTextColor,
-                ),
-              ),
               10.spaceY,
+              if (text1 != null)
+                Text(
+                  getTranslated(text1 ?? 'resend_code', context),
+                  style: AppTextstyle.bodyTextStyle(
+                    fontSize: 16.sp,
+                    color:
+                        text1Color ?? context.theme.colorTheme.normalTextColor,
+                  ),
+                ),
+              28.spaceY,
               RichText(
                 text: TextSpan(
                   children: [

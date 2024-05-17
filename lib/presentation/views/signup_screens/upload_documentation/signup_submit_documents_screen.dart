@@ -21,7 +21,7 @@ class SignUpSubmitDocumentScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       backgroundColor: context.theme.colorTheme.backgroundColor,
-      appBar: CommonAppBar(
+      appBar: const CommonAppBar(
         etBankLogo: true,
       ),
       body: Padding(
@@ -38,12 +38,12 @@ class SignUpSubmitDocumentScreen extends ConsumerWidget {
               getTranslated("to_do", context),
               style: AppTextstyle.bodyTextStyle(
                   fontSize: 16,
-                  color: context.theme.colorTheme.headerDescriptionColor),
+                  color: context.theme.colorTheme.whiteColor.withOpacity(0.8)),
             ),
             10.spaceY,
             CommonWhiteFlexibleCard(
               borderRadius: 8,
-              padding: EdgeInsets.only(left: 10, top: 10, bottom: 10),
+              padding: const EdgeInsets.only(left: 10, top: 10, bottom: 10),
               widget: Column(
                 children: [
                   CommonIconTitleIconButton(

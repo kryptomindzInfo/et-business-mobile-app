@@ -26,7 +26,7 @@ class CurrencySellHeader extends ConsumerWidget {
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
             Padding(
-              padding: const EdgeInsets.only(top: 75),
+              padding: const EdgeInsets.only(top: 0),
               child: Image.asset(
                 AppAssets.roundukflag,
                 height: 50,

@@ -8,8 +8,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class CapturedImageContainer extends ConsumerWidget {
-  final File? capturedFile;
-  const CapturedImageContainer({super.key, this.capturedFile});
+  final String imagePath;
+  const CapturedImageContainer({super.key, required this.imagePath});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -21,7 +21,7 @@ class CapturedImageContainer extends ConsumerWidget {
           decoration: BoxDecoration(
               borderRadius: BorderRadiusDirectional.circular(6),
               image: DecorationImage(
-                  image: FileImage(capturedFile!), fit: BoxFit.cover)),
+                  image: FileImage(File(imagePath)), fit: BoxFit.cover)),
         ),
         40.spaceY,
         Padding(

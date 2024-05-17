@@ -8,7 +8,6 @@ import 'package:etbank_business_app/resources/localization/language_constrants.d
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../constants/app_assets.dart';
 import '../../../constants/app_colors.dart';
 import '../../../constants/static_data/signup_screen_static_data.dart';
 import '../common_widgets/app_common_appbar.dart';
@@ -25,7 +24,7 @@ class SignUpHowManyPaymentsEachMonthScreen extends ConsumerWidget {
       child: Scaffold(
         extendBody: true,
         backgroundColor: AppColors.transparent,
-        appBar: CommonAppBar(
+        appBar: const CommonAppBar(
           etBankLogo: true,
         ),
         body: Padding(
@@ -37,6 +36,7 @@ class SignUpHowManyPaymentsEachMonthScreen extends ConsumerWidget {
                 title: getTranslated(
                     'how_many_payments_will_you_send_each_month_title',
                     context),
+                spaceBtw: 0,
                 description: getTranslated(
                     'how_many_payments_will_you_send_each_month_subtitle',
                     context),

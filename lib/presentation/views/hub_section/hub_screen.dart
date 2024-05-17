@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../constants/app_colors.dart';
+import '../common_widgets/app_common_appbar.dart';
 import '../common_widgets/app_common_widgets.dart';
 
 class HubScreen extends ConsumerWidget {
@@ -16,18 +17,23 @@ class HubScreen extends ConsumerWidget {
     return BackgroundImageWidget(
       child: Scaffold(
         backgroundColor: AppColors.transparent,
-        body: Padding(
-          padding: const EdgeInsets.only(left: 20, right: 20),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              60.spaceY,
-              HeaderIconWithTitle(
-                title: getTranslated("hub", context),
-              ),
-              20.spaceY,
-              const HubSectionBody()
-            ],
+        appBar: const CommonAppBar(
+          etBankLogo: true,
+        ),
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.only(left: 20, right: 20),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                30.spaceY,
+                HeaderIconWithTitle(
+                  title: getTranslated("hub", context),
+                ),
+                20.spaceY,
+                const HubSectionBody()
+              ],
+            ),
           ),
         ),
       ),

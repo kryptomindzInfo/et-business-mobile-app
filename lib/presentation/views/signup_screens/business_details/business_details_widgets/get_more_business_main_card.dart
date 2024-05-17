@@ -1,3 +1,4 @@
+import 'package:etbank_business_app/core/app_print.dart';
 import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/navigation/navigation.dart';
@@ -12,6 +13,7 @@ import '../../../../../constants/app_colors.dart';
 import '../../../../../constants/app_textstyle.dart';
 import '../../../../../navigation/navigator_key.dart';
 import '../../../../../resources/localization/language_constrants.dart';
+import '../../../bottom_navigation_bar.dart';
 import '../../../onboarding_screens/onboarding_widgets/button_widget.dart';
 import '../../../onboarding_screens/onboarding_widgets/onboarding_widget.dart';
 import '../../../profile_section/refer_business/refer_business_wdigets/get_started_whole_container.dart';
@@ -41,7 +43,7 @@ class GetMoreBusinessMainCard extends ConsumerWidget {
         left: 50.w,
         child: CustomButton(
           onPressed: () {
-            // Navigation.pushNamed(BaseBottomNavBar.routeName);
+            Navigation.pushNamed(BaseBottomNavBar.routeName);
           },
           height: 48.h,
           width: 327.w,
@@ -76,7 +78,7 @@ class GetMoreBusinessMainCard extends ConsumerWidget {
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(28),
               // color: AppColors.transparent,
-              color: Color(0xff0D2226).withOpacity(0.6),
+              color: const Color(0xff0D2226).withOpacity(0.6),
               border: Border.all(color: context.theme.colorTheme.borderColor)),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
@@ -104,11 +106,11 @@ class GetMoreBusinessMainCard extends ConsumerWidget {
                       overflow: TextOverflow.clip),
                 ),
               ),
-              5.spaceY,
+              22.spaceY,
               GetStartedSection(
                 title: getTranslated("easier_way_to_manage", context),
                 onpress: () {
-                  print(screens);
+                  console(screens);
                   Navigation.pushNamed(Onboarding.routeName,
                       arguments: OnboardingArgs(screens: screens, width: 100));
                 },
@@ -118,6 +120,5 @@ class GetMoreBusinessMainCard extends ConsumerWidget {
         ),
       ],
     );
-    ;
   }
 }

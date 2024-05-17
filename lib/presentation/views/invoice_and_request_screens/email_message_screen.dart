@@ -8,7 +8,6 @@ import 'package:etbank_business_app/presentation/views/signup_screens/signup_wid
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../constants/app_assets.dart';
 import '../../../navigation/navigation.dart';
 import '../../../providers/invoice_request_provider.dart';
 import '../../../resources/localization/language_constrants.dart';
@@ -31,7 +30,7 @@ class EmailMessageScreen extends ConsumerWidget {
     return BackgroundImageWidget(
       child: Scaffold(
         backgroundColor: AppColors.transparent,
-        appBar: CommonAppBar(
+        appBar: const CommonAppBar(
           etBankLogo: true,
         ),
         body: Padding(
@@ -42,19 +41,20 @@ class EmailMessageScreen extends ConsumerWidget {
               HeaderIconWithTitle(
                 title: getTranslated('email_message', context),
                 description: getTranslated('email_message_subtitle', context),
-                descriptionTextStyle: AppTextstyle.headingTextStyle(
-                    fontSize: 14, color: AppColors.grey),
+                // descriptionTextStyle: AppTextstyle.headingTextStyle(
+                //     fontSize: 14, color: AppColors.grey),
                 // imageicon: AppAssets.arrowLeft,
               ),
               18.spaceY,
               TextFieldWidget(
                 hintText: getTranslated('enter_message', context),
-                hintStyle: AppTextstyle.bodyTextStyle(color: AppColors.grey),
+                // hintStyle: AppTextstyle.bodyTextStyle(color: AppColors.grey),
               ),
+              8.spaceY,
               Text(
                 getTranslated('optional', context),
                 style: AppTextstyle.headingTextStyle(
-                  color: AppColors.grey,
+                  color: AppColors.halfWhite,
                 ),
               ),
               24.spaceY,
@@ -66,7 +66,7 @@ class EmailMessageScreen extends ConsumerWidget {
                       invoiceRequestProviderW.emailMessageSetAsDefault,
                   title: getTranslated('set_as_default', context),
                   titleTextStyle: AppTextstyle.bodyTextStyle(
-                      fontSize: 16, color: AppColors.black),
+                      fontSize: 16, color: AppColors.halfWhite),
                   onChanged: (value) {
                     invoiceRequestProviderR.toggleEmailMessageSetAsDefault();
                   },
@@ -81,7 +81,7 @@ class EmailMessageScreen extends ConsumerWidget {
               height: 48.h,
               width: 327.w,
               child: PrimaryButton(
-                color: AppColors.green,
+                color: AppColors.yellowGreen,
                 text: Text(
                   getTranslated('save', context),
                   style: AppTextstyle.bodyTextStyle(

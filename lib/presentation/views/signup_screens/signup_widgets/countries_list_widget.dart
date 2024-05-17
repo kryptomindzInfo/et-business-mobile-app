@@ -8,7 +8,7 @@ import '../../../../globals/countries_list.dart';
 class CountriesListWidget extends ConsumerWidget {
   final Function(int)? onTap;
   final VoidCallback? onpress;
-  const CountriesListWidget({super.key,  this.onTap, this.onpress});
+  const CountriesListWidget({super.key, this.onTap, this.onpress});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -40,25 +40,28 @@ class CountriesListWidget extends ConsumerWidget {
       ),
       child: Padding(
         padding: const EdgeInsets.fromLTRB(35, 20, 20, 0),
-        child: ListView.builder(itemBuilder: (context, index) {
-          return GestureDetector(
-            onTap: onpress ??
-                () {
-                  onTap!(index);
+        child: ListView.builder(
+            itemCount: allCountries.length,
+            itemBuilder: (context, index) {
+              return GestureDetector(
+                onTap: onpress ??
+                    () {
+                      onTap!(index);
 
-                  Navigator.pop(context);
-                },
-            child: ListTile(
-                leading: CircleAvatar(child: Text(allCountries[index].flag)),
-                title: Text(
-                  allCountries[index].name,
-                  style: AppTextstyle.bodyTextStyle(
-                      fontWeight: FontWeight.w500,
-                      fontSize: 16,
-                      color: Colors.white),
-                )),
-          );
-        }),
+                      Navigator.pop(context);
+                    },
+                child: ListTile(
+                    leading:
+                        CircleAvatar(child: Text(allCountries[index].flag)),
+                    title: Text(
+                      allCountries[index].name,
+                      style: AppTextstyle.bodyTextStyle(
+                          fontWeight: FontWeight.w500,
+                          fontSize: 16,
+                          color: Colors.white),
+                    )),
+              );
+            }),
       ),
     );
   }

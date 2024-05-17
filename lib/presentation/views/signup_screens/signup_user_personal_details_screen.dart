@@ -13,7 +13,6 @@ import '../../../providers/signup_provider.dart';
 import '../common_widgets/app_common_appbar.dart';
 import 'signup_user_home_address_screen.dart';
 import 'signup_widgets/button_bottom_navigation_widget.dart';
-import 'signup_widgets/country_and_mobileno_widget.dart';
 import 'signup_widgets/primary_button.dart';
 import 'signup_widgets/user_personal_details_widget.dart';
 
@@ -89,6 +88,7 @@ class SignUpUserPersonalDetailsScreen extends ConsumerWidget {
                     AppAssets.iconArrowDownBlack,
                     height: 11.h,
                     width: 22.w,
+                    color: context.theme.colorTheme.whiteColor,
                   ),
                 ),
                 16.spaceY,
@@ -99,7 +99,6 @@ class SignUpUserPersonalDetailsScreen extends ConsumerWidget {
                   onTap: () {},
                 ),
                 16.spaceY,
-                // const CountryAndMobileNoWidget(),
               ],
             ),
           ),

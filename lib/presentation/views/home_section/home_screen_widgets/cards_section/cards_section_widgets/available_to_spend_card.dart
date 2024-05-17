@@ -14,6 +14,7 @@ class AvailableToSpendCard extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return CommonWhiteFlexibleCard(
+      borderRadius: 12,
       widget: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -26,14 +27,15 @@ class AvailableToSpendCard extends ConsumerWidget {
                   context,
                 )}",
                 style: AppTextstyle.bodyTextStyle(
-                    fontSize: 16,
+                    fontSize: 18,
                     fontWeight: FontWeight.w600,
                     color: context.theme.colorTheme.normalTextColor),
               ),
               Image.asset(
-                AppAssets.markicon,
-                height: 16,
-                color: context.theme.colorTheme.indigoToColor,
+                AppAssets.exclamationMark,
+                height: 20,
+                width: 20,
+                color: context.theme.colorTheme.redColor,
               )
             ],
           ),
@@ -41,13 +43,14 @@ class AvailableToSpendCard extends ConsumerWidget {
           Text(
             getTranslated("card_low_balance", context),
             style: AppTextstyle.bodyTextStyle(
-                fontSize: 16,
+                fontSize: 14,
                 fontWeight: FontWeight.w400,
                 color: context.theme.colorTheme.normalTextColor),
             overflow: TextOverflow.clip,
           ),
-          15.spaceY,
+          25.spaceY,
           CommonGreyButton(
+            borderRadius: 8,
             title: getTranslated("resolve", context),
           )
         ],

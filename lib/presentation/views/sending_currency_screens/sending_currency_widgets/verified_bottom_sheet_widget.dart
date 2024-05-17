@@ -6,13 +6,14 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 class VerifiedBottomSheetWidget extends ConsumerWidget {
   final Widget title;
   final Widget description;
+  final double? height;
   const VerifiedBottomSheetWidget(
-      {super.key, required this.title, required this.description});
+      {super.key, required this.title, required this.description, this.height});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Container(
-      height: 311,
+      height: height ?? 311,
       width: double.infinity,
       decoration: BoxDecoration(borderRadius: BorderRadius.circular(28)),
       child: Column(
@@ -25,7 +26,10 @@ class VerifiedBottomSheetWidget extends ConsumerWidget {
           20.spaceY,
           title,
           20.spaceY,
-          description,
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 70),
+            child: description,
+          ),
         ],
       ),
     );

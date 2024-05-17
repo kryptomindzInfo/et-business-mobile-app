@@ -31,7 +31,7 @@ class SignUpEnableFaceIdScreen extends ConsumerWidget {
           child: PrimaryButton(
             color: context.theme.colorTheme.buttonColor,
             text: Text(
-              getTranslated('continue', context),
+              getTranslated('use_face_id', context),
               style: AppTextstyle.bodyTextStyle(
                   color: context.theme.colorTheme.blackColor,
                   fontSize: 16,

@@ -12,6 +12,8 @@ class DirectorButtonWidget extends ConsumerWidget {
   final String? leadingImage;
   final EdgeInsetsGeometry? padding;
   final double? width;
+  final Color? imageColor;
+  final double? buttonRadius;
 
   const DirectorButtonWidget(
       {super.key,
@@ -20,7 +22,9 @@ class DirectorButtonWidget extends ConsumerWidget {
       this.titleTextStyle,
       this.leadingImage,
       this.padding,
-      this.width});
+      this.width,
+      this.imageColor,
+      this.buttonRadius});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -28,8 +32,8 @@ class DirectorButtonWidget extends ConsumerWidget {
       width: width,
       decoration: BoxDecoration(
           color: buttonColor ?? AppColors.tealColor,
-          borderRadius: const BorderRadius.all(
-            Radius.circular(8),
+          borderRadius: BorderRadius.all(
+            Radius.circular(buttonRadius ?? 8),
           ),
           border: Border.all(color: context.theme.colorTheme.borderColor)),
       child: Padding(
@@ -40,6 +44,7 @@ class DirectorButtonWidget extends ConsumerWidget {
               Padding(
                 padding: const EdgeInsets.only(right: 8),
                 child: Image.asset(
+                  color: imageColor,
                   leadingImage ?? '',
                   height: 12,
                   width: 17,

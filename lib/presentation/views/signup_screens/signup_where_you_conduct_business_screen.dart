@@ -26,7 +26,7 @@ class SignUpWhereYouConductBusinessScreen extends ConsumerWidget {
       child: Scaffold(
         extendBody: false,
         backgroundColor: AppColors.transparent,
-        appBar: CommonAppBar(
+        appBar: const CommonAppBar(
             // etBankLogo: true,
             ),
         body: SingleChildScrollView(
@@ -38,22 +38,23 @@ class SignUpWhereYouConductBusinessScreen extends ConsumerWidget {
                 HeaderIconWithTitle(
                   title: getTranslated(
                       'where_do_you_conduct_business_title', context),
+                  spaceBtw: 0,
                   description: getTranslated(
                       'where_do_you_conduct_business_subtitle', context),
                   // imageicon: AppAssets.arrowLeft,
                 ),
-                11.spaceY,
+                16.spaceY,
                 Text(
                   getTranslated('which_countries_should_I_list', context),
                   style: AppTextstyle.bodyTextStyle(
                       color: context.theme.colorTheme.primaryColor),
                 ),
-                32.spaceY,
+                24.spaceY,
                 BusinessDetailsWhiteContainerWidet(
                   title: getTranslated('add_countries', context),
                   titleTextColor: context.theme.colorTheme.primaryColor,
                 ),
-                32.spaceY,
+                45.spaceY,
                 Text(
                   getTranslated('countries', context),
                   style: AppTextstyle.bodyTextStyle(

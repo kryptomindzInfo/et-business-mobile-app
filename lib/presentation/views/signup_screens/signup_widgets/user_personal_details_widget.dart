@@ -1,4 +1,5 @@
 import 'package:etbank_business_app/constants/app_colors.dart';
+import 'package:etbank_business_app/constants/app_textstyle.dart';
 import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_widgets/custom_text_field_widget.dart';
 import 'package:flutter/cupertino.dart';
@@ -16,6 +17,7 @@ class UserPersonalDetailsWidget extends ConsumerWidget {
   final bool? readOnly;
   final bool? enableInteraction;
   final TextEditingController controller;
+  final TextStyle? hintStyle;
 
   final TextStyle? titleTextStyle;
   const UserPersonalDetailsWidget(
@@ -28,7 +30,8 @@ class UserPersonalDetailsWidget extends ConsumerWidget {
       this.titleTextStyle,
       this.readOnly,
       this.enableInteraction,
-      required this.controller});
+      required this.controller,
+      this.hintStyle});
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return GestureDetector(
@@ -36,7 +39,7 @@ class UserPersonalDetailsWidget extends ConsumerWidget {
       child: Container(
         decoration: BoxDecoration(
             // color: AppColors.white,
-            borderRadius: BorderRadius.all(
+            borderRadius: const BorderRadius.all(
               Radius.circular(8),
             ),
             border: Border.all(color: context.theme.colorTheme.borderColor)),
@@ -53,10 +56,12 @@ class UserPersonalDetailsWidget extends ConsumerWidget {
                       SizedBox(
                         width: 250.w,
                         child: CustomTextFiledWidget(
+                          textStyle: AppTextstyle.bodyTextStyle(
+                              color: context.theme.colorTheme.whiteColor),
                           controller: controller,
                           title: title,
                           hint: hint,
-                          // backgroundColor: AppColors.white,
+                          hintStyle: hintStyle,
                           padding: 0,
                           readOnly: readOnly ?? false,
                           enableInteraction: enableInteraction ?? true,

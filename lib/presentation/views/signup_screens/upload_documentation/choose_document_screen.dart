@@ -17,7 +17,7 @@ class ChooseDocumentScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       backgroundColor: context.theme.colorTheme.backgroundColor,
-      appBar: CommonAppBar(
+      appBar: const CommonAppBar(
         etBankLogo: true,
       ),
       body: Padding(
@@ -30,11 +30,11 @@ class ChooseDocumentScreen extends ConsumerWidget {
                 description: getTranslated("select_doc_shareholder", context),
               ),
               20.spaceY,
-              ProviderValidDocWidget(),
+              const ProviderValidDocWidget(),
               20.spaceY,
-              RecommendedWidget(),
+              const RecommendedWidget(),
               20.spaceY,
-              OtherWidget(),
+              const OtherWidget(),
               20.spaceY,
             ],
           ),

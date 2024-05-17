@@ -10,25 +10,31 @@ class CurrencyChartWhiteCard extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return CommonWhiteFlexibleCard(
-      color: context.theme.colorTheme.blackAndWhite,
-      widget: const Row(
+      color: context.theme.colorTheme.whiteColor,
+      widget: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           Padding(
-            padding: EdgeInsets.only(right: 20),
+            padding: const EdgeInsets.only(right: 20),
             child: CurrencyValueWithStatusText(
               digitalValue: "1.3275",
+              valueColor: context.theme.colorTheme.blackColor,
+              statusColor: context.theme.colorTheme.blackColor,
               status: "lowest",
             ),
           ),
           CurrencyValueWithStatusText(
             digitalValue: "1.3601",
+            valueColor: context.theme.colorTheme.blackColor,
+            statusColor: context.theme.colorTheme.blackColor,
             status: "current",
           ),
           Padding(
-            padding: EdgeInsets.only(left: 20),
+            padding: const EdgeInsets.only(left: 20),
             child: CurrencyValueWithStatusText(
               digitalValue: "1.3603",
+              valueColor: context.theme.colorTheme.blackColor,
+              statusColor: context.theme.colorTheme.blackColor,
               status: "highest",
             ),
           )

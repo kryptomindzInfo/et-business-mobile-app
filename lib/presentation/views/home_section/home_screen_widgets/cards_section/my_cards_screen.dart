@@ -25,7 +25,7 @@ class MyCardsScreen extends ConsumerWidget {
     return BackgroundImageWidget(
       child: Scaffold(
         backgroundColor: AppColors.transparent,
-        appBar: CommonAppBar(
+        appBar: const CommonAppBar(
           etBankLogo: true,
         ),
         body: Padding(
@@ -54,13 +54,13 @@ class MyCardsScreen extends ConsumerWidget {
                     height: 40,
                   ),
                 ),
-                10.spaceY,
+                16.spaceY,
                 const AvailableToSpendCard(),
-                10.spaceY,
+                16.spaceY,
                 const FundingAmountCard(),
-                10.spaceY,
+                16.spaceY,
                 const FreezeCard(),
-                10.spaceY,
+                20.spaceY,
               ],
             ),
           ),

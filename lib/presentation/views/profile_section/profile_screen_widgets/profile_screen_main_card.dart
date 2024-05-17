@@ -18,7 +18,7 @@ class ProfileScreenMainCard extends ConsumerWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: const EdgeInsets.only(left: 20),
+          padding: const EdgeInsets.only(left: 0),
           child: Text(
             getTranslated('help', context),
             style: AppTextstyle.bodyTextStyle(
@@ -27,12 +27,12 @@ class ProfileScreenMainCard extends ConsumerWidget {
                 color: context.theme.colorTheme.normalTextColor),
           ),
         ),
-        10.spaceY,
+        8.spaceY,
         Container(
           height: 148,
           width: double.infinity,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(28),
+            borderRadius: BorderRadius.circular(12),
             border: Border.all(color: AppColors.tealColor),
             color: AppColors.transparent,
           ),

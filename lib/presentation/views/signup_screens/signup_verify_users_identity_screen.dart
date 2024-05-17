@@ -5,13 +5,12 @@ import 'package:etbank_business_app/presentation/views/common_widgets/app_common
 import 'package:etbank_business_app/presentation/views/common_widgets/icon_with_title.dart';
 import 'package:etbank_business_app/resources/localization/language_constrants.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../constants/app_assets.dart';
 import '../../../constants/app_colors.dart';
-import '../common_widgets/app_common_appbar.dart';
 import 'signup_user_personal_details_screen.dart';
-import 'signup_widgets/business_details_white_container_widget.dart';
 import 'signup_widgets/button_bottom_navigation_widget.dart';
 import 'signup_widgets/primary_button.dart';
 import 'signup_widgets/verify_user_identity_header_widget.dart';
@@ -37,18 +36,26 @@ class SignUpVerifyUserIdentityScreen extends ConsumerWidget {
                 decoration: BoxDecoration(
                   color: context.theme.colorTheme.signUpContainerColor,
                   borderRadius: BorderRadius.circular(28),
-                  // border: const Border(
-                  //   left: BorderSide(width: 2, color: AppColors.white),
-                  //   right: BorderSide(width: 2, color: AppColors.white),
-                  //   bottom: BorderSide(width: 2, color: AppColors.white),
-                  // ),
                 ),
                 child: Padding(
                   padding: const EdgeInsets.fromLTRB(20, 20, 20, 30),
-                  child: VerifyUserIdentityHeaderWidget(
-                    title:
-                        getTranslated('verify_james_forks_identity', context),
-                    imageicon: AppAssets.arrowLeft,
+                  child: Stack(
+                    children: [
+                      Positioned(
+                        right: 10,
+                        top: 10,
+                        child: Image.asset(
+                          AppAssets.userCard,
+                          height: 195,
+                          width: 195,
+                        ),
+                      ),
+                      VerifyUserIdentityHeaderWidget(
+                        title: getTranslated(
+                            'verify_james_forks_identity', context),
+                        imageicon: AppAssets.arrowLeft,
+                      ),
+                    ],
                   ),
                 ),
               ),

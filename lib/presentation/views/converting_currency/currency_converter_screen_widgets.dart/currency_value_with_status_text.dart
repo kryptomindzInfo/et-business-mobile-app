@@ -8,8 +8,14 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 class CurrencyValueWithStatusText extends ConsumerWidget {
   final String? digitalValue;
   final String? status;
+  final Color? valueColor;
+  final Color? statusColor;
   const CurrencyValueWithStatusText(
-      {super.key, this.digitalValue, this.status});
+      {super.key,
+      this.digitalValue,
+      this.status,
+      this.valueColor,
+      this.statusColor});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -22,7 +28,7 @@ class CurrencyValueWithStatusText extends ConsumerWidget {
             style: AppTextstyle.bodyTextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.w600,
-                color: context.theme.colorTheme.normalTextColor),
+                color: valueColor ?? context.theme.colorTheme.normalTextColor),
           ),
           5.spaceY,
           Text(
@@ -30,7 +36,7 @@ class CurrencyValueWithStatusText extends ConsumerWidget {
             style: AppTextstyle.bodyTextStyle(
                 fontSize: 12,
                 fontWeight: FontWeight.w500,
-                color: context.theme.colorTheme.normalTextColor),
+                color: statusColor ?? context.theme.colorTheme.normalTextColor),
           )
         ],
       ),

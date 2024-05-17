@@ -21,9 +21,13 @@ class HeaderIconWithTitle extends ConsumerWidget {
   final Widget? widget;
   final bool? etBankLogo;
   final bool? profilePicWidget;
+  final int? spaceBtw;
+  final Widget? trailing;
+  final TextStyle? titleStyle;
   const HeaderIconWithTitle(
       {super.key,
       this.title,
+      this.titleStyle,
       this.description,
       this.greenDescription,
       this.edgeinsets,
@@ -34,7 +38,9 @@ class HeaderIconWithTitle extends ConsumerWidget {
       this.onTrailingiconPress,
       this.widget,
       this.etBankLogo,
-      this.profilePicWidget});
+      this.profilePicWidget,
+      this.spaceBtw,
+      this.trailing});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -111,21 +117,25 @@ class HeaderIconWithTitle extends ConsumerWidget {
               Expanded(
                 child: Text(
                   title!,
-                  style: AppTextstyle.headingTextStyle(
-                    color: context.theme.colorTheme.appbarTitleColor,
-                    fontSize: fontsize ?? 24,
-                    fontWeight: FontWeight.bold,
-                    overflow: TextOverflow.clip,
-                  ),
+                  style: titleStyle ??
+                      AppTextstyle.headingTextStyle(
+                        color: context.theme.colorTheme.appbarTitleColor,
+                        fontSize: fontsize ?? 32,
+                        fontWeight: FontWeight.bold,
+                        overflow: TextOverflow.clip,
+                      ),
                 ),
               ),
               if (profilePicWidget == true)
                 const ProfilePicWidget(
                   image: AppAssets.profileicon,
                 ),
+              if (trailing != null) trailing ?? SizedBox(),
             ],
           ),
-        10.spaceY,
+
+        if (spaceBtw != null) spaceBtw!.spaceY, //  spaceBtw.spaceY ?
+        if (spaceBtw == null) 0.spaceY,
         description != null
             ? Text(
                 description!,
@@ -138,6 +148,16 @@ class HeaderIconWithTitle extends ConsumerWidget {
                     ),
               )
             : const SizedBox(),
+        if (greenDescription != null)
+          Text(
+            greenDescription!,
+            style: AppTextstyle.bodyTextStyle(
+              color: context.theme.colorTheme.yellowGreenColor,
+              fontSize: 16,
+              fontWeight: FontWeight.w400,
+              overflow: TextOverflow.clip,
+            ),
+          )
       ],
     );
   }

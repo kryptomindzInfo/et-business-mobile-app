@@ -1,4 +1,3 @@
-import 'package:etbank_business_app/constants/app_assets.dart';
 import 'package:etbank_business_app/constants/app_textstyle.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/header_icon_with_text.dart';
@@ -17,41 +16,53 @@ class CreateNewRoleBottomSheet extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Container(
-      height: 620,
-      color: AppColors.black,
+      height: 720,
+      decoration: const BoxDecoration(
+          color: AppColors.black,
+          borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(12), topRight: Radius.circular(12))),
       child: Padding(
         padding: const EdgeInsets.only(left: 20, right: 20),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            24.spaceY,
+            IconButton(
+              onPressed: () {},
+              icon: const Icon(Icons.close),
+              color: AppColors.white,
+            ),
             HeaderIconWithTitle(
               // imageicon: AppAssets.crossicon,
               title: getTranslated("create_new_role", context),
             ),
-            70.spaceY,
+            28.spaceY,
             TextFieldWidget(
               hintText: getTranslated('new_role_name', context),
               style: const TextStyle(color: AppColors.black),
             ),
-            70.spaceY,
-            PrimaryButton(
-              color: AppColors.continueButtonDisabledColor,
-              text: Text(getTranslated("continue", context)),
-              onPressed: () {
-                Navigator.pop(context);
-                showModalBottomSheet(
-                    context: context,
-                    builder: (context) => VerifiedBottomSheetWidget(
-                          title: const Column(
-                            children: [],
-                          ),
-                          description: Text(
-                            "Role Created",
-                            style: AppTextstyle.headingTextStyle(
-                                fontSize: 20, fontWeight: FontWeight.bold),
-                          ),
-                        ));
-              },
-              minwidth: 280,
+            140.spaceY,
+            Center(
+              child: PrimaryButton(
+                color: AppColors.yellowGreen,
+                text: Text(getTranslated("continue", context)),
+                onPressed: () {
+                  Navigator.pop(context);
+                  showModalBottomSheet(
+                      context: context,
+                      builder: (context) => VerifiedBottomSheetWidget(
+                            title: const Column(
+                              children: [],
+                            ),
+                            description: Text(
+                              "Role Created",
+                              style: AppTextstyle.headingTextStyle(
+                                  fontSize: 20, fontWeight: FontWeight.bold),
+                            ),
+                          ));
+                },
+                minwidth: 280,
+              ),
             )
           ],
         ),

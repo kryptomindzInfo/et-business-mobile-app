@@ -12,13 +12,15 @@ class BusinessTypeWidget extends ConsumerWidget {
   final String? description;
   final VoidCallback? onPressed;
   final String? labelText;
+  final bool? arrowForward;
   const BusinessTypeWidget(
       {super.key,
       required this.image,
       required this.title,
       this.description,
       this.onPressed,
-      this.labelText});
+      this.labelText,
+      this.arrowForward});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -27,11 +29,6 @@ class BusinessTypeWidget extends ConsumerWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Image.asset(
-          //   image,
-          //   height: 34.h,
-          //   width: 34.w,
-          // ),
           IconContainer(
             image: image,
           ),
@@ -61,7 +58,15 @@ class BusinessTypeWidget extends ConsumerWidget {
                   ),
                 ),
             ],
-          )
+          ),
+          if (arrowForward == true)
+            Padding(
+              padding: const EdgeInsets.only(top: 20),
+              child: Icon(
+                Icons.arrow_forward_ios,
+                color: context.theme.colorTheme.whiteColor,
+              ),
+            ),
         ],
       ),
     );

@@ -20,7 +20,7 @@ class ProfileInfoCard extends ConsumerWidget {
     return Column(
       children: [
         const SeeAllCommonWidget("Profile", true),
-        5.spaceY,
+        8.spaceY,
         InfoCardCommonWidget(
           color: AppColors.transparent,
           child: Column(
@@ -48,13 +48,13 @@ class ProfileInfoCard extends ConsumerWidget {
                 image: AppAssets.statementicon,
                 title: getTranslated("statement", context),
                 onpress: () {
-                  print("dddddddd");
                   Navigation.pushNamed(StatementScreen.routeName);
                 },
               ),
               ProfileInfoTextWidget(
                 image: AppAssets.billingicon,
                 title: getTranslated("billing", context),
+                subTitle: 'Free',
               ),
             ],
           ),

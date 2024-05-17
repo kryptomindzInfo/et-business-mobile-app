@@ -8,7 +8,6 @@ import 'package:etbank_business_app/resources/localization/language_constrants.d
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../constants/app_assets.dart';
 import '../../../constants/app_colors.dart';
 import '../../../providers/signup_provider.dart';
 import '../common_widgets/app_common_appbar.dart';
@@ -28,7 +27,7 @@ class SignUpWebsiteSocialEcommerceLinkScreen extends ConsumerWidget {
       child: Scaffold(
         extendBody: true,
         backgroundColor: AppColors.transparent,
-        appBar: CommonAppBar(
+        appBar: const CommonAppBar(
             // etBankLogo: true,
             ),
         body: Padding(
@@ -38,13 +37,14 @@ class SignUpWebsiteSocialEcommerceLinkScreen extends ConsumerWidget {
             children: [
               HeaderIconWithTitle(
                 title: getTranslated('website_social_ecommerce_title', context),
+                spaceBtw: 8,
                 description:
                     getTranslated('website_social_ecommerce_subtitle', context),
                 // imageicon: AppAssets.arrowLeft,
               ),
               32.spaceY,
               TextFieldWidget(
-                style: const TextStyle(color: Colors.black),
+                style: const TextStyle(color: Colors.white),
                 controller: ref.read(signUpStateProvider).emailController,
                 hintText: getTranslated('link', context),
                 hintStyle: AppTextstyle.bodyTextStyle(

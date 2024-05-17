@@ -5,9 +5,7 @@ import 'package:etbank_business_app/presentation/views/signup_screens/signup_wid
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_widgets/signup_verifications_widgets/signup_verifications_chips.dart';
 import 'package:etbank_business_app/resources/localization/language_constrants.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
 import '../../../providers/signup_provider.dart';
 
 class SignUpVerificationsScreen extends ConsumerWidget {
@@ -18,7 +16,7 @@ class SignUpVerificationsScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       backgroundColor: context.theme.colorTheme.appBackgroundColor,
-      appBar: CommonAppBar(
+      appBar: const CommonAppBar(
         etBankLogo: true,
       ),
       body: Padding(
@@ -36,7 +34,7 @@ class SignUpVerificationsScreen extends ConsumerWidget {
             20.spaceY,
             Expanded(
               child: GridView.builder(
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
                     crossAxisSpacing: 10,
                     mainAxisSpacing: 10,
@@ -54,6 +52,7 @@ class SignUpVerificationsScreen extends ConsumerWidget {
                     status: getTranslated(data[index]["status"], context),
                     statusIcon: data[index]["statusicon"],
                     onpress: data[index]["ontap"],
+                    color: data[index]['color'],
                   );
                 },
               ),

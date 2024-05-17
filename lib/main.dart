@@ -1,8 +1,4 @@
-import 'package:etbank_business_app/presentation/views/onboarding_screens/onboarding_screen.dart';
-import 'package:etbank_business_app/presentation/views/signup_screens/captured_picture_of_document_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/sign_in_sign_up_screen.dart';
-import 'package:etbank_business_app/presentation/views/signup_screens/signup_email_screen.dart';
-import 'package:etbank_business_app/presentation/views/signup_screens/signup_verifications_screen.dart';
 import 'package:etbank_business_app/providers/localization_provider.dart';
 import 'package:etbank_business_app/theme/app_theme.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +10,9 @@ import 'navigation/navigator_key.dart';
 import 'navigation/route_generator.dart';
 import 'resources/localization/app_localization.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
   runApp(const ProviderScope(child: MyApp()));
 }
 
@@ -28,6 +26,7 @@ class MyApp extends ConsumerWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) => MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'ET Bank Business',
         themeMode: ThemeMode.dark,
         theme: ThemeData(
@@ -51,7 +50,6 @@ class MyApp extends ConsumerWidget {
         navigatorKey: navigatorKey,
         onGenerateRoute: RouteGenerator.generateRoute,
         initialRoute: SignInSignUpScreen.routeName,
-        // initialRoute: SignUpVerificationsScreen.routeName,
       ),
     );
   }

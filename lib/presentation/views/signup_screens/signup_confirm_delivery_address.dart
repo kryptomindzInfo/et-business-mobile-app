@@ -3,11 +3,9 @@ import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/app_common_appbar.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/common_button.dart';
-import 'package:etbank_business_app/presentation/views/common_widgets/common_green_button.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/header_icon_with_text.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/white_flexible_card.dart';
 import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/common_transparent_button.dart';
-import 'package:etbank_business_app/presentation/views/signup_screens/signup_widgets/verify_user_identity_header_widget.dart';
 import 'package:etbank_business_app/providers/signup_provider.dart';
 import 'package:etbank_business_app/resources/localization/language_constrants.dart';
 import 'package:flutter/material.dart';
@@ -23,7 +21,7 @@ class SignupConfirmDeliveryAddress extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       backgroundColor: context.theme.colorTheme.backgroundColor,
-      appBar: CommonAppBar(),
+      appBar: const CommonAppBar(),
       body: Padding(
         padding: const EdgeInsets.only(left: 20, right: 20),
         child: Column(
@@ -34,8 +32,8 @@ class SignupConfirmDeliveryAddress extends ConsumerWidget {
             ),
             30.spaceY,
             CommonWhiteFlexibleCard(
-              borderRadius: 8,
-              padding: EdgeInsets.only(top: 15, bottom: 20, right: 60),
+              borderRadius: 12,
+              padding: const EdgeInsets.only(top: 15, bottom: 20, right: 60),
               widget: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -46,7 +44,7 @@ class SignupConfirmDeliveryAddress extends ConsumerWidget {
                         fontWeight: FontWeight.w400,
                         color: context.theme.colorTheme.normalTextColor),
                   ),
-                  10.spaceY,
+                  22.spaceY,
                   Text(
                     "House No 12, 5th street, UK",
                     style: AppTextstyle.bodyTextStyle(
@@ -54,9 +52,11 @@ class SignupConfirmDeliveryAddress extends ConsumerWidget {
                         fontWeight: FontWeight.w400,
                         color: context.theme.colorTheme.normalTextColor),
                   ),
-                  60.spaceY,
+                  68.spaceY,
                   CommonGreyButton(
                     title: getTranslated("change_delivery_address", context),
+                    buttonColor: context.theme.colorTheme.normallyUsedTealColor,
+                    titleColor: context.theme.colorTheme.whiteColor,
                   ),
                 ],
               ),
@@ -64,7 +64,7 @@ class SignupConfirmDeliveryAddress extends ConsumerWidget {
             30.spaceY,
             CommonWhiteFlexibleCard(
               borderRadius: 8,
-              padding: EdgeInsets.only(left: 0, bottom: 0, top: 0),
+              padding: const EdgeInsets.only(left: 0, bottom: 0, top: 0),
               widget: Row(
                 children: [
                   Checkbox(
@@ -85,7 +85,7 @@ class SignupConfirmDeliveryAddress extends ConsumerWidget {
                 ],
               ),
             ),
-            120.spaceY,
+            130.spaceY,
             CommonButton(
               title: getTranslated("confirm", context),
               mainButtonColor: context.theme.colorTheme.buttonColor,
@@ -96,8 +96,19 @@ class SignupConfirmDeliveryAddress extends ConsumerWidget {
                   context: context,
                   builder: (context) {
                     return VerifiedBottomSheetWidget(
-                      title: Text(getTranslated("order_free_card", context)),
-                      description: Text(getTranslated("ship_card", context)),
+                      title: Text(
+                        getTranslated("order_free_card", context),
+                        style: AppTextstyle.bodyTextStyle(
+                            fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
+                      description: Text(
+                        textAlign: TextAlign.center,
+                        getTranslated("ship_card", context),
+                        style: AppTextstyle.bodyTextStyle(
+                            overflow: TextOverflow.clip,
+                            color: context.theme.colorTheme.whiteAndBlack
+                                .withOpacity(0.8)),
+                      ),
                     );
                   },
                 );

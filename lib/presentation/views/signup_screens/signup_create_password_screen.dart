@@ -26,7 +26,7 @@ class SignUpCreatePassword extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return BackgroundImageWidget(
       child: Scaffold(
-        appBar: CommonAppBar(
+        appBar: const CommonAppBar(
           etBankLogo: true,
         ),
         body: Padding(
@@ -36,6 +36,7 @@ class SignUpCreatePassword extends ConsumerWidget {
             children: [
               HeaderIconWithTitle(
                 title: getTranslated('create_password_title', context),
+                spaceBtw: 0,
                 description: getTranslated('create_password_subtitle', context),
                 // imageicon: AppAssets.arrowLeft,
                 etBankLogo: true,
@@ -53,12 +54,18 @@ class SignUpCreatePassword extends ConsumerWidget {
                               : Icons.visibility,
                           color: AppColors.white,
                         ),
+                        // contentPadding: EdgeInsets.all(0),
                         // suffix: Icon(Icons.remove_red_eye),
-                        fillColor: ref
+                        containerColor: ref
                                 .watch(signUpStateProvider)
                                 .containsSpecialCharacters
-                            ? AppColors.white
+                            ? AppColors.transparent
                             : AppColors.lightRed,
+                        // fillColor: ref
+                        //         .watch(signUpStateProvider)
+                        //         .containsSpecialCharacters
+                        //     ? AppColors.transparent
+                        //     : AppColors.lightRed,
                         onSuffixIconTap: () {
                           ref
                               .read(signUpStateProvider)
@@ -131,7 +138,7 @@ class SignUpCreatePassword extends ConsumerWidget {
                   getTranslated('continue', context),
                   style: AppTextstyle.bodyTextStyle(
                       color: ref.watch(signUpStateProvider).isPasswordEmpty
-                          ? context.theme.colorTheme.disableButtonTextColor
+                          ? context.theme.colorTheme.whiteColor
                           : context.theme.colorTheme.whiteAndBlack,
                       // buttonTextColor(
                       //     ref.watch(signUpStateProvider).isPasswordEmpty),
