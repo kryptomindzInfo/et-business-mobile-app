@@ -42,7 +42,7 @@ class CountryAndMobileNoWidget extends ConsumerWidget {
         14.spaceX,
         Expanded(
           child: TextFieldWidget(
-            style: const TextStyle(color: Colors.black),
+            style: const TextStyle(color: Colors.white),
             controller: ref.read(signUpStateProvider).mobileNoController,
             hintText: getTranslated('mobile_no', context),
             hintStyle: AppTextstyle.bodyTextStyle(

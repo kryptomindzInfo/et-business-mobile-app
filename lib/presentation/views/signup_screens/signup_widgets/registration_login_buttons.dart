@@ -27,9 +27,9 @@ class RegistrationLoginButtons extends ConsumerWidget {
         ),
         10.spaceX,
         RegistrationLoginCommonButton(
-          buttonTitle: getTranslated("Sign_in", context),
+          buttonTitle: getTranslated("Login", context),
           buttoncolor: context.theme.colorTheme.normalButtonsColor,
-          buttonTitleColor: context.theme.colorTheme.whiteButtonTitleColor,
+          buttonTitleColor: context.theme.colorTheme.whiteButtonColor,
           onpress: () {
             Navigation.pushNamed(BaseBottomNavBar.routeName);
           },

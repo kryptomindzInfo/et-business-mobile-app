@@ -19,23 +19,25 @@ class NotificationScreen extends ConsumerWidget {
     return BackgroundImageWidget(
       child: Scaffold(
         backgroundColor: AppColors.transparent,
-        appBar: CommonAppBar(
+        appBar: const CommonAppBar(
           etBankLogo: true,
         ),
         body: Padding(
           padding: const EdgeInsets.only(left: 20, right: 20),
           child: Column(
             children: [
+              10.spaceY,
               HeaderIconWithTitle(
                 title: getTranslated("inbox", context),
                 // imageicon: AppAssets.arrowLeft,
               ),
-              80.spaceY,
+              200.spaceY,
               Image.asset(
-                AppAssets.pinkbell,
-                height: 250,
+                AppAssets.notifImage,
+                width: 106,
+                height: 124,
               ),
-              30.spaceY,
+              96.spaceY,
               Text(
                 getTranslated("caught_up", context),
                 style: AppTextstyle.headingTextStyle(
@@ -43,7 +45,7 @@ class NotificationScreen extends ConsumerWidget {
                     fontWeight: FontWeight.bold,
                     color: AppColors.white),
               ),
-              10.spaceY,
+              27.spaceY,
               Text(
                 getTranslated("check_back_later", context),
                 textAlign: TextAlign.center,

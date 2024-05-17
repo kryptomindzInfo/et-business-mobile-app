@@ -4,7 +4,6 @@ import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../constants/app_colors.dart';
 
 class CountryDropDownButtonWidget extends ConsumerWidget {
   final String? countryFlag;
@@ -25,7 +24,7 @@ class CountryDropDownButtonWidget extends ConsumerWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        width: 100.h,
+        // width: 108.h,
         decoration: BoxDecoration(
           color: context.theme.colorTheme.iconBgColor,
           borderRadius: BorderRadius.circular(8),
@@ -41,6 +40,7 @@ class CountryDropDownButtonWidget extends ConsumerWidget {
                 ),
                 10.spaceX,
                 Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
                       countryName!,
@@ -58,7 +58,8 @@ class CountryDropDownButtonWidget extends ConsumerWidget {
                 Icon(
                   Icons.keyboard_arrow_down,
                   color: context.theme.colorTheme.normalTextColor,
-                )
+                ),
+                2.spaceX,
               ],
             ),
           ),

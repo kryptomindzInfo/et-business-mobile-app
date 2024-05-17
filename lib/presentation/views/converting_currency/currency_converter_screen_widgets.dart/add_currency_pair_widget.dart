@@ -20,7 +20,7 @@ class AddCurrencyPairWidget extends ConsumerWidget {
         InkWell(
           onTap: onpress,
           child: Image.asset(
-            AppAssets.addgreenbutton,
+            AppAssets.addYellow,
             height: 55,
           ),
         ),
@@ -30,7 +30,7 @@ class AddCurrencyPairWidget extends ConsumerWidget {
           style: AppTextstyle.headingTextStyle(
               fontSize: 16,
               fontWeight: FontWeight.normal,
-              color: AppColors.primaryColor),
+              color: AppColors.yellowGreen),
         ),
         5.spaceY,
         Text(

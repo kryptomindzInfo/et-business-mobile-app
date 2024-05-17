@@ -25,6 +25,13 @@ class AddCustomerScreen extends ConsumerWidget {
         backgroundColor: AppColors.transparent,
         appBar: CommonAppBar(
           etBankLogo: true,
+          actions: [
+            Image.asset(
+              AppAssets.addYellow,
+              height: 28,
+              width: 28,
+            ),
+          ],
         ),
         body: Padding(
           padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
@@ -49,17 +56,17 @@ class AddCustomerScreen extends ConsumerWidget {
                 onChanged: (value) {},
               ),
               54.spaceY,
-              Center(
-                child: Text(
-                  getTranslated('cant_find_who_you_are_looking_for', context),
-                  style: AppTextstyle.headingTextStyle(
-                    color: AppColors.white,
-                    fontSize: 16,
-                  ),
+              Text(
+                getTranslated('cant_find_who_you_are_looking_for', context),
+                style: AppTextstyle.headingTextStyle(
+                  color: AppColors.grey,
+                  fontSize: 16,
                 ),
               ),
               18.spaceY,
               AddCounterPartyWidget(
+                borderRadius: 12,
+                padding: const EdgeInsets.all(20),
                 title: 'add_new_customer',
                 onTap: () {
                   Navigation.pushNamed(AddNewCustomerScreen.routeName);

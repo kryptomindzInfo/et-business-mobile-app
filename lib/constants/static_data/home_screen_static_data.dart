@@ -1,5 +1,6 @@
 import 'package:etbank_business_app/constants/app_assets.dart';
 import 'package:etbank_business_app/constants/app_colors.dart';
+import 'package:etbank_business_app/presentation/views/profile_section/profile_screen_bottom_sheets/confirmation_bottom_sheet.dart';
 import 'package:flutter/material.dart';
 import '../../navigation/navigation.dart';
 import '../../navigation/navigator_key.dart';
@@ -14,7 +15,21 @@ List<Map> _profileScreenOptions = [
       showModalBottomSheet(
         context: appContext,
         isScrollControlled: true,
-        builder: (context) => const UpgradeBottomSheet(),
+        builder: (context) => UpgradeBottomSheet(
+          icon: AppAssets.crossicon,
+          onPressed: () {
+            showModalBottomSheet(
+              isScrollControlled: true,
+              context: context,
+              // builder: (context) => const ConfirmationBottomSheet(),
+              builder: (context) => ConfirmationBottomSheet(
+                onPressed: () {
+                  Navigation.pushNamed(ReferBusinessScreen.routeName);
+                },
+              ),
+            );
+          },
+        ),
       );
     }
   },
@@ -136,20 +151,20 @@ List<Map> _merchantData = [
     "title": "Business owners failed",
     "desc": "Please retry",
     "icon": AppAssets.markicon,
-    "color": {AppColors.red}
+    "color": AppColors.red
   },
   {
     "title": "Choose a plan and order a card",
-    "desc": "",
-    "icon": "",
-    "color": {AppColors.black}
+    "desc": null,
+    "icon": null,
+    "color": AppColors.black
   },
-  {"title": "Submit documentation", "desc": "", "icon": "", "color": ""},
+  {"title": "Submit documentation", "desc": null, "icon": null, "color": null},
   {
     "title": "Verifying business details",
     "desc": "Ready to submit",
     "icon": AppAssets.hourglassicon,
-    "color": {AppColors.black}
+    "color": AppColors.white
   },
   // {
   //   "title": "Identity",

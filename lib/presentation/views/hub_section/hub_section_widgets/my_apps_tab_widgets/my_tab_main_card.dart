@@ -7,7 +7,6 @@ import 'package:etbank_business_app/presentation/views/hub_section/hub_section_w
 import 'package:etbank_business_app/resources/localization/language_constrants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
 import '../../../../../constants/app_colors.dart';
 
 class MyAppTabMainCard extends ConsumerWidget {
@@ -16,44 +15,48 @@ class MyAppTabMainCard extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Container(
-      height: 308,
+      // height: 308,
       width: double.infinity,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(28),
-          border: Border.all(color: AppColors.white),
-          color: const Color.fromRGBO(0, 255, 157, 1)),
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(color: AppColors.tealColor),
+        // color: const Color.fromRGBO(0, 255, 157, 1),
+      ),
       child: Column(
         children: [
+          62.spaceY,
           Padding(
             padding: const EdgeInsets.only(left: 15, right: 20),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Container(
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Image.asset(
-                        AppAssets.gifticon,
-                        height: 22,
-                      ),
-                      5.spaceX,
-                      Text(
-                        getTranslated("1_month_free", context),
-                        style: AppTextstyle.bodyTextStyle(
-                            fontSize: 14, fontWeight: FontWeight.normal),
-                      )
-                    ],
-                  ),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      color: AppColors.white,
+                      AppAssets.gifticon,
+                      height: 22,
+                    ),
+                    5.spaceX,
+                    Text(
+                      getTranslated("1_month_free", context),
+                      style: AppTextstyle.bodyTextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.normal,
+                          color: AppColors.white),
+                    )
+                  ],
                 ),
-                Image.asset(
-                  AppAssets.planets,
-                  height: 130,
-                )
+                // Image.asset(
+                //   AppAssets.planets,
+                //   height: 130,
+                // )
               ],
             ),
           ),
+          30.spaceY,
           Padding(
             padding: const EdgeInsets.only(left: 15),
             child: Text(
@@ -61,18 +64,20 @@ class MyAppTabMainCard extends ConsumerWidget {
               style: AppTextstyle.headingTextStyle(
                   fontSize: 32,
                   fontWeight: FontWeight.bold,
+                  color: AppColors.white,
                   overflow: TextOverflow.clip),
             ),
           ),
+          30.spaceY,
           Container(
-            height: 84,
+            // height: 84,
             decoration: const BoxDecoration(
                 color: AppColors.blackish,
                 borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(28),
-                    bottomRight: Radius.circular(28))),
+                    bottomLeft: Radius.circular(10),
+                    bottomRight: Radius.circular(10))),
             child: Padding(
-              padding: const EdgeInsets.only(left: 15, right: 12),
+              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 18),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -90,7 +95,7 @@ class MyAppTabMainCard extends ConsumerWidget {
                   CommonButton(
                     width: 100,
                     title: getTranslated("upgrade", context),
-                    mainButtonColor: AppColors.primaryColor,
+                    mainButtonColor: AppColors.yellowGreen,
                     titleColor: AppColors.black,
                     onpress: () {
                       Navigation.pushNamed(UpgradeScreens.routeName);

@@ -8,16 +8,26 @@ class ShowAccountDetailsWidget extends ConsumerWidget {
   final String title;
   final String? subTitle;
   final TextStyle? subTitleStyle;
+  final Color? color;
+  final BoxBorder? border;
+  final Color? titleColor;
 
   const ShowAccountDetailsWidget(
-      {super.key, required this.title, this.subTitle, this.subTitleStyle});
+      {super.key,
+      required this.title,
+      this.subTitle,
+      this.subTitleStyle,
+      this.color,
+      this.border,
+      this.titleColor});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Container(
       decoration: BoxDecoration(
-        color: AppColors.white,
+        color: color ?? AppColors.white,
         borderRadius: BorderRadius.circular(8),
+        border: border ?? Border.all(color: AppColors.tealColor, width: 1),
       ),
       child: Padding(
         padding: const EdgeInsets.fromLTRB(11, 14, 14, 14),
@@ -27,11 +37,13 @@ class ShowAccountDetailsWidget extends ConsumerWidget {
             Text(
               getTranslated(title, context),
               style: AppTextstyle.bodyTextStyle(
-                  fontSize: 16, color: AppColors.grey),
+                  fontSize: 16, color: titleColor ?? AppColors.halfWhite),
             ),
             Text(
               getTranslated(subTitle ?? '', context),
-              style: subTitleStyle ?? AppTextstyle.bodyTextStyle(fontSize: 16),
+              style: subTitleStyle ??
+                  AppTextstyle.bodyTextStyle(
+                      fontSize: 16, color: AppColors.halfWhite),
             ),
           ],
         ),

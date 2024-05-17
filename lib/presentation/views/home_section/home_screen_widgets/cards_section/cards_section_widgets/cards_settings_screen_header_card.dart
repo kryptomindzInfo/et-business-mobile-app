@@ -13,6 +13,7 @@ class SettingsScreenHeaderCard extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return CommonWhiteFlexibleCard(
+      borderRadius: 12,
       widget: Row(
         children: [
           Image.asset(

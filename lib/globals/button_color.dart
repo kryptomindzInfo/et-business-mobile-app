@@ -12,7 +12,7 @@ import 'package:flutter/material.dart';
 // Company and Individul Buttons Selection
 
 Color companyButtonColor(bool value) =>
-    value ? AppColors.primaryColor : AppColors.grey;
+    value ? AppColors.yellowGreen : AppColors.grey;
 
 Color companyButtonTextColor(bool value) =>
     value ? AppColors.black : AppColors.white;

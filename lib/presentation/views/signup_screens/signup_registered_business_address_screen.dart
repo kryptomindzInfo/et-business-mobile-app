@@ -7,6 +7,7 @@ import 'package:etbank_business_app/presentation/views/common_widgets/app_common
 import 'package:etbank_business_app/presentation/views/common_widgets/header_icon_with_text.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_role_in_the_company_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_widgets/bottom_sheet_widget.dart';
+import 'package:etbank_business_app/presentation/views/signup_screens/signup_widgets/country_and_mobileno_widget.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_widgets/text_field_widget.dart';
 import 'package:etbank_business_app/resources/localization/language_constrants.dart';
 import 'package:flutter/material.dart';
@@ -32,7 +33,7 @@ class SignUpRegisteredBusinessAddressScreen extends ConsumerWidget {
     return BackgroundImageWidget(
       child: Scaffold(
         backgroundColor: AppColors.transparent,
-        appBar: CommonAppBar(
+        appBar: const CommonAppBar(
           etBankLogo: true,
         ),
         body: Padding(
@@ -44,6 +45,7 @@ class SignUpRegisteredBusinessAddressScreen extends ConsumerWidget {
                 HeaderIconWithTitle(
                   title: getTranslated(
                       'registered_business_address_title', context),
+                  spaceBtw: 5,
                   description: getTranslated(
                       'registered_business_address_subtitle', context),
                   // imageicon: AppAssets.arrowLeft,
@@ -79,7 +81,7 @@ class SignUpRegisteredBusinessAddressScreen extends ConsumerWidget {
                       ref.watch(signUpStateProvider).countryOfIncorporation ==
                               ''
                           ? context.theme.colorTheme.normalTextColor
-                          : Colors.black,
+                          : context.theme.colorTheme.normalTextColor,
                   icon: Image.asset(
                     AppAssets.iconArrowDownBlack,
                     height: 11.h,
@@ -141,23 +143,25 @@ class SignUpRegisteredBusinessAddressScreen extends ConsumerWidget {
                 ),
                 16.spaceY,
                 TextFieldWidget(
-                  hintText: getTranslated('address_line_01', context),
+                  hintText: getTranslated('address_line_02', context),
                   hintStyle: AppTextstyle.bodyTextStyle(color: AppColors.grey),
                   style: AppTextstyle.bodyTextStyle(color: AppColors.black),
                 ),
-                16.spaceY,
+                2.spaceY,
                 Text(
                   getTranslated('optional', context),
                   style: AppTextstyle.bodyTextStyle(
-                      fontSize: 16.sp, color: Colors.grey),
+                      fontSize: 12.sp, color: Colors.grey),
                   overflow: TextOverflow.clip,
                 ),
-                2.spaceY,
+                16.spaceY,
                 TextFieldWidget(
                   hintText: getTranslated('city', context),
                   hintStyle: AppTextstyle.bodyTextStyle(color: AppColors.grey),
                   style: AppTextstyle.bodyTextStyle(color: AppColors.black),
                 ),
+                16.spaceY,
+                const CountryAndMobileNoWidget(),
               ],
             ),
           ),

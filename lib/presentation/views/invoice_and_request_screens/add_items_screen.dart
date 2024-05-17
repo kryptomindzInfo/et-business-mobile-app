@@ -6,7 +6,6 @@ import 'package:etbank_business_app/presentation/views/invoice_and_request_scree
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../constants/app_assets.dart';
 import '../../../navigation/navigation.dart';
 import '../../../resources/localization/language_constrants.dart';
 import '../common_widgets/app_common_appbar.dart';
@@ -26,32 +25,36 @@ class AddItemsScreen extends ConsumerWidget {
     return BackgroundImageWidget(
       child: Scaffold(
         backgroundColor: AppColors.transparent,
-        appBar: CommonAppBar(
+        appBar: const CommonAppBar(
           etBankLogo: true,
         ),
-        body: Padding(
-          padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              HeaderIconWithTitle(
-                title: getTranslated('add_items', context),
-                // imageicon: AppAssets.arrowLeft,
-              ),
-              18.spaceY,
-              const CurrencyTextFieldWidget(),
-              24.spaceY,
-              const QuantityAndDescriptionWidget(),
-              24.spaceY,
-              Container(
-                alignment: Alignment.centerRight,
-                child: Text(
-                  getTranslated('more_options', context),
-                  style: AppTextstyle.bodyTextStyle(
-                      color: AppColors.green, fontSize: 12),
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                HeaderIconWithTitle(
+                  title: getTranslated('add_items', context),
+                  // imageicon: AppAssets.arrowLeft,
                 ),
-              ),
-            ],
+                64.spaceY,
+                const CurrencyTextFieldWidget(
+                    // padding: EdgeInsets.all(16)
+                    ),
+                45.spaceY,
+                const QuantityAndDescriptionWidget(),
+                32.spaceY,
+                Container(
+                  alignment: Alignment.center,
+                  child: Text(
+                    getTranslated('more_options', context),
+                    style: AppTextstyle.bodyTextStyle(
+                        color: AppColors.yellowGreen, fontSize: 12),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
         bottomNavigationBar: ButtonBottomNavigationWidget(
@@ -60,7 +63,7 @@ class AddItemsScreen extends ConsumerWidget {
               height: 48.h,
               width: 327.w,
               child: PrimaryButton(
-                color: AppColors.green,
+                color: AppColors.yellowGreen,
                 text: Text(
                   getTranslated('add_items', context),
                   style: AppTextstyle.bodyTextStyle(

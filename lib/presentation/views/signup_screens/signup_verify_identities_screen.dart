@@ -27,7 +27,7 @@ class SignUpVerifyIdentitiesScreen extends ConsumerWidget {
       child: Scaffold(
         extendBody: false,
         backgroundColor: AppColors.transparent,
-        appBar: CommonAppBar(
+        appBar: const CommonAppBar(
           etBankLogo: true,
         ),
         body: SingleChildScrollView(
@@ -46,7 +46,9 @@ class SignUpVerifyIdentitiesScreen extends ConsumerWidget {
                 Text(
                   getTranslated('todo', context),
                   style: AppTextstyle.bodyTextStyle(
-                      color: AppColors.greywhite, fontSize: 16.sp),
+                      color:
+                          context.theme.colorTheme.whiteColor.withOpacity(0.5),
+                      fontSize: 16.sp),
                 ),
                 16.spaceY,
                 Container(

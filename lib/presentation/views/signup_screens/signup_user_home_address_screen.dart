@@ -32,7 +32,7 @@ class SignUpUserHomeAddressScreen extends ConsumerWidget {
     return BackgroundImageWidget(
       child: Scaffold(
         backgroundColor: AppColors.transparent,
-        appBar: CommonAppBar(
+        appBar: const CommonAppBar(
           etBankLogo: true,
         ),
         body: Padding(
@@ -66,7 +66,8 @@ class SignUpUserHomeAddressScreen extends ConsumerWidget {
                           );
                         });
                   },
-                  title: ref.watch(signUpStateProvider).countryOfResidence.name,
+                  title:
+                      '${ref.watch(signUpStateProvider).countryOfResidence.flag}  ${ref.watch(signUpStateProvider).countryOfResidence.name}',
                   // titleTextColor: Colors.black,
                   icon: Image.asset(
                     AppAssets.iconArrowDownBlack,
@@ -78,6 +79,7 @@ class SignUpUserHomeAddressScreen extends ConsumerWidget {
                 16.spaceY,
                 BusinessDetailsWhiteContainerWidet(
                   title: getTranslated('post_code', context),
+                  titleTextColor: AppColors.grey,
                   icon: Image.asset(
                     AppAssets.iconSearchBlack,
                     height: 14.h,
@@ -133,10 +135,11 @@ class SignUpUserHomeAddressScreen extends ConsumerWidget {
                   hintStyle: AppTextstyle.bodyTextStyle(color: AppColors.grey),
                   style: AppTextstyle.bodyTextStyle(color: AppColors.black),
                 ),
+                4.spaceY,
                 Text(
                   getTranslated('optional', context),
                   style: AppTextstyle.bodyTextStyle(
-                      fontSize: 16.sp, color: Colors.grey),
+                      fontSize: 12.sp, color: Colors.grey),
                   overflow: TextOverflow.clip,
                 ),
                 16.spaceY,

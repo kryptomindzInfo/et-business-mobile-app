@@ -15,20 +15,19 @@ class ReferBusinessShareLinkMainCard extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Container(
-      height: 109,
-      width: double.infinity,
+      padding: const EdgeInsets.fromLTRB(16, 25, 0, 25),
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(28),
+          borderRadius: BorderRadius.circular(12),
           color: AppColors.transparent,
           border: Border.all(color: context.theme.colorTheme.borderColor)),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
+        // mainAxisAlignment: MainAxisAlignment.center,
+        // crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           const IconContainer(
             image: AppAssets.contactpermission,
           ),
-          10.spaceX,
+          15.spaceX,
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -36,19 +35,24 @@ class ReferBusinessShareLinkMainCard extends ConsumerWidget {
               Text(
                 getTranslated("enable_contact_permission", context),
                 style: AppTextstyle.bodyTextStyle(
-                    fontSize: 16,
+                    fontSize: 18,
                     fontWeight: FontWeight.w600,
                     color: context.theme.colorTheme.titleColor),
               ),
-              Text(
-                getTranslated("quickly_invite_contact", context),
-                style: AppTextstyle.bodyTextStyle(
-                    fontSize: 12,
-                    fontWeight: FontWeight.w600,
-                    color: context.theme.colorTheme.normalTextColor),
+              6.spaceY,
+              SizedBox(
+                width: 200,
+                child: Text(
+                  getTranslated("quickly_invite_contact", context),
+                  style: AppTextstyle.bodyTextStyle(
+                      overflow: TextOverflow.clip,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w600,
+                      color: context.theme.colorTheme.normalTextColor),
+                ),
               )
             ],
-          )
+          ),
         ],
       ),
     );

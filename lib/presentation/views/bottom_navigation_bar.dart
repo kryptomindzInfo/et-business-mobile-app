@@ -1,3 +1,4 @@
+import 'package:etbank_business_app/core/app_print.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/app_common_widgets.dart';
 import 'package:etbank_business_app/presentation/views/home_section/homes_screen.dart';
 import 'package:etbank_business_app/presentation/views/hub_section/hub_screen.dart';
@@ -5,7 +6,6 @@ import 'package:etbank_business_app/presentation/views/payments_section/payment_
 import 'package:etbank_business_app/providers/home_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
 import '../../constants/app_colors.dart';
 import 'common_widgets/custom_bottom_navigation.dart';
 
@@ -29,7 +29,7 @@ class BaseBottomNavBar extends ConsumerWidget {
         bottomNavigationBar: CustomBottomNavigation(
           selected: ref.watch(homescreenProvider).pageIndex,
           onTap: (index) {
-            print(index);
+            console(index);
             ref.read(homescreenProvider).pageIndex = index;
           },
         ),

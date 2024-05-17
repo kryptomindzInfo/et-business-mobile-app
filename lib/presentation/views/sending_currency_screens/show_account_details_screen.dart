@@ -25,7 +25,7 @@ class ShowAccountDetailsScreen extends ConsumerWidget {
     return BackgroundImageWidget(
       child: Scaffold(
         backgroundColor: AppColors.transparent,
-        appBar: CommonAppBar(
+        appBar: const CommonAppBar(
           etBankLogo: true,
         ),
         body: Padding(
@@ -34,36 +34,46 @@ class ShowAccountDetailsScreen extends ConsumerWidget {
             child: Column(
               children: [
                 HeaderIconWithTitle(
-                  title: getTranslated('account_details', context),
+                  title: getTranslated('Review transfer', context),
                   // imageicon: AppAssets.arrowLeft,
                 ),
                 45.spaceY,
                 const ShowAccountDetailsWidget(
+                  color: AppColors.transparent,
                   title: 'reference',
                   subTitle: 'et_bank',
                 ),
                 20.spaceY,
                 const ShowAccountDetailsWidget(
+                  color: AppColors.transparent,
                   title: 'arriving',
                   subTitle: 'today',
                 ),
                 20.spaceY,
                 Container(
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8),
-                      color: AppColors.white),
-                  child: const Column(
+                    borderRadius: BorderRadius.circular(8),
+                    border: Border.all(color: AppColors.tealColor, width: 1),
+                    color: AppColors.transparent,
+                  ),
+                  child: Column(
                     children: [
                       ShowAccountDetailsWidget(
+                        border: Border.all(color: AppColors.transparent),
+                        color: AppColors.transparent,
                         title: 'amount',
                         subTitle: '£1',
                       ),
                       ShowAccountDetailsWidget(
+                        color: AppColors.transparent,
+                        border: Border.all(color: AppColors.transparent),
                         title: 'transfer_fee',
                         subTitle: 'no_fee',
                       ),
                       ShowAccountDetailsWidget(
+                        color: AppColors.transparent,
                         title: 'from',
+                        border: Border.all(color: AppColors.transparent),
                         subTitle: 'gbp',
                       ),
                     ],
@@ -73,22 +83,31 @@ class ShowAccountDetailsScreen extends ConsumerWidget {
                 Container(
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(8),
-                      color: AppColors.white),
-                  child: const Column(
+                      border: Border.all(color: AppColors.tealColor, width: 1),
+                      color: AppColors.transparent),
+                  child: Column(
                     children: [
                       ShowAccountDetailsWidget(
+                        color: AppColors.transparent,
+                        border: Border.all(color: AppColors.transparent),
                         title: 'amount',
                         subTitle: 'xyz',
                       ),
                       ShowAccountDetailsWidget(
+                        color: AppColors.transparent,
                         title: 'account_type',
                         subTitle: 'individual',
+                        border: Border.all(color: AppColors.transparent),
                       ),
                       ShowAccountDetailsWidget(
+                        color: AppColors.transparent,
+                        border: Border.all(color: AppColors.transparent),
                         title: 'account',
                         subTitle: '£1',
                       ),
                       ShowAccountDetailsWidget(
+                        color: AppColors.transparent,
+                        border: Border.all(color: AppColors.transparent),
                         title: 'from',
                         subTitle: 'abc',
                       ),
@@ -105,7 +124,7 @@ class ShowAccountDetailsScreen extends ConsumerWidget {
               height: 48.h,
               width: 327.w,
               child: PrimaryButton(
-                color: AppColors.green,
+                color: AppColors.yellowGreen,
                 text: Text(
                   getTranslated('send', context),
                   style: AppTextstyle.bodyTextStyle(

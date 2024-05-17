@@ -31,7 +31,7 @@ class BillingDetailsScreen extends ConsumerWidget {
     return BackgroundImageWidget(
       child: Scaffold(
         backgroundColor: AppColors.transparent,
-        appBar: CommonAppBar(
+        appBar: const CommonAppBar(
           etBankLogo: true,
         ),
         body: Padding(
@@ -52,16 +52,16 @@ class BillingDetailsScreen extends ConsumerWidget {
                 rightPadding: 0,
               ),
               if (sendingCurrencyProviderW.selectedCountry?.name == null) ...{
-                70.spaceY,
-                Center(
-                  child: Text(
-                    getTranslated('cant_find_who_you_are_looking_for', context),
-                    style: AppTextstyle.headingTextStyle(
-                      color: AppColors.white,
-                      fontSize: 16,
-                    ),
-                  ),
-                ),
+                33.spaceY,
+                // Center(
+                //   child: Text(
+                //     getTranslated('cant_find_who_you_are_looking_for', context),
+                //     style: AppTextstyle.headingTextStyle(
+                //       color: AppColors.white,
+                //       fontSize: 16,
+                //     ),
+                //   ),
+                // ),
               },
               18.spaceY,
               BusinessDetailsWhiteContainerWidet(
@@ -89,10 +89,11 @@ class BillingDetailsScreen extends ConsumerWidget {
                     getTranslated('country', context),
                 titleTextColor:
                     sendingCurrencyProviderW.selectedCountry?.name == ''
-                        ? Colors.grey
-                        : Colors.black,
+                        ? Colors.white
+                        : Colors.white,
                 icon: Image.asset(
                   AppAssets.iconArrowDownBlack,
+                  color: AppColors.white,
                   height: 11.h,
                   width: 22.w,
                 ),
@@ -128,7 +129,7 @@ class BillingDetailsScreen extends ConsumerWidget {
               height: 48.h,
               width: 327.w,
               child: PrimaryButton(
-                color: AppColors.green,
+                color: AppColors.yellowGreen,
                 text: Text(
                   getTranslated('continue', context),
                   style: AppTextstyle.bodyTextStyle(

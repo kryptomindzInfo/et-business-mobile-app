@@ -10,8 +10,27 @@ class CommonGreenButton extends ConsumerWidget {
   final String? imageIcon;
   final VoidCallback? onpress;
   final double? imageHeight;
+  final Color? color;
+  final Color? textColor;
+  final Color? iconColor;
+  final Color? borderColor;
+  final double? borderRadius;
+  final double? height;
+  final EdgeInsetsGeometry? padding;
+
   const CommonGreenButton(
-      {super.key, this.title, this.imageIcon, this.onpress, this.imageHeight});
+      {super.key,
+      this.title,
+      this.imageIcon,
+      this.onpress,
+      this.imageHeight,
+      this.color,
+      this.iconColor,
+      this.textColor,
+      this.borderColor,
+      this.borderRadius,
+      this.height,
+      this.padding});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -19,21 +38,22 @@ class CommonGreenButton extends ConsumerWidget {
       onTap: onpress,
       child: FittedBox(
         child: Container(
-          height: 60,
+          height: height ?? 60,
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(17),
-              border: Border.all(color: AppColors.white),
-              color: AppColors.primaryColor),
+              borderRadius: BorderRadius.circular(borderRadius ?? 17),
+              border: Border.all(color: borderColor ?? AppColors.white),
+              color: color ?? AppColors.primaryColor),
           margin: const EdgeInsets.only(right: 5),
           child: Center(
             child: Padding(
-              padding: const EdgeInsets.only(left: 11, right: 11),
+              padding: padding ?? const EdgeInsets.only(left: 11, right: 11),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   if (imageIcon != null)
                     Image.asset(
+                      color: iconColor,
                       imageIcon!,
                       height: imageHeight ?? 25,
                     ),
@@ -42,7 +62,7 @@ class CommonGreenButton extends ConsumerWidget {
                     Text(
                       title!,
                       style: AppTextstyle.bodyTextStyle(
-                          color: AppColors.black,
+                          color: textColor ?? AppColors.black,
                           fontSize: 16,
                           fontWeight: FontWeight.w500),
                     ),

@@ -13,6 +13,7 @@ class SignUpEmailOTPCodeScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return OTPVerification(
       description: 'email_otp_text',
+      text1: 'resend_code',
       text2: "make_sure_you_have_entered_correct_email",
       onCompleted: (value) {
         Navigation.pushNamed(SignUpBusinessTypeScreen.routeName);

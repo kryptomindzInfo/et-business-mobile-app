@@ -2,7 +2,6 @@ import 'package:etbank_business_app/presentation/views/home_section/home_screen_
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-
 class DashBoardWidget extends ConsumerWidget {
   const DashBoardWidget({super.key});
 
@@ -11,7 +10,6 @@ class DashBoardWidget extends ConsumerWidget {
     return const Column(
       children: [
         DashboardMainCard(),
-      
       ],
     );
   }

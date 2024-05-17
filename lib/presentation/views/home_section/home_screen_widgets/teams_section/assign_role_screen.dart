@@ -11,8 +11,8 @@ import 'package:etbank_business_app/providers/team_provider.dart';
 import 'package:etbank_business_app/resources/localization/language_constrants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
 import '../../../common_widgets/app_common_appbar.dart';
+import '../../../common_widgets/white_flexible_card.dart';
 import '../home_Screen_textfields.dart';
 
 class AssignRoleScreen extends ConsumerWidget {
@@ -24,16 +24,17 @@ class AssignRoleScreen extends ConsumerWidget {
     return BackgroundImageWidget(
       child: Scaffold(
         backgroundColor: AppColors.transparent,
-        appBar: CommonAppBar(
+        appBar: const CommonAppBar(
           etBankLogo: true,
         ),
         body: Padding(
-          padding: const EdgeInsets.only(left: 20, right: 20),
+          padding: const EdgeInsets.only(left: 20, right: 20, top: 15),
           child: Column(
             children: [
               HeaderIconWithTitle(
                 // imageicon: AppAssets.arrowLeft,
                 title: getTranslated("assign_role", context),
+                spaceBtw: 8,
                 description: getTranslated("select_role", context),
                 // trailingImage: AppAssets.addgreenbutton,
                 widget: Container(
@@ -53,35 +54,38 @@ class AssignRoleScreen extends ConsumerWidget {
                   // color: AppColors.greywhite,
                   ),
               30.spaceY,
-              Expanded(
-                child: ListView.builder(
-                  itemCount:
-                      ref.watch(teamscreenProvider).assignRoleData.length,
-                  itemBuilder: (context, index) => RolesWithDetails(
-                    isSelected: int.parse(ref
-                                .watch(teamscreenProvider)
-                                .assignRoleData[index]["id"]) ==
-                            ref.watch(teamscreenProvider).roleId
-                        ? true
-                        : false,
-                    onpress: () {
-                      ref.read(teamscreenProvider).getRoleId(int.parse(ref
+              CommonWhiteFlexibleCard(
+                widget: SizedBox(
+                  height: 250,
+                  child: ListView.builder(
+                    itemCount:
+                        ref.watch(teamscreenProvider).assignRoleData.length,
+                    itemBuilder: (context, index) => RolesWithDetails(
+                      isSelected: int.parse(ref
+                                  .watch(teamscreenProvider)
+                                  .assignRoleData[index]["id"]) ==
+                              ref.watch(teamscreenProvider).roleId
+                          ? true
+                          : false,
+                      onpress: () {
+                        ref.read(teamscreenProvider).getRoleId(int.parse(ref
+                            .read(teamscreenProvider)
+                            .assignRoleData[index]["id"]));
+                      },
+                      title: ref.read(teamscreenProvider).assignRoleData[index]
+                          ["title"],
+                      subtitile: ref
                           .read(teamscreenProvider)
-                          .assignRoleData[index]["id"]));
-                    },
-                    title: ref.read(teamscreenProvider).assignRoleData[index]
-                        ["title"],
-                    subtitile: ref
-                        .read(teamscreenProvider)
-                        .assignRoleData[index]["desc"],
+                          .assignRoleData[index]["desc"],
+                    ),
                   ),
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(bottom: 40),
+                padding: const EdgeInsets.only(top: 120),
                 child: PrimaryButton(
                     minwidth: 280,
-                    color: AppColors.primaryColor,
+                    color: AppColors.yellowGreen,
                     text: Text(getTranslated("continue", context)),
                     onPressed: () {
                       Navigation.pushNamed(AdminScreen.routeName);

@@ -1,4 +1,7 @@
 import 'package:etbank_business_app/constants/app_colors.dart';
+import 'package:etbank_business_app/extensions/sized_box.dart';
+import 'package:etbank_business_app/navigation/navigation.dart';
+import 'package:etbank_business_app/presentation/views/bottom_navigation_bar.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_otp_code_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -28,26 +31,26 @@ class AccountDetailsOTPCodeScreen extends ConsumerWidget {
                   Text(
                     getTranslated("Youve_sent", context),
                     style: AppTextstyle.bodyTextStyle(
-                        fontSize: 20, fontWeight: FontWeight.bold),
+                        fontSize: 20, fontWeight: FontWeight.w700),
                   ),
                   Text(
                     getTranslated("£1 ", context),
                     style: AppTextstyle.bodyTextStyle(
                         fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                        color: AppColors.green),
+                        fontWeight: FontWeight.w700,
+                        color: AppColors.tealColor),
                   ),
                   Text(
                     getTranslated("to ", context),
                     style: AppTextstyle.bodyTextStyle(
-                        fontSize: 20, fontWeight: FontWeight.bold),
+                        fontSize: 20, fontWeight: FontWeight.w700),
                   ),
                   Text(
                     getTranslated("xyz", context),
                     style: AppTextstyle.bodyTextStyle(
                         fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                        color: AppColors.green),
+                        fontWeight: FontWeight.w700,
+                        color: AppColors.tealColor),
                   ),
                 ],
               ),
@@ -55,7 +58,7 @@ class AccountDetailsOTPCodeScreen extends ConsumerWidget {
                 height: 48.h,
                 width: 327.w,
                 child: PrimaryButton(
-                  color: AppColors.green,
+                  color: AppColors.yellowGreen,
                   text: Text(
                     getTranslated('payment_notif_title', context),
                     style: AppTextstyle.bodyTextStyle(
@@ -63,18 +66,22 @@ class AccountDetailsOTPCodeScreen extends ConsumerWidget {
                         fontSize: 16,
                         fontWeight: FontWeight.w500),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigation.pushNamed(BaseBottomNavBar.routeName);
+                  },
                 ),
               ),
             );
           },
         );
       },
-      text1: 'code_hasnt_arrived',
-      text1Color: AppColors.green,
-      text2: 'you_can_retry_in_58',
-      text2Color: AppColors.white,
-      text3: '',
+      text1: 'Code hasn’t arrived? you can retry in 0:58',
+      text1Color: AppColors.halfWhite,
+      // text1: 'code_hasnt_arrived',
+      // text1Color: AppColors.green,
+      text2: '',
+      // text2Color: AppColors.white,
+      // text3: '',
     );
   }
 }

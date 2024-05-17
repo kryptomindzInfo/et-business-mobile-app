@@ -25,7 +25,7 @@ class EnterAmountScreen extends ConsumerWidget {
     return BackgroundImageWidget(
       child: Scaffold(
         backgroundColor: AppColors.transparent,
-        appBar: CommonAppBar(
+        appBar: const CommonAppBar(
           etBankLogo: true,
         ),
         body: Padding(
@@ -46,7 +46,7 @@ class EnterAmountScreen extends ConsumerWidget {
               ),
               40.spaceY,
               const CurrencyTextFieldWidget(),
-              16.spaceY,
+              22.spaceY,
               TextFieldWidget(
                 hintText: getTranslated('reference', context),
                 hintStyle: AppTextstyle.bodyTextStyle(
@@ -62,7 +62,7 @@ class EnterAmountScreen extends ConsumerWidget {
               height: 48.h,
               width: 327.w,
               child: PrimaryButton(
-                color: AppColors.green,
+                color: AppColors.yellowGreen,
                 text: Text(
                   getTranslated('continue', context),
                   style: AppTextstyle.bodyTextStyle(

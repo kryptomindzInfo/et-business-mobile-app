@@ -22,12 +22,13 @@ class QuantityAndDescriptionWidget extends ConsumerWidget {
       children: [
         Container(
           decoration: BoxDecoration(
-            color: AppColors.white,
-            borderRadius: BorderRadius.circular(8),
-          ),
+              color: AppColors.transparent,
+              borderRadius: BorderRadius.circular(8),
+              border: Border.all(color: AppColors.tealColor, width: 1)),
           child: Padding(
-            padding: const EdgeInsets.fromLTRB(12, 10, 12, 10),
+            padding: const EdgeInsets.fromLTRB(8, 4, 8, 4),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   getTranslated('quantity', context),
@@ -35,38 +36,43 @@ class QuantityAndDescriptionWidget extends ConsumerWidget {
                       fontSize: 16, color: AppColors.grey),
                 ),
                 4.spaceY,
-                Row(
-                  children: [
-                    GestureDetector(
-                      onTap: () {
-                        invoiceRequestProviderR.decrementQuantity();
-                      },
-                      child: Text(
-                        getTranslated('-', context),
-                        style: AppTextstyle.bodyTextStyle(
-                            fontSize: 16, color: AppColors.grey),
-                      ),
-                    ),
-                    16.spaceX,
-                    Text(
-                      getTranslated(
-                          invoiceRequestProviderW.quantity.toString(), context),
-                      style: AppTextstyle.bodyTextStyle(
-                          fontSize: 16, color: AppColors.black),
-                    ),
-                    16.spaceX,
-                    GestureDetector(
-                      onTap: () {
-                        invoiceRequestProviderR.incrementQuantity();
-                      },
-                      child: Text(
-                        getTranslated('+', context),
-                        style: AppTextstyle.bodyTextStyle(
-                            fontSize: 16, color: AppColors.grey),
-                      ),
-                    ),
-                  ],
+                Text(
+                  getTranslated('1', context),
+                  style: AppTextstyle.bodyTextStyle(
+                      fontSize: 16, color: AppColors.white),
                 ),
+                // Row(
+                //   children: [
+                //     GestureDetector(
+                //       onTap: () {
+                //         invoiceRequestProviderR.decrementQuantity();
+                //       },
+                //       child: Text(
+                //         getTranslated('-', context),
+                //         style: AppTextstyle.bodyTextStyle(
+                //             fontSize: 16, color: AppColors.grey),
+                //       ),
+                //     ),
+                //     16.spaceX,
+                //     Text(
+                //       getTranslated(
+                //           invoiceRequestProviderW.quantity.toString(), context),
+                //       style: AppTextstyle.bodyTextStyle(
+                //           fontSize: 16, color: AppColors.black),
+                //     ),
+                //     16.spaceX,
+                //     GestureDetector(
+                //       onTap: () {
+                //         invoiceRequestProviderR.incrementQuantity();
+                //       },
+                //       child: Text(
+                //         getTranslated('+', context),
+                //         style: AppTextstyle.bodyTextStyle(
+                //             fontSize: 16, color: AppColors.grey),
+                //       ),
+                //     ),
+                //   ],
+                // ),
               ],
             ),
           ),
@@ -75,12 +81,12 @@ class QuantityAndDescriptionWidget extends ConsumerWidget {
         Expanded(
           child: SizedBox(
             child: TextFieldWidget(
-              contentPadding: const EdgeInsets.fromLTRB(16, 20, 8, 20),
+              // contentPadding: const EdgeInsets.all(10),
               hintText: getTranslated('description', context),
-              style: const TextStyle(color: AppColors.black),
+              style: const TextStyle(color: AppColors.white),
               hintStyle: AppTextstyle.headingTextStyle(
                   color: AppColors.grey, fontSize: 16),
-              bottomContentPadding: 10,
+              // bottomContentPadding: 10,
             ),
           ),
         ),

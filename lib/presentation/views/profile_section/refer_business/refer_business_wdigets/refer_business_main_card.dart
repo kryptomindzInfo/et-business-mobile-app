@@ -7,28 +7,38 @@ import 'package:etbank_business_app/resources/localization/language_constrants.d
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../../../constants/app_colors.dart';
-
 class ReferBusinessMainCard extends ConsumerWidget {
   const ReferBusinessMainCard({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Container(
-      height: 387,
+      // height: 387,
       width: double.infinity,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(28),
+          borderRadius: BorderRadius.circular(12),
           // color: AppColors.transparent,
           border: Border.all(color: context.theme.colorTheme.borderColor)),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.end,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
+          15.spaceY,
           Padding(
-            padding: const EdgeInsets.only(top: 10),
-            child: Image.asset(
-              AppAssets.etbankrocket,
-              height: 130,
+            padding: const EdgeInsets.symmetric(horizontal: 24),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Image.asset(
+                  AppAssets.appbarLogo,
+                  height: 40,
+                  width: 135,
+                ),
+                Image.asset(
+                  AppAssets.rocketImage,
+                  height: 180,
+                  width: 120,
+                ),
+              ],
             ),
           ),
           Container(
@@ -45,8 +55,13 @@ class ReferBusinessMainCard extends ConsumerWidget {
                   overflow: TextOverflow.clip),
             ),
           ),
-          5.spaceY,
-          const GetStartedSection()
+          20.spaceY,
+          const GetStartedSection(
+            borderRadius: BorderRadius.only(
+              bottomLeft: Radius.circular(10),
+              bottomRight: Radius.circular(10),
+            ),
+          )
         ],
       ),
     );

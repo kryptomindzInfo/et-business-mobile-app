@@ -9,7 +9,9 @@ import '../../../../constants/app_textstyle.dart';
 class TransferFavouriteProfileWidget extends ConsumerWidget {
   final String? title;
   final String? imageIcon;
-  const TransferFavouriteProfileWidget({super.key, this.title, this.imageIcon});
+  final Color? titleColor;
+  const TransferFavouriteProfileWidget(
+      {super.key, this.title, this.imageIcon, this.titleColor});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -19,36 +21,35 @@ class TransferFavouriteProfileWidget extends ConsumerWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
-            child: Row(
-              children: [
-                Image.asset(
-                  imageIcon!,
-                  height: 45,
-                ),
-                15.spaceX,
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      title!,
-                      style: AppTextstyle.bodyTextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600,
-                        color: context.theme.colorTheme.normalTextColor,
-                      ),
+          Row(
+            children: [
+              Image.asset(
+                imageIcon!,
+                height: 45,
+              ),
+              20.spaceX,
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    title!,
+                    style: AppTextstyle.bodyTextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600,
+                      color: titleColor ??
+                          context.theme.colorTheme.normalTextColor,
                     ),
-                    Text(
-                      "Active",
-                      style: AppTextstyle.bodyTextStyle(
-                          fontSize: 12,
-                          fontWeight: FontWeight.w500,
-                          color: AppColors.grey),
-                    )
-                  ],
-                ),
-              ],
-            ),
+                  ),
+                  Text(
+                    "Active",
+                    style: AppTextstyle.bodyTextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.w500,
+                        color: AppColors.grey),
+                  )
+                ],
+              ),
+            ],
           ),
           Text(
             "Owner",

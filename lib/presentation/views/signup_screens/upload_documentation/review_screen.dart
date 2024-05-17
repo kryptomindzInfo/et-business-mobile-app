@@ -18,7 +18,7 @@ class ReviewScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       backgroundColor: context.theme.colorTheme.backgroundColor,
-      appBar: CommonAppBar(
+      appBar: const CommonAppBar(
         etBankLogo: true,
       ),
       body: Padding(
@@ -30,7 +30,7 @@ class ReviewScreen extends ConsumerWidget {
               description: getTranslated("review_description", context),
             ),
             30.spaceY,
-            ReviewDocWidget(),
+            const ReviewDocWidget(),
             // 250.spaceY,
           ],
         ),
@@ -42,6 +42,7 @@ class ReviewScreen extends ConsumerWidget {
           titleColor: context.theme.colorTheme.buttonTitleColor,
           title: getTranslated("confirm", context),
           width: 288,
+          height: 48,
           onpress: () {
             showModalBottomSheet(
               context: context,
@@ -54,7 +55,7 @@ class ReviewScreen extends ConsumerWidget {
                           fontWeight: FontWeight.bold,
                           color: context.theme.colorTheme.whiteAndBlack),
                     ),
-                    description: Text(""));
+                    description: const Text(""));
               },
             );
           },

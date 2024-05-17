@@ -9,7 +9,6 @@ import 'package:etbank_business_app/resources/localization/language_constrants.d
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../constants/app_assets.dart';
 import '../../../constants/app_colors.dart';
 import '../../../constants/static_data/signup_screen_static_data.dart';
 import 'signup_widgets/category_widget.dart';
@@ -26,19 +25,21 @@ class SignUpCategoryScreen extends ConsumerWidget {
       child: Scaffold(
         extendBody: true,
         backgroundColor: AppColors.transparent,
-        appBar: CommonAppBar(),
+        appBar: const CommonAppBar(),
         body: Padding(
-          padding: EdgeInsets.only(left: 20, right: 20),
+          padding: const EdgeInsets.only(left: 20, right: 20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               HeaderIconWithTitle(
                 title: getTranslated('category_title', context),
+                spaceBtw: 0,
                 description: getTranslated('category_subtitle', context),
                 // imageicon: AppAssets.arrowLeft,
               ),
-              23.spaceY,
+              8.spaceY,
               TextFieldBlackWidget(
+                hintText: 'Search',
                 onChanged: (value) {},
               ),
               16.spaceY,

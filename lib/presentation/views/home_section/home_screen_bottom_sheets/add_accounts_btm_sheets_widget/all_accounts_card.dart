@@ -17,29 +17,27 @@ class AllAccountsCardBS extends ConsumerWidget {
       height: 74,
       width: double.infinity,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20),
+          borderRadius: BorderRadius.circular(12),
           border: Border.all(color: context.theme.colorTheme.borderColor)),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Padding(
             padding: const EdgeInsets.only(left: 20),
-            child: Container(
-              child: Row(
-                children: [
-                  const IconContainer(
-                    image: AppAssets.allaccountsicon,
-                  ),
-                  15.spaceX,
-                  Text(
-                    getTranslated("all_accounts", context),
-                    style: AppTextstyle.roboto(
-                        fontWeight: FontWeight.w500,
-                        fontSize: 16,
-                        color: AppColors.white),
-                  )
-                ],
-              ),
+            child: Row(
+              children: [
+                const IconContainer(
+                  image: AppAssets.allaccountsicon,
+                ),
+                15.spaceX,
+                Text(
+                  getTranslated("all_accounts", context),
+                  style: AppTextstyle.roboto(
+                      fontWeight: FontWeight.w500,
+                      fontSize: 16,
+                      color: AppColors.white),
+                )
+              ],
             ),
           ),
           Padding(

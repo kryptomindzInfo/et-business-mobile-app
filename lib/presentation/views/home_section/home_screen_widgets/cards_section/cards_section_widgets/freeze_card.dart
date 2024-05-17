@@ -14,13 +14,14 @@ class FreezeCard extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return CommonWhiteFlexibleCard(
+      borderRadius: 12,
       widget: Row(
         children: [
           Image.asset(
             AppAssets.freezicon,
             height: 35,
           ),
-          10.spaceX,
+          16.spaceX,
           Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -31,14 +32,14 @@ class FreezeCard extends ConsumerWidget {
                   context,
                 ),
                 style: AppTextstyle.bodyTextStyle(
-                    fontSize: 16,
+                    fontSize: 18,
                     fontWeight: FontWeight.w600,
                     color: context.theme.colorTheme.normalTextColor),
               ),
               Text(
                 getTranslated("tap_again_unfreeze", context),
                 style: AppTextstyle.bodyTextStyle(
-                    fontSize: 16,
+                    fontSize: 14,
                     fontWeight: FontWeight.w400,
                     color: context.theme.colorTheme.normalTextColor),
                 overflow: TextOverflow.clip,

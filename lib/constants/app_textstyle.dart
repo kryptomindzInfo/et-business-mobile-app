@@ -40,13 +40,13 @@ class AppTextstyle {
         color: color,
         overflow: overflow,
       );
-
-  static TextStyle _normalText(
-          {required String fontFamily,
-          FontWeight fontWeight = FontWeight.normal,
-          double fontSize = 14,
-          Color color = AppColors.black,
-          TextOverflow? overflow}) =>
+  static TextStyle _normalText({
+    required String fontFamily,
+    FontWeight fontWeight = FontWeight.normal,
+    double fontSize = 14,
+    Color color = AppColors.black,
+    TextOverflow? overflow,
+  }) =>
       TextStyle(
           fontFamily: '',
           fontWeight: fontWeight,

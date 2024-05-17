@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import '../../../constants/app_colors.dart';
 
 showCommonModalSheet(BuildContext context, double height, Widget widget,
-    {CrossAxisAlignment? crossAxisAlignment}) {
+    {CrossAxisAlignment? crossAxisAlignment, Color? color}) {
   return showModalBottomSheet(
     context: appContext,
     isScrollControlled: true,
@@ -13,17 +13,18 @@ showCommonModalSheet(BuildContext context, double height, Widget widget,
     builder: (context) => Container(
       height: height,
       width: double.infinity,
-      margin: EdgeInsets.only(left: 10, right: 10),
+      margin: const EdgeInsets.only(left: 10, right: 10),
       decoration: BoxDecoration(
-          color: context.theme.colorTheme.commonBottomSheetColor,
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(20),
-            topRight: Radius.circular(20),
-          ),
-          border: Border(
-              left: BorderSide(color: context.theme.colorTheme.borderColor),
-              right: BorderSide(color: context.theme.colorTheme.borderColor),
-              top: BorderSide(color: context.theme.colorTheme.borderColor))),
+        color: color ?? context.theme.colorTheme.commonBottomSheetColor,
+        borderRadius: const BorderRadius.only(
+          topLeft: Radius.circular(20),
+          topRight: Radius.circular(20),
+        ),
+        // border: Border(
+        //     left: BorderSide(color: context.theme.colorTheme.borderColor),
+        //     right: BorderSide(color: context.theme.colorTheme.borderColor),
+        //     top: BorderSide(color: context.theme.colorTheme.borderColor))
+      ),
       child: Column(
         crossAxisAlignment: crossAxisAlignment ?? CrossAxisAlignment.center,
         children: [

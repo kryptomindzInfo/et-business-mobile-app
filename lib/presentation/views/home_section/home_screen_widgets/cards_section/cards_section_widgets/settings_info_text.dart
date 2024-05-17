@@ -32,7 +32,7 @@ class SettingsInfoText extends ConsumerWidget {
         //   imageIcon,
         //   height: 35,
         // ),
-        10.spaceX,
+        16.spaceX,
         Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -40,7 +40,7 @@ class SettingsInfoText extends ConsumerWidget {
             Text(
               title!,
               style: AppTextstyle.bodyTextStyle(
-                  fontSize: 16,
+                  fontSize: 18,
                   fontWeight: FontWeight.w600,
                   color: context.theme.colorTheme.normalTextColor),
             ),
@@ -52,26 +52,22 @@ class SettingsInfoText extends ConsumerWidget {
                   child: Text(
                     description!,
                     style: AppTextstyle.bodyTextStyle(
-                        fontSize: 16,
+                        fontSize: 14,
                         fontWeight: FontWeight.w400,
                         color: context.theme.colorTheme.normalTextColor),
                     overflow: TextOverflow.clip,
                   ),
                 ),
-                20.spaceX,
+                5.spaceX,
                 isButton
                     ? Padding(
-                        padding: const EdgeInsets.only(bottom: 50),
-                        child: SizedBox(
-                          height: 20,
-                          width: 20,
-                          child: CupertinoSwitch(
-                            value: proWatch.expenseReportingBool,
-                            onChanged: (value) {
-                              proRead.expenseReportingSwitch(value);
-                            },
-                            activeColor: context.theme.colorTheme.indigoToColor,
-                          ),
+                        padding: const EdgeInsets.only(bottom: 20, left: 00),
+                        child: CupertinoSwitch(
+                          value: proWatch.expenseReportingBool,
+                          onChanged: (value) {
+                            proRead.expenseReportingSwitch(value);
+                          },
+                          activeColor: context.theme.colorTheme.indigoToColor,
                         ),
                       )
                     : const SizedBox()

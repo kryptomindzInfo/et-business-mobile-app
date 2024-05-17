@@ -6,19 +6,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-
 class CurrencyTextFieldWidget extends ConsumerWidget {
-  const CurrencyTextFieldWidget({super.key});
+  final EdgeInsetsGeometry? padding;
+  const CurrencyTextFieldWidget({super.key, this.padding});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Container(
       decoration: BoxDecoration(
-        color: AppColors.white,
-        borderRadius: BorderRadius.circular(8),
+        // color: AppColors.white,
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(color: AppColors.tealColor, width: 1),
       ),
       child: Padding(
-        padding: const EdgeInsets.fromLTRB(12, 0, 8, 4),
+        padding: padding ?? const EdgeInsets.fromLTRB(12, 0, 8, 0),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -28,8 +29,7 @@ class CurrencyTextFieldWidget extends ConsumerWidget {
                 Text(
                   getTranslated('gbp', context),
                   style: AppTextstyle.bodyTextStyle(
-                    fontSize: 16,
-                  ),
+                      fontSize: 20, color: AppColors.white),
                 ),
                 // 5.spaceY,
                 // Row(
@@ -52,11 +52,13 @@ class CurrencyTextFieldWidget extends ConsumerWidget {
             SizedBox(
               width: 50,
               child: TextFieldWidget(
+                border: Border.all(width: 0, color: AppColors.transparent),
                 hintText: '£0',
-                style: const TextStyle(color: AppColors.black),
+                style: const TextStyle(color: AppColors.white),
                 hintStyle: AppTextstyle.headingTextStyle(
-                    color: AppColors.grey, fontSize: 22),
-                bottomContentPadding: 10,
+                    color: AppColors.white, fontSize: 22),
+                keyboardType: TextInputType.number,
+                // bottomContentPadding: 10,
               ),
             ),
           ],

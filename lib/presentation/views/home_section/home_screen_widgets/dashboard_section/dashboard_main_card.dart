@@ -1,10 +1,11 @@
 import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
+import 'package:etbank_business_app/navigation/navigation.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/common_bottom_sheet.dart';
 import 'package:etbank_business_app/presentation/views/home_section/home_screen_bottom_sheets/more_option_bottom_sheet.dart';
+import 'package:etbank_business_app/presentation/views/sending_currency_screens/who_to_pay_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
 import '../../../../../constants/app_assets.dart';
 import '../../../../../constants/app_colors.dart';
 import '../../../../../constants/app_textstyle.dart';
@@ -45,24 +46,24 @@ class DashboardMainCard extends ConsumerWidget {
                         Text(
                           "£1",
                           style: AppTextstyle.headingTextStyle(
-                              fontSize: 48,
-                              fontWeight: FontWeight.w700,
+                              fontSize: 38,
+                              fontWeight: FontWeight.bold,
                               color: context.theme.colorTheme.normalTextColor),
                         ),
                         Container(
-                          height: 16,
-                          width: 16,
+                          height: 21,
+                          width: 21,
                           decoration: const BoxDecoration(
                               shape: BoxShape.circle,
                               color: AppColors.tealColor),
                           child: const Center(
                             child: Icon(
                               Icons.keyboard_arrow_down_sharp,
-                              size: 16,
+                              size: 21,
                               color: AppColors.white,
                             ),
                           ),
-                        )
+                        ),
                       ],
                     ),
                     Text(
@@ -77,57 +78,75 @@ class DashboardMainCard extends ConsumerWidget {
                 Padding(
                   padding: const EdgeInsets.only(top: 15),
                   child: Image.asset(
-                    AppAssets.ukflag,
+                    AppAssets.roundukflag,
                     height: 45,
                   ),
                 )
               ],
             ),
-            10.spaceY,
+            29.spaceY,
             Container(
               margin: const EdgeInsets.only(left: 35, right: 22),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const MainCardOption(
-                      image: AppAssets.sendicon, title: "Send"),
+                  MainCardOption(
+                    image: AppAssets.sendicon,
+                    title: "Send",
+                    onpress: () {
+                      Navigation.pushNamed(WhoToPayScreen.routeName);
+                    },
+                  ),
                   MainCardOption(
                     image: AppAssets.requesticon,
                     title: "Request",
                     onpress: () {
                       showCommonModalSheet(
-                        context,
-                        460,
-                        RequestMoneyBottomSheetWidget(),
-                      );
+                          context, 460, const RequestMoneyBottomSheetWidget(),
+                          color: AppColors.black);
                     },
                   ),
                   MainCardOption(
                     image: AppAssets.moreicon,
                     title: "More",
-                    onpress: () => showCommonModalSheet(
-                        context,
-                        450,
-                        const Padding(
-                          padding: EdgeInsets.only(left: 20, top: 20),
-                          child: MoreOptionsBottomSheetWidget(),
-                        )),
+                    onpress: () {
+                      showCommonModalSheet(
+                          context,
+                          450,
+                          color: AppColors.black,
+                          const Padding(
+                            padding: EdgeInsets.only(left: 20, top: 20),
+                            child: MoreOptionsBottomSheetWidget(),
+                          ));
+                    },
                   )
                 ],
               ),
             ),
             20.spaceY,
             const SeeAllCommonWidget("Transactions", true),
+            30.spaceY,
             InfoTextWidget(
-              marketPriceColor: context.theme.colorTheme.grassGreen,
+              marketPriceColor: context.theme.colorTheme.greyDescription,
+              image: AppAssets.exchangeUsd,
+              title: 'Exchanged to USD',
+              subTitle: 'Today, 9:29 PM',
+              price1: '-£1',
+              price2: '+S1.36',
             ),
             // 10.spaceY,
-            InfoTextWidget(
-              marketPriceColor: context.theme.colorTheme.redColor,
+            const InfoTextWidget(
+              image: AppAssets.transferTo,
+              title: 'Transfer to Brooklyn',
+              price1: '-£1',
+              subTitle: 'Today, 9:13 PM',
             ),
             // 10.spaceY,
-            InfoTextWidget(
-              marketPriceColor: context.theme.colorTheme.redColor,
+            const InfoTextWidget(
+              image: AppAssets.paymentFrom,
+              title: 'Payment from jhon deo',
+              price1: '-£1',
+              subTitle: 'Today, 9:09 PM',
             ),
             20.spaceY,
           ],

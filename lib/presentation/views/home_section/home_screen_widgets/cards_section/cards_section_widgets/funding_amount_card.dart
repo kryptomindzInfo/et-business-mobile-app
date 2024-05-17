@@ -13,6 +13,7 @@ class FundingAmountCard extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return CommonWhiteFlexibleCard(
+      borderRadius: 12,
       widget: Column(
         children: [
           Row(
@@ -21,14 +22,14 @@ class FundingAmountCard extends ConsumerWidget {
               Text(
                 getTranslated("spend_controls", context),
                 style: AppTextstyle.bodyTextStyle(
-                    fontSize: 12,
+                    fontSize: 14,
                     fontWeight: FontWeight.w500,
                     color: context.theme.colorTheme.normalTextColor),
               ),
               Text(
                 getTranslated("see_all", context),
                 style: AppTextstyle.bodyTextStyle(
-                    fontSize: 12,
+                    fontSize: 14,
                     fontWeight: FontWeight.w500,
                     color: context.theme.colorTheme.grassGreen),
               )
@@ -46,7 +47,7 @@ class FundingAmountCard extends ConsumerWidget {
                   color: context.theme.colorTheme.indigoToColor,
                 ),
               ),
-              10.spaceX,
+              16.spaceX,
               Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -57,14 +58,14 @@ class FundingAmountCard extends ConsumerWidget {
                       context,
                     ),
                     style: AppTextstyle.bodyTextStyle(
-                        fontSize: 16,
+                        fontSize: 18,
                         fontWeight: FontWeight.w600,
                         color: context.theme.colorTheme.normalTextColor),
                   ),
                   Text(
                     getTranslated("all_accounts", context),
                     style: AppTextstyle.bodyTextStyle(
-                        fontSize: 16,
+                        fontSize: 14,
                         fontWeight: FontWeight.w400,
                         color: context.theme.colorTheme.normalTextColor),
                     overflow: TextOverflow.clip,

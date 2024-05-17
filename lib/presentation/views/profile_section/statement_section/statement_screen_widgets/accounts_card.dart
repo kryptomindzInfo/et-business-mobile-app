@@ -15,54 +15,49 @@ class AccountsCard extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Container(
-      height: 71,
+      // height: 71,
       // width: double.infinity,
-      margin: const EdgeInsets.only(left: 8, right: 8, top: 7),
+      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 18),
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(28),
+          borderRadius: BorderRadius.circular(12),
           color: context.theme.colorTheme.transparentToColor,
           border: Border.all(color: context.theme.colorTheme.borderColor)),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Padding(
-            padding: const EdgeInsets.only(left: 10),
-            child: Container(
-              child: Row(
-                children: [
-                  Image.asset(
-                    image!,
-                    height: 32,
-                  ),
-                  20.spaceX,
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        title ?? "",
-                        style: AppTextstyle.roboto(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w500,
-                            color: context.theme.colorTheme.normalTextColor),
-                      ),
-                      Text(
-                        subtitle ?? "",
-                        style: AppTextstyle.roboto(
-                            fontSize: 12,
-                            fontWeight: FontWeight.w500,
-                            color: context.theme.colorTheme.normalTextColor),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
+            padding: const EdgeInsets.only(left: 00),
+            child: Row(
+              children: [
+                Image.asset(
+                  image!,
+                  height: 32,
+                ),
+                20.spaceX,
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      title ?? "",
+                      style: AppTextstyle.roboto(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w500,
+                          color: context.theme.colorTheme.normalTextColor),
+                    ),
+                    Text(
+                      subtitle ?? "",
+                      style: AppTextstyle.roboto(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w500,
+                          color: context.theme.colorTheme.normalTextColor),
+                    ),
+                  ],
+                ),
+              ],
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.only(right: 20),
-            child: widget!,
-          )
+          widget!
         ],
       ),
     );

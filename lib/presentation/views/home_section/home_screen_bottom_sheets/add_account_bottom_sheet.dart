@@ -25,10 +25,11 @@ class AddAccountsBottomSheet extends ConsumerWidget {
           const AllAccountsCardBS(),
           15.spaceY,
           Container(
+            padding: const EdgeInsets.all(8),
             width: double.infinity,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
-                color: AppColors.grey.withOpacity(0.5)),
+                color: AppColors.blackish),
             child: Column(
               children: [
                 AccountsCard(
@@ -42,20 +43,21 @@ class AddAccountsBottomSheet extends ConsumerWidget {
                       Text(
                         "£1",
                         style: AppTextstyle.roboto(
-                            fontSize: 16,
+                            fontSize: 18,
                             fontWeight: FontWeight.w500,
                             color: context.theme.colorTheme.normalTextColor),
                       ),
                       Text(
                         "£0",
                         style: AppTextstyle.roboto(
-                            fontSize: 12,
+                            fontSize: 14,
                             fontWeight: FontWeight.w500,
                             color: context.theme.colorTheme.normalTextColor),
                       ),
                     ],
                   ),
                 ),
+                8.spaceY,
                 AccountsCard(
                   title: "Euro",
                   subtitle: "EUR",
@@ -67,20 +69,21 @@ class AddAccountsBottomSheet extends ConsumerWidget {
                       Text(
                         "€0",
                         style: AppTextstyle.roboto(
-                            fontSize: 16,
+                            fontSize: 18,
                             fontWeight: FontWeight.w500,
                             color: context.theme.colorTheme.normalTextColor),
                       ),
                       Text(
                         "£0",
                         style: AppTextstyle.roboto(
-                            fontSize: 12,
+                            fontSize: 14,
                             fontWeight: FontWeight.w500,
                             color: context.theme.colorTheme.normalTextColor),
                       ),
                     ],
                   ),
                 ),
+                8.spaceY,
                 AccountsCard(
                   title: "US Dollar",
                   subtitle: "USD",
@@ -92,14 +95,14 @@ class AddAccountsBottomSheet extends ConsumerWidget {
                       Text(
                         "\$1.36",
                         style: AppTextstyle.roboto(
-                            fontSize: 16,
+                            fontSize: 18,
                             fontWeight: FontWeight.w500,
                             color: context.theme.colorTheme.normalTextColor),
                       ),
                       Text(
                         "£0.99",
                         style: AppTextstyle.roboto(
-                            fontSize: 12,
+                            fontSize: 14,
                             fontWeight: FontWeight.w500,
                             color: context.theme.colorTheme.normalTextColor),
                       ),

@@ -20,7 +20,7 @@ class MerchantWidgetContainer extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Container(
-      height: 179,
+      // height: 179,
       width: 154,
       margin: const EdgeInsets.only(right: 10, bottom: 10),
 
@@ -31,7 +31,7 @@ class MerchantWidgetContainer extends ConsumerWidget {
             color: context.theme.colorTheme.borderColor,
           )),
       child: Padding(
-        padding: const EdgeInsets.only(left: 10, bottom: 10, right: 4),
+        padding: const EdgeInsets.only(left: 10, bottom: 20, right: 4),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
@@ -43,26 +43,24 @@ class MerchantWidgetContainer extends ConsumerWidget {
                   color: context.theme.colorTheme.normalTextColor,
                   overflow: TextOverflow.clip),
             ),
+            4.spaceY,
             Row(
               children: [
-                imageicon!.isNotEmpty
-                    ? Image.asset(
-                        imageicon!,
-                        height: 16,
-                      )
-                    : const SizedBox(),
+                if (imageicon != null)
+                  Image.asset(
+                    imageicon!,
+                    height: 16,
+                  ),
                 5.spaceX,
-                subtitle!.isNotEmpty
-                    ? Text(
-                        subtitle!,
-                        style: AppTextstyle.bodyTextStyle(
-                          fontSize: 12,
-                          fontWeight: FontWeight.w400,
-                          color: context.theme.colorTheme.normalTextColor,
-                          // color: subtitleColor!
-                        ),
-                      )
-                    : const SizedBox()
+                Text(
+                  subtitle ?? '',
+                  style: AppTextstyle.bodyTextStyle(
+                    fontSize: 12,
+                    fontWeight: FontWeight.w400,
+                    color: context.theme.colorTheme.normalTextColor,
+                    // color: subtitleColor!
+                  ),
+                )
               ],
             )
           ],

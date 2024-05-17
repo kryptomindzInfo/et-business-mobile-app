@@ -22,40 +22,38 @@ class RolesWithDetails extends ConsumerWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(top: 3),
-                  child: CustomRadioButtonWidget(
-                      isSelected: isSelected!, onTap: onpress),
-                ),
-                15.spaceX,
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      getTranslated(title!, context),
-                      style: AppTextstyle.headingTextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w600,
-                          color: context.theme.colorTheme.normalTextColor),
-                    ),
-                    10.spaceY,
-                    Text(
-                      getTranslated(subtitile!, context),
-                      style: AppTextstyle.bodyTextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.normal,
-                          color: context.theme.colorTheme.normalTextColor
-                              .withOpacity(0.6)),
-                    ),
-                  ],
-                ),
-              ],
-            ),
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(top: 3),
+                child: CustomRadioButtonWidget(
+                    isSelected: isSelected!, onTap: onpress),
+              ),
+              15.spaceX,
+              Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    getTranslated(title!, context),
+                    style: AppTextstyle.headingTextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600,
+                        color: context.theme.colorTheme.normalTextColor),
+                  ),
+                  2.spaceY,
+                  Text(
+                    getTranslated(subtitile!, context),
+                    style: AppTextstyle.bodyTextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.normal,
+                        color: context.theme.colorTheme.normalTextColor
+                            .withOpacity(0.6)),
+                  ),
+                ],
+              ),
+            ],
           ),
           Container(
             height: 28,

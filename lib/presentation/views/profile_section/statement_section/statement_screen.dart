@@ -18,19 +18,19 @@ class StatementScreen extends ConsumerWidget {
     return BackgroundImageWidget(
       child: Scaffold(
         backgroundColor: const Color.fromRGBO(0, 0, 0, 0),
-        appBar: CommonAppBar(
+        appBar: const CommonAppBar(
           etBankLogo: true,
         ),
         body: Padding(
-          padding: const EdgeInsets.only(left: 20, right: 20),
+          padding: const EdgeInsets.only(left: 20, right: 20, top: 20),
           child: Column(
             children: [
               HeaderIconWithTitle(
                 // imageicon: AppAssets.arrowLeft,
                 title: getTranslated("statements", context),
               ),
-              30.spaceY,
-              const StatementScreenMainCard()
+              45.spaceY,
+              const StatementScreenMainCard(),
             ],
           ),
         ),

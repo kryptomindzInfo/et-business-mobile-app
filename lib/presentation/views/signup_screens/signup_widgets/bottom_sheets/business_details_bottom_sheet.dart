@@ -37,8 +37,9 @@ class BusinessDetailsBottomSheet extends ConsumerWidget {
                   fontWeight: FontWeight.normal,
                   overflow: TextOverflow.clip),
             ),
-            20.spaceY,
+            25.spaceY,
             CommonButton(
+              height: 48,
               mainButtonColor: context.theme.colorTheme.buttonColor,
               titleColor: context.theme.colorTheme.buttonTitleColor,
               title: getTranslated("submit", context),

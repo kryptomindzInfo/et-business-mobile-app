@@ -6,7 +6,6 @@ import 'package:etbank_business_app/presentation/views/sending_currency_screens/
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../constants/app_assets.dart';
 import '../../../constants/app_textstyle.dart';
 import '../../../providers/sending_currency_provider.dart';
 import '../../../resources/localization/language_constrants.dart';
@@ -28,57 +27,60 @@ class AccountDetailsScreen extends ConsumerWidget {
     return BackgroundImageWidget(
       child: Scaffold(
         backgroundColor: AppColors.transparent,
-        appBar: CommonAppBar(
+        appBar: const CommonAppBar(
           etBankLogo: true,
         ),
-        body: Padding(
-          padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              HeaderIconWithTitle(
-                title: getTranslated('account_details', context),
-                // imageicon: AppAssets.arrowLeft,
-              ),
-              8.spaceY,
-              AccountDetailsButtonsWidget(
-                provider: sendingCurrencyProvider,
-              ),
-              32.spaceY,
-              UserPersonalDetailsWidget(
-                readOnly: true,
-                enableInteraction: false,
-                controller:
-                    ref.watch(sendingCurrencyProvider).countryController,
-                title: getTranslated('country', context),
-                hint: getTranslated('united_kingdom', context),
-                onTap: () {},
-              ),
-              16.spaceY,
-              UserPersonalDetailsWidget(
-                readOnly: true,
-                enableInteraction: false,
-                controller:
-                    ref.watch(sendingCurrencyProvider).currencyController,
-                title: getTranslated('currency', context),
-                hint: getTranslated('british_pound', context),
-                onTap: () {},
-              ),
-              16.spaceY,
-              UserPersonalDetailsWidget(
-                readOnly: true,
-                enableInteraction: false,
-                controller:
-                    ref.watch(sendingCurrencyProvider).accountNoController,
-                title: getTranslated('account_number', context),
-                hint: getTranslated('##############', context),
-                onTap: () {},
-              ),
-              16.spaceY,
-              TextFieldWidget(
-                hintText: getTranslated('sort_code', context),
-              ),
-            ],
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                HeaderIconWithTitle(
+                  title: getTranslated('account_details', context),
+                  // imageicon: AppAssets.arrowLeft,
+                ),
+                20.spaceY,
+                AccountDetailsButtonsWidget(
+                  provider: sendingCurrencyProvider,
+                ),
+                32.spaceY,
+                UserPersonalDetailsWidget(
+                  readOnly: true,
+                  enableInteraction: false,
+                  controller:
+                      ref.watch(sendingCurrencyProvider).countryController,
+                  title: getTranslated('country', context),
+                  hint: getTranslated('united_kingdom', context),
+                  onTap: () {},
+                ),
+                16.spaceY,
+                UserPersonalDetailsWidget(
+                  readOnly: true,
+                  enableInteraction: false,
+                  controller:
+                      ref.watch(sendingCurrencyProvider).currencyController,
+                  title: getTranslated('currency', context),
+                  hint: getTranslated('british_pound', context),
+                  onTap: () {},
+                ),
+                16.spaceY,
+                UserPersonalDetailsWidget(
+                  readOnly: true,
+                  enableInteraction: false,
+                  controller:
+                      ref.watch(sendingCurrencyProvider).accountNoController,
+                  title: getTranslated('account_number', context),
+                  hint: getTranslated('##############', context),
+                  onTap: () {},
+                ),
+                16.spaceY,
+                TextFieldWidget(
+                  hintText: getTranslated('sort_code', context),
+                  keyboardType: TextInputType.number,
+                ),
+              ],
+            ),
           ),
         ),
         bottomNavigationBar: ButtonBottomNavigationWidget(
@@ -87,7 +89,7 @@ class AccountDetailsScreen extends ConsumerWidget {
               height: 48.h,
               width: 327.w,
               child: PrimaryButton(
-                color: AppColors.green,
+                color: AppColors.yellowGreen,
                 text: Text(
                   getTranslated('continue', context),
                   style: AppTextstyle.bodyTextStyle(

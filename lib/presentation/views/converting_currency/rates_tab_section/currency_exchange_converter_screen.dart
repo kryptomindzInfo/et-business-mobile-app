@@ -10,9 +10,7 @@ import 'package:etbank_business_app/presentation/views/common_widgets/primary_bu
 import 'package:etbank_business_app/presentation/views/converting_currency/currency_converter_screen_widgets.dart/currency_exchange_textfield.dart';
 import 'package:etbank_business_app/presentation/views/converting_currency/rates_tab_section/currency_sell_screen.dart';
 import 'package:etbank_business_app/providers/currency_coverter_provider.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../common_widgets/app_common_appbar.dart';
@@ -26,7 +24,7 @@ class CurrencyExchangeConverterScreen extends ConsumerWidget {
     return BackgroundImageWidget(
       child: Scaffold(
         backgroundColor: AppColors.transparent,
-        appBar: CommonAppBar(
+        appBar: const CommonAppBar(
           etBankLogo: true,
         ),
         body: Padding(
@@ -36,9 +34,11 @@ class CurrencyExchangeConverterScreen extends ConsumerWidget {
               const HeaderIconWithTitle(
                 // imageicon: AppAssets.arrowLeft,
                 title: "SELL GBP",
+                spaceBtw: 6,
                 greenDescription: "£1 = 1.3601",
                 fontsize: 31,
               ),
+              17.spaceY,
               Stack(
                 children: [
                   Column(
@@ -72,8 +72,8 @@ class CurrencyExchangeConverterScreen extends ConsumerWidget {
                   minwidth: 288,
                   color:
                       ref.watch(currencyScreenProvider).activateButton == true
-                          ? context.theme.colorTheme.buttonColor
-                          : AppColors.grey,
+                          ? context.theme.colorTheme.yellowGreenColor
+                          : AppColors.yellowGreen,
                   text: Text(
                     "Review Order",
                     style: AppTextstyle.bodyTextStyle(

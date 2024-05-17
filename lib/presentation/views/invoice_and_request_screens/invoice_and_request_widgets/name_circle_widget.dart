@@ -10,19 +10,21 @@ class NameCircleWidget extends ConsumerWidget {
   final String name;
   final String? trailingText;
   final String? trailingHintText;
+  final Color? color;
 
   const NameCircleWidget(
       {super.key,
       required this.leadingText,
       required this.name,
       this.trailingText,
-      this.trailingHintText});
+      this.trailingHintText,
+      this.color});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Container(
       decoration: BoxDecoration(
-        color: AppColors.white,
+        color: color ?? AppColors.white,
         borderRadius: BorderRadius.circular(8),
       ),
       child: Padding(
@@ -43,10 +45,11 @@ class NameCircleWidget extends ConsumerWidget {
                         fontWeight: FontWeight.bold),
                   ),
                 ),
-                10.spaceX,
+                25.spaceX,
                 Text(
                   getTranslated(name, context),
                   style: AppTextstyle.bodyTextStyle(
+                    color: AppColors.white,
                     fontSize: 16,
                   ),
                 ),
@@ -59,6 +62,7 @@ class NameCircleWidget extends ConsumerWidget {
                   Text(
                     getTranslated(trailingText ?? '', context),
                     style: AppTextstyle.bodyTextStyle(
+                      color: AppColors.white,
                       fontSize: 18,
                     ),
                   ),
@@ -66,7 +70,7 @@ class NameCircleWidget extends ConsumerWidget {
                   Text(
                     getTranslated(trailingHintText ?? '', context),
                     style: AppTextstyle.bodyTextStyle(
-                        fontSize: 18, color: AppColors.grey),
+                        fontSize: 18, color: AppColors.white),
                   ),
               ],
             )
