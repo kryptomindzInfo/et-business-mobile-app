@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../navigation/navigation.dart';
+import '../../../../providers/theme_provider.dart';
 import '../../bottom_navigation_bar.dart';
 import '../signup_email_screen.dart';
 
@@ -22,7 +23,8 @@ class RegistrationLoginButtons extends ConsumerWidget {
           buttoncolor: context.theme.colorTheme.buttonColor,
           buttonTitleColor: context.theme.colorTheme.buttonTitleColor,
           onpress: () {
-            Navigation.pushNamed(SignUpEmailScreen.routeName);
+                ref.read(themeProvider.notifier).toggle();
+            // Navigation.pushNamed(SignUpEmailScreen.routeName);
           },
         ),
         10.spaceX,
