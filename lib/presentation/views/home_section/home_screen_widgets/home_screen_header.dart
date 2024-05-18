@@ -32,28 +32,26 @@ class HomeScreenHeader extends ConsumerWidget {
               height: 40,
             ),
           ),
-          Container(
-            child: Row(
-              children: [
-                InkWell(
-                  onTap: () {
-                    Navigation.pushNamed(ConverterCurrencyScreen.routeName);
-                  },
-                  child: Image.asset(
-                    AppAssets.charticon,
-                    height: 25,
-                  ),
+          Row(
+            children: [
+              InkWell(
+                onTap: () {
+                  Navigation.pushNamed(ConverterCurrencyScreen.routeName);
+                },
+                child: Image.asset(
+                  AppAssets.charticon,
+                  height: 25,
                 ),
-                20.spaceX,
-                InkWell(
-                  onTap: onNotificationPress,
-                  child: Image.asset(
-                    AppAssets.notificationicon,
-                    height: 25,
-                  ),
-                )
-              ],
-            ),
+              ),
+              20.spaceX,
+              InkWell(
+                onTap: onNotificationPress,
+                child: Image.asset(
+                  AppAssets.notificationicon,
+                  height: 25,
+                ),
+              )
+            ],
           )
         ],
       ),

@@ -5,6 +5,7 @@ import 'package:etbank_business_app/navigation/navigation.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/app_common_appbar.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/app_common_widgets.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/header_icon_with_text.dart';
+import 'package:etbank_business_app/presentation/views/common_widgets/parent_theme_scaffold.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_check_email_screen.dart';
 import 'package:etbank_business_app/resources/localization/language_constrants.dart';
 import 'package:flutter/material.dart';
@@ -23,78 +24,80 @@ class SignUpEmailScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return BackgroundImageWidget(
-        child: Scaffold(
-      backgroundColor: AppColors.transparent,
-      appBar: const CommonAppBar(
-        etBankLogo: true,
-      ),
-      body: Padding(
-        padding: const EdgeInsets.fromLTRB(20, 26, 20, 0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            HeaderIconWithTitle(
-              title: getTranslated('signup_email_title', context),
-              spaceBtw: 5,
-              // imageicon: AppAssets.arrowLeft,
-              etBankLogo: true,
-            ),
-            20.spaceY,
-            SizedBox(
-              child: TextFieldWidget(
-                style: AppTextstyle.bodyTextStyle(
-                    color: context.theme.colorTheme.normalTextColor,
+    return ParentThemeScaffold(
+      child: BackgroundImageWidget(
+          child: Scaffold(
+        backgroundColor: AppColors.transparent,
+        appBar: const CommonAppBar(
+          etBankLogo: true,
+        ),
+        body: Padding(
+          padding: const EdgeInsets.fromLTRB(20, 26, 20, 0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              HeaderIconWithTitle(
+                title: getTranslated('signup_email_title', context),
+                spaceBtw: 5,
+                // imageicon: AppAssets.arrowLeft,
+                etBankLogo: true,
+              ),
+              20.spaceY,
+              SizedBox(
+                child: TextFieldWidget(
+                  style: AppTextstyle.bodyTextStyle(
+                      color: context.theme.colorTheme.normalTextColor,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w400),
+                  // fillColor: AppColors.darkTeal,
+                  controller: ref.read(signUpStateProvider).emailController,
+                  hintText: getTranslated('enter_email_address', context),
+                  hintStyle: AppTextstyle.bodyTextStyle(
+                    color: context.theme.colorTheme.whiteColor.withOpacity(0.5),
                     fontSize: 16,
-                    fontWeight: FontWeight.w400),
-                // fillColor: AppColors.darkTeal,
-                controller: ref.read(signUpStateProvider).emailController,
-                hintText: getTranslated('enter_email_address', context),
-                hintStyle: AppTextstyle.bodyTextStyle(
-                  color: context.theme.colorTheme.whiteColor.withOpacity(0.5),
-                  fontSize: 16,
-                  fontWeight: FontWeight.w400,
+                    fontWeight: FontWeight.w400,
+                  ),
+                  onChanged: (value) {
+                    ref.read(signUpStateProvider).notify();
+                  },
                 ),
-                onChanged: (value) {
-                  ref.read(signUpStateProvider).notify();
+              ),
+            ],
+          ),
+        ),
+        bottomNavigationBar: ButtonBottomNavigationWidget(
+          children: [
+            SizedBox(
+              height: 48.h,
+              width: 327.w,
+              child: PrimaryButton(
+                color: ref.watch(signUpStateProvider).isEmailEmpty
+                    ? context.theme.colorTheme.disableButtonColor
+                    : context.theme.colorTheme.yellowGreenColor,
+                // buttonColor(ref.watch(signUpStateProvider).isEmailEmpty),
+                text: Text(
+                  getTranslated('continue', context),
+                  style: AppTextstyle.bodyTextStyle(
+                      color: ref.watch(signUpStateProvider).isEmailEmpty
+                          ? context.theme.colorTheme.buttonHalfWhiteText
+                          : context.theme.colorTheme.whiteAndBlack,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500),
+                ),
+                onPressed: () {
+                  if (ref.read(signUpStateProvider).isEmailEmpty) {
+                  } else {
+                    FocusScope.of(context).unfocus();
+
+                    Navigation.pushNamed(SignUpCheckEmailScreen.routeName);
+                  }
                 },
               ),
             ),
           ],
+          // ),
         ),
-      ),
-      bottomNavigationBar: ButtonBottomNavigationWidget(
-        children: [
-          SizedBox(
-            height: 48.h,
-            width: 327.w,
-            child: PrimaryButton(
-              color: ref.watch(signUpStateProvider).isEmailEmpty
-                  ? context.theme.colorTheme.disableButtonColor
-                  : context.theme.colorTheme.yellowGreenColor,
-              // buttonColor(ref.watch(signUpStateProvider).isEmailEmpty),
-              text: Text(
-                getTranslated('continue', context),
-                style: AppTextstyle.bodyTextStyle(
-                    color: ref.watch(signUpStateProvider).isEmailEmpty
-                        ? context.theme.colorTheme.buttonHalfWhiteText
-                        : context.theme.colorTheme.whiteAndBlack,
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500),
-              ),
-              onPressed: () {
-                if (ref.read(signUpStateProvider).isEmailEmpty) {
-                } else {
-                  FocusScope.of(context).unfocus();
-
-                  Navigation.pushNamed(SignUpCheckEmailScreen.routeName);
-                }
-              },
-            ),
-          ),
-        ],
-        // ),
-      ),
-    ));
+      )),
+    );
   }
 }

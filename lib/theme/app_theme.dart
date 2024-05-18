@@ -91,7 +91,7 @@ class AppTheme extends ThemeExtension<AppTheme> {
     this.normallyUsedTealColor = AppColors.tealColor,
     this.greyDescription = AppColors.grey,
     this.appBackgroundColor = AppColors.darkTeal,
-    this.appBarColor = AppColors.darkTeal,
+    this.appBarColor = AppColors.white,
     this.headerDescriptionColor = AppColors.headerDescColor,
     this.textfieldborderColor = AppColors.yellowGreen,
     this.subGrayColor = AppColors.grey,
