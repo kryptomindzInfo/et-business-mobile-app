@@ -34,6 +34,7 @@ class AppAssets {
   static const evelyn = "${imagesDir}evelyn.png";
   static const trustPayee = "${imagesDir}trust_payee.png";
   static const appbarLogo = "${imagesDir}appbarlogo.png";
+  static const appbarLogoDark = "${imagesDir}appbarlogodark.png";
   static const registrationImage = "${imagesDir}registrationimage.png";
   static const greenplasticcard = "${imagesDir}greenplasticcard.png";
   //app_icons
