@@ -148,14 +148,16 @@ class SignUpRegisteredBusinessAddressScreen extends ConsumerWidget {
                     hintText: getTranslated('address_line_01', context),
                     hintStyle:
                         AppTextstyle.bodyTextStyle(color: AppColors.grey),
-                    style: AppTextstyle.bodyTextStyle(color: AppColors.black),
+                    style: AppTextstyle.bodyTextStyle(
+                        color: context.theme.colorTheme.whiteColor),
                   ),
                   16.spaceY,
                   TextFieldWidget(
                     hintText: getTranslated('address_line_02', context),
                     hintStyle:
                         AppTextstyle.bodyTextStyle(color: AppColors.grey),
-                    style: AppTextstyle.bodyTextStyle(color: AppColors.black),
+                    style: AppTextstyle.bodyTextStyle(
+                        color: context.theme.colorTheme.whiteColor),
                   ),
                   2.spaceY,
                   Text(
@@ -169,7 +171,8 @@ class SignUpRegisteredBusinessAddressScreen extends ConsumerWidget {
                     hintText: getTranslated('city', context),
                     hintStyle:
                         AppTextstyle.bodyTextStyle(color: AppColors.grey),
-                    style: AppTextstyle.bodyTextStyle(color: AppColors.black),
+                    style: AppTextstyle.bodyTextStyle(
+                        color: context.theme.colorTheme.whiteColor),
                   ),
                   16.spaceY,
                   const CountryAndMobileNoWidget(),

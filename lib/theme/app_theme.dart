@@ -33,6 +33,7 @@ class AppTheme extends ThemeExtension<AppTheme> {
   final Color iconBgColor;
   final Color greyToTeal;
   final Color greenToTeal;
+  final Color whiteToTeal;
   final Color tealToYellow;
   final Color iconWithTitleColor;
   final Color cardColor;
@@ -102,6 +103,7 @@ class AppTheme extends ThemeExtension<AppTheme> {
     this.iconBgColor = AppColors.halfWhite,
     this.greyToTeal = AppColors.halfWhite,
     this.greenToTeal = AppColors.grassGreen,
+    this.whiteToTeal = AppColors.tealColor,
     this.tealToYellow = AppColors.yellowGreen,
     this.iconWithTitleColor = AppColors.black,
     this.cardColor = AppColors.black,
@@ -172,6 +174,7 @@ class AppTheme extends ThemeExtension<AppTheme> {
         iconBgColor: AppColors.tealColor,
         greyToTeal: AppColors.tealColor,
         greenToTeal: AppColors.tealColor,
+        whiteToTeal: AppColors.white,
         tealToYellow: AppColors.tealColor,
         iconWithTitleColor: AppColors.white,
         cardColor: AppColors.white,

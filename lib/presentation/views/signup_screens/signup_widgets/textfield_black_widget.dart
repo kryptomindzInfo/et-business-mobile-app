@@ -24,14 +24,16 @@ class TextFieldBlackWidget extends ConsumerWidget {
       height: 35.h,
       child: TextFormField(
         onChanged: onChanged,
-        style: AppTextstyle.bodyTextStyle(color: AppColors.white),
+        style: AppTextstyle.bodyTextStyle(
+            color: context.theme.colorTheme.whiteColor),
         decoration: InputDecoration(
           // border: OutlineInputBorder(
           //   borderRadius: BorderRadius.circular(28.0),
           // ),
-          contentPadding: EdgeInsets.symmetric(
+          contentPadding: const EdgeInsets.symmetric(
               // horizontal: 90.w,
               vertical: 9),
+          // contentPadding: const EdgeInsets.only(bottom: 8),
           // filled: true,
           disabledBorder: InputBorder.none,
           enabledBorder: InputBorder.none,

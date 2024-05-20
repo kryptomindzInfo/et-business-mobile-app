@@ -56,7 +56,7 @@ class SignUpCreatePassword extends ConsumerWidget {
                             ref.watch(signUpStateProvider).isObscured
                                 ? Icons.visibility_off
                                 : Icons.visibility,
-                            color: AppColors.white,
+                            color: context.theme.colorTheme.whiteColor,
                           ),
                           // contentPadding: EdgeInsets.all(0),
                           // suffix: Icon(Icons.remove_red_eye),

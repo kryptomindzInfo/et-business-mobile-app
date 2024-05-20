@@ -47,7 +47,7 @@ class SignUpDescribeBusinessActivityScreen extends ConsumerWidget {
                 ),
                 48.spaceY,
                 TextFieldWidget(
-                  style: const TextStyle(color: Colors.white),
+                  style: TextStyle(color: context.theme.colorTheme.whiteColor),
                   controller:
                       ref.read(signUpStateProvider).businessActivityController,
                   hintText: getTranslated('description', context),

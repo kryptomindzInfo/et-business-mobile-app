@@ -56,7 +56,7 @@ class CapturedImageOfDocument extends ConsumerWidget {
               height: 48,
               title: getTranslated("take_picture", context),
               titleColor: context.theme.colorTheme.buttonTitleColor,
-              mainButtonColor: context.theme.colorTheme.whiteButtonColor,
+              mainButtonColor: context.theme.colorTheme.whiteToTeal,
               onpress: params.onPressTakeNewPic,
               // () async {
               //   File? image = await showCapture(

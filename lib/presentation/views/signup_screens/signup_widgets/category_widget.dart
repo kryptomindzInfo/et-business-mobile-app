@@ -37,9 +37,9 @@ class CategoryWidget extends ConsumerWidget {
             ),
           ),
           8.spaceX,
-          const Icon(
+          Icon(
             Icons.arrow_forward_ios,
-            color: AppColors.white,
+            color: context.theme.colorTheme.whiteColor,
           ),
         ],
       ),

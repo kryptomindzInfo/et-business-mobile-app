@@ -137,14 +137,16 @@ class SignUpUserHomeAddressScreen extends ConsumerWidget {
                     hintText: getTranslated('address_line_01', context),
                     hintStyle:
                         AppTextstyle.bodyTextStyle(color: AppColors.grey),
-                    style: AppTextstyle.bodyTextStyle(color: AppColors.black),
+                    style: AppTextstyle.bodyTextStyle(
+                        color: context.theme.colorTheme.whiteColor),
                   ),
                   16.spaceY,
                   TextFieldWidget(
                     hintText: getTranslated('address_line_01', context),
                     hintStyle:
                         AppTextstyle.bodyTextStyle(color: AppColors.grey),
-                    style: AppTextstyle.bodyTextStyle(color: AppColors.black),
+                    style: AppTextstyle.bodyTextStyle(
+                        color: context.theme.colorTheme.whiteColor),
                   ),
                   4.spaceY,
                   Text(
@@ -158,7 +160,8 @@ class SignUpUserHomeAddressScreen extends ConsumerWidget {
                     hintText: getTranslated('city', context),
                     hintStyle:
                         AppTextstyle.bodyTextStyle(color: AppColors.grey),
-                    style: AppTextstyle.bodyTextStyle(color: AppColors.black),
+                    style: AppTextstyle.bodyTextStyle(
+                        color: context.theme.colorTheme.whiteColor),
                   ),
                 ],
               ),
