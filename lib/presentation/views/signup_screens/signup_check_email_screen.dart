@@ -2,6 +2,7 @@ import 'package:etbank_business_app/constants/app_textstyle.dart';
 import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/navigation/navigation.dart';
+import 'package:etbank_business_app/presentation/views/common_widgets/parent_theme_scaffold.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_email_otp_code_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_widgets/image_screen_widget.dart';
 import 'package:etbank_business_app/resources/localization/language_constrants.dart';
@@ -18,47 +19,49 @@ class SignUpCheckEmailScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return ImageScreenWidget(
-      title: 'check_email_title',
-      subtitle: 'check_email_subtitle',
-      image: AppAssets.checkEmailImage,
-      isLogo: true,
-      isEmailArrivedText: true,
-      buttons: [
-        SizedBox(
-          height: 48.h,
-          width: 327.w,
-          child: PrimaryButton(
-            color: context.theme.colorTheme.buttonColor,
-            text: Text(
-              getTranslated('go_to_inbox', context),
-              style: AppTextstyle.bodyTextStyle(
-                  color: context.theme.colorTheme.blackColor,
-                  fontSize: 16,
-                  fontWeight: FontWeight.w500),
+    return ParentThemeScaffold(
+      child: ImageScreenWidget(
+        title: 'check_email_title',
+        subtitle: 'check_email_subtitle',
+        image: AppAssets.checkEmailImage,
+        isLogo: true,
+        isEmailArrivedText: true,
+        buttons: [
+          SizedBox(
+            height: 48.h,
+            width: 327.w,
+            child: PrimaryButton(
+              color: context.theme.colorTheme.buttonColor,
+              text: Text(
+                getTranslated('go_to_inbox', context),
+                style: AppTextstyle.bodyTextStyle(
+                    color: context.theme.colorTheme.blackColor,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500),
+              ),
+              onPressed: () {},
             ),
-            onPressed: () {},
           ),
-        ),
-        16.spaceY,
-        SizedBox(
-          height: 48.h,
-          width: 327.w,
-          child: PrimaryButton(
-            color: context.theme.colorTheme.normallyUsedTealColor,
-            text: Text(
-              getTranslated('enter_code_manually', context),
-              style: AppTextstyle.bodyTextStyle(
-                  color: context.theme.colorTheme.buttonHalfWhiteText,
-                  fontSize: 16,
-                  fontWeight: FontWeight.w500),
+          16.spaceY,
+          SizedBox(
+            height: 48.h,
+            width: 327.w,
+            child: PrimaryButton(
+              color: context.theme.colorTheme.normallyUsedTealColor,
+              text: Text(
+                getTranslated('enter_code_manually', context),
+                style: AppTextstyle.bodyTextStyle(
+                    color: context.theme.colorTheme.buttonHalfWhiteText,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500),
+              ),
+              onPressed: () {
+                Navigation.pushNamed(SignUpEmailOTPCodeScreen.routeName);
+              },
             ),
-            onPressed: () {
-              Navigation.pushNamed(SignUpEmailOTPCodeScreen.routeName);
-            },
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

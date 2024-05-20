@@ -21,7 +21,7 @@ class GetStartedSection extends ConsumerWidget {
       // height: 84,
       width: double.infinity,
       decoration: BoxDecoration(
-        color: AppColors.tealColor,
+        color: context.theme.colorTheme.tealToYellow,
         borderRadius: borderRadius ??
             const BorderRadius.only(
               bottomLeft: Radius.circular(28),
@@ -39,15 +39,15 @@ class GetStartedSection extends ConsumerWidget {
               child: Text(
                 title ?? getTranslated("free_instant_transfer", context),
                 style: AppTextstyle.bodyTextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.normal,
-                  overflow: TextOverflow.clip,
-                  color:
-                      context.theme.colorTheme.normalTextColor.withOpacity(0.5),
-                ),
+                    fontSize: 14,
+                    fontWeight: FontWeight.normal,
+                    overflow: TextOverflow.clip,
+                    color: AppColors.black),
               ),
             ),
             GetStartedButton(
+              color: context.theme.colorTheme.yellowToBlackish,
+              titleColor: context.theme.colorTheme.bottomSheetColor,
               onpress: onpress ??
                   () => Navigation.pushNamed(
                       ReferBusinessShareLinkScreen.routeName),

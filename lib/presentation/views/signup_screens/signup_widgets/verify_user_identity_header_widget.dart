@@ -2,20 +2,21 @@ import 'package:etbank_business_app/constants/app_textstyle.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
 import '../../../../constants/app_colors.dart';
 
 class VerifyUserIdentityHeaderWidget extends ConsumerWidget {
   final String? title;
   final String? description;
   final String imageicon;
+  final Color? imageiconColor;
   final EdgeInsetsGeometry? edgeinsets;
   const VerifyUserIdentityHeaderWidget(
       {super.key,
       this.title,
       this.description,
       required this.imageicon,
-      this.edgeinsets});
+      this.edgeinsets,
+      this.imageiconColor});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -34,6 +35,7 @@ class VerifyUserIdentityHeaderWidget extends ConsumerWidget {
                   Navigator.pop(context);
                 },
                 child: Image.asset(
+                  color: imageiconColor,
                   imageicon,
                   width: 25.12,
                   height: 17.94,

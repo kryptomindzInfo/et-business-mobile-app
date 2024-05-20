@@ -4,7 +4,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class IconContainer extends ConsumerWidget {
   final String? image;
-  const IconContainer({super.key, this.image});
+  final Color? bgColor;
+  const IconContainer({super.key, this.image, this.bgColor});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -13,7 +14,7 @@ class IconContainer extends ConsumerWidget {
       width: 38,
       decoration: BoxDecoration(
           shape: BoxShape.circle,
-          color: context.theme.colorTheme.iconBgColor,
+          color: bgColor ?? context.theme.colorTheme.iconBgColor,
           image: DecorationImage(image: AssetImage(image!), scale: 2)),
     );
   }

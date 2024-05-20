@@ -1,6 +1,7 @@
 import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/app_common_appbar.dart';
+import 'package:etbank_business_app/presentation/views/common_widgets/parent_theme_scaffold.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/business_details/business_details_widgets/get_more_business_main_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -11,15 +12,17 @@ class GetMoreFromBusinessScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return Scaffold(
-      backgroundColor: context.theme.colorTheme.backgroundColor,
-      appBar: const CommonAppBar(
-        etBankLogo: true,
-      ),
-      body: Padding(
-        padding: const EdgeInsets.only(left: 20, right: 20),
-        child: Column(
-          children: [40.spaceY, GetMoreBusinessMainCard()],
+    return ParentThemeScaffold(
+      child: Scaffold(
+        backgroundColor: context.theme.colorTheme.backgroundColor,
+        appBar: const CommonAppBar(
+          etBankLogo: true,
+        ),
+        body: Padding(
+          padding: const EdgeInsets.only(left: 20, right: 20),
+          child: Column(
+            children: [40.spaceY, GetMoreBusinessMainCard()],
+          ),
         ),
       ),
     );

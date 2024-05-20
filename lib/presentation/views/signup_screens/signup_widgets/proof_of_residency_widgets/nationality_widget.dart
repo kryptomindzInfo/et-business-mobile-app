@@ -76,7 +76,8 @@ class NationalityWidget extends ConsumerWidget {
               InkWell(
                 onTap: () {
                   showModalBottomSheet(
-                      backgroundColor: AppColors.black,
+                      backgroundColor:
+                          context.theme.colorTheme.bottomSheetColor,
                       isScrollControlled: true,
                       context: context,
                       builder: (context) {

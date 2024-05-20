@@ -54,7 +54,8 @@ class DirectorButtonWidget extends ConsumerWidget {
               title,
               style: titleTextStyle ??
                   AppTextstyle.bodyTextStyle(
-                      color: context.theme.colorTheme.whiteColor,
+                      color: AppColors.white,
+                      // color: context.theme.colorTheme.whiteColor,
                       fontSize: 16.sp),
             ),
           ],

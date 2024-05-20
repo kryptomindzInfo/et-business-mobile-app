@@ -22,25 +22,23 @@ class CommonIconTitleIconButton extends ConsumerWidget {
     return InkWell(
       onTap: onpress,
       child: Container(
-        margin: EdgeInsets.only(left: 10, right: 10),
+        margin: const EdgeInsets.only(left: 10, right: 10),
         height: 50,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Container(
-              child: Row(
-                children: [
-                  if (iconImage != null) IconContainer(image: iconImage!),
-                  if (iconImage != null) 10.spaceX,
-                  Text(
-                    title!,
-                    style: AppTextstyle.bodyTextStyle(
-                        color: context.theme.colorTheme.headerDescriptionColor,
-                        fontSize: 16,
-                        fontWeight: FontWeight.normal),
-                  ),
-                ],
-              ),
+            Row(
+              children: [
+                if (iconImage != null) IconContainer(image: iconImage!),
+                if (iconImage != null) 10.spaceX,
+                Text(
+                  title!,
+                  style: AppTextstyle.bodyTextStyle(
+                      color: context.theme.colorTheme.headerDescriptionColor,
+                      fontSize: 16,
+                      fontWeight: FontWeight.normal),
+                ),
+              ],
             ),
             isForwardIcon
                 ? Icon(
@@ -48,7 +46,7 @@ class CommonIconTitleIconButton extends ConsumerWidget {
                     color: context.theme.colorTheme.headerDescriptionColor,
                     size: 18,
                   )
-                : SizedBox()
+                : const SizedBox()
           ],
         ),
       ),

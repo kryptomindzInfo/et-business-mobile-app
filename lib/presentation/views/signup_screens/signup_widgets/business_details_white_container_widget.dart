@@ -33,7 +33,7 @@ class BusinessDetailsWhiteContainerWidet extends ConsumerWidget {
       onTap: onTap,
       child: Container(
         decoration: BoxDecoration(
-            color: context.theme.colorTheme.transparentToColor,
+            color: context.theme.colorTheme.businessDetailsContainer,
             border: Border.all(
                 color: borderColor ?? context.theme.colorTheme.borderColor),
             borderRadius: const BorderRadius.all(

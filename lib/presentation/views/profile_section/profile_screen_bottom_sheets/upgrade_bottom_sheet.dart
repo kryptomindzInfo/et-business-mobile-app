@@ -1,4 +1,5 @@
 import 'package:etbank_business_app/constants/app_colors.dart';
+import 'package:etbank_business_app/constants/app_textstyle.dart';
 import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/header_icon_with_text.dart';
@@ -27,9 +28,9 @@ class UpgradeBottomSheet extends ConsumerWidget {
         profileProviderWatch.upgradeData;
     return Container(
       height: MediaQuery.of(context).size.height / 1.05,
-      decoration: const BoxDecoration(
-        color: AppColors.black,
-        borderRadius: BorderRadius.only(
+      decoration: BoxDecoration(
+        color: context.theme.colorTheme.bottomSheetColor,
+        borderRadius: const BorderRadius.only(
             topLeft: Radius.circular(24), topRight: Radius.circular(24)),
       ),
       child: SingleChildScrollView(
@@ -67,7 +68,7 @@ class UpgradeBottomSheet extends ConsumerWidget {
                           : context.theme.colorTheme.chipsColor,
                       titleColor: index == profileProviderWatch.selectedPlan
                           ? context.theme.colorTheme.blackColor
-                          : context.theme.colorTheme.whiteColor,
+                          : AppColors.white,
                     ),
                   );
                 }).toList(),
@@ -83,7 +84,7 @@ class UpgradeBottomSheet extends ConsumerWidget {
               const SeeAllCommonWidget("Get more from your plan", false),
               16.spaceY,
               InfoCardCommonWidget(
-                color: AppColors.black,
+                color: context.theme.colorTheme.bottomSheetColor,
                 child: Column(
                   children: [
                     ...(upgradePlanslist[profileProviderWatch.selectedPlan]
@@ -102,6 +103,7 @@ class UpgradeBottomSheet extends ConsumerWidget {
                         color: context.theme.colorTheme.buttonColor,
                         text: Text(
                           "Get Grow for £${upgradePlanslist[profileProviderWatch.selectedPlan]["price"]} Free",
+                          style: AppTextstyle.bodyTextStyle(fontSize: 16),
                           // style:
                           //     TextStyle(decoration: TextDecoration.lineThrough),
                         ),

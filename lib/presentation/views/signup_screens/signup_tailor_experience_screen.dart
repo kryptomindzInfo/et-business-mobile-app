@@ -1,6 +1,7 @@
 import 'package:etbank_business_app/constants/app_textstyle.dart';
 import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/navigation/navigation.dart';
+import 'package:etbank_business_app/presentation/views/common_widgets/parent_theme_scaffold.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_business_details_screen.dart';
 import 'package:etbank_business_app/resources/localization/language_constrants.dart';
 import 'package:flutter/material.dart';
@@ -17,30 +18,32 @@ class SignUpTailorExperienceScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return ImageScreenWidget(
-      title: 'tailor_experience_title',
-      subtitle: 'tailor_experience_subtitle',
-      image: AppAssets.tailorExperienceImage,
-      isLogo: true,
-      buttons: [
-        SizedBox(
-          height: 48.h,
-          width: 327.w,
-          child: PrimaryButton(
-            color: context.theme.colorTheme.buttonColor,
-            text: Text(
-              getTranslated('continue', context),
-              style: AppTextstyle.bodyTextStyle(
-                  color: context.theme.colorTheme.blackColor,
-                  fontSize: 16,
-                  fontWeight: FontWeight.w500),
+    return ParentThemeScaffold(
+      child: ImageScreenWidget(
+        title: 'tailor_experience_title',
+        subtitle: 'tailor_experience_subtitle',
+        image: AppAssets.tailorExperienceImage,
+        isLogo: true,
+        buttons: [
+          SizedBox(
+            height: 48.h,
+            width: 327.w,
+            child: PrimaryButton(
+              color: context.theme.colorTheme.buttonColor,
+              text: Text(
+                getTranslated('continue', context),
+                style: AppTextstyle.bodyTextStyle(
+                    color: context.theme.colorTheme.blackColor,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500),
+              ),
+              onPressed: () {
+                Navigation.pushNamed(SignUpBusinessDetailsScreen.routeName);
+              },
             ),
-            onPressed: () {
-              Navigation.pushNamed(SignUpBusinessDetailsScreen.routeName);
-            },
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

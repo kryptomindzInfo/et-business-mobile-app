@@ -78,7 +78,8 @@ class GetMoreBusinessMainCard extends ConsumerWidget {
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(28),
               // color: AppColors.transparent,
-              color: const Color(0xff0D2226).withOpacity(0.6),
+              color: context.theme.colorTheme.greenToTeal.withOpacity(0.7),
+              // color: const Color(0xff0D2226).withOpacity(0.6),
               border: Border.all(color: context.theme.colorTheme.borderColor)),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
@@ -102,7 +103,7 @@ class GetMoreBusinessMainCard extends ConsumerWidget {
                   style: AppTextstyle.headingTextStyle(
                       fontSize: 32,
                       fontWeight: FontWeight.bold,
-                      color: context.theme.colorTheme.normalTextColor,
+                      color: AppColors.white,
                       overflow: TextOverflow.clip),
                 ),
               ),

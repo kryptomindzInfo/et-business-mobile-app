@@ -14,6 +14,7 @@ class ProviderValidDocWidget extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return CommonWhiteFlexibleCard(
+      color: context.theme.colorTheme.businessDetailsContainer,
       padding: const EdgeInsets.only(left: 16, right: 10, bottom: 20, top: 20),
       widget: Column(
         children: [

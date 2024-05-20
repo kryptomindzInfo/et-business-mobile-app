@@ -104,7 +104,7 @@ class HeaderIconWithTitle extends ConsumerWidget {
                   imageicon!,
                   width: 25.12,
                   height: 17.94,
-                  color: context.theme.colorTheme.blackAndWhite,
+                  color: context.theme.colorTheme.whiteColor,
                 ),
               ),
             ],
@@ -130,7 +130,7 @@ class HeaderIconWithTitle extends ConsumerWidget {
                 const ProfilePicWidget(
                   image: AppAssets.profileicon,
                 ),
-              if (trailing != null) trailing ?? SizedBox(),
+              if (trailing != null) trailing ?? const SizedBox(),
             ],
           ),
 

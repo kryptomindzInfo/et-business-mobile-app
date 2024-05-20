@@ -36,7 +36,8 @@ class CheckBoxWidget extends ConsumerWidget {
             title,
             style: titleTextStyle ??
                 AppTextstyle.bodyTextStyle(
-                    color: AppColors.white, fontSize: 16.sp),
+                    color: context.theme.colorTheme.whiteColor,
+                    fontSize: 16.sp),
             overflow: TextOverflow.clip,
           ),
         ),

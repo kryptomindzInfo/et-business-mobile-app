@@ -45,6 +45,7 @@ class SignUpVerificationCard extends ConsumerWidget {
                   child: Image.asset(
                     imageIcon!,
                     scale: 2.10,
+                    // color: context.theme.colorTheme.whiteColor,
                   ),
                 ),
               ),

@@ -5,6 +5,7 @@ import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/navigation/navigation.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/app_common_appbar.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/common_button.dart';
+import 'package:etbank_business_app/presentation/views/common_widgets/parent_theme_scaffold.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/white_flexible_card.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_confirm_delivery_address.dart';
 import 'package:etbank_business_app/resources/localization/language_constrants.dart';
@@ -17,58 +18,66 @@ class GetPlasticCardScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return Scaffold(
-      backgroundColor: context.theme.colorTheme.backgroundColor,
-      appBar: const CommonAppBar(
-        topPadding: 20,
-        etBankLogo: true,
-      ),
-      body: Padding(
-        padding: const EdgeInsets.only(left: 20, right: 20),
-        child: Column(
-          children: [
-            20.spaceY,
-            CommonWhiteFlexibleCard(
-              widget: Column(
-                children: [
-                  Image.asset(
-                    AppAssets.greenplasticcard,
-                    scale: 3,
+    return ParentThemeScaffold(
+      child: Padding(
+        padding: const EdgeInsets.only(top: 50),
+        child: Scaffold(
+          backgroundColor: context.theme.colorTheme.backgroundColor,
+          appBar: const CommonAppBar(
+            topPadding: 00,
+            etBankLogo: true,
+          ),
+          body: Padding(
+            padding: const EdgeInsets.only(left: 20, right: 20),
+            child: Column(
+              children: [
+                20.spaceY,
+                CommonWhiteFlexibleCard(
+                  color: context.theme.colorTheme.bottomSheetColor,
+                  widget: Column(
+                    children: [
+                      Image.asset(
+                        AppAssets.greenplasticcard,
+                        scale: 3,
+                      ),
+                      60.spaceY,
+                      Text(
+                        getTranslated("plastic_card", context),
+                        style: AppTextstyle.headingTextStyle(
+                            color: context.theme.colorTheme.normalTextColor,
+                            fontWeight: FontWeight.w600,
+                            fontSize: 16),
+                      ),
+                      5.spaceY,
+                      Text(
+                        getTranslated("card_speciality", context),
+                        textAlign: TextAlign.center,
+                        style: AppTextstyle.headingTextStyle(
+                            color: context.theme.colorTheme.whiteColor
+                                .withOpacity(0.5),
+                            fontWeight: FontWeight.normal,
+                            fontSize: 14,
+                            overflow: TextOverflow.clip),
+                      ),
+                      // 20.spaceY,
+                    ],
                   ),
-                  60.spaceY,
-                  Text(
-                    getTranslated("plastic_card", context),
-                    style: AppTextstyle.headingTextStyle(
-                        color: context.theme.colorTheme.normalTextColor,
-                        fontWeight: FontWeight.w600,
-                        fontSize: 16),
-                  ),
-                  5.spaceY,
-                  Text(
-                    getTranslated("card_speciality", context),
-                    textAlign: TextAlign.center,
-                    style: AppTextstyle.headingTextStyle(
-                        color: context.theme.colorTheme.buttonHalfWhiteText,
-                        fontWeight: FontWeight.normal,
-                        fontSize: 14,
-                        overflow: TextOverflow.clip),
-                  ),
-                  // 20.spaceY,
-                ],
-              ),
-              // padding: const EdgeInsets.only(top: 30, right: 12, left: 12),
+                  // padding: const EdgeInsets.only(top: 30, right: 12, left: 12),
+                ),
+                78.spaceY,
+                CommonButton(
+                  width: 288,
+                  title: getTranslated("get_plastic_card", context),
+                  mainButtonColor: context.theme.colorTheme.buttonColor,
+                  titleColor: context.theme.colorTheme.buttonTitleColor,
+                  onpress: () {
+                    Navigation.pushNamed(
+                        SignupConfirmDeliveryAddress.routeName);
+                  },
+                )
+              ],
             ),
-            78.spaceY,
-            CommonButton(
-              width: 288,
-              title: getTranslated("get_plastic_card", context),
-              mainButtonColor: context.theme.colorTheme.buttonColor,
-              titleColor: context.theme.colorTheme.buttonTitleColor,
-              onpress: () {
-                Navigation.pushNamed(SignupConfirmDeliveryAddress.routeName);
-              },
-            )
-          ],
+          ),
         ),
       ),
     );
