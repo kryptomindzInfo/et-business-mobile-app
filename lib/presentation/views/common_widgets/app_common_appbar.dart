@@ -1,8 +1,10 @@
 import 'package:etbank_business_app/extensions/build_context.dart';
+import 'package:etbank_business_app/providers/theme_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../constants/app_assets.dart';
 
-class CommonAppBar extends StatelessWidget implements PreferredSizeWidget {
+class CommonAppBar extends ConsumerWidget implements PreferredSizeWidget {
   final bool? etBankLogo;
   final Widget? widget;
   final Widget? leading;
@@ -16,7 +18,7 @@ class CommonAppBar extends StatelessWidget implements PreferredSizeWidget {
       this.leading,
       this.actions});
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context,WidgetRef ref) {
     // ThemeData theme = Theme.of(context);
     return Padding(
       padding: EdgeInsets.only(
@@ -27,7 +29,7 @@ class CommonAppBar extends StatelessWidget implements PreferredSizeWidget {
         actions: actions,
         title: etBankLogo == true
             ? Image.asset(
-                AppAssets.appbarLogo,
+               ref.watch(themeProvider).themeMode==ThemeMode.dark? AppAssets.appbarLogo:AppAssets.appbarLogoDark,
                 height: 46,
                 width: 154,
               )
