@@ -1,9 +1,11 @@
 import 'package:etbank_business_app/constants/app_colors.dart';
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/common_button.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/header_icon_with_text.dart';
 import 'package:etbank_business_app/resources/localization/language_constrants.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class BlackCommonBottomSheet extends ConsumerWidget {
@@ -25,9 +27,9 @@ class BlackCommonBottomSheet extends ConsumerWidget {
     return Container(
       height: 750,
       width: double.infinity,
-      decoration: const BoxDecoration(
-        color: AppColors.black,
-        borderRadius: BorderRadius.only(
+      decoration: BoxDecoration(
+        color: context.theme.colorTheme.bottomSheetColor,
+        borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(24),
           topRight: Radius.circular(24),
         ),
@@ -38,9 +40,12 @@ class BlackCommonBottomSheet extends ConsumerWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             36.spaceY,
-            const Icon(
-              Icons.close,
-              color: AppColors.white,
+            GestureDetector(
+              onTap: () => Navigator.pop(context),
+              child: Icon(
+                Icons.close,
+                color: context.theme.colorTheme.whiteColor,
+              ),
             ),
             42.spaceY,
             HeaderIconWithTitle(

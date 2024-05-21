@@ -33,6 +33,7 @@ class TeamMemebersWidget extends ConsumerWidget {
         ),
         10.spaceY,
         CommonWhiteFlexibleCard(
+          color: context.theme.colorTheme.businessDetailsContainer,
           widget: Column(
             children: [
               const InfoTextWithIcon(

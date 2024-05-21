@@ -2,11 +2,11 @@ import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/navigation/navigation.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/app_common_widgets.dart';
+import 'package:etbank_business_app/presentation/views/common_widgets/parent_theme_scaffold.dart';
 import 'package:etbank_business_app/presentation/views/invoice_and_request_screens/billing_details_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../constants/app_assets.dart';
 import '../../../constants/app_textstyle.dart';
 import '../../../providers/invoice_request_provider.dart';
 import '../../../providers/sending_currency_provider.dart';
@@ -26,68 +26,70 @@ class AddNewCustomerScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return BackgroundImageWidget(
-      child: Scaffold(
-        backgroundColor: AppColors.transparent,
-        appBar: const CommonAppBar(
-          etBankLogo: true,
-        ),
-        body: Padding(
-          padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+    return ParentThemeScaffold(
+      child: BackgroundImageWidget(
+        child: Scaffold(
+          backgroundColor: AppColors.transparent,
+          appBar: const CommonAppBar(
+            etBankLogo: true,
+          ),
+          body: Padding(
+            padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                HeaderIconWithTitle(
+                  title: getTranslated('add_new_customer', context),
+                  // imageicon: AppAssets.arrowLeft,
+                ),
+                8.spaceY,
+                AccountDetailsButtonsWidget(
+                  provider: invoiceRequestProvider,
+                ),
+                24.spaceY,
+                TextFieldWidget(
+                  hintText: getTranslated('email', context),
+                  hintStyle: AppTextstyle.bodyTextStyle(color: AppColors.grey),
+                ),
+                16.spaceY,
+                TextFieldWidget(
+                  hintText: getTranslated('full_name', context),
+                  hintStyle: AppTextstyle.bodyTextStyle(color: AppColors.grey),
+                ),
+                24.spaceY,
+                UserPersonalDetailsWidget(
+                  readOnly: true,
+                  enableInteraction: false,
+                  controller:
+                      ref.watch(sendingCurrencyProvider).countryController,
+                  title: getTranslated('*optional', context),
+                  hint: getTranslated('VAT_number', context),
+                  onTap: () {},
+                ),
+              ],
+            ),
+          ),
+          bottomNavigationBar: ButtonBottomNavigationWidget(
             children: [
-              HeaderIconWithTitle(
-                title: getTranslated('add_new_customer', context),
-                // imageicon: AppAssets.arrowLeft,
-              ),
-              8.spaceY,
-              AccountDetailsButtonsWidget(
-                provider: invoiceRequestProvider,
-              ),
-              24.spaceY,
-              TextFieldWidget(
-                hintText: getTranslated('email', context),
-                hintStyle: AppTextstyle.bodyTextStyle(color: AppColors.grey),
-              ),
-              16.spaceY,
-              TextFieldWidget(
-                hintText: getTranslated('full_name', context),
-                hintStyle: AppTextstyle.bodyTextStyle(color: AppColors.grey),
-              ),
-              24.spaceY,
-              UserPersonalDetailsWidget(
-                readOnly: true,
-                enableInteraction: false,
-                controller:
-                    ref.watch(sendingCurrencyProvider).countryController,
-                title: getTranslated('*optional', context),
-                hint: getTranslated('VAT_number', context),
-                onTap: () {},
+              SizedBox(
+                height: 48.h,
+                width: 327.w,
+                child: PrimaryButton(
+                  color: AppColors.yellowGreen,
+                  text: Text(
+                    getTranslated('continue', context),
+                    style: AppTextstyle.bodyTextStyle(
+                        color: AppColors.black,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500),
+                  ),
+                  onPressed: () {
+                    Navigation.pushNamed(BillingDetailsScreen.routeName);
+                  },
+                ),
               ),
             ],
           ),
-        ),
-        bottomNavigationBar: ButtonBottomNavigationWidget(
-          children: [
-            SizedBox(
-              height: 48.h,
-              width: 327.w,
-              child: PrimaryButton(
-                color: AppColors.yellowGreen,
-                text: Text(
-                  getTranslated('continue', context),
-                  style: AppTextstyle.bodyTextStyle(
-                      color: AppColors.black,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500),
-                ),
-                onPressed: () {
-                  Navigation.pushNamed(BillingDetailsScreen.routeName);
-                },
-              ),
-            ),
-          ],
         ),
       ),
     );

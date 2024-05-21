@@ -20,7 +20,7 @@ class AccountsCard extends ConsumerWidget {
       padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 18),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
-          color: context.theme.colorTheme.transparentToColor,
+          color: context.theme.colorTheme.businessDetailsContainer,
           border: Border.all(color: context.theme.colorTheme.borderColor)),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,

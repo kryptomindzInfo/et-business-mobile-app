@@ -6,6 +6,8 @@ import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/navigation/navigation.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/app_common_widgets.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/header_icon_with_text.dart';
+import 'package:etbank_business_app/presentation/views/common_widgets/icon_container.dart';
+import 'package:etbank_business_app/presentation/views/common_widgets/parent_theme_scaffold.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/primary_button.dart';
 import 'package:etbank_business_app/presentation/views/converting_currency/currency_converter_screen_widgets.dart/currency_exchange_textfield.dart';
 import 'package:etbank_business_app/presentation/views/converting_currency/rates_tab_section/currency_sell_screen.dart';
@@ -21,69 +23,77 @@ class CurrencyExchangeConverterScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return BackgroundImageWidget(
-      child: Scaffold(
-        backgroundColor: AppColors.transparent,
-        appBar: const CommonAppBar(
-          etBankLogo: true,
-        ),
-        body: Padding(
-          padding: const EdgeInsets.only(left: 20, right: 20),
-          child: Column(
-            children: [
-              const HeaderIconWithTitle(
-                // imageicon: AppAssets.arrowLeft,
-                title: "SELL GBP",
-                spaceBtw: 6,
-                greenDescription: "£1 = 1.3601",
-                fontsize: 31,
-              ),
-              17.spaceY,
-              Stack(
-                children: [
-                  Column(
-                    children: [
-                      10.spaceY,
-                      CurrencyExchangeTextfield(
-                        controller: ref
-                            .watch(currencyScreenProvider)
-                            .firstCurrencyController,
-                      ),
-                      5.spaceY,
-                      CurrencyExchangeTextfield(
-                        controller: ref
-                            .watch(currencyScreenProvider)
-                            .secondCurrencyController,
-                      ),
-                      50.spaceY,
-                    ],
-                  ),
-                  Positioned(
-                    left: 250,
-                    top: 95,
-                    child: Image.asset(
-                      AppAssets.convertericon,
-                      height: 32,
+    return ParentThemeScaffold(
+      child: BackgroundImageWidget(
+        child: Scaffold(
+          backgroundColor: AppColors.transparent,
+          appBar: const CommonAppBar(
+            etBankLogo: true,
+          ),
+          body: Padding(
+            padding: const EdgeInsets.only(left: 20, right: 20),
+            child: Column(
+              children: [
+                const HeaderIconWithTitle(
+                  // imageicon: AppAssets.arrowLeft,
+                  title: "SELL GBP",
+                  spaceBtw: 6,
+                  greenDescription: "£1 = 1.3601",
+                  fontsize: 31,
+                ),
+                17.spaceY,
+                Stack(
+                  children: [
+                    Column(
+                      children: [
+                        10.spaceY,
+                        CurrencyExchangeTextfield(
+                          controller: ref
+                              .watch(currencyScreenProvider)
+                              .firstCurrencyController,
+                        ),
+                        5.spaceY,
+                        CurrencyExchangeTextfield(
+                          controller: ref
+                              .watch(currencyScreenProvider)
+                              .secondCurrencyController,
+                        ),
+                        50.spaceY,
+                      ],
                     ),
-                  ),
-                ],
-              ),
-              PrimaryButton(
-                  minwidth: 288,
-                  color:
-                      ref.watch(currencyScreenProvider).activateButton == true
-                          ? context.theme.colorTheme.yellowGreenColor
-                          : AppColors.yellowGreen,
-                  text: Text(
-                    "Review Order",
-                    style: AppTextstyle.bodyTextStyle(
-                      color: context.theme.colorTheme.blackColor,
+                    Positioned(
+                      left: 250,
+                      top: 95,
+                      child: IconContainer(
+                        bgColor: context.theme.colorTheme.yellowToGreen,
+                        image: AppAssets.currencyExchange,
+                        scale: 1,
+                      ),
+                      //  Image.asset(
+                      //   AppAssets.convertericon,
+                      //   height: 32,
+                      //   color: context.theme.colorTheme.yellowToGreen,
+                      // ),
                     ),
-                  ),
-                  onPressed: () {
-                    Navigation.pushNamed(CurrencySellScreen.routeName);
-                  })
-            ],
+                  ],
+                ),
+                PrimaryButton(
+                    minwidth: 288,
+                    color:
+                        ref.watch(currencyScreenProvider).activateButton == true
+                            ? context.theme.colorTheme.yellowGreenColor
+                            : AppColors.yellowGreen,
+                    text: Text(
+                      "Review Order",
+                      style: AppTextstyle.bodyTextStyle(
+                        color: context.theme.colorTheme.blackColor,
+                      ),
+                    ),
+                    onPressed: () {
+                      Navigation.pushNamed(CurrencySellScreen.routeName);
+                    })
+              ],
+            ),
           ),
         ),
       ),

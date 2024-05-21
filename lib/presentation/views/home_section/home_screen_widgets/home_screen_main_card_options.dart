@@ -1,5 +1,6 @@
 import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
+import 'package:etbank_business_app/presentation/views/common_widgets/icon_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -22,10 +23,14 @@ class MainCardOption extends ConsumerWidget {
             height: 46,
             width: 46,
             decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: AppColors.black.withOpacity(0.28),
-                border: Border.all(color: context.theme.colorTheme.borderColor),
-                image: DecorationImage(image: AssetImage(image!), scale: 2)),
+              shape: BoxShape.circle,
+              color: context.theme.colorTheme.greenToTeal,
+              border: Border.all(color: context.theme.colorTheme.borderColor),
+              image: DecorationImage(
+                image: AssetImage(image!),
+                scale: 2,
+              ),
+            ),
             // child: Center(
             //   child: Image.asset(image!),
             // ),

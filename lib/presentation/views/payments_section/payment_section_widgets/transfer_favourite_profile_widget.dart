@@ -56,7 +56,7 @@ class TransferFavouriteProfileWidget extends ConsumerWidget {
             style: AppTextstyle.bodyTextStyle(
               fontSize: 16,
               fontWeight: FontWeight.bold,
-              color: context.theme.colorTheme.blackAndWhite,
+              color: context.theme.colorTheme.whiteColor,
             ),
           ),
         ],

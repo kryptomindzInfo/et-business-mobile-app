@@ -25,6 +25,7 @@ class ReferBusinessShareLinkMainCard extends ConsumerWidget {
         // crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           const IconContainer(
+            bgColor: AppColors.tealColor,
             image: AppAssets.contactpermission,
           ),
           15.spaceX,
@@ -37,7 +38,7 @@ class ReferBusinessShareLinkMainCard extends ConsumerWidget {
                 style: AppTextstyle.bodyTextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.w600,
-                    color: context.theme.colorTheme.titleColor),
+                    color: context.theme.colorTheme.yellowToGreen),
               ),
               6.spaceY,
               SizedBox(

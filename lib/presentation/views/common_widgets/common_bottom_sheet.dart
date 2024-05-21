@@ -37,7 +37,7 @@ showCommonModalSheet(BuildContext context, double height, Widget widget,
                 width: 40,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(30),
-                    color: AppColors.white),
+                    color: context.theme.colorTheme.whiteColor),
               ),
             ],
           ),

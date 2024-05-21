@@ -18,6 +18,7 @@ class AppTheme extends ThemeExtension<AppTheme> {
   final Color cardBorderColor;
   final Color boldTextColor;
   final Color yellowToBlackish;
+  final Color blackishToYellow;
   final Color normalTextColor;
   final Color buttonColor;
   final Color borderColor;
@@ -33,12 +34,18 @@ class AppTheme extends ThemeExtension<AppTheme> {
   final Color iconBgColor;
   final Color greyToTeal;
   final Color greenToTeal;
+  final Color yellowToGreen;
+  final Color whiteToYellow;
   final Color whiteToTeal;
+  final Color whiteToGreen;
   final Color tealToYellow;
   final Color iconWithTitleColor;
   final Color cardColor;
   final Color transparentToColor;
+  final Color transparentToGreen;
   final Color businessDetailsContainer;
+  final Color whiteTohalfWhite;
+  final Color whiteToGrey;
   final Color normalButtonsColor;
   final Color buttonDisabledColor;
   final Color indigoToColor;
@@ -88,6 +95,7 @@ class AppTheme extends ThemeExtension<AppTheme> {
     this.cardBorderColor = AppColors.tealColor,
     this.boldTextColor = AppColors.yellowGreen,
     this.yellowToBlackish = AppColors.blackish,
+    this.blackishToYellow = AppColors.yellowGreen,
     this.normalTextColor = AppColors.black,
     this.buttonColor = AppColors.yellowGreen,
     this.borderColor = AppColors.black,
@@ -103,12 +111,18 @@ class AppTheme extends ThemeExtension<AppTheme> {
     this.iconBgColor = AppColors.halfWhite,
     this.greyToTeal = AppColors.halfWhite,
     this.greenToTeal = AppColors.grassGreen,
+    this.yellowToGreen = AppColors.grassGreen,
+    this.whiteToYellow = AppColors.yellowGreen,
     this.whiteToTeal = AppColors.tealColor,
+    this.whiteToGreen = AppColors.grassGreen,
     this.tealToYellow = AppColors.yellowGreen,
     this.iconWithTitleColor = AppColors.black,
     this.cardColor = AppColors.black,
     this.transparentToColor = AppColors.black,
+    this.transparentToGreen = AppColors.grassGreen,
     this.businessDetailsContainer = AppColors.businessDetailsContainer,
+    this.whiteTohalfWhite = AppColors.businessDetailsContainer,
+    this.whiteToGrey = AppColors.iconGreyColor,
     this.normalButtonsColor = AppColors.black,
     this.buttonDisabledColor = AppColors.grey,
     this.indigoToColor = AppColors.indigo,
@@ -159,6 +173,7 @@ class AppTheme extends ThemeExtension<AppTheme> {
         cardBorderColor: AppColors.tealColor,
         boldTextColor: AppColors.yellowGreen,
         yellowToBlackish: AppColors.yellowGreen,
+        blackishToYellow: AppColors.blackish,
         normalTextColor: AppColors.white,
         buttonColor: AppColors.yellowGreen,
         borderColor: AppColors.tealColor,
@@ -174,12 +189,18 @@ class AppTheme extends ThemeExtension<AppTheme> {
         iconBgColor: AppColors.tealColor,
         greyToTeal: AppColors.tealColor,
         greenToTeal: AppColors.tealColor,
+        yellowToGreen: AppColors.yellowGreen,
+        whiteToYellow: AppColors.white,
         whiteToTeal: AppColors.white,
+        whiteToGreen: AppColors.white,
         tealToYellow: AppColors.tealColor,
         iconWithTitleColor: AppColors.white,
         cardColor: AppColors.white,
         transparentToColor: AppColors.transparent,
+        transparentToGreen: AppColors.transparent,
         businessDetailsContainer: AppColors.transparent,
+        whiteTohalfWhite: AppColors.white,
+        whiteToGrey: AppColors.white,
         normalButtonsColor: AppColors.tealColor,
         buttonDisabledColor: AppColors.grey,
         indigoToColor: AppColors.indigo,

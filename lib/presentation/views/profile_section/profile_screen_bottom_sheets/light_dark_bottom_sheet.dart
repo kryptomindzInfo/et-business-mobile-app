@@ -18,16 +18,16 @@ class ThemeBottomSheet extends ConsumerWidget {
       height: 310,
       margin: const EdgeInsets.only(left: 10, right: 10),
       decoration: BoxDecoration(
-          color: context.theme.colorTheme.darkWhiteThemesheetColor,
-          border: Border(
-            left: BorderSide(
-                width: 1, color: context.theme.colorTheme.borderColor),
-            top: BorderSide(
-                width: 1, color: context.theme.colorTheme.borderColor),
-            right: BorderSide(
-                width: 1, color: context.theme.colorTheme.borderColor),
-          ),
-          borderRadius: BorderRadius.only(
+          color: context.theme.colorTheme.bottomSheetColor,
+          // border: Border(
+          //   left: BorderSide(
+          //       width: 1, color: context.theme.colorTheme.borderColor),
+          //   top: BorderSide(
+          //       width: 1, color: context.theme.colorTheme.borderColor),
+          //   right: BorderSide(
+          //       width: 1, color: context.theme.colorTheme.borderColor),
+          // ),
+          borderRadius: const BorderRadius.only(
             topLeft: Radius.circular(20),
             topRight: Radius.circular(20),
           )),
@@ -40,8 +40,9 @@ class ThemeBottomSheet extends ConsumerWidget {
             height: 3.5,
             width: 40,
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(30),
-                color: AppColors.white),
+              borderRadius: BorderRadius.circular(30),
+              color: context.theme.colorTheme.whiteColor,
+            ),
           ),
           Padding(
             padding: const EdgeInsets.only(left: 15, top: 10),
@@ -51,7 +52,7 @@ class ThemeBottomSheet extends ConsumerWidget {
                   getTranslated("choose_theme", context),
                   style: AppTextstyle.bodyTextStyle(
                       fontSize: 16,
-                      color: AppColors.white,
+                      color: context.theme.colorTheme.whiteColor,
                       fontWeight: FontWeight.w600),
                 ),
               ],
@@ -71,7 +72,7 @@ class ThemeBottomSheet extends ConsumerWidget {
                     getTranslated("light", context),
                     style: AppTextstyle.bodyTextStyle(
                         fontSize: 16,
-                        color: AppColors.white,
+                        color: context.theme.colorTheme.whiteColor,
                         fontWeight: FontWeight.w600),
                   ),
                   Radio(
@@ -96,11 +97,36 @@ class ThemeBottomSheet extends ConsumerWidget {
                     getTranslated("dark", context),
                     style: AppTextstyle.bodyTextStyle(
                         fontSize: 16,
-                        color: AppColors.white,
+                        color: context.theme.colorTheme.whiteColor,
                         fontWeight: FontWeight.w600),
                   ),
                   Radio(
                     value: "dark",
+                    groupValue: ref.watch(profilescreenProvider).lightDark,
+                    onChanged: (val) {
+                      ref
+                          .read(profilescreenProvider)
+                          .changeLightAndDarkTheme(val!);
+                    },
+                    activeColor: AppColors.primaryColor,
+                  ),
+                ],
+              ),
+              Column(
+                children: [
+                  Image.asset(
+                    AppAssets.system,
+                    height: 170,
+                  ),
+                  Text(
+                    getTranslated("System", context),
+                    style: AppTextstyle.bodyTextStyle(
+                        fontSize: 16,
+                        color: context.theme.colorTheme.whiteColor,
+                        fontWeight: FontWeight.w600),
+                  ),
+                  Radio(
+                    value: "system",
                     groupValue: ref.watch(profilescreenProvider).lightDark,
                     onChanged: (val) {
                       ref

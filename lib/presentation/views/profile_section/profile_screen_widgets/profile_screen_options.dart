@@ -1,3 +1,4 @@
+import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/providers/profile_provider.dart';
 import 'package:flutter/material.dart';
@@ -30,7 +31,7 @@ class ProfileScreenOptionsWidget extends ConsumerWidget {
             onpress: item["ontap"],
             titleColor: index == 0
                 ? context.theme.colorTheme.blackColor
-                : context.theme.colorTheme.normalTextColor,
+                : AppColors.white,
           );
         },
       ),

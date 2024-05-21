@@ -1,6 +1,7 @@
 import 'package:etbank_business_app/constants/app_assets.dart';
 import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:etbank_business_app/constants/app_textstyle.dart';
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/navigation/navigation.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/header_icon_with_text.dart';
@@ -19,7 +20,7 @@ class CurrencyChartHeader extends ConsumerWidget {
           onTap: () {
             Navigation.pushNamed(CurrencyExchangeConverterScreen.routeName);
           },
-          child: Container(
+          child: SizedBox(
             width: 230,
             // color: Colors.red,
             child: Row(
@@ -29,21 +30,21 @@ class CurrencyChartHeader extends ConsumerWidget {
                   "GBP",
                   style: AppTextstyle.bodyTextStyle(
                       fontSize: 21,
-                      color: AppColors.white,
+                      color: context.theme.colorTheme.whiteColor,
                       fontWeight: FontWeight.normal),
                 ),
                 10.spaceX,
                 Image.asset(
                   AppAssets.greenrightarrow,
                   height: 15,
-                  color: AppColors.yellowGreen,
+                  color: context.theme.colorTheme.yellowToGreen,
                 ),
                 10.spaceX,
                 Text(
                   "USD",
                   style: AppTextstyle.bodyTextStyle(
                       fontSize: 21,
-                      color: AppColors.white,
+                      color: context.theme.colorTheme.whiteColor,
                       fontWeight: FontWeight.normal),
                 ),
               ],

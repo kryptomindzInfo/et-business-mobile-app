@@ -1,7 +1,9 @@
 import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:etbank_business_app/constants/app_textstyle.dart';
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/app_common_widgets.dart';
+import 'package:etbank_business_app/presentation/views/common_widgets/parent_theme_scaffold.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/white_flexible_card.dart';
 import 'package:etbank_business_app/presentation/views/invoice_and_request_screens/invoice_number_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_widgets/checkbox_widget.dart';
@@ -27,80 +29,89 @@ class AutomaticRemindersScreen extends ConsumerWidget {
     var invoiceRequestProviderW = ref.watch(invoiceRequestProvider);
     var invoiceRequestProviderR = ref.read(invoiceRequestProvider);
 
-    return BackgroundImageWidget(
-      child: Scaffold(
-        backgroundColor: AppColors.transparent,
-        appBar: const CommonAppBar(
-          etBankLogo: true,
-        ),
-        body: Padding(
-          padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              HeaderIconWithTitle(
-                title: getTranslated('automatic_reminders_title', context),
-                description:
-                    getTranslated('automatic_reminders_subtitle', context),
-                descriptionTextStyle: AppTextstyle.headingTextStyle(
-                    fontSize: 14,
-                    color: AppColors.grey,
-                    overflow: TextOverflow.clip),
-                // imageicon: AppAssets.arrowLeft,
-              ),
-              22.spaceY,
-              CommonWhiteFlexibleCard(
-                borderRadius: 8,
-                padding: const EdgeInsets.fromLTRB(6, 6, 6, 6),
-                widget: SwitchButtonWidget(
-                  value: invoiceRequestProviderW.sendAutomaticReminders,
-                  title: getTranslated('send_automatically_reminders', context),
-                  titleTextStyle: AppTextstyle.bodyTextStyle(
-                      fontSize: 16, color: AppColors.white),
-                  onChanged: (value) {
-                    invoiceRequestProviderR.toggleSendAutomaticReminders();
-                  },
+    return ParentThemeScaffold(
+      child: BackgroundImageWidget(
+        child: Scaffold(
+          backgroundColor: AppColors.transparent,
+          appBar: const CommonAppBar(
+            etBankLogo: true,
+          ),
+          body: Padding(
+            padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                HeaderIconWithTitle(
+                  title: getTranslated('automatic_reminders_title', context),
+                  description:
+                      getTranslated('automatic_reminders_subtitle', context),
+                  descriptionTextStyle: AppTextstyle.headingTextStyle(
+                      fontSize: 14,
+                      color: AppColors.grey,
+                      overflow: TextOverflow.clip),
+                  // imageicon: AppAssets.arrowLeft,
                 ),
-              ),
-              24.spaceY,
-              CommonWhiteFlexibleCard(
-                borderRadius: 8,
-                padding: const EdgeInsets.fromLTRB(6, 6, 6, 6),
-                widget: CheckBoxWidget(
-                  checkBoxValue:
-                      invoiceRequestProviderW.automaticRemindersSetAsDefault,
-                  title: getTranslated('set_as_default', context),
-                  titleTextStyle: AppTextstyle.bodyTextStyle(
-                      fontSize: 16, color: AppColors.white),
-                  onChanged: (value) {
-                    invoiceRequestProviderR
-                        .toggleAutomaticRemindersSetAsDefault();
+                22.spaceY,
+                CommonWhiteFlexibleCard(
+                  color: context.theme.colorTheme.businessDetailsContainer,
+                  borderRadius: 8,
+                  padding: const EdgeInsets.fromLTRB(6, 6, 6, 6),
+                  widget: SwitchButtonWidget(
+                    value: invoiceRequestProviderW.sendAutomaticReminders,
+                    title:
+                        getTranslated('send_automatically_reminders', context),
+                    titleTextStyle: AppTextstyle.bodyTextStyle(
+                      fontSize: 16,
+                      color: context.theme.colorTheme.whiteColor,
+                    ),
+                    onChanged: (value) {
+                      invoiceRequestProviderR.toggleSendAutomaticReminders();
+                    },
+                  ),
+                ),
+                24.spaceY,
+                CommonWhiteFlexibleCard(
+                  color: context.theme.colorTheme.businessDetailsContainer,
+                  borderRadius: 8,
+                  padding: const EdgeInsets.fromLTRB(6, 6, 6, 6),
+                  widget: CheckBoxWidget(
+                    checkBoxValue:
+                        invoiceRequestProviderW.automaticRemindersSetAsDefault,
+                    title: getTranslated('set_as_default', context),
+                    titleTextStyle: AppTextstyle.bodyTextStyle(
+                      fontSize: 16,
+                      color: context.theme.colorTheme.whiteColor,
+                    ),
+                    onChanged: (value) {
+                      invoiceRequestProviderR
+                          .toggleAutomaticRemindersSetAsDefault();
+                    },
+                  ),
+                ),
+              ],
+            ),
+          ),
+          bottomNavigationBar: ButtonBottomNavigationWidget(
+            children: [
+              SizedBox(
+                height: 48.h,
+                width: 327.w,
+                child: PrimaryButton(
+                  color: AppColors.yellowGreen,
+                  text: Text(
+                    getTranslated('save', context),
+                    style: AppTextstyle.bodyTextStyle(
+                        color: AppColors.black,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500),
+                  ),
+                  onPressed: () {
+                    Navigation.pushNamed(InvoiceNumberScreen.routeName);
                   },
                 ),
               ),
             ],
           ),
-        ),
-        bottomNavigationBar: ButtonBottomNavigationWidget(
-          children: [
-            SizedBox(
-              height: 48.h,
-              width: 327.w,
-              child: PrimaryButton(
-                color: AppColors.yellowGreen,
-                text: Text(
-                  getTranslated('save', context),
-                  style: AppTextstyle.bodyTextStyle(
-                      color: AppColors.black,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500),
-                ),
-                onPressed: () {
-                  Navigation.pushNamed(InvoiceNumberScreen.routeName);
-                },
-              ),
-            ),
-          ],
         ),
       ),
     );

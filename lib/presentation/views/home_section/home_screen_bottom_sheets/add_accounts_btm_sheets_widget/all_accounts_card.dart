@@ -27,6 +27,7 @@ class AllAccountsCardBS extends ConsumerWidget {
             child: Row(
               children: [
                 const IconContainer(
+                  bgColor: AppColors.tealColor,
                   image: AppAssets.allaccountsicon,
                 ),
                 15.spaceX,
@@ -35,7 +36,7 @@ class AllAccountsCardBS extends ConsumerWidget {
                   style: AppTextstyle.roboto(
                       fontWeight: FontWeight.w500,
                       fontSize: 16,
-                      color: AppColors.white),
+                      color: context.theme.colorTheme.whiteColor),
                 )
               ],
             ),
@@ -47,7 +48,7 @@ class AllAccountsCardBS extends ConsumerWidget {
               style: AppTextstyle.roboto(
                   fontWeight: FontWeight.w500,
                   fontSize: 16,
-                  color: AppColors.white),
+                  color: context.theme.colorTheme.whiteColor),
             ),
           )
         ],

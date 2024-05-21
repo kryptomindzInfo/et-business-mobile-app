@@ -34,11 +34,11 @@ class CardsSwiper extends ConsumerWidget {
         DotsIndicator(
           dotsCount: cardsProWatch.cards.length,
           position: cardsProWatch.cardIndex,
-          decorator: DotsDecorator(
-            color: Colors.white.withOpacity(0.8), // Inactive color
+          decorator: const DotsDecorator(
+            color: AppColors.grey, // Inactive color
             activeColor: AppColors.primaryColor,
-            size: const Size.square(10),
-            activeSize: const Size.square(10),
+            size: Size.square(10),
+            activeSize: Size.square(10),
           ),
         )
       ],

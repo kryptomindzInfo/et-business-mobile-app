@@ -203,4 +203,6 @@ class AppAssets {
   static const offers = "${imagesDir}offers.png";
   static const appInBrowser = "${imagesDir}app_in_browser.png";
   static const notifImage = "${imagesDir}notif_image.png";
+  static const currencyExchange = "${iconsDir}currency_exchange.png";
+  static const system = "${imagesDir}system.png";
 }

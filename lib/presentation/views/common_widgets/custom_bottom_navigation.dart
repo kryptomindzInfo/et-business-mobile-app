@@ -1,5 +1,7 @@
 import 'package:etbank_business_app/constants/app_assets.dart';
 import 'package:etbank_business_app/constants/app_colors.dart';
+import 'package:etbank_business_app/extensions/build_context.dart';
+import 'package:etbank_business_app/navigation/navigator_key.dart';
 import 'package:flutter/material.dart';
 
 class CustomBottomNavigation extends StatelessWidget {
@@ -52,7 +54,9 @@ class CustomBottomNavigation extends StatelessWidget {
         onTap: () => onTap(),
         child: Image.asset(
           icon,
-          color: isActive ? AppColors.primaryColor : AppColors.white,
+          color: isActive
+              ? AppColors.primaryColor
+              : appContext.theme.colorTheme.whiteToGrey,
           height: 35,
         ),
       ),

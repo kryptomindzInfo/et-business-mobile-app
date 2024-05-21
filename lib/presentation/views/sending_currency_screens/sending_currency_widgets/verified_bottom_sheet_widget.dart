@@ -1,4 +1,5 @@
 import 'package:etbank_business_app/constants/app_assets.dart';
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -15,7 +16,10 @@ class VerifiedBottomSheetWidget extends ConsumerWidget {
     return Container(
       height: height ?? 311,
       width: double.infinity,
-      decoration: BoxDecoration(borderRadius: BorderRadius.circular(28)),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(28),
+        color: context.theme.colorTheme.bottomSheetColor,
+      ),
       child: Column(
         children: [
           60.spaceY,

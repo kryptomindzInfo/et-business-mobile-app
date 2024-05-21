@@ -26,12 +26,18 @@ class AdminFooterSection extends ConsumerWidget {
         ),
         20.spaceY,
         CommonWhiteFlexibleCard(
+          color: context.theme.colorTheme.businessDetailsContainer,
           borderRadius: 8,
           widget: Column(
             children: [
               PrimaryButton(
                 color: AppColors.yellowGreen,
-                text: Text(getTranslated("update_admin", context)),
+                text: Text(
+                  getTranslated("update_admin", context),
+                  style: AppTextstyle.bodyTextStyle(
+                    color: AppColors.black,
+                  ),
+                ),
                 onPressed: () {},
                 minwidth: double.infinity,
               ),
@@ -78,7 +84,7 @@ class AdminFooterSection extends ConsumerWidget {
                           style: AppTextstyle.bodyTextStyle(
                               fontSize: 14,
                               fontWeight: FontWeight.w600,
-                              color: AppColors.white),
+                              color: context.theme.colorTheme.whiteColor),
                         ),
                       ],
                     ),

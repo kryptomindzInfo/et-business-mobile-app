@@ -1,4 +1,5 @@
 import 'package:etbank_business_app/constants/app_assets.dart';
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/navigation/navigation.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/common_green_button.dart';
@@ -19,6 +20,7 @@ class TeamsWidget extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return CommonWhiteFlexibleCard(
+      color: context.theme.colorTheme.businessDetailsContainer,
       widget: Column(
         children: [
           Row(
@@ -29,7 +31,7 @@ class TeamsWidget extends ConsumerWidget {
                 height: 42,
                 borderRadius: 64,
                 textColor: AppColors.white,
-                color: AppColors.transparent,
+                color: context.theme.colorTheme.transparentToGreen,
                 imageIcon: AppAssets.invitepeople,
                 title: getTranslated("invite", context),
                 padding: const EdgeInsets.symmetric(horizontal: 8),
@@ -42,7 +44,7 @@ class TeamsWidget extends ConsumerWidget {
                 height: 42,
                 borderRadius: 64,
                 borderColor: AppColors.yellowGreen,
-                color: AppColors.transparent,
+                color: context.theme.colorTheme.transparentToGreen,
                 imageIcon: AppAssets.managerole,
                 padding: const EdgeInsets.symmetric(horizontal: 8),
                 title: getTranslated("manage_role", context),
@@ -55,7 +57,8 @@ class TeamsWidget extends ConsumerWidget {
                 borderRadius: 64,
                 iconColor: AppColors.white,
                 borderColor: AppColors.yellowGreen,
-                color: AppColors.transparent,
+                color: context.theme.colorTheme.transparentToGreen,
+
                 padding: const EdgeInsets.symmetric(horizontal: 8),
                 imageIcon: AppAssets.poepleicon,
                 imageHeight: 15,

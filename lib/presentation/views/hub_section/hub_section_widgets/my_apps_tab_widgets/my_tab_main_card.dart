@@ -1,5 +1,6 @@
 import 'package:etbank_business_app/constants/app_assets.dart';
 import 'package:etbank_business_app/constants/app_textstyle.dart';
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/navigation/navigation.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/common_button.dart';
@@ -18,6 +19,7 @@ class MyAppTabMainCard extends ConsumerWidget {
       // height: 308,
       width: double.infinity,
       decoration: BoxDecoration(
+        color: context.theme.colorTheme.transparentToGreen,
         borderRadius: BorderRadius.circular(12),
         border: Border.all(color: AppColors.tealColor),
         // color: const Color.fromRGBO(0, 255, 157, 1),
@@ -71,9 +73,9 @@ class MyAppTabMainCard extends ConsumerWidget {
           30.spaceY,
           Container(
             // height: 84,
-            decoration: const BoxDecoration(
-                color: AppColors.blackish,
-                borderRadius: BorderRadius.only(
+            decoration: BoxDecoration(
+                color: context.theme.colorTheme.blackishToYellow,
+                borderRadius: const BorderRadius.only(
                     bottomLeft: Radius.circular(10),
                     bottomRight: Radius.circular(10))),
             child: Padding(
@@ -88,15 +90,15 @@ class MyAppTabMainCard extends ConsumerWidget {
                       style: AppTextstyle.bodyTextStyle(
                           fontSize: 14,
                           fontWeight: FontWeight.normal,
-                          color: AppColors.white.withOpacity(0.7),
+                          color: context.theme.colorTheme.whiteColor,
                           overflow: TextOverflow.clip),
                     ),
                   ),
                   CommonButton(
                     width: 100,
                     title: getTranslated("upgrade", context),
-                    mainButtonColor: AppColors.yellowGreen,
-                    titleColor: AppColors.black,
+                    mainButtonColor: context.theme.colorTheme.yellowToBlackish,
+                    titleColor: context.theme.colorTheme.blackishToYellow,
                     onpress: () {
                       Navigation.pushNamed(UpgradeScreens.routeName);
                     },

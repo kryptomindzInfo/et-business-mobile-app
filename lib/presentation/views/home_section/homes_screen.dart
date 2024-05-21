@@ -1,5 +1,6 @@
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/navigation/navigation.dart';
+import 'package:etbank_business_app/presentation/views/common_widgets/parent_theme_scaffold.dart';
 import 'package:etbank_business_app/presentation/views/home_section/notification_screen.dart';
 import 'package:etbank_business_app/presentation/views/profile_section/profile_screen.dart';
 import 'package:flutter/material.dart';
@@ -19,23 +20,25 @@ class HomeScreen extends ConsumerStatefulWidget {
 class _HomeScreenState extends ConsumerState<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(left: 18, right: 18),
-      child: Column(children: [
-        60.spaceY,
-        HomeScreenHeader(
-          onpress: () {
-            Navigation.pushNamed(ProfileScreen.routeName);
-          },
-          onNotificationPress: () {
-            Navigation.pushNamed(NotificationScreen.routeName);
-          },
-        ),
-        20.spaceY,
-        const HomeScreenSearchTextfield(),
-        15.spaceY,
-        const HomeScreenOptionsWidget(),
-      ]),
+    return ParentThemeScaffold(
+      child: Padding(
+        padding: const EdgeInsets.only(left: 18, right: 18),
+        child: Column(children: [
+          60.spaceY,
+          HomeScreenHeader(
+            onpress: () {
+              Navigation.pushNamed(ProfileScreen.routeName);
+            },
+            onNotificationPress: () {
+              Navigation.pushNamed(NotificationScreen.routeName);
+            },
+          ),
+          20.spaceY,
+          const HomeScreenSearchTextfield(),
+          15.spaceY,
+          const HomeScreenOptionsWidget(),
+        ]),
+      ),
     );
   }
 }

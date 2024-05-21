@@ -69,6 +69,7 @@ class OnboardingWidget extends StatelessWidget {
                               },
                               child: Image.asset(
                                 AppAssets.crossicon,
+                                color: context.theme.colorTheme.whiteColor,
                                 scale: 3,
                               ),
                             )
@@ -109,8 +110,7 @@ class OnboardingWidget extends StatelessWidget {
                             fontSize: 16.sp,
                             fontWeight: FontWeight.w500,
                             color: subTitleColor ??
-                                context.theme.colorTheme.normalTextColor
-                                    .withOpacity(0.5),
+                                context.theme.colorTheme.yellowToBlackish,
                             overflow: TextOverflow.clip),
                       ),
                     ),

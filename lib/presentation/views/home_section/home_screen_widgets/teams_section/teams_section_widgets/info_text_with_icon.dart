@@ -20,6 +20,7 @@ class InfoTextWithIcon extends ConsumerWidget {
         Row(
           children: [
             IconContainer(
+              bgColor: AppColors.tealColor,
               image: imageicon,
             ),
             15.spaceX,
@@ -47,9 +48,10 @@ class InfoTextWithIcon extends ConsumerWidget {
         Text(
           "Owner",
           style: AppTextstyle.bodyTextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.w400,
-              color: AppColors.white),
+            fontSize: 16,
+            fontWeight: FontWeight.w400,
+            color: context.theme.colorTheme.whiteColor,
+          ),
         ),
       ],
     );

@@ -1,3 +1,4 @@
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -36,9 +37,10 @@ class CurrencyChartFooterOpt extends ConsumerWidget {
           Text(
             title!,
             style: AppTextstyle.bodyTextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w500,
-                color: AppColors.white),
+              fontSize: 16,
+              fontWeight: FontWeight.w500,
+              color: context.theme.colorTheme.whiteColor,
+            ),
           )
         ],
       ),

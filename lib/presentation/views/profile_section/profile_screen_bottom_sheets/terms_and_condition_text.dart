@@ -19,25 +19,25 @@ class TermsAndConditionsText extends ConsumerWidget {
             TextSpan(
                 text: getTranslated("terms1", context),
                 style: AppTextstyle.headingTextStyle(
-                    color: AppColors.white.withOpacity(0.5),
+                    color: context.theme.colorTheme.whiteColor,
                     fontSize: 12,
                     fontWeight: FontWeight.w500)),
             TextSpan(
                 text: "£49 ",
                 style: AppTextstyle.headingTextStyle(
-                    color: context.theme.colorTheme.yellowTextColor,
+                    color: context.theme.colorTheme.yellowToGreen,
                     fontSize: 12,
                     fontWeight: FontWeight.w500)),
             TextSpan(
                 text: getTranslated("terms2", context),
                 style: AppTextstyle.headingTextStyle(
-                    color: AppColors.white.withOpacity(0.5),
+                    color: context.theme.colorTheme.whiteColor,
                     fontSize: 12,
                     fontWeight: FontWeight.w500)),
             TextSpan(
                 text: getTranslated("terms3", context),
                 style: AppTextstyle.headingTextStyle(
-                    color: context.theme.colorTheme.yellowTextColor,
+                    color: context.theme.colorTheme.yellowToGreen,
                     fontSize: 12,
                     fontWeight: FontWeight.w500))
           ])),

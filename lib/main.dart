@@ -1,12 +1,4 @@
-import 'package:etbank_business_app/presentation/views/signup_screens/business_details/get_more_from_business_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/sign_in_sign_up_screen.dart';
-import 'package:etbank_business_app/presentation/views/signup_screens/signup_business_details_screen.dart';
-import 'package:etbank_business_app/presentation/views/signup_screens/signup_email_otp_code_screen.dart';
-import 'package:etbank_business_app/presentation/views/signup_screens/signup_enter_passcode_screen.dart';
-import 'package:etbank_business_app/presentation/views/signup_screens/signup_proof_residency_screen.dart';
-import 'package:etbank_business_app/presentation/views/signup_screens/signup_user_home_address_screen.dart';
-import 'package:etbank_business_app/presentation/views/signup_screens/signup_verifications_screen.dart';
-import 'package:etbank_business_app/presentation/views/signup_screens/signup_verify_users_identity_screen.dart';
 import 'package:etbank_business_app/providers/localization_provider.dart';
 import 'package:etbank_business_app/theme/theme.dart';
 import 'package:flutter/material.dart';
@@ -15,7 +7,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'navigation/navigator_key.dart';
 import 'navigation/route_generator.dart';
-import 'presentation/views/signup_screens/signup_email_screen.dart';
 import 'providers/theme_provider.dart';
 import 'resources/app_persistance/app_local.dart';
 import 'resources/localization/app_localization.dart';
@@ -51,7 +42,7 @@ class MyApp extends ConsumerWidget {
               ],
               navigatorKey: navigatorKey,
               onGenerateRoute: RouteGenerator.generateRoute,
-              initialRoute: ProofOfResidencyScreen.routeName,
+              initialRoute: SignInSignUpScreen.routeName,
             ));
   }
 }

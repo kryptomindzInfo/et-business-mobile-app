@@ -1,6 +1,8 @@
 import 'package:etbank_business_app/constants/app_colors.dart';
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/app_common_widgets.dart';
+import 'package:etbank_business_app/presentation/views/common_widgets/parent_theme_scaffold.dart';
 import 'package:etbank_business_app/presentation/views/sending_currency_screens/sending_currency_widgets/payment_notification_bottom_sheet_widget.dart';
 import 'package:etbank_business_app/presentation/views/sending_currency_screens/sending_currency_widgets/verified_bottom_sheet_widget.dart';
 import 'package:flutter/material.dart';
@@ -24,120 +26,127 @@ class AccountDetailsScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return BackgroundImageWidget(
-      child: Scaffold(
-        backgroundColor: AppColors.transparent,
-        appBar: const CommonAppBar(
-          etBankLogo: true,
-        ),
-        body: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                HeaderIconWithTitle(
-                  title: getTranslated('account_details', context),
-                  // imageicon: AppAssets.arrowLeft,
-                ),
-                20.spaceY,
-                AccountDetailsButtonsWidget(
-                  provider: sendingCurrencyProvider,
-                ),
-                32.spaceY,
-                UserPersonalDetailsWidget(
-                  readOnly: true,
-                  enableInteraction: false,
-                  controller:
-                      ref.watch(sendingCurrencyProvider).countryController,
-                  title: getTranslated('country', context),
-                  hint: getTranslated('united_kingdom', context),
-                  onTap: () {},
-                ),
-                16.spaceY,
-                UserPersonalDetailsWidget(
-                  readOnly: true,
-                  enableInteraction: false,
-                  controller:
-                      ref.watch(sendingCurrencyProvider).currencyController,
-                  title: getTranslated('currency', context),
-                  hint: getTranslated('british_pound', context),
-                  onTap: () {},
-                ),
-                16.spaceY,
-                UserPersonalDetailsWidget(
-                  readOnly: true,
-                  enableInteraction: false,
-                  controller:
-                      ref.watch(sendingCurrencyProvider).accountNoController,
-                  title: getTranslated('account_number', context),
-                  hint: getTranslated('##############', context),
-                  onTap: () {},
-                ),
-                16.spaceY,
-                TextFieldWidget(
-                  hintText: getTranslated('sort_code', context),
-                  keyboardType: TextInputType.number,
-                ),
-              ],
-            ),
+    return ParentThemeScaffold(
+      child: BackgroundImageWidget(
+        child: Scaffold(
+          backgroundColor: AppColors.transparent,
+          appBar: const CommonAppBar(
+            etBankLogo: true,
           ),
-        ),
-        bottomNavigationBar: ButtonBottomNavigationWidget(
-          children: [
-            SizedBox(
-              height: 48.h,
-              width: 327.w,
-              child: PrimaryButton(
-                color: AppColors.yellowGreen,
-                text: Text(
-                  getTranslated('continue', context),
-                  style: AppTextstyle.bodyTextStyle(
-                      color: AppColors.black,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500),
-                ),
-                onPressed: () {
-                  showModalBottomSheet(
-                    context: context,
-                    builder: (BuildContext context) {
-                      return GestureDetector(
-                        onTap: () {
-                          showModalBottomSheet(
-                              isScrollControlled: true,
-                              backgroundColor: AppColors.black,
-                              context: context,
-                              builder: (BuildContext context) {
-                                return const PaymentNotificationBottomSheetWidget();
-                              });
-                        },
-                        child: VerifiedBottomSheetWidget(
-                          title: Text(
-                            getTranslated(
-                                "account_name_matched_title", context),
-                            style: AppTextstyle.bodyTextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          description: Text(
-                            textAlign: TextAlign.center,
-                            getTranslated(
-                                "account_name_matched_subtitle", context),
-                            style: AppTextstyle.bodyTextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w500,
-                              overflow: TextOverflow.clip,
-                            ),
-                          ),
-                        ),
-                      );
-                    },
-                  );
-                },
+          body: SingleChildScrollView(
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  HeaderIconWithTitle(
+                    title: getTranslated('account_details', context),
+                    // imageicon: AppAssets.arrowLeft,
+                  ),
+                  20.spaceY,
+                  AccountDetailsButtonsWidget(
+                    provider: sendingCurrencyProvider,
+                  ),
+                  32.spaceY,
+                  UserPersonalDetailsWidget(
+                    readOnly: true,
+                    enableInteraction: false,
+                    controller:
+                        ref.watch(sendingCurrencyProvider).countryController,
+                    title: getTranslated('country', context),
+                    hint: getTranslated('united_kingdom', context),
+                    onTap: () {},
+                  ),
+                  16.spaceY,
+                  UserPersonalDetailsWidget(
+                    readOnly: true,
+                    enableInteraction: false,
+                    controller:
+                        ref.watch(sendingCurrencyProvider).currencyController,
+                    title: getTranslated('currency', context),
+                    hint: getTranslated('british_pound', context),
+                    onTap: () {},
+                  ),
+                  16.spaceY,
+                  UserPersonalDetailsWidget(
+                    readOnly: true,
+                    enableInteraction: false,
+                    controller:
+                        ref.watch(sendingCurrencyProvider).accountNoController,
+                    title: getTranslated('account_number', context),
+                    hint: getTranslated('##############', context),
+                    onTap: () {},
+                  ),
+                  16.spaceY,
+                  TextFieldWidget(
+                    hintText: getTranslated('sort_code', context),
+                    style: AppTextstyle.bodyTextStyle(
+                        color: context.theme.colorTheme.whiteColor),
+                    keyboardType: TextInputType.number,
+                  ),
+                ],
               ),
             ),
-          ],
+          ),
+          bottomNavigationBar: ButtonBottomNavigationWidget(
+            children: [
+              SizedBox(
+                height: 48.h,
+                width: 327.w,
+                child: PrimaryButton(
+                  color: AppColors.yellowGreen,
+                  text: Text(
+                    getTranslated('continue', context),
+                    style: AppTextstyle.bodyTextStyle(
+                        color: AppColors.black,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500),
+                  ),
+                  onPressed: () {
+                    showModalBottomSheet(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return GestureDetector(
+                          onTap: () {
+                            showModalBottomSheet(
+                                isScrollControlled: true,
+                                backgroundColor:
+                                    context.theme.colorTheme.bottomSheetColor,
+                                context: context,
+                                builder: (BuildContext context) {
+                                  return const PaymentNotificationBottomSheetWidget();
+                                });
+                          },
+                          child: VerifiedBottomSheetWidget(
+                            title: Text(
+                              getTranslated(
+                                  "account_name_matched_title", context),
+                              style: AppTextstyle.bodyTextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                                color: context.theme.colorTheme.whiteColor,
+                              ),
+                            ),
+                            description: Text(
+                              textAlign: TextAlign.center,
+                              getTranslated(
+                                  "account_name_matched_subtitle", context),
+                              style: AppTextstyle.bodyTextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w500,
+                                overflow: TextOverflow.clip,
+                                color: context.theme.colorTheme.whiteColor,
+                              ),
+                            ),
+                          ),
+                        );
+                      },
+                    );
+                  },
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
