@@ -3,6 +3,7 @@ import 'package:etbank_business_app/core/app_print.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/navigation/navigator_key.dart';
 import 'package:etbank_business_app/navigation/params/onboarding_args.dart';
+import 'package:etbank_business_app/presentation/views/common_widgets/parent_theme_scaffold.dart';
 import 'package:etbank_business_app/providers/pageview_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -90,34 +91,36 @@ class Onboarding extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final pageController = ref.read(pageControllerProvider);
-    console(params!.screens);
-    console("dddddddddddd");
+    // console(params!.screens);
+    // console("dddddddddddd");
 
-    return Scaffold(
-      body: Stack(
-        children: [
-          Padding(
-            padding: EdgeInsets.only(top: 0.h),
-            child: PageView.builder(
-              controller: pageController,
-              onPageChanged: (index) =>
-                  ref.read(activePageIndexProvider.notifier).state = index,
-              itemCount: params!.screens!.isNotEmpty
+    return ParentThemeScaffold(
+      child: Scaffold(
+        body: Stack(
+          children: [
+            Padding(
+              padding: EdgeInsets.only(top: 0.h),
+              child: PageView.builder(
+                controller: pageController,
+                onPageChanged: (index) =>
+                    ref.read(activePageIndexProvider.notifier).state = index,
+                itemCount: params!.screens!.isNotEmpty
+                    ? params!.screens!.length
+                    : pages.length,
+                itemBuilder: (context, index) => params!.screens!.isNotEmpty
+                    ? params!.screens![index % pages.length]
+                    : pages[index % pages.length],
+              ),
+            ),
+            LinearIndicatorWidget(
+              activePageIndex: ref.watch(activePageIndexProvider),
+              widgetListLength: params!.screens!.isNotEmpty
                   ? params!.screens!.length
                   : pages.length,
-              itemBuilder: (context, index) => params!.screens!.isNotEmpty
-                  ? params!.screens![index % pages.length]
-                  : pages[index % pages.length],
+              width: params!.width ?? 50.w,
             ),
-          ),
-          LinearIndicatorWidget(
-            activePageIndex: ref.watch(activePageIndexProvider),
-            widgetListLength: params!.screens!.isNotEmpty
-                ? params!.screens!.length
-                : pages.length,
-            width: params!.width ?? 50.w,
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

@@ -52,7 +52,7 @@ class MoreOptionsBottomSheetWidget extends ConsumerWidget {
             Navigator.pop(context);
             // Navigation.pop();
             showCommonModalSheet(
-              color: AppColors.black,
+              color: context.theme.colorTheme.bottomSheetColor,
               context,
               500,
               const AddAccountsBottomSheet(),

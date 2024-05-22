@@ -29,7 +29,7 @@ class AddAccountsBottomSheet extends ConsumerWidget {
             width: double.infinity,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
-                color: AppColors.blackish),
+                color: context.theme.colorTheme.businessDetailsContainer),
             child: Column(
               children: [
                 AccountsCard(

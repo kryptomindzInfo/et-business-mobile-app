@@ -21,7 +21,9 @@ class CustomRadioButtonWidget extends ConsumerWidget {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
           border: Border.all(
-            color: isSelected ? AppColors.yellowGreen : AppColors.white,
+            color: isSelected
+                ? context.theme.colorTheme.yellowToGreen
+                : context.theme.colorTheme.whiteToGreen,
             width: 2,
           ),
         ),
@@ -31,10 +33,10 @@ class CustomRadioButtonWidget extends ConsumerWidget {
                 height: 18.h,
                 width: 18.w,
                 decoration: BoxDecoration(
-                  color: AppColors.yellowGreen,
+                  color: context.theme.colorTheme.yellowToGreen,
                   borderRadius: BorderRadius.circular(20),
                   border: Border.all(
-                    color: AppColors.yellowGreen,
+                    color: context.theme.colorTheme.yellowToGreen,
                     width: 2,
                   ),
                 ),

@@ -1,3 +1,4 @@
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -10,12 +11,14 @@ class EssentialIconWithTitle extends ConsumerWidget {
   final String? title;
   final double? imageHieght;
   final double? imageWidth;
+  final Color? iconColor;
   const EssentialIconWithTitle(
       {super.key,
       this.imageicon,
       this.title,
       this.imageHieght,
-      this.imageWidth});
+      this.imageWidth,
+      this.iconColor});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -25,6 +28,8 @@ class EssentialIconWithTitle extends ConsumerWidget {
           imageicon!,
           height: imageHieght ?? 40,
           width: imageWidth ?? 40,
+          color: iconColor,
+          // color: context.theme.colorTheme.yellowToGreen,
         ),
         20.spaceY,
         Text(
@@ -32,7 +37,7 @@ class EssentialIconWithTitle extends ConsumerWidget {
           style: AppTextstyle.bodyTextStyle(
               fontSize: 12,
               fontWeight: FontWeight.normal,
-              color: AppColors.white,
+              color: context.theme.colorTheme.whiteColor,
               overflow: TextOverflow.clip),
         )
       ],

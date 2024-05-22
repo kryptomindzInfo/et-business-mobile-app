@@ -25,7 +25,7 @@ class DashboardMainCard extends ConsumerWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(28),
         border: Border.all(color: context.theme.colorTheme.borderColor),
-        color: context.theme.colorTheme.transparentToColor,
+        color: context.theme.colorTheme.businessDetailsContainer,
       ),
       child: Container(
         margin: const EdgeInsets.only(left: 18, right: 18),
@@ -103,7 +103,7 @@ class DashboardMainCard extends ConsumerWidget {
                     onpress: () {
                       showCommonModalSheet(
                           context, 460, const RequestMoneyBottomSheetWidget(),
-                          color: AppColors.black);
+                          color: context.theme.colorTheme.bottomSheetColor);
                     },
                   ),
                   MainCardOption(
@@ -113,7 +113,7 @@ class DashboardMainCard extends ConsumerWidget {
                       showCommonModalSheet(
                           context,
                           450,
-                          color: AppColors.black,
+                          color: context.theme.colorTheme.bottomSheetColor,
                           const Padding(
                             padding: EdgeInsets.only(left: 20, top: 20),
                             child: MoreOptionsBottomSheetWidget(),

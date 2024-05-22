@@ -23,27 +23,26 @@ class MyApp extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return ScreenUtilInit(
-      designSize: const Size(390, 844),
-      minTextAdapt: true,
-      splitScreenMode: true,
-      builder: (context, child) => MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'ET Bank Business',
-        themeMode: ref.watch(themeProvider).themeMode,
-        theme: lightTheme,
-        darkTheme: darkTheme,
-        supportedLocales: AppLocalization.supportedLocales,
-        locale: ref.watch(localizationProvider).locale,
-        localizationsDelegates: const [
-          AppLocalization.delegate,
-          GlobalMaterialLocalizations.delegate,
-          GlobalWidgetsLocalizations.delegate,
-          GlobalCupertinoLocalizations.delegate
-        ],
-        navigatorKey: navigatorKey,
-        onGenerateRoute: RouteGenerator.generateRoute,
-        initialRoute: SignInSignUpScreen.routeName,
-      ),
-    );
+        designSize: const Size(390, 844),
+        minTextAdapt: true,
+        splitScreenMode: true,
+        builder: (context, child) => MaterialApp(
+              debugShowCheckedModeBanner: false,
+              title: 'ET Bank Business',
+              themeMode: ref.watch(themeProvider).themeMode,
+              theme: lightTheme,
+              darkTheme: darkTheme,
+              supportedLocales: AppLocalization.supportedLocales,
+              locale: ref.watch(localizationProvider).locale,
+              localizationsDelegates: const [
+                AppLocalization.delegate,
+                GlobalMaterialLocalizations.delegate,
+                GlobalWidgetsLocalizations.delegate,
+                GlobalCupertinoLocalizations.delegate
+              ],
+              navigatorKey: navigatorKey,
+              onGenerateRoute: RouteGenerator.generateRoute,
+              initialRoute: SignInSignUpScreen.routeName,
+            ));
   }
 }

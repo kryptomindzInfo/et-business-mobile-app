@@ -11,6 +11,7 @@ class CommonButton extends ConsumerWidget {
   final Color? titleColor;
   final double? height;
   final double? borderRadius;
+  final EdgeInsetsGeometry? padding;
   const CommonButton(
       {super.key,
       this.onpress,
@@ -19,13 +20,16 @@ class CommonButton extends ConsumerWidget {
       this.mainButtonColor,
       this.titleColor,
       this.height,
-      this.borderRadius});
+      this.borderRadius,
+      this.padding});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return InkWell(
       onTap: onpress,
       child: Container(
+        padding:
+            padding, // const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
         height: height ?? 38,
         width: width,
         decoration: BoxDecoration(

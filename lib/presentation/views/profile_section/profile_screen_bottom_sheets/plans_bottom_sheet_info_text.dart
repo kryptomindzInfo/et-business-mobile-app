@@ -1,3 +1,4 @@
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/icon_container.dart';
 import 'package:flutter/material.dart';
@@ -26,6 +27,7 @@ class PlansBottomSheetInfoText extends ConsumerWidget {
         children: [
           IconContainer(
             image: imageicon,
+            bgColor: context.theme.colorTheme.greyToTeal,
           ),
           Column(
             children: [
@@ -35,7 +37,7 @@ class PlansBottomSheetInfoText extends ConsumerWidget {
                   title,
                   style: AppTextstyle.bodyTextStyle(
                       fontSize: 14,
-                      color: AppColors.white,
+                      color: context.theme.colorTheme.whiteColor,
                       fontWeight: FontWeight.w600),
                   overflow: TextOverflow.clip,
                 ),
@@ -47,7 +49,8 @@ class PlansBottomSheetInfoText extends ConsumerWidget {
                   subtitle,
                   style: AppTextstyle.bodyTextStyle(
                       fontSize: 12,
-                      color: AppColors.white.withOpacity(0.8),
+                      color:
+                          context.theme.colorTheme.whiteColor.withOpacity(0.8),
                       fontWeight: FontWeight.w400),
                   overflow: TextOverflow.clip,
                   // overflow: TextOverflow.ellipsis,

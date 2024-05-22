@@ -1,5 +1,6 @@
 import 'package:etbank_business_app/constants/app_assets.dart';
 import 'package:etbank_business_app/constants/app_colors.dart';
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/navigation/navigation.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/info_card_common_widget.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/info_icon_title_subtitle_text.dart';
@@ -23,9 +24,9 @@ class StatementScreenMainCard extends ConsumerWidget {
               imageicon: AppAssets.monthlystatement,
               title: getTranslated("monthly_statement", context),
               subtitle: getTranslated("monthly_statement_sub", context),
-              trailing: const Icon(
+              trailing: Icon(
                 Icons.arrow_forward_ios,
-                color: AppColors.white,
+                color: context.theme.colorTheme.whiteColor,
               ),
               onpress: () {
                 Navigation.pushNamed(MonthlyStatementScreen.routeName);
@@ -35,36 +36,36 @@ class StatementScreenMainCard extends ConsumerWidget {
               imageicon: AppAssets.transaction,
               title: getTranslated("transaction_statement", context),
               subtitle: getTranslated("transaction_statement_sub", context),
-              trailing: const Icon(
+              trailing: Icon(
                 Icons.arrow_forward_ios,
-                color: AppColors.white,
+                color: context.theme.colorTheme.whiteColor,
               ),
             ),
             InfoIconTitleSubtitleText(
               imageicon: AppAssets.balancestatement,
               title: getTranslated("statement_balance", context),
               subtitle: getTranslated("statement_balance_sub", context),
-              trailing: const Icon(
+              trailing: Icon(
                 Icons.arrow_forward_ios,
-                color: AppColors.white,
+                color: context.theme.colorTheme.whiteColor,
               ),
             ),
             InfoIconTitleSubtitleText(
               imageicon: AppAssets.accountconfirmation,
               title: getTranslated("account_confirmation", context),
               subtitle: getTranslated("account_confirmation_sub", context),
-              trailing: const Icon(
+              trailing: Icon(
                 Icons.arrow_forward_ios,
-                color: AppColors.white,
+                color: context.theme.colorTheme.whiteColor,
               ),
             ),
             InfoIconTitleSubtitleText(
               imageicon: AppAssets.auditicon,
               title: getTranslated("audit_confirmation", context),
               subtitle: getTranslated("audit_confirmation_sub", context),
-              trailing: const Icon(
+              trailing: Icon(
                 Icons.arrow_forward_ios,
-                color: AppColors.white,
+                color: context.theme.colorTheme.whiteColor,
               ),
             )
           ],

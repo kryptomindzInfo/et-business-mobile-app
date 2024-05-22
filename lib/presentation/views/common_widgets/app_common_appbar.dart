@@ -18,16 +18,21 @@ class CommonAppBar extends ConsumerWidget implements PreferredSizeWidget {
       this.leading,
       this.actions});
   @override
-  Widget build(BuildContext context,WidgetRef ref) {
-    // ThemeData theme = Theme.of(context);
+  Widget build(BuildContext context, WidgetRef ref) {
+    ThemeData theme = Theme.of(context);
     return Padding(
-      padding: EdgeInsets.only(top: topPadding ?? 0, left: 0, right: 20),
+      padding: EdgeInsets.only(
+        top: topPadding ?? 0,
+      ),
       child: AppBar(
         leading: leading,
         actions: actions,
+        surfaceTintColor: Colors.transparent,
         title: etBankLogo == true
             ? Image.asset(
-               ref.watch(themeProvider).themeMode==ThemeMode.dark? AppAssets.appbarLogo:AppAssets.appbarLogoDark,
+                theme.brightness == Brightness.dark
+                    ? AppAssets.appbarLogo
+                    : AppAssets.appbarLogoDark,
                 height: 46,
                 width: 154,
               )
@@ -35,10 +40,14 @@ class CommonAppBar extends ConsumerWidget implements PreferredSizeWidget {
         centerTitle: true,
         // surfaceTintColor: AppColors.transparent,
         // elevation: 10,
-        iconTheme: IconThemeData(color: context.theme.colorTheme.blackAndWhite),
+        iconTheme: IconThemeData(
+          color: context.theme.colorTheme.whiteColor,
+        ),
         // systemOverlayStyle: SystemUiOverlayStyle(
         //     // statusBarColor: context.theme.colorTheme.appBarColor,
         //     ),
+        // backgroundColor: context.theme.colorTheme.bottomSheetColor,
+
         backgroundColor: context.theme.colorTheme.appBarColor,
       ),
     );

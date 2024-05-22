@@ -30,6 +30,7 @@ class RecommendedWidget extends ConsumerWidget {
         ),
         5.spaceY,
         CommonWhiteFlexibleCard(
+          color: context.theme.colorTheme.businessDetailsContainer,
           widget: Column(
             children: [
               CommonIconTitleIconButton(

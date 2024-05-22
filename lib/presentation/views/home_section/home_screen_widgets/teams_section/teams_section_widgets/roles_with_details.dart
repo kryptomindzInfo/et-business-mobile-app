@@ -40,7 +40,7 @@ class RolesWithDetails extends ConsumerWidget {
                     style: AppTextstyle.headingTextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w600,
-                        color: context.theme.colorTheme.normalTextColor),
+                        color: context.theme.colorTheme.whiteColor),
                   ),
                   2.spaceY,
                   Text(
@@ -60,7 +60,7 @@ class RolesWithDetails extends ConsumerWidget {
             width: 64,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(5),
-                color: context.theme.colorTheme.blackAndWhite),
+                color: context.theme.colorTheme.whiteTohalfWhite),
             child: Center(
               child: Text(
                 getTranslated("view", context),

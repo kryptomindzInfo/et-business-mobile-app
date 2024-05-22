@@ -2,6 +2,7 @@ import 'package:etbank_business_app/constants/app_textstyle.dart';
 import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/navigation/navigation.dart';
+import 'package:etbank_business_app/presentation/views/common_widgets/parent_theme_scaffold.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/primary_button.dart';
 import 'package:etbank_business_app/presentation/views/profile_section/profile_screen_bottom_sheets/terms_and_condition_text.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/get_plastic_card_screen.dart';
@@ -21,9 +22,9 @@ class ConfirmationBottomSheet extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Container(
       height: 720,
-      decoration: const BoxDecoration(
-        color: AppColors.black,
-        borderRadius: BorderRadius.only(
+      decoration: BoxDecoration(
+        color: context.theme.colorTheme.bottomSheetColor,
+        borderRadius: const BorderRadius.only(
             topLeft: Radius.circular(24), topRight: Radius.circular(24)),
       ),
       child: Padding(
@@ -36,6 +37,7 @@ class ConfirmationBottomSheet extends ConsumerWidget {
               child: HeaderIconWithTitle(
                 imageicon: AppAssets.arrowLeftShort,
                 title: getTranslated("confirmation", context),
+                titleColor: context.theme.colorTheme.whiteColor,
                 description: getTranslated("charge", context),
                 // imageicon: AppAssets.arrowLeft,
                 edgeinsets: const EdgeInsets.only(top: 20),
@@ -59,14 +61,14 @@ class ConfirmationBottomSheet extends ConsumerWidget {
                         Text(
                           getTranslated("monthly_sub", context),
                           style: AppTextstyle.roboto(
-                              color: context.theme.colorTheme.normalTextColor,
+                              color: context.theme.colorTheme.whiteColor,
                               fontSize: 18,
                               fontWeight: FontWeight.bold),
                         ),
                         Text(
                           getTranslated("-£100", context),
                           style: AppTextstyle.headingTextStyle(
-                              color: context.theme.colorTheme.normalTextColor,
+                              color: context.theme.colorTheme.whiteColor,
                               fontSize: 18,
                               fontWeight: FontWeight.bold),
                         )
@@ -79,14 +81,14 @@ class ConfirmationBottomSheet extends ConsumerWidget {
                         Text(
                           getTranslated("first_month", context),
                           style: AppTextstyle.roboto(
-                              color: context.theme.colorTheme.normalTextColor,
+                              color: context.theme.colorTheme.whiteColor,
                               fontSize: 18,
                               fontWeight: FontWeight.bold),
                         ),
                         Text(
                           getTranslated("-£100 Free", context),
                           style: AppTextstyle.headingTextStyle(
-                              color: context.theme.colorTheme.normalTextColor,
+                              color: context.theme.colorTheme.whiteColor,
                               fontSize: 18,
                               fontWeight: FontWeight.bold),
                         )

@@ -22,6 +22,7 @@ class AdminscreenListview extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return CommonWhiteFlexibleCard(
+      color: context.theme.colorTheme.businessDetailsContainer,
       borderRadius: 8,
       widget: SizedBox(
         height: 240,
@@ -36,6 +37,8 @@ class AdminscreenListview extends ConsumerWidget {
                   GetCardScreen.routeName,
                   arguments: GetCardScreenArgs(onOrderPressed: () {
                     showModalBottomSheet(
+                      backgroundColor:
+                          context.theme.colorTheme.bottomSheetColor,
                       context: context,
                       builder: (context) => VerifiedBottomSheetWidget(
                         height: 450,
@@ -46,7 +49,10 @@ class AdminscreenListview extends ConsumerWidget {
                                   "Invitation sent to \numrziad123.com ",
                                   context),
                               style: AppTextstyle.bodyTextStyle(
-                                  fontSize: 20, fontWeight: FontWeight.bold),
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                                color: context.theme.colorTheme.whiteColor,
+                              ),
                             ),
                           ],
                         ),
@@ -66,7 +72,11 @@ class AdminscreenListview extends ConsumerWidget {
                             68.spaceY,
                             PrimaryButton(
                               minwidth: 288,
-                              text: const Text('Invite someone else'),
+                              text: Text(
+                                'Invite someone else',
+                                style: AppTextstyle.bodyTextStyle(
+                                    color: AppColors.black),
+                              ),
                               color: AppColors.yellowGreen,
                               onPressed: () {
                                 Navigation.pushNamed(

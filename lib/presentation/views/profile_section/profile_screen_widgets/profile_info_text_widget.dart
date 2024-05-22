@@ -1,3 +1,4 @@
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -22,6 +23,7 @@ class ProfileInfoTextWidget extends ConsumerWidget {
         child: Row(
           children: [
             IconContainer(
+              bgColor: AppColors.tealColor,
               image: image!,
             ),
             15.spaceX,
@@ -32,7 +34,7 @@ class ProfileInfoTextWidget extends ConsumerWidget {
                   title!,
                   style: AppTextstyle.bodyTextStyle(
                       fontSize: 16,
-                      color: AppColors.white,
+                      color: context.theme.colorTheme.whiteColor,
                       fontWeight: FontWeight.w600),
                 ),
                 if (subTitle != null) ...{

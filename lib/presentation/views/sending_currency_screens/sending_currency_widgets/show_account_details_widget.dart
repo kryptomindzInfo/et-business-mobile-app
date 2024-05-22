@@ -1,5 +1,6 @@
 import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:etbank_business_app/constants/app_textstyle.dart';
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/resources/localization/language_constrants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -37,13 +38,17 @@ class ShowAccountDetailsWidget extends ConsumerWidget {
             Text(
               getTranslated(title, context),
               style: AppTextstyle.bodyTextStyle(
-                  fontSize: 16, color: titleColor ?? AppColors.halfWhite),
+                fontSize: 16,
+                color: titleColor ?? context.theme.colorTheme.whiteColor,
+              ),
             ),
             Text(
               getTranslated(subTitle ?? '', context),
               style: subTitleStyle ??
                   AppTextstyle.bodyTextStyle(
-                      fontSize: 16, color: AppColors.halfWhite),
+                    fontSize: 16,
+                    color: context.theme.colorTheme.whiteColor,
+                  ),
             ),
           ],
         ),

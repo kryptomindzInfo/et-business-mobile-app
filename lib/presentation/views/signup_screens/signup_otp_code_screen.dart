@@ -63,8 +63,7 @@ class OTPVerification extends ConsumerWidget {
                 autoDisposeControllers: false,
                 animationType: AnimationType.fade,
                 mainAxisAlignment: MainAxisAlignment.center,
-                textStyle:
-                    TextStyle(color: context.theme.colorTheme.blackAndWhite),
+                textStyle: TextStyle(color: context.theme.colorTheme.otpText),
                 pinTheme: PinTheme(
                   shape: PinCodeFieldShape.box,
                   borderRadius: BorderRadius.circular(12),
@@ -72,14 +71,12 @@ class OTPVerification extends ConsumerWidget {
                   fieldHeight: 48.h,
                   fieldWidth: 34.w,
                   borderWidth: 1,
-                  activeFillColor: context.theme.colorTheme.transparentToColor,
-                  selectedFillColor:
-                      context.theme.colorTheme.transparentToColor,
-                  inactiveFillColor:
-                      context.theme.colorTheme.transparentToColor,
+                  activeFillColor: context.theme.colorTheme.otpBlock,
+                  selectedFillColor: context.theme.colorTheme.otpBlock,
+                  inactiveFillColor: context.theme.colorTheme.otpBlock,
                   activeColor: AppColors.tealColor,
                   selectedColor: AppColors.tealColor,
-                  inactiveColor: context.theme.colorTheme.borderColor,
+                  inactiveColor: AppColors.tealColor,
                 ),
                 inputFormatters: [FilteringTextInputFormatter.digitsOnly],
                 keyboardType: TextInputType.number,

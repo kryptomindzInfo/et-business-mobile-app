@@ -3,6 +3,7 @@ import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/navigation/navigation.dart';
 import 'package:etbank_business_app/navigation/params/onboarding_args.dart';
+import 'package:etbank_business_app/presentation/views/common_widgets/primary_button.dart';
 import 'package:etbank_business_app/presentation/views/onboarding_screens/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -37,22 +38,33 @@ class GetMoreBusinessMainCard extends ConsumerWidget {
       image: AppAssets.internationpaymenticon,
       scale: 2,
       isButtons: true,
-      widget: Positioned(
-        bottom: 60.h,
-        right: 50.w,
-        left: 50.w,
-        child: CustomButton(
-          onPressed: () {
-            Navigation.pushNamed(BaseBottomNavBar.routeName);
-          },
-          height: 48.h,
-          width: 327.w,
-          backgroundColor: appContext.theme.colorTheme.buttonColor,
-          textColor: appContext.theme.colorTheme.buttonTitleColor,
-          borderRadius: 20,
-          text: getTranslated('get_started', appContext),
-        ),
+      widget: CustomButton(
+        onPressed: () {
+          Navigation.pushNamed(BaseBottomNavBar.routeName);
+        },
+        height: 48.h,
+        width: 327.w,
+        backgroundColor: appContext.theme.colorTheme.buttonColor,
+        textColor: appContext.theme.colorTheme.buttonTitleColor,
+        borderRadius: 20,
+        text: getTranslated('get_started', appContext),
       ),
+      // widget: Positioned(
+      //   bottom: 60.h,
+      //   right: 50.w,
+      //   left: 50.w,
+      //   child: CustomButton(
+      //     onPressed: () {
+      //       Navigation.pushNamed(BaseBottomNavBar.routeName);
+      //     },
+      //     height: 48.h,
+      //     width: 327.w,
+      //     backgroundColor: appContext.theme.colorTheme.buttonColor,
+      //     textColor: appContext.theme.colorTheme.buttonTitleColor,
+      //     borderRadius: 20,
+      //     text: getTranslated('get_started', appContext),
+      //   ),
+      // ),
     ),
   ];
   GetMoreBusinessMainCard({
@@ -78,7 +90,8 @@ class GetMoreBusinessMainCard extends ConsumerWidget {
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(28),
               // color: AppColors.transparent,
-              color: const Color(0xff0D2226).withOpacity(0.6),
+              color: context.theme.colorTheme.greenToTeal.withOpacity(0.7),
+              // color: const Color(0xff0D2226).withOpacity(0.6),
               border: Border.all(color: context.theme.colorTheme.borderColor)),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
@@ -102,7 +115,7 @@ class GetMoreBusinessMainCard extends ConsumerWidget {
                   style: AppTextstyle.headingTextStyle(
                       fontSize: 32,
                       fontWeight: FontWeight.bold,
-                      color: context.theme.colorTheme.normalTextColor,
+                      color: AppColors.white,
                       overflow: TextOverflow.clip),
                 ),
               ),

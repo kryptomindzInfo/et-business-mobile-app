@@ -3,12 +3,9 @@ import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:etbank_business_app/constants/app_textstyle.dart';
 import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
-import 'package:etbank_business_app/presentation/views/common_widgets/primary_button.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/white_flexible_card.dart';
-import 'package:etbank_business_app/presentation/views/onboarding_screens/onboarding_widgets/button_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
 import 'transfer_favourite_profile_widget.dart';
 
 class TransferMainWhiteCard extends ConsumerWidget {
@@ -17,6 +14,7 @@ class TransferMainWhiteCard extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return CommonWhiteFlexibleCard(
+      color: context.theme.colorTheme.businessDetailsContainer,
       widget: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -26,9 +24,9 @@ class TransferMainWhiteCard extends ConsumerWidget {
               Container(
                 padding:
                     const EdgeInsets.symmetric(vertical: 11, horizontal: 30),
-                decoration: const BoxDecoration(
-                  color: AppColors.yellowGreen,
-                  borderRadius: BorderRadius.all(
+                decoration: BoxDecoration(
+                  color: context.theme.colorTheme.yellowToGreen,
+                  borderRadius: const BorderRadius.all(
                     Radius.circular(70),
                   ),
                 ),
@@ -36,7 +34,7 @@ class TransferMainWhiteCard extends ConsumerWidget {
                   "+ Transfer",
                   style: AppTextstyle.headingTextStyle(
                     fontSize: 16,
-                    color: context.theme.colorTheme.blackColor,
+                    color: context.theme.colorTheme.bottomSheetColor,
                   ),
                 ),
               ),
@@ -65,7 +63,7 @@ class TransferMainWhiteCard extends ConsumerWidget {
                 style: AppTextstyle.headingTextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.w500,
-                  color: context.theme.colorTheme.normalTextColor,
+                  color: context.theme.colorTheme.whiteColor,
                 ),
               ),
               Text(

@@ -26,6 +26,7 @@ class ReviewDocWidget extends ConsumerWidget {
         ),
         12.spaceY,
         CommonWhiteFlexibleCard(
+          color: context.theme.colorTheme.businessDetailsContainer,
           widget: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

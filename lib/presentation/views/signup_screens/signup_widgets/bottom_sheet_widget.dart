@@ -1,5 +1,6 @@
 import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:etbank_business_app/constants/app_textstyle.dart';
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -36,7 +37,8 @@ class BottomSheetWidet extends ConsumerWidget {
                   height: 38.h,
                   child: TextFormField(
                     onChanged: onChanged,
-                    style: AppTextstyle.bodyTextStyle(color: AppColors.white),
+                    style: AppTextstyle.bodyTextStyle(
+                        color: context.theme.colorTheme.whiteColor),
                     decoration: InputDecoration(
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(28.0),
@@ -46,16 +48,16 @@ class BottomSheetWidet extends ConsumerWidget {
                       ),
                       filled: true,
 
-                      fillColor: AppColors.mateBlackColor,
+                      fillColor: context.theme.colorTheme.bottomSheetColor,
                       // prefixIconConstraints:
                       //     BoxConstraints(maxHeight: 14.h, maxWidth: 14.w),
                       hintText:
                           hintText ?? getTranslated('search_country', context),
                       hintStyle:
                           AppTextstyle.bodyTextStyle(color: AppColors.grey),
-                      prefixIcon: const Icon(
+                      prefixIcon: Icon(
                         Icons.search,
-                        color: AppColors.greywhite,
+                        color: context.theme.colorTheme.whiteColor,
                       ),
                       //  Image.asset(
                       //   AppAssets.iconSearchBlack,

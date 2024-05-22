@@ -26,9 +26,10 @@ class RolesInfoTextWidget extends ConsumerWidget {
                 Text(
                   title!,
                   style: AppTextstyle.bodyTextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600,
-                      color: context.theme.colorTheme.normalTextColor),
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600,
+                    color: context.theme.colorTheme.whiteColor,
+                  ),
                 ),
                 Text(
                   subtitle!,
@@ -42,8 +43,10 @@ class RolesInfoTextWidget extends ConsumerWidget {
             ),
           ),
           CommonGreyButton(
+            buttonColor: context.theme.colorTheme.yellowToGreen,
             title: getTranslated("view", context),
-          )
+            titleColor: context.theme.colorTheme.bottomSheetColor,
+          ),
         ],
       ),
     );

@@ -1,5 +1,6 @@
 import 'package:etbank_business_app/constants/app_assets.dart';
 import 'package:etbank_business_app/constants/app_textstyle.dart';
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/navigation/navigation.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/white_flexible_card.dart';
@@ -26,16 +27,14 @@ class RequestMoneyBottomSheetWidget extends ConsumerWidget {
             child: Text(
               getTranslated('request_money', context),
               style: AppTextstyle.roboto(
-                fontSize: 18,
-                color: AppColors.white,
-              ),
+                  fontSize: 18, color: context.theme.colorTheme.whiteColor),
             ),
           ),
           20.spaceY,
           Container(
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(24),
-                color: AppColors.mateBlackColor),
+                color: context.theme.colorTheme.bottomSheetColor),
             child: Padding(
               padding: const EdgeInsets.fromLTRB(8, 12, 8, 12),
               child: Column(
@@ -44,9 +43,9 @@ class RequestMoneyBottomSheetWidget extends ConsumerWidget {
                     borderRadius: 12,
                     padding: const EdgeInsets.all(0),
                     widget: RequestMoneyWhiteContainerWidget(
-                      titleColor: AppColors.white,
+                      titleColor: context.theme.colorTheme.whiteColor,
                       subTitlecolor: AppColors.grey,
-                      color: Colors.transparent,
+                      color: context.theme.colorTheme.bottomSheetColor,
                       imageicon: Image.asset(
                         AppAssets.paymentLink,
                         // height: 20,
@@ -61,9 +60,9 @@ class RequestMoneyBottomSheetWidget extends ConsumerWidget {
                     borderRadius: 12,
                     padding: const EdgeInsets.all(0),
                     widget: RequestMoneyWhiteContainerWidget(
-                      titleColor: AppColors.white,
+                      titleColor: context.theme.colorTheme.whiteColor,
                       subTitlecolor: AppColors.grey,
-                      color: Colors.transparent,
+                      color: context.theme.colorTheme.bottomSheetColor,
                       imageicon: Image.asset(
                         AppAssets.invoice,
                         // height: 20,
@@ -80,9 +79,9 @@ class RequestMoneyBottomSheetWidget extends ConsumerWidget {
                     borderRadius: 12,
                     padding: const EdgeInsets.all(0),
                     widget: RequestMoneyWhiteContainerWidget(
-                      titleColor: AppColors.white,
+                      titleColor: context.theme.colorTheme.whiteColor,
                       subTitlecolor: AppColors.grey,
-                      color: Colors.transparent,
+                      color: context.theme.colorTheme.bottomSheetColor,
                       imageicon: Image.asset(
                         AppAssets.cardReader,
                         // height: 20,
@@ -96,9 +95,9 @@ class RequestMoneyBottomSheetWidget extends ConsumerWidget {
                     borderRadius: 12,
                     padding: const EdgeInsets.all(0),
                     widget: RequestMoneyWhiteContainerWidget(
-                      titleColor: AppColors.white,
+                      titleColor: context.theme.colorTheme.whiteColor,
                       subTitlecolor: AppColors.grey,
-                      color: Colors.transparent,
+                      color: context.theme.colorTheme.bottomSheetColor,
                       imageicon: Image.asset(
                         AppAssets.qrCode,
                         height: 25,

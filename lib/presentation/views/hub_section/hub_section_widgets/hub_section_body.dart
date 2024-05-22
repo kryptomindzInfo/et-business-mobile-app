@@ -3,7 +3,6 @@ import 'package:etbank_business_app/presentation/views/hub_section/hub_section_w
 import 'package:etbank_business_app/providers/hub_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
 import '../../../../constants/app_colors.dart';
 import '../../../../resources/localization/language_constrants.dart';
 

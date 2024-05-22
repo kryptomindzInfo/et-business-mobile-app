@@ -24,6 +24,7 @@ class HeaderIconWithTitle extends ConsumerWidget {
   final int? spaceBtw;
   final Widget? trailing;
   final TextStyle? titleStyle;
+  final Color? titleColor;
   const HeaderIconWithTitle(
       {super.key,
       this.title,
@@ -40,7 +41,8 @@ class HeaderIconWithTitle extends ConsumerWidget {
       this.etBankLogo,
       this.profilePicWidget,
       this.spaceBtw,
-      this.trailing});
+      this.trailing,
+      this.titleColor});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -104,7 +106,7 @@ class HeaderIconWithTitle extends ConsumerWidget {
                   imageicon!,
                   width: 25.12,
                   height: 17.94,
-                  color: context.theme.colorTheme.blackAndWhite,
+                  color: context.theme.colorTheme.whiteColor,
                 ),
               ),
             ],
@@ -119,7 +121,8 @@ class HeaderIconWithTitle extends ConsumerWidget {
                   title!,
                   style: titleStyle ??
                       AppTextstyle.headingTextStyle(
-                        color: context.theme.colorTheme.appbarTitleColor,
+                        color: titleColor ??
+                            context.theme.colorTheme.appbarTitleColor,
                         fontSize: fontsize ?? 32,
                         fontWeight: FontWeight.bold,
                         overflow: TextOverflow.clip,
@@ -130,7 +133,7 @@ class HeaderIconWithTitle extends ConsumerWidget {
                 const ProfilePicWidget(
                   image: AppAssets.profileicon,
                 ),
-              if (trailing != null) trailing ?? SizedBox(),
+              if (trailing != null) trailing ?? const SizedBox(),
             ],
           ),
 
@@ -152,7 +155,7 @@ class HeaderIconWithTitle extends ConsumerWidget {
           Text(
             greenDescription!,
             style: AppTextstyle.bodyTextStyle(
-              color: context.theme.colorTheme.yellowGreenColor,
+              color: context.theme.colorTheme.yellowToGreen,
               fontSize: 16,
               fontWeight: FontWeight.w400,
               overflow: TextOverflow.clip,

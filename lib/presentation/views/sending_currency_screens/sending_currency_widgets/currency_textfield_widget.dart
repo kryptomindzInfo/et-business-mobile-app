@@ -1,5 +1,6 @@
 import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:etbank_business_app/constants/app_textstyle.dart';
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_widgets/text_field_widget.dart';
 import 'package:etbank_business_app/resources/localization/language_constrants.dart';
 import 'package:flutter/material.dart';
@@ -29,7 +30,9 @@ class CurrencyTextFieldWidget extends ConsumerWidget {
                 Text(
                   getTranslated('gbp', context),
                   style: AppTextstyle.bodyTextStyle(
-                      fontSize: 20, color: AppColors.white),
+                    fontSize: 20,
+                    color: context.theme.colorTheme.whiteColor,
+                  ),
                 ),
                 // 5.spaceY,
                 // Row(
@@ -54,9 +57,11 @@ class CurrencyTextFieldWidget extends ConsumerWidget {
               child: TextFieldWidget(
                 border: Border.all(width: 0, color: AppColors.transparent),
                 hintText: '£0',
-                style: const TextStyle(color: AppColors.white),
+                style: TextStyle(
+                  color: context.theme.colorTheme.whiteColor,
+                ),
                 hintStyle: AppTextstyle.headingTextStyle(
-                    color: AppColors.white, fontSize: 22),
+                    color: context.theme.colorTheme.whiteColor, fontSize: 22),
                 keyboardType: TextInputType.number,
                 // bottomContentPadding: 10,
               ),

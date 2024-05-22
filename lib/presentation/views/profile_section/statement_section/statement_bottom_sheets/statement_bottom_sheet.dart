@@ -5,8 +5,6 @@ import 'package:etbank_business_app/navigation/navigator_key.dart';
 import 'package:etbank_business_app/presentation/views/profile_section/statement_section/statement_screen_widgets/statement_bottom_sheet_header.dart';
 import 'package:etbank_business_app/presentation/views/profile_section/statement_section/statement_screen_widgets/statement_container.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-
 import '../../../../../constants/app_assets.dart';
 import '../../../../../constants/app_textstyle.dart';
 import '../../../../../resources/localization/language_constrants.dart';
@@ -17,9 +15,9 @@ statementBottomSheet() {
     isScrollControlled: true,
     builder: (context) => Container(
       height: 700,
-      decoration: const BoxDecoration(
-        color: AppColors.black,
-        borderRadius: BorderRadius.only(
+      decoration: BoxDecoration(
+        color: context.theme.colorTheme.bottomSheetColor,
+        borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(24),
           topRight: Radius.circular(24),
         ),
@@ -101,6 +99,7 @@ statementBottomSheet() {
             Padding(
               padding: const EdgeInsets.only(left: 50),
               child: Image.asset(
+                color: context.theme.colorTheme.yellowToGreen,
                 AppAssets.export,
                 height: 22,
                 width: 22,

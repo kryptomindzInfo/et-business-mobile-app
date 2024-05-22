@@ -14,10 +14,13 @@ class AddingCurrencyPairContainer extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Container(
       height: 550,
-      margin: const EdgeInsets.only(left: 15, right: 15),
+      margin: const EdgeInsets.only(
+        left: 15,
+        right: 15,
+      ),
       decoration: BoxDecoration(
         color: AppColors.transparent,
-        border: Border.all(color: context.theme.colorTheme.borderColor),
+        // border: Border.all(color: context.theme.colorTheme.borderColor),
         borderRadius: BorderRadius.circular(24),
       ),
       child: Column(

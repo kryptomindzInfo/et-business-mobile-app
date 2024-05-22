@@ -1,7 +1,7 @@
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../constants/app_colors.dart';
 import '../../../../constants/app_textstyle.dart';
 import '../../../../globals/countries_list.dart';
 
@@ -14,12 +14,12 @@ class CountriesListWidget extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Container(
       height: 650.h,
-      decoration: const BoxDecoration(
-        color: AppColors.tealColor,
-        borderRadius: BorderRadius.all(
+      decoration: BoxDecoration(
+        color: context.theme.colorTheme.bottomSheetColor,
+        borderRadius: const BorderRadius.all(
           Radius.circular(32),
         ),
-        border: Border(
+        border: const Border(
           left: BorderSide(
             color: Colors.white,
             width: 2,
@@ -58,7 +58,7 @@ class CountriesListWidget extends ConsumerWidget {
                       style: AppTextstyle.bodyTextStyle(
                           fontWeight: FontWeight.w500,
                           fontSize: 16,
-                          color: Colors.white),
+                          color: context.theme.colorTheme.whiteColor),
                     )),
               );
             }),

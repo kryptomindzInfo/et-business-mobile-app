@@ -6,23 +6,27 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class GetStartedButton extends ConsumerWidget {
   final VoidCallback? onpress;
-  const GetStartedButton({super.key, this.onpress});
+  final Color? color;
+  final Color? titleColor;
+  const GetStartedButton(
+      {super.key, this.onpress, this.color, this.titleColor});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return InkWell(
       onTap: onpress,
       child: Container(
-        height: 39,
-        width: 120,
+        // height: 39,
+        // width: 120,
+        padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(70),
-            color: context.theme.colorTheme.buttonColor),
+            color: color ?? context.theme.colorTheme.buttonColor),
         child: Center(
           child: Text(
             getTranslated("get_started", context),
             style: AppTextstyle.headingTextStyle(
-                color: context.theme.colorTheme.buttonTitleColor,
+                color: titleColor ?? context.theme.colorTheme.buttonTitleColor,
                 fontSize: 16,
                 fontWeight: FontWeight.w500),
           ),

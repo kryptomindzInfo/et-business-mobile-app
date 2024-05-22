@@ -28,8 +28,8 @@ class HomeScreenSearchTextfield extends ConsumerWidget {
               child: Icon(
                 Icons.search,
                 color: color != null
-                    ? AppColors.black.withOpacity(0.6)
-                    : AppColors.greywhite.withOpacity(0.7),
+                    ? context.theme.colorTheme.whiteColor.withOpacity(0.6)
+                    : context.theme.colorTheme.whiteColor.withOpacity(0.7),
                 size: 18,
               ),
             ),
@@ -37,8 +37,8 @@ class HomeScreenSearchTextfield extends ConsumerWidget {
             hintStyle: AppTextstyle.bodyTextStyle(
               fontSize: 12,
               color: color != null
-                  ? AppColors.black.withOpacity(0.6)
-                  : AppColors.greywhite.withOpacity(0.7),
+                  ? context.theme.colorTheme.whiteColor.withOpacity(0.6)
+                  : context.theme.colorTheme.whiteColor.withOpacity(0.7),
             )),
       ),
     );

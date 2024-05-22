@@ -1,5 +1,6 @@
 import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:etbank_business_app/constants/app_textstyle.dart';
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/resources/localization/language_constrants.dart';
 import 'package:flutter/material.dart';
@@ -49,7 +50,7 @@ class NameCircleWidget extends ConsumerWidget {
                 Text(
                   getTranslated(name, context),
                   style: AppTextstyle.bodyTextStyle(
-                    color: AppColors.white,
+                    color: context.theme.colorTheme.whiteColor,
                     fontSize: 16,
                   ),
                 ),
@@ -62,7 +63,7 @@ class NameCircleWidget extends ConsumerWidget {
                   Text(
                     getTranslated(trailingText ?? '', context),
                     style: AppTextstyle.bodyTextStyle(
-                      color: AppColors.white,
+                      color: context.theme.colorTheme.whiteColor,
                       fontSize: 18,
                     ),
                   ),
@@ -70,7 +71,9 @@ class NameCircleWidget extends ConsumerWidget {
                   Text(
                     getTranslated(trailingHintText ?? '', context),
                     style: AppTextstyle.bodyTextStyle(
-                        fontSize: 18, color: AppColors.white),
+                      fontSize: 18,
+                      color: context.theme.colorTheme.whiteColor,
+                    ),
                   ),
               ],
             )

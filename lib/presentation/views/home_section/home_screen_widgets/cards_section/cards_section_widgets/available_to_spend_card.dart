@@ -14,6 +14,7 @@ class AvailableToSpendCard extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return CommonWhiteFlexibleCard(
+      color: context.theme.colorTheme.businessDetailsContainer,
       borderRadius: 12,
       widget: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

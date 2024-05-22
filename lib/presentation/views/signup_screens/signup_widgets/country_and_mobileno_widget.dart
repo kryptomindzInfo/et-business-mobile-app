@@ -1,3 +1,4 @@
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_widgets/text_field_widget.dart';
 import 'package:flutter/material.dart';
@@ -42,7 +43,9 @@ class CountryAndMobileNoWidget extends ConsumerWidget {
         14.spaceX,
         Expanded(
           child: TextFieldWidget(
-            style: const TextStyle(color: Colors.white),
+            style: TextStyle(
+              color: context.theme.colorTheme.whiteColor,
+            ),
             controller: ref.read(signUpStateProvider).mobileNoController,
             hintText: getTranslated('mobile_no', context),
             hintStyle: AppTextstyle.bodyTextStyle(

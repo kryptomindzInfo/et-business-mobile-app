@@ -20,7 +20,7 @@ class AddAccountsBSheaderSection extends ConsumerWidget {
           style: AppTextstyle.roboto(
               fontSize: 18,
               fontWeight: FontWeight.w500,
-              color: AppColors.white),
+              color: context.theme.colorTheme.whiteColor),
         ),
         Container(
           height: 35,

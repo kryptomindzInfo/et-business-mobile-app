@@ -18,23 +18,23 @@ class CurrencyChartWhiteCard extends ConsumerWidget {
             padding: const EdgeInsets.only(right: 20),
             child: CurrencyValueWithStatusText(
               digitalValue: "1.3275",
-              valueColor: context.theme.colorTheme.blackColor,
-              statusColor: context.theme.colorTheme.blackColor,
+              valueColor: context.theme.colorTheme.bottomSheetColor,
+              statusColor: context.theme.colorTheme.bottomSheetColor,
               status: "lowest",
             ),
           ),
           CurrencyValueWithStatusText(
             digitalValue: "1.3601",
-            valueColor: context.theme.colorTheme.blackColor,
-            statusColor: context.theme.colorTheme.blackColor,
+            valueColor: context.theme.colorTheme.bottomSheetColor,
+            statusColor: context.theme.colorTheme.bottomSheetColor,
             status: "current",
           ),
           Padding(
             padding: const EdgeInsets.only(left: 20),
             child: CurrencyValueWithStatusText(
               digitalValue: "1.3603",
-              valueColor: context.theme.colorTheme.blackColor,
-              statusColor: context.theme.colorTheme.blackColor,
+              valueColor: context.theme.colorTheme.bottomSheetColor,
+              statusColor: context.theme.colorTheme.bottomSheetColor,
               status: "highest",
             ),
           )

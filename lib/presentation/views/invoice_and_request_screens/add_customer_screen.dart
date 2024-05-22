@@ -3,6 +3,7 @@ import 'package:etbank_business_app/constants/app_textstyle.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/navigation/navigation.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/app_common_widgets.dart';
+import 'package:etbank_business_app/presentation/views/common_widgets/parent_theme_scaffold.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_widgets/textfield_black_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -20,59 +21,64 @@ class AddCustomerScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return BackgroundImageWidget(
-      child: Scaffold(
-        backgroundColor: AppColors.transparent,
-        appBar: CommonAppBar(
-          etBankLogo: true,
-          actions: [
-            Image.asset(
-              AppAssets.addYellow,
-              height: 28,
-              width: 28,
-            ),
-          ],
-        ),
-        body: Padding(
-          padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              HeaderIconWithTitle(
-                title: getTranslated('add_customer', context),
-                // imageicon: AppAssets.arrowLeft,
-                widget: Image.asset(
-                  AppAssets.addIconBold,
-                  height: 34,
-                  width: 34,
+    return ParentThemeScaffold(
+      child: BackgroundImageWidget(
+        child: Scaffold(
+          backgroundColor: AppColors.transparent,
+          appBar: CommonAppBar(
+            etBankLogo: true,
+            actions: [
+              Padding(
+                padding: const EdgeInsets.only(right: 20),
+                child: Image.asset(
+                  AppAssets.addYellow,
+                  height: 28,
+                  width: 28,
                 ),
-
-                // trailingImage: AppAssets.addIconBold,
-                rightPadding: 0,
-              ),
-              32.spaceY,
-              TextFieldBlackWidget(
-                hintText: getTranslated('search', context),
-                onChanged: (value) {},
-              ),
-              54.spaceY,
-              Text(
-                getTranslated('cant_find_who_you_are_looking_for', context),
-                style: AppTextstyle.headingTextStyle(
-                  color: AppColors.grey,
-                  fontSize: 16,
-                ),
-              ),
-              18.spaceY,
-              AddCounterPartyWidget(
-                borderRadius: 12,
-                padding: const EdgeInsets.all(20),
-                title: 'add_new_customer',
-                onTap: () {
-                  Navigation.pushNamed(AddNewCustomerScreen.routeName);
-                },
               ),
             ],
+          ),
+          body: Padding(
+            padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                HeaderIconWithTitle(
+                  title: getTranslated('add_customer', context),
+                  // imageicon: AppAssets.arrowLeft,
+                  widget: Image.asset(
+                    AppAssets.addIconBold,
+                    height: 34,
+                    width: 34,
+                  ),
+
+                  // trailingImage: AppAssets.addIconBold,
+                  rightPadding: 0,
+                ),
+                32.spaceY,
+                TextFieldBlackWidget(
+                  hintText: getTranslated('search', context),
+                  onChanged: (value) {},
+                ),
+                54.spaceY,
+                Text(
+                  getTranslated('cant_find_who_you_are_looking_for', context),
+                  style: AppTextstyle.headingTextStyle(
+                    color: AppColors.grey,
+                    fontSize: 16,
+                  ),
+                ),
+                18.spaceY,
+                AddCounterPartyWidget(
+                  borderRadius: 12,
+                  padding: const EdgeInsets.all(20),
+                  title: 'add_new_customer',
+                  onTap: () {
+                    Navigation.pushNamed(AddNewCustomerScreen.routeName);
+                  },
+                ),
+              ],
+            ),
           ),
         ),
       ),

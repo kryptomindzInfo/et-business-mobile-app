@@ -49,7 +49,7 @@ class LinearIndicatorWidget extends ConsumerWidget {
 
   Color getPageIndicatorColor(BuildContext context, int index, int activePage) {
     return index == activePage
-        ? context.theme.colorTheme.activeChipColor
+        ? context.theme.colorTheme.greenToTeal
         : AppColors.grey;
   }
 }

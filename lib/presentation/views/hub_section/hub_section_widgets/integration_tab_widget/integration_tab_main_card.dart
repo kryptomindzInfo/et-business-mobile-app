@@ -1,5 +1,6 @@
 import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:etbank_business_app/constants/app_textstyle.dart';
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -17,6 +18,7 @@ class IntegrationTabMainCard extends ConsumerWidget {
         width: double.infinity,
         // margin: const EdgeInsets.only(bottom: 10),
         decoration: BoxDecoration(
+            color: context.theme.colorTheme.businessDetailsContainer,
             border: Border.all(color: AppColors.grassGreen),
             borderRadius: BorderRadius.circular(28)),
         child: Row(
@@ -28,9 +30,10 @@ class IntegrationTabMainCard extends ConsumerWidget {
               child: Text(
                 title,
                 style: AppTextstyle.bodyTextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500,
-                    color: AppColors.white),
+                  fontSize: 16,
+                  fontWeight: FontWeight.w500,
+                  color: context.theme.colorTheme.whiteColor,
+                ),
               ),
             )
           ],

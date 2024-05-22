@@ -1,11 +1,10 @@
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
 import '../../../../../../constants/app_assets.dart';
 import '../../../../../../constants/app_colors.dart';
 import '../../../../../../resources/localization/language_constrants.dart';
 import '../../../../common_widgets/common_green_button.dart';
-import '../../common_transparent_button.dart';
 
 class AdminOptions extends ConsumerWidget {
   const AdminOptions({super.key});
@@ -21,7 +20,7 @@ class AdminOptions extends ConsumerWidget {
           height: 42,
           borderRadius: 64,
           textColor: AppColors.white,
-          color: AppColors.transparent,
+          color: context.theme.colorTheme.transparentToGreen,
           imageIcon: AppAssets.plus,
           imageHeight: 13,
         ),
@@ -34,16 +33,16 @@ class AdminOptions extends ConsumerWidget {
           height: 42,
           borderRadius: 64,
           textColor: AppColors.white,
-          color: AppColors.transparent,
+          color: context.theme.colorTheme.transparentToGreen,
         ),
-        const CommonGreenButton(
+        CommonGreenButton(
           imageIcon: AppAssets.menudots,
           imageHeight: 5,
           borderColor: AppColors.yellowGreen,
           height: 42,
           borderRadius: 64,
           textColor: AppColors.white,
-          color: AppColors.transparent,
+          color: context.theme.colorTheme.transparentToGreen,
         )
       ],
     );

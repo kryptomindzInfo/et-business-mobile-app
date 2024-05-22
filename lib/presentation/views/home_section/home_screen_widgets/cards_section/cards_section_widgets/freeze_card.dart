@@ -14,12 +14,14 @@ class FreezeCard extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return CommonWhiteFlexibleCard(
+      color: context.theme.colorTheme.businessDetailsContainer,
       borderRadius: 12,
       widget: Row(
         children: [
           Image.asset(
             AppAssets.freezicon,
             height: 35,
+            color: context.theme.colorTheme.whiteToGreen,
           ),
           16.spaceX,
           Column(

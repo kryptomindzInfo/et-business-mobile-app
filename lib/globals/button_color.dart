@@ -13,6 +13,7 @@ import 'package:flutter/material.dart';
 
 Color companyButtonColor(bool value) =>
     value ? AppColors.yellowGreen : AppColors.grey;
+// appContext.theme.colorTheme.greyToTeal
 
 Color companyButtonTextColor(bool value) =>
     value ? AppColors.black : AppColors.white;

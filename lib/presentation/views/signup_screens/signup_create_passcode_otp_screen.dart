@@ -1,5 +1,6 @@
 import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/navigation/navigation.dart';
+import 'package:etbank_business_app/presentation/views/common_widgets/parent_theme_scaffold.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_enable_face_id_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_otp_code_screen.dart';
 import 'package:flutter/material.dart';
@@ -12,13 +13,15 @@ class SignUpCreatePassCodeOTPCodeScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return OTPVerification(
-      description: 'mobile_otp_text',
-      onCompleted: (value) {
-        Navigation.pushNamed(SignUpEnableFaceIdScreen.routeName);
-      },
-      text2: 'Code hasn’t arrived? you can retry in 0:58',
-      text2Color: context.theme.colorTheme.whiteColor,
+    return ParentThemeScaffold(
+      child: OTPVerification(
+        description: 'mobile_otp_text',
+        onCompleted: (value) {
+          Navigation.pushNamed(SignUpEnableFaceIdScreen.routeName);
+        },
+        text2: 'Code hasn’t arrived? you can retry in 0:58',
+        text2Color: context.theme.colorTheme.whiteColor,
+      ),
     );
   }
 }

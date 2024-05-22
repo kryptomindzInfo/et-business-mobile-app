@@ -1,3 +1,4 @@
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/navigation/navigation.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/profile_pic_widget.dart';
@@ -6,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../constants/app_assets.dart';
+import '../../../../providers/theme_provider.dart';
 
 class HomeScreenHeader extends ConsumerWidget {
   final VoidCallback? onpress;
@@ -28,32 +30,34 @@ class HomeScreenHeader extends ConsumerWidget {
           Padding(
             padding: const EdgeInsets.only(left: 15),
             child: Image.asset(
-              AppAssets.appbarLogo,
+              ref.watch(themeProvider).themeMode == ThemeMode.dark
+                  ? AppAssets.appbarLogo
+                  : AppAssets.appbarLogoDark,
               height: 40,
             ),
           ),
-          Container(
-            child: Row(
-              children: [
-                InkWell(
-                  onTap: () {
-                    Navigation.pushNamed(ConverterCurrencyScreen.routeName);
-                  },
-                  child: Image.asset(
-                    AppAssets.charticon,
-                    height: 25,
-                  ),
+          Row(
+            children: [
+              InkWell(
+                onTap: () {
+                  Navigation.pushNamed(ConverterCurrencyScreen.routeName);
+                },
+                child: Image.asset(
+                  AppAssets.charticon,
+                  height: 25,
+                  color: context.theme.colorTheme.whiteColor,
                 ),
-                20.spaceX,
-                InkWell(
-                  onTap: onNotificationPress,
-                  child: Image.asset(
-                    AppAssets.notificationicon,
-                    height: 25,
-                  ),
-                )
-              ],
-            ),
+              ),
+              20.spaceX,
+              InkWell(
+                onTap: onNotificationPress,
+                child: Image.asset(
+                  AppAssets.notificationicon,
+                  height: 25,
+                  color: context.theme.colorTheme.whiteColor,
+                ),
+              )
+            ],
           )
         ],
       ),

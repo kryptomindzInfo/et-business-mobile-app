@@ -1,3 +1,4 @@
+import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/icon_container.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:flutter/material.dart';
@@ -29,6 +30,7 @@ class IconWithTitle extends ConsumerWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             IconContainer(
+              bgColor: AppColors.tealColor,
               image: imageicon,
             ),
             15.spaceX,

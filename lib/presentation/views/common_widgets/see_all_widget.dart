@@ -1,3 +1,4 @@
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -19,7 +20,7 @@ class SeeAllCommonWidget extends ConsumerWidget {
           style: AppTextstyle.bodyTextStyle(
               fontSize: 16,
               fontWeight: FontWeight.w600,
-              color: AppColors.white),
+              color: context.theme.colorTheme.whiteColor),
         ),
         isSeeAll
             ? Padding(

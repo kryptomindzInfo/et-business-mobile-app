@@ -1,4 +1,5 @@
 import 'package:etbank_business_app/constants/app_assets.dart';
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/common_bottom_sheet.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/white_flexible_card.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_widgets/common_icon_title_icon_button.dart';
@@ -14,7 +15,8 @@ class UploadDocWidget extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return CommonWhiteFlexibleCard(
-      padding: EdgeInsets.only(left: 10, bottom: 10, right: 10, top: 10),
+      color: context.theme.colorTheme.businessDetailsContainer,
+      padding: const EdgeInsets.only(left: 10, bottom: 10, right: 10, top: 10),
       widget: Row(
         children: [
           CommonIconTitleIconButton(

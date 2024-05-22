@@ -1,5 +1,6 @@
 import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:etbank_business_app/constants/app_textstyle.dart';
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_widgets/text_field_widget.dart';
 import 'package:etbank_business_app/resources/localization/language_constrants.dart';
@@ -39,7 +40,9 @@ class QuantityAndDescriptionWidget extends ConsumerWidget {
                 Text(
                   getTranslated('1', context),
                   style: AppTextstyle.bodyTextStyle(
-                      fontSize: 16, color: AppColors.white),
+                    fontSize: 16,
+                    color: context.theme.colorTheme.whiteColor,
+                  ),
                 ),
                 // Row(
                 //   children: [

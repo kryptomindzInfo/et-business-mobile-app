@@ -14,7 +14,7 @@ ThemeData lightTheme = ThemeData(
             statusBarBrightness: Brightness.light,
             statusBarIconBrightness: Brightness.dark,
             systemNavigationBarColor: Colors.white,
-            systemNavigationBarIconBrightness: Brightness.light)),
+            systemNavigationBarIconBrightness: Brightness.dark)),
     extensions: [AppTheme()]);
 
 ThemeData darkTheme = ThemeData(
@@ -27,5 +27,5 @@ ThemeData darkTheme = ThemeData(
             statusBarBrightness: Brightness.dark,
             statusBarIconBrightness: Brightness.light,
             systemNavigationBarColor: AppColors.darkTeal,
-            systemNavigationBarIconBrightness: Brightness.dark)),
+            systemNavigationBarIconBrightness: Brightness.light)),
     extensions: [AppTheme.dark()]);

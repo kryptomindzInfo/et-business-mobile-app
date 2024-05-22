@@ -1,4 +1,5 @@
 import 'package:etbank_business_app/constants/app_assets.dart';
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/white_flexible_card.dart';
 import 'package:etbank_business_app/presentation/views/hub_section/hub_section_widgets/my_apps_tab_widgets/essential_icon_text.dart';
@@ -14,6 +15,7 @@ class MyApptabEssentialWidget extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return CommonWhiteFlexibleCard(
+      color: context.theme.colorTheme.businessDetailsContainer,
       borderRadius: 12,
       widget: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -23,11 +25,11 @@ class MyApptabEssentialWidget extends ConsumerWidget {
             style: AppTextstyle.bodyTextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.normal,
-                color: AppColors.baseGreenColor,
+                color: AppColors.darkGreen,
                 overflow: TextOverflow.clip),
           ),
           15.spaceY,
-          const Row(
+          Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               EssentialIconWithTitle(
@@ -35,23 +37,27 @@ class MyApptabEssentialWidget extends ConsumerWidget {
                 title: "cards",
                 imageWidth: 47,
                 imageHieght: 27,
+                iconColor: context.theme.colorTheme.yellowToGreen,
               ),
               EssentialIconWithTitle(
                 imageicon: AppAssets.hubTeam,
                 title: "team",
                 imageWidth: 44,
+                iconColor: context.theme.colorTheme.yellowToGreen,
                 imageHieght: 35,
               ),
               EssentialIconWithTitle(
                 imageicon: AppAssets.hubMerchant,
                 title: "merchant",
                 imageWidth: 36,
+                iconColor: context.theme.colorTheme.yellowToGreen,
                 imageHieght: 36,
               ),
               EssentialIconWithTitle(
                 imageicon: AppAssets.hubLinked,
                 title: "linked",
                 imageWidth: 34,
+                iconColor: context.theme.colorTheme.yellowToGreen,
                 imageHieght: 34,
               ),
             ],

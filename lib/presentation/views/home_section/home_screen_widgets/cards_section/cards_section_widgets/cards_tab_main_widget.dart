@@ -26,7 +26,7 @@ class CardsMainWidget extends ConsumerWidget {
           width: double.infinity,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(28),
-              color: context.theme.colorTheme.transparentToColor,
+              color: context.theme.colorTheme.businessDetailsContainer,
               border: Border.all(color: context.theme.colorTheme.borderColor)),
           child: Padding(
             padding: const EdgeInsets.only(left: 15, right: 25),
@@ -93,7 +93,7 @@ class CardsMainWidget extends ConsumerWidget {
                 Image.asset(
                   AppAssets.teamsCard,
                   height: 25,
-                  color: context.theme.colorTheme.buttonColor,
+                  color: context.theme.colorTheme.yellowToGreen,
                 )
               ],
             ),

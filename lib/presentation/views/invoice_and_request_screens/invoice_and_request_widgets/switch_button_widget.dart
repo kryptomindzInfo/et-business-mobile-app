@@ -24,7 +24,7 @@ class SwitchButtonWidget extends ConsumerWidget {
       children: [
         16.spaceX,
         SizedBox(
-          width: 250.h,
+          width: 240.h,
           child: Text(
             title,
             style: titleTextStyle ??

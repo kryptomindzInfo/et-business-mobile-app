@@ -1,4 +1,5 @@
 import 'package:etbank_business_app/constants/app_textstyle.dart';
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/header_icon_with_text.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/primary_button.dart';
@@ -17,9 +18,9 @@ class CreateNewRoleBottomSheet extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Container(
       height: 720,
-      decoration: const BoxDecoration(
-          color: AppColors.black,
-          borderRadius: BorderRadius.only(
+      decoration: BoxDecoration(
+          color: context.theme.colorTheme.bottomSheetColor,
+          borderRadius: const BorderRadius.only(
               topLeft: Radius.circular(12), topRight: Radius.circular(12))),
       child: Padding(
         padding: const EdgeInsets.only(left: 20, right: 20),
@@ -45,10 +46,15 @@ class CreateNewRoleBottomSheet extends ConsumerWidget {
             Center(
               child: PrimaryButton(
                 color: AppColors.yellowGreen,
-                text: Text(getTranslated("continue", context)),
+                text: Text(
+                  getTranslated("continue", context),
+                  style: AppTextstyle.bodyTextStyle(color: AppColors.black),
+                ),
                 onPressed: () {
                   Navigator.pop(context);
                   showModalBottomSheet(
+                      backgroundColor:
+                          context.theme.colorTheme.bottomSheetColor,
                       context: context,
                       builder: (context) => VerifiedBottomSheetWidget(
                             title: const Column(
@@ -57,7 +63,9 @@ class CreateNewRoleBottomSheet extends ConsumerWidget {
                             description: Text(
                               "Role Created",
                               style: AppTextstyle.headingTextStyle(
-                                  fontSize: 20, fontWeight: FontWeight.bold),
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                  color: context.theme.colorTheme.whiteColor),
                             ),
                           ));
                 },

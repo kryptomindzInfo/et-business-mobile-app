@@ -1,3 +1,4 @@
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/presentation/views/converting_currency/currency_converter_screen_widgets.dart/add_currency_pair_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -15,13 +16,15 @@ class RatesTabWidget extends ConsumerWidget {
     return AddCurrencyPairWidget(
       onpress: () {
         showModalBottomSheet(
-          backgroundColor: AppColors.black,
+          backgroundColor: context.theme.colorTheme.bottomSheetColor,
           isScrollControlled: true,
           context: context,
           builder: (context) {
             return BottomSheetWidet(
               onChanged: (value) {},
-              onCancelTap: () {},
+              onCancelTap: () {
+                Navigator.pop(context);
+              },
               bottomNavigationBody: CountriesListWidget(
                 // onTap: (x) {
                 //   // ref.read(sendingCurrencyProvider).setSelectedCountry(x);
@@ -31,7 +34,7 @@ class RatesTabWidget extends ConsumerWidget {
                   showModalBottomSheet(
                     context: context,
                     isScrollControlled: true,
-                    backgroundColor: AppColors.transparent,
+                    backgroundColor: context.theme.colorTheme.bottomSheetColor,
                     builder: (context) {
                       return const AddingCurrencyPairContainer();
                     },

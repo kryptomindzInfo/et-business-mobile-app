@@ -43,6 +43,7 @@ class ProfileScreenMainCard extends ConsumerWidget {
                 Row(
                   children: [
                     const IconContainer(
+                      bgColor: AppColors.tealColor,
                       image: AppAssets.communicationicon,
                     ),
                     20.spaceX,
@@ -59,6 +60,7 @@ class ProfileScreenMainCard extends ConsumerWidget {
                 Row(
                   children: [
                     const IconContainer(
+                      bgColor: AppColors.tealColor,
                       image: AppAssets.singlewhiteperson,
                     ),
                     20.spaceX,

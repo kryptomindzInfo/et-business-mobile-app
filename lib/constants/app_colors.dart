@@ -22,6 +22,8 @@ class AppColors {
   static const yellowGreen = Color(0xffDEFC65);
   static const indigo = Color(0xff8B8CE6);
   static const headerDescColor = Color(0xffBEBEBE);
+  static const headerDescColorLight = Color(0xff6F6F70);
+
   static const darkGrassGreen = Color(0xff00804F);
 
   static const iconGreyColor = Color(0xff6F6F70);
@@ -32,4 +34,5 @@ class AppColors {
   // static const continueButtonEnabledColor = Color(0xFF00FF9D);
   static const continueTextDisabledColor = Color(0xFF7E7878);
   // static const continueTextEnabledColor = Color(0xFF000000);
+  static const businessDetailsContainer = Color(0xFFF5F7F9);
 }
