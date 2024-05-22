@@ -45,10 +45,11 @@ class SettingsInfoText extends ConsumerWidget {
                   color: context.theme.colorTheme.normalTextColor),
             ),
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 SizedBox(
                   // margin: EdgeInsets.only(right: 10),
-                  width: 180,
+                  width: 150,
                   child: Text(
                     description!,
                     style: AppTextstyle.bodyTextStyle(
@@ -58,7 +59,7 @@ class SettingsInfoText extends ConsumerWidget {
                     overflow: TextOverflow.clip,
                   ),
                 ),
-                5.spaceX,
+                10.spaceX,
                 isButton
                     ? Padding(
                         padding: const EdgeInsets.only(bottom: 20, left: 00),

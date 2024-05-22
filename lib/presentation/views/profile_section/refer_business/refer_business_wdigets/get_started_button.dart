@@ -16,8 +16,9 @@ class GetStartedButton extends ConsumerWidget {
     return InkWell(
       onTap: onpress,
       child: Container(
-        height: 39,
-        width: 120,
+        // height: 39,
+        // width: 120,
+        padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(70),
             color: color ?? context.theme.colorTheme.buttonColor),

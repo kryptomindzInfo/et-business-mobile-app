@@ -25,7 +25,7 @@ class InfoTextWidget extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Container(
-      margin: const EdgeInsets.only(top: 15, bottom: 5),
+      margin: const EdgeInsets.only(top: 13, bottom: 4),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

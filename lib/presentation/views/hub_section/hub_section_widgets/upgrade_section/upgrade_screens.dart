@@ -34,33 +34,28 @@ class UpgradeScreens extends ConsumerWidget {
       isButtons: true,
       widget: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16),
-        child: Positioned(
-          bottom: 60.h,
-          right: 50.w,
-          left: 50.w,
-          child: CommonButton(
-            borderRadius: 12,
-            height: 50,
-            title: getTranslated("get_started", appContext),
-            // mainButtonColor: AppColors.white,
-            mainButtonColor: appContext.theme.colorTheme.whiteToYellow,
-            titleColor: AppColors.black,
-            width: double.infinity,
-            onpress: () {
-              showModalBottomSheet(
-                isScrollControlled: true,
-                context: appContext,
-                backgroundColor: appContext.theme.colorTheme.bottomSheetColor,
-                builder: (context) => BlackCommonBottomSheet(
-                  title: "your_plan_doesnt",
-                  subtitle: "Upgrade_your_plan",
-                  buttonTitle: "upgrade_plan",
-                  image: AppAssets.rocketImage,
-                  buttonPadding: 120.spaceY,
-                ),
-              );
-            },
-          ),
+        child: CommonButton(
+          borderRadius: 12,
+          height: 50,
+          title: getTranslated("get_started", appContext),
+          // mainButtonColor: AppColors.white,
+          mainButtonColor: appContext.theme.colorTheme.whiteToYellow,
+          titleColor: AppColors.black,
+          width: double.infinity,
+          onpress: () {
+            showModalBottomSheet(
+              isScrollControlled: true,
+              context: appContext,
+              backgroundColor: appContext.theme.colorTheme.bottomSheetColor,
+              builder: (context) => BlackCommonBottomSheet(
+                title: "your_plan_doesnt",
+                subtitle: "Upgrade_your_plan",
+                buttonTitle: "upgrade_plan",
+                image: AppAssets.rocketImage,
+                buttonPadding: 120.spaceY,
+              ),
+            );
+          },
         ),
       ),
     ),

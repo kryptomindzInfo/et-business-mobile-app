@@ -53,13 +53,14 @@ class SignUpRoleInTheCompanyScreen extends ConsumerWidget {
                         return Padding(
                           padding: const EdgeInsets.only(bottom: 32.0),
                           child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               const Padding(
                                 padding: EdgeInsets.only(top: 8.0),
                                 child: CustomCheckBox(),
                               ),
-                              12.spaceX,
+                              // 10.spaceX,
                               BusinessTypeWidget(
                                 image: companyRoles[index]['image'],
                                 title: getTranslated(

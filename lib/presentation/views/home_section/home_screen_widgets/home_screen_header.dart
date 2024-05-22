@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../constants/app_assets.dart';
+import '../../../../providers/theme_provider.dart';
 
 class HomeScreenHeader extends ConsumerWidget {
   final VoidCallback? onpress;
@@ -29,7 +30,9 @@ class HomeScreenHeader extends ConsumerWidget {
           Padding(
             padding: const EdgeInsets.only(left: 15),
             child: Image.asset(
-              AppAssets.appbarLogo,
+              ref.watch(themeProvider).themeMode == ThemeMode.dark
+                  ? AppAssets.appbarLogo
+                  : AppAssets.appbarLogoDark,
               height: 40,
             ),
           ),

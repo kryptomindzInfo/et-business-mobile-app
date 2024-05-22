@@ -246,7 +246,104 @@ class AppTheme extends ThemeExtension<AppTheme> {
       return this;
     }
     return AppTheme(
+      // primaryColor: Color.lerp(primaryColor, other.primaryColor, t)!,
+      // secondaryColor: Color.lerp(secondaryColor, other.secondaryColor, t)!,
       primaryColor: Color.lerp(primaryColor, other.primaryColor, t)!,
+      secondaryColor: Color.lerp(secondaryColor, other.secondaryColor, t)!,
+      chipsColor: Color.lerp(chipsColor, other.chipsColor, t)!,
+      appbarTitleColor:
+          Color.lerp(appbarTitleColor, other.appbarTitleColor, t)!,
+      activeChipColor: Color.lerp(activeChipColor, other.activeChipColor, t)!,
+      blackColor: Color.lerp(blackColor, other.blackColor, t)!,
+      whiteColor: Color.lerp(whiteColor, other.whiteColor, t)!,
+      notNowButtonColor:
+          Color.lerp(notNowButtonColor, other.notNowButtonColor, t)!,
+      bottomSheetColor:
+          Color.lerp(bottomSheetColor, other.bottomSheetColor, t)!,
+      backgroundColor: Color.lerp(backgroundColor, other.backgroundColor, t)!,
+      yellowGreenColor:
+          Color.lerp(yellowGreenColor, other.yellowGreenColor, t)!,
+      cardBorderColor: Color.lerp(cardBorderColor, other.cardBorderColor, t)!,
+      boldTextColor: Color.lerp(boldTextColor, other.boldTextColor, t)!,
+      yellowToBlackish:
+          Color.lerp(yellowToBlackish, other.yellowToBlackish, t)!,
+      blackishToYellow:
+          Color.lerp(blackishToYellow, other.blackishToYellow, t)!,
+      normalTextColor: Color.lerp(normalTextColor, other.normalTextColor, t)!,
+      buttonColor: Color.lerp(buttonColor, other.buttonColor, t)!,
+      borderColor: Color.lerp(borderColor, other.borderColor, t)!,
+      buttonTitleColor:
+          Color.lerp(buttonTitleColor, other.buttonTitleColor, t)!,
+      titleColor: Color.lerp(titleColor, other.titleColor, t)!,
+      otpText: Color.lerp(otpText, other.otpText, t)!,
+      otpBlock: Color.lerp(otpBlock, other.otpBlock, t)!,
+      passCodeBlock: Color.lerp(passCodeBlock, other.passCodeBlock, t)!,
+      passCodeCursor: Color.lerp(passCodeCursor, other.passCodeCursor, t)!,
+      blackAndWhite: Color.lerp(blackAndWhite, other.blackAndWhite, t)!,
+      passCodeText: Color.lerp(passCodeText, other.passCodeText, t)!,
+      whiteAndBlack: Color.lerp(whiteAndBlack, other.whiteAndBlack, t)!,
+      iconBgColor: Color.lerp(iconBgColor, other.iconBgColor, t)!,
+      greyToTeal: Color.lerp(greyToTeal, other.greyToTeal, t)!,
+      greenToTeal: Color.lerp(greenToTeal, other.greenToTeal, t)!,
+      yellowToGreen: Color.lerp(yellowToGreen, other.yellowToGreen, t)!,
+      whiteToYellow: Color.lerp(whiteToYellow, other.whiteToYellow, t)!,
+      whiteToTeal: Color.lerp(whiteToTeal, other.whiteToTeal, t)!,
+      whiteToGreen: Color.lerp(whiteToGreen, other.whiteToGreen, t)!,
+      tealToYellow: Color.lerp(tealToYellow, other.tealToYellow, t)!,
+      iconWithTitleColor:
+          Color.lerp(iconWithTitleColor, other.iconWithTitleColor, t)!,
+      cardColor: Color.lerp(cardColor, other.cardColor, t)!,
+      transparentToColor:
+          Color.lerp(transparentToColor, other.transparentToColor, t)!,
+      transparentToGreen:
+          Color.lerp(transparentToGreen, other.transparentToGreen, t)!,
+      businessDetailsContainer: Color.lerp(
+          businessDetailsContainer, other.businessDetailsContainer, t)!,
+      whiteTohalfWhite:
+          Color.lerp(whiteTohalfWhite, other.whiteTohalfWhite, t)!,
+      whiteToGrey: Color.lerp(whiteToGrey, other.whiteToGrey, t)!,
+      normalButtonsColor:
+          Color.lerp(normalButtonsColor, other.normalButtonsColor, t)!,
+      buttonDisabledColor:
+          Color.lerp(buttonDisabledColor, other.buttonDisabledColor, t)!,
+      indigoToColor: Color.lerp(indigoToColor, other.indigoToColor, t)!,
+      grassGreen: Color.lerp(grassGreen, other.grassGreen, t)!,
+      disableButtonColor:
+          Color.lerp(disableButtonColor, other.disableButtonColor, t)!,
+      disableButtonTextColor:
+          Color.lerp(disableButtonTextColor, other.disableButtonTextColor, t)!,
+      normallyUsedTealColor:
+          Color.lerp(normallyUsedTealColor, other.normallyUsedTealColor, t)!,
+      greyDescription: Color.lerp(greyDescription, other.greyDescription, t)!,
+      appBackgroundColor:
+          Color.lerp(appBackgroundColor, other.appBackgroundColor, t)!,
+      appBarColor: Color.lerp(appBarColor, other.appBarColor, t)!,
+      headerDescriptionColor:
+          Color.lerp(headerDescriptionColor, other.headerDescriptionColor, t)!,
+      textfieldborderColor:
+          Color.lerp(textfieldborderColor, other.textfieldborderColor, t)!,
+      subGrayColor: Color.lerp(subGrayColor, other.subGrayColor, t)!,
+      inActiveButtonColor:
+          Color.lerp(inActiveButtonColor, other.inActiveButtonColor, t)!,
+      whiteButtonTitleColor:
+          Color.lerp(whiteButtonTitleColor, other.whiteButtonTitleColor, t)!,
+      signUpContainerColor:
+          Color.lerp(signUpContainerColor, other.signUpContainerColor, t)!,
+      userIdentityContainer:
+          Color.lerp(userIdentityContainer, other.userIdentityContainer, t)!,
+      whiteButtonColor:
+          Color.lerp(whiteButtonColor, other.whiteButtonColor, t)!,
+      darkWhiteThemesheetColor: Color.lerp(
+          darkWhiteThemesheetColor, other.darkWhiteThemesheetColor, t)!,
+      yellowTextColor: Color.lerp(yellowTextColor, other.yellowTextColor, t)!,
+      textGrassGreenColor:
+          Color.lerp(textGrassGreenColor, other.textGrassGreenColor, t)!,
+      iconColor: Color.lerp(iconColor, other.iconColor, t)!,
+      commonBottomSheetColor:
+          Color.lerp(commonBottomSheetColor, other.commonBottomSheetColor, t)!,
+      redColor: Color.lerp(redColor, other.redColor, t)!,
+      requestIconBGcolor:
+          Color.lerp(requestIconBGcolor, other.requestIconBGcolor, t)!,
     );
   }
 }

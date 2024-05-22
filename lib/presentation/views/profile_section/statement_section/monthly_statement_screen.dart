@@ -48,7 +48,7 @@ class MonthlyStatementScreen extends ConsumerWidget {
                       icon: Image.asset(
                         AppAssets.iconArrowDownBlack,
                         height: 11,
-                        color: context.theme.colorTheme.blackAndWhite,
+                        color: context.theme.colorTheme.whiteColor,
                       )),
                   30.spaceY,
                   TitleText(

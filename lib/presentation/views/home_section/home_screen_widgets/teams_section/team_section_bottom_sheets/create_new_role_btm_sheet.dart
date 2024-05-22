@@ -63,7 +63,9 @@ class CreateNewRoleBottomSheet extends ConsumerWidget {
                             description: Text(
                               "Role Created",
                               style: AppTextstyle.headingTextStyle(
-                                  fontSize: 20, fontWeight: FontWeight.bold),
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                  color: context.theme.colorTheme.whiteColor),
                             ),
                           ));
                 },

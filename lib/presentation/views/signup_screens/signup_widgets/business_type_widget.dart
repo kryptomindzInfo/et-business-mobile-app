@@ -3,6 +3,7 @@ import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/icon_container.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -32,7 +33,7 @@ class BusinessTypeWidget extends ConsumerWidget {
           IconContainer(
             image: image,
           ),
-          16.spaceX,
+          12.spaceX,
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
