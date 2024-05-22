@@ -19,7 +19,7 @@ class CommonAppBar extends ConsumerWidget implements PreferredSizeWidget {
       this.actions});
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    // ThemeData theme = Theme.of(context);
+    ThemeData theme = Theme.of(context);
     return Padding(
       padding: EdgeInsets.only(
         top: topPadding ?? 0,
@@ -27,9 +27,10 @@ class CommonAppBar extends ConsumerWidget implements PreferredSizeWidget {
       child: AppBar(
         leading: leading,
         actions: actions,
+        surfaceTintColor: Colors.transparent,
         title: etBankLogo == true
             ? Image.asset(
-                ref.watch(themeProvider).themeMode == ThemeMode.dark
+                theme.brightness == Brightness.dark
                     ? AppAssets.appbarLogo
                     : AppAssets.appbarLogoDark,
                 height: 46,

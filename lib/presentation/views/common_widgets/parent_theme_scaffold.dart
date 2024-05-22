@@ -4,12 +4,13 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../providers/theme_provider.dart';
 
 class ParentThemeScaffold extends ConsumerWidget {
-  final Widget? child;
+  final Widget child;
 
-  const ParentThemeScaffold({super.key, this.child});
+  const ParentThemeScaffold({super.key, required this.child});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    // return child;
     return Scaffold(
       backgroundColor: context.theme.colorTheme.backgroundColor,
       floatingActionButton: FloatingActionButton(
