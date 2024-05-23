@@ -50,6 +50,10 @@ class EmailMessageScreen extends ConsumerWidget {
                 ),
                 18.spaceY,
                 TextFieldWidget(
+                  containerColor:
+                      context.theme.colorTheme.businessDetailsContainer,
+                  border: Border.all(
+                      color: context.theme.colorTheme.transparentToTeal),
                   hintText: getTranslated('enter_message', context),
                   // hintStyle: AppTextstyle.bodyTextStyle(color: AppColors.grey),
                 ),
@@ -63,6 +67,8 @@ class EmailMessageScreen extends ConsumerWidget {
                 24.spaceY,
                 CommonWhiteFlexibleCard(
                   color: context.theme.colorTheme.businessDetailsContainer,
+                  border: Border.all(
+                      color: context.theme.colorTheme.transparentToTeal),
                   borderRadius: 8,
                   padding: const EdgeInsets.fromLTRB(6, 6, 6, 6),
                   widget: CheckBoxWidget(

@@ -57,6 +57,9 @@ class SignUpVerificationsScreen extends ConsumerWidget {
                       statusIcon: data[index]["statusicon"],
                       onpress: data[index]["ontap"],
                       color: data[index]['color'],
+                      imageColor: data[index]['imageColor'] == null
+                          ? null
+                          : data[index]['imageColor'](context),
                     );
                   },
                 ),

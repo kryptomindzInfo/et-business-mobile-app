@@ -1,5 +1,4 @@
 import 'package:etbank_business_app/presentation/views/signup_screens/sign_in_sign_up_screen.dart';
-import 'package:etbank_business_app/providers/localization_provider.dart';
 import 'package:etbank_business_app/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -7,6 +6,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'navigation/navigator_key.dart';
 import 'navigation/route_generator.dart';
+import 'providers/localization_provider.dart';
 import 'providers/theme_provider.dart';
 import 'resources/app_persistance/app_local.dart';
 import 'resources/localization/app_localization.dart';

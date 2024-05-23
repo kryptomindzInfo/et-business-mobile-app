@@ -11,7 +11,6 @@ import 'package:etbank_business_app/presentation/views/home_section/home_screen_
 import 'package:etbank_business_app/resources/localization/language_constrants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
 import '../../../../../constants/app_colors.dart';
 import '../../../common_widgets/app_common_appbar.dart';
 import 'cards_section_widgets/funding_amount_card.dart';

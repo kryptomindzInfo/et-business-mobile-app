@@ -51,6 +51,11 @@ class EnterAmountScreen extends ConsumerWidget {
                 const CurrencyTextFieldWidget(),
                 22.spaceY,
                 TextFieldWidget(
+                  containerColor:
+                      context.theme.colorTheme.businessDetailsContainer,
+                  border: Border.all(
+                    color: context.theme.colorTheme.transparentToTeal,
+                  ),
                   hintText: getTranslated('reference', context),
                   hintStyle: AppTextstyle.bodyTextStyle(
                       fontSize: 16, color: AppColors.grey),

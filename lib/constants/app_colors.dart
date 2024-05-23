@@ -23,6 +23,7 @@ class AppColors {
   static const indigo = Color(0xff8B8CE6);
   static const headerDescColor = Color(0xffBEBEBE);
   static const headerDescColorLight = Color(0xff6F6F70);
+  static const viewButton = Color(0xffD9D9D9);
 
   static const darkGrassGreen = Color(0xff00804F);
 

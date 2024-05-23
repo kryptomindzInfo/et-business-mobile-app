@@ -16,7 +16,7 @@ class AdminOptions extends ConsumerWidget {
       children: [
         CommonGreenButton(
           title: getTranslated("save_a_copy", context),
-          borderColor: AppColors.yellowGreen,
+          borderColor: context.theme.colorTheme.transparentToYellow,
           height: 42,
           borderRadius: 64,
           textColor: AppColors.white,
@@ -29,7 +29,7 @@ class AdminOptions extends ConsumerWidget {
           imageHeight: 13,
           iconColor: Colors.white,
           imageIcon: AppAssets.editicon,
-          borderColor: AppColors.yellowGreen,
+          borderColor: context.theme.colorTheme.transparentToYellow,
           height: 42,
           borderRadius: 64,
           textColor: AppColors.white,
@@ -38,7 +38,7 @@ class AdminOptions extends ConsumerWidget {
         CommonGreenButton(
           imageIcon: AppAssets.menudots,
           imageHeight: 5,
-          borderColor: AppColors.yellowGreen,
+          borderColor: context.theme.colorTheme.transparentToYellow,
           height: 42,
           borderRadius: 64,
           textColor: AppColors.white,

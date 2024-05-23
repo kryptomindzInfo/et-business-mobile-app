@@ -27,6 +27,9 @@ class AdminFooterSection extends ConsumerWidget {
         20.spaceY,
         CommonWhiteFlexibleCard(
           color: context.theme.colorTheme.businessDetailsContainer,
+          border: Border.all(
+            color: context.theme.colorTheme.transparentToTeal,
+          ),
           borderRadius: 8,
           widget: Column(
             children: [

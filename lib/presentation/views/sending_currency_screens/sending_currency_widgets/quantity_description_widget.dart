@@ -23,9 +23,12 @@ class QuantityAndDescriptionWidget extends ConsumerWidget {
       children: [
         Container(
           decoration: BoxDecoration(
-              color: AppColors.transparent,
-              borderRadius: BorderRadius.circular(8),
-              border: Border.all(color: AppColors.tealColor, width: 1)),
+            color: context.theme.colorTheme.businessDetailsContainer,
+            border: Border.all(
+              color: context.theme.colorTheme.transparentToTeal,
+            ),
+            borderRadius: BorderRadius.circular(8),
+          ),
           child: Padding(
             padding: const EdgeInsets.fromLTRB(8, 4, 8, 4),
             child: Column(
@@ -84,6 +87,11 @@ class QuantityAndDescriptionWidget extends ConsumerWidget {
         Expanded(
           child: SizedBox(
             child: TextFieldWidget(
+              containerColor: context.theme.colorTheme.businessDetailsContainer,
+              border: Border.all(
+                color: context.theme.colorTheme.transparentToTeal,
+              ),
+
               // contentPadding: const EdgeInsets.all(10),
               hintText: getTranslated('description', context),
               style: const TextStyle(color: AppColors.white),

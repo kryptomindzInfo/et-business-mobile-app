@@ -11,6 +11,7 @@ class SignUpVerificationCard extends ConsumerWidget {
   final String? status;
   final VoidCallback? onpress;
   final Color? color;
+  final Color? imageColor;
   const SignUpVerificationCard(
       {super.key,
       this.imageIcon,
@@ -18,7 +19,8 @@ class SignUpVerificationCard extends ConsumerWidget {
       this.statusIcon,
       this.status,
       this.onpress,
-      this.color});
+      this.color,
+      this.imageColor});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -45,6 +47,7 @@ class SignUpVerificationCard extends ConsumerWidget {
                   child: Image.asset(
                     imageIcon!,
                     scale: 2.10,
+                    color: imageColor,
                     // color: context.theme.colorTheme.whiteColor,
                   ),
                 ),

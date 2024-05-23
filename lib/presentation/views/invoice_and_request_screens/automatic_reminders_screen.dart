@@ -53,6 +53,8 @@ class AutomaticRemindersScreen extends ConsumerWidget {
                 ),
                 22.spaceY,
                 CommonWhiteFlexibleCard(
+                  border: Border.all(
+                      color: context.theme.colorTheme.transparentToTeal),
                   color: context.theme.colorTheme.businessDetailsContainer,
                   borderRadius: 8,
                   padding: const EdgeInsets.fromLTRB(6, 6, 6, 6),
@@ -71,6 +73,8 @@ class AutomaticRemindersScreen extends ConsumerWidget {
                 ),
                 24.spaceY,
                 CommonWhiteFlexibleCard(
+                  border: Border.all(
+                      color: context.theme.colorTheme.transparentToTeal),
                   color: context.theme.colorTheme.businessDetailsContainer,
                   borderRadius: 8,
                   padding: const EdgeInsets.fromLTRB(6, 6, 6, 6),

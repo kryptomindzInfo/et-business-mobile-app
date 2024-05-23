@@ -1,3 +1,4 @@
+import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:etbank_business_app/constants/app_textstyle.dart';
 import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
@@ -10,12 +11,14 @@ class CommonIconTitleIconButton extends ConsumerWidget {
   final VoidCallback? onpress;
   final String? iconImage;
   bool isForwardIcon = true;
+  final Color? imageColor;
   CommonIconTitleIconButton(
       {super.key,
       this.title,
       this.onpress,
       this.iconImage,
-      required this.isForwardIcon});
+      required this.isForwardIcon,
+      this.imageColor});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -29,7 +32,12 @@ class CommonIconTitleIconButton extends ConsumerWidget {
           children: [
             Row(
               children: [
-                if (iconImage != null) IconContainer(image: iconImage!),
+                if (iconImage != null)
+                  IconContainer(
+                    image: iconImage!,
+                    bgColor: AppColors.tealColor,
+                    imageColor: imageColor,
+                  ),
                 if (iconImage != null) 10.spaceX,
                 Text(
                   title!,

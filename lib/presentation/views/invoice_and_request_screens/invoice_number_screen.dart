@@ -49,6 +49,10 @@ class InvoiceNumberScreen extends ConsumerWidget {
                 ),
                 38.spaceY,
                 TextFieldWidget(
+                  border: Border.all(
+                      color: context.theme.colorTheme.transparentToTeal),
+                  containerColor:
+                      context.theme.colorTheme.businessDetailsContainer,
                   height: 85,
                   labelText: getTranslated('invoice_prefix', context),
                   labelStyle: AppTextstyle.headingTextStyle(
@@ -66,6 +70,10 @@ class InvoiceNumberScreen extends ConsumerWidget {
                 ),
                 14.spaceY,
                 TextFieldWidget(
+                  border: Border.all(
+                      color: context.theme.colorTheme.transparentToTeal),
+                  containerColor:
+                      context.theme.colorTheme.businessDetailsContainer,
                   height: 85,
                   labelText: getTranslated('Invoice number', context),
                   labelStyle: AppTextstyle.headingTextStyle(
@@ -86,6 +94,8 @@ class InvoiceNumberScreen extends ConsumerWidget {
                 CommonWhiteFlexibleCard(
                   borderRadius: 8,
                   color: context.theme.colorTheme.businessDetailsContainer,
+                  border: Border.all(
+                      color: context.theme.colorTheme.transparentToTeal),
                   padding: const EdgeInsets.fromLTRB(6, 6, 6, 6),
                   widget: CheckBoxWidget(
                     checkBoxValue:

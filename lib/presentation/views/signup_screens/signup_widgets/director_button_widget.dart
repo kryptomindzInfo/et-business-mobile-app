@@ -35,7 +35,8 @@ class DirectorButtonWidget extends ConsumerWidget {
           borderRadius: BorderRadius.all(
             Radius.circular(buttonRadius ?? 8),
           ),
-          border: Border.all(color: context.theme.colorTheme.borderColor)),
+          border:
+              Border.all(color: context.theme.colorTheme.transparentToTeal)),
       child: Padding(
         padding: padding ?? const EdgeInsets.all(8.0),
         child: Row(

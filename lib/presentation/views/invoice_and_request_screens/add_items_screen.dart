@@ -43,6 +43,7 @@ class AddItemsScreen extends ConsumerWidget {
                   ),
                   64.spaceY,
                   const CurrencyTextFieldWidget(
+
                       // padding: EdgeInsets.all(16)
                       ),
                   45.spaceY,

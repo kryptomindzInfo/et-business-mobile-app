@@ -105,6 +105,8 @@ class MarkAsPaidScreen extends ConsumerWidget {
                   ),
                   25.spaceY,
                   CommonWhiteFlexibleCard(
+                    border: Border.all(
+                        color: context.theme.colorTheme.transparentToTeal),
                     color: context.theme.colorTheme.businessDetailsContainer,
                     borderRadius: 12,
                     padding: const EdgeInsets.symmetric(
@@ -134,6 +136,8 @@ class MarkAsPaidScreen extends ConsumerWidget {
                   ),
                   24.spaceY,
                   CommonWhiteFlexibleCard(
+                    border: Border.all(
+                        color: context.theme.colorTheme.transparentToTeal),
                     color: context.theme.colorTheme.businessDetailsContainer,
                     borderRadius: 12,
                     padding: const EdgeInsets.symmetric(
@@ -157,6 +161,8 @@ class MarkAsPaidScreen extends ConsumerWidget {
                   ),
                   24.spaceY,
                   CommonWhiteFlexibleCard(
+                    border: Border.all(
+                        color: context.theme.colorTheme.transparentToTeal),
                     color: context.theme.colorTheme.businessDetailsContainer,
                     borderRadius: 12,
                     padding:
@@ -187,6 +193,8 @@ class MarkAsPaidScreen extends ConsumerWidget {
                   ),
                   20.spaceY,
                   CommonWhiteFlexibleCard(
+                    border: Border.all(
+                        color: context.theme.colorTheme.transparentToTeal),
                     color: context.theme.colorTheme.businessDetailsContainer,
                     borderRadius: 12,
                     padding:

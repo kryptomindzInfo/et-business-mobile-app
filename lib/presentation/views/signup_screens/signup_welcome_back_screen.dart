@@ -29,7 +29,7 @@ class SignUpWelcomeBackScreen extends ConsumerWidget {
             Row(
               children: [
                 IconButtonWidget(
-                  color: context.theme.colorTheme.inActiveButtonColor,
+                  color: context.theme.colorTheme.tealToGrey,
                   image: const Icon(
                     Icons.close,
                     color: AppColors.white,

@@ -54,12 +54,17 @@ class AssignRoleScreen extends ConsumerWidget {
                   // trailingImageHeight: 30,
                 ),
                 20.spaceY,
-                const HomeScreenSearchTextfield(
-                    // color: AppColors.greywhite,
-                    ),
+                HomeScreenSearchTextfield(
+                  color: context.theme.colorTheme.businessDetailsContainer,
+
+                  // color: AppColors.greywhite,
+                ),
                 30.spaceY,
                 CommonWhiteFlexibleCard(
                   color: context.theme.colorTheme.businessDetailsContainer,
+                  border: Border.all(
+                    color: context.theme.colorTheme.transparentToTeal,
+                  ),
                   widget: SizedBox(
                     height: 250,
                     child: ListView.builder(

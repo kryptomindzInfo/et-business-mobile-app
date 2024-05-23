@@ -69,6 +69,9 @@ class CurrencySellScreen extends ConsumerWidget {
                 CommonWhiteFlexibleCard(
                   borderRadius: 12,
                   color: context.theme.colorTheme.whiteTohalfWhite,
+                  border: Border.all(
+                    color: context.theme.colorTheme.transparentToTeal,
+                  ),
                   padding:
                       const EdgeInsets.symmetric(horizontal: 28, vertical: 14),
                   widget: const CurrencySellDetailTexts(

@@ -17,7 +17,8 @@ class InfoCardCommonWidget extends ConsumerWidget {
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12),
             color: color ?? AppColors.tealColor,
-            border: Border.all(color: context.theme.colorTheme.borderColor)),
+            border:
+                Border.all(color: context.theme.colorTheme.transparentToTeal)),
         child: child);
   }
 }

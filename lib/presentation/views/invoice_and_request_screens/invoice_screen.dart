@@ -86,13 +86,16 @@ class InvoiceSreen extends ConsumerWidget {
                   CommonWhiteFlexibleCard(
                     padding: const EdgeInsets.all(0),
                     borderRadius: 12,
+                    color: AppColors.transparent,
+                    border: Border.all(
+                        color: context.theme.colorTheme.transparentToTeal),
                     widget: RequestMoneyWhiteContainerWidget(
                         color:
                             context.theme.colorTheme.businessDetailsContainer,
                         titleColor: context.theme.colorTheme.whiteColor,
                         subTitlecolor: AppColors.grey,
                         imageicon: Image.asset(
-                          color: context.theme.colorTheme.whiteColor,
+                          color: AppColors.white,
                           AppAssets.person,
                           height: 25,
                         ),
@@ -103,6 +106,9 @@ class InvoiceSreen extends ConsumerWidget {
                   CommonWhiteFlexibleCard(
                     padding: const EdgeInsets.all(0),
                     borderRadius: 12,
+                    color: AppColors.transparent,
+                    border: Border.all(
+                        color: context.theme.colorTheme.transparentToTeal),
                     widget: RequestMoneyWhiteContainerWidget(
                       color: context.theme.colorTheme.businessDetailsContainer,
                       titleColor: context.theme.colorTheme.whiteColor,
@@ -121,7 +127,9 @@ class InvoiceSreen extends ConsumerWidget {
                   ),
                   22.spaceY,
                   ShowAccountDetailsWidget(
-                    color: AppColors.transparent,
+                    color: context.theme.colorTheme.businessDetailsContainer,
+                    border: Border.all(
+                        color: context.theme.colorTheme.transparentToTeal),
                     title: getTranslated('currency', context),
                     titleColor: AppColors.grey,
                     subTitle: getTranslated('GBP_british_pound', context),
@@ -132,6 +140,9 @@ class InvoiceSreen extends ConsumerWidget {
                   CommonWhiteFlexibleCard(
                     padding: const EdgeInsets.all(0),
                     borderRadius: 12,
+                    color: AppColors.transparent,
+                    border: Border.all(
+                        color: context.theme.colorTheme.transparentToTeal),
                     widget: RequestMoneyWhiteContainerWidget(
                         color:
                             context.theme.colorTheme.businessDetailsContainer,
@@ -146,7 +157,9 @@ class InvoiceSreen extends ConsumerWidget {
                   ),
                   16.spaceY,
                   ShowAccountDetailsWidget(
-                    color: AppColors.transparent,
+                    border: Border.all(
+                        color: context.theme.colorTheme.transparentToTeal),
+                    color: context.theme.colorTheme.businessDetailsContainer,
                     titleColor: AppColors.grey,
                     title: getTranslated('sub_total', context),
                     subTitle: getTranslated('£0', context),

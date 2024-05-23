@@ -5,6 +5,7 @@ import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/presentation/views/profile_section/refer_business/refer_business_wdigets/get_started_whole_container.dart';
 import 'package:etbank_business_app/resources/localization/language_constrants.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class ReferBusinessMainCard extends ConsumerWidget {
@@ -58,6 +59,8 @@ class ReferBusinessMainCard extends ConsumerWidget {
           20.spaceY,
           const GetStartedSection(
             borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(12),
+              topRight: Radius.circular(12),
               bottomLeft: Radius.circular(10),
               bottomRight: Radius.circular(10),
             ),

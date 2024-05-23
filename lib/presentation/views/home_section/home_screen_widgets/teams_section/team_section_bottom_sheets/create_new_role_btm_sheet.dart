@@ -31,7 +31,7 @@ class CreateNewRoleBottomSheet extends ConsumerWidget {
             IconButton(
               onPressed: () {},
               icon: const Icon(Icons.close),
-              color: AppColors.white,
+              color: context.theme.colorTheme.whiteColor,
             ),
             HeaderIconWithTitle(
               // imageicon: AppAssets.crossicon,
@@ -39,6 +39,10 @@ class CreateNewRoleBottomSheet extends ConsumerWidget {
             ),
             28.spaceY,
             TextFieldWidget(
+              containerColor: context.theme.colorTheme.businessDetailsContainer,
+              border: Border.all(
+                color: context.theme.colorTheme.transparentToTeal,
+              ),
               hintText: getTranslated('new_role_name', context),
               style: const TextStyle(color: AppColors.black),
             ),

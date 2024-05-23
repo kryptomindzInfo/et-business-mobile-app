@@ -196,7 +196,9 @@ List<Map> _verificationData = [
     "icon": AppAssets.verifybusinessdetailsicon,
     "status": "ready_to_submit",
     "statusicon": AppAssets.whitehourglass,
-    "ontap": () {}
+    "ontap": () {},
+    "imageColor": (BuildContext context) =>
+        context.theme.colorTheme.whiteToGrey,
   },
   {
     "title": "verify_business_details",
@@ -205,7 +207,9 @@ List<Map> _verificationData = [
     "statusicon": AppAssets.whitehourglass,
     "ontap": () {
       showCommonModalSheet(appContext, 300, const BusinessDetailsBottomSheet());
-    }
+    },
+    "imageColor": (BuildContext context) =>
+        context.theme.colorTheme.whiteToGrey,
   },
   {
     "title": "identity",

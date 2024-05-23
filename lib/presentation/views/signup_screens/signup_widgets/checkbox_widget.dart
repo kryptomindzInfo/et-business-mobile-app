@@ -26,8 +26,10 @@ class CheckBoxWidget extends ConsumerWidget {
         Checkbox(
           value: checkBoxValue,
           onChanged: onChanged,
-          activeColor: context.theme.colorTheme.yellowGreenColor,
+          activeColor: AppColors.green,
+          // activeColor: context.theme.colorTheme.yellowGreenColor,
           checkColor: AppColors.black,
+          side: const BorderSide(color: AppColors.grassGreen, width: 1.5),
         ),
         8.spaceX,
         SizedBox(

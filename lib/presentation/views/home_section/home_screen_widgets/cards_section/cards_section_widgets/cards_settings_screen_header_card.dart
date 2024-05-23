@@ -14,6 +14,9 @@ class SettingsScreenHeaderCard extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return CommonWhiteFlexibleCard(
       color: context.theme.colorTheme.businessDetailsContainer,
+      border: Border.all(
+        color: context.theme.colorTheme.businessDetailsContainer,
+      ),
       borderRadius: 12,
       widget: Row(
         children: [

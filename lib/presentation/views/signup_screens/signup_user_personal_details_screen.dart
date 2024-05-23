@@ -111,11 +111,11 @@ class SignUpUserPersonalDetailsScreen extends ConsumerWidget {
                 height: 48.h,
                 width: 327.w,
                 child: PrimaryButton(
-                  color: context.theme.colorTheme.buttonColor,
+                  color: context.theme.colorTheme.disableButtonColor,
                   text: Text(
                     getTranslated('continue', context),
                     style: AppTextstyle.bodyTextStyle(
-                        color: context.theme.colorTheme.buttonTitleColor,
+                        color: AppColors.white,
                         fontSize: 16,
                         fontWeight: FontWeight.w500),
                   ),

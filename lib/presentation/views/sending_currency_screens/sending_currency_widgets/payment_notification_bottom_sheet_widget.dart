@@ -60,6 +60,11 @@ class PaymentNotificationBottomSheetWidget extends ConsumerWidget {
                   Padding(
                     padding: const EdgeInsets.only(left: 20),
                     child: TextFieldWidget(
+                      containerColor:
+                          context.theme.colorTheme.businessDetailsContainer,
+                      border: Border.all(
+                        color: context.theme.colorTheme.transparentToTeal,
+                      ),
                       hintText: getTranslated('recipient_email', context),
                       style: const TextStyle(color: AppColors.white),
                     ),
@@ -94,7 +99,7 @@ class PaymentNotificationBottomSheetWidget extends ConsumerWidget {
                       text: Text(
                         getTranslated('not_now', context),
                         style: AppTextstyle.bodyTextStyle(
-                            color: AppColors.green,
+                            color: AppColors.grassGreen,
                             fontSize: 16,
                             fontWeight: FontWeight.w500),
                       ),

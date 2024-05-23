@@ -35,6 +35,9 @@ class CardSetupAndEditWidget extends ConsumerWidget {
         16.spaceY,
         CommonWhiteFlexibleCard(
           color: context.theme.colorTheme.businessDetailsContainer,
+          border: Border.all(
+            color: context.theme.colorTheme.businessDetailsContainer,
+          ),
           borderRadius: 12,
           widget: Column(
             children: [

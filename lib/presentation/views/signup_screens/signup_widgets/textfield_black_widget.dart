@@ -19,8 +19,10 @@ class TextFieldBlackWidget extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Container(
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(30),
-          border: Border.all(color: context.theme.colorTheme.borderColor)),
+        color: context.theme.colorTheme.businessDetailsContainer,
+        borderRadius: BorderRadius.circular(30),
+        border: Border.all(color: context.theme.colorTheme.transparentToTeal),
+      ),
       height: 35.h,
       child: TextFormField(
         onChanged: onChanged,

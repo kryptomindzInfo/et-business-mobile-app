@@ -37,6 +37,7 @@ class InviteToETBankScreen extends ConsumerWidget {
                 ),
                 24.spaceY,
                 UserPersonalDetailsWidget(
+                    height: 30,
                     title: getTranslated("email", context),
                     hint: "Type or past multiple at once",
                     hintStyle:
