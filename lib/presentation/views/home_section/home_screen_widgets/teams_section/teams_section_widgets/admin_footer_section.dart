@@ -34,7 +34,9 @@ class AdminFooterSection extends ConsumerWidget {
           widget: Column(
             children: [
               PrimaryButton(
-                color: AppColors.yellowGreen,
+                color: true
+                    ? context.theme.colorTheme.buttonColor
+                    : context.theme.colorTheme.buttonDisabledColor,
                 text: Text(
                   getTranslated("update_admin", context),
                   style: AppTextstyle.bodyTextStyle(

@@ -16,6 +16,7 @@ class UploadDocWidget extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return CommonWhiteFlexibleCard(
       color: context.theme.colorTheme.businessDetailsContainer,
+      border: Border.all(color: context.theme.colorTheme.transparentToTeal),
       padding: const EdgeInsets.only(left: 10, bottom: 10, right: 10, top: 10),
       widget: Row(
         children: [

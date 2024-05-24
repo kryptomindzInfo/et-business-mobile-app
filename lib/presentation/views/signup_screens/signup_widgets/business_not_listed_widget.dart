@@ -35,10 +35,12 @@ class BusinessNotListedWidet extends ConsumerWidget {
         // margin: EdgeInsets.only(left: 0, right: 0),
         decoration: BoxDecoration(
             // color: AppColors.white,
-            borderRadius: BorderRadius.all(
+            color: context.theme.colorTheme.businessDetailsContainer,
+            borderRadius: const BorderRadius.all(
               Radius.circular(12),
             ),
-            border: Border.all(color: context.theme.colorTheme.borderColor)),
+            border:
+                Border.all(color: context.theme.colorTheme.transparentToTeal)),
         child: Center(
           child: Row(
             children: [

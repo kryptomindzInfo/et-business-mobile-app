@@ -96,7 +96,9 @@ class SignUpWhereYouConductBusinessScreen extends ConsumerWidget {
                 height: 48.h,
                 width: 327.w,
                 child: PrimaryButton(
-                  color: context.theme.colorTheme.buttonColor,
+                  color: true
+                      ? context.theme.colorTheme.buttonColor
+                      : context.theme.colorTheme.buttonDisabledColor,
                   text: Text(
                     getTranslated('continue', context),
                     style: AppTextstyle.bodyTextStyle(

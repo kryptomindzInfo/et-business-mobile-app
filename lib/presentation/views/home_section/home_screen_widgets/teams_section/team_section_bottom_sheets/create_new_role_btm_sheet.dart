@@ -49,7 +49,9 @@ class CreateNewRoleBottomSheet extends ConsumerWidget {
             140.spaceY,
             Center(
               child: PrimaryButton(
-                color: AppColors.yellowGreen,
+                color: true
+                    ? context.theme.colorTheme.buttonColor
+                    : context.theme.colorTheme.buttonDisabledColor,
                 text: Text(
                   getTranslated("continue", context),
                   style: AppTextstyle.bodyTextStyle(color: AppColors.black),

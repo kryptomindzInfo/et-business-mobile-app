@@ -77,9 +77,11 @@ class SignUpVerifyUserIdentityScreen extends ConsumerWidget {
                       10.spaceY,
                       Container(
                         decoration: BoxDecoration(
-                            // color: AppColors.white,
+                            color: context
+                                .theme.colorTheme.businessDetailsContainer,
                             border: Border.all(
-                                color: context.theme.colorTheme.borderColor),
+                                color:
+                                    context.theme.colorTheme.transparentToTeal),
                             borderRadius: BorderRadius.circular(8)),
                         child: Column(
                           children: [

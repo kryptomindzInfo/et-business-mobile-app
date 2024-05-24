@@ -98,7 +98,9 @@ class AssignRoleScreen extends ConsumerWidget {
                   padding: const EdgeInsets.only(top: 120),
                   child: PrimaryButton(
                       minwidth: 280,
-                      color: AppColors.yellowGreen,
+                      color: true
+                          ? context.theme.colorTheme.buttonColor
+                          : context.theme.colorTheme.buttonDisabledColor,
                       text: Text(
                         getTranslated("continue", context),
                         style: AppTextstyle.bodyTextStyle(

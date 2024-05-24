@@ -66,7 +66,9 @@ class BlackCommonBottomSheet extends ConsumerWidget {
             Center(
               child: CommonButton(
                 title: getTranslated(buttonTitle!, context),
-                mainButtonColor: AppColors.yellowGreen,
+                mainButtonColor: true
+                    ? context.theme.colorTheme.buttonColor
+                    : context.theme.colorTheme.buttonDisabledColor,
                 titleColor: AppColors.black,
                 width: 288,
               ),

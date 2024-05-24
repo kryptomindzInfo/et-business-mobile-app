@@ -70,7 +70,7 @@ class SettingsInfoText extends ConsumerWidget {
                           onChanged: (value) {
                             proRead.expenseReportingSwitch(value);
                           },
-                          activeColor: context.theme.colorTheme.indigoToColor,
+                          activeColor: context.theme.colorTheme.grassGreen,
                         ),
                       )
                     : const SizedBox()

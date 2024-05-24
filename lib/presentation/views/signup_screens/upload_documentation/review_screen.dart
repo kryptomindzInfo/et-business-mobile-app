@@ -40,7 +40,9 @@ class ReviewScreen extends ConsumerWidget {
         bottomNavigationBar: Padding(
           padding: const EdgeInsets.only(bottom: 50, right: 30, left: 30),
           child: CommonButton(
-            mainButtonColor: context.theme.colorTheme.buttonColor,
+            mainButtonColor: true
+                ? context.theme.colorTheme.buttonColor
+                : context.theme.colorTheme.buttonDisabledColor,
             titleColor: context.theme.colorTheme.buttonTitleColor,
             title: getTranslated("confirm", context),
             width: 288,

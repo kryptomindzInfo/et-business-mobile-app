@@ -3,7 +3,6 @@ import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/white_flexible_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
 import '../../../../../../constants/app_assets.dart';
 import '../../../../../../constants/app_textstyle.dart';
 
@@ -15,7 +14,7 @@ class SettingsScreenHeaderCard extends ConsumerWidget {
     return CommonWhiteFlexibleCard(
       color: context.theme.colorTheme.businessDetailsContainer,
       border: Border.all(
-        color: context.theme.colorTheme.businessDetailsContainer,
+        color: context.theme.colorTheme.transparentToTeal,
       ),
       borderRadius: 12,
       widget: Row(

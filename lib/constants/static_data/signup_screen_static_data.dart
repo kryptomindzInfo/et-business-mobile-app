@@ -179,7 +179,7 @@ List<Map> _verificationData = [
         builder: (context) => const UpgradeBottomSheet(),
       );
     },
-    "color": appContext.theme.colorTheme.grassGreen,
+    "color": (BuildContext context) => context.theme.colorTheme.grassGreen,
   },
   {
     "title": "submit_doc",
@@ -189,7 +189,7 @@ List<Map> _verificationData = [
     "ontap": () {
       Navigation.pushNamed(SignUpSubmitDocumentScreen.routeName);
     },
-    "color": appContext.theme.colorTheme.grassGreen,
+    "color": (BuildContext context) => context.theme.colorTheme.grassGreen,
   },
   {
     "title": "verify_business",
@@ -199,6 +199,8 @@ List<Map> _verificationData = [
     "ontap": () {},
     "imageColor": (BuildContext context) =>
         context.theme.colorTheme.whiteToGrey,
+    "color": (BuildContext context) =>
+        context.theme.colorTheme.businessDetailsContainer,
   },
   {
     "title": "verify_business_details",
@@ -210,13 +212,17 @@ List<Map> _verificationData = [
     },
     "imageColor": (BuildContext context) =>
         context.theme.colorTheme.whiteToGrey,
+    "color": (BuildContext context) =>
+        context.theme.colorTheme.businessDetailsContainer,
   },
   {
     "title": "identity",
     "icon": AppAssets.identityicon,
     "status": "verified",
     "statusicon": AppAssets.greencheck,
-    "ontap": () {}
+    "ontap": () {},
+    "color": (BuildContext context) =>
+        context.theme.colorTheme.businessDetailsContainer,
   }
 ];
 

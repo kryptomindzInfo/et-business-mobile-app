@@ -36,36 +36,27 @@ class CardSetupAndEditWidget extends ConsumerWidget {
         CommonWhiteFlexibleCard(
           color: context.theme.colorTheme.businessDetailsContainer,
           border: Border.all(
-            color: context.theme.colorTheme.businessDetailsContainer,
+            color: context.theme.colorTheme.transparentToTeal,
           ),
           borderRadius: 12,
           widget: Column(
             children: [
               SettingsInfoText(
-                title: getTranslated(
-                  "expense_reporting",
-                  context,
-                ),
+                title: getTranslated("expense_reporting", context),
                 description: getTranslated("attach_receipts", context),
                 isButton: true,
                 imageIcon: AppAssets.freezicon,
               ),
               32.spaceY,
               SettingsInfoText(
-                title: getTranslated(
-                  "change_card_name",
-                  context,
-                ),
+                title: getTranslated("change_card_name", context),
                 description: "${getTranslated("current_name", context)}:",
                 isButton: false,
                 imageIcon: AppAssets.editicon,
               ),
               32.spaceY,
               SettingsInfoText(
-                title: getTranslated(
-                  "Terminate card",
-                  context,
-                ),
+                title: getTranslated("Terminate card", context),
                 description:
                     "${getTranslated("Card will be deactivated but stay in your account", context)}:",
                 isButton: false,

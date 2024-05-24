@@ -24,7 +24,7 @@ class DashboardMainCard extends ConsumerWidget {
       width: double.infinity,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(28),
-        border: Border.all(color: context.theme.colorTheme.borderColor),
+        border: Border.all(color: context.theme.colorTheme.transparentToTeal),
         color: context.theme.colorTheme.businessDetailsContainer,
       ),
       child: Container(

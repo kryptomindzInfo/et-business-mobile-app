@@ -36,6 +36,8 @@ class SignupConfirmDeliveryAddress extends ConsumerWidget {
               30.spaceY,
               CommonWhiteFlexibleCard(
                 color: context.theme.colorTheme.businessDetailsContainer,
+                border: Border.all(
+                    color: context.theme.colorTheme.transparentToTeal),
                 borderRadius: 12,
                 padding: const EdgeInsets.only(top: 15, bottom: 20, right: 60),
                 widget: Column(
@@ -69,6 +71,8 @@ class SignupConfirmDeliveryAddress extends ConsumerWidget {
               30.spaceY,
               CommonWhiteFlexibleCard(
                 color: context.theme.colorTheme.businessDetailsContainer,
+                border: Border.all(
+                    color: context.theme.colorTheme.transparentToTeal),
                 borderRadius: 8,
                 padding: const EdgeInsets.only(left: 0, bottom: 0, top: 0),
                 widget: Row(
@@ -94,7 +98,9 @@ class SignupConfirmDeliveryAddress extends ConsumerWidget {
               220.spaceY,
               CommonButton(
                 title: getTranslated("confirm", context),
-                mainButtonColor: context.theme.colorTheme.buttonColor,
+                mainButtonColor: true
+                    ? context.theme.colorTheme.buttonColor
+                    : context.theme.colorTheme.buttonDisabledColor,
                 titleColor: context.theme.colorTheme.buttonTitleColor,
                 width: 288,
                 onpress: () {

@@ -86,7 +86,9 @@ class MonthlyStatementScreen extends ConsumerWidget {
                   ),
                   90.spaceY,
                   PrimaryButton(
-                    color: context.theme.colorTheme.buttonColor,
+                    color: true
+                        ? context.theme.colorTheme.buttonColor
+                        : context.theme.colorTheme.buttonDisabledColor,
                     text: Text(
                       getTranslated("get_statement", context),
                       style: AppTextstyle.bodyTextStyle(
@@ -101,7 +103,7 @@ class MonthlyStatementScreen extends ConsumerWidget {
                   ),
                   10.spaceY,
                   PrimaryButton(
-                    color: context.theme.colorTheme.disableButtonColor,
+                    color: context.theme.colorTheme.tealToGrey,
                     text: Text(
                       getTranslated("share_statement", context),
                       style: AppTextstyle.bodyTextStyle(

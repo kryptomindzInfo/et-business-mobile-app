@@ -44,9 +44,9 @@ class _SelectDocumentWidgetState extends ConsumerState<SelectDocumentWidget> {
           height: 116,
           width: double.infinity,
           decoration: BoxDecoration(
-              border: Border.all(
-                color: context.theme.colorTheme.borderColor,
-              ),
+              color: context.theme.colorTheme.businessDetailsContainer,
+              border:
+                  Border.all(color: context.theme.colorTheme.transparentToTeal),
               borderRadius: BorderRadius.circular(8)),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,

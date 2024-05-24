@@ -4,13 +4,14 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class BlackContainerWidget extends ConsumerWidget {
   final Widget child;
-  const BlackContainerWidget({super.key, required this.child});
+  final Color? color;
+  const BlackContainerWidget({super.key, required this.child, this.color});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Container(
       decoration: BoxDecoration(
-          color: context.theme.colorTheme.businessDetailsContainer,
+          color: color ?? context.theme.colorTheme.businessDetailsContainer,
           borderRadius: BorderRadius.circular(32)),
       child: Padding(
         padding: const EdgeInsets.all(15),

@@ -48,6 +48,7 @@ class AppTheme extends ThemeExtension<AppTheme> {
   final Color transparentToTeal;
   final Color transparentToYellow;
   final Color businessDetailsContainer;
+  final Color halfWhiteToBlack;
   final Color whiteTohalfWhite;
   final Color whiteToGrey;
   final Color normalButtonsColor;
@@ -108,7 +109,7 @@ class AppTheme extends ThemeExtension<AppTheme> {
     this.blackAndWhite = AppColors.white,
     this.passCodeText = AppColors.grey,
     this.otpText = AppColors.black,
-    this.otpBlock = AppColors.halfWhite,
+    this.otpBlock = AppColors.otpBlock,
     this.passCodeBlock = AppColors.transparent,
     this.passCodeCursor = AppColors.black,
     this.whiteAndBlack = AppColors.black,
@@ -130,6 +131,7 @@ class AppTheme extends ThemeExtension<AppTheme> {
     this.transparentToYellow = AppColors.transparent,
     this.businessDetailsContainer = AppColors.businessDetailsContainer,
     this.whiteTohalfWhite = AppColors.businessDetailsContainer,
+    this.halfWhiteToBlack = AppColors.businessDetailsContainer,
     this.whiteToGrey = AppColors.iconGreyColor,
     this.normalButtonsColor = AppColors.black,
     this.buttonDisabledColor = AppColors.grey,
@@ -211,6 +213,7 @@ class AppTheme extends ThemeExtension<AppTheme> {
         transparentToTeal: AppColors.tealColor,
         transparentToYellow: AppColors.yellowGreen,
         businessDetailsContainer: AppColors.transparent,
+        halfWhiteToBlack: AppColors.black,
         whiteTohalfWhite: AppColors.white,
         whiteToGrey: AppColors.white,
         normalButtonsColor: AppColors.tealColor,

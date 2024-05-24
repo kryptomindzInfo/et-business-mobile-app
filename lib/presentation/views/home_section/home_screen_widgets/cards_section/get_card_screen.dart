@@ -88,7 +88,9 @@ class GetCardScreen extends ConsumerWidget {
                 40.spaceY,
                 CommonButton(
                   title: getTranslated("order", context),
-                  mainButtonColor: context.theme.colorTheme.buttonColor,
+                  mainButtonColor: true
+                      ? context.theme.colorTheme.buttonColor
+                      : context.theme.colorTheme.buttonDisabledColor,
                   titleColor: AppColors.black,
                   onpress: params.onOrderPressed,
                   // () {

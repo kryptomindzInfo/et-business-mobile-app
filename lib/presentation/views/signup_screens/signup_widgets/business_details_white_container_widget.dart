@@ -1,7 +1,9 @@
 import 'package:etbank_business_app/constants/app_assets.dart';
+import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:etbank_business_app/constants/app_textstyle.dart';
 import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
+import 'package:etbank_business_app/presentation/views/common_widgets/icon_container.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -35,7 +37,8 @@ class BusinessDetailsWhiteContainerWidet extends ConsumerWidget {
         decoration: BoxDecoration(
             color: context.theme.colorTheme.businessDetailsContainer,
             border: Border.all(
-                color: borderColor ?? context.theme.colorTheme.borderColor),
+                color:
+                    borderColor ?? context.theme.colorTheme.transparentToTeal),
             borderRadius: const BorderRadius.all(
               Radius.circular(12),
             )),
@@ -64,25 +67,35 @@ class BusinessDetailsWhiteContainerWidet extends ConsumerWidget {
                           Row(
                             children: [
                               if (image != null) ...[
-                                Container(
-                                  height: 34,
-                                  width: 34,
-                                  decoration: BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      color: context.theme.colorTheme.blackColor
-                                          .withOpacity(0.5),
-                                      image: DecorationImage(
-                                          image: AssetImage(
-                                            image ??
-                                                AppAssets.accountconfirmation,
-                                          ),
-                                          scale: 2)),
-                                  // child: Image.asset(
-
-                                  //   height: 42.h,
-                                  //   width: 42.w,
-                                  // ),
+                                IconContainer(
+                                  image: image ?? AppAssets.accountconfirmation,
+                                  bgColor: AppColors.tealColor,
                                 ),
+                                // Image.asset(
+                                //   image ?? AppAssets.accountconfirmation,
+                                //   scale: 2,
+                                // ),
+
+                                // Container(
+                                //   height: 34,
+                                //   width: 34,
+                                // decoration: BoxDecoration(
+                                //   shape: BoxShape.circle,
+                                //   color: context.theme.colorTheme.blackColor
+                                //       .withOpacity(0.5),
+                                // image: DecorationImage(
+                                //     image: AssetImage(
+                                //       image ??
+                                //           AppAssets.accountconfirmation,
+                                //     ),
+                                //     scale: 2),
+                                // ),
+                                // child: Image.asset(
+
+                                //   height: 42.h,
+                                //   width: 42.w,
+                                // ),
+                                // ),
                                 16.spaceX
                               ],
                               Text(

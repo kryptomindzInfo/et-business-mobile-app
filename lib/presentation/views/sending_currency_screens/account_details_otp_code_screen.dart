@@ -66,7 +66,9 @@ class AccountDetailsOTPCodeScreen extends ConsumerWidget {
                   height: 48.h,
                   width: 327.w,
                   child: PrimaryButton(
-                    color: AppColors.yellowGreen,
+                    color: true
+                        ? context.theme.colorTheme.buttonColor
+                        : context.theme.colorTheme.buttonDisabledColor,
                     text: Text(
                       getTranslated('payment_notif_title', context),
                       style: AppTextstyle.bodyTextStyle(

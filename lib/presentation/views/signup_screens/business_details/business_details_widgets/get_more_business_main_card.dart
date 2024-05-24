@@ -44,7 +44,9 @@ class GetMoreBusinessMainCard extends ConsumerWidget {
         },
         height: 48.h,
         width: 327.w,
-        backgroundColor: appContext.theme.colorTheme.buttonColor,
+        backgroundColor: true
+            ? appContext.theme.colorTheme.buttonColor
+            : appContext.theme.colorTheme.buttonDisabledColor,
         textColor: appContext.theme.colorTheme.buttonTitleColor,
         borderRadius: 20,
         text: getTranslated('get_started', appContext),
@@ -92,7 +94,8 @@ class GetMoreBusinessMainCard extends ConsumerWidget {
               // color: AppColors.transparent,
               color: context.theme.colorTheme.greenToTeal.withOpacity(0.7),
               // color: const Color(0xff0D2226).withOpacity(0.6),
-              border: Border.all(color: context.theme.colorTheme.borderColor)),
+              border: Border.all(
+                  color: context.theme.colorTheme.transparentToTeal)),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
             crossAxisAlignment: CrossAxisAlignment.start,

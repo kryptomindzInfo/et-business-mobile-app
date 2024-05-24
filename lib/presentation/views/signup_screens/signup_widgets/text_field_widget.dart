@@ -84,10 +84,11 @@ class TextFieldWidget extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 3),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
-        color: containerColor,
+        color:
+            containerColor ?? context.theme.colorTheme.businessDetailsContainer,
         // color: labelText != null ? AppColors.white : null,
-        border:
-            border ?? Border.all(color: context.theme.colorTheme.borderColor),
+        border: border ??
+            Border.all(color: context.theme.colorTheme.transparentToTeal),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

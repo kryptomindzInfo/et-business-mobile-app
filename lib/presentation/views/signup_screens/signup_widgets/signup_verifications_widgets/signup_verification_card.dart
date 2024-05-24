@@ -32,7 +32,8 @@ class SignUpVerificationCard extends ConsumerWidget {
         decoration: BoxDecoration(
             color: color ?? Colors.transparent,
             borderRadius: BorderRadius.circular(28),
-            border: Border.all(color: context.theme.colorTheme.borderColor)),
+            border:
+                Border.all(color: context.theme.colorTheme.transparentToTeal)),
         child: Padding(
           padding: const EdgeInsets.only(left: 15),
           child: Column(

@@ -83,7 +83,9 @@ class CurrencySellScreen extends ConsumerWidget {
                 170.spaceY,
                 PrimaryButton(
                     height: 38,
-                    color: AppColors.yellowGreen,
+                    color: true
+                        ? context.theme.colorTheme.buttonColor
+                        : context.theme.colorTheme.buttonDisabledColor,
                     minwidth: 280,
                     text: Text(
                       getTranslated("continue", context),

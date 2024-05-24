@@ -45,6 +45,7 @@ class SignUpWhoAreYourCustomersScreen extends ConsumerWidget {
                 ),
                 36.spaceY,
                 BlackContainerWidget(
+                  color: context.theme.colorTheme.halfWhiteToBlack,
                   child: SizedBox(
                     height: 300.h,
                     child: ListView.builder(
@@ -77,7 +78,9 @@ class SignUpWhoAreYourCustomersScreen extends ConsumerWidget {
                 height: 48.h,
                 width: 327.w,
                 child: PrimaryButton(
-                    color: context.theme.colorTheme.disableButtonColor,
+                    color: true
+                        ? context.theme.colorTheme.buttonColor
+                        : context.theme.colorTheme.buttonDisabledColor,
                     text: Text(
                       getTranslated('continue', context),
                       style: AppTextstyle.bodyTextStyle(
