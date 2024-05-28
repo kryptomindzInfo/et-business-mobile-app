@@ -239,8 +239,9 @@ List<Map> get hubscreenOpt => _hubScreen;
 List<Map> _rolesData = [
   {"title": "accountant", "desc": "custom_role", "id": "0"},
   {"title": "admin", "desc": "complete_access_to_account", "id": "1"},
-  {"title": "member", "desc": "costume_role", "id": "2"},
-  {"title": "viewer", "desc": "read_only", "id": "3"},
+  {"title": "Contractor", "desc": "custom_role", "id": "2"},
+  {"title": "member", "desc": "costume_role", "id": "3"},
+  {"title": "viewer", "desc": "read_only", "id": "4"},
 ];
 
 List<Map> get rolesData => _rolesData;

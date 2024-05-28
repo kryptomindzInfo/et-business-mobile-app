@@ -59,19 +59,21 @@ class CreateNewRoleBottomSheet extends ConsumerWidget {
                 onPressed: () {
                   Navigator.pop(context);
                   showModalBottomSheet(
-                      backgroundColor:
-                          context.theme.colorTheme.bottomSheetColor,
+                      backgroundColor: AppColors.transparent,
                       context: context,
-                      builder: (context) => VerifiedBottomSheetWidget(
-                            title: const Column(
-                              children: [],
-                            ),
-                            description: Text(
-                              "Role Created",
-                              style: AppTextstyle.headingTextStyle(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold,
-                                  color: context.theme.colorTheme.whiteColor),
+                      builder: (context) => Container(
+                            margin: const EdgeInsets.all(20),
+                            child: VerifiedBottomSheetWidget(
+                              title: const Column(
+                                children: [],
+                              ),
+                              description: Text(
+                                "Role Created",
+                                style: AppTextstyle.headingTextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                    color: AppColors.black),
+                              ),
                             ),
                           ));
                 },

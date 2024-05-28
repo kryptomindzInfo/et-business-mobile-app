@@ -1,4 +1,5 @@
 import 'package:etbank_business_app/constants/app_assets.dart';
+import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/common_bottom_sheet.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/white_flexible_card.dart';
@@ -23,7 +24,8 @@ class UploadDocWidget extends ConsumerWidget {
           CommonIconTitleIconButton(
             title: getTranslated("upload_doc", context),
             isForwardIcon: false,
-            iconImage: AppAssets.addButton2x,
+            iconImage: AppAssets.plus,
+            // imageColor: AppColors.red,
             onpress: () {
               showCommonModalSheet(
                 context,

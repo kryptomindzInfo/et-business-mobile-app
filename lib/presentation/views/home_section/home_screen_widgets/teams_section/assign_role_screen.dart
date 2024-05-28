@@ -66,7 +66,7 @@ class AssignRoleScreen extends ConsumerWidget {
                     color: context.theme.colorTheme.transparentToTeal,
                   ),
                   widget: SizedBox(
-                    height: 250,
+                    height: 320,
                     child: ListView.builder(
                       itemCount:
                           ref.watch(teamscreenProvider).assignRoleData.length,
@@ -95,7 +95,7 @@ class AssignRoleScreen extends ConsumerWidget {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 120),
+                  padding: const EdgeInsets.only(top: 80),
                   child: PrimaryButton(
                       minwidth: 280,
                       color: true

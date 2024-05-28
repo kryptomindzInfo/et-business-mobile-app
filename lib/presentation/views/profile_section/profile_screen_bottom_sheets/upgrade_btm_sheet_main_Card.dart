@@ -42,7 +42,7 @@ class UpgradeBottomSheetMainCard extends ConsumerWidget {
                   style: AppTextstyle.headingTextStyle(
                       fontSize: 40,
                       fontWeight: FontWeight.bold,
-                      color: context.theme.colorTheme.yellowToBlackish),
+                      color: context.theme.colorTheme.yellowToGreen),
                 ),
                 // 8.spaceY,
                 Text(

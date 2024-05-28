@@ -12,6 +12,8 @@ class SignUpVerificationCard extends ConsumerWidget {
   final VoidCallback? onpress;
   final Color? color;
   final Color? imageColor;
+  final Color? titleColor;
+
   const SignUpVerificationCard(
       {super.key,
       this.imageIcon,
@@ -20,7 +22,8 @@ class SignUpVerificationCard extends ConsumerWidget {
       this.status,
       this.onpress,
       this.color,
-      this.imageColor});
+      this.imageColor,
+      this.titleColor});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -59,7 +62,8 @@ class SignUpVerificationCard extends ConsumerWidget {
                 style: AppTextstyle.bodyTextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w400,
-                    color: context.theme.colorTheme.normalTextColor,
+                    color:
+                        titleColor ?? context.theme.colorTheme.normalTextColor,
                     overflow: TextOverflow.clip),
               ),
               if (status!.isNotEmpty) 5.spaceY,

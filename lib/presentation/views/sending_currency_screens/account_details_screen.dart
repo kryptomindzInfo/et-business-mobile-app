@@ -126,6 +126,7 @@ class AccountDetailsScreen extends ConsumerWidget {
                   onPressed: () {
                     showModalBottomSheet(
                       context: context,
+                      backgroundColor: AppColors.transparent,
                       builder: (BuildContext context) {
                         return GestureDetector(
                           onTap: () {
@@ -138,25 +139,28 @@ class AccountDetailsScreen extends ConsumerWidget {
                                   return const PaymentNotificationBottomSheetWidget();
                                 });
                           },
-                          child: VerifiedBottomSheetWidget(
-                            title: Text(
-                              getTranslated(
-                                  "account_name_matched_title", context),
-                              style: AppTextstyle.bodyTextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                                color: context.theme.colorTheme.whiteColor,
+                          child: Container(
+                            margin: const EdgeInsets.all(20),
+                            child: VerifiedBottomSheetWidget(
+                              title: Text(
+                                getTranslated(
+                                    "account_name_matched_title", context),
+                                style: AppTextstyle.bodyTextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.black,
+                                ),
                               ),
-                            ),
-                            description: Text(
-                              textAlign: TextAlign.center,
-                              getTranslated(
-                                  "account_name_matched_subtitle", context),
-                              style: AppTextstyle.bodyTextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w500,
-                                overflow: TextOverflow.clip,
-                                color: context.theme.colorTheme.whiteColor,
+                              description: Text(
+                                textAlign: TextAlign.center,
+                                getTranslated(
+                                    "account_name_matched_subtitle", context),
+                                style: AppTextstyle.bodyTextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w500,
+                                  overflow: TextOverflow.clip,
+                                  color: AppColors.black,
+                                ),
                               ),
                             ),
                           ),

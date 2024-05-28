@@ -169,6 +169,8 @@ List paymentRanges = [
 List<Map> _verificationData = [
   {
     "title": "choose_a_plan_and_order_a_card",
+    "titleColor": (BuildContext context) =>
+        context.theme.colorTheme.secondaryColor,
     "icon": AppAssets.plancardicon,
     "status": "",
     "statusicon": AppAssets.greencheck,
@@ -183,6 +185,8 @@ List<Map> _verificationData = [
   },
   {
     "title": "submit_doc",
+    "titleColor": (BuildContext context) =>
+        context.theme.colorTheme.secondaryColor,
     "icon": AppAssets.submitdocicon,
     "status": "",
     "statusicon": "",
@@ -193,6 +197,7 @@ List<Map> _verificationData = [
   },
   {
     "title": "verify_business",
+    "titleColor": (BuildContext context) => context.theme.colorTheme.whiteColor,
     "icon": AppAssets.verifybusinessdetailsicon,
     "status": "ready_to_submit",
     "statusicon": AppAssets.whitehourglass,
@@ -204,6 +209,7 @@ List<Map> _verificationData = [
   },
   {
     "title": "verify_business_details",
+    "titleColor": (BuildContext context) => context.theme.colorTheme.whiteColor,
     "icon": AppAssets.verifybusinessownersicon,
     "status": "ready_to_submit",
     "statusicon": AppAssets.whitehourglass,
@@ -217,6 +223,7 @@ List<Map> _verificationData = [
   },
   {
     "title": "identity",
+    "titleColor": (BuildContext context) => context.theme.colorTheme.whiteColor,
     "icon": AppAssets.identityicon,
     "status": "verified",
     "statusicon": AppAssets.greencheck,

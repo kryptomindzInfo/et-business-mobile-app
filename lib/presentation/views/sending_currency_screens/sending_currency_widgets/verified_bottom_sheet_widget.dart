@@ -8,17 +8,22 @@ class VerifiedBottomSheetWidget extends ConsumerWidget {
   final Widget title;
   final Widget description;
   final double? height;
+  final Color? color;
   const VerifiedBottomSheetWidget(
-      {super.key, required this.title, required this.description, this.height});
+      {super.key,
+      required this.title,
+      required this.description,
+      this.height,
+      this.color});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Container(
-      height: height ?? 311,
+      height: height ?? 315,
       width: double.infinity,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(28),
-        color: context.theme.colorTheme.bottomSheetColor,
+        color: color ?? context.theme.colorTheme.secondaryColor,
       ),
       child: Column(
         children: [

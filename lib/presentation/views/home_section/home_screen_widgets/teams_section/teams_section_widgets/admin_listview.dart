@@ -40,54 +40,57 @@ class AdminscreenListview extends ConsumerWidget {
                   GetCardScreen.routeName,
                   arguments: GetCardScreenArgs(onOrderPressed: () {
                     showModalBottomSheet(
-                      backgroundColor:
-                          context.theme.colorTheme.bottomSheetColor,
+                      backgroundColor: AppColors.transparent,
                       context: context,
-                      builder: (context) => VerifiedBottomSheetWidget(
-                        height: 450,
-                        title: Column(
-                          children: [
-                            Text(
-                              getTranslated(
-                                  "Invitation sent to \numrziad123.com ",
-                                  context),
-                              style: AppTextstyle.bodyTextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                                color: context.theme.colorTheme.whiteColor,
-                              ),
-                            ),
-                          ],
-                        ),
-                        description: Column(
-                          children: [
-                            20.spaceY,
-                            Text(
-                              getTranslated(
-                                  "They will receive an invitation email to sign-up immediately",
-                                  context),
-                              textAlign: TextAlign.center,
-                              style: AppTextstyle.bodyTextStyle(
-                                  color: AppColors.grey,
-                                  fontSize: 14,
-                                  overflow: TextOverflow.clip),
-                            ),
-                            68.spaceY,
-                            PrimaryButton(
-                              minwidth: 288,
-                              text: Text(
-                                'Invite someone else',
+                      builder: (context) => Container(
+                        margin: const EdgeInsets.only(
+                            left: 20, right: 20, bottom: 20),
+                        child: VerifiedBottomSheetWidget(
+                          height: 500,
+                          title: Column(
+                            children: [
+                              Text(
+                                getTranslated(
+                                    "Invitation sent to \numrziad123.com ",
+                                    context),
                                 style: AppTextstyle.bodyTextStyle(
-                                    color: AppColors.black),
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.black,
+                                ),
                               ),
-                              color: AppColors.yellowGreen,
-                              onPressed: () {
-                                Navigation.pushNamed(
-                                    BaseBottomNavBar.routeName);
-                              },
-                            ),
-                            20.spaceY,
-                          ],
+                            ],
+                          ),
+                          description: Column(
+                            children: [
+                              20.spaceY,
+                              Text(
+                                getTranslated(
+                                    "They will receive an invitation email to sign-up immediately",
+                                    context),
+                                textAlign: TextAlign.center,
+                                style: AppTextstyle.bodyTextStyle(
+                                    color: AppColors.grey,
+                                    fontSize: 14,
+                                    overflow: TextOverflow.clip),
+                              ),
+                              68.spaceY,
+                              PrimaryButton(
+                                minwidth: 288,
+                                text: Text(
+                                  'Invite someone else',
+                                  style: AppTextstyle.bodyTextStyle(
+                                      color: AppColors.black),
+                                ),
+                                color: AppColors.yellowGreen,
+                                onPressed: () {
+                                  Navigation.pushNamed(
+                                      BaseBottomNavBar.routeName);
+                                },
+                              ),
+                              20.spaceY,
+                            ],
+                          ),
                         ),
                       ),
                     );

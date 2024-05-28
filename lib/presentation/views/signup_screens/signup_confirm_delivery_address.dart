@@ -106,23 +106,26 @@ class SignupConfirmDeliveryAddress extends ConsumerWidget {
                 onpress: () {
                   showModalBottomSheet(
                     context: context,
-                    backgroundColor: context.theme.colorTheme.bottomSheetColor,
+                    backgroundColor: AppColors.transparent,
                     builder: (context) {
-                      return VerifiedBottomSheetWidget(
-                        title: Text(
-                          getTranslated("order_free_card", context),
-                          style: AppTextstyle.bodyTextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                            color: context.theme.colorTheme.whiteColor,
+                      return Container(
+                        margin: const EdgeInsets.all(20),
+                        child: VerifiedBottomSheetWidget(
+                          title: Text(
+                            getTranslated("order_free_card", context),
+                            style: AppTextstyle.bodyTextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              color: AppColors.black,
+                            ),
                           ),
-                        ),
-                        description: Text(
-                          textAlign: TextAlign.center,
-                          getTranslated("ship_card", context),
-                          style: AppTextstyle.bodyTextStyle(
-                            overflow: TextOverflow.clip,
-                            color: context.theme.colorTheme.whiteColor,
+                          description: Text(
+                            textAlign: TextAlign.center,
+                            getTranslated("ship_card", context),
+                            style: AppTextstyle.bodyTextStyle(
+                              overflow: TextOverflow.clip,
+                              color: AppColors.black,
+                            ),
                           ),
                         ),
                       );
