@@ -66,7 +66,8 @@ class PaymentNotificationBottomSheetWidget extends ConsumerWidget {
                         color: context.theme.colorTheme.transparentToTeal,
                       ),
                       hintText: getTranslated('recipient_email', context),
-                      style: const TextStyle(color: AppColors.white),
+                      style:
+                          TextStyle(color: context.theme.colorTheme.whiteColor),
                     ),
                   ),
                 ],

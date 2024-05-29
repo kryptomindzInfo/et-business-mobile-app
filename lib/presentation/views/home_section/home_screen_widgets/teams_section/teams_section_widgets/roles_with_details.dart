@@ -61,14 +61,14 @@ class RolesWithDetails extends ConsumerWidget {
             width: 64,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(5),
-                color: AppColors.viewButton),
+                color: AppColors.grassGreen),
             child: Center(
               child: Text(
                 getTranslated("view", context),
                 style: AppTextstyle.bodyTextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.w500,
-                    color: AppColors.black),
+                    color: AppColors.white),
               ),
             ),
           )
