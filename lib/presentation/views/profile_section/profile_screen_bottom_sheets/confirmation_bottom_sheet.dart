@@ -48,9 +48,10 @@ class ConfirmationBottomSheet extends ConsumerWidget {
               height: 129,
               width: double.infinity,
               decoration: BoxDecoration(
+                  color: context.theme.colorTheme.businessDetailsContainer,
                   borderRadius: BorderRadius.circular(12),
-                  border:
-                      Border.all(color: context.theme.colorTheme.borderColor)),
+                  border: Border.all(
+                      color: context.theme.colorTheme.transparentToTeal)),
               child: Container(
                 margin: const EdgeInsets.only(left: 25, right: 25, top: 30),
                 child: Column(

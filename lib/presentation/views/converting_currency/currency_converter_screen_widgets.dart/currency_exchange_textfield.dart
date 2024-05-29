@@ -17,7 +17,9 @@ class CurrencyExchangeTextfield extends ConsumerWidget {
       width: double.infinity,
       padding: const EdgeInsets.only(left: 20),
       decoration: BoxDecoration(
-          border: Border.all(color: context.theme.colorTheme.yellowToGreen),
+          color: context.theme.colorTheme.businessDetailsContainer,
+          border:
+              Border.all(color: context.theme.colorTheme.transparentToYellow),
           borderRadius: BorderRadius.circular(40)),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,

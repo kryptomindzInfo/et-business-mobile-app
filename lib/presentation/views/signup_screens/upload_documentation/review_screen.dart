@@ -1,3 +1,4 @@
+import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:etbank_business_app/constants/app_textstyle.dart';
 import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
@@ -40,7 +41,9 @@ class ReviewScreen extends ConsumerWidget {
         bottomNavigationBar: Padding(
           padding: const EdgeInsets.only(bottom: 50, right: 30, left: 30),
           child: CommonButton(
-            mainButtonColor: context.theme.colorTheme.buttonColor,
+            mainButtonColor: true
+                ? context.theme.colorTheme.buttonColor
+                : context.theme.colorTheme.buttonDisabledColor,
             titleColor: context.theme.colorTheme.buttonTitleColor,
             title: getTranslated("confirm", context),
             width: 288,
@@ -48,16 +51,20 @@ class ReviewScreen extends ConsumerWidget {
             onpress: () {
               showModalBottomSheet(
                 context: context,
+                backgroundColor: AppColors.transparent,
                 builder: (context) {
-                  return VerifiedBottomSheetWidget(
-                      title: Text(
-                        getTranslated("success", context),
-                        style: AppTextstyle.bodyTextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                            color: context.theme.colorTheme.whiteAndBlack),
-                      ),
-                      description: const Text(""));
+                  return Container(
+                    margin: const EdgeInsets.all(20),
+                    child: VerifiedBottomSheetWidget(
+                        title: Text(
+                          getTranslated("success", context),
+                          style: AppTextstyle.bodyTextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              color: AppColors.black),
+                        ),
+                        description: const Text("")),
+                  );
                 },
               );
             },

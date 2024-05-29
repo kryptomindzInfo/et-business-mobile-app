@@ -36,6 +36,8 @@ class SignupConfirmDeliveryAddress extends ConsumerWidget {
               30.spaceY,
               CommonWhiteFlexibleCard(
                 color: context.theme.colorTheme.businessDetailsContainer,
+                border: Border.all(
+                    color: context.theme.colorTheme.transparentToTeal),
                 borderRadius: 12,
                 padding: const EdgeInsets.only(top: 15, bottom: 20, right: 60),
                 widget: Column(
@@ -69,6 +71,8 @@ class SignupConfirmDeliveryAddress extends ConsumerWidget {
               30.spaceY,
               CommonWhiteFlexibleCard(
                 color: context.theme.colorTheme.businessDetailsContainer,
+                border: Border.all(
+                    color: context.theme.colorTheme.transparentToTeal),
                 borderRadius: 8,
                 padding: const EdgeInsets.only(left: 0, bottom: 0, top: 0),
                 widget: Row(
@@ -94,29 +98,34 @@ class SignupConfirmDeliveryAddress extends ConsumerWidget {
               220.spaceY,
               CommonButton(
                 title: getTranslated("confirm", context),
-                mainButtonColor: context.theme.colorTheme.buttonColor,
+                mainButtonColor: true
+                    ? context.theme.colorTheme.buttonColor
+                    : context.theme.colorTheme.buttonDisabledColor,
                 titleColor: context.theme.colorTheme.buttonTitleColor,
                 width: 288,
                 onpress: () {
                   showModalBottomSheet(
                     context: context,
-                    backgroundColor: context.theme.colorTheme.bottomSheetColor,
+                    backgroundColor: AppColors.transparent,
                     builder: (context) {
-                      return VerifiedBottomSheetWidget(
-                        title: Text(
-                          getTranslated("order_free_card", context),
-                          style: AppTextstyle.bodyTextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                            color: context.theme.colorTheme.whiteColor,
+                      return Container(
+                        margin: const EdgeInsets.all(20),
+                        child: VerifiedBottomSheetWidget(
+                          title: Text(
+                            getTranslated("order_free_card", context),
+                            style: AppTextstyle.bodyTextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              color: AppColors.black,
+                            ),
                           ),
-                        ),
-                        description: Text(
-                          textAlign: TextAlign.center,
-                          getTranslated("ship_card", context),
-                          style: AppTextstyle.bodyTextStyle(
-                            overflow: TextOverflow.clip,
-                            color: context.theme.colorTheme.whiteColor,
+                          description: Text(
+                            textAlign: TextAlign.center,
+                            getTranslated("ship_card", context),
+                            style: AppTextstyle.bodyTextStyle(
+                              overflow: TextOverflow.clip,
+                              color: AppColors.black,
+                            ),
                           ),
                         ),
                       );

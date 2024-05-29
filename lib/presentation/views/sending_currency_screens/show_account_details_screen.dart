@@ -1,4 +1,5 @@
 import 'package:etbank_business_app/constants/app_colors.dart';
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/app_common_widgets.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/parent_theme_scaffold.dart';
@@ -40,14 +41,18 @@ class ShowAccountDetailsScreen extends ConsumerWidget {
                     // imageicon: AppAssets.arrowLeft,
                   ),
                   45.spaceY,
-                  const ShowAccountDetailsWidget(
-                    color: AppColors.transparent,
+                  ShowAccountDetailsWidget(
+                    color: context.theme.colorTheme.businessDetailsContainer,
+                    border: Border.all(
+                        color: context.theme.colorTheme.transparentToTeal),
                     title: 'reference',
                     subTitle: 'et_bank',
                   ),
                   20.spaceY,
-                  const ShowAccountDetailsWidget(
-                    color: AppColors.transparent,
+                  ShowAccountDetailsWidget(
+                    color: context.theme.colorTheme.businessDetailsContainer,
+                    border: Border.all(
+                        color: context.theme.colorTheme.transparentToTeal),
                     title: 'arriving',
                     subTitle: 'today',
                   ),
@@ -55,8 +60,9 @@ class ShowAccountDetailsScreen extends ConsumerWidget {
                   Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(8),
-                      border: Border.all(color: AppColors.tealColor, width: 1),
-                      color: AppColors.transparent,
+                      color: context.theme.colorTheme.businessDetailsContainer,
+                      border: Border.all(
+                          color: context.theme.colorTheme.transparentToTeal),
                     ),
                     child: Column(
                       children: [
@@ -84,10 +90,11 @@ class ShowAccountDetailsScreen extends ConsumerWidget {
                   20.spaceY,
                   Container(
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(8),
-                        border:
-                            Border.all(color: AppColors.tealColor, width: 1),
-                        color: AppColors.transparent),
+                      borderRadius: BorderRadius.circular(8),
+                      color: context.theme.colorTheme.businessDetailsContainer,
+                      border: Border.all(
+                          color: context.theme.colorTheme.transparentToTeal),
+                    ),
                     child: Column(
                       children: [
                         ShowAccountDetailsWidget(
@@ -127,7 +134,9 @@ class ShowAccountDetailsScreen extends ConsumerWidget {
                 height: 48.h,
                 width: 327.w,
                 child: PrimaryButton(
-                  color: AppColors.yellowGreen,
+                  color: true
+                      ? context.theme.colorTheme.buttonColor
+                      : context.theme.colorTheme.buttonDisabledColor,
                   text: Text(
                     getTranslated('send', context),
                     style: AppTextstyle.bodyTextStyle(

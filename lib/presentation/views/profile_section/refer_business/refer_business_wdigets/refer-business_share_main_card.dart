@@ -18,8 +18,9 @@ class ReferBusinessShareLinkMainCard extends ConsumerWidget {
       padding: const EdgeInsets.fromLTRB(16, 25, 0, 25),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
-          color: AppColors.transparent,
-          border: Border.all(color: context.theme.colorTheme.borderColor)),
+          color: context.theme.colorTheme.businessDetailsContainer,
+          border:
+              Border.all(color: context.theme.colorTheme.transparentToTeal)),
       child: Row(
         // mainAxisAlignment: MainAxisAlignment.center,
         // crossAxisAlignment: CrossAxisAlignment.center,

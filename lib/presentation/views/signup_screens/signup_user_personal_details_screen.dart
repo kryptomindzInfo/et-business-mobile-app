@@ -4,6 +4,7 @@ import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/app_common_widgets.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/header_icon_with_text.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/parent_theme_scaffold.dart';
+import 'package:etbank_business_app/presentation/views/signup_screens/signup_widgets/country_and_mobileno_widget.dart';
 import 'package:etbank_business_app/resources/localization/language_constrants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -101,6 +102,7 @@ class SignUpUserPersonalDetailsScreen extends ConsumerWidget {
                     onTap: () {},
                   ),
                   16.spaceY,
+                  const CountryAndMobileNoWidget(),
                 ],
               ),
             ),
@@ -111,11 +113,13 @@ class SignUpUserPersonalDetailsScreen extends ConsumerWidget {
                 height: 48.h,
                 width: 327.w,
                 child: PrimaryButton(
-                  color: context.theme.colorTheme.buttonColor,
+                  color: true
+                      ? context.theme.colorTheme.buttonColor
+                      : context.theme.colorTheme.buttonDisabledColor,
                   text: Text(
                     getTranslated('continue', context),
                     style: AppTextstyle.bodyTextStyle(
-                        color: context.theme.colorTheme.buttonTitleColor,
+                        color: AppColors.black,
                         fontSize: 16,
                         fontWeight: FontWeight.w500),
                   ),

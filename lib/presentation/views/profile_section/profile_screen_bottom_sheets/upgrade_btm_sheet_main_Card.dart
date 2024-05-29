@@ -21,7 +21,9 @@ class UpgradeBottomSheetMainCard extends ConsumerWidget {
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
           // color: AppColors.primaryColor,
-          border: Border.all(color: context.theme.colorTheme.cardBorderColor)),
+          color: context.theme.colorTheme.businessDetailsContainer,
+          border:
+              Border.all(color: context.theme.colorTheme.transparentToTeal)),
       child: Container(
         margin: const EdgeInsets.only(
           left: 20,
@@ -40,7 +42,7 @@ class UpgradeBottomSheetMainCard extends ConsumerWidget {
                   style: AppTextstyle.headingTextStyle(
                       fontSize: 40,
                       fontWeight: FontWeight.bold,
-                      color: context.theme.colorTheme.yellowToBlackish),
+                      color: context.theme.colorTheme.yellowToGreen),
                 ),
                 // 8.spaceY,
                 Text(

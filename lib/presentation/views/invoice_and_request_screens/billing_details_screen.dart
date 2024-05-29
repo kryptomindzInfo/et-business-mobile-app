@@ -69,9 +69,11 @@ class BillingDetailsScreen extends ConsumerWidget {
                 },
                 18.spaceY,
                 BusinessDetailsWhiteContainerWidet(
+                  borderColor: context.theme.colorTheme.transparentToTeal,
                   onTap: () {
                     showModalBottomSheet(
-                      backgroundColor: AppColors.black,
+                      backgroundColor:
+                          context.theme.colorTheme.bottomSheetColor,
                       isScrollControlled: true,
                       context: context,
                       builder: (context) {
@@ -107,24 +109,40 @@ class BillingDetailsScreen extends ConsumerWidget {
                 if (sendingCurrencyProviderW.selectedCountry?.name != null) ...{
                   16.spaceY,
                   TextFieldWidget(
+                    containerColor:
+                        context.theme.colorTheme.businessDetailsContainer,
+                    border: Border.all(
+                        color: context.theme.colorTheme.transparentToTeal),
                     hintText: getTranslated('address_line_01', context),
                     hintStyle:
                         AppTextstyle.bodyTextStyle(color: AppColors.grey),
                   ),
                   16.spaceY,
                   TextFieldWidget(
+                    containerColor:
+                        context.theme.colorTheme.businessDetailsContainer,
+                    border: Border.all(
+                        color: context.theme.colorTheme.transparentToTeal),
                     hintText: getTranslated('address_line_02', context),
                     hintStyle:
                         AppTextstyle.bodyTextStyle(color: AppColors.grey),
                   ),
                   16.spaceY,
                   TextFieldWidget(
+                    containerColor:
+                        context.theme.colorTheme.businessDetailsContainer,
+                    border: Border.all(
+                        color: context.theme.colorTheme.transparentToTeal),
                     hintText: getTranslated('post_code', context),
                     hintStyle:
                         AppTextstyle.bodyTextStyle(color: AppColors.grey),
                   ),
                   16.spaceY,
                   TextFieldWidget(
+                    containerColor:
+                        context.theme.colorTheme.businessDetailsContainer,
+                    border: Border.all(
+                        color: context.theme.colorTheme.transparentToTeal),
                     hintText: getTranslated('city', context),
                     hintStyle:
                         AppTextstyle.bodyTextStyle(color: AppColors.grey),
@@ -139,7 +157,9 @@ class BillingDetailsScreen extends ConsumerWidget {
                 height: 48.h,
                 width: 327.w,
                 child: PrimaryButton(
-                  color: AppColors.yellowGreen,
+                  color: true
+                      ? context.theme.colorTheme.buttonColor
+                      : context.theme.colorTheme.buttonDisabledColor,
                   text: Text(
                     getTranslated('continue', context),
                     style: AppTextstyle.bodyTextStyle(

@@ -69,6 +69,9 @@ class CurrencySellScreen extends ConsumerWidget {
                 CommonWhiteFlexibleCard(
                   borderRadius: 12,
                   color: context.theme.colorTheme.whiteTohalfWhite,
+                  border: Border.all(
+                    color: context.theme.colorTheme.transparentToTeal,
+                  ),
                   padding:
                       const EdgeInsets.symmetric(horizontal: 28, vertical: 14),
                   widget: const CurrencySellDetailTexts(
@@ -80,7 +83,9 @@ class CurrencySellScreen extends ConsumerWidget {
                 170.spaceY,
                 PrimaryButton(
                     height: 38,
-                    color: AppColors.yellowGreen,
+                    color: true
+                        ? context.theme.colorTheme.buttonColor
+                        : context.theme.colorTheme.buttonDisabledColor,
                     minwidth: 280,
                     text: Text(
                       getTranslated("continue", context),

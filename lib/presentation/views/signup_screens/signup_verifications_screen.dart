@@ -56,7 +56,11 @@ class SignUpVerificationsScreen extends ConsumerWidget {
                       status: getTranslated(data[index]["status"], context),
                       statusIcon: data[index]["statusicon"],
                       onpress: data[index]["ontap"],
-                      color: data[index]['color'],
+                      color: data[index]['color'](context),
+                      titleColor: data[index]['titleColor'](context),
+                      imageColor: data[index]['imageColor'] == null
+                          ? null
+                          : data[index]['imageColor'](context),
                     );
                   },
                 ),

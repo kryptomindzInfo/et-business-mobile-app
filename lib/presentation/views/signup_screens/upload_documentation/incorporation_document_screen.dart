@@ -41,7 +41,9 @@ class IncorporationDocumentScreen extends ConsumerWidget {
                 30.spaceY,
                 CommonButton(
                   title: getTranslated("continue", context),
-                  mainButtonColor: context.theme.colorTheme.disableButtonColor,
+                  mainButtonColor: true
+                      ? context.theme.colorTheme.buttonColor
+                      : context.theme.colorTheme.buttonDisabledColor,
                   titleColor: context.theme.colorTheme.whiteColor,
                   onpress: () {
                     Navigation.pushNamed(ReviewScreen.routeName);

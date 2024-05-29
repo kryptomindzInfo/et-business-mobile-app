@@ -21,13 +21,16 @@ class TeamsWidget extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return CommonWhiteFlexibleCard(
       color: context.theme.colorTheme.businessDetailsContainer,
+      border: Border.all(
+        color: context.theme.colorTheme.transparentToTeal,
+      ),
       widget: Column(
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               CommonGreenButton(
-                borderColor: AppColors.yellowGreen,
+                borderColor: context.theme.colorTheme.transparentToYellow,
                 height: 42,
                 borderRadius: 64,
                 textColor: AppColors.white,
@@ -43,7 +46,7 @@ class TeamsWidget extends ConsumerWidget {
                 textColor: AppColors.white,
                 height: 42,
                 borderRadius: 64,
-                borderColor: AppColors.yellowGreen,
+                borderColor: context.theme.colorTheme.transparentToYellow,
                 color: context.theme.colorTheme.transparentToGreen,
                 imageIcon: AppAssets.managerole,
                 padding: const EdgeInsets.symmetric(horizontal: 8),
@@ -56,7 +59,8 @@ class TeamsWidget extends ConsumerWidget {
                 height: 42,
                 borderRadius: 64,
                 iconColor: AppColors.white,
-                borderColor: AppColors.yellowGreen,
+                borderColor: context.theme.colorTheme.transparentToYellow,
+
                 color: context.theme.colorTheme.transparentToGreen,
 
                 padding: const EdgeInsets.symmetric(horizontal: 8),

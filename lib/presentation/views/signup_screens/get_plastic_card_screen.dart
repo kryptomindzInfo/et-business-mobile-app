@@ -33,7 +33,9 @@ class GetPlasticCardScreen extends ConsumerWidget {
               children: [
                 20.spaceY,
                 CommonWhiteFlexibleCard(
-                  color: context.theme.colorTheme.bottomSheetColor,
+                  color: context.theme.colorTheme.businessDetailsContainer,
+                  border: Border.all(
+                      color: context.theme.colorTheme.transparentToTeal),
                   widget: Column(
                     children: [
                       Image.asset(
@@ -68,7 +70,9 @@ class GetPlasticCardScreen extends ConsumerWidget {
                 CommonButton(
                   width: 288,
                   title: getTranslated("get_plastic_card", context),
-                  mainButtonColor: context.theme.colorTheme.buttonColor,
+                  mainButtonColor: true
+                      ? context.theme.colorTheme.buttonColor
+                      : context.theme.colorTheme.buttonDisabledColor,
                   titleColor: context.theme.colorTheme.buttonTitleColor,
                   onpress: () {
                     Navigation.pushNamed(

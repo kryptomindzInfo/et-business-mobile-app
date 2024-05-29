@@ -27,7 +27,7 @@ class PlansBottomSheetInfoText extends ConsumerWidget {
         children: [
           IconContainer(
             image: imageicon,
-            bgColor: context.theme.colorTheme.greyToTeal,
+            bgColor: AppColors.tealColor,
           ),
           Column(
             children: [

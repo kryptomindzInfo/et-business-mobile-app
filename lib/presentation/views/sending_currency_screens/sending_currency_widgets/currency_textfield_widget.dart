@@ -15,9 +15,10 @@ class CurrencyTextFieldWidget extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Container(
       decoration: BoxDecoration(
-        // color: AppColors.white,
+        color: context.theme.colorTheme.businessDetailsContainer,
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: AppColors.tealColor, width: 1),
+        border: Border.all(
+            color: context.theme.colorTheme.transparentToTeal, width: 1),
       ),
       child: Padding(
         padding: padding ?? const EdgeInsets.fromLTRB(12, 0, 8, 0),

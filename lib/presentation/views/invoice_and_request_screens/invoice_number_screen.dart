@@ -49,6 +49,10 @@ class InvoiceNumberScreen extends ConsumerWidget {
                 ),
                 38.spaceY,
                 TextFieldWidget(
+                  border: Border.all(
+                      color: context.theme.colorTheme.transparentToTeal),
+                  containerColor:
+                      context.theme.colorTheme.businessDetailsContainer,
                   height: 85,
                   labelText: getTranslated('invoice_prefix', context),
                   labelStyle: AppTextstyle.headingTextStyle(
@@ -66,6 +70,10 @@ class InvoiceNumberScreen extends ConsumerWidget {
                 ),
                 14.spaceY,
                 TextFieldWidget(
+                  border: Border.all(
+                      color: context.theme.colorTheme.transparentToTeal),
+                  containerColor:
+                      context.theme.colorTheme.businessDetailsContainer,
                   height: 85,
                   labelText: getTranslated('Invoice number', context),
                   labelStyle: AppTextstyle.headingTextStyle(
@@ -86,6 +94,8 @@ class InvoiceNumberScreen extends ConsumerWidget {
                 CommonWhiteFlexibleCard(
                   borderRadius: 8,
                   color: context.theme.colorTheme.businessDetailsContainer,
+                  border: Border.all(
+                      color: context.theme.colorTheme.transparentToTeal),
                   padding: const EdgeInsets.fromLTRB(6, 6, 6, 6),
                   widget: CheckBoxWidget(
                     checkBoxValue:
@@ -109,7 +119,9 @@ class InvoiceNumberScreen extends ConsumerWidget {
                 height: 48.h,
                 width: 327.w,
                 child: PrimaryButton(
-                  color: AppColors.yellowGreen,
+                  color: true
+                      ? context.theme.colorTheme.buttonColor
+                      : context.theme.colorTheme.buttonDisabledColor,
                   text: Text(
                     getTranslated('save', context),
                     style: AppTextstyle.bodyTextStyle(
@@ -120,53 +132,55 @@ class InvoiceNumberScreen extends ConsumerWidget {
                   onPressed: () {
                     showModalBottomSheet(
                       context: context,
+                      backgroundColor: AppColors.transparent,
                       builder: (BuildContext context) {
                         return GestureDetector(
                           onTap: () {
                             Navigation.pushNamed(MarkAsPaidScreen.routeName);
                           },
-                          child: VerifiedBottomSheetWidget(
-                            title: RichText(
-                              text: TextSpan(children: [
-                                TextSpan(
-                                  text: 'Invoice for ',
+                          child: Container(
+                            margin: const EdgeInsets.all(20),
+                            child: VerifiedBottomSheetWidget(
+                              title: RichText(
+                                text: TextSpan(children: [
+                                  TextSpan(
+                                    text: 'Invoice for ',
+                                    style: AppTextstyle.bodyTextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: AppColors.black,
+                                        fontSize: 20),
+                                  ),
+                                  TextSpan(
+                                    text: '\$3 ',
+                                    style: AppTextstyle.bodyTextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 20,
+                                        color: AppColors.blue),
+                                  ),
+                                  TextSpan(
+                                    text: 'sent to nickle',
+                                    style: AppTextstyle.bodyTextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: AppColors.black,
+                                        fontSize: 20),
+                                  ),
+                                ]),
+                              ),
+                              // Text(
+                              //   getTranslated(
+                              //       'invoice_for_3_sent_to_nickle', context),
+                              //   style: AppTextstyle.bodyTextStyle(
+                              //       fontWeight: FontWeight.bold, fontSize: 20),
+                              // ),
+                              description: Padding(
+                                padding: const EdgeInsets.only(top: 60),
+                                child: Text(
+                                  getTranslated('invoice_INV_2', context),
                                   style: AppTextstyle.bodyTextStyle(
                                       fontWeight: FontWeight.bold,
-                                      color:
-                                          context.theme.colorTheme.whiteColor,
-                                      fontSize: 20),
+                                      fontSize: 14,
+                                      color: AppColors.grey),
                                 ),
-                                TextSpan(
-                                  text: '\$3 ',
-                                  style: AppTextstyle.bodyTextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 20,
-                                      color: AppColors.blue),
-                                ),
-                                TextSpan(
-                                  text: 'sent to nickle',
-                                  style: AppTextstyle.bodyTextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      color:
-                                          context.theme.colorTheme.whiteColor,
-                                      fontSize: 20),
-                                ),
-                              ]),
-                            ),
-                            // Text(
-                            //   getTranslated(
-                            //       'invoice_for_3_sent_to_nickle', context),
-                            //   style: AppTextstyle.bodyTextStyle(
-                            //       fontWeight: FontWeight.bold, fontSize: 20),
-                            // ),
-                            description: Padding(
-                              padding: const EdgeInsets.only(top: 60),
-                              child: Text(
-                                getTranslated('invoice_INV_2', context),
-                                style: AppTextstyle.bodyTextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 14,
-                                    color: AppColors.grey),
                               ),
                             ),
                           ),

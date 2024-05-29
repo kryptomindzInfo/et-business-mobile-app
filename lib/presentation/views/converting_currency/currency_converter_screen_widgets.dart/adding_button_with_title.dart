@@ -2,6 +2,7 @@ import 'package:etbank_business_app/constants/app_assets.dart';
 import 'package:etbank_business_app/constants/app_textstyle.dart';
 import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
+import 'package:etbank_business_app/presentation/views/common_widgets/icon_container.dart';
 import 'package:etbank_business_app/resources/localization/language_constrants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -18,16 +19,21 @@ class AddingButtonWithTitle extends ConsumerWidget {
         margin: const EdgeInsets.only(left: 30, top: 30),
         child: Row(
           children: [
-            Image.asset(
-              AppAssets.addingicon,
-              height: 40,
+            IconContainer(
+              image: AppAssets.addingicon,
+              bgColor: context.theme.colorTheme.whiteToGreen,
             ),
+            // Image.asset(
+            //   AppAssets.addingicon,
+            //   color: context.theme.colorTheme.whiteToGreen,
+            //   height: 40,
+            // ),
             10.spaceX,
             Text(
               getTranslated("add_currency_pair", context),
               style: AppTextstyle.bodyTextStyle(
                   fontWeight: FontWeight.normal,
-                  color: context.theme.colorTheme.normalTextColor,
+                  color: context.theme.colorTheme.whiteToGreen,
                   fontSize: 16),
             )
           ],

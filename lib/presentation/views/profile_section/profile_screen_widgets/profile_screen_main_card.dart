@@ -33,8 +33,9 @@ class ProfileScreenMainCard extends ConsumerWidget {
           width: double.infinity,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12),
-            border: Border.all(color: AppColors.tealColor),
-            color: AppColors.transparent,
+            border:
+                Border.all(color: context.theme.colorTheme.transparentToTeal),
+            color: context.theme.colorTheme.businessDetailsContainer,
           ),
           child: Container(
             margin: const EdgeInsets.only(left: 20, top: 25),

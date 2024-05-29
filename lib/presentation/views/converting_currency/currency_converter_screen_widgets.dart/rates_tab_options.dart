@@ -18,21 +18,24 @@ class RatesScreenOptionsWidget extends ConsumerWidget {
         scrollDirection: Axis.horizontal,
         itemCount: ref.read(currencyScreenProvider).ratesOptions.length,
         itemBuilder: (context, index) {
-          return RatesScreenChips(
-            title: ref.read(currencyScreenProvider).ratesOptions[index]
-                ["title"],
-            onpress: () =>
-                ref.read(currencyScreenProvider).setCCtabIndex(index),
-            color:
-                ref.watch(currencyScreenProvider).currencyConverterTabIndex ==
-                        index
-                    ? context.theme.colorTheme.activeChipColor
-                    : context.theme.colorTheme.chipsColor,
-            titleColor:
-                ref.watch(currencyScreenProvider).currencyConverterTabIndex ==
-                        index
-                    ? context.theme.colorTheme.blackColor
-                    : AppColors.white,
+          return Padding(
+            padding: const EdgeInsets.only(left: 9),
+            child: RatesScreenChips(
+              title: ref.read(currencyScreenProvider).ratesOptions[index]
+                  ["title"],
+              onpress: () =>
+                  ref.read(currencyScreenProvider).setCCtabIndex(index),
+              color:
+                  ref.watch(currencyScreenProvider).currencyConverterTabIndex ==
+                          index
+                      ? context.theme.colorTheme.activeChipColor
+                      : context.theme.colorTheme.chipsColor,
+              titleColor:
+                  ref.watch(currencyScreenProvider).currencyConverterTabIndex ==
+                          index
+                      ? context.theme.colorTheme.blackColor
+                      : AppColors.white,
+            ),
           );
         },
       ),

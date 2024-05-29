@@ -39,7 +39,9 @@ class NationalityWidget extends ConsumerWidget {
           width: double.infinity,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(8),
-              border: Border.all(color: context.theme.colorTheme.borderColor)),
+              color: context.theme.colorTheme.businessDetailsContainer,
+              border: Border.all(
+                  color: context.theme.colorTheme.transparentToTeal)),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [

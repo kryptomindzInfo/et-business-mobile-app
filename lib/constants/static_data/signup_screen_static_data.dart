@@ -169,6 +169,8 @@ List paymentRanges = [
 List<Map> _verificationData = [
   {
     "title": "choose_a_plan_and_order_a_card",
+    "titleColor": (BuildContext context) =>
+        context.theme.colorTheme.secondaryColor,
     "icon": AppAssets.plancardicon,
     "status": "",
     "statusicon": AppAssets.greencheck,
@@ -179,40 +181,55 @@ List<Map> _verificationData = [
         builder: (context) => const UpgradeBottomSheet(),
       );
     },
-    "color": appContext.theme.colorTheme.grassGreen,
+    "color": (BuildContext context) => context.theme.colorTheme.grassGreen,
   },
   {
     "title": "submit_doc",
+    "titleColor": (BuildContext context) =>
+        context.theme.colorTheme.secondaryColor,
     "icon": AppAssets.submitdocicon,
     "status": "",
     "statusicon": "",
     "ontap": () {
       Navigation.pushNamed(SignUpSubmitDocumentScreen.routeName);
     },
-    "color": appContext.theme.colorTheme.grassGreen,
+    "color": (BuildContext context) => context.theme.colorTheme.grassGreen,
   },
   {
     "title": "verify_business",
+    "titleColor": (BuildContext context) => context.theme.colorTheme.whiteColor,
     "icon": AppAssets.verifybusinessdetailsicon,
     "status": "ready_to_submit",
     "statusicon": AppAssets.whitehourglass,
-    "ontap": () {}
+    "ontap": () {},
+    "imageColor": (BuildContext context) =>
+        context.theme.colorTheme.whiteToGrey,
+    "color": (BuildContext context) =>
+        context.theme.colorTheme.businessDetailsContainer,
   },
   {
     "title": "verify_business_details",
+    "titleColor": (BuildContext context) => context.theme.colorTheme.whiteColor,
     "icon": AppAssets.verifybusinessownersicon,
     "status": "ready_to_submit",
     "statusicon": AppAssets.whitehourglass,
     "ontap": () {
       showCommonModalSheet(appContext, 300, const BusinessDetailsBottomSheet());
-    }
+    },
+    "imageColor": (BuildContext context) =>
+        context.theme.colorTheme.whiteToGrey,
+    "color": (BuildContext context) =>
+        context.theme.colorTheme.businessDetailsContainer,
   },
   {
     "title": "identity",
+    "titleColor": (BuildContext context) => context.theme.colorTheme.whiteColor,
     "icon": AppAssets.identityicon,
     "status": "verified",
     "statusicon": AppAssets.greencheck,
-    "ontap": () {}
+    "ontap": () {},
+    "color": (BuildContext context) =>
+        context.theme.colorTheme.businessDetailsContainer,
   }
 ];
 

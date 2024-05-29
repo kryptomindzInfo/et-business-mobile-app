@@ -1,3 +1,4 @@
+import 'package:etbank_business_app/constants/app_assets.dart';
 import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:etbank_business_app/constants/app_textstyle.dart';
 import 'package:etbank_business_app/extensions/build_context.dart';
@@ -18,6 +19,8 @@ class UserPersonalDetailsWidget extends ConsumerWidget {
   final bool? enableInteraction;
   final TextEditingController controller;
   final TextStyle? hintStyle;
+  final double? height;
+  final Widget? suffixIcon;
 
   final TextStyle? titleTextStyle;
   const UserPersonalDetailsWidget(
@@ -31,18 +34,21 @@ class UserPersonalDetailsWidget extends ConsumerWidget {
       this.readOnly,
       this.enableInteraction,
       required this.controller,
-      this.hintStyle});
+      this.hintStyle,
+      this.height,
+      this.suffixIcon});
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return GestureDetector(
       onTap: onTap,
       child: Container(
         decoration: BoxDecoration(
-            // color: AppColors.white,
+            color: context.theme.colorTheme.businessDetailsContainer,
             borderRadius: const BorderRadius.all(
               Radius.circular(8),
             ),
-            border: Border.all(color: context.theme.colorTheme.borderColor)),
+            border:
+                Border.all(color: context.theme.colorTheme.transparentToTeal)),
         child: Padding(
           padding: const EdgeInsets.fromLTRB(15, 8, 15, 0),
           child: Column(
@@ -65,6 +71,8 @@ class UserPersonalDetailsWidget extends ConsumerWidget {
                           padding: 0,
                           readOnly: readOnly ?? false,
                           enableInteraction: enableInteraction ?? true,
+                          height: height,
+                          suffixIcon: suffixIcon,
                         ),
                       ),
                     ],

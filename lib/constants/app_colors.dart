@@ -5,6 +5,7 @@ class AppColors {
   static const black = Colors.black;
   static const white = Colors.white;
   static const halfWhite = Color(0xffDADADA);
+  static const otpBlock = Color(0xffEDEFF2);
   static const grey = Color(0xff5E5E5E);
   static const blue = Color(0xff0094FF);
   static const red = Colors.red;
@@ -23,6 +24,7 @@ class AppColors {
   static const indigo = Color(0xff8B8CE6);
   static const headerDescColor = Color(0xffBEBEBE);
   static const headerDescColorLight = Color(0xff6F6F70);
+  static const viewButton = Color(0xffD9D9D9);
 
   static const darkGrassGreen = Color(0xff00804F);
 

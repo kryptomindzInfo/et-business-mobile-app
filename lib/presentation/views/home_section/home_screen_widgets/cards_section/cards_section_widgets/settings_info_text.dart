@@ -1,3 +1,4 @@
+import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/icon_container.dart';
 import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
@@ -26,6 +27,7 @@ class SettingsInfoText extends ConsumerWidget {
     return Row(
       children: [
         IconContainer(
+          bgColor: AppColors.tealColor,
           image: imageIcon,
         ),
         // Image.asset(
@@ -68,7 +70,7 @@ class SettingsInfoText extends ConsumerWidget {
                           onChanged: (value) {
                             proRead.expenseReportingSwitch(value);
                           },
-                          activeColor: context.theme.colorTheme.indigoToColor,
+                          activeColor: context.theme.colorTheme.grassGreen,
                         ),
                       )
                     : const SizedBox()

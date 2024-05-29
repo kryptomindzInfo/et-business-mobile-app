@@ -46,6 +46,8 @@ class SignUpSubmitDocumentScreen extends ConsumerWidget {
               10.spaceY,
               CommonWhiteFlexibleCard(
                 color: context.theme.colorTheme.businessDetailsContainer,
+                border: Border.all(
+                    color: context.theme.colorTheme.transparentToTeal),
                 borderRadius: 8,
                 padding: const EdgeInsets.only(left: 10, top: 10, bottom: 10),
                 widget: Column(

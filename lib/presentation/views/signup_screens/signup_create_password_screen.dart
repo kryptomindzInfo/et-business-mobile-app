@@ -58,12 +58,16 @@ class SignUpCreatePassword extends ConsumerWidget {
                                 : Icons.visibility,
                             color: context.theme.colorTheme.whiteColor,
                           ),
+                          border: Border.all(
+                            color: context.theme.colorTheme.transparentToTeal,
+                          ),
                           // contentPadding: EdgeInsets.all(0),
                           // suffix: Icon(Icons.remove_red_eye),
                           containerColor: ref
                                   .watch(signUpStateProvider)
                                   .containsSpecialCharacters
-                              ? AppColors.transparent
+                              ? context
+                                  .theme.colorTheme.businessDetailsContainer
                               : AppColors.lightRed,
                           // fillColor: ref
                           //         .watch(signUpStateProvider)

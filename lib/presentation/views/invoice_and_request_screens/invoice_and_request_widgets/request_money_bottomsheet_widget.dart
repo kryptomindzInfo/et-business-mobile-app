@@ -34,18 +34,22 @@ class RequestMoneyBottomSheetWidget extends ConsumerWidget {
           Container(
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(24),
-                color: context.theme.colorTheme.bottomSheetColor),
+                color: context.theme.colorTheme.businessDetailsContainer),
             child: Padding(
               padding: const EdgeInsets.fromLTRB(8, 12, 8, 12),
               child: Column(
                 children: [
                   CommonWhiteFlexibleCard(
+                    border: Border.all(
+                      color: context.theme.colorTheme.transparentToTeal,
+                    ),
+                    color: AppColors.transparent,
                     borderRadius: 12,
                     padding: const EdgeInsets.all(0),
                     widget: RequestMoneyWhiteContainerWidget(
                       titleColor: context.theme.colorTheme.whiteColor,
                       subTitlecolor: AppColors.grey,
-                      color: context.theme.colorTheme.bottomSheetColor,
+                      color: context.theme.colorTheme.businessDetailsContainer,
                       imageicon: Image.asset(
                         AppAssets.paymentLink,
                         // height: 20,
@@ -57,12 +61,16 @@ class RequestMoneyBottomSheetWidget extends ConsumerWidget {
                   ),
                   8.spaceY,
                   CommonWhiteFlexibleCard(
+                    border: Border.all(
+                      color: context.theme.colorTheme.transparentToTeal,
+                    ),
+                    color: AppColors.transparent,
                     borderRadius: 12,
                     padding: const EdgeInsets.all(0),
                     widget: RequestMoneyWhiteContainerWidget(
                       titleColor: context.theme.colorTheme.whiteColor,
                       subTitlecolor: AppColors.grey,
-                      color: context.theme.colorTheme.bottomSheetColor,
+                      color: context.theme.colorTheme.businessDetailsContainer,
                       imageicon: Image.asset(
                         AppAssets.invoice,
                         // height: 20,
@@ -76,12 +84,16 @@ class RequestMoneyBottomSheetWidget extends ConsumerWidget {
                   ),
                   8.spaceY,
                   CommonWhiteFlexibleCard(
+                    border: Border.all(
+                      color: context.theme.colorTheme.transparentToTeal,
+                    ),
+                    color: AppColors.transparent,
                     borderRadius: 12,
                     padding: const EdgeInsets.all(0),
                     widget: RequestMoneyWhiteContainerWidget(
                       titleColor: context.theme.colorTheme.whiteColor,
                       subTitlecolor: AppColors.grey,
-                      color: context.theme.colorTheme.bottomSheetColor,
+                      color: context.theme.colorTheme.businessDetailsContainer,
                       imageicon: Image.asset(
                         AppAssets.cardReader,
                         // height: 20,
@@ -92,12 +104,16 @@ class RequestMoneyBottomSheetWidget extends ConsumerWidget {
                   ),
                   8.spaceY,
                   CommonWhiteFlexibleCard(
+                    border: Border.all(
+                      color: context.theme.colorTheme.transparentToTeal,
+                    ),
+                    color: AppColors.transparent,
                     borderRadius: 12,
                     padding: const EdgeInsets.all(0),
                     widget: RequestMoneyWhiteContainerWidget(
                       titleColor: context.theme.colorTheme.whiteColor,
                       subTitlecolor: AppColors.grey,
-                      color: context.theme.colorTheme.bottomSheetColor,
+                      color: context.theme.colorTheme.businessDetailsContainer,
                       imageicon: Image.asset(
                         AppAssets.qrCode,
                         height: 25,

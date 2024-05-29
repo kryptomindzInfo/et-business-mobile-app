@@ -80,7 +80,7 @@ class SignUpBusinessDetailsScreen extends ConsumerWidget {
                                   .countryOfIncorporation ==
                               ''
                           ? context.theme.colorTheme.normalTextColor
-                          : Colors.black,
+                          : context.theme.colorTheme.whiteColor,
                       icon: Icon(
                         Icons.keyboard_arrow_down_outlined,
                         size: 35,
@@ -169,7 +169,9 @@ class SignUpBusinessDetailsScreen extends ConsumerWidget {
                 height: 48.h,
                 width: 327.w,
                 child: PrimaryButton(
-                  color: context.theme.colorTheme.buttonColor,
+                  color: true
+                      ? context.theme.colorTheme.buttonColor
+                      : context.theme.colorTheme.buttonDisabledColor,
                   text: Text(
                     getTranslated('continue', context),
                     style: AppTextstyle.bodyTextStyle(

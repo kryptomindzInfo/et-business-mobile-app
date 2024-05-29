@@ -75,9 +75,11 @@ class AdminScreen extends ConsumerWidget {
                   20.spaceY,
                   const AdminOptions(),
                   20.spaceY,
-                  const HomeScreenSearchTextfield(
-                      // color: AppColors.greywhite,
-                      ),
+                  HomeScreenSearchTextfield(
+                    color: context.theme.colorTheme.businessDetailsContainer,
+
+                    // color: AppColors.greywhite,
+                  ),
                   45.spaceY,
                   Text(
                     getTranslated("Essentials", context),

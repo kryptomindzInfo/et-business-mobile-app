@@ -21,7 +21,8 @@ class AccountsCard extends ConsumerWidget {
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
           color: context.theme.colorTheme.businessDetailsContainer,
-          border: Border.all(color: context.theme.colorTheme.borderColor)),
+          border:
+              Border.all(color: context.theme.colorTheme.transparentToTeal)),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

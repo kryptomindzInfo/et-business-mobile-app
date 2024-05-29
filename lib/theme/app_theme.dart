@@ -33,17 +33,22 @@ class AppTheme extends ThemeExtension<AppTheme> {
   final Color whiteAndBlack;
   final Color iconBgColor;
   final Color greyToTeal;
+  final Color tealToGrey;
   final Color greenToTeal;
   final Color yellowToGreen;
   final Color whiteToYellow;
   final Color whiteToTeal;
   final Color whiteToGreen;
+  final Color greenToWhite;
   final Color tealToYellow;
   final Color iconWithTitleColor;
   final Color cardColor;
   final Color transparentToColor;
   final Color transparentToGreen;
+  final Color transparentToTeal;
+  final Color transparentToYellow;
   final Color businessDetailsContainer;
+  final Color halfWhiteToBlack;
   final Color whiteTohalfWhite;
   final Color whiteToGrey;
   final Color normalButtonsColor;
@@ -104,24 +109,29 @@ class AppTheme extends ThemeExtension<AppTheme> {
     this.blackAndWhite = AppColors.white,
     this.passCodeText = AppColors.grey,
     this.otpText = AppColors.black,
-    this.otpBlock = AppColors.halfWhite,
+    this.otpBlock = AppColors.otpBlock,
     this.passCodeBlock = AppColors.transparent,
     this.passCodeCursor = AppColors.black,
     this.whiteAndBlack = AppColors.black,
     this.iconBgColor = AppColors.halfWhite,
     this.greyToTeal = AppColors.halfWhite,
+    this.tealToGrey = AppColors.tealColor,
     this.greenToTeal = AppColors.grassGreen,
     this.yellowToGreen = AppColors.grassGreen,
     this.whiteToYellow = AppColors.yellowGreen,
     this.whiteToTeal = AppColors.tealColor,
     this.whiteToGreen = AppColors.grassGreen,
+    this.greenToWhite = AppColors.white,
     this.tealToYellow = AppColors.yellowGreen,
     this.iconWithTitleColor = AppColors.black,
     this.cardColor = AppColors.black,
     this.transparentToColor = AppColors.black,
     this.transparentToGreen = AppColors.grassGreen,
+    this.transparentToTeal = AppColors.transparent,
+    this.transparentToYellow = AppColors.transparent,
     this.businessDetailsContainer = AppColors.businessDetailsContainer,
     this.whiteTohalfWhite = AppColors.businessDetailsContainer,
+    this.halfWhiteToBlack = AppColors.businessDetailsContainer,
     this.whiteToGrey = AppColors.iconGreyColor,
     this.normalButtonsColor = AppColors.black,
     this.buttonDisabledColor = AppColors.grey,
@@ -188,17 +198,22 @@ class AppTheme extends ThemeExtension<AppTheme> {
         whiteAndBlack: AppColors.black,
         iconBgColor: AppColors.tealColor,
         greyToTeal: AppColors.tealColor,
+        tealToGrey: AppColors.grey,
         greenToTeal: AppColors.tealColor,
         yellowToGreen: AppColors.yellowGreen,
         whiteToYellow: AppColors.white,
         whiteToTeal: AppColors.white,
         whiteToGreen: AppColors.white,
+        greenToWhite: AppColors.grassGreen,
         tealToYellow: AppColors.tealColor,
         iconWithTitleColor: AppColors.white,
         cardColor: AppColors.white,
         transparentToColor: AppColors.transparent,
         transparentToGreen: AppColors.transparent,
+        transparentToTeal: AppColors.tealColor,
+        transparentToYellow: AppColors.yellowGreen,
         businessDetailsContainer: AppColors.transparent,
+        halfWhiteToBlack: AppColors.black,
         whiteTohalfWhite: AppColors.white,
         whiteToGrey: AppColors.white,
         normalButtonsColor: AppColors.tealColor,
@@ -284,6 +299,7 @@ class AppTheme extends ThemeExtension<AppTheme> {
       whiteAndBlack: Color.lerp(whiteAndBlack, other.whiteAndBlack, t)!,
       iconBgColor: Color.lerp(iconBgColor, other.iconBgColor, t)!,
       greyToTeal: Color.lerp(greyToTeal, other.greyToTeal, t)!,
+      tealToGrey: Color.lerp(tealToGrey, other.tealToGrey, t)!,
       greenToTeal: Color.lerp(greenToTeal, other.greenToTeal, t)!,
       yellowToGreen: Color.lerp(yellowToGreen, other.yellowToGreen, t)!,
       whiteToYellow: Color.lerp(whiteToYellow, other.whiteToYellow, t)!,

@@ -53,6 +53,8 @@ class AutomaticRemindersScreen extends ConsumerWidget {
                 ),
                 22.spaceY,
                 CommonWhiteFlexibleCard(
+                  border: Border.all(
+                      color: context.theme.colorTheme.transparentToTeal),
                   color: context.theme.colorTheme.businessDetailsContainer,
                   borderRadius: 8,
                   padding: const EdgeInsets.fromLTRB(6, 6, 6, 6),
@@ -71,6 +73,8 @@ class AutomaticRemindersScreen extends ConsumerWidget {
                 ),
                 24.spaceY,
                 CommonWhiteFlexibleCard(
+                  border: Border.all(
+                      color: context.theme.colorTheme.transparentToTeal),
                   color: context.theme.colorTheme.businessDetailsContainer,
                   borderRadius: 8,
                   padding: const EdgeInsets.fromLTRB(6, 6, 6, 6),
@@ -97,7 +101,9 @@ class AutomaticRemindersScreen extends ConsumerWidget {
                 height: 48.h,
                 width: 327.w,
                 child: PrimaryButton(
-                  color: AppColors.yellowGreen,
+                  color: true
+                      ? context.theme.colorTheme.buttonColor
+                      : context.theme.colorTheme.buttonDisabledColor,
                   text: Text(
                     getTranslated('save', context),
                     style: AppTextstyle.bodyTextStyle(

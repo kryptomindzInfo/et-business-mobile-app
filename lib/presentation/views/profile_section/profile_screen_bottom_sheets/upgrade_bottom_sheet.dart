@@ -12,6 +12,7 @@ import 'package:etbank_business_app/presentation/views/profile_section/profile_s
 import 'package:etbank_business_app/providers/profile_provider.dart';
 import 'package:etbank_business_app/resources/localization/language_constrants.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../../constants/app_assets.dart';
 import '../../signup_screens/get_plastic_card_screen.dart';
@@ -51,27 +52,30 @@ class UpgradeBottomSheet extends ConsumerWidget {
                 ),
               ),
               23.spaceY,
-              Row(
-                children: upgradePlanslist.map((e) {
-                  int index =
-                      ref.read(profilescreenProvider).upgradeData.indexOf(e);
-                  return InkWell(
-                    onTap: () {
-                      ref.read(profilescreenProvider).selectPlan(index);
-                      // print(ref.read(profilescreenProvider).selectedPlan);
-                      // print(index);
-                    },
-                    child: ProfileScreenChips(
-                      title: e["title"],
-                      color: index == profileProviderWatch.selectedPlan
-                          ? context.theme.colorTheme.activeChipColor
-                          : context.theme.colorTheme.chipsColor,
-                      titleColor: index == profileProviderWatch.selectedPlan
-                          ? context.theme.colorTheme.blackColor
-                          : AppColors.white,
-                    ),
-                  );
-                }).toList(),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: upgradePlanslist.map((e) {
+                    int index =
+                        ref.read(profilescreenProvider).upgradeData.indexOf(e);
+                    return InkWell(
+                      onTap: () {
+                        ref.read(profilescreenProvider).selectPlan(index);
+                        // print(ref.read(profilescreenProvider).selectedPlan);
+                        // print(index);
+                      },
+                      child: ProfileScreenChips(
+                        title: e["title"],
+                        color: index == profileProviderWatch.selectedPlan
+                            ? context.theme.colorTheme.activeChipColor
+                            : context.theme.colorTheme.chipsColor,
+                        titleColor: index == profileProviderWatch.selectedPlan
+                            ? context.theme.colorTheme.blackColor
+                            : AppColors.white,
+                      ),
+                    );
+                  }).toList(),
+                ),
               ),
               18.spaceY,
               UpgradeBottomSheetMainCard(
@@ -84,7 +88,7 @@ class UpgradeBottomSheet extends ConsumerWidget {
               const SeeAllCommonWidget("Get more from your plan", false),
               16.spaceY,
               InfoCardCommonWidget(
-                color: context.theme.colorTheme.bottomSheetColor,
+                color: context.theme.colorTheme.businessDetailsContainer,
                 child: Column(
                   children: [
                     ...(upgradePlanslist[profileProviderWatch.selectedPlan]
@@ -102,7 +106,7 @@ class UpgradeBottomSheet extends ConsumerWidget {
                         minwidth: 288,
                         color: context.theme.colorTheme.buttonColor,
                         text: Text(
-                          "Get Grow for £${upgradePlanslist[profileProviderWatch.selectedPlan]["price"]} Free",
+                          "Get Grow for £${upgradePlanslist[profileProviderWatch.selectedPlan]["price"] ?? ''} Free",
                           style: AppTextstyle.bodyTextStyle(fontSize: 16),
                           // style:
                           //     TextStyle(decoration: TextDecoration.lineThrough),

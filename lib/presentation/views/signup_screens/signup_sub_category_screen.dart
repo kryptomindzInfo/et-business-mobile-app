@@ -57,6 +57,7 @@ class SignUpSubCategoryScreen extends ConsumerWidget {
                 16.spaceY,
                 Expanded(
                   child: BlackContainerWidget(
+                      color: context.theme.colorTheme.halfWhiteToBlack,
                       child: ListView.builder(
                           itemCount: categories.length,
                           itemBuilder: (context, index) {

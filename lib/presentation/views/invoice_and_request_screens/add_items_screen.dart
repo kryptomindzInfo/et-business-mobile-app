@@ -43,6 +43,7 @@ class AddItemsScreen extends ConsumerWidget {
                   ),
                   64.spaceY,
                   const CurrencyTextFieldWidget(
+
                       // padding: EdgeInsets.all(16)
                       ),
                   45.spaceY,
@@ -67,7 +68,9 @@ class AddItemsScreen extends ConsumerWidget {
                 height: 48.h,
                 width: 327.w,
                 child: PrimaryButton(
-                  color: AppColors.yellowGreen,
+                  color: true
+                      ? context.theme.colorTheme.buttonColor
+                      : context.theme.colorTheme.buttonDisabledColor,
                   text: Text(
                     getTranslated('add_items', context),
                     style: AppTextstyle.bodyTextStyle(

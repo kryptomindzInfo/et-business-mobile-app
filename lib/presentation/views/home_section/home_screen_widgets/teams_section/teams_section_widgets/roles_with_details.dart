@@ -1,3 +1,4 @@
+import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:etbank_business_app/constants/app_textstyle.dart';
 import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
@@ -60,14 +61,14 @@ class RolesWithDetails extends ConsumerWidget {
             width: 64,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(5),
-                color: context.theme.colorTheme.whiteTohalfWhite),
+                color: AppColors.viewButton),
             child: Center(
               child: Text(
                 getTranslated("view", context),
                 style: AppTextstyle.bodyTextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.w500,
-                    color: context.theme.colorTheme.whiteAndBlack),
+                    color: AppColors.black),
               ),
             ),
           )

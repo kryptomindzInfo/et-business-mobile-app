@@ -25,58 +25,64 @@ class AccountDetailsOTPCodeScreen extends ConsumerWidget {
         description: 'account_details_otp_text',
         onCompleted: (value) {
           showModalBottomSheet(
+            backgroundColor: AppColors.transparent,
             context: context,
             builder: (BuildContext context) {
-              return VerifiedBottomSheetWidget(
-                title: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      getTranslated("Youve_sent", context),
-                      style: AppTextstyle.bodyTextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w700,
-                          color: context.theme.colorTheme.whiteColor),
-                    ),
-                    Text(
-                      getTranslated("£1 ", context),
-                      style: AppTextstyle.bodyTextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w700,
-                          color: AppColors.tealColor),
-                    ),
-                    Text(
-                      getTranslated("to ", context),
-                      style: AppTextstyle.bodyTextStyle(
-                        color: context.theme.colorTheme.whiteColor,
-                        fontSize: 20,
-                        fontWeight: FontWeight.w700,
+              return Container(
+                margin: const EdgeInsets.all(20),
+                child: VerifiedBottomSheetWidget(
+                  title: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        getTranslated("Youve_sent", context),
+                        style: AppTextstyle.bodyTextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w700,
+                            color: AppColors.black),
                       ),
-                    ),
-                    Text(
-                      getTranslated("xyz", context),
-                      style: AppTextstyle.bodyTextStyle(
+                      Text(
+                        getTranslated("£1 ", context),
+                        style: AppTextstyle.bodyTextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w700,
+                            color: AppColors.tealColor),
+                      ),
+                      Text(
+                        getTranslated("to ", context),
+                        style: AppTextstyle.bodyTextStyle(
+                          color: AppColors.black,
                           fontSize: 20,
                           fontWeight: FontWeight.w700,
-                          color: AppColors.tealColor),
+                        ),
+                      ),
+                      Text(
+                        getTranslated("xyz", context),
+                        style: AppTextstyle.bodyTextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w700,
+                            color: AppColors.tealColor),
+                      ),
+                    ],
+                  ),
+                  description: SizedBox(
+                    height: 48.h,
+                    width: 327.w,
+                    child: PrimaryButton(
+                      color: true
+                          ? context.theme.colorTheme.buttonColor
+                          : context.theme.colorTheme.buttonDisabledColor,
+                      text: Text(
+                        getTranslated('payment_notif_title', context),
+                        style: AppTextstyle.bodyTextStyle(
+                            color: AppColors.mateBlackColor,
+                            fontSize: 16,
+                            fontWeight: FontWeight.w500),
+                      ),
+                      onPressed: () {
+                        Navigation.pushNamed(BaseBottomNavBar.routeName);
+                      },
                     ),
-                  ],
-                ),
-                description: SizedBox(
-                  height: 48.h,
-                  width: 327.w,
-                  child: PrimaryButton(
-                    color: AppColors.yellowGreen,
-                    text: Text(
-                      getTranslated('payment_notif_title', context),
-                      style: AppTextstyle.bodyTextStyle(
-                          color: AppColors.mateBlackColor,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w500),
-                    ),
-                    onPressed: () {
-                      Navigation.pushNamed(BaseBottomNavBar.routeName);
-                    },
                   ),
                 ),
               );

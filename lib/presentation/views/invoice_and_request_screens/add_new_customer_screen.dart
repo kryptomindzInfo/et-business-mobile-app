@@ -1,4 +1,5 @@
 import 'package:etbank_business_app/constants/app_colors.dart';
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/navigation/navigation.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/app_common_widgets.dart';
@@ -48,11 +49,21 @@ class AddNewCustomerScreen extends ConsumerWidget {
                 ),
                 24.spaceY,
                 TextFieldWidget(
+                  containerColor:
+                      context.theme.colorTheme.businessDetailsContainer,
+                  border: Border.all(
+                    color: context.theme.colorTheme.transparentToTeal,
+                  ),
                   hintText: getTranslated('email', context),
                   hintStyle: AppTextstyle.bodyTextStyle(color: AppColors.grey),
                 ),
                 16.spaceY,
                 TextFieldWidget(
+                  containerColor:
+                      context.theme.colorTheme.businessDetailsContainer,
+                  border: Border.all(
+                    color: context.theme.colorTheme.transparentToTeal,
+                  ),
                   hintText: getTranslated('full_name', context),
                   hintStyle: AppTextstyle.bodyTextStyle(color: AppColors.grey),
                 ),
@@ -75,7 +86,9 @@ class AddNewCustomerScreen extends ConsumerWidget {
                 height: 48.h,
                 width: 327.w,
                 child: PrimaryButton(
-                  color: AppColors.yellowGreen,
+                  color: true
+                      ? context.theme.colorTheme.buttonColor
+                      : context.theme.colorTheme.buttonDisabledColor,
                   text: Text(
                     getTranslated('continue', context),
                     style: AppTextstyle.bodyTextStyle(

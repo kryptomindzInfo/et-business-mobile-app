@@ -54,14 +54,19 @@ class AssignRoleScreen extends ConsumerWidget {
                   // trailingImageHeight: 30,
                 ),
                 20.spaceY,
-                const HomeScreenSearchTextfield(
-                    // color: AppColors.greywhite,
-                    ),
+                HomeScreenSearchTextfield(
+                  color: context.theme.colorTheme.businessDetailsContainer,
+
+                  // color: AppColors.greywhite,
+                ),
                 30.spaceY,
                 CommonWhiteFlexibleCard(
                   color: context.theme.colorTheme.businessDetailsContainer,
+                  border: Border.all(
+                    color: context.theme.colorTheme.transparentToTeal,
+                  ),
                   widget: SizedBox(
-                    height: 250,
+                    height: 320,
                     child: ListView.builder(
                       itemCount:
                           ref.watch(teamscreenProvider).assignRoleData.length,
@@ -90,10 +95,12 @@ class AssignRoleScreen extends ConsumerWidget {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 120),
+                  padding: const EdgeInsets.only(top: 80),
                   child: PrimaryButton(
                       minwidth: 280,
-                      color: AppColors.yellowGreen,
+                      color: true
+                          ? context.theme.colorTheme.buttonColor
+                          : context.theme.colorTheme.buttonDisabledColor,
                       text: Text(
                         getTranslated("continue", context),
                         style: AppTextstyle.bodyTextStyle(

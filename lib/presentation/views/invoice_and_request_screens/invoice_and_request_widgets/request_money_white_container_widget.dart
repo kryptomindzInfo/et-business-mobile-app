@@ -30,6 +30,7 @@ class RequestMoneyWhiteContainerWidget extends ConsumerWidget {
       onTap: onpress,
       child: Container(
         decoration: BoxDecoration(
+          border: Border.all(color: AppColors.transparent),
           borderRadius: BorderRadius.circular(12),
           color: color ?? AppColors.white,
         ),

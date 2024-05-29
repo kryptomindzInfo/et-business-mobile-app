@@ -15,7 +15,7 @@ class StatementScreenMainCard extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return InfoCardCommonWidget(
-      color: AppColors.transparent,
+      color: context.theme.colorTheme.businessDetailsContainer,
       child: Padding(
         padding: const EdgeInsets.only(left: 8),
         child: Column(
@@ -67,7 +67,7 @@ class StatementScreenMainCard extends ConsumerWidget {
                 Icons.arrow_forward_ios,
                 color: context.theme.colorTheme.whiteColor,
               ),
-            )
+            ),
           ],
         ),
       ),

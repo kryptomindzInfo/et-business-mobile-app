@@ -23,7 +23,7 @@ class ProfileInfoCard extends ConsumerWidget {
         const SeeAllCommonWidget("Profile", true),
         8.spaceY,
         InfoCardCommonWidget(
-          color: AppColors.transparent,
+          color: context.theme.colorTheme.businessDetailsContainer,
           child: Column(
             children: [
               ProfileInfoTextWidget(

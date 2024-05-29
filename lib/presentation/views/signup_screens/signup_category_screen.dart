@@ -1,3 +1,4 @@
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/navigation/navigation.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/app_common_appbar.dart';
@@ -46,23 +47,24 @@ class SignUpCategoryScreen extends ConsumerWidget {
                 ),
                 16.spaceY,
                 BlackContainerWidget(
+                    color: context.theme.colorTheme.halfWhiteToBlack,
                     child: SizedBox(
-                  height: 540.h,
-                  child: ListView.builder(
-                      itemCount: categories.length,
-                      itemBuilder: (context, index) {
-                        return GestureDetector(
-                          onTap: () {
-                            Navigation.pushNamed(
-                                SignUpSubCategoryScreen.routeName);
-                          },
-                          child: CategoryWidget(
-                            title: getTranslated(
-                                categories[index]['title'], context),
-                          ),
-                        );
-                      }),
-                )),
+                      height: 540.h,
+                      child: ListView.builder(
+                          itemCount: categories.length,
+                          itemBuilder: (context, index) {
+                            return GestureDetector(
+                              onTap: () {
+                                Navigation.pushNamed(
+                                    SignUpSubCategoryScreen.routeName);
+                              },
+                              child: CategoryWidget(
+                                title: getTranslated(
+                                    categories[index]['title'], context),
+                              ),
+                            );
+                          }),
+                    )),
               ],
             ),
           ),

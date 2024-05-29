@@ -50,15 +50,15 @@ class AddDocBottomSheetWidget extends ConsumerWidget {
           ),
           10.spaceY,
           CommonIconTitleIconButton(
-            isForwardIcon: false,
-            iconImage: AppAssets.galleryicon,
-            title: getTranslated("choose_gallery", context),
-          ),
+              isForwardIcon: false,
+              iconImage: AppAssets.galleryicon,
+              title: getTranslated("choose_gallery", context),
+              imageColor: context.theme.colorTheme.greenToWhite),
           CommonIconTitleIconButton(
-            isForwardIcon: false,
-            iconImage: AppAssets.docicon,
-            title: getTranslated("upload_doc", context),
-          )
+              isForwardIcon: false,
+              iconImage: AppAssets.docicon,
+              title: getTranslated("upload_doc", context),
+              imageColor: context.theme.colorTheme.greenToWhite)
         ],
       ),
     );

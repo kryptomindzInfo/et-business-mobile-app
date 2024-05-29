@@ -16,7 +16,8 @@ class HomeScreenSearchTextfield extends ConsumerWidget {
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(28),
           color: color ?? AppColors.transparent,
-          border: Border.all(color: context.theme.colorTheme.borderColor)),
+          border:
+              Border.all(color: context.theme.colorTheme.transparentToTeal)),
       child: TextField(
         decoration: InputDecoration(
             disabledBorder: InputBorder.none,

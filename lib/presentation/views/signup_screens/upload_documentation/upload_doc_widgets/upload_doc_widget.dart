@@ -1,4 +1,5 @@
 import 'package:etbank_business_app/constants/app_assets.dart';
+import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/common_bottom_sheet.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/white_flexible_card.dart';
@@ -16,13 +17,15 @@ class UploadDocWidget extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return CommonWhiteFlexibleCard(
       color: context.theme.colorTheme.businessDetailsContainer,
+      border: Border.all(color: context.theme.colorTheme.transparentToTeal),
       padding: const EdgeInsets.only(left: 10, bottom: 10, right: 10, top: 10),
       widget: Row(
         children: [
           CommonIconTitleIconButton(
             title: getTranslated("upload_doc", context),
             isForwardIcon: false,
-            iconImage: AppAssets.addButton2x,
+            iconImage: AppAssets.plus,
+            // imageColor: AppColors.red,
             onpress: () {
               showCommonModalSheet(
                 context,

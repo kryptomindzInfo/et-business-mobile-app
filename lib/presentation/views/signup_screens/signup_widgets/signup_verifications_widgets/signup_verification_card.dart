@@ -11,6 +11,9 @@ class SignUpVerificationCard extends ConsumerWidget {
   final String? status;
   final VoidCallback? onpress;
   final Color? color;
+  final Color? imageColor;
+  final Color? titleColor;
+
   const SignUpVerificationCard(
       {super.key,
       this.imageIcon,
@@ -18,7 +21,9 @@ class SignUpVerificationCard extends ConsumerWidget {
       this.statusIcon,
       this.status,
       this.onpress,
-      this.color});
+      this.color,
+      this.imageColor,
+      this.titleColor});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -30,7 +35,8 @@ class SignUpVerificationCard extends ConsumerWidget {
         decoration: BoxDecoration(
             color: color ?? Colors.transparent,
             borderRadius: BorderRadius.circular(28),
-            border: Border.all(color: context.theme.colorTheme.borderColor)),
+            border:
+                Border.all(color: context.theme.colorTheme.transparentToTeal)),
         child: Padding(
           padding: const EdgeInsets.only(left: 15),
           child: Column(
@@ -45,6 +51,7 @@ class SignUpVerificationCard extends ConsumerWidget {
                   child: Image.asset(
                     imageIcon!,
                     scale: 2.10,
+                    color: imageColor,
                     // color: context.theme.colorTheme.whiteColor,
                   ),
                 ),
@@ -55,7 +62,8 @@ class SignUpVerificationCard extends ConsumerWidget {
                 style: AppTextstyle.bodyTextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w400,
-                    color: context.theme.colorTheme.normalTextColor,
+                    color:
+                        titleColor ?? context.theme.colorTheme.normalTextColor,
                     overflow: TextOverflow.clip),
               ),
               if (status!.isNotEmpty) 5.spaceY,

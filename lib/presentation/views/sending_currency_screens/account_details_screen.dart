@@ -1,3 +1,4 @@
+import 'package:etbank_business_app/constants/app_assets.dart';
 import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
@@ -49,6 +50,7 @@ class AccountDetailsScreen extends ConsumerWidget {
                   ),
                   32.spaceY,
                   UserPersonalDetailsWidget(
+                    height: 32,
                     readOnly: true,
                     enableInteraction: false,
                     controller:
@@ -56,9 +58,16 @@ class AccountDetailsScreen extends ConsumerWidget {
                     title: getTranslated('country', context),
                     hint: getTranslated('united_kingdom', context),
                     onTap: () {},
+                    icon: Image.asset(
+                      AppAssets.iconArrowDownBlack,
+                      color: context.theme.colorTheme.whiteColor,
+                      width: 18,
+                      height: 11,
+                    ),
                   ),
                   16.spaceY,
                   UserPersonalDetailsWidget(
+                    height: 32,
                     readOnly: true,
                     enableInteraction: false,
                     controller:
@@ -66,9 +75,16 @@ class AccountDetailsScreen extends ConsumerWidget {
                     title: getTranslated('currency', context),
                     hint: getTranslated('british_pound', context),
                     onTap: () {},
+                    icon: Image.asset(
+                      AppAssets.iconArrowDownBlack,
+                      color: context.theme.colorTheme.whiteColor,
+                      width: 18,
+                      height: 11,
+                    ),
                   ),
                   16.spaceY,
                   UserPersonalDetailsWidget(
+                    height: 32,
                     readOnly: true,
                     enableInteraction: false,
                     controller:
@@ -79,6 +95,11 @@ class AccountDetailsScreen extends ConsumerWidget {
                   ),
                   16.spaceY,
                   TextFieldWidget(
+                    containerColor:
+                        context.theme.colorTheme.businessDetailsContainer,
+                    border: Border.all(
+                      color: context.theme.colorTheme.transparentToTeal,
+                    ),
                     hintText: getTranslated('sort_code', context),
                     style: AppTextstyle.bodyTextStyle(
                         color: context.theme.colorTheme.whiteColor),
@@ -105,6 +126,7 @@ class AccountDetailsScreen extends ConsumerWidget {
                   onPressed: () {
                     showModalBottomSheet(
                       context: context,
+                      backgroundColor: AppColors.transparent,
                       builder: (BuildContext context) {
                         return GestureDetector(
                           onTap: () {
@@ -117,25 +139,28 @@ class AccountDetailsScreen extends ConsumerWidget {
                                   return const PaymentNotificationBottomSheetWidget();
                                 });
                           },
-                          child: VerifiedBottomSheetWidget(
-                            title: Text(
-                              getTranslated(
-                                  "account_name_matched_title", context),
-                              style: AppTextstyle.bodyTextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                                color: context.theme.colorTheme.whiteColor,
+                          child: Container(
+                            margin: const EdgeInsets.all(20),
+                            child: VerifiedBottomSheetWidget(
+                              title: Text(
+                                getTranslated(
+                                    "account_name_matched_title", context),
+                                style: AppTextstyle.bodyTextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.black,
+                                ),
                               ),
-                            ),
-                            description: Text(
-                              textAlign: TextAlign.center,
-                              getTranslated(
-                                  "account_name_matched_subtitle", context),
-                              style: AppTextstyle.bodyTextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w500,
-                                overflow: TextOverflow.clip,
-                                color: context.theme.colorTheme.whiteColor,
+                              description: Text(
+                                textAlign: TextAlign.center,
+                                getTranslated(
+                                    "account_name_matched_subtitle", context),
+                                style: AppTextstyle.bodyTextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w500,
+                                  overflow: TextOverflow.clip,
+                                  color: AppColors.black,
+                                ),
                               ),
                             ),
                           ),

@@ -1,4 +1,5 @@
 import 'package:etbank_business_app/constants/app_textstyle.dart';
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/navigation/navigation.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/app_common_widgets.dart';
@@ -37,6 +38,7 @@ class InviteToETBankScreen extends ConsumerWidget {
                 ),
                 24.spaceY,
                 UserPersonalDetailsWidget(
+                    height: 30,
                     title: getTranslated("email", context),
                     hint: "Type or past multiple at once",
                     hintStyle:
@@ -51,7 +53,9 @@ class InviteToETBankScreen extends ConsumerWidget {
             child: CommonButton(
               height: 38,
               title: getTranslated("continue", context),
-              mainButtonColor: AppColors.yellowGreen,
+              mainButtonColor: true
+                  ? context.theme.colorTheme.buttonColor
+                  : context.theme.colorTheme.buttonDisabledColor,
               titleColor: AppColors.mateBlackColor,
               onpress: () {
                 Navigation.pushNamed(AssignRoleScreen.routeName);

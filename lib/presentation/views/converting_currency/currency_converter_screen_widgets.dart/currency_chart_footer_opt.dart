@@ -1,5 +1,6 @@
 import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
+import 'package:etbank_business_app/presentation/views/common_widgets/icon_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -19,13 +20,19 @@ class CurrencyChartFooterOpt extends ConsumerWidget {
       onTap: onpress,
       child: Column(
         children: [
-          Container(
+          SizedBox(
             height: 46,
             width: 46,
-            decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                image: DecorationImage(image: AssetImage(image!), scale: 2),
-                color: AppColors.grey.withOpacity(0.6)),
+            child: IconContainer(
+              bgColor: context.theme.colorTheme.grassGreen,
+              image: image,
+              imageColor: AppColors.white,
+              scale: 2,
+            ),
+            // decoration: BoxDecoration(
+            //     shape: BoxShape.circle,
+            //     image: DecorationImage(image: AssetImage(image!), scale: 2),
+            //     color: AppColors.grey.withOpacity(0.6)),
             // child: Center(
             //   child: Image.asset(
             //     image!,

@@ -25,10 +25,10 @@ class AddCounterPartyWidget extends ConsumerWidget {
       onTap: onTap,
       child: Container(
         decoration: BoxDecoration(
-          color: AppColors.transparent,
+          color: context.theme.colorTheme.businessDetailsContainer,
           borderRadius: BorderRadius.circular(borderRadius ?? 28),
           border: Border.all(
-            color: AppColors.tealColor,
+            color: context.theme.colorTheme.transparentToTeal,
             width: 1,
           ),
         ),

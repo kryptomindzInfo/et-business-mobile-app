@@ -93,7 +93,9 @@ class TrustThisPayeeBottomSheetWidget extends ConsumerWidget {
                       height: 48.h,
                       width: 327.w,
                       child: PrimaryButton(
-                        color: AppColors.yellowGreen,
+                        color: true
+                            ? context.theme.colorTheme.buttonColor
+                            : context.theme.colorTheme.buttonDisabledColor,
                         text: Text(
                           getTranslated('no_go_back', context),
                           style: AppTextstyle.bodyTextStyle(

@@ -31,7 +31,7 @@ class CreateNewRoleBottomSheet extends ConsumerWidget {
             IconButton(
               onPressed: () {},
               icon: const Icon(Icons.close),
-              color: AppColors.white,
+              color: context.theme.colorTheme.whiteColor,
             ),
             HeaderIconWithTitle(
               // imageicon: AppAssets.crossicon,
@@ -39,13 +39,19 @@ class CreateNewRoleBottomSheet extends ConsumerWidget {
             ),
             28.spaceY,
             TextFieldWidget(
+              containerColor: context.theme.colorTheme.businessDetailsContainer,
+              border: Border.all(
+                color: context.theme.colorTheme.transparentToTeal,
+              ),
               hintText: getTranslated('new_role_name', context),
               style: const TextStyle(color: AppColors.black),
             ),
             140.spaceY,
             Center(
               child: PrimaryButton(
-                color: AppColors.yellowGreen,
+                color: true
+                    ? context.theme.colorTheme.buttonColor
+                    : context.theme.colorTheme.buttonDisabledColor,
                 text: Text(
                   getTranslated("continue", context),
                   style: AppTextstyle.bodyTextStyle(color: AppColors.black),
@@ -53,19 +59,21 @@ class CreateNewRoleBottomSheet extends ConsumerWidget {
                 onPressed: () {
                   Navigator.pop(context);
                   showModalBottomSheet(
-                      backgroundColor:
-                          context.theme.colorTheme.bottomSheetColor,
+                      backgroundColor: AppColors.transparent,
                       context: context,
-                      builder: (context) => VerifiedBottomSheetWidget(
-                            title: const Column(
-                              children: [],
-                            ),
-                            description: Text(
-                              "Role Created",
-                              style: AppTextstyle.headingTextStyle(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold,
-                                  color: context.theme.colorTheme.whiteColor),
+                      builder: (context) => Container(
+                            margin: const EdgeInsets.all(20),
+                            child: VerifiedBottomSheetWidget(
+                              title: const Column(
+                                children: [],
+                              ),
+                              description: Text(
+                                "Role Created",
+                                style: AppTextstyle.headingTextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                    color: AppColors.black),
+                              ),
                             ),
                           ));
                 },

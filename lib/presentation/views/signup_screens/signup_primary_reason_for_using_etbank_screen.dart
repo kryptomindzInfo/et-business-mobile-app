@@ -44,6 +44,7 @@ class SignUpPrimaryReasonForEtBankScreen extends ConsumerWidget {
                 ),
                 36.spaceY,
                 BlackContainerWidget(
+                  color: context.theme.colorTheme.halfWhiteToBlack,
                   child: SizedBox(
                     height: 280.h,
                     child: ListView.builder(
@@ -77,7 +78,9 @@ class SignUpPrimaryReasonForEtBankScreen extends ConsumerWidget {
                 height: 48.h,
                 width: 327.w,
                 child: PrimaryButton(
-                    color: context.theme.colorTheme.buttonColor,
+                    color: true
+                        ? context.theme.colorTheme.buttonColor
+                        : context.theme.colorTheme.buttonDisabledColor,
                     text: Text(
                       getTranslated('continue', context),
                       style: AppTextstyle.bodyTextStyle(

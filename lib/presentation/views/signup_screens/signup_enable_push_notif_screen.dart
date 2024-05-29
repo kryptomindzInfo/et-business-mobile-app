@@ -1,3 +1,4 @@
+import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:etbank_business_app/constants/app_textstyle.dart';
 import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
@@ -46,11 +47,11 @@ class SignUpEnablePushNotifScreen extends ConsumerWidget {
               height: 48.h,
               width: 327.w,
               child: PrimaryButton(
-                color: context.theme.colorTheme.inActiveButtonColor,
+                color: context.theme.colorTheme.tealToGrey,
                 text: Text(
                   getTranslated('not_now', context),
                   style: AppTextstyle.bodyTextStyle(
-                      color: context.theme.colorTheme.whiteColor,
+                      color: AppColors.white,
                       fontSize: 16,
                       fontWeight: FontWeight.w500),
                 ),
