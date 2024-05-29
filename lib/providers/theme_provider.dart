@@ -25,7 +25,6 @@ class ThemeProvider extends Notifier<Themes> {
 
   changeTheme(ThemeMode themeMode) {
     if (themeMode != state.themeMode) {
-      console(themeMode);
       int themeId = themefromMode[themeMode]!;
       AppLocal.ins.appBox.put(ThemeConstants.theme, themeId);
       state = state.copyWith(themeMode: themeMode, themeId: themeId);
