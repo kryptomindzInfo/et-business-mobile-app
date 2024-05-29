@@ -32,10 +32,10 @@ class TextFieldBlackWidget extends ConsumerWidget {
           // border: OutlineInputBorder(
           //   borderRadius: BorderRadius.circular(28.0),
           // ),
-          contentPadding: const EdgeInsets.symmetric(
-              // horizontal: 90.w,
-              vertical: 9),
-          // contentPadding: const EdgeInsets.only(bottom: 8),
+          // contentPadding: const EdgeInsets.symmetric(
+          //     // horizontal: 90.w,
+          //     vertical: 9),
+          contentPadding: const EdgeInsets.only(bottom: 13),
           // filled: true,
           disabledBorder: InputBorder.none,
           enabledBorder: InputBorder.none,
