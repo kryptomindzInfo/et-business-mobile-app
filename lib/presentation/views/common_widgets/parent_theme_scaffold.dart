@@ -10,15 +10,15 @@ class ParentThemeScaffold extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    // return child;
-    return Scaffold(
-      backgroundColor: context.theme.colorTheme.backgroundColor,
-      floatingActionButton: FloatingActionButton(
-          child: const Icon(Icons.theater_comedy),
-          onPressed: () {
-            ref.read(themeProvider.notifier).toggle();
-          }),
-      body: child,
-    );
+    return child;
+    // return Scaffold(
+    //   backgroundColor: context.theme.colorTheme.backgroundColor,
+    //   floatingActionButton: FloatingActionButton(
+    //       child: const Icon(Icons.theater_comedy),
+    //       onPressed: () {
+    //         ref.read(themeProvider.notifier).toggle();
+    //       }),
+    //   body: child,
+    // );
   }
 }
