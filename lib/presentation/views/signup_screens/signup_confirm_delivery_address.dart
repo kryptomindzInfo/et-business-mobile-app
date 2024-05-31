@@ -12,7 +12,6 @@ import 'package:etbank_business_app/providers/signup_provider.dart';
 import 'package:etbank_business_app/resources/localization/language_constrants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
 import '../sending_currency_screens/sending_currency_widgets/verified_bottom_sheet_widget.dart';
 
 class SignupConfirmDeliveryAddress extends ConsumerWidget {
@@ -26,7 +25,7 @@ class SignupConfirmDeliveryAddress extends ConsumerWidget {
         backgroundColor: context.theme.colorTheme.backgroundColor,
         appBar: const CommonAppBar(),
         body: Padding(
-          padding: const EdgeInsets.only(left: 20, right: 20),
+          padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Column(
             children: [
               HeaderIconWithTitle(
@@ -35,11 +34,12 @@ class SignupConfirmDeliveryAddress extends ConsumerWidget {
               ),
               30.spaceY,
               CommonWhiteFlexibleCard(
+                alignment: Alignment.centerLeft,
                 color: context.theme.colorTheme.businessDetailsContainer,
                 border: Border.all(
                     color: context.theme.colorTheme.transparentToTeal),
                 borderRadius: 12,
-                padding: const EdgeInsets.only(top: 15, bottom: 20, right: 60),
+                padding: const EdgeInsets.only(top: 15, bottom: 23, left: 24),
                 widget: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -47,7 +47,7 @@ class SignupConfirmDeliveryAddress extends ConsumerWidget {
                       getTranslated("home_address", context),
                       style: AppTextstyle.bodyTextStyle(
                           fontSize: 16,
-                          fontWeight: FontWeight.w400,
+                          fontWeight: FontWeight.w500,
                           color: context.theme.colorTheme.normalTextColor),
                     ),
                     22.spaceY,
@@ -55,7 +55,7 @@ class SignupConfirmDeliveryAddress extends ConsumerWidget {
                       "House No 12, 5th street, UK",
                       style: AppTextstyle.bodyTextStyle(
                           fontSize: 16,
-                          fontWeight: FontWeight.w400,
+                          fontWeight: FontWeight.w500,
                           color: context.theme.colorTheme.normalTextColor),
                     ),
                     68.spaceY,
@@ -68,7 +68,7 @@ class SignupConfirmDeliveryAddress extends ConsumerWidget {
                   ],
                 ),
               ),
-              30.spaceY,
+              21.spaceY,
               CommonWhiteFlexibleCard(
                 color: context.theme.colorTheme.businessDetailsContainer,
                 border: Border.all(
@@ -78,7 +78,7 @@ class SignupConfirmDeliveryAddress extends ConsumerWidget {
                 widget: Row(
                   children: [
                     Checkbox(
-                        activeColor: context.theme.colorTheme.blackColor,
+                        activeColor: AppColors.green,
                         value: ref.watch(signUpStateProvider).isPlaceOfBusiness,
                         onChanged: (val) {
                           ref
@@ -95,7 +95,7 @@ class SignupConfirmDeliveryAddress extends ConsumerWidget {
                   ],
                 ),
               ),
-              220.spaceY,
+              210.spaceY,
               CommonButton(
                 title: getTranslated("confirm", context),
                 mainButtonColor: true

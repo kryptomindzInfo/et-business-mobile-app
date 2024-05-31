@@ -13,7 +13,7 @@ showCommonModalSheet(BuildContext context, double height, Widget widget,
     builder: (context) => Container(
       height: height,
       width: double.infinity,
-      margin: const EdgeInsets.only(left: 10, right: 10),
+      // margin: const EdgeInsets.only(left: 10, right: 10),
       decoration: BoxDecoration(
         color: color ?? context.theme.colorTheme.commonBottomSheetColor,
         borderRadius: const BorderRadius.only(

@@ -42,7 +42,7 @@ class GetStartedSection extends ConsumerWidget {
                     fontSize: 14,
                     fontWeight: FontWeight.normal,
                     overflow: TextOverflow.clip,
-                    color: AppColors.black),
+                    color: context.theme.colorTheme.whiteWithOpactiy),
               ),
             ),
             GetStartedButton(

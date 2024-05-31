@@ -57,6 +57,8 @@ class SignUpDirectorsScreen extends ConsumerWidget {
                         fontSize: 16,
                         color: context.theme.colorTheme.normalTextColor),
                     icon: DirectorButtonWidget(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 15, vertical: 10),
                       title: getTranslated('edit', context),
                       buttonColor: AppColors.tealColor.withOpacity(0.3),
                       titleTextStyle: AppTextstyle.bodyTextStyle(

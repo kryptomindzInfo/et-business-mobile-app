@@ -205,4 +205,8 @@ class AppAssets {
   static const notifImage = "${imagesDir}notif_image.png";
   static const currencyExchange = "${iconsDir}currency_exchange.png";
   static const system = "${imagesDir}system.png";
+  static const searchImage = "${iconsDir}search_image.png";
+  static const searchImage2x = "${iconsDir}search_image2x.png";
+  static const home = "${iconsDir}home.png";
+  static const page = "${iconsDir}page.png";
 }

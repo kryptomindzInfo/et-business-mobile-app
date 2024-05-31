@@ -14,6 +14,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import '../../../constants/app_colors.dart';
 import '../../../navigation/navigation.dart';
+import '../common_widgets/primary_button.dart';
+import 'signup_widgets/button_bottom_navigation_widget.dart';
 
 class SignUpCreatePassCodeScreen extends ConsumerWidget {
   static const String routeName = "signup_create_passcode";
@@ -28,59 +30,64 @@ class SignUpCreatePassCodeScreen extends ConsumerWidget {
           appBar: const CommonAppBar(
             etBankLogo: true,
           ),
-          body: Padding(
-            padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                HeaderIconWithTitle(
-                  title: getTranslated('create_passcode_title', context),
-                  // description: getTranslated('create_passcode_subtitle', context),
-                  // imageicon: AppAssets.arrowLeft,
-                ),
-                220.spaceY,
-                PinCodeTextField(
-                    appContext: context,
-                    length: 4,
-                    obscureText: true,
-                    autoFocus: true,
-                    autoDisposeControllers: false,
-                    animationType: AnimationType.fade,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    cursorColor: context.theme.colorTheme.passCodeCursor,
-                    textStyle:
-                        TextStyle(color: context.theme.colorTheme.passCodeText),
-                    pinTheme: PinTheme(
-                      shape: PinCodeFieldShape.box,
-                      borderRadius: BorderRadius.circular(12),
-                      fieldOuterPadding:
-                          const EdgeInsets.symmetric(horizontal: 8),
-                      fieldHeight: 48.h,
-                      fieldWidth: 34.w,
-                      borderWidth: 0,
-                      activeFillColor: context.theme.colorTheme.passCodeBlock,
-                      selectedFillColor: context.theme.colorTheme.passCodeBlock,
-                      inactiveFillColor: context.theme.colorTheme.passCodeBlock,
-                      activeColor: AppColors.transparent,
-                      selectedColor: AppColors.transparent,
-                      inactiveColor:
-                          context.theme.colorTheme.transparentToColor,
-                      activeBorderWidth: 0,
-                      errorBorderWidth: 0,
-                      disabledBorderWidth: 0,
-                      inactiveBorderWidth: 0,
-                      selectedBorderWidth: 0,
-                    ),
-                    inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-                    keyboardType: TextInputType.number,
-                    animationDuration: const Duration(milliseconds: 300),
-                    enableActiveFill: true,
-                    enablePinAutofill: true,
-                    onCompleted: (value) {
-                      Navigation.pushNamed(
-                          SignUpCreatePassCodeOTPCodeScreen.routeName);
-                    }),
-              ],
+          body: SingleChildScrollView(
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  HeaderIconWithTitle(
+                    title: getTranslated('create_passcode_title', context),
+                    isCenter: true,
+                    // description: getTranslated('create_passcode_subtitle', context),
+                    // imageicon: AppAssets.arrowLeft,
+                  ),
+                  220.spaceY,
+                  PinCodeTextField(
+                      appContext: context,
+                      length: 4,
+                      obscureText: true,
+                      autoFocus: true,
+                      autoDisposeControllers: false,
+                      animationType: AnimationType.fade,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      cursorColor: context.theme.colorTheme.passCodeCursor,
+                      textStyle: TextStyle(
+                          color: context.theme.colorTheme.passCodeText),
+                      pinTheme: PinTheme(
+                        shape: PinCodeFieldShape.box,
+                        borderRadius: BorderRadius.circular(12),
+                        fieldOuterPadding:
+                            const EdgeInsets.symmetric(horizontal: 8),
+                        fieldHeight: 48.h,
+                        fieldWidth: 34.w,
+                        borderWidth: 0,
+                        activeFillColor: context.theme.colorTheme.passCodeBlock,
+                        selectedFillColor:
+                            context.theme.colorTheme.passCodeBlock,
+                        inactiveFillColor:
+                            context.theme.colorTheme.passCodeBlock,
+                        activeColor: AppColors.transparent,
+                        selectedColor: AppColors.transparent,
+                        inactiveColor:
+                            context.theme.colorTheme.transparentToColor,
+                        activeBorderWidth: 0,
+                        errorBorderWidth: 0,
+                        disabledBorderWidth: 0,
+                        inactiveBorderWidth: 0,
+                        selectedBorderWidth: 0,
+                      ),
+                      inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+                      keyboardType: TextInputType.number,
+                      animationDuration: const Duration(milliseconds: 300),
+                      enableActiveFill: true,
+                      enablePinAutofill: true,
+                      onCompleted: (value) {
+                        Navigation.pushNamed(
+                            SignUpCreatePassCodeOTPCodeScreen.routeName);
+                      }),
+                ],
+              ),
             ),
           ),
           resizeToAvoidBottomInset: false,
@@ -107,6 +114,30 @@ class SignUpCreatePassCodeScreen extends ConsumerWidget {
           //     ),
           //   ],
           // ),
+          bottomNavigationBar: ButtonBottomNavigationWidget(
+            children: [
+              SizedBox(
+                height: 48.h,
+                width: 327.w,
+                child: PrimaryButton(
+                  color: true
+                      ? context.theme.colorTheme.buttonColor
+                      : context.theme.colorTheme.buttonDisabledColor,
+                  text: Text(
+                    getTranslated('Continue', context),
+                    style: AppTextstyle.bodyTextStyle(
+                        color: context.theme.colorTheme.blackColor,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500),
+                  ),
+                  onPressed: () {
+                    Navigation.pushNamed(
+                        SignUpCreatePassCodeOTPCodeScreen.routeName);
+                  },
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

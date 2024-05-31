@@ -35,7 +35,8 @@ class CompanyIndividualTabsWidget extends ConsumerWidget {
                     borderRadius: BorderRadius.circular(70),
                   ),
                   child: Padding(
-                    padding: const EdgeInsets.fromLTRB(44, 12, 44, 12),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 44, vertical: 12),
                     child: Text(
                       getTranslated('company', context),
                       style: AppTextstyle.bodyTextStyle(

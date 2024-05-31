@@ -34,7 +34,7 @@ class RequestMoneyBottomSheetWidget extends ConsumerWidget {
           Container(
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(24),
-                color: context.theme.colorTheme.businessDetailsContainer),
+                color: context.theme.colorTheme.requestMoneyContainerToWhite),
             child: Padding(
               padding: const EdgeInsets.fromLTRB(8, 12, 8, 12),
               child: Column(

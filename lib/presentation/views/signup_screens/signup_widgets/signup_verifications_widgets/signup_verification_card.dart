@@ -34,7 +34,7 @@ class SignUpVerificationCard extends ConsumerWidget {
         // width: 164,
         decoration: BoxDecoration(
             color: color ?? Colors.transparent,
-            borderRadius: BorderRadius.circular(28),
+            borderRadius: BorderRadius.circular(12),
             border:
                 Border.all(color: context.theme.colorTheme.transparentToTeal)),
         child: Padding(
@@ -66,7 +66,7 @@ class SignUpVerificationCard extends ConsumerWidget {
                         titleColor ?? context.theme.colorTheme.normalTextColor,
                     overflow: TextOverflow.clip),
               ),
-              if (status!.isNotEmpty) 5.spaceY,
+              if (status!.isNotEmpty) 16.spaceY,
               status!.isNotEmpty
                   ? Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -86,7 +86,7 @@ class SignUpVerificationCard extends ConsumerWidget {
                         )
                       ],
                     )
-                  : const SizedBox()
+                  : const SizedBox(),
             ],
           ),
         ),

@@ -37,4 +37,7 @@ class AppColors {
   static const continueTextDisabledColor = Color(0xFF7E7878);
   // static const continueTextEnabledColor = Color(0xFF000000);
   static const businessDetailsContainer = Color(0xFFF5F7F9);
+  static const requestMoneyContainer = Color(0xFF272727);
+  static const homeIconContainer = Color(0xFF09181C);
+  static const tealBorder = Color(0xFF215864);
 }

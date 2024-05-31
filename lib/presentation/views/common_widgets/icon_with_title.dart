@@ -11,13 +11,15 @@ class IconWithTitle extends ConsumerWidget {
   final VoidCallback? onpress;
   final Color? titleColor;
   final double? topSpacing;
+  final BorderRadiusGeometry? borderRadius;
   const IconWithTitle(
       {super.key,
       required this.imageicon,
       required this.title,
       this.onpress,
       this.titleColor,
-      this.topSpacing});
+      this.topSpacing,
+      this.borderRadius});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -30,6 +32,9 @@ class IconWithTitle extends ConsumerWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             IconContainer(
+              borderRadius: borderRadius,
+              height: 34,
+              width: 34,
               bgColor: AppColors.tealColor,
               image: imageicon,
             ),

@@ -30,6 +30,7 @@ class InfoTextWidget extends ConsumerWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               IconContainer(
@@ -60,6 +61,7 @@ class InfoTextWidget extends ConsumerWidget {
             ],
           ),
           Column(
+            crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               Text(
                 price1,

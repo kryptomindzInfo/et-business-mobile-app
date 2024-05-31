@@ -67,6 +67,7 @@ class SignUpRegisteredBusinessAddressScreen extends ConsumerWidget {
                                 Navigator.pop(context);
                               },
                               bottomNavigationBody: CountriesListWidget(
+                                color: context.theme.colorTheme.tealTohalfWhite,
                                 onTap: (index) {
                                   ref
                                       .read(signUpStateProvider)
@@ -90,8 +91,8 @@ class SignUpRegisteredBusinessAddressScreen extends ConsumerWidget {
                             : context.theme.colorTheme.normalTextColor,
                     icon: Image.asset(
                       AppAssets.iconArrowDownBlack,
-                      height: 11.h,
-                      width: 22.w,
+                      height: 10.h,
+                      width: 17.w,
                       color: context.theme.colorTheme.whiteColor,
                     ),
                   ),
@@ -100,9 +101,9 @@ class SignUpRegisteredBusinessAddressScreen extends ConsumerWidget {
                     title: getTranslated('post_code', context),
                     icon: Image.asset(
                       AppAssets.iconSearchBlack,
-                      height: 18.h,
-                      width: 18.w,
-                      color: context.theme.colorTheme.whiteColor,
+                      height: 15.h,
+                      width: 15.w,
+                      color: AppColors.iconGreyColor,
                     ),
                     onTap: () {
                       showModalBottomSheet(
@@ -123,13 +124,15 @@ class SignUpRegisteredBusinessAddressScreen extends ConsumerWidget {
                                         .read(signUpStateProvider)
                                         .setPostCode(value);
                                   },
-                                  onCancelTap: () {},
+                                  onCancelTap: () {
+                                    Navigator.pop(context);
+                                  },
                                   bottomNavigationBody: postCode!.isNotEmpty
                                       ? const ListOfAdressesWidget()
                                       : BusinessNotListedWidet(
                                           image: AppAssets.puzzleImage,
                                           title: getTranslated(
-                                              'business_not_listed_here',
+                                              'Search results will appear here',
                                               context),
                                           tilteStyle:
                                               AppTextstyle.bodyTextStyle(
@@ -145,6 +148,8 @@ class SignUpRegisteredBusinessAddressScreen extends ConsumerWidget {
                   ),
                   16.spaceY,
                   TextFieldWidget(
+                    height: 48,
+                    contentPadding: const EdgeInsets.only(bottom: 8, left: 15),
                     hintText: getTranslated('address_line_01', context),
                     hintStyle:
                         AppTextstyle.bodyTextStyle(color: AppColors.grey),
@@ -153,6 +158,8 @@ class SignUpRegisteredBusinessAddressScreen extends ConsumerWidget {
                   ),
                   16.spaceY,
                   TextFieldWidget(
+                    height: 48,
+                    contentPadding: const EdgeInsets.only(bottom: 8, left: 15),
                     hintText: getTranslated('address_line_02', context),
                     hintStyle:
                         AppTextstyle.bodyTextStyle(color: AppColors.grey),
@@ -168,6 +175,8 @@ class SignUpRegisteredBusinessAddressScreen extends ConsumerWidget {
                   ),
                   16.spaceY,
                   TextFieldWidget(
+                    height: 48,
+                    contentPadding: const EdgeInsets.only(bottom: 8, left: 15),
                     hintText: getTranslated('city', context),
                     hintStyle:
                         AppTextstyle.bodyTextStyle(color: AppColors.grey),

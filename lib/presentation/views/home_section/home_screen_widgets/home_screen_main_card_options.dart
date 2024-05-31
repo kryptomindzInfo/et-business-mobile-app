@@ -24,8 +24,9 @@ class MainCardOption extends ConsumerWidget {
             width: 46,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
-              color: context.theme.colorTheme.greenToTeal,
-              // border: Border.all(color: context.theme.colorTheme.borderColor),
+              color: context.theme.colorTheme.homeIconContainerToGreen,
+              border:
+                  Border.all(color: context.theme.colorTheme.transparentToTeal),
               image: DecorationImage(
                 image: AssetImage(image!),
                 scale: 2,

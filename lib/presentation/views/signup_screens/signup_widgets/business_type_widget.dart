@@ -15,14 +15,17 @@ class BusinessTypeWidget extends ConsumerWidget {
   final VoidCallback? onPressed;
   final String? labelText;
   final bool? arrowForward;
-  const BusinessTypeWidget(
-      {super.key,
-      required this.image,
-      required this.title,
-      this.description,
-      this.onPressed,
-      this.labelText,
-      this.arrowForward});
+  final EdgeInsetsGeometry? padding;
+  const BusinessTypeWidget({
+    super.key,
+    required this.image,
+    required this.title,
+    this.description,
+    this.onPressed,
+    this.labelText,
+    this.arrowForward,
+    this.padding,
+  });
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -30,27 +33,34 @@ class BusinessTypeWidget extends ConsumerWidget {
       onTap: onPressed,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
+        // mainAxisAlignment: MainAxisAlignment.center,
         children: [
           IconContainer(
+            height: 34,
+            width: 34,
             bgColor: AppColors.tealColor,
             image: image,
           ),
           12.spaceX,
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SizedBox(
                 width: 260.w,
-                child: Text(
-                  title,
-                  style: AppTextstyle.headingTextStyle(
-                      fontSize: 18.sp,
-                      color: context.theme.colorTheme.normalTextColor,
-                      fontWeight: FontWeight.w600,
-                      overflow: TextOverflow.clip),
+                child: Padding(
+                  padding: padding ?? const EdgeInsets.all(0),
+                  child: Text(
+                    title,
+                    style: AppTextstyle.headingTextStyle(
+                        fontSize: 18.sp,
+                        color: context.theme.colorTheme.normalTextColor,
+                        fontWeight: FontWeight.w600,
+                        overflow: TextOverflow.clip),
+                  ),
                 ),
               ),
-              if (description != null)
+              if ((description ?? '').isNotEmpty)
                 SizedBox(
                   width: 230.w,
                   child: Text(
@@ -67,6 +77,7 @@ class BusinessTypeWidget extends ConsumerWidget {
               padding: const EdgeInsets.only(top: 20),
               child: Icon(
                 Icons.arrow_forward_ios,
+                size: 18,
                 color: context.theme.colorTheme.whiteColor,
               ),
             ),

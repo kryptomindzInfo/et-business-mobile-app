@@ -34,11 +34,16 @@ class AppTheme extends ThemeExtension<AppTheme> {
   final Color iconBgColor;
   final Color greyToTeal;
   final Color tealToGrey;
+  final Color homeIconContainerToGreen;
+  final Color requestMoneyContainerToWhite;
   final Color greenToTeal;
   final Color yellowToGreen;
   final Color whiteToYellow;
   final Color whiteToTeal;
+  final Color tealToWhite;
+  final Color tealTohalfWhite;
   final Color whiteToGreen;
+  final Color greenTohomeIconContainer;
   final Color greenToWhite;
   final Color tealToYellow;
   final Color iconWithTitleColor;
@@ -46,6 +51,7 @@ class AppTheme extends ThemeExtension<AppTheme> {
   final Color transparentToColor;
   final Color transparentToGreen;
   final Color transparentToTeal;
+  final Color transparentToTealBorder;
   final Color transparentToYellow;
   final Color businessDetailsContainer;
   final Color halfWhiteToBlack;
@@ -77,6 +83,7 @@ class AppTheme extends ThemeExtension<AppTheme> {
   final Color redColor;
   final Color requestIconBGcolor;
   final Color buttonHalfWhiteText;
+  final Color whiteWithOpactiy;
 
   // final Color scaffoldBgColor;
   // final Color headingColor;
@@ -116,11 +123,16 @@ class AppTheme extends ThemeExtension<AppTheme> {
     this.iconBgColor = AppColors.halfWhite,
     this.greyToTeal = AppColors.halfWhite,
     this.tealToGrey = AppColors.tealColor,
+    this.homeIconContainerToGreen = AppColors.grassGreen,
+    this.requestMoneyContainerToWhite = AppColors.white,
     this.greenToTeal = AppColors.grassGreen,
     this.yellowToGreen = AppColors.grassGreen,
     this.whiteToYellow = AppColors.yellowGreen,
     this.whiteToTeal = AppColors.tealColor,
+    this.tealToWhite = AppColors.white,
+    this.tealTohalfWhite = AppColors.businessDetailsContainer,
     this.whiteToGreen = AppColors.grassGreen,
+    this.greenTohomeIconContainer = AppColors.grassGreen,
     this.greenToWhite = AppColors.white,
     this.tealToYellow = AppColors.yellowGreen,
     this.iconWithTitleColor = AppColors.black,
@@ -128,6 +140,7 @@ class AppTheme extends ThemeExtension<AppTheme> {
     this.transparentToColor = AppColors.black,
     this.transparentToGreen = AppColors.grassGreen,
     this.transparentToTeal = AppColors.transparent,
+    this.transparentToTealBorder = AppColors.transparent,
     this.transparentToYellow = AppColors.transparent,
     this.businessDetailsContainer = AppColors.businessDetailsContainer,
     this.whiteTohalfWhite = AppColors.businessDetailsContainer,
@@ -159,7 +172,7 @@ class AppTheme extends ThemeExtension<AppTheme> {
     this.redColor = AppColors.red,
     this.requestIconBGcolor = AppColors.darkGrassGreen,
     this.buttonHalfWhiteText = AppColors.halfWhite,
-
+    this.whiteWithOpactiy = AppColors.black,
     // this.scaffoldBgColor=AppColors.lightGreyColor,
     // this.headingColor=AppColors.black,
     // this.subHeadingColor=AppColors.lightGreyColor,
@@ -199,11 +212,16 @@ class AppTheme extends ThemeExtension<AppTheme> {
         iconBgColor: AppColors.tealColor,
         greyToTeal: AppColors.tealColor,
         tealToGrey: AppColors.grey,
+        homeIconContainerToGreen: AppColors.homeIconContainer,
+        requestMoneyContainerToWhite: AppColors.requestMoneyContainer,
         greenToTeal: AppColors.tealColor,
         yellowToGreen: AppColors.yellowGreen,
         whiteToYellow: AppColors.white,
         whiteToTeal: AppColors.white,
+        tealToWhite: AppColors.tealColor,
+        tealTohalfWhite: AppColors.tealColor,
         whiteToGreen: AppColors.white,
+        greenTohomeIconContainer: AppColors.homeIconContainer,
         greenToWhite: AppColors.grassGreen,
         tealToYellow: AppColors.tealColor,
         iconWithTitleColor: AppColors.white,
@@ -211,6 +229,7 @@ class AppTheme extends ThemeExtension<AppTheme> {
         transparentToColor: AppColors.transparent,
         transparentToGreen: AppColors.transparent,
         transparentToTeal: AppColors.tealColor,
+        transparentToTealBorder: AppColors.tealBorder,
         transparentToYellow: AppColors.yellowGreen,
         businessDetailsContainer: AppColors.transparent,
         halfWhiteToBlack: AppColors.black,
@@ -240,7 +259,8 @@ class AppTheme extends ThemeExtension<AppTheme> {
         iconColor: AppColors.white,
         commonBottomSheetColor: AppColors.darkTeal,
         redColor: AppColors.red,
-        requestIconBGcolor: AppColors.darkGrassGreen);
+        requestIconBGcolor: AppColors.darkGrassGreen,
+        whiteWithOpactiy: AppColors.white.withOpacity(0.5));
   }
 
   @override
@@ -300,10 +320,16 @@ class AppTheme extends ThemeExtension<AppTheme> {
       iconBgColor: Color.lerp(iconBgColor, other.iconBgColor, t)!,
       greyToTeal: Color.lerp(greyToTeal, other.greyToTeal, t)!,
       tealToGrey: Color.lerp(tealToGrey, other.tealToGrey, t)!,
+      requestMoneyContainerToWhite: Color.lerp(
+          requestMoneyContainerToWhite, other.requestMoneyContainerToWhite, t)!,
       greenToTeal: Color.lerp(greenToTeal, other.greenToTeal, t)!,
+      homeIconContainerToGreen: Color.lerp(
+          homeIconContainerToGreen, other.homeIconContainerToGreen, t)!,
       yellowToGreen: Color.lerp(yellowToGreen, other.yellowToGreen, t)!,
       whiteToYellow: Color.lerp(whiteToYellow, other.whiteToYellow, t)!,
       whiteToTeal: Color.lerp(whiteToTeal, other.whiteToTeal, t)!,
+      tealToWhite: Color.lerp(tealToWhite, other.tealToWhite, t)!,
+      tealTohalfWhite: Color.lerp(tealTohalfWhite, other.tealTohalfWhite, t)!,
       whiteToGreen: Color.lerp(whiteToGreen, other.whiteToGreen, t)!,
       tealToYellow: Color.lerp(tealToYellow, other.tealToYellow, t)!,
       iconWithTitleColor:

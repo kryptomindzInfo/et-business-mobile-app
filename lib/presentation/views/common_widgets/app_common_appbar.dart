@@ -33,8 +33,8 @@ class CommonAppBar extends ConsumerWidget implements PreferredSizeWidget {
                 theme.brightness == Brightness.dark
                     ? AppAssets.appbarLogo
                     : AppAssets.appbarLogoDark,
-                height: 46,
-                width: 154,
+                height: 32,
+                width: 105,
               )
             : widget ?? const SizedBox(),
         centerTitle: true,

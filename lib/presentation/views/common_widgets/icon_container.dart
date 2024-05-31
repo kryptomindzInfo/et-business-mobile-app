@@ -10,19 +10,23 @@ class IconContainer extends ConsumerWidget {
   final Color? imageColor;
   final double? scale;
   final BorderRadiusGeometry? borderRadius;
+  final double? height;
+  final double? width;
   const IconContainer(
       {super.key,
       this.image,
       this.bgColor,
       this.scale,
       this.imageColor,
-      this.borderRadius});
+      this.borderRadius,
+      this.height,
+      this.width});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Container(
-      height: 38,
-      width: 38,
+      height: height ?? 38,
+      width: width ?? 38,
       decoration: BoxDecoration(
         shape: borderRadius != null ? BoxShape.rectangle : BoxShape.circle,
         borderRadius: borderRadius,

@@ -45,12 +45,12 @@ class UserPersonalDetailsWidget extends ConsumerWidget {
         decoration: BoxDecoration(
             color: context.theme.colorTheme.businessDetailsContainer,
             borderRadius: const BorderRadius.all(
-              Radius.circular(8),
+              Radius.circular(12),
             ),
             border:
                 Border.all(color: context.theme.colorTheme.transparentToTeal)),
         child: Padding(
-          padding: const EdgeInsets.fromLTRB(15, 8, 15, 0),
+          padding: const EdgeInsets.fromLTRB(15, 8, 15, 8),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

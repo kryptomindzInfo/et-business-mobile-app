@@ -52,6 +52,8 @@ class SignUpPrimaryReasonForEtBankScreen extends ConsumerWidget {
                         itemBuilder: (context, index) {
                           return Consumer(builder: (context, ref, child) {
                             return CheckBoxWidget(
+                              borderColor:
+                                  context.theme.colorTheme.whiteToGreen,
                               checkBoxValue: ref
                                   .watch(signUpStateProvider)
                                   .selectedReasonsForUsingEtBank

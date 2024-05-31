@@ -20,7 +20,10 @@ class ProfileInfoCard extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Column(
       children: [
-        const SeeAllCommonWidget("Profile", true),
+        const SeeAllCommonWidget(
+          "Profile",
+          false,
+        ),
         8.spaceY,
         InfoCardCommonWidget(
           color: context.theme.colorTheme.businessDetailsContainer,

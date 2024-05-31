@@ -44,12 +44,12 @@ class SignUpVerifyUserIdentityScreen extends ConsumerWidget {
                     child: Stack(
                       children: [
                         Positioned(
-                          right: 10,
-                          top: 10,
+                          right: 12,
+                          top: 34,
                           child: Image.asset(
                             AppAssets.userCard,
-                            height: 195,
-                            width: 195,
+                            height: 134,
+                            width: 170,
                           ),
                         ),
                         VerifyUserIdentityHeaderWidget(
@@ -93,14 +93,15 @@ class SignUpVerifyUserIdentityScreen extends ConsumerWidget {
                               topSpacing: 10,
                             ),
                             IconWithTitle(
-                              imageicon: AppAssets.contactpermission,
+                              imageicon: AppAssets.home,
                               title: getTranslated('personal_address', context),
                               titleColor:
                                   context.theme.colorTheme.normalTextColor,
                               topSpacing: 5,
                             ),
                             IconWithTitle(
-                              imageicon: AppAssets.contactpermission,
+                              borderRadius: BorderRadius.circular(12),
+                              imageicon: AppAssets.page,
                               title:
                                   getTranslated('identity_documents', context),
                               titleColor:

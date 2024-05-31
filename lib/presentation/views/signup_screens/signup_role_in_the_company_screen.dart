@@ -70,6 +70,9 @@ class SignUpRoleInTheCompanyScreen extends ConsumerWidget {
                                 onPressed: () => ref
                                     .read(signUpStateProvider)
                                     .changeRole(index),
+                                padding: index == 3
+                                    ? const EdgeInsets.only(top: 8)
+                                    : null,
                               ),
                             ],
                           ),
@@ -89,7 +92,7 @@ class SignUpRoleInTheCompanyScreen extends ConsumerWidget {
                       ? context.theme.colorTheme.buttonColor
                       : context.theme.colorTheme.buttonDisabledColor,
                   text: Text(
-                    getTranslated('continue', context),
+                    getTranslated('Confirm', context),
                     style: AppTextstyle.bodyTextStyle(
                         color: context.theme.colorTheme.blackColor,
                         fontSize: 16,

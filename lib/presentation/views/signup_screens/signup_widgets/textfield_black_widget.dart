@@ -1,3 +1,4 @@
+import 'package:etbank_business_app/constants/app_assets.dart';
 import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -29,31 +30,35 @@ class TextFieldBlackWidget extends ConsumerWidget {
         style: AppTextstyle.bodyTextStyle(
             color: context.theme.colorTheme.whiteColor),
         decoration: InputDecoration(
-          // border: OutlineInputBorder(
-          //   borderRadius: BorderRadius.circular(28.0),
-          // ),
-          // contentPadding: const EdgeInsets.symmetric(
-          //     // horizontal: 90.w,
-          //     vertical: 9),
-          contentPadding: const EdgeInsets.only(bottom: 13),
-          // filled: true,
-          disabledBorder: InputBorder.none,
-          enabledBorder: InputBorder.none,
-          focusedBorder: InputBorder.none,
-          // fillColor: AppColors.mateBlackColor,
-          // prefixIconConstraints:
-          //     BoxConstraints(maxHeight: 14.h, maxWidth: 14.w),
-          hintText: hintText ?? getTranslated('search_country', context),
-          hintStyle: AppTextstyle.bodyTextStyle(color: AppColors.grey),
-          prefixIcon: const Icon(
-            Icons.search,
-            color: AppColors.grey,
-          ),
-          //  Image.asset(
-          //   AppAssets.iconSearchBlack,
-          //   color: Colors.white,
-          // ),
-        ),
+            // border: OutlineInputBorder(
+            //   borderRadius: BorderRadius.circular(28.0),
+            // ),
+            // contentPadding: const EdgeInsets.symmetric(
+            //     // horizontal: 90.w,
+            //     vertical: 9),
+            contentPadding: const EdgeInsets.only(bottom: 13),
+            // filled: true,
+            disabledBorder: InputBorder.none,
+            enabledBorder: InputBorder.none,
+            focusedBorder: InputBorder.none,
+            // fillColor: AppColors.mateBlackColor,
+            // prefixIconConstraints:
+            //     BoxConstraints(maxHeight: 14.h, maxWidth: 14.w),
+            hintText: hintText ?? getTranslated('search_country', context),
+            hintStyle: AppTextstyle.bodyTextStyle(color: AppColors.grey),
+            // prefixIcon: const Icon(
+            //   Icons.search,
+            //   color: AppColors.grey,
+            // ),
+            prefixIcon: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Image.asset(AppAssets.searchImage2x),
+            )
+            //  Image.asset(
+            //   AppAssets.iconSearchBlack,
+            //   color: Colors.white,
+            // ),
+            ),
       ),
     );
   }

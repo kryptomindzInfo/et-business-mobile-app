@@ -1,4 +1,5 @@
 import 'package:etbank_business_app/constants/app_assets.dart';
+import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:etbank_business_app/constants/app_textstyle.dart';
 import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
@@ -20,7 +21,7 @@ class GetPlasticCardScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return ParentThemeScaffold(
       child: Padding(
-        padding: const EdgeInsets.only(top: 50),
+        padding: const EdgeInsets.only(top: 45),
         child: Scaffold(
           backgroundColor: context.theme.colorTheme.backgroundColor,
           appBar: const CommonAppBar(
@@ -33,9 +34,10 @@ class GetPlasticCardScreen extends ConsumerWidget {
               children: [
                 20.spaceY,
                 CommonWhiteFlexibleCard(
-                  color: context.theme.colorTheme.businessDetailsContainer,
+                  color: AppColors.transparent,
                   border: Border.all(
-                      color: context.theme.colorTheme.transparentToTeal),
+                    color: AppColors.transparent,
+                  ),
                   widget: Column(
                     children: [
                       Image.asset(

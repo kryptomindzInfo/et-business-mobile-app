@@ -62,12 +62,12 @@ class OTPVerification extends ConsumerWidget {
                 autoFocus: true,
                 autoDisposeControllers: false,
                 animationType: AnimationType.fade,
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.start,
                 textStyle: TextStyle(color: context.theme.colorTheme.otpText),
                 pinTheme: PinTheme(
                   shape: PinCodeFieldShape.box,
                   borderRadius: BorderRadius.circular(12),
-                  fieldOuterPadding: const EdgeInsets.symmetric(horizontal: 8),
+                  fieldOuterPadding: const EdgeInsets.only(right: 16),
                   fieldHeight: 48.h,
                   fieldWidth: 34.w,
                   borderWidth: 1,
@@ -91,6 +91,7 @@ class OTPVerification extends ConsumerWidget {
                   getTranslated(text1 ?? 'resend_code', context),
                   style: AppTextstyle.bodyTextStyle(
                     fontSize: 16.sp,
+                    fontWeight: FontWeight.w500,
                     color:
                         text1Color ?? context.theme.colorTheme.normalTextColor,
                   ),

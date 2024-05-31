@@ -19,6 +19,7 @@ class BusinessDetailsWhiteContainerWidet extends ConsumerWidget {
   final String? image;
   final TextStyle? titleTextStyle;
   final Color? borderColor;
+  final EdgeInsetsGeometry? padding;
   const BusinessDetailsWhiteContainerWidet(
       {super.key,
       required this.title,
@@ -28,7 +29,8 @@ class BusinessDetailsWhiteContainerWidet extends ConsumerWidget {
       this.labelText,
       this.image,
       this.titleTextStyle,
-      this.borderColor});
+      this.borderColor,
+      this.padding});
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return GestureDetector(
@@ -37,13 +39,13 @@ class BusinessDetailsWhiteContainerWidet extends ConsumerWidget {
         decoration: BoxDecoration(
             color: context.theme.colorTheme.businessDetailsContainer,
             border: Border.all(
-                color:
-                    borderColor ?? context.theme.colorTheme.transparentToTeal),
+                color: borderColor ??
+                    context.theme.colorTheme.transparentToTealBorder),
             borderRadius: const BorderRadius.all(
               Radius.circular(12),
             )),
         child: Padding(
-          padding: const EdgeInsets.all(15),
+          padding: padding ?? const EdgeInsets.all(15),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,

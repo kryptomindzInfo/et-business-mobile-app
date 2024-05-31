@@ -40,6 +40,12 @@ class SignUpWebsiteSocialEcommerceLinkScreen extends ConsumerWidget {
                 HeaderIconWithTitle(
                   title:
                       getTranslated('website_social_ecommerce_title', context),
+                  // titleStyle: TextStyle(
+                  //     color: context.theme.colorTheme.appbarTitleColor,
+                  //     fontSize: 32,
+                  //     fontWeight: FontWeight.bold,
+                  //     overflow: TextOverflow.clip,
+                  //     height: 1.5),
                   spaceBtw: 8,
                   description: getTranslated(
                       'website_social_ecommerce_subtitle', context),
@@ -47,6 +53,8 @@ class SignUpWebsiteSocialEcommerceLinkScreen extends ConsumerWidget {
                 ),
                 32.spaceY,
                 TextFieldWidget(
+                  height: 55,
+                  contentPadding: const EdgeInsets.only(top: 4, left: 15),
                   style: TextStyle(color: context.theme.colorTheme.whiteColor),
                   controller: ref.read(signUpStateProvider).emailController,
                   hintText: getTranslated('link', context),
