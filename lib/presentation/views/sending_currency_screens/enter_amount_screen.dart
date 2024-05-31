@@ -3,7 +3,9 @@ import 'package:etbank_business_app/constants/app_textstyle.dart';
 import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/app_common_widgets.dart';
+import 'package:etbank_business_app/presentation/views/common_widgets/icon_container.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/parent_theme_scaffold.dart';
+import 'package:etbank_business_app/presentation/views/invoice_and_request_screens/invoice_and_request_widgets/name_circle_widget.dart';
 import 'package:etbank_business_app/presentation/views/sending_currency_screens/sending_currency_widgets/trust_this_payee_bottom_sheet_widget.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_widgets/text_field_widget.dart';
 import 'package:flutter/material.dart';
@@ -47,6 +49,44 @@ class EnterAmountScreen extends ConsumerWidget {
                   // trailingImageWidth: 53,
                   rightPadding: 0,
                 ),
+                // 14.spaceY,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'User Name',
+                          style: AppTextstyle.headingTextStyle(
+                              fontWeight: FontWeight.w700,
+                              fontSize: 24,
+                              color: context.theme.colorTheme.whiteColor),
+                        ),
+                        Text(
+                          'Individual',
+                          style: AppTextstyle.headingTextStyle(
+                              fontSize: 16,
+                              color: context.theme.colorTheme.whiteColor),
+                        ),
+                      ],
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 17),
+                      child: CircleAvatar(
+                        radius: 26,
+                        backgroundColor: AppColors.yellowGreen,
+                        child: Text(
+                          getTranslated('RK', context),
+                          style: AppTextstyle.bodyTextStyle(
+                            fontSize: 26,
+                            color: AppColors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
                 40.spaceY,
                 const CurrencyTextFieldWidget(),
                 22.spaceY,
@@ -59,7 +99,8 @@ class EnterAmountScreen extends ConsumerWidget {
                   hintText: getTranslated('reference', context),
                   hintStyle: AppTextstyle.bodyTextStyle(
                       fontSize: 16, color: AppColors.grey),
-                  style: const TextStyle(color: AppColors.black),
+                  contentPadding: const EdgeInsets.only(left: 11, top: 4),
+                  style: TextStyle(color: context.theme.colorTheme.whiteColor),
                 ),
               ],
             ),

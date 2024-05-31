@@ -9,12 +9,14 @@ class VerifiedBottomSheetWidget extends ConsumerWidget {
   final Widget description;
   final double? height;
   final Color? color;
+  final EdgeInsetsGeometry? padding;
   const VerifiedBottomSheetWidget(
       {super.key,
       required this.title,
       required this.description,
       this.height,
-      this.color});
+      this.color,
+      this.padding});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -27,16 +29,16 @@ class VerifiedBottomSheetWidget extends ConsumerWidget {
       ),
       child: Column(
         children: [
-          60.spaceY,
+          50.spaceY,
           Image.asset(
             AppAssets.checkout,
             height: 80,
           ),
-          20.spaceY,
+          26.spaceY,
           title,
-          20.spaceY,
+          34.spaceY,
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 70),
+            padding: padding ?? const EdgeInsets.symmetric(horizontal: 70),
             child: description,
           ),
         ],

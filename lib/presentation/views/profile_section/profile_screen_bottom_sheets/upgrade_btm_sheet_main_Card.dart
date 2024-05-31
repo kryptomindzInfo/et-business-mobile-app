@@ -10,7 +10,9 @@ import '../../../../constants/app_textstyle.dart';
 class UpgradeBottomSheetMainCard extends ConsumerWidget {
   final String? title;
   final String? subtitle;
-  const UpgradeBottomSheetMainCard({super.key, this.title, this.subtitle});
+  final bool isPopular;
+  const UpgradeBottomSheetMainCard(
+      {super.key, this.title, this.subtitle, this.isPopular = false});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -55,7 +57,7 @@ class UpgradeBottomSheetMainCard extends ConsumerWidget {
               ],
             ),
             30.spaceX,
-            const Expanded(child: PopularWidget())
+            if (isPopular) const PopularWidget(),
           ],
         ),
       ),

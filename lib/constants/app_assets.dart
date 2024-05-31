@@ -209,4 +209,5 @@ class AppAssets {
   static const searchImage2x = "${iconsDir}search_image2x.png";
   static const home = "${iconsDir}home.png";
   static const page = "${iconsDir}page.png";
+  static const addIcon = "${iconsDir}add_icon.png";
 }

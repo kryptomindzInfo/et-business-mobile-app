@@ -34,13 +34,13 @@ class AddCounterPartyWidget extends ConsumerWidget {
           ),
         ),
         child: Padding(
-          padding: padding ?? const EdgeInsets.fromLTRB(25, 25, 0, 25),
+          padding: padding ?? const EdgeInsets.fromLTRB(24, 20, 0, 18),
           child: Row(
             children: [
               IconContainer(
                 bgColor: context.theme.colorTheme.greenTohomeIconContainer,
-                image: AppAssets.plus,
-                scale: 1.6,
+                image: AppAssets.addIcon,
+                // scale: 1.6,
               ),
               // Image.asset(
               //   AppAssets.addButton2x,

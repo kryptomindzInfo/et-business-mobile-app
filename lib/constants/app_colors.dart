@@ -40,4 +40,5 @@ class AppColors {
   static const requestMoneyContainer = Color(0xFF272727);
   static const homeIconContainer = Color(0xFF09181C);
   static const tealBorder = Color(0xFF215864);
+  static const subTitleBlack = Color(0xFF494A4B);
 }

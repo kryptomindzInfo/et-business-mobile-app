@@ -40,6 +40,7 @@ class CompanyIndividualTabsWidget extends ConsumerWidget {
                     child: Text(
                       getTranslated('company', context),
                       style: AppTextstyle.bodyTextStyle(
+                        fontWeight: FontWeight.w500,
                         fontSize: 16,
                         color: companyButtonTextColor(
                             sendingCurrencyProW.companySelected),
@@ -70,6 +71,7 @@ class CompanyIndividualTabsWidget extends ConsumerWidget {
                       getTranslated('individual', context),
                       style: AppTextstyle.bodyTextStyle(
                         fontSize: 16,
+                        fontWeight: FontWeight.w500,
                         color: companyButtonTextColor(
                             !ref.watch(provider).companySelected),
                       ),

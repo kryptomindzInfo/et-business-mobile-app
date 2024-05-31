@@ -14,32 +14,32 @@ class TermsAndConditionsText extends ConsumerWidget {
     return Container(
       margin: const EdgeInsets.only(left: 10, right: 10, top: 200),
       child: RichText(
-          textAlign: TextAlign.center,
+          textAlign: TextAlign.start,
           text: TextSpan(children: [
             TextSpan(
                 text: getTranslated("terms1", context),
-                style: AppTextstyle.headingTextStyle(
-                    color: context.theme.colorTheme.whiteColor,
+                style: AppTextstyle.bodyTextStyle(
+                    color: AppColors.subTitleBlack,
                     fontSize: 12,
-                    fontWeight: FontWeight.w500)),
+                    fontWeight: FontWeight.w700)),
             TextSpan(
                 text: "£49 ",
-                style: AppTextstyle.headingTextStyle(
-                    color: context.theme.colorTheme.yellowToGreen,
+                style: AppTextstyle.bodyTextStyle(
+                    color: AppColors.subTitleBlack,
                     fontSize: 12,
-                    fontWeight: FontWeight.w500)),
+                    fontWeight: FontWeight.w700)),
             TextSpan(
                 text: getTranslated("terms2", context),
-                style: AppTextstyle.headingTextStyle(
-                    color: context.theme.colorTheme.whiteColor,
+                style: AppTextstyle.bodyTextStyle(
+                    color: AppColors.subTitleBlack,
                     fontSize: 12,
-                    fontWeight: FontWeight.w500)),
+                    fontWeight: FontWeight.w700)),
             TextSpan(
                 text: getTranslated("terms3", context),
                 style: AppTextstyle.headingTextStyle(
                     color: context.theme.colorTheme.yellowToGreen,
                     fontSize: 12,
-                    fontWeight: FontWeight.w500))
+                    fontWeight: FontWeight.w700))
           ])),
     );
   }

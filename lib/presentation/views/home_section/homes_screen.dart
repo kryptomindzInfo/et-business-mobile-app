@@ -1,3 +1,4 @@
+import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/navigation/navigation.dart';
@@ -37,6 +38,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
           20.spaceY,
           HomeScreenSearchTextfield(
             color: context.theme.colorTheme.businessDetailsContainer,
+            // titleColor: AppColors.iconGreyColor,
           ),
           15.spaceY,
           const HomeScreenOptionsWidget(),

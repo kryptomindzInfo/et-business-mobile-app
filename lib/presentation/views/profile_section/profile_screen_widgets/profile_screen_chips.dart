@@ -10,6 +10,9 @@ class ProfileScreenChips extends ConsumerWidget {
   final Color? color;
   final Color? titleColor;
   final Color? imageIconColor;
+  final EdgeInsetsGeometry? padding;
+  final TextStyle? titleStyle;
+  final double? height;
   const ProfileScreenChips(
       {super.key,
       this.icon,
@@ -17,11 +20,17 @@ class ProfileScreenChips extends ConsumerWidget {
       this.onpress,
       this.color,
       this.titleColor,
-      this.imageIconColor});
+      this.imageIconColor,
+      this.padding,
+      this.titleStyle,
+      this.height});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Chips(
+      height: height,
+      titleStyle: titleStyle,
+      padding: padding,
       title: title ?? "",
       imageicon: icon,
       imageIconColor: imageIconColor,

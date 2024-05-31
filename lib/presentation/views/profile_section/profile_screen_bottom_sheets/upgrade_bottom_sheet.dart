@@ -79,6 +79,9 @@ class UpgradeBottomSheet extends ConsumerWidget {
               ),
               18.spaceY,
               UpgradeBottomSheetMainCard(
+                isPopular: upgradePlanslist[profileProviderWatch.selectedPlan]
+                        ["isPopular"] ??
+                    false,
                 title: upgradePlanslist[profileProviderWatch.selectedPlan]
                     ["title"],
                 subtitle:
@@ -105,11 +108,32 @@ class UpgradeBottomSheet extends ConsumerWidget {
                         height: 38,
                         minwidth: 288,
                         color: context.theme.colorTheme.buttonColor,
-                        text: Text(
-                          "Get Grow for £${upgradePlanslist[profileProviderWatch.selectedPlan]["price"] ?? ''} Free",
-                          style: AppTextstyle.bodyTextStyle(fontSize: 16),
-                          // style:
-                          //     TextStyle(decoration: TextDecoration.lineThrough),
+                        text: Text.rich(
+                          TextSpan(
+                            children: [
+                              TextSpan(
+                                text: 'Get Grow for ',
+                                style: AppTextstyle.bodyTextStyle(
+                                    fontSize: 16, fontWeight: FontWeight.w600),
+                              ),
+                              TextSpan(
+                                text:
+                                    '${upgradePlanslist[profileProviderWatch.selectedPlan]["price"] ?? ''}',
+                                style: const TextStyle(
+                                  color: AppColors.black,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w600,
+                                  decoration: TextDecoration.lineThrough,
+                                  decorationColor: Colors.black,
+                                ),
+                              ),
+                              TextSpan(
+                                text: ' Free',
+                                style: AppTextstyle.bodyTextStyle(
+                                    fontSize: 16, fontWeight: FontWeight.w600),
+                              ),
+                            ],
+                          ),
                         ),
                         onPressed: onPressed ??
                             () {

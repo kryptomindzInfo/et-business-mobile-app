@@ -1,3 +1,4 @@
+import 'package:etbank_business_app/constants/app_textstyle.dart';
 import 'package:etbank_business_app/presentation/views/profile_section/profile_screen_widgets/profile_screen_chips.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -9,7 +10,11 @@ class PopularWidget extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return const ProfileScreenChips(
+    return ProfileScreenChips(
+      height: 20,
+      padding: const EdgeInsets.symmetric(horizontal: 9, vertical: 3),
+      titleStyle: AppTextstyle.bodyTextStyle(
+          fontSize: 10, fontWeight: FontWeight.w500, color: AppColors.black),
       title: 'Popular',
       color: AppColors.yellowGreen,
       icon: AppAssets.popularBlack,
