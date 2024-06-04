@@ -1,11 +1,11 @@
 import 'package:etbank_business_app/constants/app_colors.dart';
+import 'package:etbank_business_app/constants/app_textstyle.dart';
 import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/common_button.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/header_icon_with_text.dart';
 import 'package:etbank_business_app/resources/localization/language_constrants.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class BlackCommonBottomSheet extends ConsumerWidget {
@@ -51,8 +51,18 @@ class BlackCommonBottomSheet extends ConsumerWidget {
             HeaderIconWithTitle(
               // imageicon: AppAssets.crossicon,
               title: getTranslated(title!, context),
+              titleStyle: AppTextstyle.headingTextStyle(
+                  fontWeight: FontWeight.w700,
+                  color: context.theme.colorTheme.whiteColor,
+                  overflow: TextOverflow.clip,
+                  fontSize: 30),
               spaceBtw: 10,
               description: getTranslated(subtitle!, context),
+              descriptionTextStyle: AppTextstyle.headingTextStyle(
+                  fontWeight: FontWeight.w500,
+                  color: context.theme.colorTheme.whiteColor,
+                  overflow: TextOverflow.clip,
+                  fontSize: 16),
               edgeinsets: const EdgeInsets.only(top: 20),
             ),
             50.spaceY,

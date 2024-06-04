@@ -6,8 +6,6 @@ import 'package:etbank_business_app/presentation/views/home_section/home_screen_
 import 'package:etbank_business_app/presentation/views/profile_section/statement_section/statement_screen_widgets/accounts_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
-import '../../../../constants/app_colors.dart';
 import '../../../../constants/app_textstyle.dart';
 
 class AddAccountsBottomSheet extends ConsumerWidget {
@@ -28,8 +26,9 @@ class AddAccountsBottomSheet extends ConsumerWidget {
             padding: const EdgeInsets.all(8),
             width: double.infinity,
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                color: context.theme.colorTheme.businessDetailsContainer),
+                borderRadius: BorderRadius.circular(12),
+                color:
+                    context.theme.colorTheme.requestMoneyContainerTohalfWhite),
             child: Column(
               children: [
                 AccountsCard(
@@ -38,7 +37,7 @@ class AddAccountsBottomSheet extends ConsumerWidget {
                   image: AppAssets.roundukflag,
                   widget: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
                       Text(
                         "£1",
@@ -64,7 +63,7 @@ class AddAccountsBottomSheet extends ConsumerWidget {
                   image: AppAssets.euroflag,
                   widget: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
                       Text(
                         "€0",
@@ -90,7 +89,7 @@ class AddAccountsBottomSheet extends ConsumerWidget {
                   image: AppAssets.usdflag,
                   widget: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
                       Text(
                         "\$1.36",

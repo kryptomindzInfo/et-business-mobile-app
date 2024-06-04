@@ -31,87 +31,91 @@ class AssignRoleScreen extends ConsumerWidget {
           appBar: const CommonAppBar(
             etBankLogo: true,
           ),
-          body: Padding(
-            padding: const EdgeInsets.only(left: 20, right: 20, top: 15),
-            child: Column(
-              children: [
-                HeaderIconWithTitle(
-                  // imageicon: AppAssets.arrowLeft,
-                  title: getTranslated("assign_role", context),
-                  spaceBtw: 8,
-                  description: getTranslated("select_role", context),
-                  // trailingImage: AppAssets.addgreenbutton,
-                  widget: Container(
-                    height: 28,
-                    width: 28,
-                    decoration: const BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: AppColors.primaryColor,
-                        image: DecorationImage(
-                            image: AssetImage(AppAssets.plusicon), scale: 2)),
+          body: SingleChildScrollView(
+            child: Padding(
+              padding: const EdgeInsets.only(left: 20, right: 20, top: 15),
+              child: Column(
+                children: [
+                  HeaderIconWithTitle(
+                    // imageicon: AppAssets.arrowLeft,
+                    title: getTranslated("assign_role", context),
+                    spaceBtw: 8,
+                    description: getTranslated("select_role", context),
+                    // trailingImage: AppAssets.addgreenbutton,
+                    widget: Container(
+                      height: 28,
+                      width: 28,
+                      decoration: const BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: AppColors.primaryColor,
+                          image: DecorationImage(
+                              image: AssetImage(AppAssets.plusicon), scale: 2)),
+                    ),
+                    rightPadding: 10,
+                    // trailingImageHeight: 30,
                   ),
-                  rightPadding: 10,
-                  // trailingImageHeight: 30,
-                ),
-                20.spaceY,
-                HomeScreenSearchTextfield(
-                  color: context.theme.colorTheme.businessDetailsContainer,
+                  20.spaceY,
+                  HomeScreenSearchTextfield(
+                    color: context.theme.colorTheme.businessDetailsContainer,
 
-                  // color: AppColors.greywhite,
-                ),
-                30.spaceY,
-                CommonWhiteFlexibleCard(
-                  color: context.theme.colorTheme.businessDetailsContainer,
-                  border: Border.all(
-                    color: context.theme.colorTheme.transparentToTeal,
+                    // color: AppColors.greywhite,
                   ),
-                  widget: SizedBox(
-                    height: 320,
-                    child: ListView.builder(
-                      itemCount:
-                          ref.watch(teamscreenProvider).assignRoleData.length,
-                      itemBuilder: (context, index) {
-                        return RolesWithDetails(
-                          isSelected: int.parse(ref
-                                      .watch(teamscreenProvider)
-                                      .assignRoleData[index]["id"]) ==
-                                  ref.watch(teamscreenProvider).roleId
-                              ? true
-                              : false,
-                          onpress: () {
-                            ref.read(teamscreenProvider).getRoleId(int.parse(ref
+                  30.spaceY,
+                  CommonWhiteFlexibleCard(
+                    color: context.theme.colorTheme.businessDetailsContainer,
+                    border: Border.all(
+                      color: context.theme.colorTheme.transparentToTeal,
+                    ),
+                    widget: SizedBox(
+                      height: 320,
+                      child: ListView.builder(
+                        physics: const NeverScrollableScrollPhysics(),
+                        itemCount:
+                            ref.watch(teamscreenProvider).assignRoleData.length,
+                        itemBuilder: (context, index) {
+                          return RolesWithDetails(
+                            isSelected: int.parse(ref
+                                        .watch(teamscreenProvider)
+                                        .assignRoleData[index]["id"]) ==
+                                    ref.watch(teamscreenProvider).roleId
+                                ? true
+                                : false,
+                            onpress: () {
+                              ref.read(teamscreenProvider).getRoleId(int.parse(
+                                  ref
+                                      .read(teamscreenProvider)
+                                      .assignRoleData[index]["id"]));
+                            },
+                            title: ref
                                 .read(teamscreenProvider)
-                                .assignRoleData[index]["id"]));
-                          },
-                          title: ref
-                              .read(teamscreenProvider)
-                              .assignRoleData[index]["title"],
-                          subtitile: ref
-                              .read(teamscreenProvider)
-                              .assignRoleData[index]["desc"],
-                        );
-                      },
+                                .assignRoleData[index]["title"],
+                            subtitile: ref
+                                .read(teamscreenProvider)
+                                .assignRoleData[index]["desc"],
+                          );
+                        },
+                      ),
                     ),
                   ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 80),
-                  child: PrimaryButton(
-                      minwidth: 280,
-                      color: true
-                          ? context.theme.colorTheme.buttonColor
-                          : context.theme.colorTheme.buttonDisabledColor,
-                      text: Text(
-                        getTranslated("continue", context),
-                        style: AppTextstyle.bodyTextStyle(
-                          color: AppColors.black,
+                  Padding(
+                    padding: const EdgeInsets.only(top: 50),
+                    child: PrimaryButton(
+                        minwidth: 280,
+                        color: true
+                            ? context.theme.colorTheme.buttonColor
+                            : context.theme.colorTheme.buttonDisabledColor,
+                        text: Text(
+                          getTranslated("continue", context),
+                          style: AppTextstyle.bodyTextStyle(
+                            color: AppColors.black,
+                          ),
                         ),
-                      ),
-                      onPressed: () {
-                        Navigation.pushNamed(AdminScreen.routeName);
-                      }),
-                )
-              ],
+                        onPressed: () {
+                          Navigation.pushNamed(AdminScreen.routeName);
+                        }),
+                  )
+                ],
+              ),
             ),
           ),
         ),

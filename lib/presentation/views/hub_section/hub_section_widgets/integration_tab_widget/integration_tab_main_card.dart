@@ -19,8 +19,9 @@ class IntegrationTabMainCard extends ConsumerWidget {
         // margin: const EdgeInsets.only(bottom: 10),
         decoration: BoxDecoration(
             color: context.theme.colorTheme.businessDetailsContainer,
-            border: Border.all(color: AppColors.grassGreen),
-            borderRadius: BorderRadius.circular(28)),
+            border:
+                Border.all(color: context.theme.colorTheme.transparentToTeal),
+            borderRadius: BorderRadius.circular(12)),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,

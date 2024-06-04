@@ -50,20 +50,22 @@ class AdminscreenListview extends ConsumerWidget {
                           title: Column(
                             children: [
                               Text(
+                                textAlign: TextAlign.center,
                                 getTranslated(
                                     "Invitation sent to \numrziad123.com ",
                                     context),
                                 style: AppTextstyle.bodyTextStyle(
                                   fontSize: 20,
-                                  fontWeight: FontWeight.bold,
+                                  fontWeight: FontWeight.w700,
                                   color: AppColors.black,
                                 ),
                               ),
                             ],
                           ),
+                          padding: EdgeInsets.symmetric(horizontal: 30),
                           description: Column(
                             children: [
-                              20.spaceY,
+                              // 20.spaceY,
                               Text(
                                 getTranslated(
                                     "They will receive an invitation email to sign-up immediately",
@@ -74,7 +76,7 @@ class AdminscreenListview extends ConsumerWidget {
                                     fontSize: 14,
                                     overflow: TextOverflow.clip),
                               ),
-                              68.spaceY,
+                              65.spaceY,
                               PrimaryButton(
                                 minwidth: 288,
                                 text: Text(

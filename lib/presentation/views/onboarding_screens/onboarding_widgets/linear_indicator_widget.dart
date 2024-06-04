@@ -19,7 +19,7 @@ class LinearIndicatorWidget extends ConsumerWidget {
       top: 85,
       height: 20.h,
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 40.w),
+        padding: EdgeInsets.symmetric(horizontal: 20.w),
         child: Row(
           children: List<Widget>.generate(widgetListLength!, (index) {
             return InkWell(
@@ -49,7 +49,7 @@ class LinearIndicatorWidget extends ConsumerWidget {
 
   Color getPageIndicatorColor(BuildContext context, int index, int activePage) {
     return index == activePage
-        ? context.theme.colorTheme.greenToTeal
+        ? context.theme.colorTheme.yellowToGreen
         : AppColors.grey;
   }
 }

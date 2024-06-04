@@ -28,12 +28,12 @@ class PaymentScreen extends ConsumerWidget {
             // ),
           ),
           body: Padding(
-            padding: const EdgeInsets.only(left: 20, right: 20),
+            padding: const EdgeInsets.only(left: 15, right: 15),
             child: Column(
               children: [
-                30.spaceY,
+                28.spaceY,
                 const HeaderIconWithTitle(
-                  title: "Payment",
+                  title: "Payments",
                 ),
                 20.spaceY,
                 const PaymentScreenBody()

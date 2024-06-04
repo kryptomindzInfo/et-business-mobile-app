@@ -210,4 +210,16 @@ class AppAssets {
   static const home = "${iconsDir}home.png";
   static const page = "${iconsDir}page.png";
   static const addIcon = "${iconsDir}add_icon.png";
+  static const monthlyStatement = "${iconsDir}monthly_statement.png";
+  static const cardsIcons = "${iconsDir}cards_icons.png";
+  static const manageRoles = "${iconsDir}manage_roles.png";
+  static const transfer = "${iconsDir}t.png";
+  static const request = "${iconsDir}r.png";
+  static const schedule = "${iconsDir}s.png";
+  static const hubBgImage = "${imagesDir}hub_bg_image.png";
+  static const lang = "${iconsDir}lang.png";
+  static const timeZone = "${iconsDir}time_zone.png";
+  static const theme = "${iconsDir}theme.png";
+  static const exchangeWhite = "${iconsDir}exchange_wh.png";
+  static const invertedArrows = "${iconsDir}inverted_arrows.png";
 }

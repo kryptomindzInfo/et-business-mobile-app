@@ -12,6 +12,7 @@ class IconContainer extends ConsumerWidget {
   final BorderRadiusGeometry? borderRadius;
   final double? height;
   final double? width;
+  final BoxBorder? border;
   const IconContainer(
       {super.key,
       this.image,
@@ -20,7 +21,8 @@ class IconContainer extends ConsumerWidget {
       this.imageColor,
       this.borderRadius,
       this.height,
-      this.width});
+      this.width,
+      this.border});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -31,6 +33,7 @@ class IconContainer extends ConsumerWidget {
         shape: borderRadius != null ? BoxShape.rectangle : BoxShape.circle,
         borderRadius: borderRadius,
         color: bgColor ?? context.theme.colorTheme.iconBgColor,
+        border: border,
 
         // image: DecorationImage(
         //   image: AssetImage(

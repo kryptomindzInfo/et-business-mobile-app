@@ -12,7 +12,6 @@ import 'package:etbank_business_app/presentation/views/profile_section/profile_s
 import 'package:etbank_business_app/providers/profile_provider.dart';
 import 'package:etbank_business_app/resources/localization/language_constrants.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../../constants/app_assets.dart';
 import '../../signup_screens/get_plastic_card_screen.dart';
@@ -85,7 +84,7 @@ class UpgradeBottomSheet extends ConsumerWidget {
                 title: upgradePlanslist[profileProviderWatch.selectedPlan]
                     ["title"],
                 subtitle:
-                    "1 month free . £${upgradePlanslist[profileProviderWatch.selectedPlan]["price"]}/month",
+                    "1 month free . ${upgradePlanslist[profileProviderWatch.selectedPlan]["price"] ?? '£0'}/month",
               ),
               32.spaceY,
               const SeeAllCommonWidget("Get more from your plan", false),

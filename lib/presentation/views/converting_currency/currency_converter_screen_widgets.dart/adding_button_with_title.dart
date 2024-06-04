@@ -17,12 +17,12 @@ class AddingButtonWithTitle extends ConsumerWidget {
     return InkWell(
       onTap: onpress,
       child: Container(
-        margin: const EdgeInsets.only(left: 30, top: 30),
+        margin: const EdgeInsets.only(left: 32, top: 32),
         child: Row(
           children: [
             IconContainer(
               image: AppAssets.addingicon,
-              bgColor: context.theme.colorTheme.whiteToGreen,
+              bgColor: AppColors.addCurrency,
             ),
             // Image.asset(
             //   AppAssets.addingicon,

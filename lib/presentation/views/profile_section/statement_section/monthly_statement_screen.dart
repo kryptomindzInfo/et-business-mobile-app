@@ -43,18 +43,21 @@ class MonthlyStatementScreen extends ConsumerWidget {
                   ),
                   64.spaceY,
                   BusinessDetailsWhiteContainerWidet(
-                      title: "PDF",
-                      labelText: getTranslated("file_type", context),
-                      icon: Image.asset(
-                        AppAssets.iconArrowDownBlack,
-                        height: 11,
-                        color: context.theme.colorTheme.whiteColor,
-                      )),
-                  30.spaceY,
+                    padding: const EdgeInsets.fromLTRB(16, 11, 20, 11),
+                    title: "PDF",
+                    labelText: getTranslated("file_type", context),
+                    icon: Image.asset(
+                      AppAssets.iconArrowDownBlack,
+                      height: 11,
+                      width: 18,
+                      color: context.theme.colorTheme.whiteColor,
+                    ),
+                  ),
+                  32.spaceY,
                   TitleText(
                     title: getTranslated("accounts", context),
                   ),
-                  20.spaceY,
+                  16.spaceY,
                   AccountsCard(
                     title: "British Pound",
                     subtitle: "GBP . Default Account",
@@ -63,8 +66,9 @@ class MonthlyStatementScreen extends ConsumerWidget {
                         borderRadius: 8,
                         title: getTranslated("select", context),
                         width: 66,
-                        mainButtonColor: AppColors.darkGrassGreen,
-                        titleColor: AppColors.white),
+                        mainButtonColor:
+                            context.theme.colorTheme.halfTealToGreen,
+                        titleColor: context.theme.colorTheme.greenToWhite),
                   ),
                   32.spaceY,
                   TitleText(
@@ -85,34 +89,40 @@ class MonthlyStatementScreen extends ConsumerWidget {
                     ],
                   ),
                   90.spaceY,
-                  PrimaryButton(
-                    color: true
-                        ? context.theme.colorTheme.buttonColor
-                        : context.theme.colorTheme.buttonDisabledColor,
-                    text: Text(
-                      getTranslated("get_statement", context),
-                      style: AppTextstyle.bodyTextStyle(
-                          color: context.theme.colorTheme.whiteAndBlack,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w500),
+                  SizedBox(
+                    height: 48,
+                    child: PrimaryButton(
+                      color: true
+                          ? context.theme.colorTheme.buttonColor
+                          : context.theme.colorTheme.buttonDisabledColor,
+                      text: Text(
+                        getTranslated("get_statement", context),
+                        style: AppTextstyle.bodyTextStyle(
+                            color: context.theme.colorTheme.whiteAndBlack,
+                            fontSize: 16,
+                            fontWeight: FontWeight.w500),
+                      ),
+                      onPressed: () {
+                        statementBottomSheet();
+                      },
+                      minwidth: double.infinity,
                     ),
-                    onPressed: () {
-                      statementBottomSheet();
-                    },
-                    minwidth: double.infinity,
                   ),
-                  10.spaceY,
-                  PrimaryButton(
-                    color: context.theme.colorTheme.tealToGrey,
-                    text: Text(
-                      getTranslated("share_statement", context),
-                      style: AppTextstyle.bodyTextStyle(
-                          color: context.theme.colorTheme.blackAndWhite,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w500),
+                  16.spaceY,
+                  SizedBox(
+                    height: 48,
+                    child: PrimaryButton(
+                      color: context.theme.colorTheme.tealToGrey,
+                      text: Text(
+                        getTranslated("share_statement", context),
+                        style: AppTextstyle.bodyTextStyle(
+                            color: context.theme.colorTheme.blackAndWhite,
+                            fontSize: 16,
+                            fontWeight: FontWeight.w500),
+                      ),
+                      onPressed: () {},
+                      minwidth: double.infinity,
                     ),
-                    onPressed: () {},
-                    minwidth: double.infinity,
                   )
                 ],
               ),

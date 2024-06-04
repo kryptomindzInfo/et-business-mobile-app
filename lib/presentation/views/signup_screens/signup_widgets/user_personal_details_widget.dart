@@ -68,6 +68,8 @@ class UserPersonalDetailsWidget extends ConsumerWidget {
                               color: context.theme.colorTheme.whiteColor),
                           controller: controller,
                           title: title,
+                          titleSize: 12,
+                          titleColor: titleTextColor,
                           hint: hint,
                           hintStyle: hintStyle,
                           padding: 0,

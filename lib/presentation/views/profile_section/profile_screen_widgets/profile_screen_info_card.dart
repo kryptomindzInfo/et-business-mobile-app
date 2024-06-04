@@ -4,14 +4,12 @@ import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/navigation/navigation.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/info_card_common_widget.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/see_all_widget.dart';
-import 'package:etbank_business_app/presentation/views/profile_section/profile_screen_bottom_sheets/light_dark_bottom_sheet.dart';
+import 'package:etbank_business_app/presentation/views/profile_section/personal_profile_screen.dart';
 import 'package:etbank_business_app/presentation/views/profile_section/profile_screen_widgets/profile_info_text_widget.dart';
 import 'package:etbank_business_app/presentation/views/profile_section/statement_section/statement_screen.dart';
 import 'package:etbank_business_app/resources/localization/language_constrants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
-import '../../../../constants/app_colors.dart';
 
 class ProfileInfoCard extends ConsumerWidget {
   const ProfileInfoCard({super.key});
@@ -33,11 +31,12 @@ class ProfileInfoCard extends ConsumerWidget {
                 image: AppAssets.personalprofileicon,
                 title: getTranslated("personal_profile", context),
                 onpress: () {
-                  showModalBottomSheet(
-                    backgroundColor: context.theme.colorTheme.bottomSheetColor,
-                    context: context,
-                    builder: (context) => const ThemeBottomSheet(),
-                  );
+                  Navigation.pushNamed(PersonalProfileScreen.routeName);
+                  // showModalBottomSheet(
+                  //   backgroundColor: context.theme.colorTheme.bottomSheetColor,
+                  //   context: context,
+                  //   builder: (context) => const ThemeBottomSheet(),
+                  // );
                 },
               ),
               ProfileInfoTextWidget(
@@ -62,7 +61,7 @@ class ProfileInfoCard extends ConsumerWidget {
               ),
             ],
           ),
-        )
+        ),
       ],
     );
   }

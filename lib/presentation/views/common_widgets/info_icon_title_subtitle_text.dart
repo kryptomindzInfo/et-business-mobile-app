@@ -21,21 +21,21 @@ class InfoIconTitleSubtitleText extends ConsumerWidget {
       this.onpress,
       this.trailing});
 
-  @override
   Widget build(BuildContext context, WidgetRef ref) {
     return InkWell(
       onTap: onpress,
       child: Container(
-        // color: AppColors.white,
-        margin: const EdgeInsets.only(top: 20, right: 15, left: 15, bottom: 20),
+        margin: const EdgeInsets.only(top: 20, right: 15, left: 15, bottom: 15),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             IconContainer(
+              height: 34,
+              width: 34,
               bgColor: AppColors.tealColor,
               image: imageicon,
             ),
-            20.spaceX,
+            SizedBox(width: 20), // Replacing 20.spaceX for clarity
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -55,11 +55,17 @@ class InfoIconTitleSubtitleText extends ConsumerWidget {
                         color: context.theme.colorTheme.normalTextColor,
                         overflow: TextOverflow.clip),
                   ),
-                  // 20.spaceY
                 ],
               ),
             ),
-            if (trailing != null) trailing!,
+            if (trailing != null)
+              SizedBox(
+                height: 34, // Same height as IconContainer
+                child: Align(
+                  alignment: Alignment.center,
+                  child: trailing!,
+                ),
+              ),
           ],
         ),
       ),

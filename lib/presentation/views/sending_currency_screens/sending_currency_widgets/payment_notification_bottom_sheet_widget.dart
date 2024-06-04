@@ -65,6 +65,7 @@ class PaymentNotificationBottomSheetWidget extends ConsumerWidget {
                   Padding(
                     padding: const EdgeInsets.only(left: 20),
                     child: TextFieldWidget(
+                      contentPadding: const EdgeInsets.only(left: 11, top: 4),
                       containerColor:
                           context.theme.colorTheme.businessDetailsContainer,
                       border: Border.all(

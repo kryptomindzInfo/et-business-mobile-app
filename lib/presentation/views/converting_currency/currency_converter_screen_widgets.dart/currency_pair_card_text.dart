@@ -7,30 +7,31 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 class CurrencyPairCardText extends ConsumerWidget {
   final String? title;
   final String? subtitle;
-  const CurrencyPairCardText({super.key, this.title, this.subtitle});
+  final CrossAxisAlignment? crossAxisAlignment;
+  const CurrencyPairCardText(
+      {super.key, this.title, this.subtitle, this.crossAxisAlignment});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return Container(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(
-            title!,
-            style: AppTextstyle.bodyTextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w600,
-                color: context.theme.colorTheme.whiteAndBlack),
-          ),
-          Text(
-            subtitle!,
-            style: AppTextstyle.bodyTextStyle(
-                fontSize: 12,
-                fontWeight: FontWeight.w500,
-                color: context.theme.colorTheme.whiteAndBlack),
-          )
-        ],
-      ),
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: crossAxisAlignment ?? CrossAxisAlignment.start,
+      children: [
+        Text(
+          title!,
+          style: AppTextstyle.bodyTextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.w600,
+              color: context.theme.colorTheme.whiteAndBlack),
+        ),
+        Text(
+          subtitle!,
+          style: AppTextstyle.bodyTextStyle(
+              fontSize: 12,
+              fontWeight: FontWeight.w500,
+              color: context.theme.colorTheme.whiteAndBlack),
+        )
+      ],
     );
   }
 }

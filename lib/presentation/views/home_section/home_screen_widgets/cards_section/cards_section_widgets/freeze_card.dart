@@ -1,6 +1,8 @@
 import 'package:etbank_business_app/constants/app_assets.dart';
+import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
+import 'package:etbank_business_app/presentation/views/common_widgets/icon_container.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/white_flexible_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -21,10 +23,11 @@ class FreezeCard extends ConsumerWidget {
       borderRadius: 12,
       widget: Row(
         children: [
-          Image.asset(
-            AppAssets.freezicon,
-            height: 35,
-            color: context.theme.colorTheme.whiteToGreen,
+          const IconContainer(
+            height: 34,
+            width: 34,
+            bgColor: AppColors.tealColor,
+            image: AppAssets.freezicon,
           ),
           16.spaceX,
           Column(
@@ -46,7 +49,7 @@ class FreezeCard extends ConsumerWidget {
                 style: AppTextstyle.bodyTextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.w400,
-                    color: context.theme.colorTheme.normalTextColor),
+                    color: context.theme.colorTheme.halfWhiteToGrey),
                 overflow: TextOverflow.clip,
               ),
             ],

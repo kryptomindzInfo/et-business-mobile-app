@@ -32,13 +32,30 @@ class TrustThisPayeeBottomSheetWidget extends ConsumerWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Column(
+                // crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   40.spaceY,
                   const HeaderIconWithTitle(),
+                  24.spaceY,
+                  Container(
+                    alignment: Alignment.centerLeft,
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.pop(context);
+                      },
+                      child: Image.asset(
+                        AppAssets.crossicon,
+                        height: 14.h,
+                        width: 14.w,
+                        color: context.theme.colorTheme.whiteColor,
+                      ),
+                    ),
+                  ),
+                  35.spaceY,
                   Image.asset(
                     AppAssets.trustPayee,
-                    height: 100.h,
-                    width: 100.w,
+                    height: 93.h,
+                    width: 102.w,
                     color: context.theme.colorTheme.yellowToGreen,
                   ),
                   54.spaceY,

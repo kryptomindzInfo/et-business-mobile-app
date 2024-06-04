@@ -1,4 +1,4 @@
-import 'package:etbank_business_app/constants/app_colors.dart';
+import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -11,7 +11,8 @@ class StatementContainer extends ConsumerWidget {
       height: 450,
       margin: const EdgeInsets.only(left: 20, right: 20),
       decoration: BoxDecoration(
-          color: AppColors.grey, borderRadius: BorderRadius.circular(28)),
+          color: context.theme.colorTheme.halfWhiteToMonthlyStatementContainer,
+          borderRadius: BorderRadius.circular(12)),
     );
   }
 }

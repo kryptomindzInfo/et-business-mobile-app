@@ -14,7 +14,7 @@ class CurrencyPairCard extends ConsumerWidget {
       width: double.infinity,
       margin: const EdgeInsets.only(bottom: 15, left: 10, right: 10),
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(28),
+          borderRadius: BorderRadius.circular(12),
           // border: Border.all(color: AppColors.white),
           color: context.theme.colorTheme.blackAndWhite),
       child: Row(
@@ -30,6 +30,7 @@ class CurrencyPairCard extends ConsumerWidget {
             height: 35,
           ),
           const CurrencyPairCardText(
+            crossAxisAlignment: CrossAxisAlignment.end,
             title: "1.3603",
             subtitle: "US Dollar . USD",
           ),

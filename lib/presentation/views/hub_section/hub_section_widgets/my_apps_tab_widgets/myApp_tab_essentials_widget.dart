@@ -16,6 +16,9 @@ class MyApptabEssentialWidget extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return CommonWhiteFlexibleCard(
       color: context.theme.colorTheme.businessDetailsContainer,
+      border: Border.all(
+        color: context.theme.colorTheme.transparentToTeal,
+      ),
       borderRadius: 12,
       widget: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -25,10 +28,10 @@ class MyApptabEssentialWidget extends ConsumerWidget {
             style: AppTextstyle.bodyTextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.normal,
-                color: AppColors.darkGreen,
+                color: AppColors.grassGreen,
                 overflow: TextOverflow.clip),
           ),
-          15.spaceY,
+          28.spaceY,
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [

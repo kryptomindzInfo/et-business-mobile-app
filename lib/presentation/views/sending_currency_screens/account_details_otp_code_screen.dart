@@ -45,8 +45,8 @@ class AccountDetailsOTPCodeScreen extends ConsumerWidget {
                         getTranslated("£1 ", context),
                         style: AppTextstyle.bodyTextStyle(
                             fontSize: 20,
-                            fontWeight: FontWeight.w700,
-                            color: AppColors.tealColor),
+                            fontWeight: FontWeight.w800,
+                            color: AppColors.darkIndigo),
                       ),
                       Text(
                         getTranslated("to ", context),
@@ -61,12 +61,13 @@ class AccountDetailsOTPCodeScreen extends ConsumerWidget {
                         style: AppTextstyle.bodyTextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.w700,
-                            color: AppColors.tealColor),
+                            color: AppColors.darkIndigo),
                       ),
                     ],
                   ),
+                  padding: const EdgeInsets.symmetric(horizontal: 35),
                   description: SizedBox(
-                    height: 48.h,
+                    height: 44.h,
                     width: 327.w,
                     child: PrimaryButton(
                       color: true

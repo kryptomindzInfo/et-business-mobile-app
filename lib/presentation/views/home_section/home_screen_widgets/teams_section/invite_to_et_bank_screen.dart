@@ -40,9 +40,10 @@ class InviteToETBankScreen extends ConsumerWidget {
                 UserPersonalDetailsWidget(
                     height: 30,
                     title: getTranslated("email", context),
-                    hint: "Type or past multiple at once",
-                    hintStyle:
-                        AppTextstyle.bodyTextStyle(color: AppColors.grey),
+                    titleTextColor: context.theme.colorTheme.halfWhiteToGrey,
+                    hint: "jamesfork@gmail.com",
+                    // hintStyle: AppTextstyle.bodyTextStyle(
+                    //     color: context.theme.colorTheme.whiteToGrey),
                     controller:
                         ref.read(teamscreenProvider).invitationController),
               ],
@@ -51,7 +52,7 @@ class InviteToETBankScreen extends ConsumerWidget {
           bottomNavigationBar: Padding(
             padding: const EdgeInsets.only(bottom: 50, left: 20, right: 20),
             child: CommonButton(
-              height: 38,
+              height: 48,
               title: getTranslated("continue", context),
               mainButtonColor: true
                   ? context.theme.colorTheme.buttonColor

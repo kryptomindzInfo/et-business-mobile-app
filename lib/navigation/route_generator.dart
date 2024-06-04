@@ -26,6 +26,7 @@ import 'package:etbank_business_app/presentation/views/invoice_and_request_scree
 import 'package:etbank_business_app/presentation/views/home_section/notification_screen.dart';
 import 'package:etbank_business_app/presentation/views/hub_section/hub_section_widgets/upgrade_section/upgrade_screens.dart';
 import 'package:etbank_business_app/presentation/views/onboarding_screens/onboarding_screen.dart';
+import 'package:etbank_business_app/presentation/views/profile_section/personal_profile_screen.dart';
 import 'package:etbank_business_app/presentation/views/sending_currency_screens/account_details_screen.dart';
 import 'package:etbank_business_app/presentation/views/sending_currency_screens/enter_amount_screen.dart';
 import 'package:etbank_business_app/presentation/views/sending_currency_screens/show_account_details_screen.dart';
@@ -383,6 +384,11 @@ class RouteGenerator {
             ));
       case GetMoreFromBusinessScreen.routeName:
         return route(const GetMoreFromBusinessScreen(
+            // params: settings.arguments as HomeScreenArgs?
+            ));
+
+      case PersonalProfileScreen.routeName:
+        return route(const PersonalProfileScreen(
             // params: settings.arguments as HomeScreenArgs?
             ));
 

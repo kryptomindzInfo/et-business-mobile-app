@@ -25,6 +25,7 @@ class StatementScreenMainCard extends ConsumerWidget {
               title: getTranslated("monthly_statement", context),
               subtitle: getTranslated("monthly_statement_sub", context),
               trailing: Icon(
+                size: 20,
                 Icons.arrow_forward_ios,
                 color: context.theme.colorTheme.whiteColor,
               ),
@@ -37,6 +38,7 @@ class StatementScreenMainCard extends ConsumerWidget {
               title: getTranslated("transaction_statement", context),
               subtitle: getTranslated("transaction_statement_sub", context),
               trailing: Icon(
+                size: 20,
                 Icons.arrow_forward_ios,
                 color: context.theme.colorTheme.whiteColor,
               ),
@@ -46,6 +48,7 @@ class StatementScreenMainCard extends ConsumerWidget {
               title: getTranslated("statement_balance", context),
               subtitle: getTranslated("statement_balance_sub", context),
               trailing: Icon(
+                size: 20,
                 Icons.arrow_forward_ios,
                 color: context.theme.colorTheme.whiteColor,
               ),
@@ -55,6 +58,7 @@ class StatementScreenMainCard extends ConsumerWidget {
               title: getTranslated("account_confirmation", context),
               subtitle: getTranslated("account_confirmation_sub", context),
               trailing: Icon(
+                size: 20,
                 Icons.arrow_forward_ios,
                 color: context.theme.colorTheme.whiteColor,
               ),
@@ -64,6 +68,7 @@ class StatementScreenMainCard extends ConsumerWidget {
               title: getTranslated("audit_confirmation", context),
               subtitle: getTranslated("audit_confirmation_sub", context),
               trailing: Icon(
+                size: 20,
                 Icons.arrow_forward_ios,
                 color: context.theme.colorTheme.whiteColor,
               ),

@@ -103,14 +103,13 @@ class MarkAsPaidScreen extends ConsumerWidget {
                       ),
                     ],
                   ),
-                  25.spaceY,
+                  24.spaceY,
                   CommonWhiteFlexibleCard(
                     border: Border.all(
                         color: context.theme.colorTheme.transparentToTeal),
                     color: context.theme.colorTheme.businessDetailsContainer,
                     borderRadius: 12,
-                    padding: const EdgeInsets.symmetric(
-                        vertical: 10, horizontal: 15),
+                    padding: const EdgeInsets.all(0),
                     widget: Column(
                       children: [
                         ShowAccountDetailsWidget(
@@ -140,8 +139,7 @@ class MarkAsPaidScreen extends ConsumerWidget {
                         color: context.theme.colorTheme.transparentToTeal),
                     color: context.theme.colorTheme.businessDetailsContainer,
                     borderRadius: 12,
-                    padding: const EdgeInsets.symmetric(
-                        vertical: 10, horizontal: 15),
+                    padding: const EdgeInsets.all(0),
                     widget: Column(
                       children: [
                         ShowAccountDetailsWidget(
@@ -165,8 +163,7 @@ class MarkAsPaidScreen extends ConsumerWidget {
                         color: context.theme.colorTheme.transparentToTeal),
                     color: context.theme.colorTheme.businessDetailsContainer,
                     borderRadius: 12,
-                    padding:
-                        const EdgeInsets.symmetric(vertical: 0, horizontal: 15),
+                    padding: const EdgeInsets.all(0),
                     widget: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -175,9 +172,11 @@ class MarkAsPaidScreen extends ConsumerWidget {
                           titleColor: AppColors.grey,
                           border: Border.all(color: Colors.transparent),
                           color: AppColors.transparent,
+                          padding: const EdgeInsets.only(
+                              left: 15, top: 14, bottom: 8),
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(left: 8.0),
+                          padding: const EdgeInsets.only(left: 15),
                           child: Text(
                             getTranslated(
                                 'please_see_the_attached_invoice', context),
@@ -187,7 +186,7 @@ class MarkAsPaidScreen extends ConsumerWidget {
                             ),
                           ),
                         ),
-                        32.spaceY,
+                        10.spaceY,
                       ],
                     ),
                   ),
@@ -197,8 +196,7 @@ class MarkAsPaidScreen extends ConsumerWidget {
                         color: context.theme.colorTheme.transparentToTeal),
                     color: context.theme.colorTheme.businessDetailsContainer,
                     borderRadius: 12,
-                    padding:
-                        const EdgeInsets.symmetric(vertical: 0, horizontal: 15),
+                    padding: const EdgeInsets.all(0),
                     widget: Column(
                       children: [
                         ShowAccountDetailsWidget(
@@ -211,15 +209,16 @@ class MarkAsPaidScreen extends ConsumerWidget {
                           name: "consulting",
                           color: AppColors.transparent,
                           trailingText: "£3",
-                          trailingHintText: '1 *£3 ',
+                          trailingHintText: '1 x £3 ',
                         ),
                         ShowAccountDetailsWidget(
+                          padding: const EdgeInsets.fromLTRB(15, 11, 15, 14),
                           title: 'sub_total',
                           subTitle: '£3',
                           border: Border.all(color: Colors.transparent),
                           color: AppColors.transparent,
                           subTitleStyle: AppTextstyle.bodyTextStyle(
-                            fontSize: 18,
+                            fontSize: 14,
                             color: context.theme.colorTheme.whiteColor,
                           ),
                         ),

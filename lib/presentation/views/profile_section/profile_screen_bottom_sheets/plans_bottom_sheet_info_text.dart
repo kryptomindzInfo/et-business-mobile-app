@@ -30,6 +30,7 @@ class PlansBottomSheetInfoText extends ConsumerWidget {
             bgColor: AppColors.tealColor,
           ),
           Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(
                 width: 210,
@@ -44,7 +45,7 @@ class PlansBottomSheetInfoText extends ConsumerWidget {
               ),
               8.spaceY,
               SizedBox(
-                width: 200,
+                width: 220,
                 child: Text(
                   subtitle,
                   style: AppTextstyle.bodyTextStyle(

@@ -120,6 +120,12 @@ List<Map> _upgradeData = [
         "subtitle":
             "A £0.20 fee applies per local payment outside of the free allowance",
         "icon": AppAssets.localpaymenticon
+      },
+      {
+        "title": "Exchange £50k at the interbank rate ",
+        "subtitle":
+            "A £0.20 fee applies per local payment outside of the free allowance",
+        "icon": AppAssets.exchangeWhite
       }
     ]
   },
@@ -228,9 +234,9 @@ List<Map> _getCardsData = [
 List<Map> get getCardsData => _getCardsData;
 
 List<Map> _paymentScreen = [
-  {"title": "transfer"},
+  {"title": "Transfer"},
   {"title": "request"},
-  {"title": "shedule"},
+  {"title": "Scheduled"},
 ];
 
 List<Map> get paymentScreenopt => _paymentScreen;

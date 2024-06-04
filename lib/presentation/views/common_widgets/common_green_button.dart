@@ -10,12 +10,14 @@ class CommonGreenButton extends ConsumerWidget {
   final String? imageIcon;
   final VoidCallback? onpress;
   final double? imageHeight;
+  final double? imageWidth;
   final Color? color;
   final Color? textColor;
   final Color? iconColor;
   final Color? borderColor;
   final double? borderRadius;
   final double? height;
+  final double? titleFontSize;
   final EdgeInsetsGeometry? padding;
 
   const CommonGreenButton(
@@ -30,7 +32,9 @@ class CommonGreenButton extends ConsumerWidget {
       this.borderColor,
       this.borderRadius,
       this.height,
-      this.padding});
+      this.padding,
+      this.imageWidth,
+      this.titleFontSize});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -56,6 +60,7 @@ class CommonGreenButton extends ConsumerWidget {
                       color: iconColor,
                       imageIcon!,
                       height: imageHeight ?? 25,
+                      width: imageWidth ?? 25,
                     ),
                   if (title != null) 8.spaceX,
                   if (title != null)
@@ -63,7 +68,7 @@ class CommonGreenButton extends ConsumerWidget {
                       title!,
                       style: AppTextstyle.bodyTextStyle(
                           color: textColor ?? AppColors.black,
-                          fontSize: 16,
+                          fontSize: titleFontSize ?? 16,
                           fontWeight: FontWeight.w500),
                     ),
                 ],

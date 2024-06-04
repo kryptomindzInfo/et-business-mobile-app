@@ -5,6 +5,7 @@ class AppColors {
   static const black = Colors.black;
   static const white = Colors.white;
   static const halfWhite = Color(0xffDADADA);
+  static const monthlyStatementContaier = Color(0xff282929);
   static const otpBlock = Color(0xffEDEFF2);
   static const grey = Color(0xff5E5E5E);
   static const blue = Color(0xff0094FF);
@@ -13,6 +14,7 @@ class AppColors {
   static const lightRed = Color(0xffFFB9B1);
   static const primaryColor = Color(0xff00FF9D);
   static const tealColor = Color(0xff004953);
+  static final halfTealColor = const Color(0xff004953).withOpacity(0.5);
   static const mateBlackColor = Color(0xff1E1E1E);
   static const greywhite = Color(0xffFFFFFF);
   static const darkGreen = Color(0xff156144);
@@ -41,4 +43,7 @@ class AppColors {
   static const homeIconContainer = Color(0xFF09181C);
   static const tealBorder = Color(0xFF215864);
   static const subTitleBlack = Color(0xFF494A4B);
+  static const textHalfWhite = Color(0xFF9BA9BB);
+  static final addCurrency = const Color(0xFF4D4D4D).withOpacity(0.5);
+  static const darkIndigo = Color(0xFF677AFF);
 }

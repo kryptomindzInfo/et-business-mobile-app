@@ -1,8 +1,6 @@
 import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
-import '../../../constants/app_colors.dart';
 import '../../../constants/app_textstyle.dart';
 import '../../../globals/button_color.dart';
 import '../../../resources/localization/language_constrants.dart';

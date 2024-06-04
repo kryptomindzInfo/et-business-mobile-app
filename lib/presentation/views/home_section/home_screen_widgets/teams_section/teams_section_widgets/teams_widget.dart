@@ -32,40 +32,51 @@ class TeamsWidget extends ConsumerWidget {
               CommonGreenButton(
                 borderColor: context.theme.colorTheme.transparentToYellow,
                 height: 42,
+                titleFontSize: 14,
+
                 borderRadius: 64,
                 textColor: AppColors.white,
                 color: context.theme.colorTheme.transparentToGreen,
-                imageIcon: AppAssets.invitepeople,
+                imageIcon: AppAssets.plusicon,
+                imageHeight: 13,
+                imageWidth: 14,
+                iconColor: AppColors.white,
                 title: getTranslated("invite", context),
-                padding: const EdgeInsets.symmetric(horizontal: 8),
+                // padding: const EdgeInsets.fromLTRB(11, 6, 24, 6),
+                padding: const EdgeInsets.only(left: 11, right: 24),
                 onpress: () {
                   Navigation.pushNamed(InviteToETBankScreen.routeName);
                 },
               ),
               CommonGreenButton(
+                padding: const EdgeInsets.only(left: 14, right: 16),
+
                 textColor: AppColors.white,
                 height: 42,
                 borderRadius: 64,
                 borderColor: context.theme.colorTheme.transparentToYellow,
                 color: context.theme.colorTheme.transparentToGreen,
-                imageIcon: AppAssets.managerole,
-                padding: const EdgeInsets.symmetric(horizontal: 8),
+                imageIcon: AppAssets.manageRoles,
+                imageHeight: 16,
+                imageWidth: 16,
+                // padding: const EdgeInsets.symmetric(horizontal: 8),
                 title: getTranslated("manage_role", context),
+                titleFontSize: 14,
                 onpress: () {
                   Navigation.pushNamed(ManageRolesScreen.routeName);
                 },
               ),
               CommonGreenButton(
+                padding: const EdgeInsets.symmetric(horizontal: 14),
                 height: 42,
-                borderRadius: 64,
+                borderRadius: 26,
                 iconColor: AppColors.white,
                 borderColor: context.theme.colorTheme.transparentToYellow,
-
                 color: context.theme.colorTheme.transparentToGreen,
-
-                padding: const EdgeInsets.symmetric(horizontal: 8),
+                // padding: const EdgeInsets.symmetric(horizontal: 8),
                 imageIcon: AppAssets.poepleicon,
-                imageHeight: 15,
+                imageHeight: 14,
+                imageWidth: 19,
                 onpress: () {
                   Navigation.pushNamed(OwnerScreen.routeName);
                 },

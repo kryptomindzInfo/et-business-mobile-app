@@ -25,10 +25,12 @@ class AllAccountsCardBS extends ConsumerWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Padding(
-            padding: const EdgeInsets.only(left: 20),
+            padding: const EdgeInsets.only(left: 14),
             child: Row(
               children: [
                 const IconContainer(
+                  height: 34,
+                  width: 34,
                   bgColor: AppColors.tealColor,
                   image: AppAssets.allaccountsicon,
                 ),

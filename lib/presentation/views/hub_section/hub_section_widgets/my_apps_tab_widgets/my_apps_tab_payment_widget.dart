@@ -3,6 +3,7 @@ import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/white_flexible_card.dart';
 import 'package:etbank_business_app/presentation/views/hub_section/hub_section_widgets/my_apps_tab_widgets/essential_icon_text.dart';
+import 'package:etbank_business_app/presentation/views/hub_section/hub_section_widgets/my_apps_tab_widgets/payment_icon_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../../../constants/app_colors.dart';
@@ -16,6 +17,9 @@ class MyApptabPaymentWidget extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return CommonWhiteFlexibleCard(
       color: context.theme.colorTheme.businessDetailsContainer,
+      border: Border.all(
+        color: context.theme.colorTheme.transparentToTeal,
+      ),
       borderRadius: 12,
       widget: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -25,26 +29,29 @@ class MyApptabPaymentWidget extends ConsumerWidget {
             style: AppTextstyle.bodyTextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.normal,
-                color: AppColors.darkGreen,
+                color: AppColors.grassGreen,
                 overflow: TextOverflow.clip),
           ),
-          15.spaceY,
+          28.spaceY,
           Row(
             // mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const EssentialIconWithTitle(
-                imageicon: AppAssets.hubTransfer,
+              PaymentIconWithTitle(
+                imageicon: AppAssets.transfer,
                 title: "Transfer",
+                iconColor: context.theme.colorTheme.bottomSheetColor,
               ),
               40.spaceX,
-              const EssentialIconWithTitle(
-                imageicon: AppAssets.hubRequest,
+              PaymentIconWithTitle(
+                imageicon: AppAssets.request,
                 title: "Request",
+                iconColor: context.theme.colorTheme.bottomSheetColor,
               ),
               40.spaceX,
-              const EssentialIconWithTitle(
-                imageicon: AppAssets.hubSchedule,
+              PaymentIconWithTitle(
+                imageicon: AppAssets.schedule,
                 title: "Scheduled",
+                iconColor: context.theme.colorTheme.bottomSheetColor,
               ),
             ],
           )

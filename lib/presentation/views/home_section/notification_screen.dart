@@ -45,7 +45,7 @@ class NotificationScreen extends ConsumerWidget {
                   getTranslated("caught_up", context),
                   style: AppTextstyle.headingTextStyle(
                       fontSize: 20,
-                      fontWeight: FontWeight.bold,
+                      fontWeight: FontWeight.w700,
                       color: context.theme.colorTheme.whiteColor),
                 ),
                 27.spaceY,
@@ -53,8 +53,8 @@ class NotificationScreen extends ConsumerWidget {
                   getTranslated("check_back_later", context),
                   textAlign: TextAlign.center,
                   style: AppTextstyle.bodyTextStyle(
-                      fontSize: 12,
-                      fontWeight: FontWeight.bold,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w500,
                       color: context.theme.colorTheme.whiteColor,
                       overflow: TextOverflow.clip),
                 )

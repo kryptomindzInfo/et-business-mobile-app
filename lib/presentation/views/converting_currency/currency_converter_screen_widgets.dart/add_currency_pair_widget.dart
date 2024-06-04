@@ -1,5 +1,4 @@
 import 'package:etbank_business_app/constants/app_assets.dart';
-import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:etbank_business_app/constants/app_textstyle.dart';
 import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
@@ -22,6 +21,7 @@ class AddCurrencyPairWidget extends ConsumerWidget {
           onTap: onpress,
           child: IconContainer(
             image: AppAssets.addingicon,
+            imageColor: context.theme.colorTheme.bottomSheetColor,
             bgColor: context.theme.colorTheme.yellowToGreen,
           ),
           // child: Image.asset(

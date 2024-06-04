@@ -75,11 +75,14 @@ class WhoToPayScreen extends ConsumerWidget {
                   onChanged: (value) {},
                 ),
                 59.spaceY,
-                Text(
-                  getTranslated('cant_find_who_you_are_looking_for', context),
-                  style: AppTextstyle.headingTextStyle(
-                    color: context.theme.colorTheme.whiteColor,
-                    fontSize: 16,
+                Padding(
+                  padding: const EdgeInsets.only(left: 7),
+                  child: Text(
+                    getTranslated('cant_find_who_you_are_looking_for', context),
+                    style: AppTextstyle.headingTextStyle(
+                      color: context.theme.colorTheme.whiteColor,
+                      fontSize: 16,
+                    ),
                   ),
                 ),
                 13.spaceY,

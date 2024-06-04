@@ -28,11 +28,11 @@ class HubScreen extends ConsumerWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  30.spaceY,
+                  20.spaceY,
                   HeaderIconWithTitle(
                     title: getTranslated("hub", context),
                   ),
-                  20.spaceY,
+                  21.spaceY,
                   const HubSectionBody()
                 ],
               ),
