@@ -62,7 +62,7 @@ class AdminscreenListview extends ConsumerWidget {
                               ),
                             ],
                           ),
-                          padding: EdgeInsets.symmetric(horizontal: 30),
+                          padding: const EdgeInsets.symmetric(horizontal: 30),
                           description: Column(
                             children: [
                               // 20.spaceY,

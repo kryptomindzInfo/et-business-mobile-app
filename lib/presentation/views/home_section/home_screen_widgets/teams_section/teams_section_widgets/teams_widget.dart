@@ -33,7 +33,6 @@ class TeamsWidget extends ConsumerWidget {
                 borderColor: context.theme.colorTheme.transparentToYellow,
                 height: 42,
                 titleFontSize: 14,
-
                 borderRadius: 64,
                 textColor: AppColors.white,
                 color: context.theme.colorTheme.transparentToGreen,
@@ -43,13 +42,13 @@ class TeamsWidget extends ConsumerWidget {
                 iconColor: AppColors.white,
                 title: getTranslated("invite", context),
                 // padding: const EdgeInsets.fromLTRB(11, 6, 24, 6),
-                padding: const EdgeInsets.only(left: 11, right: 24),
+                padding: const EdgeInsets.only(left: 10, right: 22),
                 onpress: () {
                   Navigation.pushNamed(InviteToETBankScreen.routeName);
                 },
               ),
               CommonGreenButton(
-                padding: const EdgeInsets.only(left: 14, right: 16),
+                padding: const EdgeInsets.only(left: 13, right: 15),
 
                 textColor: AppColors.white,
                 height: 42,
@@ -67,7 +66,7 @@ class TeamsWidget extends ConsumerWidget {
                 },
               ),
               CommonGreenButton(
-                padding: const EdgeInsets.symmetric(horizontal: 14),
+                padding: const EdgeInsets.symmetric(horizontal: 13),
                 height: 42,
                 borderRadius: 26,
                 iconColor: AppColors.white,

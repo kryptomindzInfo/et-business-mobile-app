@@ -122,7 +122,7 @@ class MyAppTabMainCard extends ConsumerWidget {
                 ),
                 CommonButton(
                   padding:
-                      const EdgeInsets.symmetric(horizontal: 26, vertical: 8),
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
                   // width: 100,
                   title: getTranslated("upgrade", context),
                   mainButtonColor: context.theme.colorTheme.indigoToBlackish,
