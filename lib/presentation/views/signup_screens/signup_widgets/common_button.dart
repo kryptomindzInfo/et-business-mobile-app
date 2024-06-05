@@ -20,7 +20,7 @@ class RegistrationLoginCommonButton extends ConsumerWidget {
       onTap: onpress,
       child: Container(
         height: 54,
-        width: 165,
+        width: 160,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(104), color: buttoncolor),
         child: Center(
