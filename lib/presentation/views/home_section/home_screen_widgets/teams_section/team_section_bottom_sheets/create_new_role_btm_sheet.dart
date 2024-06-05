@@ -67,9 +67,11 @@ class CreateNewRoleBottomSheet extends ConsumerWidget {
                       builder: (context) => Container(
                             margin: const EdgeInsets.all(20),
                             child: VerifiedBottomSheetWidget(
+                              height: 235,
                               title: const Column(
                                 children: [],
                               ),
+                              spaceBtw: 0.spaceY,
                               description: Text(
                                 "Role Created",
                                 style: AppTextstyle.headingTextStyle(

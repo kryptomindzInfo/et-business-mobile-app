@@ -80,7 +80,8 @@ class ProfileScreenMainCard extends ConsumerWidget {
                           style: AppTextstyle.bodyTextStyle(
                               fontSize: 12,
                               fontWeight: FontWeight.w600,
-                              color: context.theme.colorTheme.iconBgColor),
+                              color: context
+                                  .theme.colorTheme.tealBorderToIconGrey),
                         ),
                       ],
                     ),

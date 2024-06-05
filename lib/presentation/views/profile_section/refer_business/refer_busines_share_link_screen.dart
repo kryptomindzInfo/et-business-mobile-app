@@ -22,7 +22,7 @@ class ReferBusinessShareLinkScreen extends ConsumerWidget {
           backgroundColor: AppColors.transparent,
           appBar: const CommonAppBar(),
           body: Padding(
-            padding: const EdgeInsets.only(left: 20, right: 20, top: 20),
+            padding: const EdgeInsets.only(left: 20, right: 20, top: 10),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

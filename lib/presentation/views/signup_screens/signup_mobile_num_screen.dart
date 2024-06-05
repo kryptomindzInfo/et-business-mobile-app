@@ -75,7 +75,7 @@ class SignUpMobileNoScreen extends ConsumerWidget {
                       14.spaceX,
                       Expanded(
                         child: TextFieldWidget(
-                          height: 48,
+                          height: 53,
                           contentPadding: const EdgeInsets.only(
                               left: 15, top: 4, bottom: 10),
                           style: AppTextstyle.bodyTextStyle(

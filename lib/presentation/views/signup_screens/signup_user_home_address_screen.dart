@@ -76,8 +76,8 @@ class SignUpUserHomeAddressScreen extends ConsumerWidget {
                     // titleTextColor: Colors.black,
                     icon: Image.asset(
                       AppAssets.iconArrowDownBlack,
-                      height: 11.h,
-                      width: 22.w,
+                      height: 9.h,
+                      width: 20.w,
                       color: context.theme.colorTheme.whiteColor,
                     ),
                   ),
@@ -134,6 +134,8 @@ class SignUpUserHomeAddressScreen extends ConsumerWidget {
                   ),
                   16.spaceY,
                   TextFieldWidget(
+                    contentPadding: const EdgeInsets.only(left: 15, bottom: 4),
+                    height: 53,
                     hintText: getTranslated('address_line_01', context),
                     hintStyle:
                         AppTextstyle.bodyTextStyle(color: AppColors.grey),
@@ -142,21 +144,28 @@ class SignUpUserHomeAddressScreen extends ConsumerWidget {
                   ),
                   16.spaceY,
                   TextFieldWidget(
-                    hintText: getTranslated('address_line_01', context),
+                    contentPadding: const EdgeInsets.only(left: 15, bottom: 4),
+                    height: 53,
+                    hintText: getTranslated('address_line_02', context),
                     hintStyle:
                         AppTextstyle.bodyTextStyle(color: AppColors.grey),
                     style: AppTextstyle.bodyTextStyle(
                         color: context.theme.colorTheme.whiteColor),
                   ),
                   4.spaceY,
-                  Text(
-                    getTranslated('optional', context),
-                    style: AppTextstyle.bodyTextStyle(
-                        fontSize: 12.sp, color: Colors.grey),
-                    overflow: TextOverflow.clip,
+                  Padding(
+                    padding: const EdgeInsets.only(left: 8),
+                    child: Text(
+                      getTranslated('optional', context),
+                      style: AppTextstyle.bodyTextStyle(
+                          fontSize: 12.sp, color: Colors.grey),
+                      overflow: TextOverflow.clip,
+                    ),
                   ),
                   16.spaceY,
                   TextFieldWidget(
+                    contentPadding: const EdgeInsets.only(left: 15, bottom: 4),
+                    height: 53,
                     hintText: getTranslated('city', context),
                     hintStyle:
                         AppTextstyle.bodyTextStyle(color: AppColors.grey),

@@ -10,6 +10,7 @@ import 'package:etbank_business_app/resources/localization/language_constrants.d
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../constants/app_assets.dart';
 import '../../../constants/app_colors.dart';
 import '../../../constants/static_data/signup_screen_static_data.dart';
 import '../../../providers/signup_provider.dart';
@@ -31,7 +32,18 @@ class SignUpPrimaryReasonForEtBankScreen extends ConsumerWidget {
         child: Scaffold(
           extendBody: true,
           backgroundColor: AppColors.transparent,
-          appBar: const CommonAppBar(),
+          appBar: CommonAppBar(
+            leading: Padding(
+              padding: const EdgeInsets.all(17.0),
+              child: GestureDetector(
+                onTap: () => Navigator.pop(context),
+                child: Image.asset(
+                  AppAssets.arrowLeftShort,
+                  color: context.theme.colorTheme.whiteColor,
+                ),
+              ),
+            ),
+          ),
           body: Padding(
             padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
             child: Column(
@@ -44,10 +56,12 @@ class SignUpPrimaryReasonForEtBankScreen extends ConsumerWidget {
                 ),
                 36.spaceY,
                 BlackContainerWidget(
+                  borderRadius: 12,
                   color: context.theme.colorTheme.halfWhiteToBlack,
                   child: SizedBox(
                     height: 280.h,
                     child: ListView.builder(
+                        physics: const NeverScrollableScrollPhysics(),
                         itemCount: reasonsForUsingEtBank.length,
                         itemBuilder: (context, index) {
                           return Consumer(builder: (context, ref, child) {

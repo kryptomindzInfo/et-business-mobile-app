@@ -43,11 +43,11 @@ class AddNewCustomerScreen extends ConsumerWidget {
                   title: getTranslated('add_new_customer', context),
                   // imageicon: AppAssets.arrowLeft,
                 ),
-                8.spaceY,
+                27.spaceY,
                 AccountDetailsButtonsWidget(
                   provider: invoiceRequestProvider,
                 ),
-                24.spaceY,
+                33.spaceY,
                 TextFieldWidget(
                   containerColor:
                       context.theme.colorTheme.businessDetailsContainer,

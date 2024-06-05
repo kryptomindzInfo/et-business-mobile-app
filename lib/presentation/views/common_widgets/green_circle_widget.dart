@@ -5,15 +5,16 @@ import '../../../constants/app_colors.dart';
 
 class GreenCircleWidget extends ConsumerWidget {
   final Widget widget;
-  const GreenCircleWidget({super.key, required this.widget});
+  final double? radius;
+  const GreenCircleWidget({super.key, required this.widget, this.radius});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return CircleAvatar(
-      radius: 23,
+      radius: radius ?? 23,
       backgroundColor: context.theme.colorTheme.requestIconBGcolor,
       child: Padding(
-        padding: const EdgeInsets.all(7),
+        padding: const EdgeInsets.all(8),
         child: widget,
       ),
     );

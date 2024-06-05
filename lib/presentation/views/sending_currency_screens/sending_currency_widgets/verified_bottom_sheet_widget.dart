@@ -7,6 +7,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 class VerifiedBottomSheetWidget extends ConsumerWidget {
   final Widget title;
   final Widget description;
+  final Widget? spaceBtw;
   final double? height;
   final Color? color;
   final EdgeInsetsGeometry? padding;
@@ -16,7 +17,8 @@ class VerifiedBottomSheetWidget extends ConsumerWidget {
       required this.description,
       this.height,
       this.color,
-      this.padding});
+      this.padding,
+      this.spaceBtw});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -36,7 +38,7 @@ class VerifiedBottomSheetWidget extends ConsumerWidget {
           ),
           26.spaceY,
           title,
-          34.spaceY,
+          spaceBtw ?? 34.spaceY,
           Padding(
             padding: padding ?? const EdgeInsets.symmetric(horizontal: 70),
             child: description,

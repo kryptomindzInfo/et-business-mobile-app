@@ -6,21 +6,22 @@ class CustomButton extends StatelessWidget {
   final VoidCallback onPressed;
   final String text;
   final Color backgroundColor;
+  final Color? borderColor;
   final Color textColor;
   final double borderRadius;
   final double width;
   final double height;
 
-  const CustomButton({
-    super.key,
-    required this.onPressed,
-    required this.text,
-    this.backgroundColor = Colors.blue,
-    this.textColor = Colors.white,
-    this.borderRadius = 8.0,
-    this.width = double.infinity,
-    this.height = 50.0,
-  });
+  const CustomButton(
+      {super.key,
+      required this.onPressed,
+      required this.text,
+      this.backgroundColor = Colors.blue,
+      this.textColor = Colors.white,
+      this.borderRadius = 8.0,
+      this.width = double.infinity,
+      this.height = 50.0,
+      this.borderColor});
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +33,7 @@ class CustomButton extends StatelessWidget {
         decoration: BoxDecoration(
           color: backgroundColor,
           borderRadius: BorderRadius.circular(borderRadius),
-          border: Border.all(color: AppColors.white),
+          border: Border.all(color: borderColor ?? AppColors.white),
         ),
         child: Center(
           child: Text(

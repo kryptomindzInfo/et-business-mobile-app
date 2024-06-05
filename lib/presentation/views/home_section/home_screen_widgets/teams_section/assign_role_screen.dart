@@ -28,8 +28,27 @@ class AssignRoleScreen extends ConsumerWidget {
       child: BackgroundImageWidget(
         child: Scaffold(
           backgroundColor: AppColors.transparent,
-          appBar: const CommonAppBar(
+          appBar: CommonAppBar(
             etBankLogo: true,
+            actions: [
+              Padding(
+                padding: const EdgeInsets.only(right: 26),
+                child: GestureDetector(
+                  onTap: () {
+                    // Navigation.pushNamed(AssignRoleScreen.routeName);
+                  },
+                  child: Container(
+                    height: 28,
+                    width: 28,
+                    decoration: const BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: AppColors.yellowGreen,
+                        image: DecorationImage(
+                            image: AssetImage(AppAssets.plusicon), scale: 2)),
+                  ),
+                ),
+              ),
+            ],
           ),
           body: SingleChildScrollView(
             child: Padding(
@@ -62,6 +81,8 @@ class AssignRoleScreen extends ConsumerWidget {
                   ),
                   30.spaceY,
                   CommonWhiteFlexibleCard(
+                    // padding: const EdgeInsets.fromLTRB(12, 16, 12, 30),
+                    borderRadius: 12,
                     color: context.theme.colorTheme.businessDetailsContainer,
                     border: Border.all(
                       color: context.theme.colorTheme.transparentToTeal,

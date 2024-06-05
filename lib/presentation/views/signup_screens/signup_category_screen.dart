@@ -47,6 +47,7 @@ class SignUpCategoryScreen extends ConsumerWidget {
                 ),
                 16.spaceY,
                 BlackContainerWidget(
+                    borderRadius: 12,
                     color: context.theme.colorTheme.halfWhiteToBlack,
                     child: SizedBox(
                       height: 540.h,

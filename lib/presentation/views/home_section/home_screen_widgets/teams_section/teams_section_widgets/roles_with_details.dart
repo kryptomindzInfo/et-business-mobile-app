@@ -12,8 +12,19 @@ class RolesWithDetails extends ConsumerWidget {
   final String? subtitile;
   final bool? isSelected;
   final VoidCallback? onpress;
+  final Color? buttonColor;
+  final Color? buttonTextColor;
+  final bool radioButton;
+
   const RolesWithDetails(
-      {super.key, this.isSelected, this.onpress, this.title, this.subtitile});
+      {super.key,
+      this.isSelected,
+      this.onpress,
+      this.title,
+      this.subtitile,
+      this.buttonColor,
+      this.buttonTextColor,
+      this.radioButton = true});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -26,12 +37,17 @@ class RolesWithDetails extends ConsumerWidget {
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Padding(
-                padding: const EdgeInsets.only(top: 3),
-                child: CustomRadioButtonWidget(
-                    isSelected: isSelected!, onTap: onpress),
-              ),
-              15.spaceX,
+              if (radioButton)
+                Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(top: 3),
+                      child: CustomRadioButtonWidget(
+                          isSelected: isSelected!, onTap: onpress),
+                    ),
+                    15.spaceX,
+                  ],
+                ),
               Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -61,14 +77,14 @@ class RolesWithDetails extends ConsumerWidget {
             width: 64,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(5),
-                color: AppColors.grassGreen),
+                color: buttonColor ?? AppColors.viewButton),
             child: Center(
               child: Text(
                 getTranslated("view", context),
                 style: AppTextstyle.bodyTextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.w500,
-                    color: AppColors.white),
+                    color: buttonTextColor ?? AppColors.black),
               ),
             ),
           )

@@ -54,10 +54,10 @@ class ReferBusinessMainCard extends ConsumerWidget {
               Container(
                 margin: const EdgeInsets.only(
                   left: 23,
-                  right: 65,
+                  right: 68,
                 ),
                 child: Text(
-                  getTranslated("refer_for_faster", context),
+                  getTranslated("refer_for_faster_updated", context),
                   style: AppTextstyle.headingTextStyle(
                       fontSize: 32,
                       fontWeight: FontWeight.w700,

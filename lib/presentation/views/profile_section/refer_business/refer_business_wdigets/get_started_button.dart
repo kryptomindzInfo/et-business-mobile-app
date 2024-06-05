@@ -18,7 +18,7 @@ class GetStartedButton extends ConsumerWidget {
       child: Container(
         // height: 39,
         // width: 120,
-        padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
+        padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(70),
             color: color ?? context.theme.colorTheme.buttonColor),

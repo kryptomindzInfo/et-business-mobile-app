@@ -40,7 +40,7 @@ class CategoryWidget extends ConsumerWidget {
           Icon(
             Icons.arrow_forward_ios,
             color: context.theme.colorTheme.whiteColor,
-            size: 20,
+            size: 18,
           ),
         ],
       ),

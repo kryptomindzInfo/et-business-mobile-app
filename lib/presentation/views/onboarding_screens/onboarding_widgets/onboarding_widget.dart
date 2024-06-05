@@ -48,7 +48,7 @@ class OnboardingWidget extends StatelessWidget {
                 children: [
                   120.spaceY,
                   Padding(
-                    padding: const EdgeInsets.only(left: 35, right: 27),
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: Column(
                       children: [
                         Row(
@@ -92,7 +92,7 @@ class OnboardingWidget extends StatelessWidget {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsets.only(left: 35, right: 35, top: 10),
+                        const EdgeInsets.only(left: 20, right: 20, top: 10),
                     child: SizedBox(
                       width: 320.w,
                       child: Text(
@@ -106,10 +106,10 @@ class OnboardingWidget extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    height: 5.h,
+                    height: 16.h,
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(left: 35, right: 35),
+                    padding: const EdgeInsets.only(left: 20, right: 20),
                     child: SizedBox(
                       width: 317.w,
                       child: Text(

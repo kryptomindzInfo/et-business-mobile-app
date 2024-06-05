@@ -72,7 +72,7 @@ class SignUpVerifyIdentitiesScreen extends ConsumerWidget {
                           ),
                           icon: DirectorButtonWidget(
                             padding: const EdgeInsets.symmetric(
-                                horizontal: 9, vertical: 10),
+                                horizontal: 9, vertical: 8),
                             title: getTranslated('verify', context),
                             buttonColor: AppColors.tealColor.withOpacity(0.3),
                             titleTextStyle: AppTextstyle.bodyTextStyle(
@@ -92,7 +92,7 @@ class SignUpVerifyIdentitiesScreen extends ConsumerWidget {
                           ),
                           icon: DirectorButtonWidget(
                             padding: const EdgeInsets.symmetric(
-                                horizontal: 9, vertical: 10),
+                                horizontal: 9, vertical: 8),
                             title: getTranslated('verify', context),
                             buttonColor: AppColors.tealColor.withOpacity(0.3),
                             titleTextStyle: AppTextstyle.bodyTextStyle(

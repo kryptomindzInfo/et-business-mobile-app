@@ -28,7 +28,8 @@ class CardsMainWidget extends ConsumerWidget {
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(12),
               color: context.theme.colorTheme.businessDetailsContainer,
-              border: Border.all(color: context.theme.colorTheme.borderColor)),
+              border: Border.all(
+                  color: context.theme.colorTheme.transparentToTeal)),
           child: Padding(
             padding: const EdgeInsets.only(left: 27, right: 29),
             child: Column(
@@ -100,11 +101,29 @@ class CardsMainWidget extends ConsumerWidget {
                       fontWeight: FontWeight.w500),
                 ),
                 20.spaceY,
-                Image.asset(
-                  AppAssets.teamsCard,
-                  height: 25,
-                  color: context.theme.colorTheme.yellowToGreen,
-                )
+                Row(
+                  children: [
+                    Image.asset(
+                      AppAssets.clock2x,
+                      height: 22,
+                      width: 22,
+                      color: context.theme.colorTheme.yellowToGreen,
+                    ),
+                    13.spaceX,
+                    Text(
+                      getTranslated("Team cards will appear here", context),
+                      style: AppTextstyle.bodyTextStyle(
+                          color: context.theme.colorTheme.teamText,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500),
+                    ),
+                  ],
+                ),
+                // Image.asset(
+                //   AppAssets.teamsCard,
+                //   height: 25,
+                //   color: context.theme.colorTheme.yellowToGreen,
+                // )
               ],
             ),
           ),

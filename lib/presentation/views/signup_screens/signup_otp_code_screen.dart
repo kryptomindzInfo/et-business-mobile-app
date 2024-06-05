@@ -104,7 +104,7 @@ class OTPVerification extends ConsumerWidget {
                       text: getTranslated(
                           text2 ?? 'already_have_account', context),
                       style: AppTextstyle.bodyTextStyle(
-                        fontSize: 16.sp,
+                        fontSize: 14.sp,
                         color: text2Color ??
                             context.theme.colorTheme.headerDescriptionColor,
                       ),

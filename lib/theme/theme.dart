@@ -29,3 +29,6 @@ ThemeData darkTheme = ThemeData(
             systemNavigationBarColor: AppColors.darkTeal,
             systemNavigationBarIconBrightness: Brightness.light)),
     extensions: [AppTheme.dark()]);
+
+themeImage(BuildContext context, String light, String dark) =>
+    Theme.of(context).brightness == Brightness.dark ? dark : light;

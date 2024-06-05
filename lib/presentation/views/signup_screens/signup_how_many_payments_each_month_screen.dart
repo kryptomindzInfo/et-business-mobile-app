@@ -45,11 +45,12 @@ class SignUpHowManyPaymentsEachMonthScreen extends ConsumerWidget {
               ),
               36.spaceY,
               BlackContainerWidget(
+                borderRadius: 12,
                 color: context.theme.colorTheme.halfWhiteToBlack,
                 child: SizedBox(
                   height: 230.h,
                   child: Padding(
-                    padding: const EdgeInsets.only(left: 16, top: 20),
+                    padding: const EdgeInsets.only(left: 0, top: 15),
                     child: ListView.builder(
                         physics: const NeverScrollableScrollPhysics(),
                         itemCount: paymentRanges.length,

@@ -32,8 +32,18 @@ class MarkAsPaidScreen extends ConsumerWidget {
       child: BackgroundImageWidget(
         child: Scaffold(
           backgroundColor: AppColors.transparent,
-          appBar: const CommonAppBar(
+          appBar: CommonAppBar(
             etBankLogo: true,
+            leading: Padding(
+              padding: const EdgeInsets.all(17.0),
+              child: GestureDetector(
+                onTap: () => Navigator.pop(context),
+                child: Image.asset(
+                  AppAssets.arrowLeftShort,
+                  color: context.theme.colorTheme.whiteColor,
+                ),
+              ),
+            ),
           ),
           body: Padding(
             padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),

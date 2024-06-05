@@ -9,6 +9,7 @@ class SwitchButtonWidget extends ConsumerWidget {
   final bool value;
   final String title;
   final TextStyle? titleTextStyle;
+  final double? scale;
   final void Function(bool?)? onChanged;
 
   const SwitchButtonWidget(
@@ -16,7 +17,8 @@ class SwitchButtonWidget extends ConsumerWidget {
       required this.value,
       required this.title,
       required this.onChanged,
-      this.titleTextStyle});
+      this.titleTextStyle,
+      this.scale});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -34,10 +36,13 @@ class SwitchButtonWidget extends ConsumerWidget {
           ),
         ),
         8.spaceX,
-        Switch(
-          value: value,
-          onChanged: onChanged,
-          activeColor: AppColors.baseGreenColor,
+        Transform.scale(
+          scale: scale ?? 1,
+          child: Switch(
+            value: value,
+            onChanged: onChanged,
+            activeColor: AppColors.baseGreenColor,
+          ),
         ),
       ],
     );

@@ -48,7 +48,7 @@ class AddDocBottomSheetWidget extends ConsumerWidget {
               ),
             ),
           ),
-          10.spaceY,
+          22.spaceY,
           CommonIconTitleIconButton(
               isForwardIcon: false,
               iconImage: AppAssets.galleryicon,

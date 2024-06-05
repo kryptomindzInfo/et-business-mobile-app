@@ -22,23 +22,30 @@ import '../../../profile_section/refer_business/refer_business_wdigets/get_start
 // ignore: must_be_immutable
 class GetMoreBusinessMainCard extends ConsumerWidget {
   List<Widget> screens = [
-    const OnboardingWidget(
+    OnboardingWidget(
       title: 'exchange_money',
       subtitle: 'exhange_money_description',
       image: AppAssets.exchangemoneyicon,
+      scale: 2,
+      topImageColor: appContext.theme.colorTheme.whiteColor,
     ),
-    const OnboardingWidget(
+    OnboardingWidget(
       title: 'create_accounts',
       subtitle: 'create_accounts_description',
       image: AppAssets.ulimitedaccounticon,
+      scale: 2.5,
+      topImageColor: appContext.theme.colorTheme.whiteColor,
     ),
     OnboardingWidget(
       title: 'recieve_international_payment',
       subtitle: 'recieve_international_payment_description',
       image: AppAssets.internationpaymenticon,
-      scale: 2,
+      scale: 2.5,
       isButtons: true,
+      topImageColor: appContext.theme.colorTheme.whiteColor,
+
       widget: CustomButton(
+        borderColor: AppColors.transparent,
         onPressed: () {
           Navigation.pushNamed(BaseBottomNavBar.routeName);
         },
@@ -86,53 +93,64 @@ class GetMoreBusinessMainCard extends ConsumerWidget {
             ),
           ),
         ),
-        Container(
-          height: 373,
-          width: double.infinity,
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(28),
-              // color: AppColors.transparent,
-              color: context.theme.colorTheme.greenToTeal.withOpacity(0.7),
-              // color: const Color(0xff0D2226).withOpacity(0.6),
-              border: Border.all(
-                  color: context.theme.colorTheme.transparentToTeal)),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.end,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(left: 15, bottom: 55),
-                child: Image.asset(
-                  AppAssets.appbarLogo,
-                  // height: 130,
-                  scale: 1.50,
-                ),
+        Column(
+          children: [
+            Container(
+              height: 292,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                  borderRadius: const BorderRadius.only(
+                    topLeft: Radius.circular(12),
+                    topRight: Radius.circular(12),
+                  ),
+                  // color: AppColors.transparent,
+                  color: context.theme.colorTheme.greenToTeal.withOpacity(0.7),
+                  // color: const Color(0xff0D2226).withOpacity(0.6),
+                  border: Border.all(
+                      color: context.theme.colorTheme.transparentToTeal)),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 15, bottom: 55),
+                    child: Image.asset(
+                      AppAssets.appbarLogo,
+                      // height: 130,
+                      scale: 1.50,
+                    ),
+                  ),
+                  Container(
+                    margin: const EdgeInsets.only(
+                      left: 25,
+                      right: 55,
+                    ),
+                    child: Text(
+                      getTranslated("get_more_from_business", context),
+                      style: AppTextstyle.headingTextStyle(
+                          fontSize: 32,
+                          fontWeight: FontWeight.bold,
+                          color: AppColors.white,
+                          overflow: TextOverflow.clip),
+                    ),
+                  ),
+                  22.spaceY,
+                ],
               ),
-              Container(
-                margin: const EdgeInsets.only(
-                  left: 25,
-                  right: 55,
-                ),
-                child: Text(
-                  getTranslated("get_more_from_business", context),
-                  style: AppTextstyle.headingTextStyle(
-                      fontSize: 32,
-                      fontWeight: FontWeight.bold,
-                      color: AppColors.white,
-                      overflow: TextOverflow.clip),
-                ),
+            ),
+            GetStartedSection(
+              borderRadius: const BorderRadius.only(
+                bottomLeft: Radius.circular(12),
+                bottomRight: Radius.circular(12),
               ),
-              22.spaceY,
-              GetStartedSection(
-                title: getTranslated("easier_way_to_manage", context),
-                onpress: () {
-                  console(screens);
-                  Navigation.pushNamed(Onboarding.routeName,
-                      arguments: OnboardingArgs(screens: screens, width: 100));
-                },
-              )
-            ],
-          ),
+              title: getTranslated("easier_way_to_manage", context),
+              onpress: () {
+                console(screens);
+                Navigation.pushNamed(Onboarding.routeName,
+                    arguments: OnboardingArgs(screens: screens, width: 108));
+              },
+            ),
+          ],
         ),
       ],
     );

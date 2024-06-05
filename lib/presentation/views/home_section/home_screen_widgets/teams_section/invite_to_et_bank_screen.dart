@@ -6,6 +6,7 @@ import 'package:etbank_business_app/presentation/views/common_widgets/app_common
 import 'package:etbank_business_app/presentation/views/common_widgets/header_icon_with_text.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/parent_theme_scaffold.dart';
 import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/teams_section/assign_role_screen.dart';
+import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/teams_section/roles_screen.dart';
 import 'package:etbank_business_app/presentation/views/signup_screens/signup_widgets/user_personal_details_widget.dart';
 import 'package:etbank_business_app/resources/localization/language_constrants.dart';
 import 'package:flutter/material.dart';
@@ -50,16 +51,20 @@ class InviteToETBankScreen extends ConsumerWidget {
             ),
           ),
           bottomNavigationBar: Padding(
-            padding: const EdgeInsets.only(bottom: 50, left: 20, right: 20),
+            padding: const EdgeInsets.only(bottom: 50, left: 50, right: 50),
             child: CommonButton(
-              height: 48,
+              height: 38,
               title: getTranslated("continue", context),
+              titleStyle: AppTextstyle.headingTextStyle(
+                  color: AppColors.mateBlackColor,
+                  fontSize: 14,
+                  fontWeight: FontWeight.w400),
               mainButtonColor: true
                   ? context.theme.colorTheme.buttonColor
                   : context.theme.colorTheme.buttonDisabledColor,
-              titleColor: AppColors.mateBlackColor,
+              // titleColor: AppColors.mateBlackColor,
               onpress: () {
-                Navigation.pushNamed(AssignRoleScreen.routeName);
+                Navigation.pushNamed(RolesScreen.routeName);
               },
             ),
           ),

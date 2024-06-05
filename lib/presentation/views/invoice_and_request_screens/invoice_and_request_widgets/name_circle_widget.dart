@@ -29,7 +29,7 @@ class NameCircleWidget extends ConsumerWidget {
         borderRadius: BorderRadius.circular(8),
       ),
       child: Padding(
-        padding: const EdgeInsets.fromLTRB(15, 18, 20, 20),
+        padding: const EdgeInsets.fromLTRB(15, 18, 20, 18),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -71,6 +71,7 @@ class NameCircleWidget extends ConsumerWidget {
                 if (trailingHintText != null)
                   Text(
                     getTranslated(trailingHintText ?? '', context),
+                    textAlign: TextAlign.end,
                     style: AppTextstyle.bodyTextStyle(
                       fontSize: 14,
                       color: context.theme.colorTheme.whiteColor,

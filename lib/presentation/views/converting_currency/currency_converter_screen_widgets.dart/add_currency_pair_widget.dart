@@ -20,7 +20,7 @@ class AddCurrencyPairWidget extends ConsumerWidget {
         InkWell(
           onTap: onpress,
           child: IconContainer(
-            image: AppAssets.addingicon,
+            image: AppAssets.addIcon,
             imageColor: context.theme.colorTheme.bottomSheetColor,
             bgColor: context.theme.colorTheme.yellowToGreen,
           ),

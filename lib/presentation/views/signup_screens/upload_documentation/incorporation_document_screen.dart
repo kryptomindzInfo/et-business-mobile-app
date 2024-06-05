@@ -1,3 +1,4 @@
+import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/navigation/navigation.dart';
@@ -11,6 +12,7 @@ import 'package:etbank_business_app/resources/localization/language_constrants.d
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../../constants/app_assets.dart';
 import 'upload_doc_widgets/provide_valid_doc_widget.dart';
 
 class IncorporationDocumentScreen extends ConsumerWidget {
@@ -22,8 +24,18 @@ class IncorporationDocumentScreen extends ConsumerWidget {
     return ParentThemeScaffold(
       child: Scaffold(
         backgroundColor: context.theme.colorTheme.backgroundColor,
-        appBar: const CommonAppBar(
+        appBar: CommonAppBar(
           etBankLogo: true,
+          leading: Padding(
+            padding: const EdgeInsets.all(17.0),
+            child: GestureDetector(
+              onTap: () => Navigator.pop(context),
+              child: Image.asset(
+                AppAssets.arrowLeftShort,
+                color: context.theme.colorTheme.whiteColor,
+              ),
+            ),
+          ),
         ),
         body: SingleChildScrollView(
           child: Padding(
@@ -38,13 +50,13 @@ class IncorporationDocumentScreen extends ConsumerWidget {
                 const ProviderValidDocWidget(),
                 20.spaceY,
                 const UploadDocWidget(),
-                30.spaceY,
+                68.spaceY,
                 CommonButton(
                   title: getTranslated("continue", context),
                   mainButtonColor: true
                       ? context.theme.colorTheme.buttonColor
                       : context.theme.colorTheme.buttonDisabledColor,
-                  titleColor: context.theme.colorTheme.whiteColor,
+                  titleColor: AppColors.black,
                   onpress: () {
                     Navigation.pushNamed(ReviewScreen.routeName);
                   },

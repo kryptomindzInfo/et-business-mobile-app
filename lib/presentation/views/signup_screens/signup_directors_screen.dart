@@ -30,8 +30,8 @@ class SignUpDirectorsScreen extends ConsumerWidget {
           extendBody: false,
           backgroundColor: AppColors.transparent,
           appBar: const CommonAppBar(
-              // etBankLogo: true,
-              ),
+            etBankLogo: true,
+          ),
           body: SingleChildScrollView(
             child: Padding(
               padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
@@ -58,11 +58,12 @@ class SignUpDirectorsScreen extends ConsumerWidget {
                         color: context.theme.colorTheme.normalTextColor),
                     icon: DirectorButtonWidget(
                       padding: const EdgeInsets.symmetric(
-                          horizontal: 15, vertical: 10),
+                          horizontal: 15, vertical: 8),
                       title: getTranslated('edit', context),
                       buttonColor: AppColors.tealColor.withOpacity(0.3),
                       titleTextStyle: AppTextstyle.bodyTextStyle(
                           color: context.theme.colorTheme.whiteColor,
+                          fontWeight: FontWeight.w500,
                           fontSize: 16.sp),
                     ),
                     onTap: () {},

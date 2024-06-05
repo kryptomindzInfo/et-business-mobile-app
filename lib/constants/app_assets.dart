@@ -108,6 +108,7 @@ class AppAssets {
   static const teamicon = "${iconsDir}teamicon.png";
   static const hubcardsicon = "${iconsDir}hubcardsicon.png";
   static const rocket = "${iconsDir}rocket.png";
+  static const rocketLight = "${iconsDir}rocket_image_light.png";
   static const computer = "${iconsDir}computer.png";
   static const shareicon = "${iconsDir}shareicon.png";
   static const plus = "${iconsDir}plus.png";
@@ -200,6 +201,7 @@ class AppAssets {
   static const hubRequest = "${iconsDir}hub_request.png";
   static const hubSchedule = "${iconsDir}hub_schedule.png";
   static const saveMoney = "${imagesDir}save_money.png";
+  static const saveMoneyLight = "${imagesDir}save_money_light.png";
   static const offers = "${imagesDir}offers.png";
   static const appInBrowser = "${imagesDir}app_in_browser.png";
   static const notifImage = "${imagesDir}notif_image.png";
@@ -222,4 +224,5 @@ class AppAssets {
   static const theme = "${iconsDir}theme.png";
   static const exchangeWhite = "${iconsDir}exchange_wh.png";
   static const invertedArrows = "${iconsDir}inverted_arrows.png";
+  static const clock2x = "${iconsDir}clock2x.png";
 }

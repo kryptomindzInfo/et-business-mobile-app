@@ -46,4 +46,7 @@ class AppColors {
   static const textHalfWhite = Color(0xFF9BA9BB);
   static final addCurrency = const Color(0xFF4D4D4D).withOpacity(0.5);
   static const darkIndigo = Color(0xFF677AFF);
+  static const teamTextLight = Color(0xFF0D2226);
+  static const teamTextDark = Color(0xFFE3E5E5);
+  static const eyeColor = Color(0xFF939393);
 }

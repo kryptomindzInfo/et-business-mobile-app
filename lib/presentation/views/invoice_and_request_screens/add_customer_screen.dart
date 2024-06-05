@@ -60,18 +60,19 @@ class AddCustomerScreen extends ConsumerWidget {
                   hintText: getTranslated('search', context),
                   onChanged: (value) {},
                 ),
-                54.spaceY,
+                32.spaceY,
                 Text(
                   getTranslated('cant_find_who_you_are_looking_for', context),
                   style: AppTextstyle.headingTextStyle(
                     color: AppColors.grey,
-                    fontSize: 16,
+                    fontSize: 14,
                   ),
                 ),
                 18.spaceY,
                 AddCounterPartyWidget(
                   borderRadius: 12,
-                  padding: const EdgeInsets.all(20),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
                   title: 'add_new_customer',
                   onTap: () {
                     Navigation.pushNamed(AddNewCustomerScreen.routeName);

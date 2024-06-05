@@ -62,7 +62,7 @@ class SignUpWhereYouConductBusinessScreen extends ConsumerWidget {
                   24.spaceY,
                   BusinessDetailsWhiteContainerWidet(
                     padding: const EdgeInsets.symmetric(
-                        horizontal: 15, vertical: 28),
+                        horizontal: 15, vertical: 27),
                     title: getTranslated('add_countries', context),
                     titleTextColor: context.theme.colorTheme.primaryColor,
                   ),

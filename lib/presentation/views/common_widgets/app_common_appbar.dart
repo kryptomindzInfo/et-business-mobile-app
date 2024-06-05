@@ -1,5 +1,5 @@
 import 'package:etbank_business_app/extensions/build_context.dart';
-import 'package:etbank_business_app/providers/theme_provider.dart';
+import 'package:etbank_business_app/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../constants/app_assets.dart';
@@ -19,7 +19,6 @@ class CommonAppBar extends ConsumerWidget implements PreferredSizeWidget {
       this.actions});
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    ThemeData theme = Theme.of(context);
     return Padding(
       padding: EdgeInsets.only(
         top: topPadding ?? 0,
@@ -30,9 +29,8 @@ class CommonAppBar extends ConsumerWidget implements PreferredSizeWidget {
         surfaceTintColor: Colors.transparent,
         title: etBankLogo == true
             ? Image.asset(
-                theme.brightness == Brightness.dark
-                    ? AppAssets.appbarLogo
-                    : AppAssets.appbarLogoDark,
+                themeImage(
+                    context, AppAssets.appbarLogoDark, AppAssets.appbarLogo),
                 height: 32,
                 width: 105,
               )
@@ -43,11 +41,6 @@ class CommonAppBar extends ConsumerWidget implements PreferredSizeWidget {
         iconTheme: IconThemeData(
           color: context.theme.colorTheme.whiteColor,
         ),
-        // systemOverlayStyle: SystemUiOverlayStyle(
-        //     // statusBarColor: context.theme.colorTheme.appBarColor,
-        //     ),
-        // backgroundColor: context.theme.colorTheme.bottomSheetColor,
-
         backgroundColor: context.theme.colorTheme.appBarColor,
       ),
     );
