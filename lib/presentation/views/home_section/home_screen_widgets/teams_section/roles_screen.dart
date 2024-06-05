@@ -33,9 +33,12 @@ class RolesScreen extends ConsumerWidget {
             etBankLogo: true,
             leading: Padding(
               padding: const EdgeInsets.all(17.0),
-              child: Image.asset(
-                AppAssets.arrowLeftShort,
-                color: context.theme.colorTheme.whiteColor,
+              child: GestureDetector(
+                onTap: () => Navigator.pop(context),
+                child: Image.asset(
+                  AppAssets.arrowLeftShort,
+                  color: context.theme.colorTheme.whiteColor,
+                ),
               ),
             ),
             actions: [
@@ -79,14 +82,14 @@ class RolesScreen extends ConsumerWidget {
                   ),
                   0.spaceY,
                   CommonWhiteFlexibleCard(
-                    padding: const EdgeInsets.fromLTRB(12, 16, 12, 30),
+                    padding: const EdgeInsets.fromLTRB(12, 16, 12, 0),
                     borderRadius: 12,
                     color: context.theme.colorTheme.businessDetailsContainer,
                     border: Border.all(
                       color: context.theme.colorTheme.transparentToTeal,
                     ),
                     widget: SizedBox(
-                      height: 320,
+                      height: 330,
                       child: ListView.builder(
                         physics: const NeverScrollableScrollPhysics(),
                         itemCount:

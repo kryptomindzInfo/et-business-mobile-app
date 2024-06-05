@@ -108,7 +108,7 @@ class AppAssets {
   static const teamicon = "${iconsDir}teamicon.png";
   static const hubcardsicon = "${iconsDir}hubcardsicon.png";
   static const rocket = "${iconsDir}rocket.png";
-  static const rocketLight = "${iconsDir}rocket_image_light.png";
+  static const rocketLight = "${imagesDir}rocket_image_light.png";
   static const computer = "${iconsDir}computer.png";
   static const shareicon = "${iconsDir}shareicon.png";
   static const plus = "${iconsDir}plus.png";

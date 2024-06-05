@@ -28,7 +28,7 @@ class RegistrationLoginButtons extends ConsumerWidget {
             Navigation.pushNamed(SignUpEmailScreen.routeName);
           },
         ),
-        10.spaceX,
+        8.spaceX,
         RegistrationLoginCommonButton(
           buttonTitle: getTranslated("Login", context),
           buttoncolor: AppColors.tealColor,

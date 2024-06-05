@@ -11,6 +11,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../constants/app_assets.dart';
 import '../../../../../providers/pageview_provider.dart';
+import '../../../../../theme/theme.dart';
 import '../../../onboarding_screens/onboarding_widgets/linear_indicator_widget.dart';
 import '../../../onboarding_screens/onboarding_widgets/onboarding_widget.dart';
 
@@ -21,7 +22,9 @@ class UpgradeScreens extends ConsumerWidget {
       title: 'upgrade1title',
       subtitle: 'upgrade1subtitle',
       // subTitleColor: AppColors.yellowGreen,
-      image: AppAssets.saveMoney,
+      // image: AppAssets.saveMoney,
+      image:
+          themeImage(appContext, AppAssets.saveMoneyLight, AppAssets.saveMoney),
       topImage: AppAssets.gifticon,
       topImageColor: appContext.theme.colorTheme.whiteToGreen,
       topText: 'Rewards',
@@ -58,7 +61,10 @@ class UpgradeScreens extends ConsumerWidget {
                 title: "your_plan_doesnt",
                 subtitle: "Upgrade_your_plan",
                 buttonTitle: "upgrade_plan",
-                image: AppAssets.rocketImage,
+                // image: AppAssets.rocketImage,
+                image: themeImage(
+                    appContext, AppAssets.rocketLight, AppAssets.rocketImage),
+
                 buttonPadding: 120.spaceY,
               ),
             );

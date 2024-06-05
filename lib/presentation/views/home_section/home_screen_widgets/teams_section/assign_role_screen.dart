@@ -88,7 +88,7 @@ class AssignRoleScreen extends ConsumerWidget {
                       color: context.theme.colorTheme.transparentToTeal,
                     ),
                     widget: SizedBox(
-                      height: 320,
+                      height: 330,
                       child: ListView.builder(
                         physics: const NeverScrollableScrollPhysics(),
                         itemCount:

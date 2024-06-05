@@ -6,6 +6,7 @@ import 'package:etbank_business_app/presentation/views/common_widgets/common_gre
 import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/teams_section/invite_to_et_bank_screen.dart';
 import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/teams_section/manage_roles_screen.dart';
 import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/teams_section/owner_screen.dart';
+import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/teams_section/roles_screen.dart';
 import 'package:etbank_business_app/resources/localization/language_constrants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -62,7 +63,8 @@ class TeamsWidget extends ConsumerWidget {
                 title: getTranslated("manage_role", context),
                 titleFontSize: 14,
                 onpress: () {
-                  Navigation.pushNamed(ManageRolesScreen.routeName);
+                  // Navigation.pushNamed(ManageRolesScreen.routeName);
+                  Navigation.pushNamed(RolesScreen.routeName);
                 },
               ),
               CommonGreenButton(
