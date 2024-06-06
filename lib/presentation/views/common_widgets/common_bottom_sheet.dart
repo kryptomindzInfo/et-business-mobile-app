@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import '../../../constants/app_colors.dart';
 
 showCommonModalSheet(BuildContext context, double height, Widget widget,
-    {CrossAxisAlignment? crossAxisAlignment, Color? color}) {
+    {CrossAxisAlignment? crossAxisAlignment, Color? color, double? margin}) {
   return showModalBottomSheet(
     context: appContext,
     isScrollControlled: true,
@@ -13,7 +13,7 @@ showCommonModalSheet(BuildContext context, double height, Widget widget,
     builder: (context) => Container(
       height: height,
       width: double.infinity,
-      // margin: const EdgeInsets.only(left: 10, right: 10),
+      margin: EdgeInsets.symmetric(horizontal: margin ?? 00),
       decoration: BoxDecoration(
         color: color ?? context.theme.colorTheme.commonBottomSheetColor,
         borderRadius: const BorderRadius.only(

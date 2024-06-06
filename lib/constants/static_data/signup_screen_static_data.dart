@@ -226,7 +226,13 @@ List<Map> _verificationData = [
         context.theme.colorTheme.whiteToGrey,
     "statusicon": AppAssets.whitehourglass,
     "ontap": () {
-      showCommonModalSheet(appContext, 300, const BusinessDetailsBottomSheet());
+      showCommonModalSheet(
+        appContext,
+        300,
+        const BusinessDetailsBottomSheet(),
+        margin: 15,
+        // margin: const EdgeInsets.symmetric(horizontal: 0),
+      );
     },
     "imageColor": (BuildContext context) =>
         context.theme.colorTheme.whiteToGrey,

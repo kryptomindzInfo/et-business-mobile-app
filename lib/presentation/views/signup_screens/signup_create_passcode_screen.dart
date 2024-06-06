@@ -52,9 +52,12 @@ class SignUpCreatePassCodeScreen extends ConsumerWidget {
                       animationType: AnimationType.fade,
                       mainAxisAlignment: MainAxisAlignment.center,
                       cursorColor: context.theme.colorTheme.passCodeCursor,
+                      hintCharacter: '●',
+                      hintStyle: TextStyle(color: Colors.grey.withOpacity(0.4)),
                       textStyle: TextStyle(
                           color: context.theme.colorTheme.passCodeText),
                       pinTheme: PinTheme(
+                        errorBorderColor: AppColors.transparent,
                         shape: PinCodeFieldShape.box,
                         borderRadius: BorderRadius.circular(12),
                         fieldOuterPadding:
@@ -69,8 +72,8 @@ class SignUpCreatePassCodeScreen extends ConsumerWidget {
                             context.theme.colorTheme.passCodeBlock,
                         activeColor: AppColors.transparent,
                         selectedColor: AppColors.transparent,
-                        inactiveColor:
-                            context.theme.colorTheme.transparentToColor,
+                        disabledColor: AppColors.transparent,
+                        inactiveColor: AppColors.transparent,
                         activeBorderWidth: 0,
                         errorBorderWidth: 0,
                         disabledBorderWidth: 0,

@@ -3,7 +3,6 @@ import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/icon_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../../../../constants/app_colors.dart';
 import '../../../../../constants/app_textstyle.dart';
 import '../../../../../resources/localization/language_constrants.dart';
 
