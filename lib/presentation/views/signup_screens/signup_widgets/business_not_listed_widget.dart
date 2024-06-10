@@ -31,10 +31,12 @@ class BusinessNotListedWidet extends ConsumerWidget {
       onTap: onTap,
       child: Container(
         // width: 500,
-        height: 44,
+        height: 60,
         // margin: EdgeInsets.only(left: 0, right: 0),
+        // padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 22),
         decoration: BoxDecoration(
             // color: AppColors.white,
+
             color: context.theme.colorTheme.businessDetailsContainer,
             borderRadius: const BorderRadius.all(
               Radius.circular(12),
@@ -55,7 +57,7 @@ class BusinessNotListedWidet extends ConsumerWidget {
                     ref.read(signUpStateProvider).setknownByDifferentName();
                   },
                 ),
-              if (isRadioButton == null && isRadioButton != true) 15.spaceX,
+              if (isRadioButton == null && isRadioButton != true) 25.spaceX,
               if (image != null)
                 Padding(
                   padding: const EdgeInsets.only(right: 24.0),

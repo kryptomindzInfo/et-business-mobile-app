@@ -1,3 +1,4 @@
+import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/presentation/views/common_widgets/app_common_appbar.dart';
@@ -54,7 +55,10 @@ class SignUpVerificationsScreen extends ConsumerWidget {
                       cardtitle: getTranslated(data[index]["title"], context),
                       imageIcon: data[index]["icon"],
                       status: getTranslated(data[index]["status"], context),
+                      statusColor: data[index]["status_color"](context),
                       statusIcon: data[index]["statusicon"],
+                      statusIconColor:
+                          data[index]["status_icon_color"](context),
                       onpress: data[index]["ontap"],
                       color: data[index]['color'](context),
                       titleColor: data[index]['titleColor'](context),

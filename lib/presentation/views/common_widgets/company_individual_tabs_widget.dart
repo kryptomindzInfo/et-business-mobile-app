@@ -1,8 +1,6 @@
 import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
-import '../../../constants/app_colors.dart';
 import '../../../constants/app_textstyle.dart';
 import '../../../globals/button_color.dart';
 import '../../../resources/localization/language_constrants.dart';
@@ -35,10 +33,12 @@ class CompanyIndividualTabsWidget extends ConsumerWidget {
                     borderRadius: BorderRadius.circular(70),
                   ),
                   child: Padding(
-                    padding: const EdgeInsets.fromLTRB(44, 12, 44, 12),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 44, vertical: 12),
                     child: Text(
                       getTranslated('company', context),
                       style: AppTextstyle.bodyTextStyle(
+                        fontWeight: FontWeight.w500,
                         fontSize: 16,
                         color: companyButtonTextColor(
                             sendingCurrencyProW.companySelected),
@@ -69,6 +69,7 @@ class CompanyIndividualTabsWidget extends ConsumerWidget {
                       getTranslated('individual', context),
                       style: AppTextstyle.bodyTextStyle(
                         fontSize: 16,
+                        fontWeight: FontWeight.w500,
                         color: companyButtonTextColor(
                             !ref.watch(provider).companySelected),
                       ),

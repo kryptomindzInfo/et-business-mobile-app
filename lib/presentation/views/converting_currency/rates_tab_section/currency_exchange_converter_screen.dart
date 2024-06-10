@@ -16,6 +16,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../common_widgets/app_common_appbar.dart';
+import '../../signup_screens/signup_widgets/button_bottom_navigation_widget.dart';
 
 class CurrencyExchangeConverterScreen extends ConsumerWidget {
   static const String routeName = 'exchange_screen';
@@ -30,70 +31,79 @@ class CurrencyExchangeConverterScreen extends ConsumerWidget {
           appBar: const CommonAppBar(
             etBankLogo: true,
           ),
-          body: Padding(
-            padding: const EdgeInsets.only(left: 20, right: 20),
-            child: Column(
-              children: [
-                const HeaderIconWithTitle(
-                  // imageicon: AppAssets.arrowLeft,
-                  title: "SELL GBP",
-                  spaceBtw: 6,
-                  greenDescription: "£1 = 1.3601",
-                  fontsize: 31,
-                ),
-                17.spaceY,
-                Stack(
-                  children: [
-                    Column(
-                      children: [
-                        10.spaceY,
-                        CurrencyExchangeTextfield(
-                          controller: ref
-                              .watch(currencyScreenProvider)
-                              .firstCurrencyController,
-                        ),
-                        5.spaceY,
-                        CurrencyExchangeTextfield(
-                          controller: ref
-                              .watch(currencyScreenProvider)
-                              .secondCurrencyController,
-                        ),
-                        50.spaceY,
-                      ],
-                    ),
-                    Positioned(
-                      left: 250,
-                      top: 95,
-                      child: IconContainer(
-                        bgColor: context.theme.colorTheme.yellowToGreen,
-                        image: AppAssets.currencyExchange,
-                        scale: 1,
+          body: SingleChildScrollView(
+            child: Padding(
+              padding: const EdgeInsets.only(left: 20, right: 20),
+              child: Column(
+                children: [
+                  const HeaderIconWithTitle(
+                    // imageicon: AppAssets.arrowLeft,
+                    title: "SELL GBP",
+                    spaceBtw: 6,
+                    greenDescription: "£1 = 1.3601",
+                    fontsize: 31,
+                  ),
+                  17.spaceY,
+                  Stack(
+                    children: [
+                      Column(
+                        children: [
+                          10.spaceY,
+                          const CurrencyExchangeTextfield(
+                              // controller: ref
+                              //     .watch(currencyScreenProvider)
+                              //     .firstCurrencyController,
+                              ),
+                          5.spaceY,
+                          const CurrencyExchangeTextfield(
+                              // controller: ref
+                              //     .watch(currencyScreenProvider)
+                              //     .secondCurrencyController,
+                              ),
+                          50.spaceY,
+                        ],
                       ),
-                      //  Image.asset(
-                      //   AppAssets.convertericon,
-                      //   height: 32,
-                      //   color: context.theme.colorTheme.yellowToGreen,
-                      // ),
-                    ),
-                  ],
-                ),
-                PrimaryButton(
-                    minwidth: 288,
-                    color:
-                        ref.watch(currencyScreenProvider).activateButton == true
-                            ? context.theme.colorTheme.yellowGreenColor
-                            : AppColors.yellowGreen,
-                    text: Text(
-                      "Review Order",
-                      style: AppTextstyle.bodyTextStyle(
-                        color: context.theme.colorTheme.blackColor,
+                      Positioned(
+                        left: 150,
+                        top: 95,
+                        child: IconContainer(
+                          height: 30,
+                          width: 30,
+                          bgColor: context.theme.colorTheme.yellowToGreen,
+                          image: AppAssets.invertedArrows,
+                          imageColor: context.theme.colorTheme.bottomSheetColor,
+                          scale: 2,
+                        ),
+                        //  Image.asset(
+                        //   AppAssets.convertericon,
+                        //   height: 32,
+                        //   color: context.theme.colorTheme.yellowToGreen,
+                        // ),
                       ),
-                    ),
-                    onPressed: () {
-                      Navigation.pushNamed(CurrencySellScreen.routeName);
-                    })
-              ],
+                    ],
+                  ),
+                ],
+              ),
             ),
+          ),
+          bottomNavigationBar: ButtonBottomNavigationWidget(
+            children: [
+              PrimaryButton(
+                  minwidth: 288,
+                  color:
+                      ref.watch(currencyScreenProvider).activateButton == true
+                          ? context.theme.colorTheme.yellowGreenColor
+                          : AppColors.yellowGreen,
+                  text: Text(
+                    "Review Order",
+                    style: AppTextstyle.bodyTextStyle(
+                      color: context.theme.colorTheme.blackColor,
+                    ),
+                  ),
+                  onPressed: () {
+                    Navigation.pushNamed(CurrencySellScreen.routeName);
+                  }),
+            ],
           ),
         ),
       ),

@@ -12,9 +12,13 @@ class OnboardingWidget extends StatelessWidget {
   final String subtitle;
   final bool isButtons;
   final String? image;
+  final String? topImage;
+  final String? topText;
   final Widget? widget;
   final double? scale;
   final Color? subTitleColor;
+  final Color? topImageColor;
+  final Color? topTextColor;
 
   const OnboardingWidget(
       {super.key,
@@ -24,7 +28,11 @@ class OnboardingWidget extends StatelessWidget {
       this.image,
       this.widget,
       this.scale,
-      this.subTitleColor});
+      this.subTitleColor,
+      this.topImage,
+      this.topText,
+      this.topImageColor,
+      this.topTextColor});
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +48,7 @@ class OnboardingWidget extends StatelessWidget {
                 children: [
                   120.spaceY,
                   Padding(
-                    padding: const EdgeInsets.only(left: 35, right: 30),
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: Column(
                       children: [
                         Row(
@@ -49,24 +57,24 @@ class OnboardingWidget extends StatelessWidget {
                             Row(
                               children: [
                                 Image.asset(
-                                  AppAssets.armouricon,
+                                  topImage ?? AppAssets.armouricon,
                                   scale: 2,
+                                  color: topImageColor,
                                 ),
                                 5.spaceX,
                                 Text(
-                                  getTranslated("account", context),
+                                  topText ?? getTranslated("account", context),
                                   style: AppTextstyle.bodyTextStyle(
-                                      fontSize: 13,
-                                      color: context
-                                          .theme.colorTheme.normalTextColor,
-                                      fontWeight: FontWeight.w400),
+                                      fontSize: 14,
+                                      color: topTextColor ??
+                                          context
+                                              .theme.colorTheme.normalTextColor,
+                                      fontWeight: FontWeight.w500),
                                 )
                               ],
                             ),
                             InkWell(
-                              onTap: () {
-                                Navigation.pop();
-                              },
+                              onTap: () {},
                               child: Image.asset(
                                 AppAssets.crossicon,
                                 color: context.theme.colorTheme.whiteColor,
@@ -77,7 +85,7 @@ class OnboardingWidget extends StatelessWidget {
                         ),
                         Image.asset(
                           AppAssets.appbarLogo,
-                          scale: 1.50,
+                          scale: 2,
                         )
                       ],
                     ),
@@ -91,14 +99,14 @@ class OnboardingWidget extends StatelessWidget {
                         getTranslated(title, context),
                         style: AppTextstyle.headingTextStyle(
                             fontSize: 32.sp,
-                            fontWeight: FontWeight.w500,
+                            fontWeight: FontWeight.w700,
                             color: context.theme.colorTheme.normalTextColor,
                             overflow: TextOverflow.clip),
                       ),
                     ),
                   ),
                   SizedBox(
-                    height: 5.h,
+                    height: 16.h,
                   ),
                   Padding(
                     padding: const EdgeInsets.only(left: 20, right: 20),
@@ -110,7 +118,7 @@ class OnboardingWidget extends StatelessWidget {
                             fontSize: 16.sp,
                             fontWeight: FontWeight.w500,
                             color: subTitleColor ??
-                                context.theme.colorTheme.yellowToBlackish,
+                                context.theme.colorTheme.yellowToGrey,
                             overflow: TextOverflow.clip),
                       ),
                     ),

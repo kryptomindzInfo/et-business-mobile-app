@@ -72,6 +72,7 @@ class EmailMessageScreen extends ConsumerWidget {
                   borderRadius: 8,
                   padding: const EdgeInsets.fromLTRB(6, 6, 6, 6),
                   widget: CheckBoxWidget(
+                    borderColor: context.theme.colorTheme.whiteToGreen,
                     checkBoxValue:
                         invoiceRequestProviderW.emailMessageSetAsDefault,
                     title: getTranslated('set_as_default', context),

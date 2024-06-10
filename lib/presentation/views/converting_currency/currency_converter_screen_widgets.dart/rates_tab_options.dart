@@ -1,5 +1,6 @@
 import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:etbank_business_app/extensions/build_context.dart';
+import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/presentation/views/converting_currency/currency_converter_screen_widgets.dart/rates_tab.chips.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -14,28 +15,28 @@ class RatesScreenOptionsWidget extends ConsumerWidget {
     return SizedBox(
       height: 40,
       width: double.infinity,
-      child: ListView.builder(
+      child: ListView.separated(
         scrollDirection: Axis.horizontal,
         itemCount: ref.read(currencyScreenProvider).ratesOptions.length,
+        separatorBuilder: (context, index) {
+          return 16.spaceX;
+        },
         itemBuilder: (context, index) {
-          return Padding(
-            padding: const EdgeInsets.only(left: 9),
-            child: RatesScreenChips(
-              title: ref.read(currencyScreenProvider).ratesOptions[index]
-                  ["title"],
-              onpress: () =>
-                  ref.read(currencyScreenProvider).setCCtabIndex(index),
-              color:
-                  ref.watch(currencyScreenProvider).currencyConverterTabIndex ==
-                          index
-                      ? context.theme.colorTheme.activeChipColor
-                      : context.theme.colorTheme.chipsColor,
-              titleColor:
-                  ref.watch(currencyScreenProvider).currencyConverterTabIndex ==
-                          index
-                      ? context.theme.colorTheme.blackColor
-                      : AppColors.white,
-            ),
+          return RatesScreenChips(
+            title: ref.read(currencyScreenProvider).ratesOptions[index]
+                ["title"],
+            onpress: () =>
+                ref.read(currencyScreenProvider).setCCtabIndex(index),
+            color:
+                ref.watch(currencyScreenProvider).currencyConverterTabIndex ==
+                        index
+                    ? context.theme.colorTheme.activeChipColor
+                    : context.theme.colorTheme.chipsColor,
+            titleColor:
+                ref.watch(currencyScreenProvider).currencyConverterTabIndex ==
+                        index
+                    ? context.theme.colorTheme.blackColor
+                    : AppColors.white,
           );
         },
       ),

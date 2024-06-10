@@ -26,7 +26,7 @@ statementBottomSheet() {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            20.spaceY,
+            5.spaceY,
             const StatementBottomSheetHeader(),
             15.spaceY,
             const StatementContainer(),
@@ -35,63 +35,65 @@ statementBottomSheet() {
               padding: const EdgeInsets.symmetric(vertical: 8),
               margin: const EdgeInsets.symmetric(horizontal: 20),
               decoration: BoxDecoration(
-                  border: Border.all(color: AppColors.tealColor, width: 1),
+                  color: context.theme.colorTheme.businessDetailsContainer,
+                  border: Border.all(
+                      color: context.theme.colorTheme.transparentToTeal,
+                      width: 1),
                   borderRadius: const BorderRadius.all(Radius.circular(12))),
               child: Column(
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(left: 20),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
+                  Padding(
+                    padding: const EdgeInsets.only(left: 09),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Image.asset(
                               AppAssets.appbarLogo,
                               width: 105,
                               height: 32,
                             ),
-                            20.spaceY,
-                            Text(
-                              getTranslated(
-                                  "Transaction from Feb 1, 2023 to Feb 1, 2024",
-                                  context),
-                              style: AppTextstyle.bodyTextStyle(
-                                  fontSize: 7,
-                                  color:
-                                      context.theme.colorTheme.normalTextColor,
-                                  fontWeight: FontWeight.w600),
+                            Padding(
+                              padding: const EdgeInsets.only(right: 20),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.end,
+                                children: [
+                                  Text(
+                                    getTranslated("statement", context),
+                                    style: AppTextstyle.bodyTextStyle(
+                                        fontSize: 16,
+                                        color: context
+                                            .theme.colorTheme.normalTextColor,
+                                        fontWeight: FontWeight.w600),
+                                  ),
+                                  Text(
+                                    "Generated on Feb 1, 2024",
+                                    style: AppTextstyle.bodyTextStyle(
+                                        fontSize: 8,
+                                        color: context
+                                            .theme.colorTheme.normalTextColor,
+                                        fontWeight: FontWeight.w500),
+                                  ),
+                                ],
+                              ),
                             ),
                           ],
                         ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(right: 20),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.end,
-                          children: [
-                            Text(
-                              getTranslated("statement", context),
-                              style: AppTextstyle.bodyTextStyle(
-                                  fontSize: 16,
-                                  color:
-                                      context.theme.colorTheme.normalTextColor,
-                                  fontWeight: FontWeight.w600),
-                            ),
-                            Text(
-                              "Generated on Feb 1, 2024",
-                              style: AppTextstyle.bodyTextStyle(
-                                  fontSize: 8,
-                                  color:
-                                      context.theme.colorTheme.normalTextColor,
-                                  fontWeight: FontWeight.w500),
-                            ),
-                          ],
+                        20.spaceY,
+                        Text(
+                          getTranslated(
+                              "Transaction from Feb 1, 2023 to Feb 1, 2024",
+                              context),
+                          style: AppTextstyle.bodyTextStyle(
+                              fontSize: 7,
+                              color: context.theme.colorTheme.normalTextColor,
+                              fontWeight: FontWeight.w600),
                         ),
-                      )
-                    ],
-                  )
+                      ],
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -104,7 +106,8 @@ statementBottomSheet() {
                 height: 22,
                 width: 22,
               ),
-            )
+            ),
+            8.spaceY,
             // PrimaryButton(
             //   color: context.theme.colorTheme.buttonColor,
             //   text: Text(

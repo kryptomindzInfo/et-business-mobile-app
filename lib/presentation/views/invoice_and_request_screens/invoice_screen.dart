@@ -112,6 +112,7 @@ class InvoiceSreen extends ConsumerWidget {
                     widget: RequestMoneyWhiteContainerWidget(
                       color: context.theme.colorTheme.businessDetailsContainer,
                       titleColor: context.theme.colorTheme.whiteColor,
+                      spaceBtw: 0.spaceX,
                       subTitlecolor: AppColors.grey,
                       title: 'add_an_email_message',
                       subtitle: 'appears_on_the_email_your_costumer_receives',

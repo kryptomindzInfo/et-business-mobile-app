@@ -1,4 +1,5 @@
 import 'package:etbank_business_app/constants/app_assets.dart';
+import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:etbank_business_app/constants/app_textstyle.dart';
 import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
@@ -20,12 +21,22 @@ class GetPlasticCardScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return ParentThemeScaffold(
       child: Padding(
-        padding: const EdgeInsets.only(top: 50),
+        padding: const EdgeInsets.only(top: 0),
         child: Scaffold(
           backgroundColor: context.theme.colorTheme.backgroundColor,
-          appBar: const CommonAppBar(
+          appBar: CommonAppBar(
             topPadding: 00,
             etBankLogo: true,
+            leading: Padding(
+              padding: const EdgeInsets.all(17.0),
+              child: GestureDetector(
+                onTap: () => Navigator.pop(context),
+                child: Image.asset(
+                  AppAssets.arrowLeftShort,
+                  color: context.theme.colorTheme.whiteColor,
+                ),
+              ),
+            ),
           ),
           body: Padding(
             padding: const EdgeInsets.only(left: 20, right: 20),
@@ -33,9 +44,10 @@ class GetPlasticCardScreen extends ConsumerWidget {
               children: [
                 20.spaceY,
                 CommonWhiteFlexibleCard(
-                  color: context.theme.colorTheme.businessDetailsContainer,
+                  color: AppColors.transparent,
                   border: Border.all(
-                      color: context.theme.colorTheme.transparentToTeal),
+                    color: AppColors.transparent,
+                  ),
                   widget: Column(
                     children: [
                       Image.asset(
@@ -66,7 +78,7 @@ class GetPlasticCardScreen extends ConsumerWidget {
                   ),
                   // padding: const EdgeInsets.only(top: 30, right: 12, left: 12),
                 ),
-                78.spaceY,
+                58.spaceY,
                 CommonButton(
                   width: 288,
                   title: getTranslated("get_plastic_card", context),

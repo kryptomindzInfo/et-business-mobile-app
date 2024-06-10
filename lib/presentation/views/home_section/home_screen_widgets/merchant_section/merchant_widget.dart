@@ -12,22 +12,21 @@ class MerchantWidget extends ConsumerWidget {
       // physics: NeverScrollableScrollPhysics(),
       shrinkWrap: true,
       padding: const EdgeInsets.only(bottom: 0),
-
       gridDelegate:
           const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
       // runSpacing: 10,
       // spacing: 10,
-      children: ref
-          .read(homescreenProvider)
-          .merchatndataList
-          .map((e) => MerchantWidgetContainer(
-                title: e["title"],
-                imageicon: e["icon"],
-                subtitle: e["desc"],
-                
-                // subtitleColor: e["color"],
-              ))
-          .toList(),
+      // children: ref
+      //     .read(homescreenProvider)
+      //     .merchatndataList
+      //     .map((e) => MerchantWidgetContainer(
+      //           title: e["title"],
+      //           imageicon: e["icon"],
+      //           subtitle: e["desc"],
+
+      //           // subtitleColor: e["color"],
+      //         ))
+      //     .toList(),
     );
   }
 }

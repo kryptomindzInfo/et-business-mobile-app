@@ -37,9 +37,14 @@ class PaymentNotificationBottomSheetWidget extends ConsumerWidget {
                 children: [
                   Padding(
                     padding: const EdgeInsets.only(left: 20),
-                    child: Icon(
-                      Icons.close,
-                      color: context.theme.colorTheme.whiteColor,
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.pop(context);
+                      },
+                      child: Icon(
+                        Icons.close,
+                        color: context.theme.colorTheme.whiteColor,
+                      ),
                     ),
                   ),
                   26.spaceY,
@@ -56,10 +61,11 @@ class PaymentNotificationBottomSheetWidget extends ConsumerWidget {
                           getTranslated('payment_notif_subtitle', context),
                     ),
                   ),
-                  40.spaceY,
+                  34.spaceY,
                   Padding(
                     padding: const EdgeInsets.only(left: 20),
                     child: TextFieldWidget(
+                      contentPadding: const EdgeInsets.only(left: 11, top: 4),
                       containerColor:
                           context.theme.colorTheme.businessDetailsContainer,
                       border: Border.all(

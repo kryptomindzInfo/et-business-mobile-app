@@ -45,14 +45,17 @@ class SignUpHowYouSellProductScreen extends ConsumerWidget {
               ),
               36.spaceY,
               BlackContainerWidget(
+                borderRadius: 12,
                 color: context.theme.colorTheme.halfWhiteToBlack,
                 child: SizedBox(
-                  height: 280.h,
+                  height: 260.h,
                   child: ListView.builder(
+                      physics: const NeverScrollableScrollPhysics(),
                       itemCount: howYouSellProductOptions.length,
                       itemBuilder: (context, index) {
                         return Consumer(builder: (context, ref, child) {
                           return CheckBoxWidget(
+                            borderColor: context.theme.colorTheme.whiteToGreen,
                             checkBoxValue: ref
                                 .watch(signUpStateProvider)
                                 .howYouSellProductsOptions

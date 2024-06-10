@@ -53,7 +53,7 @@ class InvoiceNumberScreen extends ConsumerWidget {
                       color: context.theme.colorTheme.transparentToTeal),
                   containerColor:
                       context.theme.colorTheme.businessDetailsContainer,
-                  height: 85,
+                  height: 75,
                   labelText: getTranslated('invoice_prefix', context),
                   labelStyle: AppTextstyle.headingTextStyle(
                       fontSize: 12, color: AppColors.grey),
@@ -74,7 +74,7 @@ class InvoiceNumberScreen extends ConsumerWidget {
                       color: context.theme.colorTheme.transparentToTeal),
                   containerColor:
                       context.theme.colorTheme.businessDetailsContainer,
-                  height: 85,
+                  height: 75,
                   labelText: getTranslated('Invoice number', context),
                   labelStyle: AppTextstyle.headingTextStyle(
                       fontSize: 12, color: AppColors.grey),
@@ -83,11 +83,14 @@ class InvoiceNumberScreen extends ConsumerWidget {
                     fontSize: 16,
                     color: context.theme.colorTheme.whiteColor,
                   ),
-                  suffixIcon: Image.asset(
-                    color: AppColors.grey,
-                    AppAssets.exclamationMark,
-                    height: 24,
-                    width: 24,
+                  suffixIcon: Padding(
+                    padding: EdgeInsets.only(bottom: 20),
+                    child: Image.asset(
+                      color: AppColors.grey,
+                      AppAssets.excalamation,
+                      height: 24,
+                      width: 24,
+                    ),
                   ),
                 ),
                 36.spaceY,
@@ -98,6 +101,7 @@ class InvoiceNumberScreen extends ConsumerWidget {
                       color: context.theme.colorTheme.transparentToTeal),
                   padding: const EdgeInsets.fromLTRB(6, 6, 6, 6),
                   widget: CheckBoxWidget(
+                    borderColor: context.theme.colorTheme.whiteToGreen,
                     checkBoxValue:
                         invoiceRequestProviderW.invoiceNumberSetAsDefault,
                     title: getTranslated('set_as_default', context),
@@ -116,7 +120,7 @@ class InvoiceNumberScreen extends ConsumerWidget {
           bottomNavigationBar: ButtonBottomNavigationWidget(
             children: [
               SizedBox(
-                height: 48.h,
+                height: 43.h,
                 width: 327.w,
                 child: PrimaryButton(
                   color: true
@@ -141,6 +145,7 @@ class InvoiceNumberScreen extends ConsumerWidget {
                           child: Container(
                             margin: const EdgeInsets.all(20),
                             child: VerifiedBottomSheetWidget(
+                              height: 262,
                               title: RichText(
                                 text: TextSpan(children: [
                                   TextSpan(
@@ -173,7 +178,7 @@ class InvoiceNumberScreen extends ConsumerWidget {
                               //       fontWeight: FontWeight.bold, fontSize: 20),
                               // ),
                               description: Padding(
-                                padding: const EdgeInsets.only(top: 60),
+                                padding: const EdgeInsets.only(top: 00),
                                 child: Text(
                                   getTranslated('invoice_INV_2', context),
                                   style: AppTextstyle.bodyTextStyle(

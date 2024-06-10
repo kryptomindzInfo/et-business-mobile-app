@@ -11,13 +11,15 @@ class CheckBoxWidget extends ConsumerWidget {
   final String title;
   final TextStyle? titleTextStyle;
   final void Function(bool?)? onChanged;
+  final Color? borderColor;
 
   const CheckBoxWidget(
       {super.key,
       required this.checkBoxValue,
       required this.title,
       required this.onChanged,
-      this.titleTextStyle});
+      this.titleTextStyle,
+      this.borderColor});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -26,10 +28,12 @@ class CheckBoxWidget extends ConsumerWidget {
         Checkbox(
           value: checkBoxValue,
           onChanged: onChanged,
+
           activeColor: AppColors.green,
           // activeColor: context.theme.colorTheme.yellowGreenColor,
           checkColor: AppColors.black,
-          side: const BorderSide(color: AppColors.grassGreen, width: 1.5),
+          side:
+              BorderSide(color: borderColor ?? AppColors.grassGreen, width: 1),
         ),
         8.spaceX,
         SizedBox(

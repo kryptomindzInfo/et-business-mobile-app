@@ -13,6 +13,7 @@ class InfoTextWidget extends ConsumerWidget {
   final String subTitle;
   final String price1;
   final String? price2;
+  final Widget? spaceBtw;
   const InfoTextWidget(
       {super.key,
       this.marketPriceColor,
@@ -20,7 +21,8 @@ class InfoTextWidget extends ConsumerWidget {
       required this.title,
       required this.subTitle,
       required this.price1,
-      this.price2});
+      this.price2,
+      this.spaceBtw});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -30,6 +32,7 @@ class InfoTextWidget extends ConsumerWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               IconContainer(
@@ -47,19 +50,20 @@ class InfoTextWidget extends ConsumerWidget {
                         color: context.theme.colorTheme.normalTextColor,
                         fontWeight: FontWeight.w600),
                   ),
-                  5.spaceY,
+                  spaceBtw ?? 5.spaceY,
                   Text(
                     subTitle,
                     style: AppTextstyle.bodyTextStyle(
                         fontSize: 14,
                         color: context.theme.colorTheme.greyDescription,
-                        fontWeight: FontWeight.w400),
+                        fontWeight: FontWeight.w500),
                   )
                 ],
               ),
             ],
           ),
           Column(
+            crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               Text(
                 price1,

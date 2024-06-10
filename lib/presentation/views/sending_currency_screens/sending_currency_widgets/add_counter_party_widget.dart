@@ -3,6 +3,7 @@ import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:etbank_business_app/constants/app_textstyle.dart';
 import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
+import 'package:etbank_business_app/presentation/views/common_widgets/icon_container.dart';
 import 'package:etbank_business_app/resources/localization/language_constrants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -33,15 +34,20 @@ class AddCounterPartyWidget extends ConsumerWidget {
           ),
         ),
         child: Padding(
-          padding: padding ?? const EdgeInsets.fromLTRB(25, 25, 0, 25),
+          padding: padding ?? const EdgeInsets.fromLTRB(24, 20, 0, 18),
           child: Row(
             children: [
-              Image.asset(
-                AppAssets.addButton2x,
-                color: context.theme.colorTheme.whiteToGreen,
-                height: 34,
-                width: 34,
+              IconContainer(
+                bgColor: context.theme.colorTheme.greenTohomeIconContainer,
+                image: AppAssets.addIcon,
+                // scale: 1.6,
               ),
+              // Image.asset(
+              //   AppAssets.addButton2x,
+              //   color: context.theme.colorTheme.whiteToGreen,
+              //   height: 34,
+              //   width: 34,
+              // ),
               16.spaceX,
               Text(
                 getTranslated(title, context),

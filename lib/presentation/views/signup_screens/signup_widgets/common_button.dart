@@ -27,7 +27,9 @@ class RegistrationLoginCommonButton extends ConsumerWidget {
           child: Text(
             buttonTitle!,
             style: AppTextstyle.headingTextStyle(
-                fontSize: 14, color: buttonTitleColor!),
+                fontSize: 15,
+                color: buttonTitleColor!,
+                fontWeight: FontWeight.w500),
           ),
         ),
       ),

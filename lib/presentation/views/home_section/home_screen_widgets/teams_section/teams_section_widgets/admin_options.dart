@@ -15,6 +15,7 @@ class AdminOptions extends ConsumerWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         CommonGreenButton(
+          padding: const EdgeInsets.only(left: 11, right: 14),
           title: getTranslated("save_a_copy", context),
           borderColor: context.theme.colorTheme.transparentToYellow,
           height: 42,
@@ -25,6 +26,7 @@ class AdminOptions extends ConsumerWidget {
           imageHeight: 13,
         ),
         CommonGreenButton(
+          padding: const EdgeInsets.only(left: 11, right: 14),
           title: getTranslated("rename", context),
           imageHeight: 13,
           iconColor: Colors.white,
@@ -36,6 +38,7 @@ class AdminOptions extends ConsumerWidget {
           color: context.theme.colorTheme.transparentToGreen,
         ),
         CommonGreenButton(
+          padding: const EdgeInsets.symmetric(horizontal: 13),
           imageIcon: AppAssets.menudots,
           imageHeight: 5,
           borderColor: context.theme.colorTheme.transparentToYellow,

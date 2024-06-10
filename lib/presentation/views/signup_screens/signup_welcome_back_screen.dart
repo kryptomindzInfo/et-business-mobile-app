@@ -32,6 +32,7 @@ class SignUpWelcomeBackScreen extends ConsumerWidget {
                   color: context.theme.colorTheme.tealToGrey,
                   image: const Icon(
                     Icons.close,
+                    size: 22,
                     color: AppColors.white,
                   ),
                   text: Text(
@@ -47,6 +48,7 @@ class SignUpWelcomeBackScreen extends ConsumerWidget {
                 IconButtonWidget(
                   color: context.theme.colorTheme.buttonColor,
                   image: const Icon(
+                    size: 22,
                     Icons.check,
                     color: AppColors.black,
                   ),

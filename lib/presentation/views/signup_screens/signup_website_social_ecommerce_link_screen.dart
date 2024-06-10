@@ -9,6 +9,7 @@ import 'package:etbank_business_app/resources/localization/language_constrants.d
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../constants/app_assets.dart';
 import '../../../constants/app_colors.dart';
 import '../../../providers/signup_provider.dart';
 import '../common_widgets/app_common_appbar.dart';
@@ -29,9 +30,19 @@ class SignUpWebsiteSocialEcommerceLinkScreen extends ConsumerWidget {
         child: Scaffold(
           extendBody: true,
           backgroundColor: AppColors.transparent,
-          appBar: const CommonAppBar(
-              // etBankLogo: true,
+          appBar: CommonAppBar(
+            etBankLogo: true,
+            leading: Padding(
+              padding: const EdgeInsets.all(17.0),
+              child: GestureDetector(
+                onTap: () => Navigator.pop(context),
+                child: Image.asset(
+                  AppAssets.arrowLeftShort,
+                  color: context.theme.colorTheme.whiteColor,
+                ),
               ),
+            ),
+          ),
           body: Padding(
             padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
             child: Column(
@@ -40,6 +51,12 @@ class SignUpWebsiteSocialEcommerceLinkScreen extends ConsumerWidget {
                 HeaderIconWithTitle(
                   title:
                       getTranslated('website_social_ecommerce_title', context),
+                  // titleStyle: TextStyle(
+                  //     color: context.theme.colorTheme.appbarTitleColor,
+                  //     fontSize: 32,
+                  //     fontWeight: FontWeight.bold,
+                  //     overflow: TextOverflow.clip,
+                  //     height: 1.5),
                   spaceBtw: 8,
                   description: getTranslated(
                       'website_social_ecommerce_subtitle', context),
@@ -47,6 +64,8 @@ class SignUpWebsiteSocialEcommerceLinkScreen extends ConsumerWidget {
                 ),
                 32.spaceY,
                 TextFieldWidget(
+                  height: 55,
+                  contentPadding: const EdgeInsets.only(top: 4, left: 15),
                   style: TextStyle(color: context.theme.colorTheme.whiteColor),
                   controller: ref.read(signUpStateProvider).emailController,
                   hintText: getTranslated('link', context),

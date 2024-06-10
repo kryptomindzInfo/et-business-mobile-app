@@ -47,23 +47,27 @@ class SignUpCategoryScreen extends ConsumerWidget {
                 ),
                 16.spaceY,
                 BlackContainerWidget(
+                    borderRadius: 12,
                     color: context.theme.colorTheme.halfWhiteToBlack,
                     child: SizedBox(
                       height: 540.h,
-                      child: ListView.builder(
-                          itemCount: categories.length,
-                          itemBuilder: (context, index) {
-                            return GestureDetector(
-                              onTap: () {
-                                Navigation.pushNamed(
-                                    SignUpSubCategoryScreen.routeName);
-                              },
-                              child: CategoryWidget(
-                                title: getTranslated(
-                                    categories[index]['title'], context),
-                              ),
-                            );
-                          }),
+                      child: Padding(
+                        padding: const EdgeInsets.only(top: 20),
+                        child: ListView.builder(
+                            itemCount: categories.length,
+                            itemBuilder: (context, index) {
+                              return GestureDetector(
+                                onTap: () {
+                                  Navigation.pushNamed(
+                                      SignUpSubCategoryScreen.routeName);
+                                },
+                                child: CategoryWidget(
+                                  title: getTranslated(
+                                      categories[index]['title'], context),
+                                ),
+                              );
+                            }),
+                      ),
                     )),
               ],
             ),

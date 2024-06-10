@@ -12,13 +12,11 @@ class PaymentScreenChips extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return Container(
-      child: Chips(
-        title: title,
-        color: color,
-        onpress: onpress,
-        titleColor: titleColor,
-      ),
+    return Chips(
+      title: title,
+      color: color,
+      onpress: onpress,
+      titleColor: titleColor,
     );
   }
 }

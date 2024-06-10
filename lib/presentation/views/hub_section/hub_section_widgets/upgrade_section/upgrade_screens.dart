@@ -9,26 +9,36 @@ import 'package:etbank_business_app/resources/localization/language_constrants.d
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../../../../constants/app_assets.dart';
 import '../../../../../providers/pageview_provider.dart';
+import '../../../../../theme/theme.dart';
 import '../../../onboarding_screens/onboarding_widgets/linear_indicator_widget.dart';
 import '../../../onboarding_screens/onboarding_widgets/onboarding_widget.dart';
 
 class UpgradeScreens extends ConsumerWidget {
   static const String routeName = "upgrade_screens";
   final List<Widget> pages = [
-    const OnboardingWidget(
+    OnboardingWidget(
       title: 'upgrade1title',
       subtitle: 'upgrade1subtitle',
       // subTitleColor: AppColors.yellowGreen,
-      image: AppAssets.saveMoney,
+      // image: AppAssets.saveMoney,
+      image:
+          themeImage(appContext, AppAssets.saveMoneyLight, AppAssets.saveMoney),
+      topImage: AppAssets.gifticon,
+      topImageColor: appContext.theme.colorTheme.whiteToGreen,
+      topText: 'Rewards',
+      topTextColor: appContext.theme.colorTheme.whiteToGreen,
       scale: 2,
     ),
     OnboardingWidget(
       title: 'upgrade2title',
       subtitle: 'upgrade2subtitle',
       // subTitleColor: AppColors.yellowGreen,
+      topImage: AppAssets.gifticon,
+      topImageColor: appContext.theme.colorTheme.whiteToGreen,
+      topText: 'Rewards',
+      topTextColor: appContext.theme.colorTheme.whiteToGreen,
       image: AppAssets.offers,
       scale: 2,
       isButtons: true,
@@ -51,7 +61,10 @@ class UpgradeScreens extends ConsumerWidget {
                 title: "your_plan_doesnt",
                 subtitle: "Upgrade_your_plan",
                 buttonTitle: "upgrade_plan",
-                image: AppAssets.rocketImage,
+                // image: AppAssets.rocketImage,
+                image: themeImage(
+                    appContext, AppAssets.rocketLight, AppAssets.rocketImage),
+
                 buttonPadding: 120.spaceY,
               ),
             );
@@ -83,7 +96,7 @@ class UpgradeScreens extends ConsumerWidget {
             LinearIndicatorWidget(
               activePageIndex: ref.watch(upgradeScreenIndexProvider),
               widgetListLength: pages.length,
-              width: 150.w,
+              width: 174.w,
             ),
           ],
         ),

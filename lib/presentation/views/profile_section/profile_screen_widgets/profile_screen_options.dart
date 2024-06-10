@@ -4,6 +4,7 @@ import 'package:etbank_business_app/providers/profile_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../../constants/app_textstyle.dart';
 import 'profile_screen_chips.dart';
 
 class ProfileScreenOptionsWidget extends ConsumerWidget {
@@ -22,6 +23,12 @@ class ProfileScreenOptionsWidget extends ConsumerWidget {
               ref.read(profilescreenProvider).profileScreenOptions[index];
 
           return ProfileScreenChips(
+            // titleStyle: AppTextstyle.bodyTextStyle(
+            //     fontWeight: FontWeight.w400,
+            //     fontSize: 16,
+            //     color: AppColors.black),
+            titleStyle: item['titleStyle'],
+            padding: const EdgeInsets.symmetric(horizontal: 15),
             color:
                 index == 0 ? context.theme.colorTheme.yellowGreenColor : null,
             title: item["title"],

@@ -1,3 +1,4 @@
+import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:etbank_business_app/constants/app_textstyle.dart';
 import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
@@ -13,6 +14,8 @@ class SignUpVerificationCard extends ConsumerWidget {
   final Color? color;
   final Color? imageColor;
   final Color? titleColor;
+  final Color? statusIconColor;
+  final Color? statusColor;
 
   const SignUpVerificationCard(
       {super.key,
@@ -23,7 +26,9 @@ class SignUpVerificationCard extends ConsumerWidget {
       this.onpress,
       this.color,
       this.imageColor,
-      this.titleColor});
+      this.titleColor,
+      this.statusIconColor,
+      this.statusColor});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -34,7 +39,7 @@ class SignUpVerificationCard extends ConsumerWidget {
         // width: 164,
         decoration: BoxDecoration(
             color: color ?? Colors.transparent,
-            borderRadius: BorderRadius.circular(28),
+            borderRadius: BorderRadius.circular(12),
             border:
                 Border.all(color: context.theme.colorTheme.transparentToTeal)),
         child: Padding(
@@ -66,7 +71,7 @@ class SignUpVerificationCard extends ConsumerWidget {
                         titleColor ?? context.theme.colorTheme.normalTextColor,
                     overflow: TextOverflow.clip),
               ),
-              if (status!.isNotEmpty) 5.spaceY,
+              if (status!.isNotEmpty) 16.spaceY,
               status!.isNotEmpty
                   ? Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -75,6 +80,7 @@ class SignUpVerificationCard extends ConsumerWidget {
                         Image.asset(
                           statusIcon!,
                           scale: 1.70,
+                          color: statusIconColor,
                         ),
                         8.spaceX,
                         Text(
@@ -82,11 +88,12 @@ class SignUpVerificationCard extends ConsumerWidget {
                           style: AppTextstyle.bodyTextStyle(
                               fontSize: 12,
                               fontWeight: FontWeight.normal,
-                              color: context.theme.colorTheme.normalTextColor),
+                              color: statusColor ??
+                                  context.theme.colorTheme.normalTextColor),
                         )
                       ],
                     )
-                  : const SizedBox()
+                  : const SizedBox(),
             ],
           ),
         ),

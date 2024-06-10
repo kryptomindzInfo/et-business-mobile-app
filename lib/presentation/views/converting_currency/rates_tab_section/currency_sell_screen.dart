@@ -35,30 +35,37 @@ class CurrencySellScreen extends ConsumerWidget {
               children: [
                 28.spaceY,
                 const CurrencySellHeader(),
-                25.spaceY,
+                22.spaceY,
                 CommonWhiteFlexibleCard(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 30, vertical: 4),
                   borderRadius: 12,
                   color: context.theme.colorTheme.whiteTohalfWhite,
                   border: Border.all(color: AppColors.transparent),
-                  widget: const Column(
+                  widget: Column(
                     children: [
-                      CurrencySellDetailTexts(
+                      const CurrencySellDetailTexts(
                         title: "Price",
                         value: "£1=\$1.3598",
                       ),
-                      CurrencySellDetailTexts(
+                      const CurrencySellDetailTexts(
                         title: "Selling",
                         value: "£1",
                       ),
                       CurrencySellDetailTexts(
                         title: "Fee",
+                        exclamationMark: true,
                         value: "No Fee",
+                        valueStyle: AppTextstyle.bodyTextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.normal,
+                            color: context.theme.colorTheme.greenToTeal),
                       ),
-                      CurrencySellDetailTexts(
+                      const CurrencySellDetailTexts(
                         title: "You will recieve",
                         value: "\$1.35",
                       ),
-                      CurrencySellDetailTexts(
+                      const CurrencySellDetailTexts(
                         title: "From",
                         value: "GBP",
                       ),
@@ -67,20 +74,22 @@ class CurrencySellScreen extends ConsumerWidget {
                 ),
                 25.spaceY,
                 CommonWhiteFlexibleCard(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 30, vertical: 4),
                   borderRadius: 12,
                   color: context.theme.colorTheme.whiteTohalfWhite,
                   border: Border.all(
                     color: context.theme.colorTheme.transparentToTeal,
                   ),
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 28, vertical: 14),
+                  // padding:
+                  //     const EdgeInsets.symmetric(horizontal: 28, vertical: 14),
                   widget: const CurrencySellDetailTexts(
                     title: "To",
                     value: "USD",
                   ),
                 ),
                 // const CurrencySellGreenCard(),
-                170.spaceY,
+                210.spaceY,
                 PrimaryButton(
                     height: 38,
                     color: true

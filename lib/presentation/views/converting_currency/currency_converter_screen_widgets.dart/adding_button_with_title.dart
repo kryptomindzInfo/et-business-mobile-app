@@ -1,4 +1,5 @@
 import 'package:etbank_business_app/constants/app_assets.dart';
+import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:etbank_business_app/constants/app_textstyle.dart';
 import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
@@ -16,12 +17,12 @@ class AddingButtonWithTitle extends ConsumerWidget {
     return InkWell(
       onTap: onpress,
       child: Container(
-        margin: const EdgeInsets.only(left: 30, top: 30),
+        margin: const EdgeInsets.only(left: 32, top: 32),
         child: Row(
           children: [
             IconContainer(
               image: AppAssets.addingicon,
-              bgColor: context.theme.colorTheme.whiteToGreen,
+              bgColor: AppColors.addCurrency,
             ),
             // Image.asset(
             //   AppAssets.addingicon,

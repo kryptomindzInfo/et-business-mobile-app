@@ -14,6 +14,7 @@ import 'package:etbank_business_app/presentation/views/home_section/home_screen_
 import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/teams_section/invite_to_et_bank_screen.dart';
 import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/teams_section/manage_roles_screen.dart';
 import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/teams_section/owner_screen.dart';
+import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/teams_section/roles_screen.dart';
 import 'package:etbank_business_app/presentation/views/invoice_and_request_screens/add_customer_screen.dart';
 import 'package:etbank_business_app/presentation/views/invoice_and_request_screens/add_items_screen.dart';
 import 'package:etbank_business_app/presentation/views/invoice_and_request_screens/add_new_customer_screen.dart';
@@ -26,6 +27,7 @@ import 'package:etbank_business_app/presentation/views/invoice_and_request_scree
 import 'package:etbank_business_app/presentation/views/home_section/notification_screen.dart';
 import 'package:etbank_business_app/presentation/views/hub_section/hub_section_widgets/upgrade_section/upgrade_screens.dart';
 import 'package:etbank_business_app/presentation/views/onboarding_screens/onboarding_screen.dart';
+import 'package:etbank_business_app/presentation/views/profile_section/personal_profile_screen.dart';
 import 'package:etbank_business_app/presentation/views/sending_currency_screens/account_details_screen.dart';
 import 'package:etbank_business_app/presentation/views/sending_currency_screens/enter_amount_screen.dart';
 import 'package:etbank_business_app/presentation/views/sending_currency_screens/show_account_details_screen.dart';
@@ -383,6 +385,16 @@ class RouteGenerator {
             ));
       case GetMoreFromBusinessScreen.routeName:
         return route(const GetMoreFromBusinessScreen(
+            // params: settings.arguments as HomeScreenArgs?
+            ));
+
+      case PersonalProfileScreen.routeName:
+        return route(const PersonalProfileScreen(
+            // params: settings.arguments as HomeScreenArgs?
+            ));
+
+      case RolesScreen.routeName:
+        return route(const RolesScreen(
             // params: settings.arguments as HomeScreenArgs?
             ));
 

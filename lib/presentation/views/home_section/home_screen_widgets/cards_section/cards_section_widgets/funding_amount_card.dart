@@ -48,7 +48,7 @@ class FundingAmountCard extends ConsumerWidget {
                 child: Image.asset(
                   AppAssets.copylink,
                   height: 12,
-                  color: context.theme.colorTheme.indigoToColor,
+                  color: context.theme.colorTheme.greenToIndigo,
                 ),
               ),
               16.spaceX,
@@ -71,7 +71,7 @@ class FundingAmountCard extends ConsumerWidget {
                     style: AppTextstyle.bodyTextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.w400,
-                        color: context.theme.colorTheme.normalTextColor),
+                        color: context.theme.colorTheme.halfWhiteToGrey),
                     overflow: TextOverflow.clip,
                   ),
                 ],

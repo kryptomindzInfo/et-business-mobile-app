@@ -107,56 +107,59 @@ class TextFieldWidget extends StatelessWidget {
               ),
             )
           },
-          TextFormField(
-            controller: controller,
-            autofocus: autofocus ?? false,
-            focusNode: focusNode,
-            textInputAction: textInputAction,
-            readOnly: readonly ?? false,
-            maxLength: maxlength,
-            maxLines: keyboardType == TextInputType.multiline ? null : 1,
-            key: key,
-            keyboardType: keyboardType ?? TextInputType.text,
-            onSaved: onSaved,
-            onChanged: onChanged,
-            validator: validator,
-            style: style ?? const TextStyle(color: Colors.white),
-            obscureText: obscureText ?? false,
-            textAlign: textAlign ?? TextAlign.start,
-            obscuringCharacter: '●',
-            // cursorHeight: 30,
+          Expanded(
+            child: TextFormField(
+              controller: controller,
+              autofocus: autofocus ?? false,
+              focusNode: focusNode,
+              textInputAction: textInputAction,
+              readOnly: readonly ?? false,
+              maxLength: maxlength,
+              maxLines: keyboardType == TextInputType.multiline ? null : 1,
+              key: key,
+              keyboardType: keyboardType ?? TextInputType.text,
+              onSaved: onSaved,
+              onChanged: onChanged,
+              validator: validator,
+              style: style ?? const TextStyle(color: Colors.white),
+              obscureText: obscureText ?? false,
+              textAlign: textAlign ?? TextAlign.start,
+              obscuringCharacter: '●',
+              // cursorHeight: 30,
 
-            decoration: InputDecoration(
-                fillColor: fillColor ?? Colors.transparent,
-                filled: true,
+              decoration: InputDecoration(
+                  fillColor: fillColor ?? Colors.transparent,
+                  filled: true,
 
-                // floatingLabelAlignment: FloatingLabelAlignment.start,
-                // alignLabelWithHint: true,
-                floatingLabelBehavior: FloatingLabelBehavior.auto,
-                label: Text(
-                  hintText ?? '',
-                  style: hintStyle ??
+                  // floatingLabelAlignment: FloatingLabelAlignment.start,
+                  // alignLabelWithHint: true,
+                  floatingLabelBehavior: FloatingLabelBehavior.auto,
+                  label: Text(
+                    hintText ?? '',
+                    style: hintStyle ??
+                        AppTextstyle.bodyTextStyle(
+                            color:
+                                context.theme.colorTheme.headerDescriptionColor,
+                            fontSize: 16),
+                  ),
+                  // hintText: hintText ?? '',
+                  errorText: errorText,
+                  suffixIcon: suffixIcon != null
+                      ? InkWell(onTap: onSuffixIconTap, child: suffixIcon)
+                      : null,
+                  contentPadding: contentPadding ??
+                      EdgeInsets.only(
+                        left: 15,
+                        bottom: bottomContentPadding ?? 0,
+                      ),
+                  hintStyle: hintStyle ??
                       AppTextstyle.bodyTextStyle(
-                          color:
-                              context.theme.colorTheme.headerDescriptionColor,
-                          fontSize: 16),
-                ),
-                // hintText: hintText ?? '',
-                errorText: errorText,
-                suffixIcon: suffixIcon != null
-                    ? InkWell(onTap: onSuffixIconTap, child: suffixIcon)
-                    : null,
-                contentPadding: contentPadding ??
-                    EdgeInsets.only(
-                      left: 15,
-                      bottom: bottomContentPadding ?? 0,
-                    ),
-                hintStyle: hintStyle ??
-                    AppTextstyle.bodyTextStyle(color: const Color(0xff191D23)),
-                enabledBorder: InputBorder.none,
-                focusedBorder: InputBorder.none,
-                border: InputBorder.none,
-                constraints: const BoxConstraints(maxHeight: 200)),
+                          color: const Color(0xff191D23)),
+                  enabledBorder: InputBorder.none,
+                  focusedBorder: InputBorder.none,
+                  border: InputBorder.none,
+                  constraints: const BoxConstraints(maxHeight: 200)),
+            ),
           ),
         ],
       ),

@@ -12,6 +12,7 @@ class CommonButton extends ConsumerWidget {
   final double? height;
   final double? borderRadius;
   final EdgeInsetsGeometry? padding;
+  final TextStyle? titleStyle;
   const CommonButton(
       {super.key,
       this.onpress,
@@ -21,7 +22,8 @@ class CommonButton extends ConsumerWidget {
       this.titleColor,
       this.height,
       this.borderRadius,
-      this.padding});
+      this.padding,
+      this.titleStyle});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -38,10 +40,11 @@ class CommonButton extends ConsumerWidget {
         child: Center(
           child: Text(
             title!,
-            style: AppTextstyle.headingTextStyle(
-                color: titleColor ?? AppColors.white,
-                fontSize: 16,
-                fontWeight: FontWeight.w500),
+            style: titleStyle ??
+                AppTextstyle.headingTextStyle(
+                    color: titleColor ?? AppColors.white,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500),
           ),
         ),
       ),

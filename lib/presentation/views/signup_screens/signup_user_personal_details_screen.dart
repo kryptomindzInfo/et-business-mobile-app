@@ -49,6 +49,7 @@ class SignUpUserPersonalDetailsScreen extends ConsumerWidget {
                   ),
                   32.spaceY,
                   UserPersonalDetailsWidget(
+                    height: 20,
                     controller: signUpProvider.legalFirstNameController,
                     hint: getTranslated('james', context),
                     title: getTranslated('legal_first_name', context),
@@ -60,6 +61,7 @@ class SignUpUserPersonalDetailsScreen extends ConsumerWidget {
                   ),
                   16.spaceY,
                   UserPersonalDetailsWidget(
+                    height: 20,
                     controller: signUpProvider.legalLastNameController,
                     hint: getTranslated('fork', context),
                     title: getTranslated('legal_last_name', context),
@@ -71,6 +73,7 @@ class SignUpUserPersonalDetailsScreen extends ConsumerWidget {
                   ),
                   16.spaceY,
                   UserPersonalDetailsWidget(
+                    height: 20,
                     controller: signUpProvider.userPersonDetailsDOBController,
                     hint: getTranslated('MM/DD/YYYY', context),
                     title: getTranslated('date_of_birth', context),
@@ -80,6 +83,7 @@ class SignUpUserPersonalDetailsScreen extends ConsumerWidget {
                   ),
                   16.spaceY,
                   UserPersonalDetailsWidget(
+                    height: 20,
                     controller:
                         signUpProvider.userPersonDetailsNationalityController,
                     hint: getTranslated('country', context),
@@ -96,6 +100,7 @@ class SignUpUserPersonalDetailsScreen extends ConsumerWidget {
                   ),
                   16.spaceY,
                   UserPersonalDetailsWidget(
+                    height: 20,
                     controller: signUpProvider.userPersonDetailsEmailController,
                     hint: getTranslated('dummy_email', context),
                     title: getTranslated('email', context),

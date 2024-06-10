@@ -14,29 +14,52 @@ class StatementBottomSheetHeader extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Column(
       children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Text(
-              getTranslated("done", context),
-              style: AppTextstyle.bodyTextStyle(
-                  fontSize: 16,
-                  color: context.theme.colorTheme.normalTextColor,
-                  fontWeight: FontWeight.w500),
-            ),
-            Text(
-              getTranslated("monthly_statement", context),
-              style: AppTextstyle.headingTextStyle(
-                  fontSize: 24,
-                  color: context.theme.colorTheme.normalTextColor,
-                  fontWeight: FontWeight.bold),
-            ),
-            Image.asset(
-              AppAssets.iconSearchBlack,
-              color: context.theme.colorTheme.normalTextColor,
-              height: 18,
-            ),
-          ],
+        Padding(
+          padding: const EdgeInsets.only(left: 20, right: 32),
+          child: Row(
+            // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Expanded(
+                flex: 3,
+                child: Text(
+                  getTranslated("done", context),
+                  style: AppTextstyle.bodyTextStyle(
+                      fontSize: 16,
+                      color: context.theme.colorTheme.normalTextColor,
+                      fontWeight: FontWeight.w500),
+                ),
+              ),
+              Expanded(
+                flex: 8,
+                child: Text(
+                  getTranslated("monthly_statement", context),
+                  style: AppTextstyle.headingTextStyle(
+                      fontSize: 20,
+                      color: context.theme.colorTheme.normalTextColor,
+                      fontWeight: FontWeight.bold),
+                ),
+              ),
+              Expanded(
+                flex: 2,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Image.asset(
+                      AppAssets.iconSearchBlack,
+                      color: context.theme.colorTheme.normalTextColor,
+                      height: 18,
+                    ),
+                    // 24.spaceX,
+                    Image.asset(
+                      AppAssets.monthlyStatement,
+                      height: 13,
+                      width: 13,
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
         15.spaceY,
         Container(
@@ -44,7 +67,7 @@ class StatementBottomSheetHeader extends ConsumerWidget {
           width: double.infinity,
           color: AppColors.grey,
         ),
-        20.spaceY,
+        23.spaceY,
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -59,7 +82,7 @@ class StatementBottomSheetHeader extends ConsumerWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(right: 20),
+              padding: const EdgeInsets.only(right: 32),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [

@@ -31,8 +31,9 @@ class TeamMemebersWidget extends ConsumerWidget {
                 color: context.theme.colorTheme.normalTextColor),
           ),
         ),
-        10.spaceY,
+        12.spaceY,
         CommonWhiteFlexibleCard(
+          borderRadius: 12,
           color: context.theme.colorTheme.businessDetailsContainer,
           border: Border.all(
             color: context.theme.colorTheme.transparentToTeal,

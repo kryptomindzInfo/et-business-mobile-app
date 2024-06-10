@@ -27,6 +27,8 @@ class CustomTextFiledWidget extends StatefulWidget {
   final double titleSize;
   final TextStyle? textStyle;
   final TextStyle? hintStyle;
+  final Widget? titlePadding;
+  final Color? titleColor;
   const CustomTextFiledWidget(
       {super.key,
       required this.title,
@@ -48,7 +50,9 @@ class CustomTextFiledWidget extends StatefulWidget {
       this.maxLines = 1,
       this.titleSize = 14,
       this.textStyle,
-      this.hintStyle});
+      this.hintStyle,
+      this.titlePadding,
+      this.titleColor});
 
   @override
   State<CustomTextFiledWidget> createState() => _CustomTextFiledState();
@@ -71,9 +75,9 @@ class _CustomTextFiledState extends State<CustomTextFiledWidget> {
       Text(widget.title,
           style: AppTextstyle.bodyTextStyle(
             fontSize: widget.titleSize,
-            color: AppColors.grey,
+            color: widget.titleColor ?? AppColors.grey,
           )),
-      4.spaceY,
+      widget.titlePadding ?? 4.spaceY,
       Container(
         height: widget.height,
         decoration: BoxDecoration(

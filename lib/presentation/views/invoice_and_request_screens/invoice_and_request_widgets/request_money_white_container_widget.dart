@@ -8,6 +8,7 @@ import '../../../../constants/app_textstyle.dart';
 
 class RequestMoneyWhiteContainerWidget extends ConsumerWidget {
   final Widget? imageicon;
+  final Widget? spaceBtw;
   final String title;
   final String subtitle;
   final VoidCallback? onpress;
@@ -22,7 +23,8 @@ class RequestMoneyWhiteContainerWidget extends ConsumerWidget {
       this.onpress,
       this.color,
       this.titleColor,
-      this.subTitlecolor});
+      this.subTitlecolor,
+      this.spaceBtw});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -45,9 +47,10 @@ class RequestMoneyWhiteContainerWidget extends ConsumerWidget {
                 //   height: 35,
                 // ),
                 GreenCircleWidget(
+                  radius: 18,
                   widget: imageicon ?? const Text(''),
                 ),
-              20.spaceX,
+              spaceBtw ?? 20.spaceX,
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,

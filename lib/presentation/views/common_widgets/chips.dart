@@ -13,6 +13,9 @@ class Chips extends ConsumerWidget {
   final Color? color;
   final Color? titleColor;
   final Color? imageIconColor;
+  final EdgeInsetsGeometry? padding;
+  final TextStyle? titleStyle;
+  final double? height;
   const Chips(
       {super.key,
       this.title,
@@ -20,7 +23,10 @@ class Chips extends ConsumerWidget {
       this.imageicon,
       this.color,
       this.titleColor,
-      this.imageIconColor});
+      this.imageIconColor,
+      this.padding,
+      this.titleStyle,
+      this.height});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -30,8 +36,8 @@ class Chips extends ConsumerWidget {
       onTap: onpress,
       child: Container(
         // width: 100,
-        height: 39,
-        padding: const EdgeInsets.only(left: 20, right: 20),
+        height: height ?? 39,
+        padding: padding ?? const EdgeInsets.symmetric(horizontal: 20),
         margin: const EdgeInsets.only(right: 10),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(100),
@@ -51,10 +57,11 @@ class Chips extends ConsumerWidget {
                 // : SizedBox(),
                 if (imageicon != null) 5.spaceX,
                 Text(title ?? "",
-                    style: AppTextstyle.bodyTextStyle(
-                        fontWeight: FontWeight.w400,
-                        fontSize: 16,
-                        color: titleColor ?? AppColors.black)),
+                    style: titleStyle ??
+                        AppTextstyle.bodyTextStyle(
+                            fontWeight: FontWeight.w400,
+                            fontSize: 16,
+                            color: titleColor ?? AppColors.black)),
                 if (imageicon != null) 5.spaceX,
               ]),
         ),

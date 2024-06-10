@@ -38,13 +38,14 @@ class SignUpEmailScreen extends ConsumerWidget {
               children: [
                 HeaderIconWithTitle(
                   title: getTranslated('signup_email_title', context),
-                  spaceBtw: 5,
+                  // spaceBtw: 5,
                   // imageicon: AppAssets.arrowLeft,
                   etBankLogo: true,
                 ),
                 20.spaceY,
                 SizedBox(
                   child: TextFieldWidget(
+                    contentPadding: const EdgeInsets.only(left: 15, top: 4),
                     style: AppTextstyle.bodyTextStyle(
                         color: context.theme.colorTheme.normalTextColor,
                         fontSize: 16,

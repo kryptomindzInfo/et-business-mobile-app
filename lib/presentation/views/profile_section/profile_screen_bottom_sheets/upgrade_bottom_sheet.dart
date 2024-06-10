@@ -12,7 +12,6 @@ import 'package:etbank_business_app/presentation/views/profile_section/profile_s
 import 'package:etbank_business_app/providers/profile_provider.dart';
 import 'package:etbank_business_app/resources/localization/language_constrants.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../../constants/app_assets.dart';
 import '../../signup_screens/get_plastic_card_screen.dart';
@@ -79,10 +78,13 @@ class UpgradeBottomSheet extends ConsumerWidget {
               ),
               18.spaceY,
               UpgradeBottomSheetMainCard(
+                isPopular: upgradePlanslist[profileProviderWatch.selectedPlan]
+                        ["isPopular"] ??
+                    false,
                 title: upgradePlanslist[profileProviderWatch.selectedPlan]
                     ["title"],
                 subtitle:
-                    "1 month free . £${upgradePlanslist[profileProviderWatch.selectedPlan]["price"]}/month",
+                    "1 month free . ${upgradePlanslist[profileProviderWatch.selectedPlan]["price"] ?? '£0'}/month",
               ),
               32.spaceY,
               const SeeAllCommonWidget("Get more from your plan", false),
@@ -105,11 +107,32 @@ class UpgradeBottomSheet extends ConsumerWidget {
                         height: 38,
                         minwidth: 288,
                         color: context.theme.colorTheme.buttonColor,
-                        text: Text(
-                          "Get Grow for £${upgradePlanslist[profileProviderWatch.selectedPlan]["price"] ?? ''} Free",
-                          style: AppTextstyle.bodyTextStyle(fontSize: 16),
-                          // style:
-                          //     TextStyle(decoration: TextDecoration.lineThrough),
+                        text: Text.rich(
+                          TextSpan(
+                            children: [
+                              TextSpan(
+                                text: 'Get Grow for ',
+                                style: AppTextstyle.bodyTextStyle(
+                                    fontSize: 16, fontWeight: FontWeight.w600),
+                              ),
+                              TextSpan(
+                                text:
+                                    '${upgradePlanslist[profileProviderWatch.selectedPlan]["price"] ?? ''}',
+                                style: const TextStyle(
+                                  color: AppColors.black,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w600,
+                                  decoration: TextDecoration.lineThrough,
+                                  decorationColor: Colors.black,
+                                ),
+                              ),
+                              TextSpan(
+                                text: ' Free',
+                                style: AppTextstyle.bodyTextStyle(
+                                    fontSize: 16, fontWeight: FontWeight.w600),
+                              ),
+                            ],
+                          ),
                         ),
                         onPressed: onPressed ??
                             () {

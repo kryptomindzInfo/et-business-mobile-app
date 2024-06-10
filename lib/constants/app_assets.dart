@@ -108,6 +108,7 @@ class AppAssets {
   static const teamicon = "${iconsDir}teamicon.png";
   static const hubcardsicon = "${iconsDir}hubcardsicon.png";
   static const rocket = "${iconsDir}rocket.png";
+  static const rocketLight = "${imagesDir}rocket_image_light.png";
   static const computer = "${iconsDir}computer.png";
   static const shareicon = "${iconsDir}shareicon.png";
   static const plus = "${iconsDir}plus.png";
@@ -200,9 +201,28 @@ class AppAssets {
   static const hubRequest = "${iconsDir}hub_request.png";
   static const hubSchedule = "${iconsDir}hub_schedule.png";
   static const saveMoney = "${imagesDir}save_money.png";
+  static const saveMoneyLight = "${imagesDir}save_money_light.png";
   static const offers = "${imagesDir}offers.png";
   static const appInBrowser = "${imagesDir}app_in_browser.png";
   static const notifImage = "${imagesDir}notif_image.png";
   static const currencyExchange = "${iconsDir}currency_exchange.png";
   static const system = "${imagesDir}system.png";
+  static const searchImage = "${iconsDir}search_image.png";
+  static const searchImage2x = "${iconsDir}search_image2x.png";
+  static const home = "${iconsDir}home.png";
+  static const page = "${iconsDir}page.png";
+  static const addIcon = "${iconsDir}add_icon.png";
+  static const monthlyStatement = "${iconsDir}monthly_statement.png";
+  static const cardsIcons = "${iconsDir}cards_icons.png";
+  static const manageRoles = "${iconsDir}manage_roles.png";
+  static const transfer = "${iconsDir}t.png";
+  static const request = "${iconsDir}r.png";
+  static const schedule = "${iconsDir}s.png";
+  static const hubBgImage = "${imagesDir}hub_bg_image.png";
+  static const lang = "${iconsDir}lang.png";
+  static const timeZone = "${iconsDir}time_zone.png";
+  static const theme = "${iconsDir}theme.png";
+  static const exchangeWhite = "${iconsDir}exchange_wh.png";
+  static const invertedArrows = "${iconsDir}inverted_arrows.png";
+  static const clock2x = "${iconsDir}clock2x.png";
 }

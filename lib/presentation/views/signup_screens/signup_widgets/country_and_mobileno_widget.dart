@@ -43,6 +43,8 @@ class CountryAndMobileNoWidget extends ConsumerWidget {
         14.spaceX,
         Expanded(
           child: TextFieldWidget(
+            height: 48,
+            contentPadding: const EdgeInsets.only(bottom: 8, left: 15),
             style: TextStyle(
               color: context.theme.colorTheme.whiteColor,
             ),

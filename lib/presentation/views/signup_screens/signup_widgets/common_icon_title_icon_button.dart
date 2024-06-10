@@ -34,7 +34,7 @@ class CommonIconTitleIconButton extends ConsumerWidget {
               children: [
                 if (iconImage != null)
                   IconContainer(
-                    borderRadius: const BorderRadius.all(Radius.circular(12)),
+                    // borderRadius: const BorderRadius.all(Radius.circular(12)),
                     image: iconImage!,
                     bgColor: AppColors.tealColor,
                     imageColor: imageColor,

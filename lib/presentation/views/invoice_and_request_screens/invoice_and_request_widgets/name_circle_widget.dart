@@ -29,21 +29,21 @@ class NameCircleWidget extends ConsumerWidget {
         borderRadius: BorderRadius.circular(8),
       ),
       child: Padding(
-        padding: const EdgeInsets.fromLTRB(15, 10, 20, 10),
+        padding: const EdgeInsets.fromLTRB(15, 18, 20, 18),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Row(
               children: [
                 CircleAvatar(
-                  radius: 23,
+                  radius: 20,
                   backgroundColor: AppColors.darkGreen,
                   child: Text(
                     getTranslated(leadingText, context),
                     style: AppTextstyle.bodyTextStyle(
                         fontSize: 18,
                         color: AppColors.white,
-                        fontWeight: FontWeight.bold),
+                        fontWeight: FontWeight.w500),
                   ),
                 ),
                 25.spaceX,
@@ -57,6 +57,7 @@ class NameCircleWidget extends ConsumerWidget {
               ],
             ),
             Column(
+              crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 if (trailingHintText != null) 20.spaceY,
                 if (trailingText != null)
@@ -64,14 +65,15 @@ class NameCircleWidget extends ConsumerWidget {
                     getTranslated(trailingText ?? '', context),
                     style: AppTextstyle.bodyTextStyle(
                       color: context.theme.colorTheme.whiteColor,
-                      fontSize: 18,
+                      fontSize: 14,
                     ),
                   ),
                 if (trailingHintText != null)
                   Text(
                     getTranslated(trailingHintText ?? '', context),
+                    textAlign: TextAlign.end,
                     style: AppTextstyle.bodyTextStyle(
-                      fontSize: 18,
+                      fontSize: 14,
                       color: context.theme.colorTheme.whiteColor,
                     ),
                   ),

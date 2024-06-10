@@ -34,6 +34,7 @@ class CardSetupAndEditWidget extends ConsumerWidget {
         ),
         16.spaceY,
         CommonWhiteFlexibleCard(
+          padding: const EdgeInsets.fromLTRB(16, 24, 16, 80),
           color: context.theme.colorTheme.businessDetailsContainer,
           border: Border.all(
             color: context.theme.colorTheme.transparentToTeal,
@@ -50,7 +51,8 @@ class CardSetupAndEditWidget extends ConsumerWidget {
               32.spaceY,
               SettingsInfoText(
                 title: getTranslated("change_card_name", context),
-                description: "${getTranslated("current_name", context)}:",
+                description:
+                    "${getTranslated("current_name", context)}:\nJames Fork",
                 isButton: false,
                 imageIcon: AppAssets.editicon,
               ),

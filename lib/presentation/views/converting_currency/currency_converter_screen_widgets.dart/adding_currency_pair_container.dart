@@ -19,9 +19,17 @@ class AddingCurrencyPairContainer extends ConsumerWidget {
         right: 15,
       ),
       decoration: BoxDecoration(
-        color: AppColors.transparent,
-        // border: Border.all(color: context.theme.colorTheme.borderColor),
-        borderRadius: BorderRadius.circular(24),
+        color: context.theme.colorTheme.businessDetailsContainerToTeal,
+        // border: Border.all(color: context.theme.colorTheme.transparentToTeal),
+        border: Border(
+          left: BorderSide(color: context.theme.colorTheme.transparentToTeal),
+          top: BorderSide(color: context.theme.colorTheme.transparentToTeal),
+          right: BorderSide(color: context.theme.colorTheme.transparentToTeal),
+          bottom: BorderSide.none, // No border for the bottom
+        ),
+        // borderRadius: BorderRadius.circular(24),
+        borderRadius: const BorderRadius.only(
+            topLeft: Radius.circular(12), topRight: Radius.circular(12)),
       ),
       child: Column(
         children: [
@@ -32,7 +40,7 @@ class AddingCurrencyPairContainer extends ConsumerWidget {
               },
             );
           }),
-          20.spaceY,
+          32.spaceY,
           Expanded(
             child: ListView.builder(
               itemCount:

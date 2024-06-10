@@ -3,6 +3,7 @@ import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
 import 'package:etbank_business_app/navigation/navigation.dart';
+import 'package:etbank_business_app/presentation/views/common_widgets/icon_container.dart';
 import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/cards_section/card_settings_screen.dart';
 import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/cards_section/get_card_screen.dart';
 import 'package:etbank_business_app/presentation/views/home_section/home_screen_widgets/cards_section/my_cards_screen.dart';
@@ -25,11 +26,12 @@ class CardsMainWidget extends ConsumerWidget {
           height: 352,
           width: double.infinity,
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(28),
+              borderRadius: BorderRadius.circular(12),
               color: context.theme.colorTheme.businessDetailsContainer,
-              border: Border.all(color: context.theme.colorTheme.borderColor)),
+              border: Border.all(
+                  color: context.theme.colorTheme.transparentToTeal)),
           child: Padding(
-            padding: const EdgeInsets.only(left: 15, right: 25),
+            padding: const EdgeInsets.only(left: 27, right: 29),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -45,14 +47,23 @@ class CardsMainWidget extends ConsumerWidget {
                       },
                     ),
                     InkWell(
-                      onTap: () {
-                        Navigation.pushNamed(MyCardsScreen.routeName);
-                      },
-                      child: Image.asset(
-                        AppAssets.cardsicon,
-                        height: 32,
-                      ),
-                    ),
+                        onTap: () {
+                          Navigation.pushNamed(MyCardsScreen.routeName);
+                        },
+                        child: IconContainer(
+                          border: Border.all(
+                              color:
+                                  context.theme.colorTheme.transparentToTeal),
+                          borderRadius: BorderRadius.circular(12),
+                          bgColor: context.theme.colorTheme.indigoToTransparent,
+                          image: AppAssets.cardsIcons,
+                          scale: 2.5,
+                        )
+                        // Image.asset(
+                        //   AppAssets.cardsicon,
+                        //   height: 32,
+                        // ),
+                        ),
                   ],
                 ),
                 20.spaceY,
@@ -90,11 +101,29 @@ class CardsMainWidget extends ConsumerWidget {
                       fontWeight: FontWeight.w500),
                 ),
                 20.spaceY,
-                Image.asset(
-                  AppAssets.teamsCard,
-                  height: 25,
-                  color: context.theme.colorTheme.yellowToGreen,
-                )
+                Row(
+                  children: [
+                    Image.asset(
+                      AppAssets.clock2x,
+                      height: 22,
+                      width: 22,
+                      color: context.theme.colorTheme.yellowToGreen,
+                    ),
+                    13.spaceX,
+                    Text(
+                      getTranslated("Team cards will appear here", context),
+                      style: AppTextstyle.bodyTextStyle(
+                          color: context.theme.colorTheme.teamText,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500),
+                    ),
+                  ],
+                ),
+                // Image.asset(
+                //   AppAssets.teamsCard,
+                //   height: 25,
+                //   color: context.theme.colorTheme.yellowToGreen,
+                // )
               ],
             ),
           ),

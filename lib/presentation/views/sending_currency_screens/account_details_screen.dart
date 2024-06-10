@@ -36,7 +36,7 @@ class AccountDetailsScreen extends ConsumerWidget {
           ),
           body: SingleChildScrollView(
             child: Padding(
-              padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
+              padding: const EdgeInsets.fromLTRB(20, 10, 20, 0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -50,7 +50,8 @@ class AccountDetailsScreen extends ConsumerWidget {
                   ),
                   32.spaceY,
                   UserPersonalDetailsWidget(
-                    height: 32,
+                    height: 22,
+                    titlePadding: 0.spaceY,
                     readOnly: true,
                     enableInteraction: false,
                     controller:
@@ -61,13 +62,14 @@ class AccountDetailsScreen extends ConsumerWidget {
                     icon: Image.asset(
                       AppAssets.iconArrowDownBlack,
                       color: context.theme.colorTheme.whiteColor,
-                      width: 18,
-                      height: 11,
+                      width: 17,
+                      height: 10,
                     ),
                   ),
                   16.spaceY,
                   UserPersonalDetailsWidget(
-                    height: 32,
+                    height: 22,
+                    titlePadding: 0.spaceY,
                     readOnly: true,
                     enableInteraction: false,
                     controller:
@@ -78,15 +80,16 @@ class AccountDetailsScreen extends ConsumerWidget {
                     icon: Image.asset(
                       AppAssets.iconArrowDownBlack,
                       color: context.theme.colorTheme.whiteColor,
-                      width: 18,
-                      height: 11,
+                      width: 17,
+                      height: 10,
                     ),
                   ),
                   16.spaceY,
                   UserPersonalDetailsWidget(
-                    height: 32,
-                    readOnly: true,
-                    enableInteraction: false,
+                    height: 22,
+                    titlePadding: 0.spaceY,
+                    // readOnly: true,
+                    // enableInteraction: false,
                     controller:
                         ref.watch(sendingCurrencyProvider).accountNoController,
                     title: getTranslated('account_number', context),
@@ -95,6 +98,8 @@ class AccountDetailsScreen extends ConsumerWidget {
                   ),
                   16.spaceY,
                   TextFieldWidget(
+                    height: 56,
+                    contentPadding: const EdgeInsets.only(top: 4, left: 15),
                     containerColor:
                         context.theme.colorTheme.businessDetailsContainer,
                     border: Border.all(
@@ -142,12 +147,15 @@ class AccountDetailsScreen extends ConsumerWidget {
                           child: Container(
                             margin: const EdgeInsets.all(20),
                             child: VerifiedBottomSheetWidget(
+                              height: 300,
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 40),
                               title: Text(
                                 getTranslated(
                                     "account_name_matched_title", context),
                                 style: AppTextstyle.bodyTextStyle(
                                   fontSize: 20,
-                                  fontWeight: FontWeight.bold,
+                                  fontWeight: FontWeight.w700,
                                   color: AppColors.black,
                                 ),
                               ),
@@ -159,7 +167,7 @@ class AccountDetailsScreen extends ConsumerWidget {
                                   fontSize: 16,
                                   fontWeight: FontWeight.w500,
                                   overflow: TextOverflow.clip,
-                                  color: AppColors.black,
+                                  color: AppColors.iconGreyColor,
                                 ),
                               ),
                             ),

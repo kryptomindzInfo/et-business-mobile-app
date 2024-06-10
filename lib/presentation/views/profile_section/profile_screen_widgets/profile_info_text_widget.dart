@@ -11,9 +11,15 @@ class ProfileInfoTextWidget extends ConsumerWidget {
   final String? image;
   final String? title;
   final String? subTitle;
+  final Color? subTitleColor;
   final VoidCallback? onpress;
   const ProfileInfoTextWidget(
-      {super.key, this.image, this.title, this.onpress, this.subTitle});
+      {super.key,
+      this.image,
+      this.title,
+      this.onpress,
+      this.subTitle,
+      this.subTitleColor});
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return InkWell(
@@ -42,8 +48,8 @@ class ProfileInfoTextWidget extends ConsumerWidget {
                     subTitle!,
                     style: AppTextstyle.bodyTextStyle(
                         // fontSize: 16,
-                        color: AppColors.grey,
-                        fontWeight: FontWeight.w600),
+                        color: subTitleColor ?? AppColors.grey,
+                        fontWeight: FontWeight.w500),
                   ),
                 }
               ],

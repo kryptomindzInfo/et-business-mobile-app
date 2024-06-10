@@ -16,7 +16,7 @@ class MyAppTabWidget extends ConsumerWidget {
         const MyAppTabMainCard(),
         24.spaceY,
         const MyApptabEssentialWidget(),
-        24.spaceY,
+        20.spaceY,
         const MyApptabPaymentWidget(),
         20.spaceY,
       ],

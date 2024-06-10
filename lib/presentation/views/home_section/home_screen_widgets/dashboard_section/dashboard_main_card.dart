@@ -85,43 +85,41 @@ class DashboardMainCard extends ConsumerWidget {
               ],
             ),
             29.spaceY,
-            Container(
-              margin: const EdgeInsets.only(left: 35, right: 22),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  MainCardOption(
-                    image: AppAssets.sendicon,
-                    title: "Send",
-                    onpress: () {
-                      Navigation.pushNamed(WhoToPayScreen.routeName);
-                    },
-                  ),
-                  MainCardOption(
-                    image: AppAssets.requesticon,
-                    title: "Request",
-                    onpress: () {
-                      showCommonModalSheet(
-                          context, 460, const RequestMoneyBottomSheetWidget(),
-                          color: context.theme.colorTheme.bottomSheetColor);
-                    },
-                  ),
-                  MainCardOption(
-                    image: AppAssets.moreicon,
-                    title: "More",
-                    onpress: () {
-                      showCommonModalSheet(
-                          context,
-                          450,
-                          color: context.theme.colorTheme.bottomSheetColor,
-                          const Padding(
-                            padding: EdgeInsets.only(left: 20, top: 20),
-                            child: MoreOptionsBottomSheetWidget(),
-                          ));
-                    },
-                  )
-                ],
-              ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                MainCardOption(
+                  image: AppAssets.sendicon,
+                  title: "Send",
+                  onpress: () {
+                    Navigation.pushNamed(WhoToPayScreen.routeName);
+                  },
+                ),
+                MainCardOption(
+                  image: AppAssets.requesticon,
+                  title: "Request",
+                  onpress: () {
+                    showCommonModalSheet(
+                        context, 460, const RequestMoneyBottomSheetWidget(),
+                        color: context.theme.colorTheme.bottomSheetColor);
+                  },
+                ),
+                MainCardOption(
+                  image: AppAssets.moreicon,
+                  title: "More",
+                  onpress: () {
+                    showCommonModalSheet(
+                        context,
+                        470,
+                        color: context.theme.colorTheme.bottomSheetColor,
+                        const Padding(
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 38, vertical: 20),
+                          child: MoreOptionsBottomSheetWidget(),
+                        ));
+                  },
+                )
+              ],
             ),
             20.spaceY,
             const SeeAllCommonWidget("Transactions", true),
@@ -130,21 +128,24 @@ class DashboardMainCard extends ConsumerWidget {
               marketPriceColor: context.theme.colorTheme.greyDescription,
               image: AppAssets.exchangeUsd,
               title: 'Exchanged to USD',
+              spaceBtw: 0.spaceY,
               subTitle: 'Today, 9:29 PM',
               price1: '-£1',
               price2: '+S1.36',
             ),
             // 10.spaceY,
-            const InfoTextWidget(
+            InfoTextWidget(
               image: AppAssets.transferTo,
               title: 'Transfer to Brooklyn',
+              spaceBtw: 0.spaceY,
               price1: '-£1',
               subTitle: 'Today, 9:13 PM',
             ),
             // 10.spaceY,
-            const InfoTextWidget(
+            InfoTextWidget(
               image: AppAssets.paymentFrom,
               title: 'Payment from jhon deo',
+              spaceBtw: 0.spaceY,
               price1: '-£1',
               subTitle: 'Today, 9:09 PM',
             ),

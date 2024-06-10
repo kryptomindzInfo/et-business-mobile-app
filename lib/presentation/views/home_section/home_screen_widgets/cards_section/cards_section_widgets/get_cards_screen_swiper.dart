@@ -19,11 +19,11 @@ class GetCardsScreenSwiper extends ConsumerWidget {
         DotsIndicator(
           dotsCount: cardsProWatch.getCardsScreenData.length,
           position: cardsProWatch.getCardsScreenIndex.toDouble(),
-          decorator: DotsDecorator(
-            color: Colors.grey.withOpacity(0.8), // Inactive color
-            activeColor: AppColors.black,
-            size: const Size.square(10),
-            activeSize: const Size.square(10),
+          decorator: const DotsDecorator(
+            color: AppColors.viewButton,
+            activeColor: AppColors.grassGreen,
+            size: Size.square(10),
+            activeSize: Size.square(10),
           ),
         ),
         20.spaceY,

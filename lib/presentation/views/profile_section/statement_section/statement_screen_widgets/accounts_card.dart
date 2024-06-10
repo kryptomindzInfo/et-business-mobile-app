@@ -17,7 +17,8 @@ class AccountsCard extends ConsumerWidget {
     return Container(
       // height: 71,
       // width: double.infinity,
-      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 18),
+      // padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 18),
+      padding: const EdgeInsets.fromLTRB(15, 18, 32, 18),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
           color: context.theme.colorTheme.businessDetailsContainer,

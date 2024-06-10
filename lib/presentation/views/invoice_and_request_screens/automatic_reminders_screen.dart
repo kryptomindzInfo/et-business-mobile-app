@@ -59,6 +59,7 @@ class AutomaticRemindersScreen extends ConsumerWidget {
                   borderRadius: 8,
                   padding: const EdgeInsets.fromLTRB(6, 6, 6, 6),
                   widget: SwitchButtonWidget(
+                    scale: 0.9,
                     value: invoiceRequestProviderW.sendAutomaticReminders,
                     title:
                         getTranslated('send_automatically_reminders', context),

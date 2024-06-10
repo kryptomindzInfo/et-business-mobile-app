@@ -32,9 +32,12 @@ class WhoToPayScreen extends ConsumerWidget {
                 Navigator.pop(context);
               },
               child: Padding(
-                padding: const EdgeInsets.all(16.0),
+                padding: const EdgeInsets.all(17.0),
                 child: Image.asset(
                   AppAssets.arrowLeftShort,
+                  color: context.theme.colorTheme.whiteColor,
+                  // height: 5,
+                  // width: 5,
                 ),
               ),
             ),
@@ -51,7 +54,7 @@ class WhoToPayScreen extends ConsumerWidget {
             etBankLogo: true,
           ),
           body: Padding(
-            padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
+            padding: const EdgeInsets.fromLTRB(20, 5, 20, 0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -66,20 +69,23 @@ class WhoToPayScreen extends ConsumerWidget {
                   // trailingImage: AppAssets.addIconBold,
                   rightPadding: 0,
                 ),
-                32.spaceY,
+                34.spaceY,
                 TextFieldBlackWidget(
                   hintText: getTranslated('search', context),
                   onChanged: (value) {},
                 ),
-                54.spaceY,
-                Text(
-                  getTranslated('cant_find_who_you_are_looking_for', context),
-                  style: AppTextstyle.headingTextStyle(
-                    color: context.theme.colorTheme.whiteColor,
-                    fontSize: 16,
+                59.spaceY,
+                Padding(
+                  padding: const EdgeInsets.only(left: 7),
+                  child: Text(
+                    getTranslated('cant_find_who_you_are_looking_for', context),
+                    style: AppTextstyle.headingTextStyle(
+                      color: context.theme.colorTheme.whiteColor,
+                      fontSize: 16,
+                    ),
                   ),
                 ),
-                18.spaceY,
+                13.spaceY,
                 AddCounterPartyWidget(
                   borderRadius: 12,
                   title: 'add_new_counterparty',

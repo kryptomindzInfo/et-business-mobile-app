@@ -7,7 +7,7 @@ import 'package:etbank_business_app/presentation/views/sending_currency_screens/
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../constants/app_assets.dart';
+
 import '../../../constants/app_textstyle.dart';
 import '../../../navigation/navigation.dart';
 import '../../../resources/localization/language_constrants.dart';
@@ -77,6 +77,11 @@ class ShowAccountDetailsScreen extends ConsumerWidget {
                           border: Border.all(color: AppColors.transparent),
                           title: 'transfer_fee',
                           subTitle: 'no_fee',
+                          exclamationMark: true,
+                          subTitleStyle: AppTextstyle.bodyTextStyle(
+                            fontSize: 16,
+                            color: context.theme.colorTheme.yellowToGreen,
+                          ),
                         ),
                         ShowAccountDetailsWidget(
                           color: AppColors.transparent,
@@ -100,7 +105,7 @@ class ShowAccountDetailsScreen extends ConsumerWidget {
                         ShowAccountDetailsWidget(
                           color: AppColors.transparent,
                           border: Border.all(color: AppColors.transparent),
-                          title: 'amount',
+                          title: 'To',
                           subTitle: 'xyz',
                         ),
                         ShowAccountDetailsWidget(
@@ -118,7 +123,7 @@ class ShowAccountDetailsScreen extends ConsumerWidget {
                         ShowAccountDetailsWidget(
                           color: AppColors.transparent,
                           border: Border.all(color: AppColors.transparent),
-                          title: 'from',
+                          title: 'Sort code',
                           subTitle: 'abc',
                         ),
                       ],

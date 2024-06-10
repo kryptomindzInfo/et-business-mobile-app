@@ -21,6 +21,7 @@ class UserPersonalDetailsWidget extends ConsumerWidget {
   final TextStyle? hintStyle;
   final double? height;
   final Widget? suffixIcon;
+  final Widget? titlePadding;
 
   final TextStyle? titleTextStyle;
   const UserPersonalDetailsWidget(
@@ -36,7 +37,8 @@ class UserPersonalDetailsWidget extends ConsumerWidget {
       required this.controller,
       this.hintStyle,
       this.height,
-      this.suffixIcon});
+      this.suffixIcon,
+      this.titlePadding});
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return GestureDetector(
@@ -45,12 +47,12 @@ class UserPersonalDetailsWidget extends ConsumerWidget {
         decoration: BoxDecoration(
             color: context.theme.colorTheme.businessDetailsContainer,
             borderRadius: const BorderRadius.all(
-              Radius.circular(8),
+              Radius.circular(12),
             ),
             border:
                 Border.all(color: context.theme.colorTheme.transparentToTeal)),
         child: Padding(
-          padding: const EdgeInsets.fromLTRB(15, 8, 15, 0),
+          padding: const EdgeInsets.fromLTRB(15, 8, 15, 8),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -66,6 +68,8 @@ class UserPersonalDetailsWidget extends ConsumerWidget {
                               color: context.theme.colorTheme.whiteColor),
                           controller: controller,
                           title: title,
+                          titleSize: 12,
+                          titleColor: titleTextColor,
                           hint: hint,
                           hintStyle: hintStyle,
                           padding: 0,
@@ -73,6 +77,7 @@ class UserPersonalDetailsWidget extends ConsumerWidget {
                           enableInteraction: enableInteraction ?? true,
                           height: height,
                           suffixIcon: suffixIcon,
+                          titlePadding: titlePadding,
                         ),
                       ),
                     ],

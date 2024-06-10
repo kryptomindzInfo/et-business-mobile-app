@@ -14,7 +14,9 @@ class TransferMainWhiteCard extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return CommonWhiteFlexibleCard(
+      borderRadius: 12,
       color: context.theme.colorTheme.businessDetailsContainer,
+      border: Border.all(color: context.theme.colorTheme.transparentToTeal),
       widget: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -39,7 +41,7 @@ class TransferMainWhiteCard extends ConsumerWidget {
                 ),
               ),
               Container(
-                padding: const EdgeInsets.all(15),
+                padding: const EdgeInsets.all(12),
                 decoration: const BoxDecoration(
                   color: AppColors.baseGreenColor,
                   borderRadius: BorderRadius.all(

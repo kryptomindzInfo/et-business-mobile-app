@@ -13,7 +13,6 @@ import 'package:etbank_business_app/providers/cards_provider.dart';
 import 'package:etbank_business_app/resources/localization/language_constrants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
 import '../../../common_widgets/app_common_appbar.dart';
 
 class GetCardScreen extends ConsumerWidget {
@@ -36,20 +35,19 @@ class GetCardScreen extends ConsumerWidget {
             padding: const EdgeInsets.only(left: 20, right: 20),
             child: Column(
               children: [
-                SizedBox(
-                  height: 110,
-                  child: HeaderIconWithTitle(
-                    // imageicon: AppAssets.arrowLeft,
-                    title: getTranslated("get_card", context),
-                    description: getTranslated(
-                        proWatch.getCardsScreenData[proWatch
-                            .getCardsScreenIndex]["data"]["description"],
-                        context),
-                    // etBankLogo: true,
-                  ),
+                HeaderIconWithTitle(
+                  // imageicon: AppAssets.arrowLeft,
+                  title: getTranslated("get_card", context),
+                  // description: getTranslated(
+                  //     proWatch.getCardsScreenData[proWatch
+                  //         .getCardsScreenIndex]["data"]["description"],
+                  //     context),
+                  // etBankLogo: true,
                 ),
-                // 10.spaceY,
+                47.spaceY,
                 CommonWhiteFlexibleCard(
+                  border: Border.all(
+                      color: context.theme.colorTheme.transparentToTeal),
                   color: context.theme.colorTheme.businessDetailsContainer,
                   widget: Column(
                     children: [
@@ -85,7 +83,7 @@ class GetCardScreen extends ConsumerWidget {
                     ],
                   ),
                 ),
-                40.spaceY,
+                27.spaceY,
                 CommonButton(
                   title: getTranslated("order", context),
                   mainButtonColor: true

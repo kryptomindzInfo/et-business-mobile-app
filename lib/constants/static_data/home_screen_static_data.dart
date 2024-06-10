@@ -6,11 +6,14 @@ import '../../navigation/navigation.dart';
 import '../../navigation/navigator_key.dart';
 import '../../presentation/views/profile_section/profile_screen_bottom_sheets/upgrade_bottom_sheet.dart';
 import '../../presentation/views/profile_section/refer_business/refer_business_screen.dart';
+import '../app_textstyle.dart';
 
 List<Map> _profileScreenOptions = [
   {
     "title": "Upgrade",
     'icon': AppAssets.upgradeicon,
+    'titleStyle': AppTextstyle.bodyTextStyle(
+        fontWeight: FontWeight.w700, fontSize: 12, color: AppColors.black),
     "ontap": () {
       showModalBottomSheet(
         context: appContext,
@@ -36,6 +39,8 @@ List<Map> _profileScreenOptions = [
   {
     "title": "Refer a business",
     "icon": AppAssets.favrouriteicon,
+    'titleStyle': AppTextstyle.bodyTextStyle(
+        fontWeight: FontWeight.w500, fontSize: 12, color: AppColors.white),
     "ontap": () {
       Navigation.pushNamed(ReferBusinessScreen.routeName);
     }
@@ -71,7 +76,8 @@ List<Map> _upgradeData = [
   },
   {
     "title": "Grow",
-    "price": 25,
+    "price": '£25',
+    'isPopular': true,
     "data": [
       {
         "title":
@@ -95,7 +101,7 @@ List<Map> _upgradeData = [
   },
   {
     "title": "Scale",
-    "price": 100,
+    "price": '£100',
     "data": [
       {
         "title":
@@ -114,12 +120,18 @@ List<Map> _upgradeData = [
         "subtitle":
             "A £0.20 fee applies per local payment outside of the free allowance",
         "icon": AppAssets.localpaymenticon
+      },
+      {
+        "title": "Exchange £50k at the interbank rate ",
+        "subtitle":
+            "A £0.20 fee applies per local payment outside of the free allowance",
+        "icon": AppAssets.exchangeWhite
       }
     ]
   },
   {
     "title": "Enterprise",
-    "price": 150,
+    "price": '£150',
     "data": [
       {
         "title":
@@ -222,9 +234,9 @@ List<Map> _getCardsData = [
 List<Map> get getCardsData => _getCardsData;
 
 List<Map> _paymentScreen = [
-  {"title": "transfer"},
+  {"title": "Transfer"},
   {"title": "request"},
-  {"title": "shedule"},
+  {"title": "Scheduled"},
 ];
 
 List<Map> get paymentScreenopt => _paymentScreen;

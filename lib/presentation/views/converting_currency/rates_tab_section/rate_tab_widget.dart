@@ -34,7 +34,8 @@ class RatesTabWidget extends ConsumerWidget {
                   showModalBottomSheet(
                     context: context,
                     isScrollControlled: true,
-                    backgroundColor: context.theme.colorTheme.bottomSheetColor,
+                    backgroundColor: AppColors.transparent,
+                    // backgroundColor: context.theme.colorTheme.bottomSheetColor,
                     builder: (context) {
                       return const AddingCurrencyPairContainer();
                     },

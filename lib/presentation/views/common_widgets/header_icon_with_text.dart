@@ -25,6 +25,7 @@ class HeaderIconWithTitle extends ConsumerWidget {
   final Widget? trailing;
   final TextStyle? titleStyle;
   final Color? titleColor;
+  final bool isCenter;
   const HeaderIconWithTitle(
       {super.key,
       this.title,
@@ -42,12 +43,14 @@ class HeaderIconWithTitle extends ConsumerWidget {
       this.profilePicWidget,
       this.spaceBtw,
       this.trailing,
-      this.titleColor});
+      this.titleColor,
+      this.isCenter = false});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment:
+          isCenter ? CrossAxisAlignment.center : CrossAxisAlignment.start,
       children: [
         // SizedBox(
         //   width: double.infinity,
@@ -119,6 +122,7 @@ class HeaderIconWithTitle extends ConsumerWidget {
               Expanded(
                 child: Text(
                   title!,
+                  textAlign: isCenter ? TextAlign.center : TextAlign.left,
                   style: titleStyle ??
                       AppTextstyle.headingTextStyle(
                         color: titleColor ??

@@ -29,7 +29,9 @@ class CreateNewRoleBottomSheet extends ConsumerWidget {
           children: [
             24.spaceY,
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pop(context);
+              },
               icon: const Icon(Icons.close),
               color: context.theme.colorTheme.whiteColor,
             ),
@@ -39,12 +41,13 @@ class CreateNewRoleBottomSheet extends ConsumerWidget {
             ),
             28.spaceY,
             TextFieldWidget(
+              contentPadding: EdgeInsets.only(top: 4, left: 11),
               containerColor: context.theme.colorTheme.businessDetailsContainer,
               border: Border.all(
                 color: context.theme.colorTheme.transparentToTeal,
               ),
               hintText: getTranslated('new_role_name', context),
-              style: const TextStyle(color: AppColors.black),
+              style: TextStyle(color: context.theme.colorTheme.whiteColor),
             ),
             140.spaceY,
             Center(
@@ -64,9 +67,11 @@ class CreateNewRoleBottomSheet extends ConsumerWidget {
                       builder: (context) => Container(
                             margin: const EdgeInsets.all(20),
                             child: VerifiedBottomSheetWidget(
+                              height: 235,
                               title: const Column(
                                 children: [],
                               ),
+                              spaceBtw: 0.spaceY,
                               description: Text(
                                 "Role Created",
                                 style: AppTextstyle.headingTextStyle(

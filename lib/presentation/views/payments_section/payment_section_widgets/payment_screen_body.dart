@@ -18,24 +18,26 @@ class PaymentScreenBody extends ConsumerWidget {
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
               children: ref.watch(paymentProvider).paymentScreenOption.map((e) {
-            int index =
-                ref.read(paymentProvider).paymentScreenOption.indexOf(e);
-            return PaymentScreenChips(
-              title: getTranslated(e["title"], context),
-              onpress: () {
-                ref.read(paymentProvider).selectedPaymntOptionsIndex(index);
-              },
-              color:
-                  ref.watch(paymentProvider).paymentScreenOptionIndex == index
+                int index =
+                    ref.read(paymentProvider).paymentScreenOption.indexOf(e);
+                return PaymentScreenChips(
+                  title: getTranslated(e["title"], context),
+                  onpress: () {
+                    ref.read(paymentProvider).selectedPaymntOptionsIndex(index);
+                  },
+                  color: ref.watch(paymentProvider).paymentScreenOptionIndex ==
+                          index
                       ? context.theme.colorTheme.activeChipColor
                       : context.theme.colorTheme.chipsColor,
-              titleColor:
-                  ref.watch(paymentProvider).paymentScreenOptionIndex == index
-                      ? context.theme.colorTheme.whiteAndBlack
-                      : context.theme.colorTheme.blackAndWhite,
-            );
-          }).toList()),
+                  titleColor:
+                      ref.watch(paymentProvider).paymentScreenOptionIndex ==
+                              index
+                          ? context.theme.colorTheme.whiteAndBlack
+                          : context.theme.colorTheme.blackAndWhite,
+                );
+              }).toList()),
         ),
         45.spaceY,
         const TransferMainWhiteCard(),

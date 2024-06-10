@@ -45,14 +45,18 @@ class SignUpWhoAreYourCustomersScreen extends ConsumerWidget {
                 ),
                 36.spaceY,
                 BlackContainerWidget(
+                  borderRadius: 12,
                   color: context.theme.colorTheme.halfWhiteToBlack,
                   child: SizedBox(
-                    height: 300.h,
+                    height: 260.h,
                     child: ListView.builder(
+                        physics: const NeverScrollableScrollPhysics(),
                         itemCount: customersTypes.length,
                         itemBuilder: (context, index) {
                           return Consumer(builder: (context, ref, child) {
                             return CheckBoxWidget(
+                              borderColor:
+                                  context.theme.colorTheme.whiteToGreen,
                               checkBoxValue: ref
                                   .watch(signUpStateProvider)
                                   .selectedCustomerTypes

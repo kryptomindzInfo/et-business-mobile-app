@@ -45,20 +45,26 @@ class SignUpHowManyPaymentsEachMonthScreen extends ConsumerWidget {
               ),
               36.spaceY,
               BlackContainerWidget(
+                borderRadius: 12,
                 color: context.theme.colorTheme.halfWhiteToBlack,
                 child: SizedBox(
-                  height: 220.h,
-                  child: ListView.builder(
-                      itemCount: paymentRanges.length,
-                      itemBuilder: (context, index) {
-                        return GestureDetector(
-                            onTap: () {
-                              Navigation.pushNamed(
-                                  SignUpMaximumSinglePaymentPerMonthScreen
-                                      .routeName);
-                            },
-                            child: CategoryWidget(title: paymentRanges[index]));
-                      }),
+                  height: 230.h,
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 0, top: 15),
+                    child: ListView.builder(
+                        physics: const NeverScrollableScrollPhysics(),
+                        itemCount: paymentRanges.length,
+                        itemBuilder: (context, index) {
+                          return GestureDetector(
+                              onTap: () {
+                                Navigation.pushNamed(
+                                    SignUpMaximumSinglePaymentPerMonthScreen
+                                        .routeName);
+                              },
+                              child:
+                                  CategoryWidget(title: paymentRanges[index]));
+                        }),
+                  ),
                 ),
               ),
             ],

@@ -5,9 +5,7 @@ import 'package:etbank_business_app/presentation/views/signup_screens/signup_wid
 import 'package:etbank_business_app/resources/localization/language_constrants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
 import '../../../../navigation/navigation.dart';
-import '../../../../providers/theme_provider.dart';
 import '../../bottom_navigation_bar.dart';
 import '../signup_email_screen.dart';
 
@@ -28,7 +26,7 @@ class RegistrationLoginButtons extends ConsumerWidget {
             Navigation.pushNamed(SignUpEmailScreen.routeName);
           },
         ),
-        10.spaceX,
+        8.spaceX,
         RegistrationLoginCommonButton(
           buttonTitle: getTranslated("Login", context),
           buttoncolor: AppColors.tealColor,

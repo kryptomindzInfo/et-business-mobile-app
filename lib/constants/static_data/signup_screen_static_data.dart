@@ -173,6 +173,9 @@ List<Map> _verificationData = [
         context.theme.colorTheme.secondaryColor,
     "icon": AppAssets.plancardicon,
     "status": "",
+    'status_color': (BuildContext context) => null,
+    'status_icon_color': (BuildContext context) =>
+        context.theme.colorTheme.whiteToGrey,
     "statusicon": AppAssets.greencheck,
     "ontap": () {
       showModalBottomSheet(
@@ -189,7 +192,10 @@ List<Map> _verificationData = [
         context.theme.colorTheme.secondaryColor,
     "icon": AppAssets.submitdocicon,
     "status": "",
+    'status_color': (BuildContext context) => null,
     "statusicon": "",
+    'status_icon_color': (BuildContext context) =>
+        context.theme.colorTheme.whiteToGrey,
     "ontap": () {
       Navigation.pushNamed(SignUpSubmitDocumentScreen.routeName);
     },
@@ -200,6 +206,9 @@ List<Map> _verificationData = [
     "titleColor": (BuildContext context) => context.theme.colorTheme.whiteColor,
     "icon": AppAssets.verifybusinessdetailsicon,
     "status": "ready_to_submit",
+    'status_color': (BuildContext context) => null,
+    'status_icon_color': (BuildContext context) =>
+        context.theme.colorTheme.whiteToGrey,
     "statusicon": AppAssets.whitehourglass,
     "ontap": () {},
     "imageColor": (BuildContext context) =>
@@ -212,9 +221,18 @@ List<Map> _verificationData = [
     "titleColor": (BuildContext context) => context.theme.colorTheme.whiteColor,
     "icon": AppAssets.verifybusinessownersicon,
     "status": "ready_to_submit",
+    'status_color': (BuildContext context) => null,
+    'status_icon_color': (BuildContext context) =>
+        context.theme.colorTheme.whiteToGrey,
     "statusicon": AppAssets.whitehourglass,
     "ontap": () {
-      showCommonModalSheet(appContext, 300, const BusinessDetailsBottomSheet());
+      showCommonModalSheet(
+        appContext,
+        300,
+        const BusinessDetailsBottomSheet(),
+        margin: 15,
+        // margin: const EdgeInsets.symmetric(horizontal: 0),
+      );
     },
     "imageColor": (BuildContext context) =>
         context.theme.colorTheme.whiteToGrey,
@@ -226,7 +244,10 @@ List<Map> _verificationData = [
     "titleColor": (BuildContext context) => context.theme.colorTheme.whiteColor,
     "icon": AppAssets.identityicon,
     "status": "verified",
+    'status_color': (BuildContext context) =>
+        context.theme.colorTheme.grassGreen,
     "statusicon": AppAssets.greencheck,
+    'status_icon_color': (BuildContext context) => null,
     "ontap": () {},
     "color": (BuildContext context) =>
         context.theme.colorTheme.businessDetailsContainer,

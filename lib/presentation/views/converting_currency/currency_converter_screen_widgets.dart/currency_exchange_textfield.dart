@@ -30,6 +30,7 @@ class CurrencyExchangeTextfield extends ConsumerWidget {
               // alignment: Alignment.centerLeft,
               children: [
                 TextField(
+                  enabled: false,
                   style: TextStyle(color: context.theme.colorTheme.whiteColor),
                   controller: controller,
                   decoration: InputDecoration(

@@ -1,4 +1,5 @@
 import 'package:etbank_business_app/constants/app_assets.dart';
+import 'package:etbank_business_app/constants/app_colors.dart';
 import 'package:etbank_business_app/constants/app_textstyle.dart';
 import 'package:etbank_business_app/extensions/build_context.dart';
 import 'package:etbank_business_app/extensions/sized_box.dart';
@@ -49,11 +50,13 @@ class AvailableToSpendCard extends ConsumerWidget {
             style: AppTextstyle.bodyTextStyle(
                 fontSize: 14,
                 fontWeight: FontWeight.w400,
-                color: context.theme.colorTheme.normalTextColor),
+                color: context.theme.colorTheme.halfWhiteToGrey),
             overflow: TextOverflow.clip,
           ),
           25.spaceY,
           CommonGreyButton(
+            buttonColor: context.theme.colorTheme.yellowToTeal,
+            titleColor: context.theme.colorTheme.bottomSheetColor,
             borderRadius: 8,
             title: getTranslated("resolve", context),
           )

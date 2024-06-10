@@ -41,7 +41,7 @@ class ReferBusinessShareLinkMainCard extends ConsumerWidget {
                     fontWeight: FontWeight.w600,
                     color: context.theme.colorTheme.yellowToGreen),
               ),
-              6.spaceY,
+              4.spaceY,
               SizedBox(
                 width: 200,
                 child: Text(

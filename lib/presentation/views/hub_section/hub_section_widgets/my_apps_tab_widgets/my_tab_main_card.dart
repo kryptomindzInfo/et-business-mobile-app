@@ -15,102 +15,127 @@ class MyAppTabMainCard extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return Container(
-      // height: 308,
-      width: double.infinity,
-      decoration: BoxDecoration(
-        color: context.theme.colorTheme.transparentToGreen,
-        borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: AppColors.tealColor),
-        // color: const Color.fromRGBO(0, 255, 157, 1),
-      ),
-      child: Column(
-        children: [
-          62.spaceY,
-          Padding(
-            padding: const EdgeInsets.only(left: 15, right: 20),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Row(
+    return Column(
+      children: [
+        Container(
+          // height: 308,
+          width: double.infinity,
+          decoration: BoxDecoration(
+              image: const DecorationImage(
+                  scale: 2,
+                  image: AssetImage(
+                    AppAssets.hubBgImage,
+                  )),
+              color: context.theme.colorTheme.transparentToGreen,
+              // borderRadius: BorderRadius.circular(12),
+              borderRadius: const BorderRadius.only(
+                  topLeft: Radius.circular(12), topRight: Radius.circular(12)),
+              // border: Border.all(color: context.theme.colorTheme.transparentToTeal),
+              border: Border(
+                left: BorderSide(
+                    color: context.theme.colorTheme.transparentToTeal),
+                right: BorderSide(
+                    color: context.theme.colorTheme.transparentToTeal),
+                top: BorderSide(
+                    color: context.theme.colorTheme.transparentToTeal),
+              )
+              // color: const Color.fromRGBO(0, 255, 157, 1),
+              ),
+          child: Column(
+            children: [
+              62.spaceY,
+              Padding(
+                padding: const EdgeInsets.only(left: 15, right: 20),
+                child: Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Image.asset(
-                      color: AppColors.white,
-                      AppAssets.gifticon,
-                      height: 22,
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Image.asset(
+                          color: AppColors.white,
+                          AppAssets.gifticon,
+                          height: 22,
+                        ),
+                        5.spaceX,
+                        Text(
+                          getTranslated("1_month_free", context),
+                          style: AppTextstyle.bodyTextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.normal,
+                              color: AppColors.white),
+                        )
+                      ],
                     ),
-                    5.spaceX,
-                    Text(
-                      getTranslated("1_month_free", context),
-                      style: AppTextstyle.bodyTextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.normal,
-                          color: AppColors.white),
-                    )
+                    // Image.asset(
+                    //   AppAssets.planets,
+                    //   height: 130,
+                    // )
                   ],
                 ),
-                // Image.asset(
-                //   AppAssets.planets,
-                //   height: 130,
-                // )
+              ),
+              30.spaceY,
+              Padding(
+                padding: const EdgeInsets.only(left: 15),
+                child: Text(
+                  getTranslated("upgrade_plane", context),
+                  style: AppTextstyle.headingTextStyle(
+                      fontSize: 32,
+                      fontWeight: FontWeight.w700,
+                      color: AppColors.white,
+                      overflow: TextOverflow.clip),
+                ),
+              ),
+              30.spaceY,
+            ],
+          ),
+        ),
+        Container(
+          // height: 84,
+          decoration: BoxDecoration(
+              color: context.theme.colorTheme.tealToYellow,
+              // borderRadius: const BorderRadius.all(Radius.circular(12)),
+              borderRadius: const BorderRadius.only(
+                bottomLeft: Radius.circular(12),
+                bottomRight: Radius.circular(12),
+              )
+              // borderRadius: const BorderRadius.only(
+              //     bottomLeft: Radius.circular(10),
+              //     bottomRight: Radius.circular(10))
+              ),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 18),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                SizedBox(
+                  width: 180,
+                  child: Text(
+                    getTranslated("enjoy_higher_limits", context),
+                    style: AppTextstyle.bodyTextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.normal,
+                        color: context.theme.colorTheme.blackTohalfWhite,
+                        overflow: TextOverflow.clip),
+                  ),
+                ),
+                CommonButton(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+                  // width: 100,
+                  title: getTranslated("upgrade", context),
+                  mainButtonColor: context.theme.colorTheme.indigoToBlackish,
+                  titleColor: context.theme.colorTheme.yellowToWhite,
+                  onpress: () {
+                    Navigation.pushNamed(UpgradeScreens.routeName);
+                  },
+                ),
               ],
             ),
           ),
-          30.spaceY,
-          Padding(
-            padding: const EdgeInsets.only(left: 15),
-            child: Text(
-              getTranslated("upgrade_plane", context),
-              style: AppTextstyle.headingTextStyle(
-                  fontSize: 32,
-                  fontWeight: FontWeight.bold,
-                  color: AppColors.white,
-                  overflow: TextOverflow.clip),
-            ),
-          ),
-          30.spaceY,
-          Container(
-            // height: 84,
-            decoration: BoxDecoration(
-                color: context.theme.colorTheme.blackishToYellow,
-                borderRadius: const BorderRadius.only(
-                    bottomLeft: Radius.circular(10),
-                    bottomRight: Radius.circular(10))),
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 18),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  SizedBox(
-                    width: 180,
-                    child: Text(
-                      getTranslated("enjoy_higher_limits", context),
-                      style: AppTextstyle.bodyTextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.normal,
-                          color: context.theme.colorTheme.whiteColor,
-                          overflow: TextOverflow.clip),
-                    ),
-                  ),
-                  CommonButton(
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: 16, vertical: 7),
-                    // width: 100,
-                    title: getTranslated("upgrade", context),
-                    mainButtonColor: context.theme.colorTheme.yellowToBlackish,
-                    titleColor: context.theme.colorTheme.blackishToYellow,
-                    onpress: () {
-                      Navigation.pushNamed(UpgradeScreens.routeName);
-                    },
-                  )
-                ],
-              ),
-            ),
-          )
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

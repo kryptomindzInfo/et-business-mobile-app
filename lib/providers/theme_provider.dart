@@ -1,4 +1,3 @@
-import 'package:etbank_business_app/core/app_print.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../constants/theme_constants.dart';
@@ -11,7 +10,7 @@ class ThemeProvider extends Notifier<Themes> {
   @override
   Themes build() {
     int themeId =
-        AppLocal.ins.appBox.get(ThemeConstants.theme, defaultValue: 0);
+        AppLocal.ins.appBox.get(ThemeConstants.theme, defaultValue: 1);
     return Themes(themeMode: themefromkey[themeId], themeId: themeId);
   }
 

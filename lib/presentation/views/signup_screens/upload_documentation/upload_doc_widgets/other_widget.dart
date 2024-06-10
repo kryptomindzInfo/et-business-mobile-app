@@ -29,6 +29,7 @@ class OtherWidget extends ConsumerWidget {
         ),
         5.spaceY,
         CommonWhiteFlexibleCard(
+          borderRadius: 12,
           color: context.theme.colorTheme.businessDetailsContainer,
           border: Border.all(color: context.theme.colorTheme.transparentToTeal),
           widget: Column(

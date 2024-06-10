@@ -61,6 +61,8 @@ class SignUpBusinessDetailsScreen extends ConsumerWidget {
                                   Navigator.pop(context);
                                 },
                                 bottomNavigationBody: CountriesListWidget(
+                                  color:
+                                      context.theme.colorTheme.tealTohalfWhite,
                                   onTap: (x) {},
                                 ),
                               );
@@ -81,10 +83,10 @@ class SignUpBusinessDetailsScreen extends ConsumerWidget {
                               ''
                           ? context.theme.colorTheme.normalTextColor
                           : context.theme.colorTheme.whiteColor,
-                      icon: Icon(
+                      icon: const Icon(
                         Icons.keyboard_arrow_down_outlined,
-                        size: 35,
-                        color: context.theme.colorTheme.whiteColor,
+                        // size: 25,
+                        color: AppColors.iconGreyColor,
                       )),
                   16.spaceY,
                   BusinessDetailsWhiteContainerWidet(
@@ -111,9 +113,9 @@ class SignUpBusinessDetailsScreen extends ConsumerWidget {
                     },
                     icon: Image.asset(
                       AppAssets.iconSearchBlack,
-                      height: 18.h,
-                      width: 18.w,
-                      color: context.theme.colorTheme.whiteColor,
+                      height: 17.h,
+                      width: 17.w,
+                      color: AppColors.iconGreyColor,
                     ),
                   ),
                   16.spaceY,
@@ -124,7 +126,7 @@ class SignUpBusinessDetailsScreen extends ConsumerWidget {
                     onTap: () {},
                     icon: Image.asset(
                       AppAssets.whitecross,
-                      scale: 2,
+                      scale: 2.5,
                     ),
                   ),
                   8.spaceY,
@@ -145,10 +147,10 @@ class SignUpBusinessDetailsScreen extends ConsumerWidget {
                       labelText: getTranslated('business_type', context),
                       title: getTranslated('private_limited_company', context),
                       onTap: () {},
-                      icon: Icon(
+                      icon: const Icon(
                         Icons.keyboard_arrow_down_outlined,
-                        size: 35,
-                        color: context.theme.colorTheme.whiteColor,
+                        // size: 55,
+                        color: AppColors.iconGreyColor,
                       )),
                   16.spaceY,
                   BusinessNotListedWidet(

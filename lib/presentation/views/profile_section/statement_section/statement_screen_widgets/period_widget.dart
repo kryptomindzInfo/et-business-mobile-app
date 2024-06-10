@@ -17,7 +17,7 @@ class SelectPeriodCalenderWidget extends ConsumerWidget {
       // height: 71,
       // width: 150,
       // margin: EdgeInsets.only(right: 2)
-      padding: const EdgeInsets.fromLTRB(16, 16, 24, 16),
+      padding: const EdgeInsets.fromLTRB(14, 16, 24, 16),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8),
           color: context.theme.colorTheme.yellowGreenColor),

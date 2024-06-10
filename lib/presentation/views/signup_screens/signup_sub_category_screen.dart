@@ -31,7 +31,7 @@ class SignUpSubCategoryScreen extends ConsumerWidget {
           backgroundColor: AppColors.transparent,
           appBar: const CommonAppBar(),
           body: Padding(
-            padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
+            padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -57,6 +57,7 @@ class SignUpSubCategoryScreen extends ConsumerWidget {
                 16.spaceY,
                 Expanded(
                   child: BlackContainerWidget(
+                      borderRadius: 12,
                       color: context.theme.colorTheme.halfWhiteToBlack,
                       child: ListView.builder(
                           itemCount: categories.length,

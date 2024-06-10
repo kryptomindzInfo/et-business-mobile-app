@@ -18,6 +18,11 @@ class AppTheme extends ThemeExtension<AppTheme> {
   final Color cardBorderColor;
   final Color boldTextColor;
   final Color yellowToBlackish;
+  final Color yellowToTeal;
+  final Color yellowToGrey;
+  final Color indigoToBlackish;
+  final Color teamText;
+  final Color yellowToWhite;
   final Color blackishToYellow;
   final Color normalTextColor;
   final Color buttonColor;
@@ -34,26 +39,44 @@ class AppTheme extends ThemeExtension<AppTheme> {
   final Color iconBgColor;
   final Color greyToTeal;
   final Color tealToGrey;
+  final Color tealBorderToIconGrey;
+  final Color tealToGreen;
+  final Color homeIconContainerToGreen;
+  final Color requestMoneyContainerToWhite;
+  final Color requestMoneyContainerTohalfWhite;
   final Color greenToTeal;
+  final Color halfWhiteToMonthlyStatementContainer;
   final Color yellowToGreen;
   final Color whiteToYellow;
   final Color whiteToTeal;
+  final Color tealToWhite;
+  final Color tealTohalfWhite;
   final Color whiteToGreen;
+  final Color addCurrencyToGreen;
+  final Color greenTohomeIconContainer;
   final Color greenToWhite;
+  final Color halfTealToGreen;
   final Color tealToYellow;
   final Color iconWithTitleColor;
   final Color cardColor;
   final Color transparentToColor;
   final Color transparentToGreen;
   final Color transparentToTeal;
+  final Color transparentToTealBorder;
   final Color transparentToYellow;
   final Color businessDetailsContainer;
+  final Color businessDetailsContainerToTeal;
+
   final Color halfWhiteToBlack;
+  final Color blackTohalfWhite;
+  final Color halfWhiteToGrey;
   final Color whiteTohalfWhite;
   final Color whiteToGrey;
   final Color normalButtonsColor;
   final Color buttonDisabledColor;
   final Color indigoToColor;
+  final Color indigoToTransparent;
+  final Color greenToIndigo;
   final Color grassGreen;
   final Color disableButtonColor;
   final Color disableButtonTextColor;
@@ -77,6 +100,7 @@ class AppTheme extends ThemeExtension<AppTheme> {
   final Color redColor;
   final Color requestIconBGcolor;
   final Color buttonHalfWhiteText;
+  final Color whiteWithOpactiy;
 
   // final Color scaffoldBgColor;
   // final Color headingColor;
@@ -100,6 +124,11 @@ class AppTheme extends ThemeExtension<AppTheme> {
     this.cardBorderColor = AppColors.tealColor,
     this.boldTextColor = AppColors.yellowGreen,
     this.yellowToBlackish = AppColors.blackish,
+    this.yellowToTeal = AppColors.tealColor,
+    this.yellowToGrey = AppColors.grey,
+    this.indigoToBlackish = AppColors.blackish,
+    this.teamText = AppColors.teamTextLight,
+    this.yellowToWhite = AppColors.yellowGreen,
     this.blackishToYellow = AppColors.yellowGreen,
     this.normalTextColor = AppColors.black,
     this.buttonColor = AppColors.yellowGreen,
@@ -116,26 +145,43 @@ class AppTheme extends ThemeExtension<AppTheme> {
     this.iconBgColor = AppColors.halfWhite,
     this.greyToTeal = AppColors.halfWhite,
     this.tealToGrey = AppColors.tealColor,
+    this.tealBorderToIconGrey = AppColors.iconGreyColor,
+    this.tealToGreen = AppColors.tealColor,
+    this.homeIconContainerToGreen = AppColors.grassGreen,
+    this.requestMoneyContainerToWhite = AppColors.white,
+    this.requestMoneyContainerTohalfWhite = AppColors.businessDetailsContainer,
     this.greenToTeal = AppColors.grassGreen,
+    this.halfWhiteToMonthlyStatementContainer = AppColors.halfWhite,
     this.yellowToGreen = AppColors.grassGreen,
     this.whiteToYellow = AppColors.yellowGreen,
     this.whiteToTeal = AppColors.tealColor,
+    this.tealToWhite = AppColors.white,
+    this.tealTohalfWhite = AppColors.businessDetailsContainer,
     this.whiteToGreen = AppColors.grassGreen,
+    this.addCurrencyToGreen = AppColors.grassGreen,
+    this.greenTohomeIconContainer = AppColors.grassGreen,
     this.greenToWhite = AppColors.white,
+    this.halfTealToGreen = AppColors.grassGreen,
     this.tealToYellow = AppColors.yellowGreen,
     this.iconWithTitleColor = AppColors.black,
     this.cardColor = AppColors.black,
     this.transparentToColor = AppColors.black,
     this.transparentToGreen = AppColors.grassGreen,
     this.transparentToTeal = AppColors.transparent,
+    this.transparentToTealBorder = AppColors.transparent,
     this.transparentToYellow = AppColors.transparent,
     this.businessDetailsContainer = AppColors.businessDetailsContainer,
+    this.businessDetailsContainerToTeal = AppColors.businessDetailsContainer,
     this.whiteTohalfWhite = AppColors.businessDetailsContainer,
     this.halfWhiteToBlack = AppColors.businessDetailsContainer,
+    this.blackTohalfWhite = AppColors.black,
+    this.halfWhiteToGrey = AppColors.iconGreyColor,
     this.whiteToGrey = AppColors.iconGreyColor,
     this.normalButtonsColor = AppColors.black,
     this.buttonDisabledColor = AppColors.grey,
     this.indigoToColor = AppColors.indigo,
+    this.indigoToTransparent = AppColors.indigo,
+    this.greenToIndigo = AppColors.grassGreen,
     this.grassGreen = AppColors.grassGreen,
     this.disableButtonColor = AppColors.continueButtonDisabledColor,
     this.disableButtonTextColor = AppColors.continueTextDisabledColor,
@@ -159,7 +205,7 @@ class AppTheme extends ThemeExtension<AppTheme> {
     this.redColor = AppColors.red,
     this.requestIconBGcolor = AppColors.darkGrassGreen,
     this.buttonHalfWhiteText = AppColors.halfWhite,
-
+    this.whiteWithOpactiy = AppColors.black,
     // this.scaffoldBgColor=AppColors.lightGreyColor,
     // this.headingColor=AppColors.black,
     // this.subHeadingColor=AppColors.lightGreyColor,
@@ -183,6 +229,11 @@ class AppTheme extends ThemeExtension<AppTheme> {
         cardBorderColor: AppColors.tealColor,
         boldTextColor: AppColors.yellowGreen,
         yellowToBlackish: AppColors.yellowGreen,
+        yellowToTeal: AppColors.yellowGreen,
+        yellowToGrey: AppColors.yellowGreen,
+        indigoToBlackish: AppColors.indigo,
+        teamText: AppColors.teamTextDark,
+        yellowToWhite: AppColors.white,
         blackishToYellow: AppColors.blackish,
         normalTextColor: AppColors.white,
         buttonColor: AppColors.yellowGreen,
@@ -199,26 +250,44 @@ class AppTheme extends ThemeExtension<AppTheme> {
         iconBgColor: AppColors.tealColor,
         greyToTeal: AppColors.tealColor,
         tealToGrey: AppColors.grey,
+        tealBorderToIconGrey: AppColors.tealBorder,
+        tealToGreen: AppColors.grassGreen,
+        homeIconContainerToGreen: AppColors.homeIconContainer,
+        requestMoneyContainerToWhite: AppColors.requestMoneyContainer,
+        requestMoneyContainerTohalfWhite: AppColors.requestMoneyContainer,
         greenToTeal: AppColors.tealColor,
+        halfWhiteToMonthlyStatementContainer:
+            AppColors.monthlyStatementContaier,
         yellowToGreen: AppColors.yellowGreen,
         whiteToYellow: AppColors.white,
         whiteToTeal: AppColors.white,
+        tealToWhite: AppColors.tealColor,
+        tealTohalfWhite: AppColors.tealColor,
         whiteToGreen: AppColors.white,
+        addCurrencyToGreen: AppColors.addCurrency,
+        greenTohomeIconContainer: AppColors.homeIconContainer,
         greenToWhite: AppColors.grassGreen,
+        halfTealToGreen: AppColors.halfTealColor,
         tealToYellow: AppColors.tealColor,
         iconWithTitleColor: AppColors.white,
         cardColor: AppColors.white,
         transparentToColor: AppColors.transparent,
         transparentToGreen: AppColors.transparent,
         transparentToTeal: AppColors.tealColor,
+        transparentToTealBorder: AppColors.tealBorder,
         transparentToYellow: AppColors.yellowGreen,
         businessDetailsContainer: AppColors.transparent,
+        businessDetailsContainerToTeal: AppColors.darkTeal,
         halfWhiteToBlack: AppColors.black,
+        blackTohalfWhite: AppColors.halfWhite,
+        halfWhiteToGrey: AppColors.halfWhite,
         whiteTohalfWhite: AppColors.white,
         whiteToGrey: AppColors.white,
         normalButtonsColor: AppColors.tealColor,
         buttonDisabledColor: AppColors.grey,
         indigoToColor: AppColors.indigo,
+        indigoToTransparent: AppColors.transparent,
+        greenToIndigo: AppColors.indigo,
         grassGreen: AppColors.grassGreen,
         disableButtonColor: AppColors.continueButtonDisabledColor,
         disableButtonTextColor: AppColors.continueTextDisabledColor,
@@ -240,7 +309,8 @@ class AppTheme extends ThemeExtension<AppTheme> {
         iconColor: AppColors.white,
         commonBottomSheetColor: AppColors.darkTeal,
         redColor: AppColors.red,
-        requestIconBGcolor: AppColors.darkGrassGreen);
+        requestIconBGcolor: AppColors.darkGrassGreen,
+        whiteWithOpactiy: AppColors.white.withOpacity(0.5));
   }
 
   @override
@@ -282,6 +352,8 @@ class AppTheme extends ThemeExtension<AppTheme> {
       boldTextColor: Color.lerp(boldTextColor, other.boldTextColor, t)!,
       yellowToBlackish:
           Color.lerp(yellowToBlackish, other.yellowToBlackish, t)!,
+      yellowToTeal: Color.lerp(yellowToTeal, other.yellowToTeal, t)!,
+      yellowToGrey: Color.lerp(yellowToGrey, other.yellowToGrey, t)!,
       blackishToYellow:
           Color.lerp(blackishToYellow, other.blackishToYellow, t)!,
       normalTextColor: Color.lerp(normalTextColor, other.normalTextColor, t)!,
@@ -300,11 +372,26 @@ class AppTheme extends ThemeExtension<AppTheme> {
       iconBgColor: Color.lerp(iconBgColor, other.iconBgColor, t)!,
       greyToTeal: Color.lerp(greyToTeal, other.greyToTeal, t)!,
       tealToGrey: Color.lerp(tealToGrey, other.tealToGrey, t)!,
+      tealBorderToIconGrey:
+          Color.lerp(tealBorderToIconGrey, other.tealBorderToIconGrey, t)!,
+      tealToGreen: Color.lerp(tealToGreen, other.tealToGreen, t)!,
+      requestMoneyContainerToWhite: Color.lerp(
+          requestMoneyContainerToWhite, other.requestMoneyContainerToWhite, t)!,
+      requestMoneyContainerTohalfWhite: Color.lerp(
+          requestMoneyContainerTohalfWhite,
+          other.requestMoneyContainerTohalfWhite,
+          t)!,
       greenToTeal: Color.lerp(greenToTeal, other.greenToTeal, t)!,
+      homeIconContainerToGreen: Color.lerp(
+          homeIconContainerToGreen, other.homeIconContainerToGreen, t)!,
       yellowToGreen: Color.lerp(yellowToGreen, other.yellowToGreen, t)!,
       whiteToYellow: Color.lerp(whiteToYellow, other.whiteToYellow, t)!,
       whiteToTeal: Color.lerp(whiteToTeal, other.whiteToTeal, t)!,
+      tealToWhite: Color.lerp(tealToWhite, other.tealToWhite, t)!,
+      tealTohalfWhite: Color.lerp(tealTohalfWhite, other.tealTohalfWhite, t)!,
       whiteToGreen: Color.lerp(whiteToGreen, other.whiteToGreen, t)!,
+      addCurrencyToGreen:
+          Color.lerp(addCurrencyToGreen, other.addCurrencyToGreen, t)!,
       tealToYellow: Color.lerp(tealToYellow, other.tealToYellow, t)!,
       iconWithTitleColor:
           Color.lerp(iconWithTitleColor, other.iconWithTitleColor, t)!,

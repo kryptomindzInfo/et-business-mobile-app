@@ -33,7 +33,8 @@ class AddAccountsBSheaderSection extends ConsumerWidget {
             children: [
               Image.asset(
                 AppAssets.plusicon,
-                height: 17,
+                height: 16,
+                width: 16,
               ),
               5.spaceX,
               Text(
